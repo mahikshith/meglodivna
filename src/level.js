@@ -1,81 +1,6 @@
-// Fixed, authored room modules use the measured jump metrics; nothing is randomized.
-const solids = [], hazards = [], route = [], enemies = [];
-function solid(id, x, y, w, h, biome, oneWay = false, kind = 'platform') {
-  const s = { id, x, y, w, h, biome, oneWay, kind, material: biome === 'snow' ? 'snow' : 'steel' };
-  solids.push(s); return s;
-}
-function mark(s, x, verb = 'run', extra = {}) { route.push({ id: s.id, x, y: s.y, verb, ...extra }); }
-function flat(id, x, w, biome, stops = []) {
-  const s = solid(id, x, 610, w, 110, biome, false, 'ground');
-  for (const stop of stops) mark(s, stop.x, 'run', stop);
-  mark(s, x + w - 70); return s;
-}
-function pit(id, x, w) { hazards.push({ id, type: 'spikes', x, y: 690, w, h: 30 }); }
-function pulse(id, type, x, phase = 0) {
-  const beam = type === 'laser';
-  hazards.push({ id, type, x, y: beam ? 315 : 592, w: beam ? 12 : 90, h: beam ? 295 : 18,
-    period: beam ? 3.4 : 4, onTime: beam ? 1.5 : 1.7, phase });
-}
-function bridge(id, x, biome, heights) {
-  const entry = solid(`${id}-entry`, x, 610, 650, 110, biome, false, 'ground');
-  mark(entry, x + 560);
-  const decks = [[900, 200], [1340, 230], [1800, 230]].map(([offset, w], i) => {
-    const s = solid(`${id}-deck-${i + 1}`, x + offset, heights[i], w, 28, biome);
-    mark(s, s.x + w / 2, 'double-jump'); return s;
-  });
-  const exit = solid(`${id}-exit`, x + 2270, 610, 730, 110, biome, false, 'ground');
-  mark(exit, exit.x + 80, 'double-jump'); mark(exit, x + 2930);
-  const supports = [entry, ...decks, exit];
-  for (let i = 1; i < supports.length; i++) {
-    const a = supports[i - 1], b = supports[i]; pit(`${id}-pit-${i}`, a.x + a.w, b.x - a.x - a.w);
-  }
-  return { entry, decks, exit };
-}
-function ascent(id, x, biome) {
-  const entry = solid(`${id}-entry`, x, 610, 1070, 110, biome, false, 'ground'); mark(entry, x + 340);
-  const risers = [[450, 505, 250], [650, 400, 240], [850, 295, 220]].map(([offset, y, w], i) => {
-    const s = solid(`${id}-riser-${i + 1}`, x + offset, y, w, 20, biome, true);
-    mark(s, s.x + w / 2, 'jump'); return s;
-  });
-  const wall = solid(`${id}-wall`, x + 1070, 210, 140, 400, biome, false, 'wall'); mark(wall, wall.x + 70, 'wall-jump');
-  solid(`${id}-low-floor`, x + 1210, 610, 300, 110, biome, false, 'ground');
-  const descents = [[1220, 300, 240], [1510, 405, 280], [1950, 510, 200]].map(([offset, y, w], i) => {
-    const s = solid(`${id}-descent-${i + 1}`, x + offset, y, w, 24, biome, true);
-    mark(s, s.x + w / 2, 'jump'); return s;
-  });
-  const exit = solid(`${id}-exit`, x + 2100, 610, 300, 110, biome, false, 'ground'); mark(exit, x + 2320, 'drop');
-  pit(`${id}-undercrypt`, x + 1510, 590); return { entry, risers, wall, descents, exit };
-}
-function vault(id, x, biome, heights) {
-  const entry = solid(`${id}-entry`, x, 610, 520, 110, biome, false, 'ground'); mark(entry, x + 440);
-  const decks = [[570, 280], [960, 260], [1320, 250], [1680, 260]].map(([offset, w], i) => {
-    const s = solid(`${id}-arch-${i + 1}`, x + offset, heights[i], w, 30, biome);
-    mark(s, s.x + w / 2, 'jump'); return s;
-  });
-  const exit = solid(`${id}-exit`, x + 2170, 610, 230, 110, biome, false, 'ground'); mark(exit, x + 2310, 'double-jump');
-  const supports = [entry, ...decks, exit];
-  for (let i = 1; i < supports.length; i++) {
-    const a = supports[i - 1], b = supports[i]; pit(`${id}-chasm-${i}`, a.x + a.w, b.x - a.x - a.w);
-  }
-  return { entry, decks, exit };
-}
-function killwire(id, x, w, biome) {
-  const s = flat(id, x, w, biome);
-  pulse(`${id}-laser-a`, 'laser', x + 340, 0.4); pulse(`${id}-emp`, 'emp', x + Math.floor(w * 0.49), 1.2);
-  pulse(`${id}-laser-b`, 'laser', x + w - 300, 1.9);
-  solid(`${id}-overlook`, x + Math.floor(w * 0.55), 505, 250, 20, biome, true); return s;
-}
-function foe(id, type, support, offset, power) {
-  const [w, h, hp] = { guard: [30, 44, 34], turret: [40, 46, 58], mage: [34, 50, 48], shade: [30, 48, 42], sentinel: [38, 54, 62] }[type];
-  const x = support.x + offset;
-  enemies.push({ id, type, power, x, y: support.y - h, w, h, hp, facing: -1,
-    minX: type === 'turret' ? x : Math.max(support.x + 12, x - 55),
-    maxX: type === 'turret' ? x : Math.min(support.x + support.w - w - 12, x + 55) });
-}
-function drone(id, x, y, power = 'rifle') {
-  enemies.push({ id, type: 'drone', power, x, y, w: 40, h: 30, hp: 28, facing: -1, minX: x - 120, maxX: x + 120 });
-}
-
+import { createLayout, buildNewWorlds, extendSoulforge } from './worlds.js';
+const layout = createLayout();
+const { solids, hazards, route, enemies, solid, mark, flat, pit, pulse, bridge, ascent, vault, killwire, foe, drone } = layout;
 // Snow border: teach movement, cross the rift, rest with refugees, and climb into the Warden's lock.
 const snowStart = flat('snow-border', 0, 1200, 'snow'); route.unshift({ id: snowStart.id, x: 112, y: 610, verb: 'run' });
 solid('snow-flank', 630, 505, 240, 20, 'snow', true); foe('border-rifle-a', 'guard', snowStart, 800, 'rifle');
@@ -180,7 +105,7 @@ const pickups = [
   { id: 'reactor-mana', type: 'mana', x: 61770, y: 578, value: 65 }, { id: 'reactor-health', type: 'health', x: 62110, y: 578, value: 50 },
   { id: 'soul-core', type: 'treasure', itemId: 'soul-core', x: 64820, y: 578 },
 ];
-export const LEVEL = {
+const BASE_LEVEL = {
   width: 65000, height: 720, spawn: { x: 100, y: 560 }, solids, hazards, route, props, pickups, bosses,
   boss: bosses.at(-1), exit: { x: 64840, y: 540, w: 50, h: 70 },
   gates: [
@@ -250,4 +175,10 @@ export const LEVEL = {
     ] },
   ],
 };
-export function createEnemies() { return enemies.map(enemy => ({ ...enemy })); }
+
+BASE_LEVEL.enemies = enemies;
+export const LEVEL = extendSoulforge(BASE_LEVEL);
+export const LEVELS = { soulforge: LEVEL, ...buildNewWorlds() };
+export const WORLD_LIST = Object.values(LEVELS).map(level => ({ id: level.id, name: level.name, description: level.description, width: level.width, timeLimit: level.timeLimit, tint: level.zones[0].tint }));
+export function getLevel(id = 'soulforge') { return LEVELS[id] || LEVEL; }
+export function createEnemies(level = LEVEL) { return level.enemies.map(enemy => ({ ...enemy })); }

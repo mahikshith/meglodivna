@@ -1,6 +1,6 @@
 {
   "name": "ash-signal",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,8 +11,13 @@
     "test:browser": "node scripts/playtest.cjs",
     "test:game": "node scripts/combat-route.mjs",
     "test:replay": "node scripts/replay.cjs",
-    "android:sync": "npm run build && node scripts/sync-android.mjs"
+    "android:sync": "npm run build && node scripts/sync-android.mjs",
+    "test:deep": "node scripts/deep-harness.mjs 30"
   },
-  "dependencies": { "phaser": "3.90.0" },
-  "devDependencies": { "vite": "6.4.1" }
+  "dependencies": {
+    "phaser": "3.90.0"
+  },
+  "devDependencies": {
+    "vite": "6.4.4"
+  }
 }

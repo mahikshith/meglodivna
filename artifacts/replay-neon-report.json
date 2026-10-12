@@ -1,0 +1,33 @@
+{
+  "worldId": "neon",
+  "status": "won",
+  "time": 336.083333333192,
+  "hp": 118.98999999999945,
+  "bosses": [
+    {
+      "id": "neon-warden",
+      "dead": true
+    },
+    {
+      "id": "neon-hex",
+      "dead": true
+    },
+    {
+      "id": "neon-regent",
+      "dead": true
+    }
+  ],
+  "retries": 0,
+  "captures": [
+    "story-neon-scout",
+    "run-storm",
+    "boss-neon-warden",
+    "story-neon-scholar",
+    "boss-neon-hex",
+    "story-neon-deserter",
+    "boss-neon-regent",
+    "campaign-victory"
+  ],
+  "runtimeErrors": [],
+  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback."
+}

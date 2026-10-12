@@ -1,6 +1,17 @@
+export function stickValue(dx, dy, radius, deadzone = 0.15) {
+  const distance = Math.hypot(dx, dy), scale = distance > radius ? radius / distance : 1;
+  const x = dx * scale / radius, y = dy * scale / radius, length = Math.hypot(x, y);
+  if (length <= deadzone) return { x: 0, y: 0, thumbX: dx * scale, thumbY: dy * scale };
+  const strength = (Math.min(1, length) - deadzone) / (1 - deadzone);
+  return { x: x / length * strength, y: y / length * strength, thumbX: dx * scale, thumbY: dy * scale };
+}
+
 export class Controls {
   constructor(element, onPause, onRetry, onConfirm) {
     this.keys = new Set(); this.edges = new Set(); this.touch = new Set(); this.pointers = new Map(); this.padLast = {};
+    this.stick = { x: 0, y: 0 }; this.stickPointer = null; this.stickElement = element.querySelector('#joystick');
+    this.pressTimes = new Map(); this.paletteOpened = new Set(); this.element = element;
+    element.querySelector('#touch-pause')?.addEventListener('click', () => { this.clear(); onPause(); });
     const captured = ['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','ShiftLeft','ShiftRight','KeyJ','KeyK','KeyL','KeyE','KeyQ','KeyF','KeyC','KeyV','KeyX','KeyZ'];
     window.addEventListener('keydown', e => {
       if (['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName) || e.target.isContentEditable || document.querySelector('dialog[open]')) return;
@@ -11,25 +22,62 @@ export class Controls {
     window.addEventListener('keyup', e => this.keys.delete(e.code));
     window.addEventListener('blur', () => { this.clear(); onPause(true); });
     document.addEventListener('visibilitychange', () => { if (document.hidden) { this.clear(); onPause(true); } });
+    if (this.stickElement) {
+      const stick = this.stickElement, thumb = stick.querySelector('.joystick-thumb');
+      const move = e => {
+        if (e.pointerId !== this.stickPointer) return;
+        e.preventDefault(); const rect = stick.getBoundingClientRect();
+        const value = stickValue(e.clientX - rect.left - rect.width / 2, e.clientY - rect.top - rect.height / 2, rect.width * 0.34);
+        this.stick = value; thumb.style.transform = `translate(${value.thumbX}px,${value.thumbY}px)`;
+      };
+      stick.addEventListener('pointerdown', e => {
+        if (this.stickPointer !== null || e.pointerType === 'mouse' && e.button !== 0 || document.querySelector('dialog[open]')) return;
+        this.stickPointer = e.pointerId; stick.setPointerCapture(e.pointerId); stick.classList.add('active'); move(e);
+      });
+      stick.addEventListener('pointermove', move);
+      for (const event of ['pointerup','pointercancel','lostpointercapture']) stick.addEventListener(event, e => {
+        if (e.pointerId !== this.stickPointer) return;
+        this.stickPointer = null; this.stick = { x: 0, y: 0 }; thumb.style.transform = ''; stick.classList.remove('active');
+      });
+    }
     for (const button of element.querySelectorAll('[data-action]')) {
       button.addEventListener('pointerdown', e => {
         if (e.pointerType === 'mouse' && e.button !== 0) return;
+        if (document.querySelector('dialog[open]')) return;
         e.preventDefault(); button.setPointerCapture(e.pointerId); const action = button.dataset.action;
         this.pointers.set(e.pointerId, action);
-        if (!this.touch.has(action)) this.edges.add(action);
+        this.pressTimes.set(e.pointerId, performance.now());
+        if (!this.touch.has(action) && !['attack','power'].includes(action)) this.edges.add(action);
         this.touch.add(action); button.classList.add('active');
       });
       for (const event of ['pointerup','pointercancel','lostpointercapture']) button.addEventListener(event, e => {
-        const action = this.pointers.get(e.pointerId); this.pointers.delete(e.pointerId);
+        const action = this.pointers.get(e.pointerId), duration = performance.now() - (this.pressTimes.get(e.pointerId) ?? 0), opened = this.paletteOpened.has(e.pointerId);
+        this.pointers.delete(e.pointerId); this.pressTimes.delete(e.pointerId); this.paletteOpened.delete(e.pointerId);
+        if (event === 'pointerup' && !document.querySelector('dialog[open]') && ![...this.pointers.values()].includes(action)) {
+          if (action === 'attack' && duration < 180) this.edges.add('slash');
+          if (action === 'power' && duration < 450 && !opened) this.edges.add(this.element.dataset.interact === 'true' ? 'interact' : 'spell');
+        }
         if (action && ![...this.pointers.values()].includes(action)) { this.touch.delete(action); button.classList.remove('active'); }
       });
     }
     this.onPause = onPause;
     this.onConfirm = onConfirm;
   }
-  clear() { this.keys.clear(); this.edges.clear(); this.touch.clear(); this.pointers.clear(); document.querySelectorAll('.touch .active').forEach(el => el.classList.remove('active')); }
+  clear() {
+    this.keys.clear(); this.edges.clear(); this.touch.clear(); this.pointers.clear(); this.pressTimes.clear(); this.paletteOpened.clear(); this.stickPointer = null; this.stick = { x: 0, y: 0 };
+    const thumb = this.stickElement?.querySelector('.joystick-thumb'); if (thumb) thumb.style.transform = '';
+    document.querySelectorAll('.touch .active').forEach(el => el.classList.remove('active'));
+  }
   read(consume = true) {
-    const modal = document.querySelector('dialog[open]');
+    let modal = document.querySelector('dialog[open]');
+    if (modal) this.clear();
+    const heldFor = (action, milliseconds) => !modal && [...this.pointers].some(([id, value]) => value === action && performance.now() - this.pressTimes.get(id) >= milliseconds);
+    if (!modal) for (const [id, action] of this.pointers) {
+      if (action === 'power' && performance.now() - this.pressTimes.get(id) >= 450 && !this.paletteOpened.has(id)) {
+        this.paletteOpened.add(id); this.element.dispatchEvent(new Event('open-loadout')); modal = document.querySelector('dialog[open]');
+        if (modal) this.clear(); break;
+      }
+    }
     const held = (...codes) => !modal && codes.some(c => this.keys.has(c) || this.touch.has(c));
     const edge = (...codes) => !modal && codes.some(c => this.edges.has(c));
     const pad = Array.from(navigator.getGamepads?.() || []).find(p => p?.connected);
@@ -48,12 +96,14 @@ export class Controls {
       if (padEdge(0)) this.onConfirm();
     }
     const axis = !modal && Math.abs(pad?.axes[0] || 0) > 0.2 ? pad.axes[0] : 0;
-    const input = { move: held('KeyA','ArrowLeft','left') ? -1 : held('KeyD','ArrowRight','right') ? 1 : axis,
+    const stickX = modal ? 0 : this.stick.x, stickY = modal ? 0 : this.stick.y;
+    const input = { move: held('KeyA','ArrowLeft','left') ? -1 : held('KeyD','ArrowRight','right') ? 1 : stickX || axis,
       jumpPressed: edge('Space','jump') || padEdge(0), jumpHeld: held('Space','jump') || button(0),
-      dashPressed: edge('ShiftLeft','ShiftRight','dash') || padEdge(1), jet: held('KeyL','KeyE','jet') || button(5),
-      slashPressed: edge('KeyJ','slash') || padEdge(2), shoot: held('KeyK','shoot') || button(7),
-      aimUp: held('KeyW','ArrowUp','aimUp') || !modal && (pad?.axes[1] || 0) < -0.55,
-      down: held('KeyS','ArrowDown','down') || !modal && (pad?.axes[1] || 0) > 0.55,
+      dashPressed: edge('ShiftLeft','ShiftRight','dash') || padEdge(1), jet: held('KeyL','KeyE','jet') || heldFor('jump',350) || button(5),
+      slashPressed: edge('KeyJ','slash') || padEdge(2), shoot: held('KeyK','shoot') || heldFor('attack',180) || button(7),
+      aimUp: held('KeyW','ArrowUp','aimUp') || stickY < -0.55 || !modal && (pad?.axes[1] || 0) < -0.55,
+      down: held('KeyS','ArrowDown','down') || stickY > 0.55 || !modal && (pad?.axes[1] || 0) > 0.55,
+      aimX: stickX || axis, aimY: stickY || (!modal ? pad?.axes[1] || 0 : 0),
       spellPressed: edge('KeyQ','spell') || padEdge(6), interactPressed: edge('KeyF','interact') || padEdge(3),
       cycleGunPressed: edge('KeyC','cycleGun') || padEdge(4), cycleSwordPressed: edge('KeyV','cycleSword') || padEdge(14),
       cycleSpellPressed: edge('KeyX','cycleSpell') || padEdge(15), ultimatePressed: edge('KeyZ','ultimate') || padEdge(11) };

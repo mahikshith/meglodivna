@@ -1,0 +1,33 @@
+{
+  "worldId": "pyre",
+  "status": "won",
+  "time": 336.7666666665247,
+  "hp": 135,
+  "bosses": [
+    {
+      "id": "pyre-warden",
+      "dead": true
+    },
+    {
+      "id": "pyre-hex",
+      "dead": true
+    },
+    {
+      "id": "pyre-regent",
+      "dead": true
+    }
+  ],
+  "retries": 0,
+  "captures": [
+    "story-pyre-scout",
+    "run-furnace",
+    "boss-pyre-warden",
+    "story-pyre-scholar",
+    "boss-pyre-hex",
+    "story-pyre-deserter",
+    "boss-pyre-regent",
+    "campaign-victory"
+  ],
+  "runtimeErrors": [],
+  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback."
+}

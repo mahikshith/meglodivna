@@ -1,0 +1,33 @@
+{
+  "worldId": "tide",
+  "status": "won",
+  "time": 349.6333333331797,
+  "hp": 135,
+  "bosses": [
+    {
+      "id": "tide-warden",
+      "dead": true
+    },
+    {
+      "id": "tide-hex",
+      "dead": true
+    },
+    {
+      "id": "tide-regent",
+      "dead": true
+    }
+  ],
+  "retries": 0,
+  "captures": [
+    "story-tide-scout",
+    "run-ruins",
+    "boss-tide-warden",
+    "story-tide-scholar",
+    "boss-tide-hex",
+    "story-tide-deserter",
+    "boss-tide-regent",
+    "campaign-victory"
+  ],
+  "runtimeErrors": [],
+  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback."
+}

@@ -28,12 +28,27 @@ export class Sound {
     src.onended=()=>{src.disconnect();filter.disconnect();gain.disconnect();this.activeVoices--;};
   }
   play(event, detail) {
-    if (typeof event === 'object') { detail=event.spell||event.kind;event=event.type; }
+    const data=typeof event==='object'&&event?event:{};
+    if (typeof event === 'object') { detail=event?.spell||event?.kind;event=event?.type; }
     if (event==='spell' && detail) event=detail;
+    if(event==='shot'&&data.gun)event=data.gun;
+    if(event==='pickup'&&data.kind==='shield')event='shield';
     switch(event) {
-      case 'shot':this.tone(140,40,.075,.15,'square');this.hiss(.05,.13,2400);break;
+      case 'shot':case 'carbine':this.tone(140,40,.075,.15,'square');this.hiss(.05,.13,2400);break;
+      case 'scatter':this.hiss(.16,.22,700,'bandpass');this.tone(155,30,.15,.19,'sawtooth');this.hiss(.07,.08,3200,'highpass',.07);break;
+      case 'rail':this.tone(1400,170,.16,.13,'triangle');this.hiss(.09,.17,3800);this.tone(75,22,.13,.14,'sine');break;
+      case 'rocket':this.hiss(.25,.19,400,'bandpass');this.tone(95,220,.2,.13,'sawtooth');break;
       case 'enemyshot':this.tone(110,40,.1,.08,'sawtooth');break;
-      case 'slash':this.hiss(.15,.17,700);this.tone(420,70,.12,.07);break;
+      case 'slash':{
+        const heavy=data.style==='finisher'||data.attackStyle==='finisher'||data.combo===2;
+        this.hiss(heavy ? .22 : .14,heavy ? .21 : .16,heavy?550:1400,'bandpass');this.tone(heavy?260:740,heavy?35:120,heavy ? .19 : .11,heavy ? .15 : .09,'triangle');break;
+      }
+      case 'shield':this.tone(180,720,.26,.1,'sine');this.tone(530,1060,.32,.08,'triangle',.04);this.hiss(.12,.04,3200);break;
+      case 'summon':{
+        const base=data.summon==='dragon'?65:data.summon==='wolf'?190:300;
+        this.tone(base,base*2.4,.35,.11,'triangle');this.tone(base*1.5,base*3,.4,.07,'sine',.06);this.hiss(.2,.065,900,'bandpass');break;
+      }
+      case 'spike':case 'trap':this.hiss(.12,.11,650,'bandpass');this.tone(330,100,.11,.1,'square');break;
       case 'jump':case 'walljump':this.tone(120,360,.12,.08);break;
       case 'dash':this.hiss(.15,.12,1300);break;
       case 'land':this.hiss(.05,.06,400);break;

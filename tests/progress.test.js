@@ -106,3 +106,24 @@ test('consumed cannon and nova charges survive immediate save and a cold reload'
   stepWorld(reloaded, { shoot: true }, STEP);
   assert.equal(reloaded.player.laserTime, 0);
 });
+
+test('loading a v0.2 save migrates translated encounters while preserving discoveries and subsequent saves', () => {
+  const legacy = defaultProgress(); delete legacy.worldId; delete legacy.worlds; delete legacy.completedWorlds;
+  legacy.unlocked.gun.push('rail', 'cannon'); legacy.equipped.gun = 'rail'; legacy.collections = ['soul-core'];
+  legacy.claimed = ['npc:vesper']; legacy.defeatedBosses = ['warden', 'hex', 'regent'];
+  legacy.openedGates = ['final-gate']; legacy.destroyedProps = ['final-cache']; legacy.checkpoint = 14;
+  legacy.charges = { cannon: 8, nova: 3 };
+  assert.equal(validateProgress(legacy).checkpoint, 14, 'Standalone validation remains compatible');
+  let value = JSON.stringify(legacy);
+  const storage = { getItem: () => value, setItem: (_key, text) => { value = text; } };
+  const migrated = loadProgress(storage);
+  assert.equal(migrated.worldId, 'soulforge'); assert.equal(migrated.checkpoint, 0);
+  assert.deepEqual(migrated.unlocked.gun, ['carbine', 'rail', 'cannon']); assert.equal(migrated.equipped.gun, 'rail');
+  assert.deepEqual(migrated.collections, ['soul-core']); assert.deepEqual(migrated.charges, { cannon: 0, nova: 0 });
+  for (const key of ['claimed', 'defeatedBosses', 'openedGates', 'destroyedProps', 'completedWorlds']) assert.deepEqual(migrated[key], []);
+  assert.deepEqual(migrated.worlds, {});
+  const world = createWorld(migrated.checkpoint, { progress: migrated });
+  assert.equal(world.player.x, world.level.checkpoints[0].x); assert.ok(world.bosses.every(boss => !boss.dead));
+  migrated.checkpoint = 2; migrated.claimed.push('new-cache'); migrated.charges.cannon = 1;
+  assert.equal(saveProgress(migrated, storage), true); assert.deepEqual(loadProgress(storage), migrated);
+});

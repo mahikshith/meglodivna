@@ -13,7 +13,7 @@ function checkReward(reward) {
 }
 
 test('six authored biomes and every object have unique IDs and finite world bounds', () => {
-  assert.equal(LEVEL.width, 65000); assert.equal(LEVEL.height, 720);
+  assert.equal(LEVEL.width, 84400); assert.equal(LEVEL.height, 720);
   assert.deepEqual(LEVEL.zones.map(zone => zone.biome), ['snow', 'ruins', 'furnace', 'storm', 'eclipse', 'reactor']);
   const ids = new Set();
   for (const object of [...LEVEL.solids, ...LEVEL.hazards, ...LEVEL.pickups, ...LEVEL.props, ...LEVEL.gates, ...LEVEL.bosses, ...LEVEL.npcs, ...createEnemies()]) {
@@ -30,7 +30,7 @@ test('six authored biomes and every object have unique IDs and finite world boun
     }
   }
   for (const s of LEVEL.solids) assert.ok(['snow', 'steel'].includes(s.material));
-  for (const h of LEVEL.hazards) assert.ok(['laser', 'fire', 'spikes', 'emp'].includes(h.type));
+  for (const h of LEVEL.hazards) assert.ok(['laser', 'fire', 'steam', 'spikes', 'emp'].includes(h.type));
   for (const item of LEVEL.pickups) checkReward(item);
   for (let i = 1; i < LEVEL.zones.length; i++) assert.ok(LEVEL.zones[i].x > LEVEL.zones[i - 1].x);
 });

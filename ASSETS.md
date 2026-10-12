@@ -1,41 +1,64 @@
-# ASH//SIGNAL original pixel art
+# Fractured Realms — original pixel assets
 
-`src/art.js` is the source for all 121 raster textures. No franchise artwork, external images, models, fonts or paid assets are used. The campaign travels from snow and flooded ruins through a furnace crypt, storm spire, eclipse citadel and soul reactor. Copper, ivory, ultraviolet, crimson and electric accents extend the original steel, cyan and amber palette. Two-pixel clusters, sloped armor plates, human limb proportions and small heads keep the courier and rifle guards distinct from cartoon characters.
+src/art.js creates/reuses **347** deterministic original raster textures and exports PALETTE, WORLD_ART and createArtTextures(scene). No franchise art, external images or paid assets were copied. Characters/objects use **one-pixel detail**; backgrounds/terrain use **two-pixel clusters**. Nearest-neighbor rendering and binary alpha preserve crisp edges.
 
-Call `createArtTextures(scene)` before rendering. It returns `{key,width,height,anchor:{x,y},notes}` for every texture and safely reuses existing textures after a scene restart. Generation is deterministic and occurs only while loading. Canvas nearest-neighbor copies preserve hard pixel edges; use Phaser's pixel-art/round-pixel settings.
+Creation returns `{key,width,height,anchor:{x,y},notes}`. Inspect the dynamic manifest instead of asserting the old121 count. Art generation happens during loading, not per gameplay frame. Original keys are preserved.
 
-| Texture family | Count | Size | Anchor in pixels |
-| --- | ---: | --- | --- |
-| Courier idle/run/jump/fall | 14 | 64 × 72 | 32, 68 |
-| Courier overhead slash | 4 | 128 × 160 | 64, 152 |
-| Rifle guard walk | 4 | 48 × 56 | 24, 54 |
-| Drone rotor/exhaust | 4 | 56 × 40 | 28, 20 |
-| Missile turret | 1 | 56 × 56 | 28, 54 |
-| Warden armor/core pulse | 4 | 128 × 144 | 64, 138 |
-| Steel and wall tiles | 2 | 64 × 64 | 0, 0 |
-| Snow trim | 1 | 64 × 32 | 0, 16 |
-| Far / mid background | 2 | 960 × 720 | 0, 0 |
-| Antenna / pipe / lamp / crate | 4 | 80 × 144 / 80 × 96 / 32 × 64 / 64 × 64 | bottom center |
-| Six biome far / mid layers | 12 | 960 × 720 | 0, 0 |
-| Mage / shade / sentinel | 12 | 64 × 80 | 32, 76 |
-| Campaign Warden | 4 | 128 × 144 | 64, 138 |
-| Hex Matriarch / Null Regent | 8 | 160 × 192 | 80, 184 |
-| Mira / Orren / Vesper bodies | 3 | 64 × 80 | 32, 76 |
-| Survivor portraits | 3 | 96 × 96 | 48, 48 |
-| Named pickup capsules | 13 | 40 × 48 | 20, 24 |
-| Equipment / spell / relic glyphs | 22 | 48 × 48 | 24, 24 |
-| Barrel / cache / lever / gate | 4 | 64 × 80 / 64 × 64 / 48 × 64 / 96 × 192 | 32,78 / 32,62 / 24,62 / 48,190 |
+## Frames and anchors
 
-Sprites face right and support horizontal flipping. Convert anchors to Phaser origins by dividing x/y by texture width/height. Align courier feet with `(player.x + player.w/2, player.y + player.h)`; combat and collision use simulation rectangles rather than art bounds. The enlarged slash frame contains the unchanged courier body at offset `(32,84)` and a long blade above it. Change the sprite origin on texture changes; do not resize the body. Snow icicles, blade pixels, drone exhaust and scenery props are decorative. Interactive barrel/cache/lever/gate collision and destruction come from world state. Slash arcs and active bullet/laser effects belong to gameplay rendering.
+| Family / keys | Size | Pixel anchor |
+| --- | --- | --- |
+| player-idle-0..3, player-run-0..7, player-jump/fall-0 |64×72 | feet32,68 |
+| player-slash-0..3; player-slash-overhead/horizontal/finisher-0..3; player-lunge-0..3 |128×160 | feet64,152 |
+| player-shoot-0..3, player-hurt-0..1, allied-clone-0..3 |64×72 | feet32,68 |
+| guard-0..3 /drone-0..3 /turret-0 |48×56 /56×40 /56×56 | feet24,54 /center28,20 /feet28,54 |
+| mage/shade/sentinel-0..3; mage-idle/cast/hurt-0..3 |64×80 | feet32,76 |
+| wizard/witch-idle/cast/hurt-0..3 |80×96 | feet40,92 |
+| boss-0..3; boss-warden-0..3 and run/attack/hurt-0..3 |128×144 | feet64,138 |
+| boss-hex/regent-0..3 and run/attack/hurt-0..3 |160×192 | feet80,184 |
+| npc-mira/orren/vesper and -0..3 idle frames |64×80 | feet32,76 |
+| portrait-mira/orren/vesper/ysra |96×96 | center48,48 |
+| weapon-carbine/scatter/rail/cannon/launcher/rocket |80×40 | handle16,24; muzzle74,20 |
+| projectile-bullet/carbine/scatter/rail/rocket/pressure/fire/hex/needle/arc/dragonfire/ally |48×24 | center24,12 |
+| shield-0..3 |96×112 | center48,56 |
+| summon-circle/portal-0..3 |128×128 | center64,64 |
+| wolf-0..3 /dragon-0..3 |96×64 /160×112 | feet48,60 /center80,56 |
+| spike-trap-0..3 |96×64 |48,60 |
+| pickup-{type}; pickup-{type}-0..3 |40×48 /64×80 | center20,24 /32,40 |
+| icon-{catalogId},26 gear/spell/relic glyphs |48×48 | center24,24 |
+| tile-steel/wall/tide/pyre/neon/veil; tile-snow |64×64 /64×32 |0,0 /0,16 |
+| background-far/mid, plus far/mid-{snow,ruins,furnace,storm,eclipse,reactor} |960×720 |0,0 |
 
-The far background is opaque; mid-background architecture is transparent. Both sit behind terrain and use different horizontal parallax rates. Scene particles provide moving snowfall and embers. Background colors stay dim enough that enemy lenses, blade trails and projectiles remain readable.
+Pickup types: health/fuel/rapid/shield/boost/mana/weapon/sword/armor/spell/treasure/cannon/nova. New icon IDs include rocket/clone/wolf/dragon. Antenna/pipe/lamp/crate and barrel/cache/lever/gate sizes/anchors remain in the manifest.
 
-All textures total 41,942,784 bytes of uncompressed RGBA pixels (about 40.0 MiB), before renderer overhead. The fourteen background textures, including the two preserved prototype keys, account for most of that budget. Source canvases are discarded after texture creation; no procedural drawing runs during gameplay. Native Canvas generation, validation and preview export took 873ms on the development computer; that is not a measurement on an Android device.
+## Physical alignment
 
-Validation performed: module syntax; all 121 unique keys; declared dimensions; nonempty alpha; binary alpha with no blurred edges; sprite sheet and all six composed backgrounds inspected locally. Browser screenshots inspected for the title, armory, story and landscape HUD. Browser assertions passed for difficulty tiers, armory item icons/tabs, paused browsing, story choices/focus, non-dismissable story Escape, and fifteen touch targets at least44px.
+Sprites face right; flip for left. Divide pixel anchors by frame dimensions to obtain Phaser origins. Feet align at `(body.x+body.w/2,body.y+body.h)`. The courier stays64×72 inside enlarged melee frames at offset32,84: change origin when switching textures, not body scale. Simulation vertical/horizontal/finisher/dash selects overhead/horizontal/finisher/lunge art.
 
-`src/ui.js` exports `createCampaignUI(catalog,callbacks)`, returning `open(world)`, `close()`, `refresh(world)`, `renderHUD(world)` and `renderStory(story)`. Callbacks equip validated items, pause/resume the simulation, advance story lines/choices and supply texture data URLs. The UI reads simulation state but never imports combat. Native dialogs contain keyboard focus. Existing DOM IDs are retained.
+Gun-ready hand local37,41 matches `(centerX+facing*5,y+h*.42)`. Separate guns render at **.6scale** around handle16,24. Their handle-to-muzzle vector58,-4 becomes34.8,-2.4. At aim angle a, the physical muzzle is `hand+(cos(a)*34.8+sin(a)*2.4,sin(a)*34.8-cos(a)*2.4)`. Shared weaponOrigin/projectileAim helpers are authoritative; boss/foe weaponSlot selects core/hand/gun/rocket.
 
-`Controls` preserves previous verbs and adds Q/F/C/V/X/Z and corresponding gamepad/touch actions. Pointer IDs maintain independent simultaneous touches. Game input is suppressed while native dialogs are open. `Sound.play` accepts either the original string or a full event object to distinguish sorceries; Web Audio voices are capped at24. `setReducedFX` shortens heavy thunder/nova effects.
+Chest cores: Warden local62,61; Hex80,106; Regent80,98. These align with `(centerX,y+h*.35)` at the listed feet anchors. Aimed overlays use beam endpoints x0/y0/x1/y1 and width, and projectile angle/velocity. Artwork does not define damage boxes or rays. Shields/circles/portals have transparent centers.
 
-This slice uses a compact pose set. Upgrade the animation count and add hand-authored intermediate poses if production playtesting calls for smoother combat transitions.
+Trap frames show retracted/warning/extended/retracting states; simulation owns timing/damage. Ally action/lifetime, portal arrival, pickup consumption and prop destruction are simulation-owned. Decoration adds no collision.
+
+## World themes and budget
+
+| World ID | Reused far/mid layer | Foreground / compact pieces |
+| --- | --- | --- |
+| soulforge | snow; renderer may use all six campaign biomes | tile-steel, tech-console |
+| tide | ruins | tile-tide, sea-wave-0..3, sea-rock |
+| pyre | furnace | tile-pyre, fire-column-0..3, dungeon-arch |
+| neon | reactor | tile-neon, tech-cables, tech-console |
+| veil | eclipse | tile-veil, wizard-tree, dungeon-arch |
+
+WORLD_ART supplies far/mid/decor/tile keys. Bright top rims distinguish collidable surfaces from architecture. Compact wave256×96, fire96×128, arch128×160, console96×80, tree128×192, cables128×128 and rock128×96 textures can be reused/culled without another fullscreen image per room. Far layers are opaque; mid layers transparent. No triangular stage spotlight assets are added.
+
+Total source allocation: **51,931,904 RGBA bytes /49.53MiB**, below the55MiB native validation budget. Ysra's96×96 witch portrait adds36,864 bytes; its pointed hat, violet eyes and long hair distinguish the guide from Orren. Fourteen960×720 full backgrounds are retained and reused across worlds. This is a source-pixel estimate; GPU copies/renderer overhead are additional and unmeasured.
+
+## Evidence and sound
+
+artifacts/assets/ contains PNGs and the dynamic manifest. **artifacts/refinement-art-sheet.png** shows actions, bosses, spellcasters, survivors, summons, traps, weapons and theme pieces; the final export incorporates portrait-ysra. **artifacts/refinement-asset-report.json** records asset dimensions, nonempty pixels, binary alpha, anchors, restart reuse and budget checks. Final integrated scene/browser/Android evidence belongs in VALIDATION.md.
+
+Touch interface art uses a112px analogue stick, four curved gesture buttons and a44px center pause control in a reserved112px bottom gutter. Attack tap/180ms hold means slash/fire; Jump tap/350ms hold means leap/thrust; Power tap/450ms hold means cast-or-context-interact/paused Sorcery-gearing palette; Dash is direct. The root renderer adapts the full-width game viewport above the controls. These interface assets are separate from the347 raster textures and do not change combat geometry.
+
+Sound.play accepts event objects or legacy strings and differentiates carbine/scatter/rail/rocket, shield activation and summons. Finisher metadata selects heavier slash feedback. Thunder, cannon, destruction and sorcery remain brief; voices cap at24 and disconnect when finished. Mute/reduced effects remain available. Speaker mix, perceived feel and physical Android comfort are not established by asset checks.

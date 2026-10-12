@@ -1,0 +1,34 @@
+{
+  "worldId": "veil",
+  "status": "won",
+  "time": 336.5916666665249,
+  "hp": 119.03999999999942,
+  "bosses": [
+    {
+      "id": "veil-warden",
+      "dead": true
+    },
+    {
+      "id": "veil-hex",
+      "dead": true
+    },
+    {
+      "id": "veil-regent",
+      "dead": true
+    }
+  ],
+  "retries": 0,
+  "captures": [
+    "story-veil-scout",
+    "run-eclipse",
+    "boss-veil-warden",
+    "story-veil-scholar",
+    "story-veil-ysra",
+    "boss-veil-hex",
+    "story-veil-deserter",
+    "boss-veil-regent",
+    "campaign-victory"
+  ],
+  "runtimeErrors": [],
+  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback."
+}

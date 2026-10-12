@@ -1,0 +1,939 @@
+{
+  "started": "2026-10-12T18:44:35.538Z",
+  "requestedMinutes": 30,
+  "method": "Fresh-process simulation stress and Node regressions, with varying seeds and checkpoint fixtures. Wall-clock timed, no idle duration counted as simulated gameplay.",
+  "rounds": [
+    {
+      "iteration": 1,
+      "at": "2026-10-12T18:44:35.541Z",
+      "sourceModified": "2026-10-12T17:54:41.649Z",
+      "soak": {
+        "seed": 1,
+        "worlds": [
+          "soulforge"
+        ],
+        "steps": 21600,
+        "deaths": 6,
+        "peakProjectiles": 33,
+        "peakAllies": 0,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "explode",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "parry",
+          "pickup",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "walljump"
+        ]
+      },
+      "status": "failed",
+      "error": "ile:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:170:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\mechanics.test.js:179:1\n✖ an eclipse barrel explosion cannot restore a dead player through nova recovery (0.4137ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at world (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:8:18)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:180:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\mechanics.test.js:190:1\n✖ story pauses the threat clock and validates a once-only reward choice across retries (0.5997ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:191:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\mechanics.test.js:209:1\n✖ lever gates leave collision immediately and stay open on retry (0.3375ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:210:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\mechanics.test.js:220:1\n✖ mage, shade, and sentinel attacks have distinct live powers (0.2506ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at world (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:8:18)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:222:19)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\mechanics.test.js:231:1\n✖ missile pressure warns before spawning right-to-left bounded attacks (0.3469ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at world (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:8:18)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:232:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\mechanics.test.js:242:1\n✖ booster increases real lift and fuel economy but jet fuel remains finite (3.754ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at world (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:8:18)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:251:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\parry.test.js:5:1\n✖ a deflected missile becomes friendly and keeps its outgoing heading (2.2017ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/parry.test.js:6:15)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n\ntest at tests\\progress.test.js:37:1\n✖ equipment must be discovered and category prototype names fail safely (1.15ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/progress.test.js:38:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\progress.test.js:49:1\n✖ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (0.4671ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/progress.test.js:50:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\progress.test.js:91:1\n✖ consumed cannon and nova charges survive immediate save and a cold reload (1.8907ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/progress.test.js:92:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n"
+    },
+    {
+      "iteration": 2,
+      "at": "2026-10-12T18:45:32.241Z",
+      "sourceModified": "2026-10-12T18:45:12.355Z",
+      "soak": {
+        "seed": 2,
+        "worlds": [
+          "soulforge"
+        ],
+        "steps": 21600,
+        "deaths": 6,
+        "peakProjectiles": 32,
+        "peakAllies": 0,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "explode",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "parry",
+          "pickup",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "walljump"
+        ]
+      },
+      "tests": [
+        "ℹ tests 64",
+        "ℹ pass 64",
+        "ℹ fail 0"
+      ],
+      "status": "passed"
+    },
+    {
+      "iteration": 3,
+      "at": "2026-10-12T18:46:30.493Z",
+      "sourceModified": "2026-10-12T18:45:53.333Z",
+      "soak": {
+        "seed": 3,
+        "worlds": [
+          "soulforge"
+        ],
+        "steps": 21600,
+        "deaths": 4,
+        "peakProjectiles": 27,
+        "peakAllies": 0,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "explode",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "pickup",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "walljump"
+        ]
+      },
+      "status": "failed",
+      "error": "✔ shield absorbs first, damage grants invulnerability, and lethal damage enters dead state (6.9782ms)\n✔ swept segments catch forward/reverse thin targets, including stationary inside points (0.8748ms)\n✔ projectile pool is bounded and expired bullets release their slots (6.9334ms)\n✔ fast player bullets damage a crossed enemy once and then deactivate (4.5239ms)\n✔ a blade swing hits each enemy once and a later swing can hit again (5.1049ms)\n✔ rapid fire expires and shooting returns to the normal cadence (7.6671ms)\n✔ EMP disables dash and jet, reduces movement, and clears after leaving the field (22.8955ms)\n✔ checkpoint activation restores resources and respawn uses that checkpoint (1.9264ms)\n✔ terminal worlds stop advancing and exit requires boss defeat (2.384ms)\n✔ lethal damage on the exit cannot be overwritten by victory or a health pickup (1.5942ms)\n✔ boss cycles through readable charge/attack/recovery and all three attacks (393.9569ms)\n✔ boss death opens exit and clears hostile projectiles (1.8522ms)\n✔ laser cycle exposes warning, off, and active intervals (0.4178ms)\n✔ closed authored forcefields cannot be crossed with legal wall jumps, dash, and finite jet fuel (242.5533ms)\n✔ upper world boundary stops upward velocity and continuing jetpack consumes real fuel (1.2585ms)\n✔ an active offscreen boss neither advances attacks nor deals hidden beam or projectile damage (6.3414ms)\n✔ boss warnings and attack rectangles remain inside the authored arena (1.2253ms)\n✔ four tiers increase wounds, health, cadence and missile pressure while reducing recovery/deadline (9.749ms)\n✔ difficulty does not alter core running or jumping physics (28.4437ms)\n✔ deadline causes a real loss and a legitimate retry restores the reactor window (3.3511ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (2.9757ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (22.2619ms)\n✔ spawn and relays provide safe standing and recovery clearance (5.7831ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (2.4673ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (1.0106ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (1.7516ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (1.4319ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (24.867ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (2.835ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (13.8755ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (10.9557ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (31.081ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (1.6598ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (6.9109ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (38.4022ms)\n✔ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (3.2578ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (1.9623ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (1.9574ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (1.402ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (1.8136ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (3.0964ms)\n✔ lever gates leave collision immediately and stay open on retry (1.7155ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (3.8495ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (7.2159ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (6.1423ms)\n✖ a deflected missile becomes friendly and keeps its outgoing heading (14.133ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (6.7977ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (5.0913ms)\n✔ jump can use coyote time and only one additional air jump (0.8432ms)\n✔ coyote time expires and buffered jump fires on landing (1.3003ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (0.933ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.497ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.2139ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (0.6577ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (1.33ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (3.9321ms)\n✔ invalid position and time fail instead of poisoning the simulation (1.2985ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (5.1021ms)\n✔ save/load round trips discovered items and handles broken storage safely (2.0854ms)\n✔ equipment must be discovered and category prototype names fail safely (7.257ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (4.8472ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (1.1497ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (7.5056ms)\n✔ the entire authored route is traversable from spawn with legal movement inputs (221.3037ms)\nℹ All six biomes: 220.47s, 137 landings, no teleport or physics bypass. Dynamic gates/combat are tested by the live campaign driver.\nℹ tests 64\nℹ suites 0\nℹ pass 63\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 781.1174\n\n✖ failing tests:\n\ntest at tests\\parry.test.js:5:1\n✖ a deflected missile becomes friendly and keeps its outgoing heading (14.133ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  'enemy' !== 'player'\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/parry.test.js:10:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 'enemy',\n    expected: 'player',\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 4,
+      "at": "2026-10-12T18:47:28.830Z",
+      "sourceModified": "2026-10-12T18:47:17.397Z",
+      "soak": {
+        "seed": 4,
+        "worlds": [
+          "soulforge"
+        ],
+        "steps": 21600,
+        "deaths": 9,
+        "peakProjectiles": 33,
+        "peakAllies": 0,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "explode",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "pickup",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "walljump"
+        ]
+      },
+      "status": "failed",
+      "error": "blade swing hits each enemy once and a later swing can hit again (6.128ms)\n✔ rapid fire expires and shooting returns to the normal cadence (8.418ms)\n✔ EMP disables dash and jet, reduces movement, and clears after leaving the field (20.4264ms)\n✔ checkpoint activation restores resources and respawn uses that checkpoint (4.0537ms)\n✔ terminal worlds stop advancing and exit requires boss defeat (2.1049ms)\n✔ lethal damage on the exit cannot be overwritten by victory or a health pickup (2.0808ms)\n✔ boss cycles through readable charge/attack/recovery and all three attacks (370.2748ms)\n✖ boss death opens exit and clears hostile projectiles (4.4715ms)\n✔ laser cycle exposes warning, off, and active intervals (0.3091ms)\n✔ closed authored forcefields cannot be crossed with legal wall jumps, dash, and finite jet fuel (247.7367ms)\n✔ upper world boundary stops upward velocity and continuing jetpack consumes real fuel (1.2109ms)\n✔ an active offscreen boss neither advances attacks nor deals hidden beam or projectile damage (6.5479ms)\n✔ boss warnings and attack rectangles remain inside the authored arena (1.2094ms)\n✔ four tiers increase wounds, health, cadence and missile pressure while reducing recovery/deadline (9.8625ms)\n✔ difficulty does not alter core running or jumping physics (30.701ms)\n✔ deadline causes a real loss and a legitimate retry restores the reactor window (3.0567ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (3.169ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (7.1146ms)\n✔ spawn and relays provide safe standing and recovery clearance (5.0791ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (3.2453ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (1.0835ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (1.6925ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (1.4728ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (17.0378ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (3.1714ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (14.0549ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (11.9338ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (30.744ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (1.248ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (4.6237ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (40.4154ms)\n✖ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (12.6676ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (1.0873ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (1.0036ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (1.2014ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (1.1117ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (1.731ms)\n✔ lever gates leave collision immediately and stay open on retry (0.7117ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (2.8232ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (5.3519ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (3.8682ms)\n✖ a deflected missile becomes friendly and keeps its outgoing heading (16.4021ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (8.8592ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (5.9263ms)\n✔ jump can use coyote time and only one additional air jump (0.8267ms)\n✔ coyote time expires and buffered jump fires on landing (1.1368ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (1.1826ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.6418ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.3528ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (0.8568ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (1.4672ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (4.5148ms)\n✔ invalid position and time fail instead of poisoning the simulation (1.5967ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (4.6666ms)\n✔ save/load round trips discovered items and handles broken storage safely (1.9741ms)\n✔ equipment must be discovered and category prototype names fail safely (5.553ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (3.4116ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (0.7174ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (6.8646ms)\n✔ the entire authored route is traversable from spawn with legal movement inputs (228.5985ms)\nℹ All six biomes: 220.47s, 137 landings, no teleport or physics bypass. Dynamic gates/combat are tested by the live campaign driver.\nℹ tests 64\nℹ suites 0\nℹ pass 61\nℹ fail 3\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 745.8314\n\n✖ failing tests:\n\ntest at tests\\combat.test.js:194:1\n✖ boss death opens exit and clears hostile projectiles (4.4715ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  4.8 !== 0\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/combat.test.js:201:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 4.8,\n    expected: 0,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n\ntest at tests\\mechanics.test.js:124:1\n✖ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (12.6676ms)\n  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n  \n    assert.ok(hp - boss.hp >= boss.maxHp * 0.25)\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:134:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: false,\n    expected: true,\n    operator: '==',\n    diff: 'simple'\n  }\n\ntest at tests\\parry.test.js:5:1\n✖ a deflected missile becomes friendly and keeps its outgoing heading (16.4021ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  'enemy' !== 'player'\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/parry.test.js:10:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 'enemy',\n    expected: 'player',\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 5,
+      "at": "2026-10-12T18:48:28.653Z",
+      "sourceModified": "2026-10-12T18:48:21.403Z",
+      "soak": {
+        "seed": 5,
+        "worlds": [
+          "soulforge"
+        ],
+        "steps": 21600,
+        "deaths": 5,
+        "peakProjectiles": 31,
+        "peakAllies": 0,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "explode",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "pickup",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "walljump"
+        ]
+      },
+      "status": "failed",
+      "error": "✔ shield absorbs first, damage grants invulnerability, and lethal damage enters dead state (8.7599ms)\n✔ swept segments catch forward/reverse thin targets, including stationary inside points (0.865ms)\n✔ projectile pool is bounded and expired bullets release their slots (6.8773ms)\n✔ fast player bullets damage a crossed enemy once and then deactivate (3.3921ms)\n✔ a blade swing hits each enemy once and a later swing can hit again (5.2541ms)\n✔ rapid fire expires and shooting returns to the normal cadence (8.068ms)\n✔ EMP disables dash and jet, reduces movement, and clears after leaving the field (24.2958ms)\n✔ checkpoint activation restores resources and respawn uses that checkpoint (3.8864ms)\n✔ terminal worlds stop advancing and exit requires boss defeat (1.551ms)\n✔ lethal damage on the exit cannot be overwritten by victory or a health pickup (4.9538ms)\n✔ boss cycles through readable charge/attack/recovery and all three attacks (378.7192ms)\n✖ boss death opens exit and clears hostile projectiles (2.4421ms)\n✔ laser cycle exposes warning, off, and active intervals (0.22ms)\n✔ closed authored forcefields cannot be crossed with legal wall jumps, dash, and finite jet fuel (249.9227ms)\n✔ upper world boundary stops upward velocity and continuing jetpack consumes real fuel (0.8919ms)\n✔ an active offscreen boss neither advances attacks nor deals hidden beam or projectile damage (5.8996ms)\n✔ boss warnings and attack rectangles remain inside the authored arena (1.0118ms)\n✔ four tiers increase wounds, health, cadence and missile pressure while reducing recovery/deadline (10.1094ms)\n✔ difficulty does not alter core running or jumping physics (33.3501ms)\n✔ deadline causes a real loss and a legitimate retry restores the reactor window (2.3768ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (3.6003ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (6.4294ms)\n✔ spawn and relays provide safe standing and recovery clearance (11.2781ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (2.7741ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (0.8802ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (1.3582ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (2.5985ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (19.4899ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (2.5572ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (16.7537ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (17.0017ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (29.3671ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (1.4242ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (5.9313ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (45.6832ms)\n✔ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (2.7891ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (2.414ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (1.3623ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (1.0647ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (0.9378ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (2.142ms)\n✔ lever gates leave collision immediately and stay open on retry (1.1758ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (2.2967ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (7.5435ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (3.8392ms)\n✖ a deflected missile becomes friendly and keeps its outgoing heading (17.2684ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (9.1173ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (4.9932ms)\n✔ jump can use coyote time and only one additional air jump (0.6478ms)\n✔ coyote time expires and buffered jump fires on landing (1.0487ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (0.9239ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.6131ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.9831ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (1.3777ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (2.1729ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (4.4737ms)\n✔ invalid position and time fail instead of poisoning the simulation (1.3511ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (5.2282ms)\n✔ save/load round trips discovered items and handles broken storage safely (1.792ms)\n✔ equipment must be discovered and category prototype names fail safely (5.902ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (4.7871ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (1.027ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (7.7814ms)\n✔ the entire authored route is traversable from spawn with legal movement inputs (247.2777ms)\nℹ All six biomes: 220.47s, 137 landings, no teleport or physics bypass. Dynamic gates/combat are tested by the live campaign driver.\nℹ tests 64\nℹ suites 0\nℹ pass 62\nℹ fail 2\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 763.8063\n\n✖ failing tests:\n\ntest at tests\\combat.test.js:194:1\n✖ boss death opens exit and clears hostile projectiles (2.4421ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  4.8 !== 0\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/combat.test.js:201:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 4.8,\n    expected: 0,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n\ntest at tests\\parry.test.js:5:1\n✖ a deflected missile becomes friendly and keeps its outgoing heading (17.2684ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  'enemy' !== 'player'\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/parry.test.js:10:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 'enemy',\n    expected: 'player',\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 6,
+      "at": "2026-10-12T18:49:26.414Z",
+      "sourceModified": "2026-10-12T18:48:21.403Z",
+      "soak": {
+        "seed": 6,
+        "worlds": [
+          "soulforge"
+        ],
+        "steps": 21600,
+        "deaths": 10,
+        "peakProjectiles": 30,
+        "peakAllies": 0,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "explode",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "pickup",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "walljump"
+        ]
+      },
+      "status": "failed",
+      "error": "✔ shield absorbs first, damage grants invulnerability, and lethal damage enters dead state (8.8881ms)\n✔ swept segments catch forward/reverse thin targets, including stationary inside points (0.7176ms)\n✔ projectile pool is bounded and expired bullets release their slots (7.1936ms)\n✔ fast player bullets damage a crossed enemy once and then deactivate (4.0022ms)\n✔ a blade swing hits each enemy once and a later swing can hit again (5.551ms)\n✔ rapid fire expires and shooting returns to the normal cadence (8.2775ms)\n✔ EMP disables dash and jet, reduces movement, and clears after leaving the field (22.7965ms)\n✔ checkpoint activation restores resources and respawn uses that checkpoint (2.0835ms)\n✔ terminal worlds stop advancing and exit requires boss defeat (1.8191ms)\n✔ lethal damage on the exit cannot be overwritten by victory or a health pickup (1.6257ms)\n✔ boss cycles through readable charge/attack/recovery and all three attacks (404.0811ms)\n✖ boss death opens exit and clears hostile projectiles (3.1058ms)\n✔ laser cycle exposes warning, off, and active intervals (0.247ms)\n✔ closed authored forcefields cannot be crossed with legal wall jumps, dash, and finite jet fuel (301.8538ms)\n✔ upper world boundary stops upward velocity and continuing jetpack consumes real fuel (0.8683ms)\n✔ an active offscreen boss neither advances attacks nor deals hidden beam or projectile damage (5.7328ms)\n✔ boss warnings and attack rectangles remain inside the authored arena (1.1828ms)\n✔ four tiers increase wounds, health, cadence and missile pressure while reducing recovery/deadline (8.8507ms)\n✔ difficulty does not alter core running or jumping physics (40.0721ms)\n✔ deadline causes a real loss and a legitimate retry restores the reactor window (13.5975ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (2.2109ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (6.4683ms)\n✔ spawn and relays provide safe standing and recovery clearance (14.4571ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (4.2084ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (1.082ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (1.4707ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (1.5056ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (22.2391ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (2.9323ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (14.3457ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (12.6305ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (31.8707ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (1.6818ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (6.7484ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (37.7337ms)\n✔ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (3.0706ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (1.8745ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (1.3778ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (1.2821ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (1.3391ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (2.2332ms)\n✔ lever gates leave collision immediately and stay open on retry (1.6848ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (2.485ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (6.8019ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (5.1798ms)\n✖ a deflected missile becomes friendly and keeps its outgoing heading (19.4317ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (8.1012ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (5.631ms)\n✔ jump can use coyote time and only one additional air jump (0.768ms)\n✔ coyote time expires and buffered jump fires on landing (1.0137ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (1.0401ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.8279ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.2905ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (0.8986ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (1.5425ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (4.7175ms)\n✔ invalid position and time fail instead of poisoning the simulation (1.3261ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (7.8041ms)\n✔ save/load round trips discovered items and handles broken storage safely (2.469ms)\n✔ equipment must be discovered and category prototype names fail safely (8.3848ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (4.9085ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (1.1349ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (8.1293ms)\n✔ the entire authored route is traversable from spawn with legal movement inputs (211.2689ms)\nℹ All six biomes: 220.47s, 137 landings, no teleport or physics bypass. Dynamic gates/combat are tested by the live campaign driver.\nℹ tests 64\nℹ suites 0\nℹ pass 62\nℹ fail 2\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 774.563\n\n✖ failing tests:\n\ntest at tests\\combat.test.js:194:1\n✖ boss death opens exit and clears hostile projectiles (3.1058ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  4.8 !== 0\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/combat.test.js:201:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 4.8,\n    expected: 0,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n\ntest at tests\\parry.test.js:5:1\n✖ a deflected missile becomes friendly and keeps its outgoing heading (19.4317ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  'enemy' !== 'player'\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/parry.test.js:10:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 'enemy',\n    expected: 'player',\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 7,
+      "at": "2026-10-12T18:50:25.002Z",
+      "sourceModified": "2026-10-12T18:49:35.987Z",
+      "status": "failed",
+      "error": "file:///C:/Users/mahik/Music/meglo/src/combat.js:445\r\n    if (boss.type === 'hex' && boss.attack === 2 && boss.shots === 0) { queueEnemySummon(world, 'shade', p.x + 110, 566, 8, boss.id); boss.shots++; }\r\n                                                                        ^\r\n\r\nReferenceError: queueEnemySummon is not defined\r\n    at updateBoss (file:///C:/Users/mahik/Music/meglo/src/combat.js:445:73)\r\n    at Module.stepWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:589:38)\r\n    at file:///C:/Users/mahik/Music/meglo/scripts/soak-world.mjs:20:14\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.19.0\r\n"
+    },
+    {
+      "iteration": 8,
+      "at": "2026-10-12T18:51:18.142Z",
+      "sourceModified": "2026-10-12T18:49:35.987Z",
+      "status": "failed",
+      "error": "file:///C:/Users/mahik/Music/meglo/src/combat.js:445\r\n    if (boss.type === 'hex' && boss.attack === 2 && boss.shots === 0) { queueEnemySummon(world, 'shade', p.x + 110, 566, 8, boss.id); boss.shots++; }\r\n                                                                        ^\r\n\r\nReferenceError: queueEnemySummon is not defined\r\n    at updateBoss (file:///C:/Users/mahik/Music/meglo/src/combat.js:445:73)\r\n    at Module.stepWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:589:38)\r\n    at file:///C:/Users/mahik/Music/meglo/scripts/soak-world.mjs:20:14\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.19.0\r\n"
+    },
+    {
+      "iteration": 9,
+      "at": "2026-10-12T18:52:13.795Z",
+      "sourceModified": "2026-10-12T18:51:29.962Z",
+      "status": "failed",
+      "error": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/soak-world.mjs 9\n"
+    },
+    {
+      "iteration": 10,
+      "at": "2026-10-12T18:53:43.852Z",
+      "sourceModified": "2026-10-12T18:53:14.876Z",
+      "status": "failed",
+      "error": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/soak-world.mjs 10\n"
+    },
+    {
+      "iteration": 11,
+      "at": "2026-10-12T18:55:13.917Z",
+      "sourceModified": "2026-10-12T18:53:14.876Z",
+      "status": "failed",
+      "error": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/soak-world.mjs 11\n"
+    },
+    {
+      "iteration": 12,
+      "at": "2026-10-12T18:56:43.984Z",
+      "sourceModified": "2026-10-12T18:55:57.832Z",
+      "status": "failed",
+      "error": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/soak-world.mjs 12\n"
+    },
+    {
+      "iteration": 13,
+      "at": "2026-10-12T18:58:14.035Z",
+      "sourceModified": "2026-10-12T18:55:57.832Z",
+      "status": "failed",
+      "error": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/soak-world.mjs 13\n"
+    },
+    {
+      "iteration": 14,
+      "at": "2026-10-12T18:59:44.094Z",
+      "sourceModified": "2026-10-12T18:58:36.642Z",
+      "status": "failed",
+      "error": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/soak-world.mjs 14\n"
+    },
+    {
+      "iteration": 15,
+      "at": "2026-10-12T19:01:14.162Z",
+      "sourceModified": "2026-10-12T19:00:59.311Z",
+      "soak": {
+        "seed": 15,
+        "worlds": [
+          "soulforge",
+          "tide",
+          "pyre",
+          "neon",
+          "veil"
+        ],
+        "steps": 47997,
+        "deaths": 10,
+        "peakProjectiles": 34,
+        "peakAllies": 1,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "checkpoint",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "equip",
+          "explode",
+          "gate",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "parry",
+          "pickup",
+          "portal",
+          "portalarrival",
+          "portalwarning",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "story",
+          "summon",
+          "summonarrival",
+          "summonexpire",
+          "walljump"
+        ]
+      },
+      "status": "failed",
+      "error": "screen boss neither advances attacks nor deals hidden beam or projectile damage (8.1785ms)\n✔ boss warnings and attack rectangles remain inside the authored arena (1.1252ms)\n✔ four tiers increase wounds, health, cadence and missile pressure while reducing recovery/deadline (7.4306ms)\n✔ difficulty does not alter core running or jumping physics (53.5767ms)\n✔ deadline causes a real loss and a legitimate retry restores the reactor window (2.3337ms)\n✖ authoritative muzzle/core points mirror correctly and directional shots start there (14.5565ms)\n✔ diagonal beams hit their segment rather than empty corners of a bounding rectangle (0.9936ms)\n✔ light parries are bounded while heavy boss rockets cannot be erased by a sword (11.2164ms)\n✔ horizontal/vertical/finisher combos alternate and a dash cuts a small foe exactly once (13.9402ms)\n✔ allied clone/wolf/dragon announce, arrive, attack real foes, expire, and stay bounded (211.4895ms)\n✔ enemy portals expose a warning then delayed arrival and bounded expiring attackers (12.4177ms)\n✔ currents change movement, moving platforms carry riders, and crumbling floors disappear/recover (11.4821ms)\n✔ world switching isolates claimed encounters and keeps globally consumed charges (2.2894ms)\n✔ a warned pact charges health once, claims its choice, and starts its enemy portal warning (3.1248ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (2.5125ms)\n✔ analogue joystick has a deadzone, clamped travel and continuous direction (2.7202ms)\n✔ joystick and action fingers release independently; cancel, blur and modal clear state (6.4779ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (10.4572ms)\n✔ spawn and relays provide safe standing and recovery clearance (4.1101ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (5.3232ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (1.2313ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (1.8315ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (1.8647ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (34.8423ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (3.4709ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (20.772ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (26.2638ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (49.4923ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (2.7716ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (9.6901ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (65.4407ms)\n✔ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (3.3372ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (2.0019ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (1.1393ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (2.2498ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (1.33ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (3.2157ms)\n✔ lever gates leave collision immediately and stay open on retry (1.6646ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (3.6628ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (8.7799ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (5.0971ms)\n✔ a deflected missile becomes friendly and keeps its outgoing heading (13.5034ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (15.7968ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (6.7529ms)\n✔ jump can use coyote time and only one additional air jump (1.022ms)\n✔ coyote time expires and buffered jump fires on landing (1.1322ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (1.3667ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.8519ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.6704ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (1.2355ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (1.596ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (5.1516ms)\n✔ invalid position and time fail instead of poisoning the simulation (1.9692ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (10.8885ms)\n✔ save/load round trips discovered items and handles broken storage safely (2.6203ms)\n✔ equipment must be discovered and category prototype names fail safely (4.889ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (7.1799ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (1.2224ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (24.25ms)\n✔ soulforge: entire authored route is traversable with legal movement inputs (397.4022ms)\nℹ soulforge: 283.79s, 170 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ tide: entire authored route is traversable with legal movement inputs (257.0838ms)\nℹ tide: 270.88s, 128 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ pyre: entire authored route is traversable with legal movement inputs (307.2181ms)\nℹ pyre: 271.71s, 129 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ neon: entire authored route is traversable with legal movement inputs (178.1831ms)\nℹ neon: 270.96s, 128 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ veil: entire authored route is traversable with legal movement inputs (253.1319ms)\nℹ veil: 271.16s, 129 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ five selectable worlds have independent authored layouts and stable metadata (4.9062ms)\n✔ soulforge: world boundaries, relays, bosses, routes, rewards and interactive references are valid (7.7048ms)\n✔ tide: world boundaries, relays, bosses, routes, rewards and interactive references are valid (2.6947ms)\n✔ pyre: world boundaries, relays, bosses, routes, rewards and interactive references are valid (3.5851ms)\n✔ neon: world boundaries, relays, bosses, routes, rewards and interactive references are valid (5.4844ms)\n✔ veil: world boundaries, relays, bosses, routes, rewards and interactive references are valid (5.4163ms)\n✔ unique world mechanics are present in actionable data rather than menu descriptions (1.9987ms)\nℹ tests 86\nℹ suites 0\nℹ pass 85\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1977.3265\n\n✖ failing tests:\n\ntest at tests\\dynamic-systems.test.js:17:1\n✖ authoritative muzzle/core points mirror correctly and directional shots start there (14.5565ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  + actual - expected\n  \n  + 39.80000000000001\n  - 39.8\n        ^\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/dynamic-systems.test.js:20:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 39.80000000000001,\n    expected: 39.8,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 16,
+      "at": "2026-10-12T19:02:28.561Z",
+      "sourceModified": "2026-10-12T19:01:59.164Z",
+      "soak": {
+        "seed": 16,
+        "worlds": [
+          "soulforge",
+          "tide",
+          "pyre",
+          "neon",
+          "veil"
+        ],
+        "steps": 48000,
+        "deaths": 19,
+        "peakProjectiles": 32,
+        "peakAllies": 0,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "checkpoint",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "equip",
+          "explode",
+          "gate",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "parry",
+          "pickup",
+          "portalarrival",
+          "portalwarning",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "summonarrival",
+          "summonexpire",
+          "walljump"
+        ]
+      },
+      "status": "failed",
+      "error": "neither advances attacks nor deals hidden beam or projectile damage (12.6426ms)\n✔ boss warnings and attack rectangles remain inside the authored arena (1.5805ms)\n✔ four tiers increase wounds, health, cadence and missile pressure while reducing recovery/deadline (12.907ms)\n✔ difficulty does not alter core running or jumping physics (61.6255ms)\n✔ deadline causes a real loss and a legitimate retry restores the reactor window (3.9423ms)\n✖ authoritative muzzle/core points mirror correctly and directional shots start there (11.9469ms)\n✔ diagonal beams hit their segment rather than empty corners of a bounding rectangle (1.2086ms)\n✔ light parries are bounded while heavy boss rockets cannot be erased by a sword (20.3961ms)\n✔ horizontal/vertical/finisher combos alternate and a dash cuts a small foe exactly once (16.0745ms)\n✔ allied clone/wolf/dragon announce, arrive, attack real foes, expire, and stay bounded (360.1775ms)\n✔ enemy portals expose a warning then delayed arrival and bounded expiring attackers (13.2869ms)\n✔ currents change movement, moving platforms carry riders, and crumbling floors disappear/recover (10.9ms)\n✔ world switching isolates claimed encounters and keeps globally consumed charges (3.1922ms)\n✔ a warned pact charges health once, claims its choice, and starts its enemy portal warning (36.4867ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (3.5546ms)\n✔ analogue joystick has a deadzone, clamped travel and continuous direction (4.0652ms)\n✔ joystick and action fingers release independently; cancel, blur and modal clear state (15.4688ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (52.6274ms)\n✔ spawn and relays provide safe standing and recovery clearance (4.904ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (18.8602ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (0.8785ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (2.95ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (1.5492ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (86.7687ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (3.4744ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (35.9887ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (36.9378ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (89.8916ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (9.7833ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (11.1232ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (120.6907ms)\n✔ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (7.6156ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (2.7605ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (1.6644ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (2.6525ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (2.1449ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (5.7764ms)\n✔ lever gates leave collision immediately and stay open on retry (16.5757ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (3.4598ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (12.6794ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (18.413ms)\n✔ a deflected missile becomes friendly and keeps its outgoing heading (20.1099ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (14.3105ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (10.3812ms)\n✔ jump can use coyote time and only one additional air jump (1.6611ms)\n✔ coyote time expires and buffered jump fires on landing (1.1503ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (1.2914ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.4778ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.0027ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (0.6363ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (1.1342ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (4.4019ms)\n✔ invalid position and time fail instead of poisoning the simulation (3.4493ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (21.5605ms)\n✔ save/load round trips discovered items and handles broken storage safely (2.8872ms)\n✔ equipment must be discovered and category prototype names fail safely (4.7895ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (21.8952ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (1.7866ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (16.4681ms)\n✔ soulforge: entire authored route is traversable with legal movement inputs (623.6733ms)\nℹ soulforge: 283.79s, 170 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ tide: entire authored route is traversable with legal movement inputs (278.2341ms)\nℹ tide: 270.88s, 128 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ pyre: entire authored route is traversable with legal movement inputs (197.6382ms)\nℹ pyre: 271.71s, 129 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ neon: entire authored route is traversable with legal movement inputs (164.3669ms)\nℹ neon: 270.96s, 128 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ veil: entire authored route is traversable with legal movement inputs (231.4976ms)\nℹ veil: 271.16s, 129 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ five selectable worlds have independent authored layouts and stable metadata (8.3075ms)\n✔ soulforge: world boundaries, relays, bosses, routes, rewards and interactive references are valid (5.5965ms)\n✔ tide: world boundaries, relays, bosses, routes, rewards and interactive references are valid (20.4821ms)\n✔ pyre: world boundaries, relays, bosses, routes, rewards and interactive references are valid (4.957ms)\n✔ neon: world boundaries, relays, bosses, routes, rewards and interactive references are valid (5.0738ms)\n✔ veil: world boundaries, relays, bosses, routes, rewards and interactive references are valid (5.0604ms)\n✔ unique world mechanics are present in actionable data rather than menu descriptions (1.3584ms)\nℹ tests 86\nℹ suites 0\nℹ pass 85\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2132.6819\n\n✖ failing tests:\n\ntest at tests\\dynamic-systems.test.js:17:1\n✖ authoritative muzzle/core points mirror correctly and directional shots start there (11.9469ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  + actual - expected\n  \n  + 39.80000000000001\n  - 39.8\n        ^\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/dynamic-systems.test.js:20:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 39.80000000000001,\n    expected: 39.8,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 17,
+      "at": "2026-10-12T19:03:43.960Z",
+      "sourceModified": "2026-10-12T19:01:59.164Z",
+      "soak": {
+        "seed": 17,
+        "worlds": [
+          "soulforge",
+          "tide",
+          "pyre",
+          "neon",
+          "veil"
+        ],
+        "steps": 47997,
+        "deaths": 13,
+        "peakProjectiles": 31,
+        "peakAllies": 1,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "checkpoint",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "equip",
+          "explode",
+          "gate",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "parry",
+          "pickup",
+          "portalarrival",
+          "portalwarning",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "story",
+          "summon",
+          "summonarrival",
+          "summonexpire",
+          "walljump"
+        ]
+      },
+      "tests": [
+        "ℹ tests 91",
+        "ℹ pass 91",
+        "ℹ fail 0"
+      ],
+      "status": "passed"
+    },
+    {
+      "iteration": 18,
+      "at": "2026-10-12T19:04:59.145Z",
+      "sourceModified": "2026-10-12T19:01:59.164Z",
+      "soak": {
+        "seed": 18,
+        "worlds": [
+          "soulforge",
+          "tide",
+          "pyre",
+          "neon",
+          "veil"
+        ],
+        "steps": 48000,
+        "deaths": 15,
+        "peakProjectiles": 32,
+        "peakAllies": 1,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "checkpoint",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "equip",
+          "explode",
+          "gate",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "parry",
+          "pickup",
+          "portal",
+          "portalarrival",
+          "portalwarning",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "summon",
+          "summonarrival",
+          "summonexpire",
+          "walljump"
+        ]
+      },
+      "tests": [
+        "ℹ tests 91",
+        "ℹ pass 91",
+        "ℹ fail 0"
+      ],
+      "status": "passed"
+    },
+    {
+      "iteration": 19,
+      "at": "2026-10-12T19:06:12.363Z",
+      "sourceModified": "2026-10-12T19:01:59.164Z",
+      "soak": {
+        "seed": 19,
+        "worlds": [
+          "soulforge",
+          "tide",
+          "pyre",
+          "neon",
+          "veil"
+        ],
+        "steps": 48000,
+        "deaths": 10,
+        "peakProjectiles": 30,
+        "peakAllies": 0,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "checkpoint",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "explode",
+          "gate",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "parry",
+          "pickup",
+          "portalarrival",
+          "portalwarning",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "summonarrival",
+          "summonexpire",
+          "walljump"
+        ]
+      },
+      "tests": [
+        "ℹ tests 93",
+        "ℹ pass 93",
+        "ℹ fail 0"
+      ],
+      "status": "passed"
+    },
+    {
+      "iteration": 20,
+      "at": "2026-10-12T19:07:25.296Z",
+      "sourceModified": "2026-10-12T19:06:24.112Z",
+      "status": "failed",
+      "error": "file:///C:/Users/mahik/Music/meglo/scripts/soak-world.mjs:18\r\n      if(world.story){combat.advanceStory(world,world.story.index>=world.story.lines.length-1?world.story.choices[0].id:undefined);continue;}\r\n                                                                                                                     ^\r\n\r\nTypeError: Cannot read properties of undefined (reading 'id')\r\n    at file:///C:/Users/mahik/Music/meglo/scripts/soak-world.mjs:18:118\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.19.0\r\n"
+    },
+    {
+      "iteration": 21,
+      "at": "2026-10-12T19:08:36.129Z",
+      "sourceModified": "2026-10-12T19:06:24.112Z",
+      "soak": {
+        "seed": 21,
+        "worlds": [
+          "soulforge",
+          "tide",
+          "pyre",
+          "neon",
+          "veil"
+        ],
+        "steps": 47997,
+        "deaths": 10,
+        "peakProjectiles": 34,
+        "peakAllies": 1,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "checkpoint",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "equip",
+          "explode",
+          "gate",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "parry",
+          "pickup",
+          "portal",
+          "portalarrival",
+          "portalwarning",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "story",
+          "summon",
+          "summonarrival",
+          "summonexpire",
+          "walljump"
+        ]
+      },
+      "tests": [
+        "ℹ tests 93",
+        "ℹ pass 93",
+        "ℹ fail 0"
+      ],
+      "status": "passed"
+    },
+    {
+      "iteration": 22,
+      "at": "2026-10-12T19:09:48.668Z",
+      "sourceModified": "2026-10-12T19:06:24.112Z",
+      "soak": {
+        "seed": 22,
+        "worlds": [
+          "soulforge",
+          "tide",
+          "pyre",
+          "neon",
+          "veil"
+        ],
+        "steps": 48000,
+        "deaths": 19,
+        "peakProjectiles": 31,
+        "peakAllies": 0,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "checkpoint",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "equip",
+          "explode",
+          "gate",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "parry",
+          "pickup",
+          "portalarrival",
+          "portalwarning",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "summonarrival",
+          "summonexpire",
+          "walljump"
+        ]
+      },
+      "tests": [
+        "ℹ tests 93",
+        "ℹ pass 93",
+        "ℹ fail 0"
+      ],
+      "status": "passed"
+    },
+    {
+      "iteration": 23,
+      "at": "2026-10-12T19:11:02.221Z",
+      "sourceModified": "2026-10-12T19:10:07.677Z",
+      "soak": {
+        "seed": 23,
+        "worlds": [
+          "soulforge",
+          "tide",
+          "pyre",
+          "neon",
+          "veil"
+        ],
+        "steps": 47994,
+        "deaths": 14,
+        "peakProjectiles": 33,
+        "peakAllies": 1,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "checkpoint",
+          "currentwarning",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "equip",
+          "explode",
+          "gate",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "parry",
+          "pickup",
+          "portalarrival",
+          "portalwarning",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "story",
+          "summon",
+          "summonarrival",
+          "summonexpire",
+          "walljump"
+        ]
+      },
+      "status": "failed",
+      "error": "nce, claims its choice, and starts its enemy portal warning (2.8444ms)\n✔ restarting one completed world preserves every other encounter save and clears replay charges (1.9543ms)\n✔ finite analogue aim fires diagonal rockets from the rotated authoritative muzzle (2.2949ms)\n✔ bosses pursue through physics and visibly enrage with a bounded taunt (6.2041ms)\n✔ conduit interaction actually removes a linked shield lock and creates a vulnerability window (11.5136ms)\n✔ Hex blink announces a safe exit before teleporting and grants arrival recovery (11.0377ms)\n✔ a leaping boss warning follows its current core while its target stays locked (3.3383ms)\n✔ Borrowed Spark refunds five mana only for each of the two legal light parries (8.4221ms)\n✔ Skybreaker suppresses and restores an ordinary ward without disabling boss shields (27.006ms)\n✖ infernal boss projectiles inflict an actual timed burn on impact (5.5127ms)\n✔ overload creates faster heavy rockets, an extra burst, and shorter real recovery (11.0945ms)\n✔ undertow telegraphs its arena current before displacing the player (26.8621ms)\n✔ mirror announces an extra portal exit before a bounded shade can arrive and attack (11.9889ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (4.4603ms)\n✔ timed mechanical spikes warn for the last0.35seconds and permanent pit spikes stay active (0.7322ms)\n✔ analogue joystick has a deadzone, clamped travel and continuous direction (4.118ms)\n✔ joystick and action fingers release independently; cancel, blur and modal clear state (9.2388ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (7.8914ms)\n✔ spawn and relays provide safe standing and recovery clearance (3.9529ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (8.0712ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (1.1698ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (1.8998ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (1.9103ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (32.9021ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (4.4181ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (22.4799ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (26.036ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (47.7569ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (2.5043ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (9.2544ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (69.661ms)\n✔ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (4.3577ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (2.3208ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (2.5607ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (2.0658ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (1.8065ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (3.9262ms)\n✔ lever gates leave collision immediately and stay open on retry (2.2131ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (5.8093ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (18.5616ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (5.366ms)\n✔ a deflected missile becomes friendly and keeps its outgoing heading (19.4317ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (11.5351ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (6.9629ms)\n✔ jump can use coyote time and only one additional air jump (0.9918ms)\n✔ coyote time expires and buffered jump fires on landing (1.4837ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (1.3138ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.6984ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.5069ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (0.9867ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (1.7938ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (6.697ms)\n✔ invalid position and time fail instead of poisoning the simulation (4.4923ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (9.4307ms)\n✔ save/load round trips discovered items and handles broken storage safely (4.7231ms)\n✔ equipment must be discovered and category prototype names fail safely (7.1908ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (7.8216ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (1.2164ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (12.7357ms)\n✔ soulforge: entire authored route is traversable with legal movement inputs (407.0487ms)\nℹ soulforge: 283.79s, 170 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ tide: entire authored route is traversable with legal movement inputs (197.9125ms)\nℹ tide: 270.88s, 128 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ pyre: entire authored route is traversable with legal movement inputs (141.2658ms)\nℹ pyre: 271.71s, 129 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ neon: entire authored route is traversable with legal movement inputs (146.7218ms)\nℹ neon: 270.96s, 128 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ veil: entire authored route is traversable with legal movement inputs (196.0758ms)\nℹ veil: 271.16s, 129 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ five selectable worlds have independent authored layouts and stable metadata (7.0143ms)\n✔ soulforge: world boundaries, relays, bosses, routes, rewards and interactive references are valid (5.8317ms)\n✔ tide: world boundaries, relays, bosses, routes, rewards and interactive references are valid (3.0012ms)\n✔ pyre: world boundaries, relays, bosses, routes, rewards and interactive references are valid (2.7198ms)\n✔ neon: world boundaries, relays, bosses, routes, rewards and interactive references are valid (2.8426ms)\n✔ veil: world boundaries, relays, bosses, routes, rewards and interactive references are valid (3.4543ms)\n✔ unique world mechanics are present in actionable data rather than menu descriptions (1.2658ms)\nℹ tests 99\nℹ suites 0\nℹ pass 98\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1597.1347\n\n✖ failing tests:\n\ntest at tests\\dynamic-systems.test.js:229:1\n✖ infernal boss projectiles inflict an actual timed burn on impact (5.5127ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  0 !== 3\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/dynamic-systems.test.js:235:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 0,\n    expected: 3,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 24,
+      "at": "2026-10-12T19:12:17.847Z",
+      "sourceModified": "2026-10-12T19:10:07.677Z",
+      "soak": {
+        "seed": 24,
+        "worlds": [
+          "soulforge",
+          "tide",
+          "pyre",
+          "neon",
+          "veil"
+        ],
+        "steps": 47997,
+        "deaths": 15,
+        "peakProjectiles": 34,
+        "peakAllies": 1,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "checkpoint",
+          "currentwarning",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "equip",
+          "explode",
+          "gate",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "parry",
+          "pickup",
+          "portal",
+          "portalarrival",
+          "portalwarning",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "story",
+          "summon",
+          "summonarrival",
+          "summonexpire",
+          "walljump"
+        ]
+      },
+      "tests": [
+        "ℹ tests 99",
+        "ℹ pass 99",
+        "ℹ fail 0"
+      ],
+      "status": "passed"
+    },
+    {
+      "iteration": 25,
+      "at": "2026-10-12T19:13:28.798Z",
+      "sourceModified": "2026-10-12T19:10:07.677Z",
+      "soak": {
+        "seed": 25,
+        "worlds": [
+          "soulforge",
+          "tide",
+          "pyre",
+          "neon",
+          "veil"
+        ],
+        "steps": 47997,
+        "deaths": 15,
+        "peakProjectiles": 32,
+        "peakAllies": 0,
+        "events": [
+          "bossstart",
+          "burn",
+          "charge",
+          "checkpoint",
+          "currentwarning",
+          "dash",
+          "death",
+          "debris",
+          "enemyshot",
+          "equip",
+          "explode",
+          "gate",
+          "hit",
+          "hurt",
+          "jet",
+          "jump",
+          "land",
+          "missilewarning",
+          "parry",
+          "pickup",
+          "portalarrival",
+          "portalwarning",
+          "shot",
+          "slash",
+          "spark",
+          "spell",
+          "story",
+          "summonarrival",
+          "summonexpire",
+          "walljump"
+        ]
+      },
+      "tests": [
+        "ℹ tests 99",
+        "ℹ pass 99",
+        "ℹ fail 0"
+      ],
+      "status": "passed"
+    }
+  ],
+  "failures": [
+    {
+      "iteration": 1,
+      "error": "ile:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:170:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\mechanics.test.js:179:1\n✖ an eclipse barrel explosion cannot restore a dead player through nova recovery (0.4137ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at world (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:8:18)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:180:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\mechanics.test.js:190:1\n✖ story pauses the threat clock and validates a once-only reward choice across retries (0.5997ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:191:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\mechanics.test.js:209:1\n✖ lever gates leave collision immediately and stay open on retry (0.3375ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:210:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\mechanics.test.js:220:1\n✖ mage, shade, and sentinel attacks have distinct live powers (0.2506ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at world (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:8:18)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:222:19)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\mechanics.test.js:231:1\n✖ missile pressure warns before spawning right-to-left bounded attacks (0.3469ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at world (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:8:18)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:232:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\mechanics.test.js:242:1\n✖ booster increases real lift and fuel economy but jet fuel remains finite (3.754ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at world (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:8:18)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:251:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\parry.test.js:5:1\n✖ a deflected missile becomes friendly and keeps its outgoing heading (2.2017ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/parry.test.js:6:15)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n\ntest at tests\\progress.test.js:37:1\n✖ equipment must be discovered and category prototype names fail safely (1.15ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/progress.test.js:38:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\progress.test.js:49:1\n✖ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (0.4671ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/progress.test.js:50:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n\ntest at tests\\progress.test.js:91:1\n✖ consumed cannon and nova charges survive immediate save and a cold reload (1.8907ms)\n  ReferenceError: level is not defined\n      at createWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:25:49)\n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/progress.test.js:92:17)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)\n"
+    },
+    {
+      "iteration": 3,
+      "error": "✔ shield absorbs first, damage grants invulnerability, and lethal damage enters dead state (6.9782ms)\n✔ swept segments catch forward/reverse thin targets, including stationary inside points (0.8748ms)\n✔ projectile pool is bounded and expired bullets release their slots (6.9334ms)\n✔ fast player bullets damage a crossed enemy once and then deactivate (4.5239ms)\n✔ a blade swing hits each enemy once and a later swing can hit again (5.1049ms)\n✔ rapid fire expires and shooting returns to the normal cadence (7.6671ms)\n✔ EMP disables dash and jet, reduces movement, and clears after leaving the field (22.8955ms)\n✔ checkpoint activation restores resources and respawn uses that checkpoint (1.9264ms)\n✔ terminal worlds stop advancing and exit requires boss defeat (2.384ms)\n✔ lethal damage on the exit cannot be overwritten by victory or a health pickup (1.5942ms)\n✔ boss cycles through readable charge/attack/recovery and all three attacks (393.9569ms)\n✔ boss death opens exit and clears hostile projectiles (1.8522ms)\n✔ laser cycle exposes warning, off, and active intervals (0.4178ms)\n✔ closed authored forcefields cannot be crossed with legal wall jumps, dash, and finite jet fuel (242.5533ms)\n✔ upper world boundary stops upward velocity and continuing jetpack consumes real fuel (1.2585ms)\n✔ an active offscreen boss neither advances attacks nor deals hidden beam or projectile damage (6.3414ms)\n✔ boss warnings and attack rectangles remain inside the authored arena (1.2253ms)\n✔ four tiers increase wounds, health, cadence and missile pressure while reducing recovery/deadline (9.749ms)\n✔ difficulty does not alter core running or jumping physics (28.4437ms)\n✔ deadline causes a real loss and a legitimate retry restores the reactor window (3.3511ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (2.9757ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (22.2619ms)\n✔ spawn and relays provide safe standing and recovery clearance (5.7831ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (2.4673ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (1.0106ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (1.7516ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (1.4319ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (24.867ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (2.835ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (13.8755ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (10.9557ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (31.081ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (1.6598ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (6.9109ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (38.4022ms)\n✔ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (3.2578ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (1.9623ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (1.9574ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (1.402ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (1.8136ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (3.0964ms)\n✔ lever gates leave collision immediately and stay open on retry (1.7155ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (3.8495ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (7.2159ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (6.1423ms)\n✖ a deflected missile becomes friendly and keeps its outgoing heading (14.133ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (6.7977ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (5.0913ms)\n✔ jump can use coyote time and only one additional air jump (0.8432ms)\n✔ coyote time expires and buffered jump fires on landing (1.3003ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (0.933ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.497ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.2139ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (0.6577ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (1.33ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (3.9321ms)\n✔ invalid position and time fail instead of poisoning the simulation (1.2985ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (5.1021ms)\n✔ save/load round trips discovered items and handles broken storage safely (2.0854ms)\n✔ equipment must be discovered and category prototype names fail safely (7.257ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (4.8472ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (1.1497ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (7.5056ms)\n✔ the entire authored route is traversable from spawn with legal movement inputs (221.3037ms)\nℹ All six biomes: 220.47s, 137 landings, no teleport or physics bypass. Dynamic gates/combat are tested by the live campaign driver.\nℹ tests 64\nℹ suites 0\nℹ pass 63\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 781.1174\n\n✖ failing tests:\n\ntest at tests\\parry.test.js:5:1\n✖ a deflected missile becomes friendly and keeps its outgoing heading (14.133ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  'enemy' !== 'player'\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/parry.test.js:10:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 'enemy',\n    expected: 'player',\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 4,
+      "error": "blade swing hits each enemy once and a later swing can hit again (6.128ms)\n✔ rapid fire expires and shooting returns to the normal cadence (8.418ms)\n✔ EMP disables dash and jet, reduces movement, and clears after leaving the field (20.4264ms)\n✔ checkpoint activation restores resources and respawn uses that checkpoint (4.0537ms)\n✔ terminal worlds stop advancing and exit requires boss defeat (2.1049ms)\n✔ lethal damage on the exit cannot be overwritten by victory or a health pickup (2.0808ms)\n✔ boss cycles through readable charge/attack/recovery and all three attacks (370.2748ms)\n✖ boss death opens exit and clears hostile projectiles (4.4715ms)\n✔ laser cycle exposes warning, off, and active intervals (0.3091ms)\n✔ closed authored forcefields cannot be crossed with legal wall jumps, dash, and finite jet fuel (247.7367ms)\n✔ upper world boundary stops upward velocity and continuing jetpack consumes real fuel (1.2109ms)\n✔ an active offscreen boss neither advances attacks nor deals hidden beam or projectile damage (6.5479ms)\n✔ boss warnings and attack rectangles remain inside the authored arena (1.2094ms)\n✔ four tiers increase wounds, health, cadence and missile pressure while reducing recovery/deadline (9.8625ms)\n✔ difficulty does not alter core running or jumping physics (30.701ms)\n✔ deadline causes a real loss and a legitimate retry restores the reactor window (3.0567ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (3.169ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (7.1146ms)\n✔ spawn and relays provide safe standing and recovery clearance (5.0791ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (3.2453ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (1.0835ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (1.6925ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (1.4728ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (17.0378ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (3.1714ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (14.0549ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (11.9338ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (30.744ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (1.248ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (4.6237ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (40.4154ms)\n✖ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (12.6676ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (1.0873ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (1.0036ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (1.2014ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (1.1117ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (1.731ms)\n✔ lever gates leave collision immediately and stay open on retry (0.7117ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (2.8232ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (5.3519ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (3.8682ms)\n✖ a deflected missile becomes friendly and keeps its outgoing heading (16.4021ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (8.8592ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (5.9263ms)\n✔ jump can use coyote time and only one additional air jump (0.8267ms)\n✔ coyote time expires and buffered jump fires on landing (1.1368ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (1.1826ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.6418ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.3528ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (0.8568ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (1.4672ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (4.5148ms)\n✔ invalid position and time fail instead of poisoning the simulation (1.5967ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (4.6666ms)\n✔ save/load round trips discovered items and handles broken storage safely (1.9741ms)\n✔ equipment must be discovered and category prototype names fail safely (5.553ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (3.4116ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (0.7174ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (6.8646ms)\n✔ the entire authored route is traversable from spawn with legal movement inputs (228.5985ms)\nℹ All six biomes: 220.47s, 137 landings, no teleport or physics bypass. Dynamic gates/combat are tested by the live campaign driver.\nℹ tests 64\nℹ suites 0\nℹ pass 61\nℹ fail 3\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 745.8314\n\n✖ failing tests:\n\ntest at tests\\combat.test.js:194:1\n✖ boss death opens exit and clears hostile projectiles (4.4715ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  4.8 !== 0\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/combat.test.js:201:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 4.8,\n    expected: 0,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n\ntest at tests\\mechanics.test.js:124:1\n✖ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (12.6676ms)\n  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n  \n    assert.ok(hp - boss.hp >= boss.maxHp * 0.25)\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/mechanics.test.js:134:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: false,\n    expected: true,\n    operator: '==',\n    diff: 'simple'\n  }\n\ntest at tests\\parry.test.js:5:1\n✖ a deflected missile becomes friendly and keeps its outgoing heading (16.4021ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  'enemy' !== 'player'\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/parry.test.js:10:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 'enemy',\n    expected: 'player',\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 5,
+      "error": "✔ shield absorbs first, damage grants invulnerability, and lethal damage enters dead state (8.7599ms)\n✔ swept segments catch forward/reverse thin targets, including stationary inside points (0.865ms)\n✔ projectile pool is bounded and expired bullets release their slots (6.8773ms)\n✔ fast player bullets damage a crossed enemy once and then deactivate (3.3921ms)\n✔ a blade swing hits each enemy once and a later swing can hit again (5.2541ms)\n✔ rapid fire expires and shooting returns to the normal cadence (8.068ms)\n✔ EMP disables dash and jet, reduces movement, and clears after leaving the field (24.2958ms)\n✔ checkpoint activation restores resources and respawn uses that checkpoint (3.8864ms)\n✔ terminal worlds stop advancing and exit requires boss defeat (1.551ms)\n✔ lethal damage on the exit cannot be overwritten by victory or a health pickup (4.9538ms)\n✔ boss cycles through readable charge/attack/recovery and all three attacks (378.7192ms)\n✖ boss death opens exit and clears hostile projectiles (2.4421ms)\n✔ laser cycle exposes warning, off, and active intervals (0.22ms)\n✔ closed authored forcefields cannot be crossed with legal wall jumps, dash, and finite jet fuel (249.9227ms)\n✔ upper world boundary stops upward velocity and continuing jetpack consumes real fuel (0.8919ms)\n✔ an active offscreen boss neither advances attacks nor deals hidden beam or projectile damage (5.8996ms)\n✔ boss warnings and attack rectangles remain inside the authored arena (1.0118ms)\n✔ four tiers increase wounds, health, cadence and missile pressure while reducing recovery/deadline (10.1094ms)\n✔ difficulty does not alter core running or jumping physics (33.3501ms)\n✔ deadline causes a real loss and a legitimate retry restores the reactor window (2.3768ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (3.6003ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (6.4294ms)\n✔ spawn and relays provide safe standing and recovery clearance (11.2781ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (2.7741ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (0.8802ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (1.3582ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (2.5985ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (19.4899ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (2.5572ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (16.7537ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (17.0017ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (29.3671ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (1.4242ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (5.9313ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (45.6832ms)\n✔ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (2.7891ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (2.414ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (1.3623ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (1.0647ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (0.9378ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (2.142ms)\n✔ lever gates leave collision immediately and stay open on retry (1.1758ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (2.2967ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (7.5435ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (3.8392ms)\n✖ a deflected missile becomes friendly and keeps its outgoing heading (17.2684ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (9.1173ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (4.9932ms)\n✔ jump can use coyote time and only one additional air jump (0.6478ms)\n✔ coyote time expires and buffered jump fires on landing (1.0487ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (0.9239ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.6131ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.9831ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (1.3777ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (2.1729ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (4.4737ms)\n✔ invalid position and time fail instead of poisoning the simulation (1.3511ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (5.2282ms)\n✔ save/load round trips discovered items and handles broken storage safely (1.792ms)\n✔ equipment must be discovered and category prototype names fail safely (5.902ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (4.7871ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (1.027ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (7.7814ms)\n✔ the entire authored route is traversable from spawn with legal movement inputs (247.2777ms)\nℹ All six biomes: 220.47s, 137 landings, no teleport or physics bypass. Dynamic gates/combat are tested by the live campaign driver.\nℹ tests 64\nℹ suites 0\nℹ pass 62\nℹ fail 2\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 763.8063\n\n✖ failing tests:\n\ntest at tests\\combat.test.js:194:1\n✖ boss death opens exit and clears hostile projectiles (2.4421ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  4.8 !== 0\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/combat.test.js:201:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 4.8,\n    expected: 0,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n\ntest at tests\\parry.test.js:5:1\n✖ a deflected missile becomes friendly and keeps its outgoing heading (17.2684ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  'enemy' !== 'player'\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/parry.test.js:10:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 'enemy',\n    expected: 'player',\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 6,
+      "error": "✔ shield absorbs first, damage grants invulnerability, and lethal damage enters dead state (8.8881ms)\n✔ swept segments catch forward/reverse thin targets, including stationary inside points (0.7176ms)\n✔ projectile pool is bounded and expired bullets release their slots (7.1936ms)\n✔ fast player bullets damage a crossed enemy once and then deactivate (4.0022ms)\n✔ a blade swing hits each enemy once and a later swing can hit again (5.551ms)\n✔ rapid fire expires and shooting returns to the normal cadence (8.2775ms)\n✔ EMP disables dash and jet, reduces movement, and clears after leaving the field (22.7965ms)\n✔ checkpoint activation restores resources and respawn uses that checkpoint (2.0835ms)\n✔ terminal worlds stop advancing and exit requires boss defeat (1.8191ms)\n✔ lethal damage on the exit cannot be overwritten by victory or a health pickup (1.6257ms)\n✔ boss cycles through readable charge/attack/recovery and all three attacks (404.0811ms)\n✖ boss death opens exit and clears hostile projectiles (3.1058ms)\n✔ laser cycle exposes warning, off, and active intervals (0.247ms)\n✔ closed authored forcefields cannot be crossed with legal wall jumps, dash, and finite jet fuel (301.8538ms)\n✔ upper world boundary stops upward velocity and continuing jetpack consumes real fuel (0.8683ms)\n✔ an active offscreen boss neither advances attacks nor deals hidden beam or projectile damage (5.7328ms)\n✔ boss warnings and attack rectangles remain inside the authored arena (1.1828ms)\n✔ four tiers increase wounds, health, cadence and missile pressure while reducing recovery/deadline (8.8507ms)\n✔ difficulty does not alter core running or jumping physics (40.0721ms)\n✔ deadline causes a real loss and a legitimate retry restores the reactor window (13.5975ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (2.2109ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (6.4683ms)\n✔ spawn and relays provide safe standing and recovery clearance (14.4571ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (4.2084ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (1.082ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (1.4707ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (1.5056ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (22.2391ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (2.9323ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (14.3457ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (12.6305ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (31.8707ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (1.6818ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (6.7484ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (37.7337ms)\n✔ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (3.0706ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (1.8745ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (1.3778ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (1.2821ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (1.3391ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (2.2332ms)\n✔ lever gates leave collision immediately and stay open on retry (1.6848ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (2.485ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (6.8019ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (5.1798ms)\n✖ a deflected missile becomes friendly and keeps its outgoing heading (19.4317ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (8.1012ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (5.631ms)\n✔ jump can use coyote time and only one additional air jump (0.768ms)\n✔ coyote time expires and buffered jump fires on landing (1.0137ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (1.0401ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.8279ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.2905ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (0.8986ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (1.5425ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (4.7175ms)\n✔ invalid position and time fail instead of poisoning the simulation (1.3261ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (7.8041ms)\n✔ save/load round trips discovered items and handles broken storage safely (2.469ms)\n✔ equipment must be discovered and category prototype names fail safely (8.3848ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (4.9085ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (1.1349ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (8.1293ms)\n✔ the entire authored route is traversable from spawn with legal movement inputs (211.2689ms)\nℹ All six biomes: 220.47s, 137 landings, no teleport or physics bypass. Dynamic gates/combat are tested by the live campaign driver.\nℹ tests 64\nℹ suites 0\nℹ pass 62\nℹ fail 2\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 774.563\n\n✖ failing tests:\n\ntest at tests\\combat.test.js:194:1\n✖ boss death opens exit and clears hostile projectiles (3.1058ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  4.8 !== 0\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/combat.test.js:201:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 4.8,\n    expected: 0,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n\ntest at tests\\parry.test.js:5:1\n✖ a deflected missile becomes friendly and keeps its outgoing heading (19.4317ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  'enemy' !== 'player'\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/parry.test.js:10:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 'enemy',\n    expected: 'player',\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 7,
+      "error": "file:///C:/Users/mahik/Music/meglo/src/combat.js:445\r\n    if (boss.type === 'hex' && boss.attack === 2 && boss.shots === 0) { queueEnemySummon(world, 'shade', p.x + 110, 566, 8, boss.id); boss.shots++; }\r\n                                                                        ^\r\n\r\nReferenceError: queueEnemySummon is not defined\r\n    at updateBoss (file:///C:/Users/mahik/Music/meglo/src/combat.js:445:73)\r\n    at Module.stepWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:589:38)\r\n    at file:///C:/Users/mahik/Music/meglo/scripts/soak-world.mjs:20:14\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.19.0\r\n"
+    },
+    {
+      "iteration": 8,
+      "error": "file:///C:/Users/mahik/Music/meglo/src/combat.js:445\r\n    if (boss.type === 'hex' && boss.attack === 2 && boss.shots === 0) { queueEnemySummon(world, 'shade', p.x + 110, 566, 8, boss.id); boss.shots++; }\r\n                                                                        ^\r\n\r\nReferenceError: queueEnemySummon is not defined\r\n    at updateBoss (file:///C:/Users/mahik/Music/meglo/src/combat.js:445:73)\r\n    at Module.stepWorld (file:///C:/Users/mahik/Music/meglo/src/combat.js:589:38)\r\n    at file:///C:/Users/mahik/Music/meglo/scripts/soak-world.mjs:20:14\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.19.0\r\n"
+    },
+    {
+      "iteration": 9,
+      "error": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/soak-world.mjs 9\n"
+    },
+    {
+      "iteration": 10,
+      "error": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/soak-world.mjs 10\n"
+    },
+    {
+      "iteration": 11,
+      "error": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/soak-world.mjs 11\n"
+    },
+    {
+      "iteration": 12,
+      "error": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/soak-world.mjs 12\n"
+    },
+    {
+      "iteration": 13,
+      "error": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/soak-world.mjs 13\n"
+    },
+    {
+      "iteration": 14,
+      "error": "Command failed: C:\\Program Files\\nodejs\\node.exe scripts/soak-world.mjs 14\n"
+    },
+    {
+      "iteration": 15,
+      "error": "screen boss neither advances attacks nor deals hidden beam or projectile damage (8.1785ms)\n✔ boss warnings and attack rectangles remain inside the authored arena (1.1252ms)\n✔ four tiers increase wounds, health, cadence and missile pressure while reducing recovery/deadline (7.4306ms)\n✔ difficulty does not alter core running or jumping physics (53.5767ms)\n✔ deadline causes a real loss and a legitimate retry restores the reactor window (2.3337ms)\n✖ authoritative muzzle/core points mirror correctly and directional shots start there (14.5565ms)\n✔ diagonal beams hit their segment rather than empty corners of a bounding rectangle (0.9936ms)\n✔ light parries are bounded while heavy boss rockets cannot be erased by a sword (11.2164ms)\n✔ horizontal/vertical/finisher combos alternate and a dash cuts a small foe exactly once (13.9402ms)\n✔ allied clone/wolf/dragon announce, arrive, attack real foes, expire, and stay bounded (211.4895ms)\n✔ enemy portals expose a warning then delayed arrival and bounded expiring attackers (12.4177ms)\n✔ currents change movement, moving platforms carry riders, and crumbling floors disappear/recover (11.4821ms)\n✔ world switching isolates claimed encounters and keeps globally consumed charges (2.2894ms)\n✔ a warned pact charges health once, claims its choice, and starts its enemy portal warning (3.1248ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (2.5125ms)\n✔ analogue joystick has a deadzone, clamped travel and continuous direction (2.7202ms)\n✔ joystick and action fingers release independently; cancel, blur and modal clear state (6.4779ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (10.4572ms)\n✔ spawn and relays provide safe standing and recovery clearance (4.1101ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (5.3232ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (1.2313ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (1.8315ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (1.8647ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (34.8423ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (3.4709ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (20.772ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (26.2638ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (49.4923ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (2.7716ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (9.6901ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (65.4407ms)\n✔ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (3.3372ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (2.0019ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (1.1393ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (2.2498ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (1.33ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (3.2157ms)\n✔ lever gates leave collision immediately and stay open on retry (1.6646ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (3.6628ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (8.7799ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (5.0971ms)\n✔ a deflected missile becomes friendly and keeps its outgoing heading (13.5034ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (15.7968ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (6.7529ms)\n✔ jump can use coyote time and only one additional air jump (1.022ms)\n✔ coyote time expires and buffered jump fires on landing (1.1322ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (1.3667ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.8519ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.6704ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (1.2355ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (1.596ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (5.1516ms)\n✔ invalid position and time fail instead of poisoning the simulation (1.9692ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (10.8885ms)\n✔ save/load round trips discovered items and handles broken storage safely (2.6203ms)\n✔ equipment must be discovered and category prototype names fail safely (4.889ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (7.1799ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (1.2224ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (24.25ms)\n✔ soulforge: entire authored route is traversable with legal movement inputs (397.4022ms)\nℹ soulforge: 283.79s, 170 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ tide: entire authored route is traversable with legal movement inputs (257.0838ms)\nℹ tide: 270.88s, 128 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ pyre: entire authored route is traversable with legal movement inputs (307.2181ms)\nℹ pyre: 271.71s, 129 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ neon: entire authored route is traversable with legal movement inputs (178.1831ms)\nℹ neon: 270.96s, 128 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ veil: entire authored route is traversable with legal movement inputs (253.1319ms)\nℹ veil: 271.16s, 129 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ five selectable worlds have independent authored layouts and stable metadata (4.9062ms)\n✔ soulforge: world boundaries, relays, bosses, routes, rewards and interactive references are valid (7.7048ms)\n✔ tide: world boundaries, relays, bosses, routes, rewards and interactive references are valid (2.6947ms)\n✔ pyre: world boundaries, relays, bosses, routes, rewards and interactive references are valid (3.5851ms)\n✔ neon: world boundaries, relays, bosses, routes, rewards and interactive references are valid (5.4844ms)\n✔ veil: world boundaries, relays, bosses, routes, rewards and interactive references are valid (5.4163ms)\n✔ unique world mechanics are present in actionable data rather than menu descriptions (1.9987ms)\nℹ tests 86\nℹ suites 0\nℹ pass 85\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1977.3265\n\n✖ failing tests:\n\ntest at tests\\dynamic-systems.test.js:17:1\n✖ authoritative muzzle/core points mirror correctly and directional shots start there (14.5565ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  + actual - expected\n  \n  + 39.80000000000001\n  - 39.8\n        ^\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/dynamic-systems.test.js:20:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 39.80000000000001,\n    expected: 39.8,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 16,
+      "error": "neither advances attacks nor deals hidden beam or projectile damage (12.6426ms)\n✔ boss warnings and attack rectangles remain inside the authored arena (1.5805ms)\n✔ four tiers increase wounds, health, cadence and missile pressure while reducing recovery/deadline (12.907ms)\n✔ difficulty does not alter core running or jumping physics (61.6255ms)\n✔ deadline causes a real loss and a legitimate retry restores the reactor window (3.9423ms)\n✖ authoritative muzzle/core points mirror correctly and directional shots start there (11.9469ms)\n✔ diagonal beams hit their segment rather than empty corners of a bounding rectangle (1.2086ms)\n✔ light parries are bounded while heavy boss rockets cannot be erased by a sword (20.3961ms)\n✔ horizontal/vertical/finisher combos alternate and a dash cuts a small foe exactly once (16.0745ms)\n✔ allied clone/wolf/dragon announce, arrive, attack real foes, expire, and stay bounded (360.1775ms)\n✔ enemy portals expose a warning then delayed arrival and bounded expiring attackers (13.2869ms)\n✔ currents change movement, moving platforms carry riders, and crumbling floors disappear/recover (10.9ms)\n✔ world switching isolates claimed encounters and keeps globally consumed charges (3.1922ms)\n✔ a warned pact charges health once, claims its choice, and starts its enemy portal warning (36.4867ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (3.5546ms)\n✔ analogue joystick has a deadzone, clamped travel and continuous direction (4.0652ms)\n✔ joystick and action fingers release independently; cancel, blur and modal clear state (15.4688ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (52.6274ms)\n✔ spawn and relays provide safe standing and recovery clearance (4.904ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (18.8602ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (0.8785ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (2.95ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (1.5492ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (86.7687ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (3.4744ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (35.9887ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (36.9378ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (89.8916ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (9.7833ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (11.1232ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (120.6907ms)\n✔ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (7.6156ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (2.7605ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (1.6644ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (2.6525ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (2.1449ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (5.7764ms)\n✔ lever gates leave collision immediately and stay open on retry (16.5757ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (3.4598ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (12.6794ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (18.413ms)\n✔ a deflected missile becomes friendly and keeps its outgoing heading (20.1099ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (14.3105ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (10.3812ms)\n✔ jump can use coyote time and only one additional air jump (1.6611ms)\n✔ coyote time expires and buffered jump fires on landing (1.1503ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (1.2914ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.4778ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.0027ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (0.6363ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (1.1342ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (4.4019ms)\n✔ invalid position and time fail instead of poisoning the simulation (3.4493ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (21.5605ms)\n✔ save/load round trips discovered items and handles broken storage safely (2.8872ms)\n✔ equipment must be discovered and category prototype names fail safely (4.7895ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (21.8952ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (1.7866ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (16.4681ms)\n✔ soulforge: entire authored route is traversable with legal movement inputs (623.6733ms)\nℹ soulforge: 283.79s, 170 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ tide: entire authored route is traversable with legal movement inputs (278.2341ms)\nℹ tide: 270.88s, 128 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ pyre: entire authored route is traversable with legal movement inputs (197.6382ms)\nℹ pyre: 271.71s, 129 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ neon: entire authored route is traversable with legal movement inputs (164.3669ms)\nℹ neon: 270.96s, 128 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ veil: entire authored route is traversable with legal movement inputs (231.4976ms)\nℹ veil: 271.16s, 129 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ five selectable worlds have independent authored layouts and stable metadata (8.3075ms)\n✔ soulforge: world boundaries, relays, bosses, routes, rewards and interactive references are valid (5.5965ms)\n✔ tide: world boundaries, relays, bosses, routes, rewards and interactive references are valid (20.4821ms)\n✔ pyre: world boundaries, relays, bosses, routes, rewards and interactive references are valid (4.957ms)\n✔ neon: world boundaries, relays, bosses, routes, rewards and interactive references are valid (5.0738ms)\n✔ veil: world boundaries, relays, bosses, routes, rewards and interactive references are valid (5.0604ms)\n✔ unique world mechanics are present in actionable data rather than menu descriptions (1.3584ms)\nℹ tests 86\nℹ suites 0\nℹ pass 85\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2132.6819\n\n✖ failing tests:\n\ntest at tests\\dynamic-systems.test.js:17:1\n✖ authoritative muzzle/core points mirror correctly and directional shots start there (11.9469ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  + actual - expected\n  \n  + 39.80000000000001\n  - 39.8\n        ^\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/dynamic-systems.test.js:20:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 39.80000000000001,\n    expected: 39.8,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    },
+    {
+      "iteration": 20,
+      "error": "file:///C:/Users/mahik/Music/meglo/scripts/soak-world.mjs:18\r\n      if(world.story){combat.advanceStory(world,world.story.index>=world.story.lines.length-1?world.story.choices[0].id:undefined);continue;}\r\n                                                                                                                     ^\r\n\r\nTypeError: Cannot read properties of undefined (reading 'id')\r\n    at file:///C:/Users/mahik/Music/meglo/scripts/soak-world.mjs:18:118\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\r\n\r\nNode.js v24.19.0\r\n"
+    },
+    {
+      "iteration": 23,
+      "error": "nce, claims its choice, and starts its enemy portal warning (2.8444ms)\n✔ restarting one completed world preserves every other encounter save and clears replay charges (1.9543ms)\n✔ finite analogue aim fires diagonal rockets from the rotated authoritative muzzle (2.2949ms)\n✔ bosses pursue through physics and visibly enrage with a bounded taunt (6.2041ms)\n✔ conduit interaction actually removes a linked shield lock and creates a vulnerability window (11.5136ms)\n✔ Hex blink announces a safe exit before teleporting and grants arrival recovery (11.0377ms)\n✔ a leaping boss warning follows its current core while its target stays locked (3.3383ms)\n✔ Borrowed Spark refunds five mana only for each of the two legal light parries (8.4221ms)\n✔ Skybreaker suppresses and restores an ordinary ward without disabling boss shields (27.006ms)\n✖ infernal boss projectiles inflict an actual timed burn on impact (5.5127ms)\n✔ overload creates faster heavy rockets, an extra burst, and shorter real recovery (11.0945ms)\n✔ undertow telegraphs its arena current before displacing the player (26.8621ms)\n✔ mirror announces an extra portal exit before a bounded shade can arrive and attack (11.9889ms)\n✔ fire and EMP follow their authored duty cycle; spikes remain active (4.4603ms)\n✔ timed mechanical spikes warn for the last0.35seconds and permanent pit spikes stay active (0.7322ms)\n✔ analogue joystick has a deadzone, clamped travel and continuous direction (4.118ms)\n✔ joystick and action fingers release independently; cancel, blur and modal clear state (9.2388ms)\n✔ six authored biomes and every object have unique IDs and finite world bounds (7.8914ms)\n✔ spawn and relays provide safe standing and recovery clearance (3.9529ms)\n✔ the ordered route has real landing surfaces, jump margins, and diverse elevation (8.0712ms)\n✔ three bosses have grounded contiguous arenas and properly linked gates (1.1698ms)\n✔ friendly dialogue and destructibles have reachable, validated, distinct rewards (1.8998ms)\n✔ enemy factories isolate state and all patrols remain on supported geometry (1.9103ms)\n✔ overhead sword covers a tall vertical arc and never re-hits one target during a swing (32.9021ms)\n✔ sword and armor equipment changes real damage, lifesteal, defense, and resource limits (4.4181ms)\n✔ scattergun creates five finite pellets and rail rounds pierce exactly three distinct targets (22.4799ms)\n✔ limited cannon pierces foes and destructible cover while preserving essential floors (26.036ms)\n✔ cinder burns distant living enemies for its exact duration without flooding hit feedback (47.7569ms)\n✔ siphon heals real dealt damage and thunder strikes multiple nearby targets (2.5043ms)\n✔ shadow veil blocks fresh targeting but attacking breaks stealth (9.2544ms)\n✔ stasis slows actual enemy and hostile projectile movement and then expires (69.661ms)\n✔ single-use eclipse nova spends one charge, clears threats, and strongly damages bosses (4.3577ms)\n✔ explosive barrels chain into adjacent props and cache rewards are claimed once (2.3208ms)\n✔ ordinary destructible crates award authored recovery contents exactly once (2.5607ms)\n✔ bypassing a gate cannot win before every campaign boss is defeated (2.0658ms)\n✔ an eclipse barrel explosion cannot restore a dead player through nova recovery (1.8065ms)\n✔ story pauses the threat clock and validates a once-only reward choice across retries (3.9262ms)\n✔ lever gates leave collision immediately and stay open on retry (2.2131ms)\n✔ mage, shade, and sentinel attacks have distinct live powers (5.8093ms)\n✔ missile pressure warns before spawning right-to-left bounded attacks (18.5616ms)\n✔ booster increases real lift and fuel economy but jet fuel remains finite (5.366ms)\n✔ a deflected missile becomes friendly and keeps its outgoing heading (19.4317ms)\n✔ full jump reaches authored height and releasing jump produces a short hop (11.5351ms)\n✔ run accelerates to its cap, releases stop, and fixed-step input is deterministic (6.9629ms)\n✔ jump can use coyote time and only one additional air jump (0.9918ms)\n✔ coyote time expires and buffered jump fires on landing (1.4837ms)\n✔ swept rectangles stop fast movement against thin walls, floors, and ceilings (1.3138ms)\n✔ exact-edge contact stops velocity on that tick and nearest collision ignores solid order (0.6984ms)\n✔ one-way platforms permit rising and down+jump dropping, but catch descending bodies (1.5069ms)\n✔ wall slide limits falling speed and wall jump pushes away without instant input reversal (0.9867ms)\n✔ dash has finite duration and cooldown and ends immediately on a wall (1.7938ms)\n✔ jet fuel exhausts, cannot sustain ascent, and refills only while grounded (6.697ms)\n✔ invalid position and time fail instead of poisoning the simulation (4.4923ms)\n✔ progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs (9.4307ms)\n✔ save/load round trips discovered items and handles broken storage safely (4.7231ms)\n✔ equipment must be discovered and category prototype names fail safely (7.1908ms)\n✔ retry preserves spent charges, claimed rewards, elapsed time, and defeated gates (7.8216ms)\n✔ new campaign keeps discoveries but resets earned charges and encounter state (1.2164ms)\n✔ consumed cannon and nova charges survive immediate save and a cold reload (12.7357ms)\n✔ soulforge: entire authored route is traversable with legal movement inputs (407.0487ms)\nℹ soulforge: 283.79s, 170 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ tide: entire authored route is traversable with legal movement inputs (197.9125ms)\nℹ tide: 270.88s, 128 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ pyre: entire authored route is traversable with legal movement inputs (141.2658ms)\nℹ pyre: 271.71s, 129 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ neon: entire authored route is traversable with legal movement inputs (146.7218ms)\nℹ neon: 270.96s, 128 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ veil: entire authored route is traversable with legal movement inputs (196.0758ms)\nℹ veil: 271.16s, 129 landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.\n✔ five selectable worlds have independent authored layouts and stable metadata (7.0143ms)\n✔ soulforge: world boundaries, relays, bosses, routes, rewards and interactive references are valid (5.8317ms)\n✔ tide: world boundaries, relays, bosses, routes, rewards and interactive references are valid (3.0012ms)\n✔ pyre: world boundaries, relays, bosses, routes, rewards and interactive references are valid (2.7198ms)\n✔ neon: world boundaries, relays, bosses, routes, rewards and interactive references are valid (2.8426ms)\n✔ veil: world boundaries, relays, bosses, routes, rewards and interactive references are valid (3.4543ms)\n✔ unique world mechanics are present in actionable data rather than menu descriptions (1.2658ms)\nℹ tests 99\nℹ suites 0\nℹ pass 98\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1597.1347\n\n✖ failing tests:\n\ntest at tests\\dynamic-systems.test.js:229:1\n✖ infernal boss projectiles inflict an actual timed burn on impact (5.5127ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  0 !== 3\n  \n      at TestContext.<anonymous> (file:///C:/Users/mahik/Music/meglo/tests/dynamic-systems.test.js:235:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 0,\n    expected: 3,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n"
+    }
+  ],
+  "elapsedSeconds": 1800.002,
+  "finished": "2026-10-12T19:14:35.540Z",
+  "status": "passed"
+}

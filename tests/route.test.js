@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { LEVEL } from '../src/level.js';
+import { LEVELS } from '../src/level.js';
 import { createPlayer, PHYSICS, stepPlayer, overlaps } from '../src/physics.js';
 
-test('the entire authored route is traversable from spawn with legal movement inputs', context => {
+for (const LEVEL of Object.values(LEVELS)) test(`${LEVEL.id}: entire authored route is traversable with legal movement inputs`, context => {
   const player = createPlayer(LEVEL.spawn.x, LEVEL.spawn.y);
   const visited = [];
   const actions = new Set();
@@ -12,7 +12,7 @@ test('the entire authored route is traversable from spawn with legal movement in
   let sinceJump = 0;
   let launched = false;
   let targetIndex = 0;
-  while (targetIndex < route.length && frames < 120 * 330) {
+  while (targetIndex < route.length && frames < 120 * 440) {
     const marker = route[targetIndex];
     const target = LEVEL.solids.find(solid => solid.id === marker.id);
     const center = player.x + player.w / 2;
@@ -52,6 +52,6 @@ test('the entire authored route is traversable from spawn with legal movement in
     `Route stalled at ${route[targetIndex]?.id}: x=${player.x.toFixed(1)}, y=${player.y.toFixed(1)}, grounded=${player.grounded}`);
   assert.deepEqual(visited, route.map(marker => marker.id));
   assert.ok(actions.has('jump'));
-  assert.ok(frames / 120 >= 195 && frames / 120 < 330, `Traversal duration ${frames / 120}s`);
-  context.diagnostic(`All six biomes: ${(frames / 120).toFixed(2)}s, ${visited.length} landings, no teleport or physics bypass. Dynamic gates/combat are tested by the live campaign driver.`);
+  assert.ok(frames / 120 >= 250 && frames / 120 < 440, `Traversal duration ${frames / 120}s`);
+  context.diagnostic(`${LEVEL.id}: ${(frames / 120).toFixed(2)}s, ${visited.length} landings, no teleport or physics bypass. Dynamic mechanics/combat use the live campaign driver.`);
 });

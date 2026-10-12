@@ -1,14 +1,18 @@
 import assert from 'node:assert/strict';
 import { mkdirSync, writeFileSync } from 'node:fs';
-import { LEVEL } from '../src/level.js';
+import { getLevel } from '../src/level.js';
 import { PHYSICS } from '../src/physics.js';
 import { advanceStory, createWorld, equipItem, hazardState, retryWorld, STEP, stepWorld } from '../src/combat.js';
 
 const difficulty = process.argv[2] || 'forge';
 assert.ok(['ember', 'forge', 'inferno', 'extinction'].includes(difficulty), 'Pass a supported difficulty ID.');
+const worldId = process.argv[3] || 'soulforge';
+const LEVEL = getLevel(worldId);
+assert.equal(LEVEL.id, worldId, 'Pass a supported world ID.');
 const route = LEVEL.route;
-const choices = { mira: 'mira-armor', orren: 'orren-siphon', vesper: 'vesper-cannon' };
-let world = createWorld(0, { difficulty });
+const choices = Object.fromEntries(LEVEL.npcs.map(npc => [npc.id, (npc.choices.find(choice => choice.reward?.itemId === 'bulwark'
+  || choice.reward?.itemId === 'siphon' || choice.reward?.type === 'cannon') || npc.choices[0]).id]));
+let world = createWorld(0, { difficulty, worldId });
 let targetIndex = 0, sinceJump = 0, launched = false, deaths = 0, totalFrames = 0;
 const history = [], trace = [], eventsSeen = new Set(), conversations = new Set(), bossTimes = {}, triggerProof = {};
 let lastControls = '';
@@ -78,14 +82,22 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   if (launched && !p.grounded && sinceJump > 20 && p.vy >= -80 && p.jumps > 0 && distance > 150) jumpPressed = true;
   const traversalJump = jumpPressed;
   if (!bossFight && p.grounded && p.impaired <= 0) {
-    const floorHazard = LEVEL.hazards.find(h => ['emp', 'fire'].includes(h.type) && h.x - center > 20 && h.x - center < 85);
+    const floorHazard = LEVEL.hazards.find(h => (['emp', 'fire'].includes(h.type) || h.type === 'spikes' && h.period)
+      && h.x - center > 20 && h.x - center < 85);
     if (floorHazard) jumpPressed = true;
   }
   if (!bossFight && move > 0) {
-    const beam = LEVEL.hazards.find(h => h.type === 'laser' && h.x - center > -10 && h.x - center < 110 && feet > h.y);
+    const beam = LEVEL.hazards.find(h => ['laser','steam'].includes(h.type) && h.x - center > -10 && h.x - center < 110 && feet > h.y);
     if (beam && hazardState(beam, world.time + STEP) !== 'off') {
       if (beam.x - center < 70 && p.dashCooldown <= STEP && p.impaired <= 0) dashPressed = true;
       else if (beam.x - center > 30 && p.grounded) move = 0;
+    }
+  }
+  // Recover a knocked-down jump beside the landing face, then steer back above it.
+  if (!bossFight && !p.grounded && feet > target.y + 20 && Math.abs(distance) < 700 && p.fuel > 0) {
+    jet = true;
+    if (!target.oneWay && p.y >= target.y - 2 && p.x + p.w > target.x && p.x < target.x + target.w) {
+      move = center < target.x + target.w / 2 ? -1 : 1;
     }
   }
   if (bossFight) {
@@ -136,7 +148,7 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   assert.ok(Number.isFinite(p.x) && Number.isFinite(p.y), 'Simulation must remain finite.');
 }
 
-const report = { difficulty, status: world.status, elapsed: +(totalFrames * STEP).toFixed(2), campaignTime: +world.time.toFixed(2),
+const report = { worldId, difficulty, status: world.status, elapsed: +(totalFrames * STEP).toFixed(2), campaignTime: +world.time.toFixed(2),
   timeLeft: +world.timeLeft.toFixed(2), deaths, checkpoint: world.checkpoint, x: +world.player.x.toFixed(1), y: +world.player.y.toFixed(1),
   hp: +world.player.hp.toFixed(1), conversations: [...conversations], triggerProof,
   storyClaims: world.progress.claimed.filter(id => id.startsWith('npc:')),
@@ -147,16 +159,21 @@ const report = { difficulty, status: world.status, elapsed: +(totalFrames * STEP
   method: 'Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.',
   target: route[targetIndex]?.id, events: [...eventsSeen].sort(), history };
 mkdirSync(new URL('../artifacts/', import.meta.url), { recursive: true });
-writeFileSync(new URL(`../artifacts/combat-route-${difficulty}-report.json`, import.meta.url), JSON.stringify(report, null, 2));
-writeFileSync(new URL(`../artifacts/combat-route-${difficulty}-inputs.json`, import.meta.url), JSON.stringify({ step: STEP, difficulty, records: trace }));
-if (difficulty === 'forge') {
+writeFileSync(new URL(`../artifacts/combat-route-${worldId}-${difficulty}-report.json`, import.meta.url), JSON.stringify(report, null, 2));
+writeFileSync(new URL(`../artifacts/combat-route-${worldId}-${difficulty}-inputs.json`, import.meta.url), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
+if (worldId === 'soulforge') {
+  writeFileSync(new URL(`../artifacts/combat-route-${difficulty}-report.json`, import.meta.url), JSON.stringify(report, null, 2));
+  writeFileSync(new URL(`../artifacts/combat-route-${difficulty}-inputs.json`, import.meta.url), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
+}
+if (worldId === 'soulforge' && difficulty === 'forge') {
   writeFileSync(new URL('../artifacts/combat-route-report.json', import.meta.url), JSON.stringify(report, null, 2));
-  writeFileSync(new URL('../artifacts/combat-route-inputs.json', import.meta.url), JSON.stringify({ step: STEP, difficulty, records: trace }));
+  writeFileSync(new URL('../artifacts/combat-route-inputs.json', import.meta.url), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
 }
 console.log(JSON.stringify({ ...report, history: world.status === 'won' ? undefined : history.slice(-12) }, null, 2));
 assert.equal(world.status, 'won', 'Legal campaign inputs must defeat every boss and reach the exit.');
 assert.ok(world.bosses.every(b => b.dead), 'All three bosses must be defeated.');
-assert.equal(conversations.size, 3, 'All three story conversations must be completed.');
+assert.equal(conversations.size, LEVEL.npcs.length, 'Every authored story conversation must be completed.');
 assert.equal(Object.keys(triggerProof).length, 3, 'All bosses must activate through their proper trigger.');
 assert.ok(LEVEL.npcs.every(npc => world.progress.claimed.filter(id => id === `npc:${npc.id}`).length === 1), 'Each story reward is claimed exactly once.');
 assert.ok(world.gates.every(g => g.open), 'Boss and lever gates must be opened through gameplay.');
+assert.ok(report.elapsed >= 300, 'Each selected world must supply at least five minutes of efficient live gameplay.');

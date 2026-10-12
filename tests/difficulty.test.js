@@ -42,6 +42,6 @@ test('deadline causes a real loss and a legitimate retry restores the reactor wi
   assert.equal(world.deathReason, 'deadline');
   const retry = retryWorld(world);
   assert.equal(retry.status, 'playing');
-  assert.equal(retry.timeLeft, retry.rules.deadline);
+  assert.equal(retry.timeLeft, retry.rules.deadline * ((retry.level.timeLimit || 510) / 510));
   assert.equal(retry.time, world.time);
 });

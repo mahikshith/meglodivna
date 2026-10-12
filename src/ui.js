@@ -28,7 +28,11 @@ export function createCampaignUI(catalog, callbacks = {}) {
       if (category === 'relic') action.className = 'item-status';
       else { action.disabled = !unlocked || equipped; action.dataset.equipped = String(equipped); action.addEventListener('click', () => { callbacks.onEquip?.(category, item.id); refresh(currentWorld); }); }
       if (item.tint) title.style.color = tint(item.tint);
-      card.append(image, title, kind, description, action); el('catalogue-grid').append(card);
+      const traits = document.createElement('p'); traits.className = 'item-traits';
+      traits.textContent = category === 'spell' ? `${item.charge ? `1 ${item.charge} charge` : `${item.cost || 0} resonance`} · ${item.cooldown}s recovery${item.duration ? ` · ${item.duration}s duration` : ''}`
+        : category === 'armor' ? `${item.maxHp} health · ${item.maxMana} resonance · ${Math.round((1 - item.damageTaken) * 100)}% resistance · ${item.fuelRate}× fuel drain`
+        : category === 'gun' || category === 'sword' ? `${item.damage}${item.pellets ? ` × ${item.pellets}` : ''} damage · ${item.cooldown}s recovery${item.pierce ? ` · pierces ${item.pierce}` : ''}${item.cost ? category === 'gun' && item.id === 'cannon' ? ' · 1 cannon charge' : ` · ${item.cost} resonance` : ''}` : '';
+      card.append(image, title, kind, description); if (traits.textContent) card.append(traits); card.append(action); el('catalogue-grid').append(card);
     }
     for (const tab of el('catalogue-tabs').children) { const selected = tab.dataset.category === category; tab.setAttribute('aria-selected', String(selected)); tab.tabIndex = selected ? 0 : -1; }
     el('catalogue-note').textContent = category === 'relic' ? 'Recovered relics remember the people this empire consumed.' : 'Equipment changes defense, resources and attack behavior. Discover caches and help survivors to unlock it.';
@@ -51,6 +55,7 @@ export function createCampaignUI(catalog, callbacks = {}) {
     previousFocus = document.activeElement; callbacks.onOpen?.(); modal.showModal(); el('catalogue-close').focus();
   };
   el('armory').addEventListener('click', () => open()); el('catalogue-close').addEventListener('click', close);
+  el('touch')?.addEventListener('open-loadout', () => { category = 'spell'; open(); });
   modal.addEventListener('close', () => { callbacks.onClose?.(); previousFocus?.focus?.({ preventScroll: true }); });
   storyPanel.addEventListener('cancel', event => event.preventDefault());
   el('story-next').addEventListener('click', () => callbacks.onStoryNext?.());
@@ -62,7 +67,8 @@ export function createCampaignUI(catalog, callbacks = {}) {
     const line = story.lines?.[story.index || 0] || {}, final = (story.index || 0) >= (story.lines?.length || 1) - 1;
     el('story-speaker').textContent = line.speaker || story.speaker || 'SURVIVOR';
     el('story-text').textContent = line.text || (typeof line === 'string' ? line : '');
-    const portrait = callbacks.iconUrl?.(`portrait-${story.npcId}`); if (portrait) el('story-portrait').src = portrait;
+    const portraitKey = story.portrait || `portrait-${story.npcId}`;
+    const portrait = callbacks.iconUrl?.(portraitKey.startsWith('portrait-') ? portraitKey : `portrait-${portraitKey}`); if (portrait) el('story-portrait').src = portrait;
     el('story-choices').replaceChildren();
     if (final) for (const choice of story.choices || []) {
       const button = document.createElement('button'); button.textContent = choice.label; button.addEventListener('click', () => callbacks.onStoryChoice?.(choice.id)); el('story-choices').append(button);
@@ -78,9 +84,24 @@ export function createCampaignUI(catalog, callbacks = {}) {
     el('mana-bar').style.width = `${Math.max(0, Math.min(100, player.mana / (player.maxMana || 100) * 100))}%`;
     el('mana-value').textContent = Math.ceil(player.mana || 0);
     el('equipped').textContent = `${name('sword', player.sword)} / ${name('gun', player.gun)} / ${name('spell', player.spell)} · ${name('armor', player.armor)} · CANNON ${player.charges?.cannon || 0} / NOVA ${player.charges?.nova || 0}`;
+    const selectedSpell = catalog.SPELLS.find(spell => spell.id === player.spell);
+    const state = (action, ready, cooling = false) => {
+      const button = el('touch').querySelector(`[data-action="${action}"]`); if (!button) return;
+      button.dataset.ready = String(ready); button.dataset.cooling = String(cooling); button.setAttribute('aria-disabled', String(!ready));
+    };
+    state('power', player.spellCooldown <= 0 && (selectedSpell?.charge ? player.charges?.[selectedSpell.charge] > 0 : player.mana >= (selectedSpell?.cost || 0)), player.spellCooldown > 0);
+    state('dash', player.dashCooldown <= 0, player.dashCooldown > 0);
+    const near = target => !target.dead && Math.abs(target.x - player.x) < 110 && Math.abs(target.y - player.y) < 100;
+    const nearby = (world.npcs || []).some(near) || (world.props || []).some(prop => ['lever','valve','conduit'].includes(prop.type) && !prop.used && near(prop)) || (world.level?.portals || []).some(near);
+    el('touch').dataset.interact = String(nearby);
+    const power = el('touch-power');
+    if (power) { power.dataset.nearby = String(nearby); power.setAttribute('aria-label', nearby ? 'Interact; hold for loadout' : 'Cast power; hold for loadout'); if (nearby) state('power', true); }
     el('countdown').textContent = time(world.timeLeft || 0); el('countdown').parentElement.classList.toggle('urgent', world.timeLeft < 60);
     el('missile-warning').hidden = !world.missileWarning || world.status !== 'playing';
-    if (world.missileWarning) el('missile-count').textContent = `${Math.max(0, world.missileWarning.time).toFixed(1)}s`;
+    if (world.missileWarning) {
+      el('missile-count').textContent = 'Incoming heavy attack from the right';
+      el('missile-warning').style.top = `${Math.max(15, Math.min(82, world.missileWarning.y / (world.level?.height || 720) * 100))}%`;
+    }
   };
   return { open, close, refresh, renderHUD, renderStory };
 }

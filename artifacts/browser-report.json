@@ -1,18 +1,24 @@
 {
   "browser": "Chromium headless",
-  "assets": 121,
+  "assets": 347,
   "runtimeErrors": [],
-  "touchTargets": 15,
+  "touchTargets": 4,
   "checks": [
-    "difficulty selection",
-    "keyboard run/jump/vertical slash/jetpack/magic",
-    "catalogue lock/equip/pause/focus",
+    "five world selection/four difficulty selection",
+    "keyboard run/jump/alternating slash/jetpack/magic",
+    "catalogue lock/equip/pause/focus/actual costs",
     "story dialogue/choice/pause/persisted reward",
     "six biome renders",
-    "missile warning/spawn",
+    "red icon missile warning/spawn",
     "pause",
     "synthetic gamepad",
-    "landscape simultaneous touch movement/jump/independent release/armory"
+    "round analogue joystick",
+    "four curved SVG touch macros",
+    "reserved control gutter does not overlap canvas",
+    "landscape simultaneous joystick movement/jump/independent release",
+    "attack tap slashes and hold fires",
+    "jump hold activates thrust",
+    "power tap casts and hold opens paused spell palette without spending"
   ],
   "limitations": "Fixture positions isolate UI/render checks. Full campaign legal-input runs are recorded separately. PhysicalAndroid/gamepad feel remains unverified."
 }

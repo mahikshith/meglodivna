@@ -1,51 +1,61 @@
-# ASH//SIGNAL: SOULFORGE — campaign route
+# ASH//SIGNAL: Fractured Realms — authored worlds
 
-A courier carries the last unbound human soul through an ancient soul engine rebuilt as a military machine. The Warden burns prisoners into soldiers; the Hex Matriarch binds the dead into the foundry; the Null Regent commands both. The route crosses six authored biomes with changing elevation, enemy combinations, landmarks, and short recoveries.
+Five selectable worlds share one measured movement model and have independently authored room sequences, stories, encounters, environmental mechanics, side caches, checkpoints, and boss identities. The layouts are fixed data; no room order or geometry is randomized.
 
-The campaign is 65,000 × 720 pixels. The main physical route takes **220.47 seconds**, measured using continuous legal inputs, 137 landing markers, and the actual 120 Hz player simulation. It uses no teleport, invulnerability, or modified movement. This physical proof excludes combat, dynamic gates, and timed hazard damage.
+| World | Width | Static legal route | Latest Forge live proof | Retries in that proof |
+| --- | --- | --- | --- | --- |
+| Soulforge — The Unbound Engine | 84,400 px | 283.79 s | 335.70 s / 5:35.70 | 0 |
+| Tide — The Drowned Fleet | 83,600 px | 270.88 s | 349.63 s / 5:49.63 | 0 |
+| Pyre — The Ember Dungeons | 83,600 px | 271.71 s | 336.77 s / 5:36.77 | 0 |
+| Neon — The Last Transit | 83,600 px | 270.96 s | 336.08 s / 5:36.08 | 0 |
+| Veil — The Mirror Graves | 83,600 px | 271.16 s | 336.59 s / 5:36.59 | 0 |
 
-The full live campaign was completed on all four tiers, with all three friendly conversations, both lever locks, all boss gates, and all three bosses defeated. Every boss used all three attack patterns. These efficient scripted runs combine legitimate armory choices, shooting, overhead cuts, parries, soul drain, finite cannon charges, and timed movement. Human reading and imperfect execution add time; the intended first skilled session remains roughly five minutes.
+Every live proof exceeded 300 seconds without idle time padding. The controller used actual public gameplay actions: movement, variable jumps, double jumps, finite jet corrections, shooting, cuts, magic, valid armory changes, dialogue choices, interactions and legitimate retries. It never changed health, position, damage, invulnerability or the clock. All three bosses were triggered at their authored boundaries and defeated; every required story claim and gate was verified. Veil includes the fourth, counterfeit-guide conversation.
 
-| Difficulty | Live campaign | Deaths / legal retries | Deadline remaining |
-| --- | --- | --- | --- |
-| Ember — easy | 251.89 s / 4:11.89 | 0 | 408.11 s |
-| Forge — medium | 263.50 s / 4:23.50 | 0 | 246.50 s |
-| Inferno — hard | 273.99 s / 4:33.99 | 0 | 176.01 s |
-| Extinction — ultra hard | 289.14 s / 4:49.14 | 1 | 100.86 s |
+All five Forge proofs were regenerated after the final boss blink, core alignment, aimed beam, parry resonance, ward-break and world-power changes. Soulforge also completed Ember in 326.29 s (no retries), Inferno in 357.59 s (no retries), and Extinction in 382.49 s (one legitimate retry and 91.63 s remaining). All eight runs passed with the same legal controller; no simulation or geometry changes were needed.
 
-| Boss | Base health | Forge fight | Inferno fight |
-| --- | --- | --- | --- |
-| The Warden | 1200 | 10.77 s | 13.70 s |
-| Hex Matriarch | 1600 | 16.83 s | 18.07 s |
-| Null Regent | 2600 | 18.14 s | 22.54 s |
+These are simulation times from efficient automated play. Human fun, difficulty, Android control comfort and device performance require playtesting. Tide, Pyre, Neon and Veil have current live evidence on Forge; their other difficulty tiers are not claimed here. Further systems changes require fresh live proofs.
 
-| Chapter | Extent | Authored sequence | New pressure / recovery |
-| --- | --- | --- | --- |
-| Snow Border | 0–10800 | Border teaching → broken rift → refugee relay → steel spine → killwire → Warden | Rifle and rocket introductions; Mira offers Storm Katana or Bulwark Plate. |
-| Flooded Ruins | 10800–21600 | Drowned arches → aqueduct → archive recovery → bell tower → sluice | Shade lunges and sorcery; Orren offers Soul Siphon or Stillgrave; the sluice requires its lever. |
-| Furnace Crypt | 21600–32400 | Crypt approach → forge ascent → pulsed machinery → ossuary → Hex Matriarch | Fire, soul spells, and mixed enemies; Wraith Weave cache at the spine's summit. |
-| Storm Spire | 32400–43200 | Deserter refuge → exposed causeway → lightning spine → batteries → killwire | Vesper offers two Oblivion Cannon charges or one Eclipse Nova; rail rifle and lightning unlocks. |
-| Eclipse Citadel | 43200–54000 | Court → shadow galleries → killwire → rampart → procession → final seal | Close assassins combine with sentinels and rockets; Soul Saber and a once-only nova cache. |
-| Soul Reactor | 54000–65000 | Airlock → pressure vents → corelift → soulwell → last relay → Null Regent | All previous mechanics return; the last cache grants finite cannon/nova recovery before the finale. |
+## World direction and concrete mechanics
 
-## Movement and encounter design
+**Soulforge** preserves the original snow border, drowned archive, furnace crypt, storm spire, eclipse citadel and reactor. Existing source IDs and relay ordering remain for save compatibility. Five new authored additions introduce conduit dungeons, machinery gaps, a spine ascent, a roofed shutter exchange and a stepped reactor battle terrace. Its guardians remain the Warden, Hex Matriarch and Null Regent; the courier carries the last unbound human soul.
 
-The player collider is 24 × 46, baseline ground isy610, running speed is 320 px/s, and a held jump rises about 123 pixels. Main-path rises never exceed 105 pixels; unsupported gaps never exceed 250 pixels. The wider undercrypt floor pits have descending catwalks across them, leaving only 160 pixels unsupported on the chosen upper route. The main route does not depend on a full jet tank. Double jump and wall jump are essential recovery tools; jet fuel improves control and lets skilled players skip exposed landings.
+**Tide** moves from wreck coast through the drowned hold to the abyssal engine. Undertow fields pull airborne and grounded movement left; moving rafts reach raised side caches over the drowned route. Long hull terraces interrupt sunken tunnels and broken fleet bridges. The Cutlass Admiral, Drowned Oracle and Leviathan Engine guard the souls powering a dead fleet. Selk, Orren and a mutinous Vesper offer protection, spirit companions, soul drain and finite firepower.
 
-The authored modules are fixed content, not procedural generation: five broken bridges, six400-pixel spines, four arched vaults, and five killwire corridors are placed in deliberate chapter orders. Deck heights and enemy powers change their rhythm. Optional perches hold soul caches, flanking positions, and boss height options. Static floors cannot be destroyed. Breakable crates, explosive barrel pairs, soul caches, and gates belong to the dynamic simulation.
+**Pyre** crosses basalt prison, steam ossuary and the mountain's heart. Crumbling landing decks punish hesitation but restore; steam vents cycle with readable inactive windows. A pressure valve physically opens the Infernal Marshal's conduit lock and strips its shield, creating a weakness window. The Ash Witch and Magma Regent follow. Summit caches contain relics and resonance, and the story centers on freeing prisoners from the furnace.
 
-Fifteen safe relay positions break up failure recovery. They provide solid support and clear wall, gate, hazard, and initial enemy overlap. Boss arenas are grounded, contiguous rooms with approach space before each activation threshold. Closed gate forcefields span the full playable height, from y0 to the ground at y610; the combat boundary prevents climbing above the world to bypass them. Boss gates open from actual boss death; the ruins and eclipse gates require safe, clearly marked levers placed before them. Story choices occur in calm space and give mutually useful equipment or magic rewards.
+**Neon** is a transit graveyard, shutter exchange and signal central. Maintenance lifts reach side lofts. Lasers are mounted beneath authored machinery ceilings, while retracting spike strips and broken transit tracks test movement between stations. Line Zero, Cipher Sibyl and Omninet treat human souls as obsolete cargo. Technician Finch, cipher exile Ada and corporate deserter Rook expose the system's stakes.
 
-Laser gates offer 1.9 seconds of inactive time per 3.4 second pulse, including the visible warning interval handled by the combat renderer. Fire and EMP glyphs occupy shallow floor bands that a normal jump clears. Missile pressure, difficulty-dependent attack frequency, and the reactor deadline belong to combat rather than artificial route delays. Snow, teal water, copper embers, electric storm light, ultraviolet shadows, and crimson reactor glow distinguish each biome while retaining readable player and hazard silhouettes.
+**Veil** follows ivory catacombs, counterfeit sanctum and the throne of names. Mirror passages identify their destination before interaction; enemy summoning rifts warn before arrival and expire. Ysra's optional Dragon Pact explicitly costs 25 life and activates an actual ambush rift; refusing preserves blood and grants resonance. The Boneward Sentinel, Witch of Mirrors and Grave Sovereign guard a stolen name. Summit relics and mirror side paths provide reasons to explore beyond the main route.
 
-## Content and validation
+## Movement and route contract
 
-The campaign contains 138 static solids, 64 hazards, 57 ordinary enemies, 3 bosses, 16 interactive/destructible props, 25 world pickups, 3 friendly NPCs with two reward choices each, and 5 gates. Enemy types are rifle guard, drone, missile turret, pyromancer, shade assassin, and lightning sentinel. Named equipment and reward IDs are validated against `src/catalog.js`; discovered gear and spell choices are handled by the combat catalogue.
+World height is 720 px and baseline ground is y610. The player collider is 24 × 46. Running speed is 320 px/s; a held jump rises about 123 px. Main-path ledge rises stay at or below 105 px and unsupported gaps at or below 250 px. Roofed tunnels provide jump clearance; upper terraces, 400-pixel spines, descending catwalks and suspended decks give each route a changing silhouette.
 
-`tests/level.test.js` checks object IDs and bounds, safe relays, actual landing surfaces, maximum gaps/rises, grounded boss arenas, gate/lever references, dialogue choices and reward IDs, supported props, all six enemy classes, independent factories, and supported patrols. `tests/route.test.js` proves the entire physical route with legal movement inputs. `scripts/combat-route.mjs` exercises the live campaign including enemies, hazards, story rewards, levers, bosses, legitimate retries, and the deadline.
+`LEVEL.route` / each selected level's `route` uses player-center x and feet y on a named static solid. It also identifies required NPC, lever and boss stops. Moving rafts and lifts offer optional side routes and supported loot; the stable main geometry remains traversable at any motion phase. Current force, crumble timing, vent damage, gates, travel portals and summons belong to the live simulation.
 
-The combat reports and replay inputs are saved in `artifacts/combat-route-{ember,forge,inferno,extinction}-report.json`, with matching `-inputs.json` files. Each report includes boss activation positions/times, the three exactly-once NPC reward claims, gates, attack coverage, remaining deadline, and any legitimate retry. The controller uses public gameplay APIs only and never overrides health, position, invulnerability, damage, or the countdown. Replay records include zero-time story advancement and valid equipment selection alongside held gameplay inputs.
+Closed forcefields span y0–610, and the upper world boundary prevents climbing around them. Boss gates open from actual boss death. Relays precede demanding sections and are supported, clear of static walls and initial hazards. Static essential floors cannot be destroyed. Enemy patrols and interactive props have explicit supported surfaces.
 
-All four final reports were regenerated after the full-height gate, world-ceiling, boss-arena containment, and tagged-projectile repairs. Boss activation occurred after the correct boundaries at x9052.10, x30301.90, and x62401.78. Inactive bosses remained at full health before activation; all five gates opened through their boss or lever condition, and Mira, Orren, and Vesper each granted exactly one story reward.
+## API and environmental data
 
-Human first-run difficulty and Android hardware feel still require playtesting. The legal-input controller proves campaign completion, not human mastery or device performance.
+`src/level.js` exports `LEVEL` (Soulforge default), `LEVELS`, `getLevel(id)`, `WORLD_LIST` and `createEnemies(level = LEVEL)`. IDs are `soulforge`, `tide`, `pyre`, `neon`, `veil`. Runtime world state owns its selected `level` and `worldId`; claims, boss state and checkpoints are isolated per world by the progress system.
+
+`src/worlds.js` contains the shared collision-metric room builders, fixed chapter arrays and per-world authored mechanics. Each level has `solids`, `hazards`, `route`, `enemies`, `bosses`, `gates`, `props`, `pickups`, `npcs`, `checkpoints`, `zones`, `guides`, and a Forge `timeLimit` of 620 seconds. Difficulty scales that clock.
+
+- `movingPlatforms`: ID, collider, axis, distance, period, phase and kind (`raft` or `lift`).
+- `currents`: rectangle, horizontal/vertical force and tint.
+- `crumble`: stable solid ID, delay and restoration time.
+- Timed steam, spikes, fire and laser hazards: collider, period, active duration and phase.
+- `enemyPortals`: location, enemy type, period, lifetime and optional required choice claim.
+- Travel `portals`: visible rectangle, destination and one-way flag; interaction performs travel.
+- Story choices: validated reward, explicit optional cost, and an optional ambush effect. Reward claims are once-only.
+
+Named clone, wolf and dragon spell unlocks are available through authored pickups or dialogue. Side loft and summit caches carry relics, resonance and finite power charges. Existing catalogue IDs are reused and validated rather than inventing unavailable items.
+
+## Verification and artifacts
+
+`tests/level.test.js` validates the expanded default world. `tests/worlds.test.js` checks all five world boundaries, metadata, independent state, routes, rewards, supported relays, boss arenas, gates and environmental references. `tests/route.test.js` performs continuous legal-input static traversal in each world. All 18 owned level/world/route checks pass.
+
+Run live proofs with `node scripts/combat-route.mjs <difficulty> <worldId>`. Reports and compact replay actions are saved as `artifacts/combat-route-<worldId>-<difficulty>-report.json` and matching `-inputs.json`. Soulforge Forge retains the common `combat-route-report.json` and `combat-route-inputs.json` aliases for existing replay tooling. Reports record trigger positions, exactly-once NPC claims, gates, boss attack coverage, deadlines, health and legitimate retries.
+
+The legal controller can recover a knocked-down jump by lifting beside a platform face and steering back above it. This uses finite fuel and normal collisions. It does not disable the enemy or bypass collision. Optional portal travel, side-cache routes and every possible NPC alternative require their own focused tests or human exploration; a main-route completion does not claim exhaustive branch coverage.

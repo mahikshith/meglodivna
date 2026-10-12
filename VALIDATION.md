@@ -1,40 +1,52 @@
-# Soulforge — delivered campaign verification
+# Fractured Realms v0.3 — verification
 
-Verified locally on 12 October 2026. This file supersedes the prototype's 32-test/54-second report.
+Verified13 October2026. This replaces the v0.2 report. Automated evidence does not establish subjective fun, balance or physical touchscreen comfort.
 
-## Simulation
+## Simulation and complete routes
 
-**64 Node tests pass.** Coverage includes fixed-step motion, acceleration/friction, variable-height jump, coyote time and buffering, double/wall jump, wall slide, swept solid/one-way collisions, finite jet fuel, boost and armor tradeoffs, damage/invulnerability, vertical sword hitboxes and once-per-swing hits, reflection, projectile pooling and piercing, all six spells, timed hazards, EMP/burn expiry, checkpoints, death/retry and all-boss victory. Save validation rejects malformed data and unknown items. Spent cannon/nova charges survive retry and immediate save/reload; ordinary mana refills on a cold launch.
+**100 Node tests pass.** Coverage includes fixed120Hz swept movement, jump/coyote/buffer/wall/double jump, finite thrust, one-way drop, dash sword damage, alternating melee, bounded light parries/heavy attack resistance, diagonal muzzle/core beams, projectile pools, enemy pursuit, shields and real boss power modifiers, warned portals, clone/wolf/dragon attacks and expiry, currents/platform carry/crumble, hazards, conduit weakness, damage/death/retry, isolated world saves and v0.2 migration.
 
-Containment regressions exercise legal held-jet/wall-jump/dash attempts at every closed forcefield, clamp the upper world boundary, and prevent hidden boss beams/projectiles outside their authored arenas. Boss warnings and damaging rectangles stay within the arena.
+Eight live runs finish using legal movement, combat, gear and story inputs. No position, health, invulnerability, damage or clock overrides. Every world's three bosses activate at their triggers, expose attacks0/1/2 and die; linked gates and story rewards complete.
 
-| Difficulty | Legal simulated gameplay | Retries | Reactor time remaining |
-| --- | ---: | ---: | ---: |
-| Ember / Easy | 251.89s | 0 | 408.11s |
-| Forge / Medium | 263.50s | 0 | 246.50s |
-| Inferno / Hard | 273.99s | 0 | 176.01s |
-| Extinction / Ultra hard | 289.14s | 1 | 100.86s |
+| World | Tier | Simulated gameplay | Retries |
+| --- | --- | ---: | ---: |
+| Soulforge | Ember / Easy |326.29s |0 |
+| Soulforge | Forge / Medium |335.70s |0 |
+| Soulforge | Inferno / Hard |357.59s |0 |
+| Soulforge | Extinction / Ultra hard |382.49s |1 |
+| Tide | Forge / Medium |349.63s |0 |
+| Pyre | Forge / Medium |336.77s |0 |
+| Neon | Forge / Medium |336.08s |0 |
+| Veil | Forge / Medium |336.59s |0 |
 
-Each full combat run uses live enemies/hazards and legal movement, weapon, spell, menu and story actions. No position, health, invulnerability, damage or clock overrides. All three bosses activate only at their proper encounter trigger, expose attacks 0/1/2, and die; all five gates open and all three NPC reward choices are claimed once. Reports and run-length input traces are reproducible with `node scripts/combat-route.mjs <difficulty>`.
+Each efficient completion exceeds five simulated minutes; reading, exploration and hit-stop change elapsed human play. Movement-only proofs take270.88–283.79s and omit combat. Moving-surface fixtures exercise carry/collision; full routes can use stable surfaces. Fifteen named encounters use three physical boss families and different world power modifiers, rather than fifteen animation families.
 
-The movement-only route reaches extraction in 220.47 simulated seconds with 137 landings. That check excludes combat and dynamic gates; the four live campaign proofs cover those. Efficient automated runs take roughly 4–5 minutes. Dialogue reading, exploration and hit-stop add wall-clock time; five minutes is an intended player target, not a guaranteed duration.
+Reports/traces: `artifacts/combat-route-{world}-{difficulty}-{report,inputs}.json`. Reproduce with `node scripts/combat-route.mjs forge tide` or another valid tier/world. Extinction's retry follows a real death and normal relay retry.
 
-## Browser and art
+## Thirty-minute development harness
 
-- Forge's recorded legal inputs reproduce victory in Chromium: 263.50 simulated seconds, all bosses dead, zero runtime errors. Captures include six biomes, three boss attacks, three conversations and the victory screen. Fixed-step replay is not real-time playback.
-- Browser QA passes difficulty selection; keyboard run/jump/large vertical slash/jet/cinder; armory locks, tabs, pause and focus; NPC conversation, reward and save; six environment renders; missile warning followed by launch; pause; and synthetic gamepad movement/menu controls.
-- Landscape touch at 844×480 passes 15 targets of at least 44×44 pixels, real browser multi-touch movement+jump, independent finger release, and armory open/close. UI render tests use isolated position fixtures; full campaign proofs use legal inputs.
-- Production preview boots with the development API absent. Touch layout and the Android back-control bridge close the armory and pause the campaign correctly.
-- 121 unique original textures are exported with dimensions/anchors. Nonempty artwork, crisp alpha and composed backgrounds were checked. The contact sheet, six environments, menus, touch layout, enlarged blade and live boss screenshots were visually inspected. Texture pixels total about 40 MiB before renderer overhead.
+The requested harness ran **1800.002 actual seconds**, from2026-10-12T18:44:35.538Z to19:14:35.540Z, across25 rounds. Fresh processes ran seeded checkpoint fixtures and Node regressions while implementation changed. It retained17 transient failed rounds, including stale assertions and intermediate source failures; final rounds24/25 passed. Full history: `artifacts/deep-harness-report.json`.
 
-## Packaging
+This was a development harness, not thirty clean minutes on the final build, a complete legal route or human playtesting. Frozen-source tests, legal routes and browser checks are separate evidence. `npm run test:deep` reproduces a30-minute run; the script accepts30–40 minutes.
 
-Vite production build succeeds. The native offline Android WebView shell builds with Java 17, SDK 36 and Gradle 8.13. `assembleDebug` and `lintDebug` pass with zero lint errors. APK identity: `com.meglodivna.ashsignal`, version `0.2.0-soulforge` / code 2, minimum API 24, target API 36, landscape. APK signature verification passes with one v2 signer. Every embedded web asset is hash-compared against `dist`; stale web assets are rejected. Runtime licenses are bundled.
+## Browser, touch and art
 
-The GitHub workflow runs all 64 tests, all four live campaign proofs, production build, Android build/lint, and uploads the debug APK plus test evidence. [Run 38288675281 passed](https://github.com/mahikshith/meglodivna/actions/runs/38288675281) for campaign commit `15e0b4fa38f3f0637768fc318f5feb90d96a7104`. The delivered `ASH-SIGNAL-Soulforge-debug.apk` is its CI artifact, 2,732,767 bytes; its signature and all six embedded production/license files were verified locally. SHA-256: `F5289A892CF893E01EF411E4ED505EA2CAE5590E14CA66300CB4AB7959FAC84E`. `artifacts/android-report.json` records the inspection. The accompanying `ASH-SIGNAL-Soulforge-web.zip` contains the matching static build.
+Chromium QA passes with **zero runtime errors** and347 original textures. It checks five-world/four-tier selection, keyboard movement/combat, alternating slashes, jet/magic, catalogue locks/costs, paused dialogue/saved choices, six Soulforge biomes/five realms, red missile warning/launch, pause and synthetic gamepad input.
 
-No connected Android device or installed emulator was available. Native device boot, thermal performance, speaker mix, physical gamepad calibration and human challenge/addictiveness remain unverified. This is a playable debug campaign for testing, not a store release. Local builds and CI builds use different debug certificates; use one distribution consistently for in-place updates.
+Touch QA at844×480 checks a112px circular analogue stick, four curved SVG action buttons of48px or larger, simultaneous movement/jump and independent release, Attack tap/hold fire, Jump hold thrust, and Power tap/hold palette without unwanted mana spending. All controls lie in the reserved112px gutter below the canvas. Gear browsing pauses play. Physical reach/comfort still needs a phone.
+
+347 exported textures have dimensions/anchors and51,931,904RGBA source bytes (49.53MiB), before renderer/GPU overhead. Character drawing uses a finer grid than scenery. Platforms have material/rim contrast; mechanical traps, shields, rockets, summoning circles, slash poses and core beams follow simulation state. Contact sheets, mobile layout and environment captures were inspected. UI position fixtures isolate rendering and do not replace legal campaign proofs.
+
+`scripts/replay.cjs <world>` replays legal Forge traces in Chromium and checks production with development hooks absent, Power-hold palette and Android Back. Playback is accelerated fixed steps, not real time. Successful final reports are `artifacts/replay-{world}-report.json`.
+
+## Build and distribution
+
+Vite6.4.4 production build passes; npm audit reports zero vulnerabilities. Android uses JDK17/SDK36/Gradle8.13, appID `com.meglodivna.ashsignal`, code3/name `0.3.0-fractured-realms`, minimum API24 and landscape. Assets/licenses are bundled; no Internet permission.
+
+CI runs100 tests, all eight legal routes, production build, Android assemble/lint, then uploads `ASH-SIGNAL-Fractured-Realms-debug-APK` and evidence. Exact distribution signature/hash/asset inspection is recorded in `artifacts/android-report.json` and appended below after delivery.
+
+No Android device/emulator was available. On-device boot, two-thumb comfort, sustained frame rate/thermal behavior, speaker mix, hardware gamepad calibration and human balance remain unchecked. This is a debug test build. Local/CI certificates can differ; successive CI APKs should update the prior CI APK. v0.2 discoveries/equipment survive migration; old Soulforge encounter/checkpoint coordinates reset for its expanded route.
 
 ## Reproduce
 
-`npm test`, `node scripts/combat-route.mjs ember|forge|inferno|extinction` (one ID per invocation), and `npm run build` cover simulation and production. With dev at 5173 and preview at 4173, `npm run test:browser` and `npm run test:replay` use an available Playwright installation; set `CHROMIUM_EXECUTABLE` if needed. `npm run android:sync`, then `android/gradlew -p android assembleDebug lintDebug`, produces the offline debug APK. See `README.md` for installation and controls.
+Run `npm test`, the eight `test:game` combinations in CI and `npm run build`. With dev at5173 and preview at4173, run `npm run test:browser` and `npm run test:replay -- veil` with Playwright/Chromium. Run `npm run android:sync`, then `android/gradlew assembleDebug lintDebug --no-daemon`. README covers SDK setup/installation.

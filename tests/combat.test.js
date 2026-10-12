@@ -194,7 +194,7 @@ test('boss cycles through readable charge/attack/recovery and all three attacks'
 test('boss death opens exit and clears hostile projectiles', () => {
   const world = isolatedWorld();
   Object.assign(world.player, { x: world.boss.x - 200, y: 564, invincible: 1 });
-  Object.assign(world.boss, { active: true, hp: 8, timer: 100 });
+  Object.assign(world.boss, { active: true, hp: 8, shield: 0, timer: 100 });
   const hostile = spawnProjectile(world, world.player.x - 400, 300, 0, 0, 'enemy');
   spawnProjectile(world, world.boss.x - 3, world.boss.y + 30, 920, 0, 'player');
   stepWorld(world, input(), STEP);

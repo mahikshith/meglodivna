@@ -16,6 +16,9 @@ function unlockSpell(state, id) { rewardPlayer(state, { type: 'spell', itemId: i
 
 test('overhead sword covers a tall vertical arc and never re-hits one target during a swing', () => {
   const state = world(); tick(state, 10);
+  stepWorld(state, { slashPressed: true }, STEP);
+  assert.equal(state.player.slashMode, 'horizontal');
+  tick(state, 35);
   const target = enemy('overhead', state.player.x + 40, state.player.y - 100);
   state.enemies = [target];
   stepWorld(state, { slashPressed: true }, STEP);
@@ -224,7 +227,7 @@ test('mage, shade, and sentinel attacks have distinct live powers', () => {
     stepWorld(state, {}, STEP);
     if (type === 'mage') assert.equal(state.projectiles.filter(projectile => projectile.active && projectile.kind === 'fire').length, 3);
     if (type === 'shade') { assert.ok(target.dashTime > 0); const x = target.x; stepWorld(state, {}, STEP); assert.ok(target.x < x); }
-    if (type === 'sentinel') assert.ok(target.beam?.h > 500 && target.beamTime > 0);
+    if (type === 'sentinel') assert.ok(Math.hypot(target.beam.x1 - target.beam.x0, target.beam.y1 - target.beam.y0) > 650 && target.beamTime > 0);
   }
 });
 
