@@ -44,3 +44,15 @@ Ember (easy), Forge (medium, default), Inferno (hard), Extinction (ultra hard). 
 5. Build offline APK, verify it, run repository CI, commit final evidence/documentation.
 
 All requested categories are included. Final documentation will distinguish implemented, tested, and hardware-unverified behavior. No feature is considered done solely because it appears in a menu.
+
+## Delivery state — 12 October 2026
+
+C01–C21 and C24 are integrated in the playable campaign. C22 has an actual signed debug APK: the offline Android build and lint pass, its signature verifies, and its packaged production assets match the web build. C23 has preserved baseline and Android-shell commits, with the campaign milestone and automated APK workflow following integration. Final CI results are recorded in `VALIDATION.md`.
+
+There are 121 original textures; three swords, four guns, three armors, six spells and six relics; six enemy archetypes; three bosses; three friendly conversations with reward choices; five gates; and fifteen safe relay positions. The cannon pierces enemies, projectiles and destructible cover for 1,800 pixels. Bosses resist its damage and structural floors remain intact so the route remains playable. Cinder burns ordinary foes globally and active bosses for five seconds; dormant bosses remain encounter-gated.
+
+All four legal campaign proofs succeeded after containment fixes: Ember 251.89s, Forge 263.50s, Inferno 273.99s, Extinction 289.14s with one legitimate retry. Every proof exercises three boss attack patterns per boss, all NPC rewards, and all gates. 64 simulation tests include finite resources, save validation, rare charges surviving reload, full-height gate containment and arena-limited boss damage. Dialogue reading, exploration and hit-stop add wall-clock time to these efficient runs; five minutes is the intended play target, not an imposed wait.
+
+Own design additions tie the requested systems together: stolen souls power the military foundry; resonance fuels spells; friend choices alter the available build; armor trades defense against magic/fuel; relic lore exposes the engine's history; and the Regent's artillery and reactor deadline create pressure between safe relays. EMP fields and enemy fire provide temporary power-downs. Shadow Veil permits stealth, but attacking reveals the courier.
+
+Physical Android performance, controller calibration, perceived audio mix and human difficulty tuning remain unverified. The delivery is a playable debug campaign, with automated proof of reachability and mechanics; it is not a store release.

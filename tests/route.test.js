@@ -7,16 +7,12 @@ test('the entire authored route is traversable from spawn with legal movement in
   const player = createPlayer(LEVEL.spawn.x, LEVEL.spawn.y);
   const visited = [];
   const actions = new Set();
-  const route = LEVEL.route.flatMap(marker => marker.id === 'gauntlet-b'
-    ? [{ id: 'gauntlet-cover-a', x: 5565, y: 540 }, marker]
-    : marker.id === 'gauntlet-c'
-      ? [{ id: 'gauntlet-cover-b', x: 7120, y: 534 }, { id: 'gauntlet-b', x: 7180, y: 610 }, marker]
-      : [marker]);
+  const route = LEVEL.route;
   let frames = 0;
   let sinceJump = 0;
   let launched = false;
   let targetIndex = 0;
-  while (targetIndex < route.length && frames < 120 * 90) {
+  while (targetIndex < route.length && frames < 120 * 330) {
     const marker = route[targetIndex];
     const target = LEVEL.solids.find(solid => solid.id === marker.id);
     const center = player.x + player.w / 2;
@@ -56,6 +52,6 @@ test('the entire authored route is traversable from spawn with legal movement in
     `Route stalled at ${route[targetIndex]?.id}: x=${player.x.toFixed(1)}, y=${player.y.toFixed(1)}, grounded=${player.grounded}`);
   assert.deepEqual(visited, route.map(marker => marker.id));
   assert.ok(actions.has('jump'));
-  assert.ok(frames / 120 >= 30 && frames / 120 < 90, `Traversal duration ${frames / 120}s`);
-  context.diagnostic(`Spawn to exit: ${(frames / 120).toFixed(2)}s, ${visited.length} landings, no teleport or physics bypass.`);
+  assert.ok(frames / 120 >= 195 && frames / 120 < 330, `Traversal duration ${frames / 120}s`);
+  context.diagnostic(`All six biomes: ${(frames / 120).toFixed(2)}s, ${visited.length} landings, no teleport or physics bypass. Dynamic gates/combat are tested by the live campaign driver.`);
 });

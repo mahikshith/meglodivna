@@ -147,6 +147,7 @@ test('terminal worlds stop advancing and exit requires boss defeat', () => {
   stepWorld(world, input(), STEP);
   assert.equal(world.status, 'playing');
   world.bossDefeated = true;
+  world.bosses.forEach(boss => { boss.dead = true; boss.hp = 0; });
   stepWorld(world, input(), STEP);
   assert.equal(world.status, 'won');
   const time = world.time;
@@ -175,7 +176,7 @@ test('lethal damage on the exit cannot be overwritten by victory or a health pic
 
 test('boss cycles through readable charge/attack/recovery and all three attacks', () => {
   const world = isolatedWorld();
-  Object.assign(world.player, { x: 8000, y: 564, invincible: 100 });
+  Object.assign(world.player, { x: world.boss.arenaStart + 150, y: 564, invincible: 100 });
   Object.assign(world.boss, { active: true, timer: 0.01 });
   const phases = new Set();
   const attacks = new Set();
@@ -192,9 +193,9 @@ test('boss cycles through readable charge/attack/recovery and all three attacks'
 
 test('boss death opens exit and clears hostile projectiles', () => {
   const world = isolatedWorld();
-  Object.assign(world.player, { x: 8400, y: 564, invincible: 1 });
+  Object.assign(world.player, { x: world.boss.x - 200, y: 564, invincible: 1 });
   Object.assign(world.boss, { active: true, hp: 8, timer: 100 });
-  const hostile = spawnProjectile(world, 8000, 300, 0, 0, 'enemy');
+  const hostile = spawnProjectile(world, world.player.x - 400, 300, 0, 0, 'enemy');
   spawnProjectile(world, world.boss.x - 3, world.boss.y + 30, 920, 0, 'player');
   stepWorld(world, input(), STEP);
   assert.equal(world.boss.hp, 0);

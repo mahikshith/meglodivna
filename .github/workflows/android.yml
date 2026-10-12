@@ -21,11 +21,22 @@ jobs:
           distribution: temurin
           java-version: '17'
       - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
+          log-accepted-android-sdk-licenses: false
       - uses: gradle/actions/setup-gradle@v4
+      - uses: actions/cache@v4
+        with:
+          path: ~/.android/debug.keystore
+          key: ash-signal-ci-debug-signing-v1
       - name: Dependencies and simulation tests
         run: npm ci && npm test
       - name: Full campaign validation
-        run: npm run test:game
+        run: |
+          node scripts/combat-route.mjs ember
+          node scripts/combat-route.mjs forge
+          node scripts/combat-route.mjs inferno
+          node scripts/combat-route.mjs extinction
       - name: Build offline game
         run: npm run build && node scripts/sync-android.mjs
       - name: Build and lint debug APK

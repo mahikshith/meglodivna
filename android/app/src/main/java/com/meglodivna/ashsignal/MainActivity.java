@@ -1,6 +1,5 @@
 package com.meglodivna.ashsignal;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Build;
 import android.view.View;
@@ -12,8 +11,10 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebViewClient;
 import androidx.webkit.WebViewAssetLoader;
+import androidx.activity.ComponentActivity;
+import androidx.activity.OnBackPressedCallback;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ComponentActivity {
     private WebView game;
 
     @Override public void onCreate(Bundle state) {
@@ -40,6 +41,13 @@ public class MainActivity extends Activity {
             }
         });
         setContentView(game);
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override public void handleOnBackPressed() {
+                game.evaluateJavascript("window.ashBack ? window.ashBack() : false", result -> {
+                    if ("false".equals(result)) finish();
+                });
+            }
+        });
         hideSystemBars();
         game.loadUrl("https://appassets.androidplatform.net/assets/public/index.html");
     }
@@ -68,8 +76,5 @@ public class MainActivity extends Activity {
         super.onPause();
     }
     @Override protected void onResume() { super.onResume(); if (game != null) game.onResume(); }
-    @SuppressWarnings("deprecation") @Override public void onBackPressed() {
-        game.evaluateJavascript("window.dispatchEvent(new KeyboardEvent('keydown',{code:'Escape'}))", null);
-    }
     @Override protected void onDestroy() { if (game != null) game.destroy(); super.onDestroy(); }
 }

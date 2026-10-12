@@ -1,0 +1,5 @@
+Third-party runtime notices
+
+Phaser 3.90.0: Copyright (c) 2024 Richard Davey, Phaser Studio Inc. MIT license; see Phaser-MIT.txt.
+AndroidX WebKit, Activity, and their AndroidX dependencies: Android Open Source Project contributors, Apache License 2.0; see Apache-2.0.txt. Native Android dependencies are used without source modifications.
+All game sprites, backgrounds, effects, level data, and dialogue are original work in this repository. Existing games are design references only.

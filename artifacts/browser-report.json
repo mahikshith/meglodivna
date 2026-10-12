@@ -1,0 +1,18 @@
+{
+  "browser": "Chromium headless",
+  "assets": 121,
+  "runtimeErrors": [],
+  "touchTargets": 15,
+  "checks": [
+    "difficulty selection",
+    "keyboard run/jump/vertical slash/jetpack/magic",
+    "catalogue lock/equip/pause/focus",
+    "story dialogue/choice/pause/persisted reward",
+    "six biome renders",
+    "missile warning/spawn",
+    "pause",
+    "synthetic gamepad",
+    "landscape simultaneous touch movement/jump/independent release/armory"
+  ],
+  "limitations": "Fixture positions isolate UI/render checks. Full campaign legal-input runs are recorded separately. PhysicalAndroid/gamepad feel remains unverified."
+}

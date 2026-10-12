@@ -1,57 +1,57 @@
-const { chromium }=require('playwright');
+const {chromium}=require('playwright');
 const fs=require('node:fs');
 const assert=require('node:assert/strict');
 
 async function main(){
   const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_EXECUTABLE||undefined});
-  const page=await browser.newPage({viewport:{width:1440,height:960}});
-  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  const page=await browser.newPage({viewport:{width:1440,height:960}}),errors=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  const trace=JSON.parse(fs.readFileSync('artifacts/combat-route-forge-inputs.json','utf8'));
   await page.goto('http://127.0.0.1:5173/');await page.waitForFunction(()=>window.__ASH?.scene?.manifest);
-  await page.getByRole('button',{name:'ENTER THE FOUNDRY'}).click();
-  await page.evaluate(()=>{const g=window.__ASH;g.scene.game.loop.sleep();g.setWorld(g.createWorld());});
-  const trace=JSON.parse(fs.readFileSync('artifacts/combat-route-inputs.json','utf8'));
+  await page.getByRole('button',{name:'ENTER SOULFORGE'}).click();
+  await page.evaluate(difficulty=>{const g=window.__ASH;g.scene.game.loop.sleep();g.setWorld(g.createWorld(0,{difficulty}));},trace.difficulty);
+  await page.evaluate(()=>window.__replayCaptures={});
   const captures=new Set();
-  let retryCount=0;
-  for(const record of trace.records){
-    const snapshot=await page.evaluate(({record,step})=>{
-      const g=window.__ASH;
-      if(record.retry!==undefined){
-        if(g.world.status!=='dead'||g.world.checkpoint!==record.retry)throw Error('Invalid retry in input trace');
-        if(Math.abs(g.world.time-record.time)>.001)throw Error('Retry clock mismatch');
-        g.retry();
-      }else{
-        for(let f=0;f<record.frames;f++)g.stepWorld(g.world,record.input,step);
+  let retries=0;
+  // Batch fixed steps in the browser, stopping at authored milestones for screenshots.
+  for(let index=0;index<trace.records.length;){
+    const batch=trace.records.slice(index,index+150);
+    const result=await page.evaluate(({records,step})=>{
+      const g=window.__ASH;let used=0,retries=0,capture=null;
+      for(const record of records){
+        if(record.retry!==undefined){if(g.world.status!=='dead')throw Error('Trace retry must follow death');g.retry();retries++;}
+        else if(record.equip){if(!g.equipItem(g.world,record.equip.category,record.equip.id))throw Error('Trace equipped locked gear');}
+        else if(record.storyAdvance!==undefined){if(g.world.story?.npcId!==record.npcId)throw Error('Story trace mismatch');if(!g.advanceStory(g.world,record.storyAdvance||undefined))throw Error('Story advancement failed');if(!g.world.story){g.ui.renderStory(null);g.start();g.scene.game.loop.sleep();}}
+        else for(let frame=0;frame<record.frames;frame++)g.stepWorld(g.world,record.input,step);
+        used++;
+        const w=g.world,p=w.player;
+        const zone=[...g.LEVEL.zones].reverse().find(z=>p.x>=z.x)||g.LEVEL.zones[0];
+        if(!window.__replayCaptures[zone.biome]&&p.x>zone.x+1600)capture=`run-${zone.biome}`;
+        if(w.story&&!window.__replayCaptures[`story-${w.story.npcId}`])capture=`story-${w.story.npcId}`;
+        if(w.activeBoss?.phase==='attack'&&w.activeBoss.attack===2&&!window.__replayCaptures[`boss-${w.activeBoss.id}`])capture=`boss-${w.activeBoss.id}`;
+        if(w.status==='won')capture='campaign-victory';
+        if(capture){window.__replayCaptures[capture.replace('run-','')]=true;break;}
+        w.events.length=0;
       }
-      g.world.events.length=0;
-      return {x:g.world.player.x,y:g.world.player.y,bossPhase:g.world.boss.phase,bossAttack:g.world.boss.attack,status:g.world.status};
-    },{record,step:trace.step});
-    if(record.retry!==undefined)retryCount++;
-    let capture;
-    if(snapshot.x>3900&&snapshot.x<4210&&snapshot.y<360&&!captures.has('foundry-climb'))capture='foundry-climb';
-    if(snapshot.x>6550&&snapshot.x<6780&&!captures.has('laser-gauntlet'))capture='laser-gauntlet';
-    if(snapshot.bossPhase==='attack'&&snapshot.bossAttack===2&&!captures.has('warden-beam'))capture='warden-beam';
-    if(snapshot.status==='won')capture='victory';
-    if(capture){
-      await page.evaluate(()=>{
-        const g=window.__ASH,s=g.scene,w=g.world,p=w.player;
-        s.previousPlayer={x:p.x,y:p.y};s.cameraX=Math.max(0,Math.min(g.LEVEL.width-960,p.x-300));s.cameraY=Math.max(0,Math.min(180,p.y-310));
-        w.hitstop=0;s.accumulator=0;s.update(0,0);s.sys.game.renderer.preRender();s.sys.game.renderer.render(s, s.children.list, s.cameras.main);s.sys.game.renderer.postRender();
-      });
-      await page.screenshot({path:`artifacts/${capture}.png`});captures.add(capture);
+      return{used,retries,capture};
+    },{records:batch,step:trace.step});
+    index+=result.used;retries+=result.retries;
+    if(result.capture&&!captures.has(result.capture)){
+      await page.evaluate(()=>{const g=window.__ASH,s=g.scene,p=g.world.player;s.previousPlayer={x:p.x,y:p.y};s.cameraX=Math.max(0,Math.min(g.LEVEL.width-960,p.x-300));s.cameraY=Math.max(0,Math.min(180,p.y-310));g.world.hitstop=0;s.accumulator=0;s.update(0,0);s.sys.game.renderer.preRender();s.sys.game.renderer.render(s,s.children.list,s.cameras.main);s.sys.game.renderer.postRender();});
+      await page.screenshot({path:`artifacts/${result.capture}.png`});captures.add(result.capture);
+      // Story UI is validated separately; replay invokes the recorded valid choices directly.
+      await page.evaluate(()=>{const g=window.__ASH;if(g.mode==='story'){g.ui.renderStory(null);g.start();g.scene.game.loop.sleep();}});
     }
   }
-  const final=await page.evaluate(()=>({status:window.__ASH.world.status,time:window.__ASH.world.time,hp:window.__ASH.world.player.hp,bossHp:window.__ASH.world.boss.hp}));
-  assert.equal(final.status,'won');assert.equal(final.bossHp,0);assert.deepEqual(errors,[]);
-  assert.ok(captures.has('foundry-climb')&&captures.has('laser-gauntlet')&&captures.has('warden-beam')&&captures.has('victory'));
-  const report={...final,retries:retryCount,captures:[...captures],runtimeErrors:errors,method:'Browser replay of recorded legal action inputs; enemies and hazards active; only valid checkpoint retries. Simulation is advanced in fixed steps, not wall-clock playback.'};
+  const final=await page.evaluate(()=>({status:window.__ASH.world.status,time:window.__ASH.world.time,hp:window.__ASH.world.player.hp,bosses:window.__ASH.world.bosses.map(b=>({id:b.id,dead:b.dead}))}));
+  assert.equal(final.status,'won');assert.ok(final.bosses.every(b=>b.dead));assert.equal(await page.evaluate(()=>window.__ASH.mode),'won');assert.deepEqual(errors,[]);
+  const report={...final,retries,captures:[...captures],runtimeErrors:errors,method:'Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback.'};
   fs.writeFileSync('artifacts/replay-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
-  const prod=await browser.newPage({viewport:{width:1440,height:960}});
-  prod.on('pageerror',e=>errors.push(e.message));await prod.goto('http://127.0.0.1:4173/');await prod.locator('canvas').waitFor();
-  await prod.getByRole('button',{name:'ENTER THE FOUNDRY'}).click();await prod.waitForTimeout(250);
-  assert.equal(await prod.evaluate(()=>typeof window.__ASH),'undefined','production excludes debug API');
-  assert.ok(await prod.locator('#hud').isVisible());
-  await prod.keyboard.down('KeyD');await prod.waitForTimeout(500);await prod.keyboard.up('KeyD');
-  await prod.keyboard.press('Escape');assert.ok(await prod.getByRole('button',{name:'RESUME OPERATION'}).isVisible());
-  assert.deepEqual(errors,[]);await browser.close();
+  const prod=await browser.newPage({viewport:{width:844,height:480},hasTouch:true,isMobile:true});prod.on('pageerror',e=>errors.push(e.message));
+  await prod.goto('http://127.0.0.1:4173/');await prod.locator('canvas').waitFor();await prod.getByRole('button',{name:'ENTER SOULFORGE'}).click();await prod.waitForTimeout(100);
+  assert.equal(await prod.evaluate(()=>typeof window.__ASH),'undefined');assert.ok(await prod.locator('#touch').isVisible());
+  await prod.getByRole('button',{name:'ARMORY',exact:true}).click();await prod.evaluate(()=>window.ashBack());assert.ok(!(await prod.locator('#catalogue').isVisible()));
+  await prod.evaluate(()=>window.ashBack());await prod.waitForTimeout(30);assert.ok(await prod.getByRole('button',{name:'RESUME CAMPAIGN'}).isVisible());assert.deepEqual(errors,[]);
+  await browser.close();
 }
 main().catch(error=>{console.error(error);process.exit(1);});

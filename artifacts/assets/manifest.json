@@ -7,7 +7,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-idle-1",
@@ -17,7 +17,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-idle-2",
@@ -27,7 +27,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-idle-3",
@@ -37,7 +37,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-run-0",
@@ -47,7 +47,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-run-1",
@@ -57,7 +57,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-run-2",
@@ -67,7 +67,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-run-3",
@@ -77,7 +77,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-run-4",
@@ -87,7 +87,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-run-5",
@@ -97,7 +97,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-run-6",
@@ -107,7 +107,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-run-7",
@@ -117,7 +117,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-jump-0",
@@ -127,7 +127,7 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-fall-0",
@@ -137,47 +137,47 @@
       "x": 32,
       "y": 68
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-slash-0",
-    "width": 64,
-    "height": 72,
+    "width": 128,
+    "height": 160,
     "anchor": {
-      "x": 32,
-      "y": 68
+      "x": 64,
+      "y": 152
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-slash-1",
-    "width": 64,
-    "height": 72,
+    "width": 128,
+    "height": 160,
     "anchor": {
-      "x": 32,
-      "y": 68
+      "x": 64,
+      "y": 152
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-slash-2",
-    "width": 64,
-    "height": 72,
+    "width": 128,
+    "height": 160,
     "anchor": {
-      "x": 32,
-      "y": 68
+      "x": 64,
+      "y": 152
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "player-slash-3",
-    "width": 64,
-    "height": 72,
+    "width": 128,
+    "height": 160,
     "anchor": {
-      "x": 32,
-      "y": 68
+      "x": 64,
+      "y": 152
     },
-    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+    "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
   },
   {
     "key": "guard-0",
@@ -398,5 +398,815 @@
       "y": 64
     },
     "notes": "Decoration only; do not add unintended player collision."
+  },
+  {
+    "key": "background-far-snow",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "snow biome far parallax layer; background only."
+  },
+  {
+    "key": "background-mid-snow",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "snow biome mid parallax layer; background only."
+  },
+  {
+    "key": "background-far-ruins",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "ruins biome far parallax layer; background only."
+  },
+  {
+    "key": "background-mid-ruins",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "ruins biome mid parallax layer; background only."
+  },
+  {
+    "key": "background-far-furnace",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "furnace biome far parallax layer; background only."
+  },
+  {
+    "key": "background-mid-furnace",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "furnace biome mid parallax layer; background only."
+  },
+  {
+    "key": "background-far-storm",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "storm biome far parallax layer; background only."
+  },
+  {
+    "key": "background-mid-storm",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "storm biome mid parallax layer; background only."
+  },
+  {
+    "key": "background-far-eclipse",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "eclipse biome far parallax layer; background only."
+  },
+  {
+    "key": "background-mid-eclipse",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "eclipse biome mid parallax layer; background only."
+  },
+  {
+    "key": "background-far-reactor",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "reactor biome far parallax layer; background only."
+  },
+  {
+    "key": "background-mid-reactor",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "reactor biome mid parallax layer; background only."
+  },
+  {
+    "key": "mage-0",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+  },
+  {
+    "key": "mage-1",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+  },
+  {
+    "key": "mage-2",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+  },
+  {
+    "key": "mage-3",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+  },
+  {
+    "key": "shade-0",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+  },
+  {
+    "key": "shade-1",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+  },
+  {
+    "key": "shade-2",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+  },
+  {
+    "key": "shade-3",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+  },
+  {
+    "key": "sentinel-0",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+  },
+  {
+    "key": "sentinel-1",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+  },
+  {
+    "key": "sentinel-2",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+  },
+  {
+    "key": "sentinel-3",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+  },
+  {
+    "key": "boss-warden-0",
+    "width": 128,
+    "height": 144,
+    "anchor": {
+      "x": 64,
+      "y": 138
+    },
+    "notes": "Warden military tyrant; original plated silhouette."
+  },
+  {
+    "key": "boss-warden-1",
+    "width": 128,
+    "height": 144,
+    "anchor": {
+      "x": 64,
+      "y": 138
+    },
+    "notes": "Warden military tyrant; original plated silhouette."
+  },
+  {
+    "key": "boss-warden-2",
+    "width": 128,
+    "height": 144,
+    "anchor": {
+      "x": 64,
+      "y": 138
+    },
+    "notes": "Warden military tyrant; original plated silhouette."
+  },
+  {
+    "key": "boss-warden-3",
+    "width": 128,
+    "height": 144,
+    "anchor": {
+      "x": 64,
+      "y": 138
+    },
+    "notes": "Warden military tyrant; original plated silhouette."
+  },
+  {
+    "key": "boss-hex-0",
+    "width": 160,
+    "height": 192,
+    "anchor": {
+      "x": 80,
+      "y": 184
+    },
+    "notes": "hex sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+  },
+  {
+    "key": "boss-hex-1",
+    "width": 160,
+    "height": 192,
+    "anchor": {
+      "x": 80,
+      "y": 184
+    },
+    "notes": "hex sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+  },
+  {
+    "key": "boss-hex-2",
+    "width": 160,
+    "height": 192,
+    "anchor": {
+      "x": 80,
+      "y": 184
+    },
+    "notes": "hex sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+  },
+  {
+    "key": "boss-hex-3",
+    "width": 160,
+    "height": 192,
+    "anchor": {
+      "x": 80,
+      "y": 184
+    },
+    "notes": "hex sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+  },
+  {
+    "key": "boss-regent-0",
+    "width": 160,
+    "height": 192,
+    "anchor": {
+      "x": 80,
+      "y": 184
+    },
+    "notes": "regent sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+  },
+  {
+    "key": "boss-regent-1",
+    "width": 160,
+    "height": 192,
+    "anchor": {
+      "x": 80,
+      "y": 184
+    },
+    "notes": "regent sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+  },
+  {
+    "key": "boss-regent-2",
+    "width": 160,
+    "height": 192,
+    "anchor": {
+      "x": 80,
+      "y": 184
+    },
+    "notes": "regent sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+  },
+  {
+    "key": "boss-regent-3",
+    "width": 160,
+    "height": 192,
+    "anchor": {
+      "x": 80,
+      "y": 184
+    },
+    "notes": "regent sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+  },
+  {
+    "key": "portrait-mira",
+    "width": 96,
+    "height": 96,
+    "anchor": {
+      "x": 48,
+      "y": 48
+    },
+    "notes": "Original survivor portrait; displayed in dialogue."
+  },
+  {
+    "key": "npc-mira",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Friendly survivor; no hostile or decorative collider."
+  },
+  {
+    "key": "portrait-orren",
+    "width": 96,
+    "height": 96,
+    "anchor": {
+      "x": 48,
+      "y": 48
+    },
+    "notes": "Original survivor portrait; displayed in dialogue."
+  },
+  {
+    "key": "npc-orren",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Friendly survivor; no hostile or decorative collider."
+  },
+  {
+    "key": "portrait-vesper",
+    "width": 96,
+    "height": 96,
+    "anchor": {
+      "x": 48,
+      "y": 48
+    },
+    "notes": "Original survivor portrait; displayed in dialogue."
+  },
+  {
+    "key": "npc-vesper",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 76
+    },
+    "notes": "Friendly survivor; no hostile or decorative collider."
+  },
+  {
+    "key": "pickup-health",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "pickup-fuel",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "pickup-rapid",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "pickup-shield",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "pickup-boost",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "pickup-mana",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "pickup-weapon",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "pickup-sword",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "pickup-armor",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "pickup-spell",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "pickup-treasure",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "pickup-cannon",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "pickup-nova",
+    "width": 40,
+    "height": 48,
+    "anchor": {
+      "x": 20,
+      "y": 24
+    },
+    "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+  },
+  {
+    "key": "icon-rustfang",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-katana",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-saber",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-carbine",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-scatter",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-rail",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-cannon",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-courier",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-bulwark",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-wraith",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-cinder",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-siphon",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-thunder",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-veil",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-stasis",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-eclipse",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-ember-heart",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-tide-glass",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-storm-seal",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-eclipse-fragment",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-regent-key",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "icon-soul-core",
+    "width": 48,
+    "height": 48,
+    "anchor": {
+      "x": 24,
+      "y": 24
+    },
+    "notes": "Named equipment or relic glyph for armory and pickups."
+  },
+  {
+    "key": "barrel",
+    "width": 64,
+    "height": 80,
+    "anchor": {
+      "x": 32,
+      "y": 78
+    },
+    "notes": "Interactive campaign object; collider and destruction state come from world."
+  },
+  {
+    "key": "cache",
+    "width": 64,
+    "height": 64,
+    "anchor": {
+      "x": 32,
+      "y": 62
+    },
+    "notes": "Interactive campaign object; collider and destruction state come from world."
+  },
+  {
+    "key": "lever",
+    "width": 48,
+    "height": 64,
+    "anchor": {
+      "x": 24,
+      "y": 62
+    },
+    "notes": "Interactive campaign object; collider and destruction state come from world."
+  },
+  {
+    "key": "gate",
+    "width": 96,
+    "height": 192,
+    "anchor": {
+      "x": 48,
+      "y": 190
+    },
+    "notes": "Interactive campaign object; collider and destruction state come from world."
   }
 ]

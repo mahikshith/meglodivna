@@ -166,11 +166,13 @@ export function stepPlayer(player, input, solids, dt) {
     player.vy = Math.min(PHYSICS.fallSpeed, player.vy + PHYSICS.gravity * dt);
     player.jetActive = !!input.jet && !player.grounded && player.fuel > 0;
     if (player.jetActive) {
-      const thrustTime = Math.min(dt, player.fuel / PHYSICS.fuelDrain);
-      if (player.vy > -PHYSICS.jetRiseSpeed) {
-        player.vy = Math.max(-PHYSICS.jetRiseSpeed, player.vy - PHYSICS.jetAcceleration * thrustTime);
+      const boost = player.boost > 0 ? 1.4 : 1;
+      const drain = PHYSICS.fuelDrain * (player.fuelRate || 1) * (boost > 1 ? 0.6 : 1);
+      const thrustTime = Math.min(dt, player.fuel / drain);
+      if (player.vy > -PHYSICS.jetRiseSpeed * boost) {
+        player.vy = Math.max(-PHYSICS.jetRiseSpeed * boost, player.vy - PHYSICS.jetAcceleration * boost * thrustTime);
       }
-      player.fuel = Math.max(0, player.fuel - PHYSICS.fuelDrain * dt);
+      player.fuel = Math.max(0, player.fuel - drain * dt);
       player.jumpCutPending = false;
       if (!wasJetActive) events.push('jet');
     } else if (player.wall && player.vy > PHYSICS.wallSlideSpeed) {

@@ -2,96 +2,119 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { LEVEL, createEnemies } from '../src/level.js';
 import { PHYSICS, overlaps } from '../src/physics.js';
+import { GUNS, SWORDS, ARMORS, SPELLS, RELICS } from '../src/catalog.js';
 
-test('level geometry, IDs, and timed hazards stay inside the world', () => {
-  assert.equal(LEVEL.width, 9400);
-  assert.equal(LEVEL.height, 720);
+const pickupTypes = ['health', 'fuel', 'rapid', 'shield', 'boost', 'mana', 'weapon', 'sword', 'armor', 'spell', 'treasure', 'cannon', 'nova'];
+const catalogs = { weapon: GUNS, sword: SWORDS, armor: ARMORS, spell: SPELLS, treasure: RELICS };
+function checkReward(reward) {
+  assert.ok(pickupTypes.includes(reward.type), `unknown reward ${reward.type}`);
+  if (catalogs[reward.type]) assert.ok(catalogs[reward.type].some(item => item.id === reward.itemId), `unknown item ${reward.itemId}`);
+  if ('value' in reward) assert.ok(reward.value > 0 && Number.isFinite(reward.value));
+}
+
+test('six authored biomes and every object have unique IDs and finite world bounds', () => {
+  assert.equal(LEVEL.width, 65000); assert.equal(LEVEL.height, 720);
+  assert.deepEqual(LEVEL.zones.map(zone => zone.biome), ['snow', 'ruins', 'furnace', 'storm', 'eclipse', 'reactor']);
   const ids = new Set();
-  for (const object of [...LEVEL.solids, ...LEVEL.hazards, ...LEVEL.pickups, ...createEnemies()]) {
-    assert.ok(object.id && !ids.has(object.id), `duplicate or absent ID: ${object.id}`);
-    ids.add(object.id);
+  for (const object of [...LEVEL.solids, ...LEVEL.hazards, ...LEVEL.pickups, ...LEVEL.props, ...LEVEL.gates, ...LEVEL.bosses, ...LEVEL.npcs, ...createEnemies()]) {
+    assert.ok(object.id && !ids.has(object.id), `duplicate ID: ${object.id}`); ids.add(object.id);
     assert.ok(Number.isFinite(object.x) && Number.isFinite(object.y));
     assert.ok(object.x >= 0 && object.y >= 0);
     assert.ok(object.x + (object.w ?? 0) <= LEVEL.width, `${object.id}: horizontal bounds`);
     assert.ok(object.y + (object.h ?? 0) <= LEVEL.height, `${object.id}: vertical bounds`);
-    if ('w' in object) assert.ok(object.w > 0 && object.h > 0, `${object.id}: positive collider`);
+    if ('w' in object) assert.ok(object.w > 0 && object.h > 0);
     if ('period' in object) {
-      assert.ok(object.onTime > 0 && object.onTime < object.period, `${object.id}: readable off window`);
+      assert.ok(object.onTime > 0 && object.onTime < object.period);
       assert.ok(object.phase >= 0 && object.phase < object.period);
-      assert.ok(object.period - object.onTime > 1, `${object.id}: crossing window`);
+      assert.ok(object.period - object.onTime > 1, `${object.id}: readable crossing window`);
     }
   }
-  for (const solid of LEVEL.solids) assert.ok(['snow', 'steel'].includes(solid.material));
-  for (const hazard of LEVEL.hazards) assert.ok(['laser', 'fire', 'spikes', 'emp'].includes(hazard.type));
-  for (const pickup of LEVEL.pickups) assert.ok(['health', 'fuel', 'rapid', 'shield'].includes(pickup.type));
+  for (const s of LEVEL.solids) assert.ok(['snow', 'steel'].includes(s.material));
+  for (const h of LEVEL.hazards) assert.ok(['laser', 'fire', 'spikes', 'emp'].includes(h.type));
+  for (const item of LEVEL.pickups) checkReward(item);
+  for (let i = 1; i < LEVEL.zones.length; i++) assert.ok(LEVEL.zones[i].x > LEVEL.zones[i - 1].x);
 });
 
-test('spawn and all checkpoints have safe standing room and recovery margins', () => {
+test('spawn and relays provide safe standing and recovery clearance', () => {
   for (const point of [LEVEL.spawn, ...LEVEL.checkpoints]) {
-    const player = { ...point, w: 24, h: 46 };
-    const ground = LEVEL.solids.find(solid => player.x >= solid.x && player.x + player.w <= solid.x + solid.w
-      && Math.abs(player.y + player.h - solid.y) <= 4);
-    assert.ok(ground, `checkpoint ${point.label ?? 'spawn'} has solid support`);
-    for (const solid of LEVEL.solids) assert.ok(!overlaps(player, solid), 'recovery starts outside walls');
-    const recoveryArea = { x: player.x - 28, y: player.y, w: player.w + 56, h: player.h };
-    for (const hazard of LEVEL.hazards) assert.ok(!overlaps(recoveryArea, hazard), 'recovery has hazard clearance');
-    for (const enemy of createEnemies()) assert.ok(!overlaps(recoveryArea, enemy), 'recovery has enemy clearance');
+    const p = { ...point, w: 24, h: 46 };
+    assert.ok(LEVEL.solids.some(s => p.x >= s.x && p.x + p.w <= s.x + s.w && Math.abs(p.y + p.h - s.y) <= 4), `relay ${point.label}: support`);
+    for (const s of LEVEL.solids) assert.ok(!overlaps(p, s), 'recovery starts outside walls');
+    const room = { x: p.x - 28, y: p.y, w: p.w + 56, h: p.h };
+    for (const hazard of [...LEVEL.hazards, ...LEVEL.gates, ...LEVEL.props.filter(prop => prop.collidable)]) assert.ok(!overlaps(room, hazard), 'relay has clearance');
+    for (const enemy of createEnemies()) assert.ok(!overlaps(room, enemy), 'relay has enemy clearance');
   }
 });
 
-test('arena ground is contiguous and route markers identify actual landing surfaces', () => {
-  const arena = LEVEL.solids.find(solid => solid.id === 'warden-floor');
-  assert.equal(arena.y, 610);
-  assert.ok(arena.x <= LEVEL.boss.x && arena.x + arena.w >= LEVEL.exit.x + LEVEL.exit.w);
-  assert.ok(LEVEL.boss.x - arena.x >= 500, 'boss checkpoint offers approach space');
-  for (const marker of LEVEL.route) {
-    const solid = LEVEL.solids.find(candidate => candidate.id === marker.id);
-    assert.ok(solid, `unknown route surface ${marker.id}`);
-    assert.equal(marker.y, solid.y);
-    assert.ok(marker.x - 12 >= solid.x && marker.x + 12 <= solid.x + solid.w);
+test('the ordered route has real landing surfaces, jump margins, and diverse elevation', () => {
+  const apex = PHYSICS.jumpSpeed ** 2 / (2 * PHYSICS.gravity);
+  let climbs = 0, pits = 0;
+  for (let i = 0; i < LEVEL.route.length; i++) {
+    const marker = LEVEL.route[i], s = LEVEL.solids.find(solid => solid.id === marker.id);
+    assert.ok(s, `unknown route surface ${marker.id}`); assert.equal(marker.y, s.y);
+    assert.ok(marker.x - 12 >= s.x && marker.x + 12 <= s.x + s.w);
+    if (!i) continue;
+    const before = LEVEL.route[i - 1], a = LEVEL.solids.find(solid => solid.id === before.id);
+    assert.ok(marker.x >= before.x, 'main route never doubles back across a locked encounter');
+    if (s.id === a.id) continue;
+    const gap = Math.max(0, s.x - a.x - a.w), rise = a.y - s.y;
+    assert.ok(gap <= 280, `${a.id}→${s.id}: gap ${gap}`);
+    assert.ok(rise <= 105, `${a.id}→${s.id}: rise ${rise}`);
+    if (gap > 0) pits++;
+    if (rise > 0) { climbs++; assert.ok(rise <= apex - 10); }
+    const secondFlight = (PHYSICS.airJumpSpeed + Math.sqrt(PHYSICS.airJumpSpeed ** 2 + 2 * PHYSICS.gravity * (apex - rise))) / PHYSICS.gravity;
+    const range = PHYSICS.runSpeed * (PHYSICS.jumpSpeed / PHYSICS.gravity + secondFlight);
+    assert.ok(gap + 24 < range, `${marker.id}: held double-jump range`);
   }
-  for (let index = 1; index < LEVEL.zones.length; index++) assert.ok(LEVEL.zones[index].x > LEVEL.zones[index - 1].x);
-  assert.ok(LEVEL.guides.every(guide => guide.text.length <= 64), 'hints remain brief');
+  assert.ok(climbs >= 35 && pits >= 40, 'campaign includes substantial vertical traversal');
+  assert.ok(LEVEL.guides.every(guide => guide.text.length <= 64));
+  assert.ok((LEVEL.exit.x - LEVEL.spawn.x) / PHYSICS.runSpeed > 200);
 });
 
-test('mandatory gap bounds fit a held double jump and foundry risers fit one held jump', () => {
-  const firstApex = PHYSICS.jumpSpeed ** 2 / (2 * PHYSICS.gravity);
-  const toApex = PHYSICS.jumpSpeed / PHYSICS.gravity;
-  const pairs = [
-    ['icebreak-floor', 'viaduct-entry'], ['viaduct-entry', 'bridge-a'],
-    ['bridge-a', 'bridge-b'], ['bridge-b', 'bridge-c'], ['bridge-c', 'foundry-entry'],
-    ['gauntlet-a', 'gauntlet-b'], ['gauntlet-b', 'gauntlet-c'],
-  ];
-  for (const [fromId, toId] of pairs) {
-    const from = LEVEL.solids.find(solid => solid.id === fromId);
-    const to = LEVEL.solids.find(solid => solid.id === toId);
-    const rise = from.y - to.y;
-    const secondFlight = (PHYSICS.airJumpSpeed + Math.sqrt(PHYSICS.airJumpSpeed ** 2
-      + 2 * PHYSICS.gravity * (firstApex - rise))) / PHYSICS.gravity;
-    const range = PHYSICS.runSpeed * (toApex + secondFlight);
-    const gap = to.x - from.x - from.w;
-    assert.ok(gap + 24 < range, `${fromId}→${toId}: ${gap}px fits ${Math.floor(range)}px range`);
+test('three bosses have grounded contiguous arenas and properly linked gates', () => {
+  assert.deepEqual(LEVEL.bosses.map(b => b.type), ['warden', 'hex', 'regent']);
+  assert.equal(LEVEL.boss, LEVEL.bosses.at(-1));
+  for (const gate of LEVEL.gates) { assert.equal(gate.y, 0); assert.equal(gate.y + gate.h, 610); }
+  for (const b of LEVEL.bosses) {
+    const floor = LEVEL.solids.find(s => s.kind === 'ground' && s.x <= b.arenaStart && s.x + s.w >= b.arenaEnd);
+    assert.ok(floor); assert.equal(b.y + b.h, floor.y);
+    assert.ok(b.triggerX > b.arenaStart && b.triggerX < b.x);
+    const gate = LEVEL.gates.find(g => g.bossId === b.id);
+    assert.ok(gate && gate.x >= b.arenaEnd && gate.x > b.x + b.w);
   }
-  const risers = ['foundry-entry', 'foundry-riser-a', 'foundry-riser-b', 'foundry-riser-c', 'foundry-wall']
-    .map(id => LEVEL.solids.find(solid => solid.id === id));
-  for (let index = 1; index < risers.length; index++) {
-    assert.ok(risers[index - 1].y - risers[index].y <= firstApex - 10, 'single-jump rise has vertical margin');
+  for (const gate of LEVEL.gates.filter(g => g.leverId)) {
+    const lever = LEVEL.props.find(p => p.id === gate.leverId);
+    assert.ok(lever && lever.type === 'lever' && lever.gateId === gate.id);
+    assert.ok(lever.x < gate.x && gate.x - lever.x <= 280);
   }
-  assert.ok((LEVEL.exit.x - LEVEL.spawn.x) / PHYSICS.runSpeed >= 28, 'scale supports 30s+ with required climbing and combat');
 });
 
-test('enemy factories isolate mutable combat state and patrols remain supported', () => {
-  const first = createEnemies();
-  const second = createEnemies();
-  first[0].hp = 0;
-  assert.equal(second[0].hp, 30);
+test('friendly dialogue and destructibles have reachable, validated, distinct rewards', () => {
+  assert.equal(LEVEL.npcs.length, 3);
+  for (const npc of LEVEL.npcs) {
+    assert.ok(npc.lines.length >= 3 && npc.lines.every(line => line.speaker && line.text));
+    assert.equal(npc.choices.length, 2); assert.notEqual(npc.choices[0].id, npc.choices[1].id);
+    for (const choice of npc.choices) checkReward(choice.reward);
+    assert.ok(LEVEL.route.some(marker => marker.npcId === npc.id));
+    assert.ok(LEVEL.solids.some(s => s.y === npc.y + 46 && npc.x >= s.x && npc.x + 24 <= s.x + s.w));
+    assert.ok(createEnemies().every(enemy => Math.abs(enemy.x - npc.x) > 350), 'story occurs in recovery space');
+  }
+  for (const prop of LEVEL.props) {
+    assert.ok(['crate', 'barrel', 'cache', 'lever'].includes(prop.type));
+    if (prop.type !== 'lever') assert.ok(prop.hp > 0);
+    for (const reward of prop.contents || []) checkReward(reward);
+    assert.ok(LEVEL.solids.some(s => s.y === prop.y + prop.h && prop.x >= s.x && prop.x + prop.w <= s.x + s.w), `${prop.id}: placed on a surface`);
+  }
+});
+
+test('enemy factories isolate state and all patrols remain on supported geometry', () => {
+  const first = createEnemies(), second = createEnemies(); first[0].hp = 0; assert.equal(second[0].hp, 34);
+  assert.ok(second.length >= 50);
+  assert.deepEqual([...new Set(second.map(enemy => enemy.type))].sort(), ['drone', 'guard', 'mage', 'sentinel', 'shade', 'turret']);
   for (const enemy of second) {
-    assert.ok(['guard', 'drone', 'turret'].includes(enemy.type));
-    assert.ok(enemy.minX <= enemy.x && enemy.x <= enemy.maxX);
+    assert.ok(enemy.power && enemy.hp > 0); assert.ok(enemy.minX <= enemy.x && enemy.x <= enemy.maxX);
     assert.ok(enemy.minX >= 0 && enemy.maxX + enemy.w <= LEVEL.width);
-    assert.ok(enemy.hp > 0);
     if (enemy.type === 'drone') continue;
-    assert.ok(LEVEL.solids.some(solid => solid.y === enemy.y + enemy.h
-      && enemy.minX >= solid.x && enemy.maxX + enemy.w <= solid.x + solid.w), `${enemy.id}: supported patrol`);
+    assert.ok(LEVEL.solids.some(s => s.y === enemy.y + enemy.h && enemy.minX >= s.x && enemy.maxX + enemy.w <= s.x + s.w), `${enemy.id}: supported patrol`);
   }
 });
