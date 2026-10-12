@@ -1,0 +1,11 @@
+import { cp, mkdir, stat } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import assert from 'node:assert/strict';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const source=new URL('../dist/',import.meta.url);
+const destination=new URL('../android/app/src/main/assets/public/',import.meta.url);
+assert.ok(fileURLToPath(destination).startsWith(root),'Android assets must stay inside workspace');
+assert.ok((await stat(new URL('index.html',source))).isFile(),'Run npm run build first');
+await mkdir(destination,{recursive:true});
+await cp(source,destination,{recursive:true});
+console.log('Synced offline web game into Android assets.');
