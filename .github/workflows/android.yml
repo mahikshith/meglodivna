@@ -10,8 +10,6 @@ jobs:
   apk:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env:
-      ASH_SIGNAL_DEBUG_KEYSTORE: ${{ runner.temp }}/ash-signal-debug.keystore
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -30,10 +28,12 @@ jobs:
       - name: Restore persistent test signing key
         env:
           ASH_SIGNAL_DEBUG_KEYSTORE_BASE64: ${{ secrets.ASH_SIGNAL_DEBUG_KEYSTORE_BASE64 }}
+          ASH_SIGNAL_DEBUG_KEYSTORE: ${{ runner.temp }}/ash-signal-debug.keystore
         run: |
           test -n "$ASH_SIGNAL_DEBUG_KEYSTORE_BASE64"
           printf '%s' "$ASH_SIGNAL_DEBUG_KEYSTORE_BASE64" | base64 --decode > "$ASH_SIGNAL_DEBUG_KEYSTORE"
           keytool -list -keystore "$ASH_SIGNAL_DEBUG_KEYSTORE" -storepass android -alias androiddebugkey
+          echo "ASH_SIGNAL_DEBUG_KEYSTORE=$ASH_SIGNAL_DEBUG_KEYSTORE" >> "$GITHUB_ENV"
       - name: Dependencies and simulation tests
         run: npm ci && npm test
       - name: Full campaign validation
