@@ -63,6 +63,9 @@ async function main(){
       await page.waitForTimeout(80);
       assert.ok(await page.evaluate(()=>{const g=window.__ASH,id=g.LEVEL.portals[0].id,sprite=g.scene.portalSprites.get(`travel:${id}`);return sprite?.visible&&sprite.texture.key.startsWith('summon-portal-');}),'travel portals must have their actual animated texture');
       await page.screenshot({path:'artifacts/veil-portal.png'});
+      await page.evaluate(()=>{const g=window.__ASH,b=g.world.bosses[0];g.world.player.x=b.x-180;g.world.player.y=564;Object.assign(b,{active:true,phase:'charge',timer:2});g.scene.cameraX=b.x-400;});
+      await page.waitForTimeout(80);
+      assert.ok(await page.evaluate(()=>{const g=window.__ASH,b=g.world.bosses[0];return g.scene.bossSprites.get(b.id)?.texture.key.startsWith(`boss-${b.type}-attack-`);}),'a world-specific boss retains its physical family attack pose');
     }
   }
   await page.locator('#worlds').click();await page.selectOption('#world-select','soulforge');await page.locator('#start').click();
@@ -125,7 +128,7 @@ async function main(){
   await mobile.getByRole('button',{name:'Close armory'}).click();assert.equal(await mobile.evaluate(()=>window.__ASH.mode),'playing');
   assert.deepEqual(errors,[]);
   const report={browser:'Chromium headless',assets:assets.length,runtimeErrors:errors,touchTargets:targets.length,
-    checks:['five world selection/four difficulty selection','keyboard run/jump/alternating slash/jetpack/magic','catalogue lock/equip/pause/focus/actual costs','story dialogue/choice/pause/persisted reward','six biome renders','red icon missile warning/spawn','pause','synthetic gamepad','round analogue joystick','four curved SVG touch macros','reserved control gutter does not overlap canvas','landscape simultaneous joystick movement/jump/independent release','attack tap slashes and hold fires','jump hold activates thrust','power tap casts and hold opens paused spell palette without spending'],
+    checks:['five world selection/four difficulty selection','keyboard run/jump/alternating slash/jetpack/magic','catalogue lock/equip/pause/focus/actual costs','story dialogue/choice/pause/persisted reward','six biome renders','animated Veil travel portal','world boss attack-pose fallback','red icon missile warning/spawn','pause','synthetic gamepad','round analogue joystick','four curved SVG touch macros','reserved control gutter does not overlap canvas','landscape simultaneous joystick movement/jump/independent release','attack tap slashes and hold fires','jump hold activates thrust','power tap casts and hold opens paused spell palette without spending'],
     limitations:'Fixture positions isolate UI/render checks. Full campaign legal-input runs are recorded separately. PhysicalAndroid/gamepad feel remains unverified.'};
   fs.writeFileSync('artifacts/browser-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));await browser.close();
 }

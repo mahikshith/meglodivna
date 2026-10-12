@@ -153,7 +153,7 @@ class Soulforge extends Phaser.Scene {
     }
     for(const sprite of this.bossSprites.values())sprite.setVisible(false);
     for(const b of world.bosses){
-      if(b.dead||!near(b))continue;let sprite=this.bossSprites.get(b.id);const state=b.flash>0?'hurt':['charge','attack'].includes(b.phase)?'attack':Math.abs(b.vx||0)>20?'run':'idle',candidate=`boss-${b.skin||b.type}-${state}-${Math.floor(t*7)%4}`,key=this.textures.exists(candidate)?candidate:`boss-${b.type}-${Math.floor(t*4)%4}`;
+      if(b.dead||!near(b))continue;let sprite=this.bossSprites.get(b.id);const state=b.flash>0?'hurt':['charge','attack'].includes(b.phase)?'attack':Math.abs(b.vx||0)>20?'run':'idle',candidate=`boss-${b.skin||b.type}-${state}-${Math.floor(t*7)%4}`,pose=`boss-${b.type}-${state}-${Math.floor(t*7)%4}`,key=this.textures.exists(candidate)?candidate:this.textures.exists(pose)?pose:`boss-${b.type}-${Math.floor(t*4)%4}`;
       if(!sprite){sprite=this.add.sprite(0,0,key).setDepth(9);this.bossSprites.set(b.id,sprite);}
       sprite.setTexture(key).setOrigin(.5,b.type==='warden'?138/144:184/192).setPosition(Math.round(b.x+b.w/2),Math.round(b.y+b.h)).setFlipX(b.facing<0).setVisible(true).setTint(b.flash>0?0xffd1b2:b.enraged?0xffbca3:b.weakened>0?0xbbebec:0xffffff);
     }

@@ -42,7 +42,7 @@ Gamepad labels follow the standard Xbox-style browser mapping.
 | Pause / resume | Escape | Start |
 | Retry at relay | R or Reconnect after death | A confirms death menu |
 
-Touch uses a **112 px circular analogue stick** and **four curved action buttons** in a reserved **112 px bottom gutter**, keeping controls separate from the adaptive game viewport. **Attack:** tap to slash; hold180ms to fire. **Jump:** tap for jump/double jump; hold350ms for thrust. **Power:** tap to cast or interact with a nearby target; hold450ms to open the paused Sorcery/gear palette. **Dash:** press to dash. A44px pause button sits in the center. The stick has a deadzone and independent pointer capture so actions can stay held while steering. Android Back closes the palette or toggles pause; from a non-playing menu it exits. Physical Android comfort still requires device playtesting.
+Touch uses a **112 px circular analogue stick** and **four curved action buttons** in a reserved **112 px bottom gutter**, keeping controls separate from the adaptive game viewport. **Attack:** tap to slash; hold 180ms to fire. **Jump:** tap for jump/double jump; hold 350ms for thrust. **Power:** tap to cast or interact with a nearby target; hold 450ms to open the paused Sorcery/gear palette. **Dash:** press to dash. A 44 px pause button sits in the center. The stick has a deadzone and independent pointer capture so actions can stay held while steering. Android Back closes the palette or toggles pause; from a non-playing menu it exits. Physical Android comfort still requires device playtesting.
 
 Hold jump for height; release to cut the arc. Jump away from walls to climb. Jet fuel is finite and recharges on solid ground. Melee alternates overhead, horizontal and finisher cuts, with a dash lunge. Ordinary bullets can be parried; heavy rockets and beams need evasion or defenses. EMP disables dash/thrust, fire can burn, and mechanical traps/lasers warn before activating. Incoming missiles use a red edge/lane cue.
 
@@ -119,6 +119,6 @@ gh run list --workflow android.yml
 gh run download --name ASH-SIGNAL-Fractured-Realms-debug-APK --dir artifacts/ci-apk
 ```
 
-Simulation is fixed120Hz with swept collision/interpolation. physics.js owns movement; combat.js owns encounters/resources/weapon origins; level.js/worlds.js provide authored routes; catalog.js/progress.js define gear/validated saves. main.js connects Phaser to DOM UI, input and synthesized audio. Android hosts the production build without another simulation.
+Simulation is fixed 120 Hz with swept collision/interpolation. physics.js owns movement; combat.js owns encounters/resources/weapon origins; level.js/worlds.js provide authored routes; catalog.js/progress.js define gear/validated saves. main.js connects Phaser to DOM UI, input and synthesized audio. Android hosts the production build without another simulation.
 
 [ROADMAP.md](ROADMAP.md), [PHASE3.md](PHASE3.md), [LEVEL.md](LEVEL.md) and [VALIDATION.md](VALIDATION.md) record scope/evidence. [ASSETS.md](ASSETS.md), `artifacts/refinement-art-sheet.png`, `artifacts/campaign-biomes.png` and `artifacts/assets/` document347 original textures and anchors, including Ysra's witch portrait.

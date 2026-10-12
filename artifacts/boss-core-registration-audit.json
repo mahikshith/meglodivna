@@ -1,0 +1,1129 @@
+{
+  "method": "Isolated render fixture; player position and Regent attack were assigned solely to diagnose draw order. No gameplay or balance proof.",
+  "bossType": "regent",
+  "origin": {
+    "x": 80656,
+    "y": 524.2
+  },
+  "oldOrder": {
+    "boss": 454,
+    "beam": 4,
+    "bossDepth": 9,
+    "beamDepth": 12,
+    "texture": "boss-regent-attack-0"
+  },
+  "samples": [
+    {
+      "key": "boss-warden-0",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 61
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": 1
+      }
+    },
+    {
+      "key": "boss-warden-1",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 59
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": -1
+      }
+    },
+    {
+      "key": "boss-warden-2",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 61
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": 1
+      }
+    },
+    {
+      "key": "boss-warden-3",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 59
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": -1
+      }
+    },
+    {
+      "key": "boss-warden-run-0",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 61
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": 1
+      }
+    },
+    {
+      "key": "boss-warden-run-1",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 59
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": -1
+      }
+    },
+    {
+      "key": "boss-warden-run-2",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 61
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": 1
+      }
+    },
+    {
+      "key": "boss-warden-run-3",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 59
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": -1
+      }
+    },
+    {
+      "key": "boss-warden-attack-0",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 61
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": 1
+      }
+    },
+    {
+      "key": "boss-warden-attack-1",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 59
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": -1
+      }
+    },
+    {
+      "key": "boss-warden-attack-2",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 61
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": 1
+      }
+    },
+    {
+      "key": "boss-warden-attack-3",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 59
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": -1
+      }
+    },
+    {
+      "key": "boss-warden-hurt-0",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 61
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": 1
+      }
+    },
+    {
+      "key": "boss-warden-hurt-1",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 59
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": -1
+      }
+    },
+    {
+      "key": "boss-warden-hurt-2",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 61
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": 1
+      }
+    },
+    {
+      "key": "boss-warden-hurt-3",
+      "width": 128,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 138
+      },
+      "core": {
+        "x": 62,
+        "y": 59
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": -2,
+        "y": -1
+      }
+    },
+    {
+      "key": "boss-hex-0",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-1",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-2",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-3",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-run-0",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-run-1",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-run-2",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-run-3",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-attack-0",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-attack-1",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-attack-2",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-attack-3",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-hurt-0",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-hurt-1",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-hurt-2",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-hex-hurt-3",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 106
+      },
+      "rgba": [
+        217,
+        147,
+        114,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "boss-regent-0",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-1",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-2",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-3",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-run-0",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-run-1",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-run-2",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-run-3",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-attack-0",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-attack-1",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-attack-2",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-attack-3",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-hurt-0",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-hurt-1",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-hurt-2",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    },
+    {
+      "key": "boss-regent-hurt-3",
+      "width": 160,
+      "height": 192,
+      "anchor": {
+        "x": 80,
+        "y": 184
+      },
+      "core": {
+        "x": 80,
+        "y": 98
+      },
+      "rgba": [
+        228,
+        242,
+        237,
+        255
+      ],
+      "originError": {
+        "x": 0,
+        "y": -0.19999999999999574
+      }
+    }
+  ],
+  "sortedOrder": {
+    "boss": 451,
+    "beam": 454,
+    "bossDepth": 9,
+    "beamDepth": 12,
+    "texture": "boss-regent-attack-0"
+  },
+  "errors": []
+}

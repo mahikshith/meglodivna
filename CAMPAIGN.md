@@ -1,5 +1,7 @@
 # ASH//SIGNAL: SOULFORGE — implementation ledger
 
+Historical v0.2 ledger. Current v0.3 scope, counts and acceptance evidence are in [PHASE3.md](PHASE3.md) and [VALIDATION.md](VALIDATION.md).
+
 Goal: expand the working prototype into a roughly five-minute playable campaign and deliver an installable debug Android APK. Ancient soul magic powers modern military machinery; the courier carries the last unbound human soul. Mature pixel art and readable, dangerous combat remain the foundation.
 
 ## Difficulty

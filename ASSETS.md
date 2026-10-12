@@ -2,7 +2,7 @@
 
 src/art.js creates/reuses **347** deterministic original raster textures and exports PALETTE, WORLD_ART and createArtTextures(scene). No franchise art, external images or paid assets were copied. Characters/objects use **one-pixel detail**; backgrounds/terrain use **two-pixel clusters**. Nearest-neighbor rendering and binary alpha preserve crisp edges.
 
-Creation returns `{key,width,height,anchor:{x,y},notes}`. Inspect the dynamic manifest instead of asserting the old121 count. Art generation happens during loading, not per gameplay frame. Original keys are preserved.
+Creation returns `{key,width,height,anchor:{x,y},notes}`. Inspect the dynamic manifest instead of asserting the old 121 count. Art generation happens during loading, not per gameplay frame. Original keys are preserved.
 
 ## Frames and anchors
 
@@ -59,6 +59,6 @@ Total source allocation: **51,931,904 RGBA bytes /49.53MiB**, below the55MiB nat
 
 artifacts/assets/ contains PNGs and the dynamic manifest. **artifacts/refinement-art-sheet.png** shows actions, bosses, spellcasters, survivors, summons, traps, weapons and theme pieces; the final export incorporates portrait-ysra. **artifacts/refinement-asset-report.json** records asset dimensions, nonempty pixels, binary alpha, anchors, restart reuse and budget checks. Final integrated scene/browser/Android evidence belongs in VALIDATION.md.
 
-Touch interface art uses a112px analogue stick, four curved gesture buttons and a44px center pause control in a reserved112px bottom gutter. Attack tap/180ms hold means slash/fire; Jump tap/350ms hold means leap/thrust; Power tap/450ms hold means cast-or-context-interact/paused Sorcery-gearing palette; Dash is direct. The root renderer adapts the full-width game viewport above the controls. These interface assets are separate from the347 raster textures and do not change combat geometry.
+Touch interface art uses a 112 px analogue stick, four curved gesture buttons and a 44 px center pause control in a reserved 112 px bottom gutter. Attack tap/180ms hold means slash/fire; Jump tap/350ms hold means leap/thrust; Power tap/450ms hold means cast-or-context-interact/paused Sorcery-gearing palette; Dash is direct. The root renderer adapts the full-width game viewport above the controls. These interface assets are separate from the 347 raster textures and do not change combat geometry.
 
 Sound.play accepts event objects or legacy strings and differentiates carbine/scatter/rail/rocket, shield activation and summons. Finisher metadata selects heavier slash feedback. Thunder, cannon, destruction and sorcery remain brief; voices cap at24 and disconnect when finished. Mute/reduced effects remain available. Speaker mix, perceived feel and physical Android comfort are not established by asset checks.
