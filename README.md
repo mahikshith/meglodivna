@@ -107,11 +107,11 @@ adb install -r ASH-SIGNAL-Fractured-Realms-debug.apk
 adb shell am start -n com.meglodivna.ashsignal/.MainActivity
 ```
 
-Local/CI debug keys may differ; switching signing source can require uninstalling the old app and removes its save. Prefer successive CI APKs for CI updates. Package build/inspection does not prove sustained Android performance or comfort.
+This v0.3 APK changes the signing certificate from the earlier Soulforge test APK. Android requires uninstalling that older test app before installing this build, which removes its local save. Subsequent CI builds use a persistent signing key from the repository's encrypted `ASH_SIGNAL_DEBUG_KEYSTORE_BASE64` secret. Keep that secret to preserve update compatibility. Package build/inspection does not prove sustained Android performance or comfort.
 
 ## CI and architecture
 
-[Android CI](.github/workflows/android.yml) runs on main pushes, pull requests and manual dispatch. It checks unit tests, all four Soulforge tiers and Forge runs in the other worlds, builds offline assets, assembles/lints and uploads **ASH-SIGNAL-Fractured-Realms-debug-APK** plus evidence. Its debug keystore is cached for update signing.
+[Android CI](.github/workflows/android.yml) runs on main pushes, pull requests and manual dispatch. It checks unit tests, all four Soulforge tiers and Forge runs in the other worlds, builds offline assets, assembles/lints and uploads **ASH-SIGNAL-Fractured-Realms-debug-APK** plus evidence. It restores its test signing key from the repository secret. Fork pull requests do not receive that secret and cannot produce a signed APK.
 
 ```sh
 gh workflow run android.yml --ref main

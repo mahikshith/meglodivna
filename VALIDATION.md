@@ -45,7 +45,7 @@ Vite 6.4.4 production build passes; npm audit reports zero vulnerabilities. Andr
 
 CI runs 100 tests, all eight legal routes, production build, Android assemble/lint, then uploads `ASH-SIGNAL-Fractured-Realms-debug-APK` and evidence. Exact distribution signature/hash/asset inspection is recorded in `artifacts/android-report.json` and appended below after delivery.
 
-No Android device/emulator was available. On-device boot, two-thumb comfort, sustained frame rate/thermal behavior, speaker mix, hardware gamepad calibration and human balance remain unchecked. This is a debug test build. Local/CI certificates can differ; successive CI APKs should update the prior CI APK. v0.2 discoveries/equipment survive migration; old Soulforge encounter/checkpoint coordinates reset for its expanded route.
+No Android device/emulator was available. On-device boot, two-thumb comfort, sustained frame rate/thermal behavior, speaker mix, hardware gamepad calibration and human balance remain unchecked. This is a debug test build. The certificate changes from the earlier Soulforge APK; installing this build requires uninstalling that older app and removes its save. Subsequent CI builds restore the same persistent signing key from an encrypted repository secret. Local builds use that key only when ASH_SIGNAL_DEBUG_KEYSTORE points to it. v0.2 discoveries/equipment survive migration; old Soulforge encounter/checkpoint coordinates reset for its expanded route.
 
 ## Reproduce
 
