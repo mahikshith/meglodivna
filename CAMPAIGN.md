@@ -47,7 +47,7 @@ All requested categories are included. Final documentation will distinguish impl
 
 ## Delivery state — 12 October 2026
 
-C01–C21 and C24 are integrated in the playable campaign. C22 has an actual signed debug APK: the offline Android build and lint pass, its signature verifies, and its packaged production assets match the web build. C23 has preserved baseline and Android-shell commits, with the campaign milestone and automated APK workflow following integration. Final CI results are recorded in `VALIDATION.md`.
+C01–C21 and C24 are integrated in the playable campaign. C22 has an actual signed debug APK: the offline Android build and lint pass, its signature verifies, and its packaged production assets match the web build. C23 has pushed baseline, Android-shell and integrated-campaign commits; GitHub's automated APK build passed and produced the delivered package. Final CI results and its checksum are recorded in `VALIDATION.md`.
 
 There are 121 original textures; three swords, four guns, three armors, six spells and six relics; six enemy archetypes; three bosses; three friendly conversations with reward choices; five gates; and fifteen safe relay positions. The cannon pierces enemies, projectiles and destructible cover for 1,800 pixels. Bosses resist its damage and structural floors remain intact so the route remains playable. Cinder burns ordinary foes globally and active bosses for five seconds; dormant bosses remain encounter-gated.
 

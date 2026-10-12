@@ -1,0 +1,24 @@
+{
+  "minSdk": 24,
+  "lintErrors": 0,
+  "package": "com.meglodivna.ashsignal",
+  "signature": "apksigner verify: v2 signature valid, one signer",
+  "targetSdk": 36,
+  "deviceRuntime": "Not checked: no connected device or installed emulator",
+  "staleWebAssets": 0,
+  "sourceCommit": "15e0b4fa38f3f0637768fc318f5feb90d96a7104",
+  "sha256": "F5289A892CF893E01EF411E4ED505EA2CAE5590E14CA66300CB4AB7959FAC84E",
+  "artifact": "ASH-SIGNAL-Soulforge-debug.apk",
+  "bytes": 2732767,
+  "version": "0.2.0-soulforge",
+  "verifiedEmbeddedFiles": [
+    "index.html",
+    "assets/index-BeEe6lJb.css",
+    "assets/index-BSsItubs.js",
+    "licenses/Apache-2.0.txt",
+    "licenses/NOTICES.txt",
+    "licenses/Phaser-MIT.txt"
+  ],
+  "distribution": "GitHub Actions debug build",
+  "workflow": "https://github.com/mahikshith/meglodivna/actions/runs/38288675281"
+}
