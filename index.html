@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a1016" />
+  <title>ASH//SIGNAL — The Frozen Foundry</title>
+</head>
+<body>
+  <main id="app">
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="Ash Signal home">ASH<span>//</span>SIGNAL</a>
+      <span class="build-label">THE FROZEN FOUNDRY <i></i> VERTICAL SLICE 01</span>
+      <nav aria-label="Game settings">
+        <button id="sound" aria-pressed="false">SOUND ON</button>
+        <button id="motion" aria-pressed="false">FX FULL</button>
+        <button id="fullscreen">FULLSCREEN</button>
+        <button id="pause" disabled>PAUSE <kbd>ESC</kbd></button>
+      </nav>
+    </header>
+    <section id="stage" class="stage" aria-label="Ash Signal action platformer">
+      <div id="game" role="img" aria-label="Pixel art game world"></div>
+      <div id="hud" class="hud" hidden>
+        <div class="vitals">
+          <div class="callsign">K-17 <span>COURIER</span></div>
+          <div class="meter-row"><span>VITALS</span><div class="meter hp"><i id="health-bar"></i></div><b id="health-value">100</b></div>
+          <div class="meter-row"><span>THRUST</span><div class="meter fuel"><i id="fuel-bar"></i></div><b id="fuel-value">100</b></div>
+          <div id="buff" class="buff"></div>
+        </div>
+        <div class="mission"><span id="zone-label">ICEBREAK OUTSKIRTS</span><p id="objective">BREACH THE FOUNDRY</p><small id="timer">00:00</small></div>
+      </div>
+      <div id="boss-hud" class="boss-hud" hidden><div>THE WARDEN <span>DEFENSE CORE / MK. IV</span></div><div class="meter"><i id="boss-bar"></i></div></div>
+      <div id="dialogue" class="dialogue" role="status" hidden></div>
+      <div id="menu" class="menu">
+        <div class="menu-content">
+          <div class="eyebrow" id="menu-eyebrow">A SIGNAL IN THE ASHES</div>
+          <h1 id="menu-title">ASH<span>//</span><br>SIGNAL</h1>
+          <div class="title-rule"></div>
+          <p id="menu-copy">The war is over. The machines never got the message.<br>Cross the frozen foundry. Cut out its beating heart.</p>
+          <button id="start" class="primary">ENTER THE FOUNDRY <span>↗</span></button>
+          <div class="menu-detail" id="menu-detail">ONE LEVEL <i>/</i> FIVE SECTORS <i>/</i> NO EASY WAY OUT</div>
+          <details id="controls"><summary>FIELD MANUAL <span>+</span></summary>
+            <div class="manual">
+              <p><kbd>A D</kbd> or <kbd>← →</kbd> move · <kbd>Space</kbd> jump / double jump</p>
+              <p><kbd>J</kbd> slash / deflect · <kbd>K</kbd> fire · <kbd>W ↑</kbd> aim up</p>
+              <p><kbd>Shift</kbd> dash · hold <kbd>L</kbd> or <kbd>E</kbd> jetpack</p>
+              <p>Jump against a wall to climb. Hold jump for height. Fuel recharges on solid ground. <kbd>S + Space</kbd> drops through catwalks.</p>
+              <p>Gamepad: left stick move · A jump · X slash · RT fire · B dash · RB thrust · Start pause.</p>
+              <p>Amber = upgrade. Cyan = safe relay. Red = incoming fire. A flashing laser is about to activate.</p>
+            </div>
+          </details>
+        </div>
+        <div id="menu-stamp" class="menu-stamp"><span>RESTRICTED ZONE</span><b>SECTOR<br>07</b><small>61° N / 18° E<br>−24°C · NO SIGNAL</small></div>
+      </div>
+      <div id="progress" class="progress" hidden><i></i></div>
+      <div id="touch" class="touch" hidden aria-label="Touch controls">
+        <button data-action="left" aria-label="Move left">◀</button><button data-action="right" aria-label="Move right">▶</button>
+        <button data-action="jump" aria-label="Jump">JUMP</button><button data-action="slash" aria-label="Slash">CUT</button>
+        <button data-action="shoot" aria-label="Shoot">FIRE</button><button data-action="dash" aria-label="Dash">DASH</button><button data-action="jet" aria-label="Jetpack">JET</button>
+      </div>
+    </section>
+    <footer class="footer"><span><kbd>A D</kbd> MOVE <kbd>SPACE</kbd> JUMP <kbd>J</kbd> CUT <kbd>K</kbd> FIRE <kbd>SHIFT</kbd> DASH <kbd>L</kbd> THRUST</span><span id="footer-status">ORIGINAL 2D PIXEL ART · KEYBOARD / GAMEPAD</span></footer>
+    <p class="small-screen-note">Best played with a keyboard or gamepad. Touch controls appear during play.</p>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

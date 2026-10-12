@@ -1,0 +1,112 @@
+const { chromium } = require('playwright');
+const fs = require('node:fs');
+const path = require('node:path');
+const assert = require('node:assert/strict');
+
+async function main() {
+  fs.mkdirSync('artifacts/assets', { recursive: true });
+  const browser = await chromium.launch({ headless: true, executablePath: process.env.CHROMIUM_EXECUTABLE || undefined });
+  const page = await browser.newPage({ viewport: { width: 1440, height: 960 }, deviceScaleFactor: 1 });
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto('http://127.0.0.1:5173/');
+  await page.waitForFunction(() => window.__ASH?.scene?.manifest);
+  await page.screenshot({ path: 'artifacts/title-screen.png' });
+  const assets = await page.evaluate(() => window.__ASH.scene.manifest.map(item => {
+    const image = window.__ASH.scene.textures.get(item.key).getSourceImage();
+    return { ...item, data: image.toDataURL('image/png') };
+  }));
+  assert.equal(assets.length, 40);
+  for (const asset of assets) {
+    fs.writeFileSync(path.join('artifacts/assets', `${asset.key}.png`), Buffer.from(asset.data.split(',')[1], 'base64'));
+  }
+  fs.writeFileSync('artifacts/assets/manifest.json', JSON.stringify(assets.map(({data,...item}) => item),null,2));
+  const gallery = await page.evaluate(() => {
+    const scene=window.__ASH.scene,canvas=document.createElement('canvas');canvas.width=1440;canvas.height=1010;
+    const c=canvas.getContext('2d');c.imageSmoothingEnabled=false;c.fillStyle='#0b141e';c.fillRect(0,0,1440,1010);
+    c.font='bold 34px Bahnschrift,Arial';c.fillStyle='#e6edea';c.fillText('ASH//SIGNAL',38,55);
+    c.font='12px Bahnschrift,Arial';c.fillStyle='#8ba0ab';c.fillText('ORIGINAL PIXEL ASSETS  /  ARMOR, SNOW, STEEL & SIGNAL  /  40 TEXTURES',38,80);
+    const row=(label,keys,y,scale,slot)=>{
+      c.fillStyle='#dda858';c.font='12px Bahnschrift,Arial';c.fillText(label,38,y);
+      keys.forEach((key,i)=>{const img=scene.textures.get(key).getSourceImage(),x=38+i*slot;
+        c.fillStyle='#132331';c.fillRect(x,y+14,slot-12,146);
+        c.drawImage(img,x+(slot-12-img.width*scale)/2,y+26+(126-img.height*scale),img.width*scale,img.height*scale);
+        c.fillStyle='#8fa5b0';c.font='10px Bahnschrift,Arial';c.fillText(key,x+8,y+177);
+      });
+    };
+    row('01 / THE COURIER — IDLE, RUN, AIR & PLASMA BLADE',['player-idle-0','player-run-0','player-run-2','player-run-4','player-run-6','player-jump-0','player-fall-0','player-slash-1','player-slash-3'],115,1.65,151);
+    row('02 / HOSTILE SYSTEMS — GUARD, DRONE, MISSILE TURRET & WARDEN',['guard-0','guard-2','drone-0','drone-2','turret-0','boss-0','boss-2'],325,1.05,194);
+    row('03 / ENVIRONMENT — SNOW, PLATE STEEL, INFRASTRUCTURE',['tile-steel','tile-wall','tile-snow','crate','pipe','lamp','antenna'],535,.86,194);
+    c.fillStyle='#dda858';c.font='12px Bahnschrift,Arial';c.fillText('04 / FROZEN FOUNDRY — TWO PARALLAX LAYERS',38,758);
+    const bg=scene.textures.get('background-far').getSourceImage(),mid=scene.textures.get('background-mid').getSourceImage();
+    c.drawImage(bg,0,80,960,570,38,780,650,210);c.drawImage(mid,0,80,960,570,38,780,650,210);
+    c.drawImage(bg,0,80,960,570,718,780,650,210);c.drawImage(mid,300,80,660,570,718,780,650,210);
+    return canvas.toDataURL('image/png');
+  });
+  fs.writeFileSync('artifacts/asset-sheet.png',Buffer.from(gallery.split(',')[1],'base64'));
+  await page.getByRole('button',{name:'ENTER THE FOUNDRY'}).click();
+  await page.waitForTimeout(400);
+  assert.equal(await page.evaluate(()=>window.__ASH.mode),'playing');
+  await page.keyboard.down('KeyD');await page.waitForTimeout(550);await page.keyboard.up('KeyD');
+  assert.ok(await page.evaluate(()=>window.__ASH.world.player.x)>200,'keyboard movement advances player');
+  await page.keyboard.down('Space');await page.waitForTimeout(220);await page.keyboard.up('Space');
+  assert.ok(await page.evaluate(()=>window.__ASH.world.player.y)<520,'jump visibly lifts player');
+  await page.keyboard.press('KeyJ');await page.keyboard.down('KeyK');await page.waitForTimeout(250);await page.keyboard.up('KeyK');
+  await page.screenshot({ path: 'artifacts/gameplay.png' });
+  await page.keyboard.press('Escape');assert.equal(await page.evaluate(()=>window.__ASH.mode),'paused');
+  const pausedTime=await page.evaluate(()=>window.__ASH.world.time);await page.waitForTimeout(100);
+  assert.equal(await page.evaluate(()=>window.__ASH.world.time),pausedTime);
+  await page.keyboard.press('Escape');assert.equal(await page.evaluate(()=>window.__ASH.mode),'playing');
+  await page.keyboard.press('ShiftLeft');assert.ok(await page.evaluate(()=>window.__ASH.world.player.dashCooldown)>0);
+  // Isolated browser arena setup exercises rendering; full traversal is asserted separately with normal physics inputs.
+  await page.evaluate(()=>{const g=window.__ASH,w=g.createWorld(4);w.player.x=8230;w.player.y=564;g.setWorld(w);g.scene.cameraX=7950;g.scene.cameraY=180;});
+  await page.waitForTimeout(300);await page.screenshot({path:'artifacts/boss-arena.png'});
+  await page.evaluate(()=>{window.__ASH.world.player.hp=0;window.__ASH.world.status='dead';});
+  await page.waitForTimeout(100);assert.equal(await page.evaluate(()=>window.__ASH.mode),'dead');
+  await page.getByRole('button',{name:'RECONNECT AT RELAY'}).click();
+  assert.equal(await page.evaluate(()=>window.__ASH.world.player.hp),100);
+  assert.equal(await page.evaluate(()=>window.__ASH.mode),'playing');
+  assert.ok(await page.evaluate(()=>window.__ASH.world.player.x)>7800);
+  await page.evaluate(()=>{const g=window.__ASH;g.setWorld(g.createWorld());g.scene.cameraX=0;g.scene.cameraY=180;});
+  await page.keyboard.down('Space');await page.waitForTimeout(100);await page.keyboard.down('KeyL');await page.waitForTimeout(350);
+  assert.ok(await page.evaluate(()=>window.__ASH.world.player.fuel)<95,'keyboard jetpack burns fuel');
+  await page.screenshot({path:'artifacts/jetpack.png'});
+  await page.keyboard.up('KeyL');await page.keyboard.up('Space');
+  await page.evaluate(()=>{
+    window.__testPad={connected:true,axes:[0,0],buttons:Array.from({length:16},()=>({pressed:false,value:0}))};
+    Object.defineProperty(navigator,'getGamepads',{configurable:true,value:()=>[window.__testPad]});
+    const g=window.__ASH;g.setWorld(g.createWorld());
+  });
+  const gamepadX=await page.evaluate(()=>window.__ASH.world.player.x);
+  await page.evaluate(()=>window.__testPad.axes[0]=1);await page.waitForTimeout(350);
+  assert.ok(await page.evaluate(()=>window.__ASH.world.player.x)>gamepadX+40,'gamepad stick moves player');
+  await page.evaluate(()=>{window.__testPad.axes[0]=0;window.__testPad.buttons[9].pressed=true;});await page.waitForTimeout(60);
+  assert.equal(await page.evaluate(()=>window.__ASH.mode),'paused');
+  await page.evaluate(()=>window.__testPad.buttons[9].pressed=false);await page.waitForTimeout(50);
+  await page.evaluate(()=>window.__testPad.buttons[0].pressed=true);await page.waitForTimeout(70);
+  assert.equal(await page.evaluate(()=>window.__ASH.mode),'playing','gamepad confirm resumes menu');
+  await page.evaluate(()=>{window.__testPad.buttons[0].pressed=false;window.__testPad=null;});
+  await page.getByRole('button',{name:'FX FULL',exact:true}).click();
+  await page.getByRole('button',{name:'SOUND ON',exact:true}).click();
+  await page.setViewportSize({width:800,height:600});await page.waitForTimeout(250);
+  await page.screenshot({path:'artifacts/compact-view.png'});
+  const bounds=await page.locator('canvas').boundingBox();assert.ok(bounds.width<=800 && bounds.height<=600);
+  const frames=await page.evaluate(()=>new Promise(resolve=>{const durations=[],start=performance.now();let last=start;function sample(now){durations.push(now-last);last=now;if(now-start<1500)requestAnimationFrame(sample);else resolve(durations);}requestAnimationFrame(sample);}));
+  assert.deepEqual(errors,[],'no browser runtime errors');
+  const touchPage=await browser.newPage({viewport:{width:844,height:480},hasTouch:true,isMobile:true});
+  touchPage.on('pageerror',error=>errors.push(error.message));
+  await touchPage.goto('http://127.0.0.1:5173/');await touchPage.waitForFunction(()=>window.__ASH?.scene?.manifest);
+  await touchPage.getByRole('button',{name:'ENTER THE FOUNDRY'}).click();
+  await touchPage.waitForTimeout(100);assert.ok(await touchPage.locator('#touch').isVisible());
+  const touchX=await touchPage.evaluate(()=>window.__ASH.world.player.x);
+  const right=await touchPage.getByRole('button',{name:'Move right',exact:true}).boundingBox();
+  await touchPage.mouse.move(right.x+right.width/2,right.y+right.height/2);await touchPage.mouse.down();await touchPage.waitForTimeout(300);await touchPage.mouse.up();
+  assert.ok(await touchPage.evaluate(()=>window.__ASH.world.player.x)>touchX+30,'touch surface movement button works');
+  await touchPage.screenshot({path:'artifacts/touch-view.png'});
+  assert.deepEqual(errors,[],'no runtime errors after touch controls');
+  const sorted=frames.filter(t=>t>0).sort((a,b)=>a-b);
+  const report={browser:'Chromium headless',viewport:'1440×960, 800×600, and 844×480 touch',runtimeErrors:errors,assetCount:assets.length,checks:['boot','all asset exports','keyboard run/jump/slash/fire/dash/jetpack','pause freezes simulation','checkpoint retry','arena render','synthetic gamepad movement/pause/menu confirm','touch controls','settings','resize'],renderFrameMedianMs:sorted[Math.floor(sorted.length*.5)],renderFrameP95Ms:sorted[Math.floor(sorted.length*.95)],note:'Headless browser timing is diagnostic, not a hardware FPS guarantee. Synthetic gamepad checks do not validate physical controller calibration. Arena setup does not prove full combat-route completion.'};
+  fs.writeFileSync('artifacts/browser-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+  await browser.close();
+}
+main().catch(error=>{console.error(error);process.exit(1);});

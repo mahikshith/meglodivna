@@ -1,0 +1,402 @@
+[
+  {
+    "key": "player-idle-0",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-idle-1",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-idle-2",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-idle-3",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-run-0",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-run-1",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-run-2",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-run-3",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-run-4",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-run-5",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-run-6",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-run-7",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-jump-0",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-fall-0",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-slash-0",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-slash-1",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-slash-2",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "player-slash-3",
+    "width": 64,
+    "height": 72,
+    "anchor": {
+      "x": 32,
+      "y": 68
+    },
+    "notes": "Courier faces right. Feet anchor; flipX to face left. Visible blade is separate from the hurt collider."
+  },
+  {
+    "key": "guard-0",
+    "width": 48,
+    "height": 56,
+    "anchor": {
+      "x": 24,
+      "y": 54
+    },
+    "notes": "Right-facing rifle guard; walking cycle, plated human-scale silhouette."
+  },
+  {
+    "key": "guard-1",
+    "width": 48,
+    "height": 56,
+    "anchor": {
+      "x": 24,
+      "y": 54
+    },
+    "notes": "Right-facing rifle guard; walking cycle, plated human-scale silhouette."
+  },
+  {
+    "key": "guard-2",
+    "width": 48,
+    "height": 56,
+    "anchor": {
+      "x": 24,
+      "y": 54
+    },
+    "notes": "Right-facing rifle guard; walking cycle, plated human-scale silhouette."
+  },
+  {
+    "key": "guard-3",
+    "width": 48,
+    "height": 56,
+    "anchor": {
+      "x": 24,
+      "y": 54
+    },
+    "notes": "Right-facing rifle guard; walking cycle, plated human-scale silhouette."
+  },
+  {
+    "key": "drone-0",
+    "width": 56,
+    "height": 40,
+    "anchor": {
+      "x": 28,
+      "y": 20
+    },
+    "notes": "Centered hovering drone; rotor/exhaust cycle, red targeting lens."
+  },
+  {
+    "key": "drone-1",
+    "width": 56,
+    "height": 40,
+    "anchor": {
+      "x": 28,
+      "y": 20
+    },
+    "notes": "Centered hovering drone; rotor/exhaust cycle, red targeting lens."
+  },
+  {
+    "key": "drone-2",
+    "width": 56,
+    "height": 40,
+    "anchor": {
+      "x": 28,
+      "y": 20
+    },
+    "notes": "Centered hovering drone; rotor/exhaust cycle, red targeting lens."
+  },
+  {
+    "key": "drone-3",
+    "width": 56,
+    "height": 40,
+    "anchor": {
+      "x": 28,
+      "y": 20
+    },
+    "notes": "Centered hovering drone; rotor/exhaust cycle, red targeting lens."
+  },
+  {
+    "key": "turret-0",
+    "width": 56,
+    "height": 56,
+    "anchor": {
+      "x": 28,
+      "y": 54
+    },
+    "notes": "Right-facing stationary missile turret; feet anchor."
+  },
+  {
+    "key": "boss-0",
+    "width": 128,
+    "height": 144,
+    "anchor": {
+      "x": 64,
+      "y": 138
+    },
+    "notes": "Warden faces right; industrial armor, core pulse and piston breathing cycle."
+  },
+  {
+    "key": "boss-1",
+    "width": 128,
+    "height": 144,
+    "anchor": {
+      "x": 64,
+      "y": 138
+    },
+    "notes": "Warden faces right; industrial armor, core pulse and piston breathing cycle."
+  },
+  {
+    "key": "boss-2",
+    "width": 128,
+    "height": 144,
+    "anchor": {
+      "x": 64,
+      "y": 138
+    },
+    "notes": "Warden faces right; industrial armor, core pulse and piston breathing cycle."
+  },
+  {
+    "key": "boss-3",
+    "width": 128,
+    "height": 144,
+    "anchor": {
+      "x": 64,
+      "y": 138
+    },
+    "notes": "Warden faces right; industrial armor, core pulse and piston breathing cycle."
+  },
+  {
+    "key": "tile-steel",
+    "width": 64,
+    "height": 64,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Solid riveted steel surface. Collider must come from LEVEL."
+  },
+  {
+    "key": "tile-wall",
+    "width": 64,
+    "height": 64,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Dark vent wall; background or solid geometry decided by LEVEL."
+  },
+  {
+    "key": "tile-snow",
+    "width": 64,
+    "height": 32,
+    "anchor": {
+      "x": 0,
+      "y": 16
+    },
+    "notes": "Transparent snowy ledge trim, decorative icicles; never adds collision."
+  },
+  {
+    "key": "background-far",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Opaque cold sky, snow mountain ridges and remote city. Horizontal edge colors match."
+  },
+  {
+    "key": "background-mid",
+    "width": 960,
+    "height": 720,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Transparent refinery, pipes and gantries. Place behind terrain with parallax."
+  },
+  {
+    "key": "antenna",
+    "width": 80,
+    "height": 144,
+    "anchor": {
+      "x": 40,
+      "y": 144
+    },
+    "notes": "Decoration only; do not add unintended player collision."
+  },
+  {
+    "key": "pipe",
+    "width": 80,
+    "height": 96,
+    "anchor": {
+      "x": 40,
+      "y": 96
+    },
+    "notes": "Decoration only; do not add unintended player collision."
+  },
+  {
+    "key": "lamp",
+    "width": 32,
+    "height": 64,
+    "anchor": {
+      "x": 16,
+      "y": 64
+    },
+    "notes": "Decoration only; do not add unintended player collision."
+  },
+  {
+    "key": "crate",
+    "width": 64,
+    "height": 64,
+    "anchor": {
+      "x": 32,
+      "y": 64
+    },
+    "notes": "Decoration only; do not add unintended player collision."
+  }
+]
