@@ -52,7 +52,7 @@ All actions have accessible labels. Gear, summons and other powers are selected 
 | P27 | Research verified references and propose distinctive physical decisions. | Research | Complete | `research/PHASE3-RESEARCH.md`: primary sources, eight coherent ideas and truthful implemented/future status. |
 | P28 | Catalogue actual traits and preserve independent world encounters. | Systems + controls | Implemented | Actual gear/summon costs; validated world snapshots/discoveries/spent charges/claims. Switch/restart/migration tests. |
 | P29 | Run timed fresh-process development checks and investigate failures. | Lead + QA | Completed with repaired failures | 1800.002 real seconds, 25 rounds, 17 transient failed rounds during development; rounds 24/25 passed. Not 30 clean post-freeze minutes. |
-| P30 | Build production/Android, lint and inspect the delivered APK. | Lead | Final packaging in progress | Source integrated; final source/APK rebuild and CI checks are being performed. Current outcome belongs in `VALIDATION.md`/`artifacts/android-report.json`; earlier Soulforge packaging is not evidence for this build. |
+| P30 | Build production/Android, lint and inspect the delivered APK. | Lead | Delivered debug APK | CI 38300900272 passed 100 tests/eight routes/build/lint; v2 signature and all six bundled files verified. Persistent CI signing key configured; older Soulforge certificate differs and requires uninstall. See `VALIDATION.md`/`artifacts/android-report.json`. |
 
 ## Legal live gameplay evidence
 

@@ -47,14 +47,16 @@ async function main(){
   const final=await page.evaluate(()=>({status:window.__ASH.world.status,time:window.__ASH.world.time,hp:window.__ASH.world.player.hp,bosses:window.__ASH.world.bosses.map(b=>({id:b.id,dead:b.dead}))}));
   assert.equal(final.status,'won');assert.ok(final.bosses.every(b=>b.dead));assert.equal(await page.evaluate(()=>window.__ASH.mode),'won');assert.deepEqual(errors,[]);
   const report={worldId,...final,retries,captures:[...captures],runtimeErrors:errors,method:'Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback.'};
-  fs.writeFileSync(`artifacts/replay-${worldId}-report.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
   const prod=await browser.newPage({viewport:{width:844,height:480},hasTouch:true,isMobile:true});prod.on('pageerror',e=>errors.push(e.message));
   await prod.goto('http://127.0.0.1:4173/');await prod.locator('canvas').waitFor();await prod.locator('#start').click();await prod.waitForTimeout(100);
   assert.equal(await prod.evaluate(()=>typeof window.__ASH),'undefined');assert.ok(await prod.locator('#touch').isVisible());
   const power=await prod.locator('[data-action="power"]').boundingBox();assert.ok(power);
   await prod.mouse.move(power.x+power.width/2,power.y+power.height/2);await prod.mouse.down();await prod.waitForTimeout(550);await prod.mouse.up();
   assert.ok(await prod.locator('#catalogue').isVisible());await prod.evaluate(()=>window.ashBack());assert.ok(!(await prod.locator('#catalogue').isVisible()));
-  await prod.evaluate(()=>window.ashBack());await prod.waitForTimeout(30);assert.ok(await prod.getByRole('button',{name:'RESUME CAMPAIGN'}).isVisible());assert.deepEqual(errors,[]);
+  await prod.waitForFunction(()=>document.querySelector('#stage').dataset.mode==='playing'&&!document.querySelector('#touch').hidden);
+  await prod.evaluate(()=>window.ashBack());await prod.getByRole('button',{name:'RESUME CAMPAIGN'}).waitFor({state:'visible'});assert.deepEqual(errors,[]);
+  report.productionChecks=['development API absent','Power hold palette','Back closes palette before pausing'];
+  fs.writeFileSync(`artifacts/replay-${worldId}-report.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
   await browser.close();
 }
 main().catch(error=>{console.error(error);process.exit(1);});
