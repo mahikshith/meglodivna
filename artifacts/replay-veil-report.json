@@ -1,8 +1,8 @@
 {
   "worldId": "veil",
   "status": "won",
-  "time": 336.5916666665249,
-  "hp": 119.03999999999942,
+  "time": 104.1583333333623,
+  "hp": 81.96000000000001,
   "bosses": [
     {
       "id": "veil-warden",
@@ -19,16 +19,29 @@
   ],
   "retries": 0,
   "captures": [
-    "story-veil-scout",
-    "run-eclipse",
+    "room-0-The-Unlit-Shrine",
+    "story-veil-mira",
+    "room-1-Mirror-Reliquary",
+    "room-2-Names-Beneath-Stone",
+    "room-3-The-Hollow-Paladin",
     "boss-veil-warden",
-    "story-veil-scholar",
+    "room-4-Moonshaft",
+    "room-5-The-Pale-Crossing",
+    "room-6-The-Mourning-Garden",
     "story-veil-ysra",
+    "room-7-The-Promise-Eater",
     "boss-veil-hex",
-    "story-veil-deserter",
+    "room-8-The-Last-Stair",
+    "room-9-Soul-Pipes",
+    "room-10-The-Counterfeit-Sun",
     "boss-veil-regent",
     "campaign-victory"
   ],
   "runtimeErrors": [],
-  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback."
+  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback.",
+  "productionChecks": [
+    "development API absent",
+    "Power hold palette",
+    "Back closes palette before pausing"
+  ]
 }

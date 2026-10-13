@@ -1,8 +1,8 @@
 {
   "worldId": "pyre",
   "status": "won",
-  "time": 336.7666666665247,
-  "hp": 135,
+  "time": 102.20833333336074,
+  "hp": 77.27999999999996,
   "bosses": [
     {
       "id": "pyre-warden",
@@ -19,12 +19,20 @@
   ],
   "retries": 0,
   "captures": [
-    "story-pyre-scout",
-    "run-furnace",
+    "room-0-The-Coal-Chapel",
+    "story-pyre-mira",
+    "room-1-Bone-Furnace",
+    "room-2-Steamworks",
+    "room-3-The-Brass-Executioner",
     "boss-pyre-warden",
-    "story-pyre-scholar",
+    "room-4-The-Broken-Flue",
+    "room-5-Charred-Garden",
+    "room-6-The-Witch-s-Hoard",
+    "room-7-The-Ember-Abbess",
     "boss-pyre-hex",
-    "story-pyre-deserter",
+    "room-8-Molten-Causeway",
+    "room-9-Ashfall",
+    "room-10-The-Devouring-Hearth",
     "boss-pyre-regent",
     "campaign-victory"
   ],

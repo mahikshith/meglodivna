@@ -1,56 +1,53 @@
-# Fractured Realms v0.3 — verification
+# Runeheart v0.5 validation
 
-Verified 13 October 2026. This replaces the v0.2 report. Automated evidence does not establish subjective fun, balance or physical touchscreen comfort.
+This document describes the new rebuild, not the older v0.3/v0.4 evidence. Source work is on `codex/runeheart-rebuild`, merged to `main` for Android delivery. APK publication details are recorded in `artifacts/android-report.json` after release verification.
 
-## Simulation and complete routes
+## Physics and legal campaigns
 
-**100 Node tests pass.** Coverage includes fixed 120 Hz swept movement, jump/coyote/buffer/wall/double jump, finite thrust, one-way drop, dash sword damage, alternating melee, bounded light parries/heavy attack resistance, diagonal muzzle/core beams, projectile pools, enemy pursuit, shields and real boss power modifiers, warned portals, clone/wolf/dragon attacks and expiry, currents/platform carry/crumble, hazards, conduit weakness, damage/death/retry, isolated world saves and v0.2 migration.
+**140 Node tests pass.** Coverage includes swept collision, frame-rate stability, buffered/variable/double/wall jumps, jet resources, dash collision, facing-locked sword combos, enemy support/patrol/chase/retreat/cover jumping, directional emission, ordinary/heavy attack distinctions, boss guard/recovery, rune-gate dependencies, rewards and save migration.
 
-Eight live runs finish using legal movement, combat, gear and story inputs. No position, health, invulnerability, damage or clock overrides. Every world's three bosses activate at their triggers, expose attacks 0/1/2 and die; linked gates and story rewards complete.
+The continuous harness ran **1801.588 actual seconds** from 2026-10-13T20:42:20.080Z to 2026-10-13T21:12:21.668Z: **245 rounds, 392 full legal campaigns, zero failures**, 5,040,480 caller steps and 98,000.00000000447 simulated stress seconds. Every round reran the regression suite and varied simulation inputs; every fifth round reran all eight campaign/difficulty combinations. Eight simulation/driver files were hash-locked for the entire run. Aggregate SHA-256: `2cb57ec19ffd16a00065659d21562ee7491247085d049eff9159463c8152c4b3`. Rendering and UI were polished separately while this simulation ran. This proves simulation stability over that run, not Android performance or thirty minutes of human play.
 
-| World | Tier | Simulated gameplay | Retries |
-| --- | --- | ---: | ---: |
-| Soulforge | Ember / Easy |326.29s |0 |
-| Soulforge | Forge / Medium |335.70s |0 |
-| Soulforge | Inferno / Hard |357.59s |0 |
-| Soulforge | Extinction / Ultra hard |382.49s |1 |
-| Tide | Forge / Medium |349.63s |0 |
-| Pyre | Forge / Medium |336.77s |0 |
-| Neon | Forge / Medium |336.08s |0 |
-| Veil | Forge / Medium |336.59s |0 |
+[Full harness report](artifacts/deep-harness-report.json). `npm run test:deep` requires 30–40 actual minutes. The final campaign driver uses normal movement, attacks, equipment, dialogue and retries; it does not inject position, health, boss damage or completion. Optimized clean routes measure about97–177 simulated seconds, so a guaranteed five-minute minimum is not claimed.
 
-Each efficient completion exceeds five simulated minutes; reading, exploration and hit-stop change elapsed human play. Movement-only proofs take 270.88–283.79s and omit combat. Moving-surface fixtures exercise carry/collision; full routes can use stable surfaces. Fifteen named encounters use three physical boss families and different world power modifiers, rather than fifteen animation families.
+All five Forge campaign traces were replayed through the actual browser simulation and reached victory with all three guardians defeated and zero runtime errors. Reports: `artifacts/replay-{world}-report.json`. Production checks verify the development API is absent, a Power hold opens the palette, and Android Back closes it before pausing. Replays are accelerated fixed-step playback, not wall-clock device play.
 
-Reports/traces: `artifacts/combat-route-{world}-{difficulty}-{report,inputs}.json`. Reproduce with `node scripts/combat-route.mjs forge tide` or another valid tier/world. Extinction's retry follows a real death and normal relay retry.
+## Controls and rendered actions
 
-## Thirty-minute development harness
+The control fixture measures 844×480, 740×360, 640×360 and390×844 layouts, action targets/gaps, canvas separation, pointer ownership, real eight-second joystick fade, hold gestures, opacity, cancellation, keyboard/gamepad and modal behavior. It is an isolated UI/input fixture.
 
-The requested harness ran **1800.002 actual seconds**, from 2026-10-12T18:44:35.538Z to 19:14:35.540Z, across 25 rounds. Fresh processes ran seeded checkpoint fixtures and Node regressions while implementation changed. It retained 17 transient failed rounds, including stale assertions and intermediate source failures; final rounds 24/25 passed. Full history: `artifacts/deep-harness-report.json`.
+The final **48-capture integrated playtest** sends real keyboard and Chromium touch input at844×480 and740×360. It covers jump/double jump, jet ascent, three sword forms, held fire, dash, Mira interaction and reward choice, legal spell equip/cast, simultaneous stick/actions, pause/retry, fall death/touch reconnect, preserved spell unlock and rotation restoration. No player/world position or resource injection is used. Source hashes stayed unchanged and browser errors were zero. This is not a complete human campaign or physical phone test. See [live report](artifacts/runeheart/live-play/report.json) and [control documentation](docs/RUNEHEART-CONTROLS.md).
 
-This was a development harness, not thirty clean minutes on the final build, a complete legal route or human playtesting. Frozen-source tests, legal routes and browser checks are separate evidence. `npm run test:deep` reproduces a 30-minute run; the script accepts 30–40 minutes.
+**54 isolated action fixtures** cover all five guns in both directions, nine spells, three live summons, damage, three armor death presentations, three sword poses, enemy windup/discharge and Regent transformation/rockets/beams. Twenty-one attachment/emission comparisons have maximum rounding error below0.49 world pixels. Twelve terminal presentation checks verify no live weapon/armor/effect overlays after death. These fixtures deliberately set valid equipment/resources and reposition authored actors; they are separate from legal campaign proof. [Action report](artifacts/runeheart/actions-report.json), [contact sheet](artifacts/runeheart/actions/contact-sheet.png).
 
-## Browser, touch and art
+**20 environment/action captures** inspect solid foundations, landing rims, crypt ceilings, aqueducts, high jet travel, summons and all five realms. Old room-title watermarks were removed. A modular castle source was recomposed before use, and skyline layers were aligned above the solid ground. [Visual report](artifacts/runeheart/gameplay/report.json). Root visually inspected sanctuary, crypt and city; asset review additionally inspected poses, backgrounds and contrast.
 
-Chromium QA passes with **zero runtime errors** and 347 original textures. It checks five-world/four-tier selection, keyboard movement/combat, alternating slashes, jet/magic, catalogue locks/costs, paused dialogue/saved choices, six Soulforge biomes/five realms, red missile warning/launch, pause and synthetic gamepad input.
+## Assets and budget
 
-Touch QA at 844×480 checks a 112 px circular analogue stick, four curved SVG action buttons of 48 px or larger, simultaneous movement/jump and independent release, Attack tap/hold fire, Jump hold thrust, and Power tap/hold palette without unwanted mana spending. All controls lie in the reserved 112 px gutter below the canvas. Gear browsing pauses play. Physical reach/comfort still needs a phone.
+The new selected graphics packet contains184 frame keys,166 unique rectangles and62 animation groups. Its twelve compiled files total465,343bytes. Canonical CC0 sources, author permissions, hashes and isolated regeneration are in[ASSETS.md](ASSETS.md) and `artifacts/runeheart/`.
 
-347 exported textures have dimensions/anchors and 51,931,904RGBA source bytes (49.53MiB), before renderer/GPU overhead. Character drawing uses a finer grid than scenery. Platforms have material/rim contrast; mechanical traps, shields, rockets, summoning circles, slash poses and core beams follow simulation state. Contact sheets, mobile layout and environment captures were inspected. UI position fixtures isolate rendering and do not replace legal campaign proofs.
+All loaded texture pixels together estimate **50.42MiB per uncompressed copy**:333 generated textures, two2048² atlases and eight background paintings. A CPU+GPU two-copy scenario is100.83MiB before screen buffers, browser, geometry and caches. This is an allocation estimate, not measured device RAM. Original boards, unused source packs, music and demos are excluded from the shipped bundle.
 
-`scripts/replay.cjs <world>` replays legal Forge traces in Chromium and checks production with development hooks absent, Power-hold palette and Android Back. Playback is accelerated fixed steps, not real time. Successful final reports are `artifacts/replay-{world}-report.json`.
+## Android and limitations
 
-## Build and distribution
+Local production build, offline asset sync, Android assemble and lint have passed. Version name0.5.0-runeheart, code5, application ID `com.meglodivna.ashsignal`, minAPI24, target36, persistent v0.3+ signing certificate. CI runs the regression suite, eight campaigns and native build/lint. Final signed APK hash, embedded file matches and CI URL belong in the delivery receipt.
 
-Vite 6.4.4 production build passes; npm audit reports zero vulnerabilities. Android uses JDK17/SDK36/Gradle8.13, appID `com.meglodivna.ashsignal`, code 3/name `0.3.0-fractured-realms`, minimum API 24 and landscape. Assets/licenses are bundled; no Internet permission.
+There is no connected Android device/emulator. Two-thumb comfort, touchscreen latency, sustained frame rate, thermal behavior, speaker mix and actual human balance remain unmeasured. At740×360, a cape edge can crop during extreme jet/threat framing while the physical body and head remain visible. The opening area becomes exposed to incoming fire after play progresses; dialogue and armory themselves pause simulation. The five realms share room archetypes. Commercial readiness and a five-minute minimum are not established.
 
-CI runs 100 tests, all eight legal routes, production build, Android assemble/lint, then uploads `ASH-SIGNAL-Fractured-Realms-debug-APK` and evidence. Exact distribution signature/hash/asset inspection is recorded in `artifacts/android-report.json`.
+## Reproduction
 
-[Run 38300900272 passed](https://github.com/mahikshith/meglodivna/actions/runs/38300900272) for source commit `1a9c52869f0216fbd6eb0bcf78d685ff78c23f6a`. The delivered CI APK is **2,762,535 bytes**. V2 signature verification passes with one signer; its certificate matches the persistent local/CI test key. All six embedded production/license files match `dist` byte-for-byte; no stale web files remain. Local `assembleDebug` and `lintDebug` also pass with zero lint errors. APK SHA256: `45C182025A54207FD29CFCEADCFC285D3D439FCB2F50BB18589551768A08DACB`.
+```sh
+npm test
+node scripts/combat-route.mjs forge soulforge
+node scripts/combat-route.mjs forge tide
+node scripts/combat-route.mjs forge pyre
+node scripts/combat-route.mjs forge neon
+node scripts/combat-route.mjs forge veil
+npm run test:deep
+npm run test:browser
+npm run test:art
+npm run test:visual
+node scripts/replay.cjs soulforge
+```
 
-The matching web archive is `ASH-SIGNAL-Fractured-Realms-web.zip`, SHA256 `175AE5FAA60A30BB8CF07A4AB15D34CA277D72B502AB1CFC155E12BB33BC4EC3`. The previous cache did not contain the generated debug key. The corrected workflow decodes a persistent encrypted repository secret and explicitly selects that key in Gradle. An initial workflow-context error was repaired before the passed distribution run; neither the earlier random-key artifact nor that failed run is the delivery.
-
-No Android device/emulator was available. On-device boot, two-thumb comfort, sustained frame rate/thermal behavior, speaker mix, hardware gamepad calibration and human balance remain unchecked. This is a debug test build. The certificate changes from the earlier Soulforge APK; installing this build requires uninstalling that older app and removes its save. Subsequent CI builds restore the same persistent signing key from an encrypted repository secret. Local builds use that key only when ASH_SIGNAL_DEBUG_KEYSTORE points to it. v0.2 discoveries/equipment survive migration; old Soulforge encounter/checkpoint coordinates reset for its expanded route.
-
-## Reproduce
-
-Run `npm test`, the eight `test:game` combinations in CI and `npm run build`. With dev at 5173 and preview at 4173, run `npm run test:browser` and `npm run test:replay -- veil` with Playwright/Chromium. Run `npm run android:sync`, then `android/gradlew assembleDebug lintDebug --no-daemon`. README covers SDK setup/installation.
+Browser commands require Playwright/Chromium and a dev server on5173. Replay production checks additionally require the latest built preview on4173. Failures while adapting old fixtures (old floor height, old frame names, array-versus-object attachment metadata and windup timing) were corrected in the harness; final reports describe current behavior rather than reusing old screenshots.

@@ -1,26 +1,40 @@
 {
   "browser": "Chromium headless",
-  "assets": 347,
+  "assets": 343,
+  "referenceAtlas": {
+    "frames": 174,
+    "animations": 49,
+    "dimensions": [
+      2048,
+      2048
+    ]
+  },
   "runtimeErrors": [],
   "touchTargets": 4,
+  "joystickFadeMilliseconds": 7960,
   "checks": [
+    "supplied-reference atlas dimensions/anchors/body/hand metadata and clear character corners",
+    "nearest-pixel canvas rendering",
     "five world selection/four difficulty selection",
     "keyboard run/jump/alternating slash/jetpack/magic",
     "catalogue lock/equip/pause/focus/actual costs",
     "story dialogue/choice/pause/persisted reward",
     "six biome renders",
+    "animated Veil travel portal",
+    "world boss attack-pose fallback",
     "red icon missile warning/spawn",
     "pause",
     "synthetic gamepad",
-    "round analogue joystick",
-    "four curved SVG touch macros",
-    "reserved control gutter does not overlap canvas",
+    "floating joystick from playfield and gutter",
+    "neutral/fixed floating origin",
+    "four curved72–84px SVG touch macros without overlap",
+    "action and pause gutter excludes canvas",
     "landscape simultaneous joystick movement/jump/independent release",
-    "attack tap slashes and hold fires",
+    "real8-second joystick fade and fresh origin",
+    "action touch excludes joystick",
+    "attack on press and held fire without release duplicate",
     "jump hold activates thrust",
-    "power tap casts and hold opens paused spell palette without spending",
-    "animated Veil travel portal",
-    "world boss attack-pose fallback"
+    "power tap casts and hold opens paused spell palette without spending"
   ],
-  "limitations": "Fixture positions isolate UI/render checks. Full campaign legal-input runs are recorded separately. PhysicalAndroid/gamepad feel remains unverified."
+  "limitations": "Fixture positions isolate UI/render checks. Simulation sleeps only during the browser joystick timer check. Full campaign legal-input runs are recorded separately. Extracted glow/hair preserve soft alpha; crisp display uses nearest-pixel rendering. Physical Android/gamepad comfort remains unverified."
 }

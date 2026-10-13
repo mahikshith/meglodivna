@@ -1,8 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { LEVEL } from '../src/level.js';
+import { LEVEL } from '../src/legacy-level.js';
 import { createPlayer, stepPlayer } from '../src/physics.js';
-import { createWorld, STEP, stepWorld, rewardPlayer, equipItem, castSpell, interact, advanceStory, retryWorld, spawnProjectile } from '../src/combat.js';
+import { createWorld as makeWorld, STEP, stepWorld, rewardPlayer, equipItem, castSpell, interact, advanceStory, retryWorld, spawnProjectile } from '../src/combat.js';
+const createWorld = () => makeWorld(0, { level: LEVEL });
 
 function world() {
   const result = createWorld();
@@ -114,11 +115,13 @@ test('shadow veil blocks fresh targeting but attacking breaks stealth', () => {
 test('stasis slows actual enemy and hostile projectile movement and then expires', () => {
   const state = world(); unlockSpell(state, 'stasis');
   const drone = enemy('slow-drone', 400, 350, 200, 'drone'); drone.patrolDirection = 1; state.enemies = [drone];
+  const normal = world(); normal.enemies = [{ ...drone }];
   const bullet = spawnProjectile(state, 450, 100, 100, 0, 'enemy');
   assert.equal(castSpell(state, 'stasis'), true);
   stepWorld(state, {}, STEP);
+  stepWorld(normal, {}, STEP);
   assert.ok(Math.abs(bullet.x - 450 - 100 * STEP * 0.3) < 0.001);
-  assert.ok(Math.abs(drone.x - 400 - 38 * STEP * 0.3) < 0.001);
+  assert.ok(Math.abs((drone.x - 400) / (normal.enemies[0].x - 400) - 0.3) < 0.001, 'Stasis reduces actual AI displacement to30%');
   tick(state, 610);
   assert.equal(state.stasis, 0);
   assert.equal(drone.slow, 0);
@@ -170,7 +173,7 @@ test('ordinary destructible crates award authored recovery contents exactly once
 });
 
 test('bypassing a gate cannot win before every campaign boss is defeated', () => {
-  const state = world(); Object.assign(state.player, { x: LEVEL.exit.x + 8, y: 564 });
+  const state = world(); Object.assign(state.player, { x: LEVEL.exit.x + 8, y: 610 - state.player.h });
   state.boss.dead = true; state.boss.hp = 0; state.bossDefeated = true;
   stepWorld(state, {}, STEP);
   assert.equal(state.status, 'playing');

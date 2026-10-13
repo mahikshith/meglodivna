@@ -1,0 +1,3548 @@
+{
+  "version": "0.4.0",
+  "method": "Dimension inventory: createArtTextures with referenceArt present plus five far/mid480x360 compositions declared by main.js. Existing-texture stub avoids re-rendering or mutating frozen runtime. Packet/source hashes verified; reproducibility recorded by isolated regeneration.",
+  "generated": {
+    "textureCount": 343,
+    "legacyTextureCount": 333,
+    "referenceCompositionCount": 10,
+    "legacyRGBABytes": 13224704,
+    "compositionRGBABytes": 6912000,
+    "rgbaBytes": 20136704,
+    "rgbaMiB": 19.203857421875,
+    "skippedLegacyFullscreenBackgrounds": 14,
+    "manifest": [
+      {
+        "key": "player-idle-0",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-idle-1",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-idle-2",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-idle-3",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-run-0",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-run-1",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-run-2",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-run-3",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-run-4",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-run-5",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-run-6",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-run-7",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-jump-0",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-fall-0",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-slash-0",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-slash-1",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-slash-2",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "player-slash-3",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Courier faces right. Feet anchor; body stays the same size. Overhead slash has a separate gameplay hitbox."
+      },
+      {
+        "key": "guard-0",
+        "width": 48,
+        "height": 56,
+        "anchor": {
+          "x": 24,
+          "y": 54
+        },
+        "notes": "Right-facing rifle guard; walking cycle, plated human-scale silhouette."
+      },
+      {
+        "key": "guard-1",
+        "width": 48,
+        "height": 56,
+        "anchor": {
+          "x": 24,
+          "y": 54
+        },
+        "notes": "Right-facing rifle guard; walking cycle, plated human-scale silhouette."
+      },
+      {
+        "key": "guard-2",
+        "width": 48,
+        "height": 56,
+        "anchor": {
+          "x": 24,
+          "y": 54
+        },
+        "notes": "Right-facing rifle guard; walking cycle, plated human-scale silhouette."
+      },
+      {
+        "key": "guard-3",
+        "width": 48,
+        "height": 56,
+        "anchor": {
+          "x": 24,
+          "y": 54
+        },
+        "notes": "Right-facing rifle guard; walking cycle, plated human-scale silhouette."
+      },
+      {
+        "key": "drone-0",
+        "width": 56,
+        "height": 40,
+        "anchor": {
+          "x": 28,
+          "y": 20
+        },
+        "notes": "Centered hovering drone; rotor/exhaust cycle, red targeting lens."
+      },
+      {
+        "key": "drone-1",
+        "width": 56,
+        "height": 40,
+        "anchor": {
+          "x": 28,
+          "y": 20
+        },
+        "notes": "Centered hovering drone; rotor/exhaust cycle, red targeting lens."
+      },
+      {
+        "key": "drone-2",
+        "width": 56,
+        "height": 40,
+        "anchor": {
+          "x": 28,
+          "y": 20
+        },
+        "notes": "Centered hovering drone; rotor/exhaust cycle, red targeting lens."
+      },
+      {
+        "key": "drone-3",
+        "width": 56,
+        "height": 40,
+        "anchor": {
+          "x": 28,
+          "y": 20
+        },
+        "notes": "Centered hovering drone; rotor/exhaust cycle, red targeting lens."
+      },
+      {
+        "key": "turret-0",
+        "width": 56,
+        "height": 56,
+        "anchor": {
+          "x": 28,
+          "y": 54
+        },
+        "notes": "Right-facing stationary missile turret; feet anchor."
+      },
+      {
+        "key": "boss-0",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Warden faces right; industrial armor, core pulse and piston breathing cycle."
+      },
+      {
+        "key": "boss-1",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Warden faces right; industrial armor, core pulse and piston breathing cycle."
+      },
+      {
+        "key": "boss-2",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Warden faces right; industrial armor, core pulse and piston breathing cycle."
+      },
+      {
+        "key": "boss-3",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Warden faces right; industrial armor, core pulse and piston breathing cycle."
+      },
+      {
+        "key": "tile-steel",
+        "width": 64,
+        "height": 64,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "Solid riveted steel surface. Collider must come from LEVEL."
+      },
+      {
+        "key": "tile-wall",
+        "width": 64,
+        "height": 64,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "Dark vent wall; background or solid geometry decided by LEVEL."
+      },
+      {
+        "key": "tile-snow",
+        "width": 64,
+        "height": 32,
+        "anchor": {
+          "x": 0,
+          "y": 16
+        },
+        "notes": "Transparent snowy ledge trim, decorative icicles; never adds collision."
+      },
+      {
+        "key": "antenna",
+        "width": 80,
+        "height": 144,
+        "anchor": {
+          "x": 40,
+          "y": 144
+        },
+        "notes": "Decoration only; do not add unintended player collision."
+      },
+      {
+        "key": "pipe",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 96
+        },
+        "notes": "Decoration only; do not add unintended player collision."
+      },
+      {
+        "key": "lamp",
+        "width": 32,
+        "height": 64,
+        "anchor": {
+          "x": 16,
+          "y": 64
+        },
+        "notes": "Decoration only; do not add unintended player collision."
+      },
+      {
+        "key": "crate",
+        "width": 64,
+        "height": 64,
+        "anchor": {
+          "x": 32,
+          "y": 64
+        },
+        "notes": "Decoration only; do not add unintended player collision."
+      },
+      {
+        "key": "mage-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+      },
+      {
+        "key": "mage-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+      },
+      {
+        "key": "mage-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+      },
+      {
+        "key": "mage-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+      },
+      {
+        "key": "shade-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+      },
+      {
+        "key": "shade-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+      },
+      {
+        "key": "shade-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+      },
+      {
+        "key": "shade-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+      },
+      {
+        "key": "sentinel-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+      },
+      {
+        "key": "sentinel-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+      },
+      {
+        "key": "sentinel-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+      },
+      {
+        "key": "sentinel-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Enemy faces right. Feet anchor; simulation owns attacks and hurt boxes."
+      },
+      {
+        "key": "boss-warden-0",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Warden military tyrant; original plated silhouette."
+      },
+      {
+        "key": "boss-warden-1",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Warden military tyrant; original plated silhouette."
+      },
+      {
+        "key": "boss-warden-2",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Warden military tyrant; original plated silhouette."
+      },
+      {
+        "key": "boss-warden-3",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Warden military tyrant; original plated silhouette."
+      },
+      {
+        "key": "boss-hex-0",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "hex sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+      },
+      {
+        "key": "boss-hex-1",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "hex sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+      },
+      {
+        "key": "boss-hex-2",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "hex sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+      },
+      {
+        "key": "boss-hex-3",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "hex sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+      },
+      {
+        "key": "boss-regent-0",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "regent sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+      },
+      {
+        "key": "boss-regent-1",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "regent sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+      },
+      {
+        "key": "boss-regent-2",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "regent sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+      },
+      {
+        "key": "boss-regent-3",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "regent sorcerous boss; tall full-size silhouette. Renderer keeps collider independent."
+      },
+      {
+        "key": "portrait-mira",
+        "width": 96,
+        "height": 96,
+        "anchor": {
+          "x": 48,
+          "y": 48
+        },
+        "notes": "Original survivor portrait; displayed in dialogue."
+      },
+      {
+        "key": "npc-mira",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Friendly survivor; no hostile or decorative collider."
+      },
+      {
+        "key": "portrait-orren",
+        "width": 96,
+        "height": 96,
+        "anchor": {
+          "x": 48,
+          "y": 48
+        },
+        "notes": "Original survivor portrait; displayed in dialogue."
+      },
+      {
+        "key": "npc-orren",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Friendly survivor; no hostile or decorative collider."
+      },
+      {
+        "key": "portrait-vesper",
+        "width": 96,
+        "height": 96,
+        "anchor": {
+          "x": 48,
+          "y": 48
+        },
+        "notes": "Original survivor portrait; displayed in dialogue."
+      },
+      {
+        "key": "npc-vesper",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Friendly survivor; no hostile or decorative collider."
+      },
+      {
+        "key": "portrait-ysra",
+        "width": 96,
+        "height": 96,
+        "anchor": {
+          "x": 48,
+          "y": 48
+        },
+        "notes": "Ysra, the counterfeit witch guide: pointed hat, violet eyes and long dark hair. Original96px dialogue portrait."
+      },
+      {
+        "key": "pickup-health",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "pickup-fuel",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "pickup-rapid",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "pickup-shield",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "pickup-boost",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "pickup-mana",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "pickup-weapon",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "pickup-sword",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "pickup-armor",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "pickup-spell",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "pickup-treasure",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "pickup-cannon",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "pickup-nova",
+        "width": 40,
+        "height": 48,
+        "anchor": {
+          "x": 20,
+          "y": 24
+        },
+        "notes": "Illustrated collectible capsule; center anchor; pickup hit test stays in simulation."
+      },
+      {
+        "key": "icon-rustfang",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-katana",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-saber",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-carbine",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-scatter",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-rail",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-cannon",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-rocket",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-courier",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-bulwark",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-wraith",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-cinder",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-siphon",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-thunder",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-veil",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-stasis",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-eclipse",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-clone",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-wolf",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-dragon",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-ember-heart",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-tide-glass",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-storm-seal",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-eclipse-fragment",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-regent-key",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "icon-soul-core",
+        "width": 48,
+        "height": 48,
+        "anchor": {
+          "x": 24,
+          "y": 24
+        },
+        "notes": "Named equipment or relic glyph for armory and pickups."
+      },
+      {
+        "key": "barrel",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 78
+        },
+        "notes": "Interactive campaign object; collider and destruction state come from world."
+      },
+      {
+        "key": "cache",
+        "width": 64,
+        "height": 64,
+        "anchor": {
+          "x": 32,
+          "y": 62
+        },
+        "notes": "Interactive campaign object; collider and destruction state come from world."
+      },
+      {
+        "key": "lever",
+        "width": 48,
+        "height": 64,
+        "anchor": {
+          "x": 24,
+          "y": 62
+        },
+        "notes": "Interactive campaign object; collider and destruction state come from world."
+      },
+      {
+        "key": "gate",
+        "width": 96,
+        "height": 192,
+        "anchor": {
+          "x": 48,
+          "y": 190
+        },
+        "notes": "Interactive campaign object; collider and destruction state come from world."
+      },
+      {
+        "key": "player-slash-overhead-0",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Shared courier body; alternating overhead/lateral/finisher blade poses."
+      },
+      {
+        "key": "player-slash-overhead-1",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Shared courier body; alternating overhead/lateral/finisher blade poses."
+      },
+      {
+        "key": "player-slash-overhead-2",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Shared courier body; alternating overhead/lateral/finisher blade poses."
+      },
+      {
+        "key": "player-slash-overhead-3",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Shared courier body; alternating overhead/lateral/finisher blade poses."
+      },
+      {
+        "key": "player-slash-horizontal-0",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Shared courier body; alternating overhead/lateral/finisher blade poses."
+      },
+      {
+        "key": "player-slash-horizontal-1",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Shared courier body; alternating overhead/lateral/finisher blade poses."
+      },
+      {
+        "key": "player-slash-horizontal-2",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Shared courier body; alternating overhead/lateral/finisher blade poses."
+      },
+      {
+        "key": "player-slash-horizontal-3",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Shared courier body; alternating overhead/lateral/finisher blade poses."
+      },
+      {
+        "key": "player-slash-finisher-0",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Shared courier body; alternating overhead/lateral/finisher blade poses."
+      },
+      {
+        "key": "player-slash-finisher-1",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Shared courier body; alternating overhead/lateral/finisher blade poses."
+      },
+      {
+        "key": "player-slash-finisher-2",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Shared courier body; alternating overhead/lateral/finisher blade poses."
+      },
+      {
+        "key": "player-slash-finisher-3",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Shared courier body; alternating overhead/lateral/finisher blade poses."
+      },
+      {
+        "key": "player-lunge-0",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Forward dash thrust; identical physical body scale and feet anchor."
+      },
+      {
+        "key": "player-lunge-1",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Forward dash thrust; identical physical body scale and feet anchor."
+      },
+      {
+        "key": "player-lunge-2",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Forward dash thrust; identical physical body scale and feet anchor."
+      },
+      {
+        "key": "player-lunge-3",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 152
+        },
+        "notes": "Forward dash thrust; identical physical body scale and feet anchor."
+      },
+      {
+        "key": "player-shoot-0",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Gun-ready body. Hand local37,41 matches weaponOrigin hand at collider center+5,y+.42h; weapon rendered separately."
+      },
+      {
+        "key": "player-shoot-1",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Gun-ready body. Hand local37,41 matches weaponOrigin hand at collider center+5,y+.42h; weapon rendered separately."
+      },
+      {
+        "key": "player-shoot-2",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Gun-ready body. Hand local37,41 matches weaponOrigin hand at collider center+5,y+.42h; weapon rendered separately."
+      },
+      {
+        "key": "player-shoot-3",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Gun-ready body. Hand local37,41 matches weaponOrigin hand at collider center+5,y+.42h; weapon rendered separately."
+      },
+      {
+        "key": "player-hurt-0",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Brief armor impact pose; body and collider remain independent."
+      },
+      {
+        "key": "player-hurt-1",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Brief armor impact pose; body and collider remain independent."
+      },
+      {
+        "key": "boss-warden-run-0",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Boss run pose. Core local62,61 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-warden-run-1",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Boss run pose. Core local62,61 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-warden-run-2",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Boss run pose. Core local62,61 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-warden-run-3",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Boss run pose. Core local62,61 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-warden-attack-0",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Boss attack pose. Core local62,61 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-warden-attack-1",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Boss attack pose. Core local62,61 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-warden-attack-2",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Boss attack pose. Core local62,61 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-warden-attack-3",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Boss attack pose. Core local62,61 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-warden-hurt-0",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Boss hurt pose. Core local62,61 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-warden-hurt-1",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Boss hurt pose. Core local62,61 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-warden-hurt-2",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Boss hurt pose. Core local62,61 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-warden-hurt-3",
+        "width": 128,
+        "height": 144,
+        "anchor": {
+          "x": 64,
+          "y": 138
+        },
+        "notes": "Boss hurt pose. Core local62,61 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-hex-run-0",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss run pose. Core local80,106 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-hex-run-1",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss run pose. Core local80,106 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-hex-run-2",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss run pose. Core local80,106 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-hex-run-3",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss run pose. Core local80,106 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-hex-attack-0",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss attack pose. Core local80,106 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-hex-attack-1",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss attack pose. Core local80,106 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-hex-attack-2",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss attack pose. Core local80,106 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-hex-attack-3",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss attack pose. Core local80,106 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-hex-hurt-0",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss hurt pose. Core local80,106 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-hex-hurt-1",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss hurt pose. Core local80,106 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-hex-hurt-2",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss hurt pose. Core local80,106 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-hex-hurt-3",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss hurt pose. Core local80,106 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-regent-run-0",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss run pose. Core local80,98 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-regent-run-1",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss run pose. Core local80,98 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-regent-run-2",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss run pose. Core local80,98 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-regent-run-3",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss run pose. Core local80,98 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-regent-attack-0",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss attack pose. Core local80,98 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-regent-attack-1",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss attack pose. Core local80,98 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-regent-attack-2",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss attack pose. Core local80,98 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-regent-attack-3",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss attack pose. Core local80,98 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-regent-hurt-0",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss hurt pose. Core local80,98 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-regent-hurt-1",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss hurt pose. Core local80,98 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-regent-hurt-2",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss hurt pose. Core local80,98 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "boss-regent-hurt-3",
+        "width": 160,
+        "height": 192,
+        "anchor": {
+          "x": 80,
+          "y": 184
+        },
+        "notes": "Boss hurt pose. Core local80,98 aligns shared weaponOrigin core; aimed weapons render separately."
+      },
+      {
+        "key": "wizard-idle-0",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "wizard-idle-1",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "wizard-idle-2",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "wizard-idle-3",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "wizard-cast-0",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "wizard-cast-1",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "wizard-cast-2",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "wizard-cast-3",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "wizard-hurt-0",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "wizard-hurt-1",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "wizard-hurt-2",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "wizard-hurt-3",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "witch-idle-0",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "witch-idle-1",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "witch-idle-2",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "witch-idle-3",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "witch-cast-0",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "witch-cast-1",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "witch-cast-2",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "witch-cast-3",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "witch-hurt-0",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "witch-hurt-1",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "witch-hurt-2",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "witch-hurt-3",
+        "width": 80,
+        "height": 96,
+        "anchor": {
+          "x": 40,
+          "y": 92
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "mage-idle-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "mage-idle-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "mage-idle-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "mage-idle-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "mage-cast-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "mage-cast-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "mage-cast-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "mage-cast-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "mage-hurt-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "mage-hurt-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "mage-hurt-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "mage-hurt-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Adult spellcaster with readable face, book/staff and casting/hurt state."
+      },
+      {
+        "key": "npc-mira-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Human survivor idle cycle: unmasked scout, bearded wizard, scarred deserter."
+      },
+      {
+        "key": "npc-mira-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Human survivor idle cycle: unmasked scout, bearded wizard, scarred deserter."
+      },
+      {
+        "key": "npc-mira-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Human survivor idle cycle: unmasked scout, bearded wizard, scarred deserter."
+      },
+      {
+        "key": "npc-mira-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Human survivor idle cycle: unmasked scout, bearded wizard, scarred deserter."
+      },
+      {
+        "key": "npc-orren-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Human survivor idle cycle: unmasked scout, bearded wizard, scarred deserter."
+      },
+      {
+        "key": "npc-orren-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Human survivor idle cycle: unmasked scout, bearded wizard, scarred deserter."
+      },
+      {
+        "key": "npc-orren-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Human survivor idle cycle: unmasked scout, bearded wizard, scarred deserter."
+      },
+      {
+        "key": "npc-orren-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Human survivor idle cycle: unmasked scout, bearded wizard, scarred deserter."
+      },
+      {
+        "key": "npc-vesper-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Human survivor idle cycle: unmasked scout, bearded wizard, scarred deserter."
+      },
+      {
+        "key": "npc-vesper-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Human survivor idle cycle: unmasked scout, bearded wizard, scarred deserter."
+      },
+      {
+        "key": "npc-vesper-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Human survivor idle cycle: unmasked scout, bearded wizard, scarred deserter."
+      },
+      {
+        "key": "npc-vesper-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 76
+        },
+        "notes": "Human survivor idle cycle: unmasked scout, bearded wizard, scarred deserter."
+      },
+      {
+        "key": "projectile-bullet",
+        "width": 48,
+        "height": 24,
+        "anchor": {
+          "x": 24,
+          "y": 12
+        },
+        "notes": "Right-facing projectile; rotate to actual projectile angle. Tail, casing and nose differ by weapon."
+      },
+      {
+        "key": "projectile-carbine",
+        "width": 48,
+        "height": 24,
+        "anchor": {
+          "x": 24,
+          "y": 12
+        },
+        "notes": "Right-facing projectile; rotate to actual projectile angle. Tail, casing and nose differ by weapon."
+      },
+      {
+        "key": "projectile-scatter",
+        "width": 48,
+        "height": 24,
+        "anchor": {
+          "x": 24,
+          "y": 12
+        },
+        "notes": "Right-facing projectile; rotate to actual projectile angle. Tail, casing and nose differ by weapon."
+      },
+      {
+        "key": "projectile-rail",
+        "width": 48,
+        "height": 24,
+        "anchor": {
+          "x": 24,
+          "y": 12
+        },
+        "notes": "Right-facing projectile; rotate to actual projectile angle. Tail, casing and nose differ by weapon."
+      },
+      {
+        "key": "projectile-rocket",
+        "width": 48,
+        "height": 24,
+        "anchor": {
+          "x": 24,
+          "y": 12
+        },
+        "notes": "Right-facing projectile; rotate to actual projectile angle. Tail, casing and nose differ by weapon."
+      },
+      {
+        "key": "projectile-pressure",
+        "width": 48,
+        "height": 24,
+        "anchor": {
+          "x": 24,
+          "y": 12
+        },
+        "notes": "Right-facing projectile; rotate to actual projectile angle. Tail, casing and nose differ by weapon."
+      },
+      {
+        "key": "projectile-fire",
+        "width": 48,
+        "height": 24,
+        "anchor": {
+          "x": 24,
+          "y": 12
+        },
+        "notes": "Right-facing projectile; rotate to actual projectile angle. Tail, casing and nose differ by weapon."
+      },
+      {
+        "key": "projectile-hex",
+        "width": 48,
+        "height": 24,
+        "anchor": {
+          "x": 24,
+          "y": 12
+        },
+        "notes": "Right-facing projectile; rotate to actual projectile angle. Tail, casing and nose differ by weapon."
+      },
+      {
+        "key": "projectile-needle",
+        "width": 48,
+        "height": 24,
+        "anchor": {
+          "x": 24,
+          "y": 12
+        },
+        "notes": "Right-facing projectile; rotate to actual projectile angle. Tail, casing and nose differ by weapon."
+      },
+      {
+        "key": "projectile-arc",
+        "width": 48,
+        "height": 24,
+        "anchor": {
+          "x": 24,
+          "y": 12
+        },
+        "notes": "Right-facing projectile; rotate to actual projectile angle. Tail, casing and nose differ by weapon."
+      },
+      {
+        "key": "projectile-dragonfire",
+        "width": 48,
+        "height": 24,
+        "anchor": {
+          "x": 24,
+          "y": 12
+        },
+        "notes": "Right-facing projectile; rotate to actual projectile angle. Tail, casing and nose differ by weapon."
+      },
+      {
+        "key": "projectile-ally",
+        "width": 48,
+        "height": 24,
+        "anchor": {
+          "x": 24,
+          "y": 12
+        },
+        "notes": "Right-facing projectile; rotate to actual projectile angle. Tail, casing and nose differ by weapon."
+      },
+      {
+        "key": "weapon-carbine",
+        "width": 80,
+        "height": 40,
+        "anchor": {
+          "x": 16,
+          "y": 24
+        },
+        "notes": "Handle origin16,24; muzzle74,20. Render at .6scale using shared weaponOrigin hand and projectile aim angle."
+      },
+      {
+        "key": "weapon-scatter",
+        "width": 80,
+        "height": 40,
+        "anchor": {
+          "x": 16,
+          "y": 24
+        },
+        "notes": "Handle origin16,24; muzzle74,20. Render at .6scale using shared weaponOrigin hand and projectile aim angle."
+      },
+      {
+        "key": "weapon-rail",
+        "width": 80,
+        "height": 40,
+        "anchor": {
+          "x": 16,
+          "y": 24
+        },
+        "notes": "Handle origin16,24; muzzle74,20. Render at .6scale using shared weaponOrigin hand and projectile aim angle."
+      },
+      {
+        "key": "weapon-cannon",
+        "width": 80,
+        "height": 40,
+        "anchor": {
+          "x": 16,
+          "y": 24
+        },
+        "notes": "Handle origin16,24; muzzle74,20. Render at .6scale using shared weaponOrigin hand and projectile aim angle."
+      },
+      {
+        "key": "weapon-launcher",
+        "width": 80,
+        "height": 40,
+        "anchor": {
+          "x": 16,
+          "y": 24
+        },
+        "notes": "Handle origin16,24; muzzle74,20. Render at .6scale using shared weaponOrigin hand and projectile aim angle."
+      },
+      {
+        "key": "weapon-rocket",
+        "width": 80,
+        "height": 40,
+        "anchor": {
+          "x": 16,
+          "y": 24
+        },
+        "notes": "Handle origin16,24; muzzle74,20. Render at .6scale using shared weaponOrigin hand and projectile aim angle."
+      },
+      {
+        "key": "shield-0",
+        "width": 96,
+        "height": 112,
+        "anchor": {
+          "x": 48,
+          "y": 56
+        },
+        "notes": "Transparent ward activation/pulse, no opaque fill over player. Center on hurt-box center."
+      },
+      {
+        "key": "shield-1",
+        "width": 96,
+        "height": 112,
+        "anchor": {
+          "x": 48,
+          "y": 56
+        },
+        "notes": "Transparent ward activation/pulse, no opaque fill over player. Center on hurt-box center."
+      },
+      {
+        "key": "shield-2",
+        "width": 96,
+        "height": 112,
+        "anchor": {
+          "x": 48,
+          "y": 56
+        },
+        "notes": "Transparent ward activation/pulse, no opaque fill over player. Center on hurt-box center."
+      },
+      {
+        "key": "shield-3",
+        "width": 96,
+        "height": 112,
+        "anchor": {
+          "x": 48,
+          "y": 56
+        },
+        "notes": "Transparent ward activation/pulse, no opaque fill over player. Center on hurt-box center."
+      },
+      {
+        "key": "summon-circle-0",
+        "width": 128,
+        "height": 128,
+        "anchor": {
+          "x": 64,
+          "y": 64
+        },
+        "notes": "Compact animated summoning glyph; visual only, no extra fullscreen canvas."
+      },
+      {
+        "key": "summon-circle-1",
+        "width": 128,
+        "height": 128,
+        "anchor": {
+          "x": 64,
+          "y": 64
+        },
+        "notes": "Compact animated summoning glyph; visual only, no extra fullscreen canvas."
+      },
+      {
+        "key": "summon-circle-2",
+        "width": 128,
+        "height": 128,
+        "anchor": {
+          "x": 64,
+          "y": 64
+        },
+        "notes": "Compact animated summoning glyph; visual only, no extra fullscreen canvas."
+      },
+      {
+        "key": "summon-circle-3",
+        "width": 128,
+        "height": 128,
+        "anchor": {
+          "x": 64,
+          "y": 64
+        },
+        "notes": "Compact animated summoning glyph; visual only, no extra fullscreen canvas."
+      },
+      {
+        "key": "summon-portal-0",
+        "width": 128,
+        "height": 128,
+        "anchor": {
+          "x": 64,
+          "y": 64
+        },
+        "notes": "Compact animated summoning glyph; visual only, no extra fullscreen canvas."
+      },
+      {
+        "key": "summon-portal-1",
+        "width": 128,
+        "height": 128,
+        "anchor": {
+          "x": 64,
+          "y": 64
+        },
+        "notes": "Compact animated summoning glyph; visual only, no extra fullscreen canvas."
+      },
+      {
+        "key": "summon-portal-2",
+        "width": 128,
+        "height": 128,
+        "anchor": {
+          "x": 64,
+          "y": 64
+        },
+        "notes": "Compact animated summoning glyph; visual only, no extra fullscreen canvas."
+      },
+      {
+        "key": "summon-portal-3",
+        "width": 128,
+        "height": 128,
+        "anchor": {
+          "x": 64,
+          "y": 64
+        },
+        "notes": "Compact animated summoning glyph; visual only, no extra fullscreen canvas."
+      },
+      {
+        "key": "allied-clone-0",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier soul clone; renderer supplies translucent tint, movement and attacks."
+      },
+      {
+        "key": "wolf-0",
+        "width": 96,
+        "height": 64,
+        "anchor": {
+          "x": 48,
+          "y": 60
+        },
+        "notes": "Right-facing armored spirit wolf; feet anchor shared across quadruped stride."
+      },
+      {
+        "key": "dragon-0",
+        "width": 160,
+        "height": 112,
+        "anchor": {
+          "x": 80,
+          "y": 56
+        },
+        "notes": "Right-facing flying soul dragon; center anchor, articulated wing cycle and visible jaw."
+      },
+      {
+        "key": "spike-trap-0",
+        "width": 96,
+        "height": 64,
+        "anchor": {
+          "x": 48,
+          "y": 60
+        },
+        "notes": "Mechanical blunt-toothed pistons:0 retracted,1 warning rise,2 extended,3 retracting. Hazard state owns damage."
+      },
+      {
+        "key": "allied-clone-1",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier soul clone; renderer supplies translucent tint, movement and attacks."
+      },
+      {
+        "key": "wolf-1",
+        "width": 96,
+        "height": 64,
+        "anchor": {
+          "x": 48,
+          "y": 60
+        },
+        "notes": "Right-facing armored spirit wolf; feet anchor shared across quadruped stride."
+      },
+      {
+        "key": "dragon-1",
+        "width": 160,
+        "height": 112,
+        "anchor": {
+          "x": 80,
+          "y": 56
+        },
+        "notes": "Right-facing flying soul dragon; center anchor, articulated wing cycle and visible jaw."
+      },
+      {
+        "key": "spike-trap-1",
+        "width": 96,
+        "height": 64,
+        "anchor": {
+          "x": 48,
+          "y": 60
+        },
+        "notes": "Mechanical blunt-toothed pistons:0 retracted,1 warning rise,2 extended,3 retracting. Hazard state owns damage."
+      },
+      {
+        "key": "allied-clone-2",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier soul clone; renderer supplies translucent tint, movement and attacks."
+      },
+      {
+        "key": "wolf-2",
+        "width": 96,
+        "height": 64,
+        "anchor": {
+          "x": 48,
+          "y": 60
+        },
+        "notes": "Right-facing armored spirit wolf; feet anchor shared across quadruped stride."
+      },
+      {
+        "key": "dragon-2",
+        "width": 160,
+        "height": 112,
+        "anchor": {
+          "x": 80,
+          "y": 56
+        },
+        "notes": "Right-facing flying soul dragon; center anchor, articulated wing cycle and visible jaw."
+      },
+      {
+        "key": "spike-trap-2",
+        "width": 96,
+        "height": 64,
+        "anchor": {
+          "x": 48,
+          "y": 60
+        },
+        "notes": "Mechanical blunt-toothed pistons:0 retracted,1 warning rise,2 extended,3 retracting. Hazard state owns damage."
+      },
+      {
+        "key": "allied-clone-3",
+        "width": 64,
+        "height": 72,
+        "anchor": {
+          "x": 32,
+          "y": 68
+        },
+        "notes": "Courier soul clone; renderer supplies translucent tint, movement and attacks."
+      },
+      {
+        "key": "wolf-3",
+        "width": 96,
+        "height": 64,
+        "anchor": {
+          "x": 48,
+          "y": 60
+        },
+        "notes": "Right-facing armored spirit wolf; feet anchor shared across quadruped stride."
+      },
+      {
+        "key": "dragon-3",
+        "width": 160,
+        "height": 112,
+        "anchor": {
+          "x": 80,
+          "y": 56
+        },
+        "notes": "Right-facing flying soul dragon; center anchor, articulated wing cycle and visible jaw."
+      },
+      {
+        "key": "spike-trap-3",
+        "width": 96,
+        "height": 64,
+        "anchor": {
+          "x": 48,
+          "y": 60
+        },
+        "notes": "Mechanical blunt-toothed pistons:0 retracted,1 warning rise,2 extended,3 retracting. Hazard state owns damage."
+      },
+      {
+        "key": "pickup-health-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-health-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-health-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-health-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-fuel-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-fuel-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-fuel-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-fuel-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-rapid-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-rapid-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-rapid-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-rapid-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-shield-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-shield-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-shield-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-shield-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-boost-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-boost-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-boost-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-boost-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-mana-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-mana-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-mana-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-mana-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-weapon-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-weapon-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-weapon-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-weapon-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-sword-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-sword-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-sword-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-sword-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-armor-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-armor-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-armor-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-armor-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-spell-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-spell-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-spell-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-spell-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-treasure-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-treasure-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-treasure-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-treasure-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-cannon-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-cannon-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-cannon-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-cannon-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-nova-0",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-nova-1",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-nova-2",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "pickup-nova-3",
+        "width": 64,
+        "height": 80,
+        "anchor": {
+          "x": 32,
+          "y": 40
+        },
+        "notes": "Animated named capsule: stable center, brief rotating glyph halo. Existing static40x48 key preserved."
+      },
+      {
+        "key": "sea-wave-0",
+        "width": 256,
+        "height": 96,
+        "anchor": {
+          "x": 0,
+          "y": 40
+        },
+        "notes": "Compact animated environment strip; renderer tiles/culls and simulation controls hazards."
+      },
+      {
+        "key": "sea-wave-1",
+        "width": 256,
+        "height": 96,
+        "anchor": {
+          "x": 0,
+          "y": 40
+        },
+        "notes": "Compact animated environment strip; renderer tiles/culls and simulation controls hazards."
+      },
+      {
+        "key": "sea-wave-2",
+        "width": 256,
+        "height": 96,
+        "anchor": {
+          "x": 0,
+          "y": 40
+        },
+        "notes": "Compact animated environment strip; renderer tiles/culls and simulation controls hazards."
+      },
+      {
+        "key": "sea-wave-3",
+        "width": 256,
+        "height": 96,
+        "anchor": {
+          "x": 0,
+          "y": 40
+        },
+        "notes": "Compact animated environment strip; renderer tiles/culls and simulation controls hazards."
+      },
+      {
+        "key": "fire-column-0",
+        "width": 96,
+        "height": 128,
+        "anchor": {
+          "x": 0,
+          "y": 124
+        },
+        "notes": "Compact animated environment strip; renderer tiles/culls and simulation controls hazards."
+      },
+      {
+        "key": "fire-column-1",
+        "width": 96,
+        "height": 128,
+        "anchor": {
+          "x": 0,
+          "y": 124
+        },
+        "notes": "Compact animated environment strip; renderer tiles/culls and simulation controls hazards."
+      },
+      {
+        "key": "fire-column-2",
+        "width": 96,
+        "height": 128,
+        "anchor": {
+          "x": 0,
+          "y": 124
+        },
+        "notes": "Compact animated environment strip; renderer tiles/culls and simulation controls hazards."
+      },
+      {
+        "key": "fire-column-3",
+        "width": 96,
+        "height": 128,
+        "anchor": {
+          "x": 0,
+          "y": 124
+        },
+        "notes": "Compact animated environment strip; renderer tiles/culls and simulation controls hazards."
+      },
+      {
+        "key": "dungeon-arch",
+        "width": 128,
+        "height": 160,
+        "anchor": {
+          "x": 64,
+          "y": 160
+        },
+        "notes": "Decorative theme piece; reuse/cull instead of allocating new fullscreen backgrounds."
+      },
+      {
+        "key": "tech-console",
+        "width": 96,
+        "height": 80,
+        "anchor": {
+          "x": 48,
+          "y": 80
+        },
+        "notes": "Decorative theme piece; reuse/cull instead of allocating new fullscreen backgrounds."
+      },
+      {
+        "key": "wizard-tree",
+        "width": 128,
+        "height": 192,
+        "anchor": {
+          "x": 64,
+          "y": 192
+        },
+        "notes": "Decorative theme piece; reuse/cull instead of allocating new fullscreen backgrounds."
+      },
+      {
+        "key": "tech-cables",
+        "width": 128,
+        "height": 128,
+        "anchor": {
+          "x": 64,
+          "y": 128
+        },
+        "notes": "Decorative theme piece; reuse/cull instead of allocating new fullscreen backgrounds."
+      },
+      {
+        "key": "sea-rock",
+        "width": 128,
+        "height": 96,
+        "anchor": {
+          "x": 64,
+          "y": 96
+        },
+        "notes": "Decorative theme piece; reuse/cull instead of allocating new fullscreen backgrounds."
+      },
+      {
+        "key": "tile-tide",
+        "width": 64,
+        "height": 64,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "World foreground surface; bright top rim distinguishes collidable terrain."
+      },
+      {
+        "key": "tile-pyre",
+        "width": 64,
+        "height": 64,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "World foreground surface; bright top rim distinguishes collidable terrain."
+      },
+      {
+        "key": "tile-neon",
+        "width": 64,
+        "height": 64,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "World foreground surface; bright top rim distinguishes collidable terrain."
+      },
+      {
+        "key": "tile-veil",
+        "width": 64,
+        "height": 64,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "World foreground surface; bright top rim distinguishes collidable terrain."
+      },
+      {
+        "key": "reference-far-forest",
+        "width": 480,
+        "height": 360,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "Reference-panel parallax composed once at boot in main.js"
+      },
+      {
+        "key": "reference-mid-forest",
+        "width": 480,
+        "height": 360,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "Reference-panel parallax composed once at boot in main.js"
+      },
+      {
+        "key": "reference-far-islands",
+        "width": 480,
+        "height": 360,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "Reference-panel parallax composed once at boot in main.js"
+      },
+      {
+        "key": "reference-mid-islands",
+        "width": 480,
+        "height": 360,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "Reference-panel parallax composed once at boot in main.js"
+      },
+      {
+        "key": "reference-far-castle",
+        "width": 480,
+        "height": 360,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "Reference-panel parallax composed once at boot in main.js"
+      },
+      {
+        "key": "reference-mid-castle",
+        "width": 480,
+        "height": 360,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "Reference-panel parallax composed once at boot in main.js"
+      },
+      {
+        "key": "reference-far-sky",
+        "width": 480,
+        "height": 360,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "Reference-panel parallax composed once at boot in main.js"
+      },
+      {
+        "key": "reference-mid-sky",
+        "width": 480,
+        "height": 360,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "Reference-panel parallax composed once at boot in main.js"
+      },
+      {
+        "key": "reference-far-crystal",
+        "width": 480,
+        "height": 360,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "Reference-panel parallax composed once at boot in main.js"
+      },
+      {
+        "key": "reference-mid-crystal",
+        "width": 480,
+        "height": 360,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        },
+        "notes": "Reference-panel parallax composed once at boot in main.js"
+      }
+    ]
+  },
+  "reference": {
+    "frameCount": 174,
+    "animationGroups": 49,
+    "uniquePixelPayloads": 173,
+    "atlasWidth": 2048,
+    "atlasHeight": 2048,
+    "rgbaBytes": 16777216,
+    "rgbaMiB": 16,
+    "compiledFiles": [
+      {
+        "name": "atlas.png",
+        "bytes": 1722171,
+        "sha256": "1b4fca284c5a7ba616355926bd83bb82bf5e5f61353ba8be4ce09ed6d2403372"
+      },
+      {
+        "name": "atlas.json",
+        "bytes": 63622,
+        "sha256": "0162d6ebf2ce5b6fbb61c51fa064362147c55ba6b7389348e02d40d43f85b766"
+      },
+      {
+        "name": "manifest.json",
+        "bytes": 166293,
+        "sha256": "9e6d8eda6d480f6a681c066dfa5f0283237c0574c5ab8c74a934c3f5f635ae1e"
+      }
+    ],
+    "compiledBytes": 1952086,
+    "sources": [
+      {
+        "file": "03_aether_character_sheet.png",
+        "sha256": "c89e1a24bcd32acee81e2051910bf42e3b4555c41e80369c34d51a2aa2ccade4",
+        "width": 1536,
+        "height": 1024,
+        "originalHashVerified": true
+      },
+      {
+        "file": "02_asset_pack_all_characters.png",
+        "sha256": "e5ac7d62c65ba90fa0c0f670e0aceac8f9032245485ee7b04b7941046b4e215a",
+        "width": 1536,
+        "height": 1024,
+        "originalHashVerified": true
+      },
+      {
+        "file": "01_concept_board_full_world.png",
+        "sha256": "305b247a16240cab407cc4102f10fb0419dfe85eb794d0f507d6a5d004cb6283",
+        "width": 1536,
+        "height": 1024,
+        "originalHashVerified": true
+      },
+      {
+        "file": "Designer.png",
+        "sha256": "6194801c4acc3d545aeda448e9ed822bf02c6ff284d4e9996dd28e165e4b3717",
+        "width": 1536,
+        "height": 1024,
+        "originalHashVerified": true
+      }
+    ],
+    "byteReproducible": true,
+    "actorOuterEdgeClear": true,
+    "alpha": "Soft source/gradient-mask alpha on extracted art; binary alpha on generated raster art; tiles/background panels opaque",
+    "padding": "Per-frame dimensions and anchors are authoritative. Jet/doublejump128x160; dashtrail160x128; Wyrm fly256x256; NPC96x128."
+  },
+  "total": {
+    "generatedTextureCount": 343,
+    "atlasCount": 1,
+    "rgbaBytes": 36913920,
+    "rgbaMiB": 35.203857421875
+  },
+  "quality": {
+    "heroIdleVisibleHeight": 89,
+    "contactSheets": [
+      "hero-contact-sheet.png",
+      "creatures-contact-sheet.png",
+      "environment-contact-sheet.png"
+    ],
+    "findings": [
+      "Source labels and divider lines excluded; dominant components remove detached neighbor fragments.",
+      "Added transparent padding prevents clipping of jet plumes, dash trails and Wyrm flight tail.",
+      "Source poses remain illustrations with varying anatomy and light, not a complete uniform sprite strip.",
+      "One literal stone/snow alias shares atlas pixels; snow key is a fallback, not extracted snow terrain."
+    ],
+    "limitations": [
+      "Flattened concept illustrations are not uniform original animation sheets.",
+      "Only distinct visible source poses were extracted; printed frame counts are ignored.",
+      "No generated in-between frames.",
+      "Opaque scenery panels contain their source painted lighting.",
+      "Background masking may lose extremely low-contrast source pixels; inspect the contact sheets.",
+      "User supplied sources; provenance recorded, independent ownership/license verification not performed."
+    ]
+  },
+  "excluded": [
+    "Phaser built-in textures and dynamic text/rasterized font textures",
+    "GPU duplicate uploads, framebuffer/render targets, renderer overhead",
+    "Canvas scratch surfaces created transiently during generation",
+    "Source image bytes, JS heap, audio and browser/native process memory"
+  ],
+  "checks": {
+    "generatedManifestUnique": true,
+    "frozenPacketHashesMatch": true,
+    "sourceHashesMatch": true,
+    "reproducibilityReceipt": "artifacts/reference/extraction-report.json",
+    "pixelMemoryMeasurement": false
+  }
+}

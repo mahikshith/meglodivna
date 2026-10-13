@@ -1,72 +1,101 @@
 {
   "worldId": "pyre",
+  "worldName": "CINDER COVEN · The Furnace Below",
   "difficulty": "forge",
   "status": "won",
-  "elapsed": 336.77,
-  "campaignTime": 336.77,
-  "timeLeft": 283.23,
+  "playerBody": {
+    "w": 28,
+    "h": 60
+  },
+  "elapsed": 102.21,
+  "campaignTime": 102.21,
+  "timeLeft": 797.79,
   "deaths": 0,
-  "checkpoint": 16,
-  "x": 83418.4,
-  "y": 564,
-  "hp": 135,
+  "checkpoint": 6,
+  "x": 18683.9,
+  "y": 400,
+  "hp": 77.3,
   "conversations": [
-    "pyre-scout",
-    "pyre-scholar",
-    "pyre-deserter"
+    "pyre-mira"
   ],
   "triggerProof": {
     "pyre-warden": {
-      "triggerX": 25030,
-      "activatedX": 25031.23,
-      "activatedTime": 84.3
+      "triggerX": 5080,
+      "activatedX": 5080.18,
+      "activatedTime": 18.42
     },
     "pyre-hex": {
-      "triggerX": 51830,
-      "activatedX": 51831.07,
-      "activatedTime": 185.25
+      "triggerX": 12110,
+      "activatedX": 12110.07,
+      "activatedTime": 50.88
     },
     "pyre-regent": {
-      "triggerX": 80030,
-      "activatedX": 80031.07,
-      "activatedTime": 299.64
+      "triggerX": 17670,
+      "activatedX": 17670.15,
+      "activatedTime": 84.06
     }
   },
   "storyClaims": [
-    "npc:pyre-scout",
-    "npc:pyre-scholar",
-    "npc:pyre-deserter"
+    "npc:pyre-mira"
   ],
   "bosses": [
     {
       "id": "pyre-warden",
       "dead": true,
       "hp": 0,
-      "fightSeconds": 15.75,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 7.28,
       "attacksSeen": [
-        0,
         1,
         2
-      ]
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
     },
     {
       "id": "pyre-hex",
       "dead": true,
       "hp": 0,
-      "fightSeconds": 27.36,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 14.3,
       "attacksSeen": [
         0,
         1,
         2
-      ]
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
     },
     {
       "id": "pyre-regent",
       "dead": true,
       "hp": 0,
-      "fightSeconds": 33.79,
+      "body": {
+        "w": 112,
+        "h": 86
+      },
+      "fightSeconds": 16.63,
       "attacksSeen": [
         0,
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground",
+        "transforming",
+        "flying"
+      ],
+      "flyingAttacksSeen": [
         1,
         2
       ]
@@ -74,24 +103,36 @@
   ],
   "gates": [
     {
-      "id": "pyre-warden-gate",
+      "id": "pyre-pressure-door-19",
       "open": true
     },
     {
-      "id": "pyre-conduit-lock",
+      "id": "pyre-guardian-seal-30",
       "open": true
     },
     {
-      "id": "pyre-hex-gate",
+      "id": "pyre-tide-seal-66",
       "open": true
     },
     {
-      "id": "pyre-regent-gate",
+      "id": "pyre-guardian-seal-79",
+      "open": true
+    },
+    {
+      "id": "pyre-guardian-seal-110",
+      "open": true
+    },
+    {
+      "id": "pyre-furnace-ward-113",
+      "open": true
+    },
+    {
+      "id": "pyre-three-stone-seal",
       "open": true
     }
   ],
   "method": "Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.",
-  "target": "pyre-arena-3",
+  "target": "pyre-arena-105",
   "events": [
     "bossdead",
     "bossstart",
@@ -102,6 +143,7 @@
     "dash",
     "debris",
     "enemyshot",
+    "enemywindup",
     "equip",
     "explode",
     "gate",
@@ -119,1422 +161,619 @@
     "slash",
     "spark",
     "spell",
+    "stagger",
     "story",
     "summonarrival",
     "summonexpire",
     "taunt",
     "thunder",
+    "transform",
     "win"
   ],
   "history": [
     {
-      "event": "story",
-      "npcId": "pyre-scout",
-      "choiceId": "pyre-scout-armor"
-    },
-    {
       "event": "landing",
-      "id": "pyre-1-approach",
-      "x": 223.3,
+      "id": "pyre-sanctuary-1",
+      "x": 98.1,
       "hp": 100,
-      "time": 0.48
+      "time": 0.01
     },
     {
-      "event": "checkpoint",
-      "x": 1580.7,
-      "hp": 122,
-      "time": 4.72
-    },
-    {
-      "event": "landing",
-      "id": "pyre-2-tower-entry",
-      "x": 1910.5,
-      "hp": 122,
-      "time": 5.8
+      "event": "story",
+      "npcId": "pyre-mira",
+      "choiceId": "pyre-ward"
     },
     {
       "event": "landing",
-      "id": "pyre-2-tower-riser-1",
-      "x": 2145.4,
-      "hp": 122,
-      "time": 6.61
+      "id": "pyre-sanctuary-1",
+      "x": 273.2,
+      "hp": 100,
+      "time": 0.62
     },
     {
       "event": "landing",
-      "id": "pyre-2-tower-riser-2",
-      "x": 2342.3,
-      "hp": 122,
-      "time": 7.31
+      "id": "pyre-sanctuary-1",
+      "x": 793.2,
+      "hp": 100,
+      "time": 2.24
     },
     {
       "event": "landing",
-      "id": "pyre-2-tower-riser-3",
-      "x": 2534.7,
-      "hp": 122,
-      "time": 8.02
+      "id": "pyre-crypt-lip-4",
+      "x": 1192.6,
+      "hp": 100,
+      "time": 3.75
     },
     {
       "event": "landing",
-      "id": "pyre-2-tower-wall",
-      "x": 2715.5,
-      "hp": 122,
-      "time": 8.88
+      "id": "pyre-crypt-stair-5",
+      "x": 1506.9,
+      "hp": 100,
+      "time": 5.2
     },
     {
       "event": "landing",
-      "id": "pyre-2-tower-descent-1",
-      "x": 2926.4,
-      "hp": 122,
-      "time": 9.94
-    },
-    {
-      "event": "landing",
-      "id": "pyre-2-tower-descent-2",
-      "x": 3234.2,
-      "hp": 122,
-      "time": 11.2
-    },
-    {
-      "event": "landing",
-      "id": "pyre-2-tower-descent-3",
-      "x": 3637,
-      "hp": 122,
-      "time": 12.94
-    },
-    {
-      "event": "landing",
-      "id": "pyre-2-tower-exit",
-      "x": 3854.1,
-      "hp": 122,
-      "time": 13.67
-    },
-    {
-      "event": "landing",
-      "id": "pyre-3-tunnel-entry",
-      "x": 4384.7,
-      "hp": 122,
-      "time": 15.33
-    },
-    {
-      "event": "landing",
-      "id": "pyre-3-tunnel-tunnel-0",
-      "x": 4905.6,
-      "hp": 122,
-      "time": 17.05
-    },
-    {
-      "event": "landing",
-      "id": "pyre-3-tunnel-tunnel-1",
-      "x": 5474.5,
-      "hp": 122,
-      "time": 18.86
-    },
-    {
-      "event": "landing",
-      "id": "pyre-3-tunnel-tunnel-2",
-      "x": 6098.4,
-      "hp": 122,
-      "time": 20.85
-    },
-    {
-      "event": "landing",
-      "id": "pyre-3-tunnel-exit",
-      "x": 6833.7,
-      "hp": 122,
-      "time": 23.17
-    },
-    {
-      "event": "checkpoint",
-      "x": 6980.4,
-      "hp": 135,
-      "time": 23.62
-    },
-    {
-      "event": "landing",
-      "id": "pyre-4-machine-entry",
-      "x": 7524.4,
-      "hp": 135,
-      "time": 25.32
-    },
-    {
-      "event": "landing",
-      "id": "pyre-4-machine-machine-0",
-      "x": 8002.4,
-      "hp": 135,
-      "time": 26.88
-    },
-    {
-      "event": "landing",
-      "id": "pyre-4-machine-machine-1",
-      "x": 8823.8,
-      "hp": 135,
-      "time": 29.47
-    },
-    {
-      "event": "landing",
-      "id": "pyre-4-machine-machine-2",
-      "x": 9712.7,
-      "hp": 135,
-      "time": 32.26
-    },
-    {
-      "event": "landing",
-      "id": "pyre-4-machine-exit",
-      "x": 10445.5,
-      "hp": 135,
-      "time": 34.55
-    },
-    {
-      "event": "landing",
-      "id": "pyre-5-terrace-terrace-0",
-      "x": 11133.5,
-      "hp": 135,
-      "time": 36.7
-    },
-    {
-      "event": "landing",
-      "id": "pyre-5-terrace-terrace-1",
-      "x": 11935.2,
-      "hp": 135,
-      "time": 39.46
-    },
-    {
-      "event": "landing",
-      "id": "pyre-5-terrace-terrace-2",
-      "x": 12735.2,
-      "hp": 135,
-      "time": 42.13
-    },
-    {
-      "event": "landing",
-      "id": "pyre-5-terrace-terrace-3",
-      "x": 13535.2,
-      "hp": 135,
-      "time": 44.63
-    },
-    {
-      "event": "landing",
-      "id": "pyre-5-terrace-terrace-4",
-      "x": 14633.9,
-      "hp": 135,
-      "time": 48.07
-    },
-    {
-      "event": "checkpoint",
-      "x": 14780.5,
-      "hp": 135,
-      "time": 48.52
-    },
-    {
-      "event": "landing",
-      "id": "pyre-6-bridge-entry",
-      "x": 15295.2,
-      "hp": 135,
-      "time": 50.13
-    },
-    {
-      "event": "landing",
-      "id": "pyre-6-bridge-deck-1",
-      "x": 15763,
-      "hp": 135,
-      "time": 51.62
+      "id": "pyre-crypt-floor-6",
+      "x": 1782.5,
+      "hp": 100,
+      "time": 6.12
     },
     {
       "event": "hurt",
-      "x": 15882.6,
-      "hp": 117.8,
-      "time": 52
-    },
-    {
-      "event": "hurt",
-      "x": 16116.1,
-      "hp": 94.4,
-      "time": 53.44
+      "x": 2662.5,
+      "hp": 100,
+      "time": 8.87
     },
     {
       "event": "landing",
-      "id": "pyre-6-bridge-deck-2",
-      "x": 16189.9,
-      "hp": 94.4,
-      "time": 54.56
+      "id": "pyre-crypt-floor-6",
+      "x": 2731.8,
+      "hp": 100,
+      "time": 9.35
     },
     {
       "event": "landing",
-      "id": "pyre-6-bridge-deck-3",
-      "x": 16695.7,
-      "hp": 94.4,
-      "time": 56.29
+      "id": "pyre-engine-walk-14",
+      "x": 3041.8,
+      "hp": 125,
+      "time": 10.39
     },
     {
       "event": "landing",
-      "id": "pyre-6-bridge-exit",
-      "x": 17134.2,
-      "hp": 94.4,
-      "time": 57.94
+      "id": "pyre-engine-walk-14",
+      "x": 3371.7,
+      "hp": 125,
+      "time": 11.45
     },
     {
       "event": "landing",
-      "id": "pyre-6-bridge-exit",
-      "x": 17665.4,
-      "hp": 94.4,
-      "time": 59.65
+      "id": "pyre-engine-duct-16",
+      "x": 3811.9,
+      "hp": 125,
+      "time": 12.95
     },
     {
       "event": "landing",
-      "id": "pyre-7-refuge",
-      "x": 18865.4,
-      "hp": 134.4,
-      "time": 63.4
-    },
-    {
-      "event": "checkpoint",
-      "x": 18980.1,
-      "hp": 135,
-      "time": 63.76
-    },
-    {
-      "event": "landing",
-      "id": "pyre-8-vault-entry",
-      "x": 19374.7,
-      "hp": 135,
-      "time": 64.99
-    },
-    {
-      "event": "landing",
-      "id": "pyre-8-vault-arch-1",
-      "x": 19675,
-      "hp": 135,
-      "time": 65.96
-    },
-    {
-      "event": "landing",
-      "id": "pyre-8-vault-arch-2",
-      "x": 20075.2,
-      "hp": 135,
-      "time": 67.51
-    },
-    {
-      "event": "landing",
-      "id": "pyre-8-vault-arch-3",
-      "x": 20396.3,
-      "hp": 135,
-      "time": 68.57
-    },
-    {
-      "event": "landing",
-      "id": "pyre-8-vault-arch-4",
-      "x": 20787.7,
-      "hp": 135,
-      "time": 69.9
-    },
-    {
-      "event": "landing",
-      "id": "pyre-8-vault-exit",
-      "x": 21288.9,
-      "hp": 135,
-      "time": 71.63
-    },
-    {
-      "event": "landing",
-      "id": "pyre-9-bridge-entry",
-      "x": 21893.1,
-      "hp": 135,
-      "time": 73.55
-    },
-    {
-      "event": "landing",
-      "id": "pyre-9-bridge-deck-1",
-      "x": 22363.3,
-      "hp": 135,
-      "time": 75.04
-    },
-    {
-      "event": "landing",
-      "id": "pyre-9-bridge-deck-2",
-      "x": 22814.1,
-      "hp": 135,
-      "time": 76.48
-    },
-    {
-      "event": "landing",
-      "id": "pyre-9-bridge-deck-3",
-      "x": 23295.4,
-      "hp": 135,
-      "time": 78.13
-    },
-    {
-      "event": "landing",
-      "id": "pyre-9-bridge-exit",
-      "x": 23734.4,
-      "hp": 135,
-      "time": 79.79
-    },
-    {
-      "event": "landing",
-      "id": "pyre-9-bridge-exit",
-      "x": 24265.5,
-      "hp": 135,
-      "time": 81.5
-    },
-    {
-      "event": "checkpoint",
-      "x": 24396.1,
-      "hp": 135,
-      "time": 81.91
+      "id": "pyre-engine-switchyard-17",
+      "x": 4154.7,
+      "hp": 125,
+      "time": 14.16
     },
     {
       "event": "gate",
-      "x": 24616.2,
-      "hp": 135,
-      "time": 82.95
+      "x": 4221.6,
+      "hp": 125,
+      "time": 14.41
     },
     {
       "event": "landing",
-      "id": "pyre-arena-1",
-      "x": 24616.2,
+      "id": "pyre-engine-switchyard-17",
+      "x": 4221.6,
+      "hp": 125,
+      "time": 14.41
+    },
+    {
+      "event": "landing",
+      "id": "pyre-engine-switchyard-17",
+      "x": 4663.6,
       "hp": 135,
-      "time": 82.95
+      "time": 16.64
+    },
+    {
+      "event": "checkpoint",
+      "x": 4783.6,
+      "hp": 135,
+      "time": 17.02
+    },
+    {
+      "event": "gate",
+      "x": 4891.8,
+      "hp": 135,
+      "time": 17.59
+    },
+    {
+      "event": "landing",
+      "id": "pyre-arena-25",
+      "x": 4891.8,
+      "hp": 135,
+      "time": 17.59
     },
     {
       "event": "bossstart",
-      "x": 25031.2,
+      "x": 5080.2,
       "hp": 135,
-      "time": 84.3
+      "time": 18.42
     },
     {
       "event": "hurt",
-      "x": 25502.6,
-      "hp": 135,
-      "time": 86.81
+      "x": 5580.9,
+      "hp": 132.2,
+      "time": 21.09
     },
     {
       "event": "hurt",
-      "x": 25513.7,
-      "hp": 135,
-      "time": 87.73
+      "x": 5598.4,
+      "hp": 116.6,
+      "time": 22.02
     },
     {
       "event": "hurt",
-      "x": 25561.2,
-      "hp": 135,
-      "time": 88.63
-    },
-    {
-      "event": "hurt",
-      "x": 25566.6,
-      "hp": 135,
-      "time": 89.54
-    },
-    {
-      "event": "hurt",
-      "x": 25624.5,
-      "hp": 131.8,
-      "time": 92.55
-    },
-    {
-      "event": "hurt",
-      "x": 25627.3,
-      "hp": 127.9,
-      "time": 93.47
-    },
-    {
-      "event": "hurt",
-      "x": 25666.6,
-      "hp": 124,
-      "time": 94.38
-    },
-    {
-      "event": "hurt",
-      "x": 25669,
-      "hp": 120.1,
-      "time": 95.28
-    },
-    {
-      "event": "hurt",
-      "x": 25758.5,
-      "hp": 110.7,
-      "time": 99.67
+      "x": 5556.2,
+      "hp": 97.9,
+      "time": 23.38
     },
     {
       "event": "bossdefeated",
       "id": "pyre-warden",
-      "time": 100.05,
-      "hp": 110.7
+      "time": 25.7,
+      "hp": 97.9
     },
     {
       "event": "gate",
-      "x": 25754.1,
-      "hp": 110.7,
-      "time": 100.05
+      "x": 5643.2,
+      "hp": 97.9,
+      "time": 25.7
     },
     {
       "event": "landing",
-      "id": "pyre-arena-1",
-      "x": 25754.1,
-      "hp": 110.7,
-      "time": 100.05
-    },
-    {
-      "event": "hurt",
-      "x": 25904.7,
-      "hp": 106.8,
-      "time": 100.58
-    },
-    {
-      "event": "hurt",
-      "x": 26193.5,
-      "hp": 102.9,
-      "time": 101.49
-    },
-    {
-      "event": "hurt",
-      "x": 26482.3,
-      "hp": 99,
-      "time": 102.4
+      "id": "pyre-arena-25",
+      "x": 5643.2,
+      "hp": 97.9,
+      "time": 25.7
     },
     {
       "event": "landing",
-      "id": "pyre-arena-1",
-      "x": 27265,
-      "hp": 99,
-      "time": 104.85
+      "id": "pyre-arena-25",
+      "x": 6074.3,
+      "hp": 97.9,
+      "time": 27.25
+    },
+    {
+      "event": "landing",
+      "id": "pyre-arena-25",
+      "x": 6074.3,
+      "hp": 97.9,
+      "time": 27.25
     },
     {
       "event": "checkpoint",
-      "x": 27382.3,
-      "hp": 121,
-      "time": 105.22
-    },
-    {
-      "event": "story",
-      "npcId": "pyre-scholar",
-      "choiceId": "pyre-scholar-siphon"
+      "x": 6160.1,
+      "hp": 119.9,
+      "time": 27.55
     },
     {
       "event": "landing",
-      "id": "pyre-10-tunnel-entry",
-      "x": 27672,
-      "hp": 121,
-      "time": 106.31
+      "id": "pyre-tower-foot-34",
+      "x": 6422.8,
+      "hp": 119.9,
+      "time": 28.63
     },
     {
       "event": "landing",
-      "id": "pyre-10-tunnel-tunnel-0",
-      "x": 28305.3,
-      "hp": 121,
-      "time": 108.42
+      "id": "pyre-tower-step-35",
+      "x": 6639.5,
+      "hp": 119.9,
+      "time": 29.42
     },
     {
       "event": "landing",
-      "id": "pyre-10-tunnel-tunnel-1",
-      "x": 28874.4,
-      "hp": 121,
-      "time": 110.23
+      "id": "pyre-tower-step-36",
+      "x": 6857.6,
+      "hp": 119.9,
+      "time": 30.17
     },
     {
       "event": "landing",
-      "id": "pyre-10-tunnel-tunnel-2",
-      "x": 29498.4,
-      "hp": 121,
-      "time": 112.22
+      "id": "pyre-tower-step-37",
+      "x": 7077.1,
+      "hp": 119.9,
+      "time": 30.92
     },
     {
       "event": "landing",
-      "id": "pyre-10-tunnel-exit",
-      "x": 30233.7,
-      "hp": 121,
-      "time": 114.53
+      "id": "pyre-tower-step-39",
+      "x": 7297.9,
+      "hp": 119.9,
+      "time": 31.67
     },
     {
       "event": "landing",
-      "id": "pyre-11-terrace-terrace-0",
-      "x": 30935.1,
-      "hp": 121,
-      "time": 116.73
+      "id": "pyre-tower-crown-40",
+      "x": 7513,
+      "hp": 119.9,
+      "time": 32.64
     },
     {
       "event": "landing",
-      "id": "pyre-11-terrace-terrace-1",
-      "x": 31735.2,
-      "hp": 121,
-      "time": 119.48
+      "id": "pyre-tower-crown-40",
+      "x": 7902.3,
+      "hp": 135,
+      "time": 33.91
     },
     {
       "event": "landing",
-      "id": "pyre-11-terrace-terrace-2",
-      "x": 32535.2,
-      "hp": 121,
-      "time": 122.15
+      "id": "pyre-root-bank-44",
+      "x": 8328.3,
+      "hp": 135,
+      "time": 35.32
     },
     {
       "event": "landing",
-      "id": "pyre-11-terrace-terrace-3",
-      "x": 33335.2,
-      "hp": 121,
-      "time": 124.65
+      "id": "pyre-broken-root-46",
+      "x": 8640.6,
+      "hp": 135,
+      "time": 37.64
     },
     {
       "event": "landing",
-      "id": "pyre-11-terrace-terrace-4",
-      "x": 34433.9,
-      "hp": 121,
-      "time": 128.08
+      "id": "pyre-hanging-root-48",
+      "x": 9063.7,
+      "hp": 135,
+      "time": 39.1
+    },
+    {
+      "event": "landing",
+      "id": "pyre-orchard-bank-49",
+      "x": 9425.8,
+      "hp": 135,
+      "time": 40.97
+    },
+    {
+      "event": "landing",
+      "id": "pyre-orchard-bank-49",
+      "x": 9711.6,
+      "hp": 135,
+      "time": 41.92
+    },
+    {
+      "event": "landing",
+      "id": "pyre-vault-entry-59",
+      "x": 10132.6,
+      "hp": 135,
+      "time": 43.49
+    },
+    {
+      "event": "landing",
+      "id": "pyre-vault-upper-60",
+      "x": 10487.5,
+      "hp": 135,
+      "time": 44.87
+    },
+    {
+      "event": "landing",
+      "id": "pyre-rune-reliquary-61",
+      "x": 10763.2,
+      "hp": 135,
+      "time": 45.77
+    },
+    {
+      "event": "gate",
+      "x": 10849.3,
+      "hp": 135,
+      "time": 46.07
+    },
+    {
+      "event": "landing",
+      "id": "pyre-rune-reliquary-61",
+      "x": 10864.3,
+      "hp": 135,
+      "time": 46.19
+    },
+    {
+      "event": "landing",
+      "id": "pyre-vault-exit-64",
+      "x": 11385.5,
+      "hp": 135,
+      "time": 48.38
+    },
+    {
+      "event": "landing",
+      "id": "pyre-vault-exit-64",
+      "x": 11671.5,
+      "hp": 135,
+      "time": 49.33
     },
     {
       "event": "checkpoint",
-      "x": 34580.5,
+      "x": 11815.5,
       "hp": 135,
-      "time": 128.54
-    },
-    {
-      "event": "landing",
-      "id": "pyre-12-wire",
-      "x": 36264.6,
-      "hp": 135,
-      "time": 133.56
-    },
-    {
-      "event": "landing",
-      "id": "pyre-13-machine-entry",
-      "x": 36923.3,
-      "hp": 135,
-      "time": 135.62
-    },
-    {
-      "event": "landing",
-      "id": "pyre-13-machine-machine-0",
-      "x": 37403,
-      "hp": 135,
-      "time": 137.18
-    },
-    {
-      "event": "hurt",
-      "x": 37977.8,
-      "hp": 121,
-      "time": 138.84
-    },
-    {
-      "event": "landing",
-      "id": "pyre-13-machine-machine-1",
-      "x": 38223.5,
-      "hp": 121,
-      "time": 139.62
-    },
-    {
-      "event": "landing",
-      "id": "pyre-13-machine-machine-2",
-      "x": 39112.5,
-      "hp": 121,
-      "time": 142.4
-    },
-    {
-      "event": "landing",
-      "id": "pyre-13-machine-exit",
-      "x": 39845.3,
-      "hp": 121,
-      "time": 144.69
-    },
-    {
-      "event": "checkpoint",
-      "x": 39981.3,
-      "hp": 135,
-      "time": 145.12
-    },
-    {
-      "event": "landing",
-      "id": "pyre-14-bridge-entry",
-      "x": 40493.3,
-      "hp": 135,
-      "time": 146.72
-    },
-    {
-      "event": "landing",
-      "id": "pyre-14-bridge-deck-1",
-      "x": 40963.4,
-      "hp": 135,
-      "time": 148.21
-    },
-    {
-      "event": "landing",
-      "id": "pyre-14-bridge-deck-2",
-      "x": 41414.2,
-      "hp": 135,
-      "time": 149.64
-    },
-    {
-      "event": "landing",
-      "id": "pyre-14-bridge-deck-3",
-      "x": 41895.4,
-      "hp": 135,
-      "time": 151.3
-    },
-    {
-      "event": "landing",
-      "id": "pyre-14-bridge-exit",
-      "x": 42334.4,
-      "hp": 135,
-      "time": 152.96
-    },
-    {
-      "event": "landing",
-      "id": "pyre-14-bridge-exit",
-      "x": 42865.5,
-      "hp": 135,
-      "time": 154.67
-    },
-    {
-      "event": "landing",
-      "id": "pyre-15-vault-entry",
-      "x": 43374.8,
-      "hp": 135,
-      "time": 156.26
-    },
-    {
-      "event": "landing",
-      "id": "pyre-15-vault-arch-1",
-      "x": 43675,
-      "hp": 135,
-      "time": 157.23
-    },
-    {
-      "event": "landing",
-      "id": "pyre-15-vault-arch-2",
-      "x": 44075.2,
-      "hp": 135,
-      "time": 158.78
-    },
-    {
-      "event": "landing",
-      "id": "pyre-15-vault-arch-3",
-      "x": 44396.3,
-      "hp": 135,
-      "time": 159.83
-    },
-    {
-      "event": "landing",
-      "id": "pyre-15-vault-arch-4",
-      "x": 44787.4,
-      "hp": 135,
-      "time": 162.87
-    },
-    {
-      "event": "landing",
-      "id": "pyre-15-vault-exit",
-      "x": 45288.8,
-      "hp": 135,
-      "time": 164.59
-    },
-    {
-      "event": "checkpoint",
-      "x": 45381.1,
-      "hp": 135,
-      "time": 164.92
-    },
-    {
-      "event": "landing",
-      "id": "pyre-16-approach",
-      "x": 46863.8,
-      "hp": 135,
-      "time": 169.55
-    },
-    {
-      "event": "landing",
-      "id": "pyre-17-tunnel-entry",
-      "x": 47383.8,
-      "hp": 135,
-      "time": 171.18
-    },
-    {
-      "event": "landing",
-      "id": "pyre-17-tunnel-tunnel-0",
-      "x": 47905.4,
-      "hp": 135,
-      "time": 172.89
-    },
-    {
-      "event": "landing",
-      "id": "pyre-17-tunnel-tunnel-1",
-      "x": 48474.4,
-      "hp": 135,
-      "time": 174.7
-    },
-    {
-      "event": "landing",
-      "id": "pyre-17-tunnel-tunnel-2",
-      "x": 49098.4,
-      "hp": 135,
-      "time": 176.69
-    },
-    {
-      "event": "landing",
-      "id": "pyre-17-tunnel-exit",
-      "x": 49833.7,
-      "hp": 135,
-      "time": 179.01
-    },
-    {
-      "event": "checkpoint",
-      "x": 49980.4,
-      "hp": 135,
-      "time": 179.47
-    },
-    {
-      "event": "landing",
-      "id": "pyre-18-refuge",
-      "x": 51063.1,
-      "hp": 135,
-      "time": 182.85
-    },
-    {
-      "event": "checkpoint",
-      "x": 51196.4,
-      "hp": 135,
-      "time": 183.27
+      "time": 49.78
     },
     {
       "event": "bossstart",
-      "x": 51831.1,
+      "x": 12110.1,
       "hp": 135,
-      "time": 185.25
+      "time": 50.88
     },
     {
       "event": "hurt",
-      "x": 52400.9,
+      "x": 12679.1,
       "hp": 135,
-      "time": 192.42
+      "time": 58.06
     },
     {
       "event": "hurt",
-      "x": 52740,
-      "hp": 135,
-      "time": 194.77
+      "x": 12510.9,
+      "hp": 128.5,
+      "time": 59.9
     },
     {
       "event": "hurt",
-      "x": 52762.3,
-      "hp": 135,
-      "time": 195.69
+      "x": 12371.9,
+      "hp": 124.6,
+      "time": 60.82
     },
     {
       "event": "hurt",
-      "x": 52805.5,
-      "hp": 135,
-      "time": 196.6
+      "x": 12449.1,
+      "hp": 120.7,
+      "time": 61.72
     },
     {
       "event": "hurt",
-      "x": 52808.4,
-      "hp": 131.8,
-      "time": 197.51
-    },
-    {
-      "event": "hurt",
-      "x": 52901.4,
-      "hp": 114.6,
-      "time": 202.02
-    },
-    {
-      "event": "hurt",
-      "x": 53194.1,
-      "hp": 125.6,
-      "time": 203.67
-    },
-    {
-      "event": "hurt",
-      "x": 53259,
-      "hp": 131.1,
-      "time": 204.59
-    },
-    {
-      "event": "hurt",
-      "x": 53273.9,
-      "hp": 131.1,
-      "time": 205.5
-    },
-    {
-      "event": "hurt",
-      "x": 53274.1,
-      "hp": 127.2,
-      "time": 206.41
-    },
-    {
-      "event": "hurt",
-      "x": 53317.4,
-      "hp": 116.3,
-      "time": 208.21
-    },
-    {
-      "event": "hurt",
-      "x": 53359.5,
-      "hp": 109.6,
-      "time": 209.91
-    },
-    {
-      "event": "hurt",
-      "x": 53672,
-      "hp": 125.6,
-      "time": 211.7
+      "x": 12452.5,
+      "hp": 116.8,
+      "time": 62.63
     },
     {
       "event": "bossdefeated",
       "id": "pyre-hex",
-      "time": 212.61,
-      "hp": 135
+      "time": 65.18,
+      "hp": 116.8
     },
     {
       "event": "gate",
-      "x": 53724.2,
-      "hp": 135,
-      "time": 212.61
+      "x": 12566.5,
+      "hp": 116.8,
+      "time": 65.18
     },
     {
       "event": "landing",
-      "id": "pyre-arena-2",
-      "x": 53724.2,
-      "hp": 135,
-      "time": 212.61
-    },
-    {
-      "event": "hurt",
-      "x": 53726.3,
-      "hp": 131.1,
-      "time": 212.62
-    },
-    {
-      "event": "hurt",
-      "x": 54015.1,
-      "hp": 127.2,
-      "time": 213.52
+      "id": "pyre-arena-74",
+      "x": 12566.5,
+      "hp": 116.8,
+      "time": 65.18
     },
     {
       "event": "landing",
-      "id": "pyre-arena-2",
-      "x": 54264.5,
-      "hp": 127.2,
-      "time": 214.31
-    },
-    {
-      "event": "hurt",
-      "x": 54303.9,
-      "hp": 123.3,
-      "time": 214.43
-    },
-    {
-      "event": "story",
-      "npcId": "pyre-deserter",
-      "choiceId": "pyre-deserter-cannon"
-    },
-    {
-      "event": "landing",
-      "id": "pyre-19-tower-entry",
-      "x": 54673,
-      "hp": 123.3,
-      "time": 215.8
-    },
-    {
-      "event": "landing",
-      "id": "pyre-19-tower-riser-1",
-      "x": 54945.5,
-      "hp": 123.3,
-      "time": 216.75
-    },
-    {
-      "event": "landing",
-      "id": "pyre-19-tower-riser-2",
-      "x": 55142.3,
-      "hp": 123.3,
-      "time": 217.45
-    },
-    {
-      "event": "landing",
-      "id": "pyre-19-tower-riser-3",
-      "x": 55334.7,
-      "hp": 123.3,
-      "time": 218.16
-    },
-    {
-      "event": "landing",
-      "id": "pyre-19-tower-wall",
-      "x": 55515.5,
-      "hp": 123.3,
-      "time": 219.02
-    },
-    {
-      "event": "landing",
-      "id": "pyre-19-tower-descent-1",
-      "x": 55726.4,
-      "hp": 123.3,
-      "time": 220.08
-    },
-    {
-      "event": "landing",
-      "id": "pyre-19-tower-descent-2",
-      "x": 56034.2,
-      "hp": 123.3,
-      "time": 221.34
-    },
-    {
-      "event": "landing",
-      "id": "pyre-19-tower-descent-3",
-      "x": 56437,
-      "hp": 123.3,
-      "time": 223.08
-    },
-    {
-      "event": "landing",
-      "id": "pyre-19-tower-exit",
-      "x": 56654.1,
-      "hp": 123.3,
-      "time": 223.82
+      "id": "pyre-arena-74",
+      "x": 13101.4,
+      "hp": 116.8,
+      "time": 66.87
     },
     {
       "event": "checkpoint",
-      "x": 56782.1,
+      "x": 13218.8,
       "hp": 135,
-      "time": 224.22
+      "time": 67.24
     },
     {
       "event": "landing",
-      "id": "pyre-20-machine-entry",
-      "x": 57323.4,
+      "id": "pyre-sluice-entry-82",
+      "x": 13488.4,
       "hp": 135,
-      "time": 225.91
+      "time": 68.23
     },
     {
       "event": "landing",
-      "id": "pyre-20-machine-machine-0",
-      "x": 57802.2,
+      "id": "pyre-aqueduct-span-83",
+      "x": 13852.6,
       "hp": 135,
-      "time": 227.47
-    },
-    {
-      "event": "hurt",
-      "x": 58377.4,
-      "hp": 121,
-      "time": 229.12
+      "time": 69.67
     },
     {
       "event": "landing",
-      "id": "pyre-20-machine-machine-1",
-      "x": 58623.1,
-      "hp": 121,
-      "time": 229.9
+      "id": "pyre-aqueduct-span-84",
+      "x": 14184.8,
+      "hp": 135,
+      "time": 71.17
     },
     {
       "event": "landing",
-      "id": "pyre-20-machine-machine-2",
-      "x": 59514.2,
-      "hp": 121,
-      "time": 232.69
+      "id": "pyre-aqueduct-span-86",
+      "x": 14511.2,
+      "hp": 135,
+      "time": 72.45
     },
     {
       "event": "landing",
-      "id": "pyre-20-machine-exit",
-      "x": 60244.1,
-      "hp": 121,
-      "time": 234.97
+      "id": "pyre-aqueduct-span-87",
+      "x": 14844.8,
+      "hp": 135,
+      "time": 73.95
     },
     {
       "event": "landing",
-      "id": "pyre-21-tunnel-entry",
-      "x": 60785.4,
-      "hp": 121,
-      "time": 236.67
-    },
-    {
-      "event": "landing",
-      "id": "pyre-21-tunnel-tunnel-0",
-      "x": 61305.9,
-      "hp": 121,
-      "time": 238.38
-    },
-    {
-      "event": "landing",
-      "id": "pyre-21-tunnel-tunnel-1",
-      "x": 61874.7,
-      "hp": 121,
-      "time": 240.19
-    },
-    {
-      "event": "landing",
-      "id": "pyre-21-tunnel-tunnel-2",
-      "x": 62498.5,
-      "hp": 121,
-      "time": 242.18
-    },
-    {
-      "event": "landing",
-      "id": "pyre-21-tunnel-exit",
-      "x": 63233.8,
-      "hp": 121,
-      "time": 244.5
+      "id": "pyre-cistern-bank-88",
+      "x": 15312.7,
+      "hp": 135,
+      "time": 75.47
     },
     {
       "event": "checkpoint",
-      "x": 63380.4,
+      "x": 15499.4,
       "hp": 135,
-      "time": 244.96
+      "time": 76.05
     },
     {
       "event": "landing",
-      "id": "pyre-22-terrace-terrace-0",
-      "x": 63935.1,
+      "id": "pyre-tower-foot-93",
+      "x": 15762.7,
       "hp": 135,
-      "time": 246.69
+      "time": 77.13
     },
     {
       "event": "landing",
-      "id": "pyre-22-terrace-terrace-1",
-      "x": 64735.2,
+      "id": "pyre-tower-step-94",
+      "x": 15979.5,
       "hp": 135,
-      "time": 249.44
+      "time": 77.92
     },
     {
       "event": "landing",
-      "id": "pyre-22-terrace-terrace-2",
-      "x": 65535.2,
+      "id": "pyre-tower-step-95",
+      "x": 16197.6,
       "hp": 135,
-      "time": 252.12
+      "time": 78.67
     },
     {
       "event": "landing",
-      "id": "pyre-22-terrace-terrace-3",
-      "x": 66335.2,
+      "id": "pyre-tower-step-96",
+      "x": 16417.1,
       "hp": 135,
-      "time": 254.62
+      "time": 79.42
     },
     {
       "event": "landing",
-      "id": "pyre-22-terrace-terrace-4",
-      "x": 67433.9,
+      "id": "pyre-tower-step-98",
+      "x": 16637.9,
       "hp": 135,
-      "time": 258.05
+      "time": 80.18
     },
     {
       "event": "landing",
-      "id": "pyre-23-bridge-entry",
-      "x": 68095.2,
+      "id": "pyre-tower-crown-99",
+      "x": 16853,
       "hp": 135,
-      "time": 260.12
+      "time": 81.14
+    },
+    {
+      "event": "gate",
+      "x": 16928.8,
+      "hp": 135,
+      "time": 81.45
     },
     {
       "event": "landing",
-      "id": "pyre-23-bridge-deck-1",
-      "x": 68563,
+      "id": "pyre-tower-crown-99",
+      "x": 16944,
       "hp": 135,
-      "time": 261.6
+      "time": 81.58
     },
     {
       "event": "landing",
-      "id": "pyre-23-bridge-deck-2",
-      "x": 69014.1,
+      "id": "pyre-tower-crown-99",
+      "x": 17243.4,
       "hp": 135,
-      "time": 263.03
-    },
-    {
-      "event": "landing",
-      "id": "pyre-23-bridge-deck-3",
-      "x": 69473.6,
-      "hp": 135,
-      "time": 264.24
-    },
-    {
-      "event": "landing",
-      "id": "pyre-23-bridge-exit",
-      "x": 69934.4,
-      "hp": 135,
-      "time": 265.93
-    },
-    {
-      "event": "landing",
-      "id": "pyre-23-bridge-exit",
-      "x": 70465.5,
-      "hp": 135,
-      "time": 267.64
+      "time": 82.54
     },
     {
       "event": "checkpoint",
-      "x": 70580.1,
+      "x": 17374,
       "hp": 135,
-      "time": 268
-    },
-    {
-      "event": "landing",
-      "id": "pyre-24-vault-entry",
-      "x": 70974.8,
-      "hp": 135,
-      "time": 269.23
-    },
-    {
-      "event": "landing",
-      "id": "pyre-24-vault-arch-1",
-      "x": 71275,
-      "hp": 135,
-      "time": 270.2
-    },
-    {
-      "event": "landing",
-      "id": "pyre-24-vault-arch-2",
-      "x": 71675.2,
-      "hp": 135,
-      "time": 271.75
-    },
-    {
-      "event": "landing",
-      "id": "pyre-24-vault-arch-3",
-      "x": 71996.3,
-      "hp": 135,
-      "time": 272.81
-    },
-    {
-      "event": "landing",
-      "id": "pyre-24-vault-arch-4",
-      "x": 72387.4,
-      "hp": 135,
-      "time": 275.37
-    },
-    {
-      "event": "landing",
-      "id": "pyre-24-vault-exit",
-      "x": 72888.8,
-      "hp": 135,
-      "time": 277.1
-    },
-    {
-      "event": "landing",
-      "id": "pyre-25-wire",
-      "x": 74664.5,
-      "hp": 135,
-      "time": 282.69
-    },
-    {
-      "event": "checkpoint",
-      "x": 74781.8,
-      "hp": 135,
-      "time": 283.06
-    },
-    {
-      "event": "landing",
-      "id": "pyre-26-tunnel-entry",
-      "x": 75184.5,
-      "hp": 135,
-      "time": 284.32
-    },
-    {
-      "event": "landing",
-      "id": "pyre-26-tunnel-tunnel-0",
-      "x": 75705.5,
-      "hp": 135,
-      "time": 286.03
-    },
-    {
-      "event": "landing",
-      "id": "pyre-26-tunnel-tunnel-1",
-      "x": 76274.5,
-      "hp": 135,
-      "time": 287.84
-    },
-    {
-      "event": "landing",
-      "id": "pyre-26-tunnel-tunnel-2",
-      "x": 76898.4,
-      "hp": 135,
-      "time": 289.83
-    },
-    {
-      "event": "landing",
-      "id": "pyre-26-tunnel-exit",
-      "x": 77633.7,
-      "hp": 135,
-      "time": 292.15
-    },
-    {
-      "event": "landing",
-      "id": "pyre-27-approach",
-      "x": 79263.1,
-      "hp": 135,
-      "time": 297.24
-    },
-    {
-      "event": "checkpoint",
-      "x": 79396.4,
-      "hp": 135,
-      "time": 297.66
+      "time": 82.95
     },
     {
       "event": "bossstart",
-      "x": 80031.1,
+      "x": 17670.1,
       "hp": 135,
-      "time": 299.64
+      "time": 84.06
     },
     {
       "event": "hurt",
-      "x": 80502.6,
+      "x": 18070.9,
       "hp": 125.6,
-      "time": 302.71
+      "time": 87.58
     },
     {
       "event": "hurt",
-      "x": 80543.3,
-      "hp": 131.1,
-      "time": 303.62
+      "x": 18164.5,
+      "hp": 121.7,
+      "time": 88.49
     },
     {
       "event": "hurt",
-      "x": 80565.3,
-      "hp": 135,
-      "time": 304.53
-    },
-    {
-      "event": "hurt",
-      "x": 80566.5,
-      "hp": 131.1,
-      "time": 305.44
-    },
-    {
-      "event": "hurt",
-      "x": 80907.4,
+      "x": 18208.2,
       "hp": 117.8,
-      "time": 308.73
+      "time": 89.4
     },
     {
       "event": "hurt",
-      "x": 80949.2,
-      "hp": 131.1,
-      "time": 309.65
+      "x": 18209.5,
+      "hp": 113.9,
+      "time": 90.31
     },
     {
       "event": "hurt",
-      "x": 80996.9,
-      "hp": 131.1,
-      "time": 310.56
+      "x": 18042.6,
+      "hp": 98.3,
+      "time": 93.55
     },
     {
       "event": "hurt",
-      "x": 81008.4,
-      "hp": 131.1,
-      "time": 311.47
+      "x": 18023.5,
+      "hp": 89,
+      "time": 96.49
     },
     {
       "event": "hurt",
-      "x": 81081.8,
-      "hp": 117.8,
-      "time": 315.69
+      "x": 18053.4,
+      "hp": 85.1,
+      "time": 97.41
     },
     {
       "event": "hurt",
-      "x": 81106.3,
-      "hp": 131.1,
-      "time": 316.61
+      "x": 18137.9,
+      "hp": 81.2,
+      "time": 98.32
     },
     {
       "event": "hurt",
-      "x": 81331,
-      "hp": 131.1,
-      "time": 317.52
-    },
-    {
-      "event": "hurt",
-      "x": 81432.4,
-      "hp": 131.1,
-      "time": 318.42
-    },
-    {
-      "event": "hurt",
-      "x": 81466.9,
-      "hp": 125.6,
-      "time": 320.25
-    },
-    {
-      "event": "hurt",
-      "x": 81511.9,
-      "hp": 131.1,
-      "time": 321.17
-    },
-    {
-      "event": "hurt",
-      "x": 81515.2,
-      "hp": 131.1,
-      "time": 322.07
-    },
-    {
-      "event": "hurt",
-      "x": 81517.5,
-      "hp": 127.2,
-      "time": 322.98
-    },
-    {
-      "event": "hurt",
-      "x": 81874,
-      "hp": 117.8,
-      "time": 325.61
-    },
-    {
-      "event": "hurt",
-      "x": 81923.7,
-      "hp": 133.1,
-      "time": 326.52
-    },
-    {
-      "event": "hurt",
-      "x": 81927,
-      "hp": 131.1,
-      "time": 327.43
-    },
-    {
-      "event": "hurt",
-      "x": 81966.7,
-      "hp": 131.1,
-      "time": 328.34
-    },
-    {
-      "event": "hurt",
-      "x": 81988.9,
-      "hp": 117.8,
-      "time": 330.63
-    },
-    {
-      "event": "hurt",
-      "x": 82017.8,
-      "hp": 131.1,
-      "time": 331.55
-    },
-    {
-      "event": "hurt",
-      "x": 82242.4,
-      "hp": 131.1,
-      "time": 332.46
-    },
-    {
-      "event": "hurt",
-      "x": 82355.3,
-      "hp": 131.1,
-      "time": 333.37
+      "x": 18140.7,
+      "hp": 77.3,
+      "time": 99.23
     },
     {
       "event": "bossdefeated",
       "id": "pyre-regent",
-      "time": 333.43,
-      "hp": 135
+      "time": 100.68,
+      "hp": 77.3
     },
     {
       "event": "gate",
-      "x": 82365.4,
-      "hp": 135,
-      "time": 333.43
+      "x": 18214.2,
+      "hp": 77.3,
+      "time": 100.68
     },
     {
       "event": "landing",
-      "id": "pyre-arena-3",
-      "x": 82365.4,
-      "hp": 135,
-      "time": 333.43
+      "id": "pyre-arena-105",
+      "x": 18214.2,
+      "hp": 77.3,
+      "time": 100.68
+    },
+    {
+      "event": "landing",
+      "id": "pyre-arena-105",
+      "x": 18661.6,
+      "hp": 77.3,
+      "time": 102.13
     },
     {
       "event": "win",
-      "x": 83418.4,
-      "hp": 135,
-      "time": 336.77
+      "x": 18683.9,
+      "hp": 77.3,
+      "time": 102.21
     }
   ]
 }

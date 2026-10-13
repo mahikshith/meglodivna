@@ -781,6 +781,7 @@ function scenery(p,type,frame=0){
 export function createArtTextures(scene) {
   const manifest = [];
   const add = (key, width, height, anchor, notes, draw) => {
+    if(scene.referenceArt&&key.startsWith('background-'))return;
     if (!scene.textures.exists(key)) {
       const p = painter(width, height, key.startsWith('background-')||key.startsWith('tile-')?2:1);
       draw(p);

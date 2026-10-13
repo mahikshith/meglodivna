@@ -1,8 +1,8 @@
 {
   "worldId": "neon",
   "status": "won",
-  "time": 336.083333333192,
-  "hp": 118.98999999999945,
+  "time": 104.20833333336233,
+  "hp": 64.52000000000002,
   "bosses": [
     {
       "id": "neon-warden",
@@ -19,12 +19,20 @@
   ],
   "retries": 0,
   "captures": [
-    "story-neon-scout",
-    "run-storm",
+    "room-0-Signal-Zero",
+    "story-neon-mira",
+    "room-1-Relay-Trenches",
+    "room-2-The-Lightning-Mast",
+    "room-3-The-Arc-Marshal",
     "boss-neon-warden",
-    "story-neon-scholar",
+    "room-4-Suspended-Highway",
+    "room-5-Antenna-Stair",
+    "room-6-The-Dead-Battery",
+    "room-7-The-Circuit-Witch",
     "boss-neon-hex",
-    "story-neon-deserter",
+    "room-8-Memory-Vault",
+    "room-9-Copper-Roots",
+    "room-10-The-Null-Reactor",
     "boss-neon-regent",
     "campaign-victory"
   ],

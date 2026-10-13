@@ -11,3 +11,9 @@ android/app/src/main/assets/public/
 artifacts/*.json
 artifacts/*.log
 artifacts/ci-apk/
+__pycache__/
+artifacts/reference/early-*.png
+artifacts/reference/reproducibility/
+
+# Canonical downloaded source packs include unused demos/music; compiled licensed art is vendored.
+reference/runeheart-sources/

@@ -123,7 +123,7 @@ test('loading a v0.2 save migrates translated encounters while preserving discov
   for (const key of ['claimed', 'defeatedBosses', 'openedGates', 'destroyedProps', 'completedWorlds']) assert.deepEqual(migrated[key], []);
   assert.deepEqual(migrated.worlds, {});
   const world = createWorld(migrated.checkpoint, { progress: migrated });
-  assert.equal(world.player.x, world.level.checkpoints[0].x); assert.ok(world.bosses.every(boss => !boss.dead));
+  assert.equal(world.player.x + world.player.w / 2, world.level.checkpoints[0].x + 12); assert.ok(world.bosses.every(boss => !boss.dead));
   migrated.checkpoint = 2; migrated.claimed.push('new-cache'); migrated.charges.cannon = 1;
   assert.equal(saveProgress(migrated, storage), true); assert.deepEqual(loadProgress(storage), migrated);
 });

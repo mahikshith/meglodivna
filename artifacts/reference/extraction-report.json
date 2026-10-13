@@ -1,0 +1,37 @@
+{
+  "reproducible": true,
+  "compiledSha256": {
+    "atlas.png": "1b4fca284c5a7ba616355926bd83bb82bf5e5f61353ba8be4ce09ed6d2403372",
+    "atlas.json": "0162d6ebf2ce5b6fbb61c51fa064362147c55ba6b7389348e02d40d43f85b766",
+    "manifest.json": "9e6d8eda6d480f6a681c066dfa5f0283237c0574c5ab8c74a934c3f5f635ae1e"
+  },
+  "allFixedFramesHaveTransparentOuterEdge": true,
+  "sourceFilesPreserved": true,
+  "sources": [
+    {
+      "file": "03_aether_character_sheet.png",
+      "sha256": "c89e1a24bcd32acee81e2051910bf42e3b4555c41e80369c34d51a2aa2ccade4",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "02_asset_pack_all_characters.png",
+      "sha256": "e5ac7d62c65ba90fa0c0f670e0aceac8f9032245485ee7b04b7941046b4e215a",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "01_concept_board_full_world.png",
+      "sha256": "305b247a16240cab407cc4102f10fb0419dfe85eb794d0f507d6a5d004cb6283",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "Designer.png",
+      "sha256": "6194801c4acc3d545aeda448e9ed822bf02c6ff284d4e9996dd28e165e4b3717",
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "method": "Regenerated all outputs in an isolated artifact directory; compared bytes to frozen runtime packet. No runtime/source files modified."
+}

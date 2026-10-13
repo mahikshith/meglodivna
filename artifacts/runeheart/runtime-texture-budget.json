@@ -1,0 +1,31 @@
+{
+  "basis": "Current createArtTextures manifest with referenceArt present, plus both loaded atlas dimensions and all8 preloaded paintings. Sprite/background subframes share their source images and are not counted twice.",
+  "generatedBackgrounds": 0,
+  "sourceTextureCount": 343,
+  "groups": [
+    {
+      "kind": "Generated graphics",
+      "count": 333,
+      "rgbaBytes": 13224704
+    },
+    {
+      "kind": "Runeheart atlas",
+      "count": 1,
+      "rgbaBytes": 16777216
+    },
+    {
+      "kind": "Runeheart paintings",
+      "count": 8,
+      "rgbaBytes": 6086656
+    },
+    {
+      "kind": "Retained reference atlas",
+      "count": 1,
+      "rgbaBytes": 16777216
+    }
+  ],
+  "totalRGBABytes": 52865792,
+  "totalMiB": 50.416748046875,
+  "twoCopyScenarioMiB": 100.83349609375,
+  "limitations": "One-copy uncompressed RGBA pixel estimate, not measured process/device RAM. CPU decoded images/canvases and GPU copies may approximately double this subtotal. Excludes Phaser internal tiny textures, buffers, graphics geometry, icon-cache canvases/data URLs, transient painter canvases, browser overhead and driver allocation."
+}

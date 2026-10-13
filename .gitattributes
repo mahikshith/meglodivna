@@ -1,0 +1,6 @@
+# Keep the hashed, compiled asset metadata byte-identical across checkouts.
+public/reference/*.json -text whitespace=cr-at-eol
+artifacts/**/*.json -text whitespace=cr-at-eol
+
+public/runeheart/*.json -text whitespace=cr-at-eol
+public/runeheart/*.txt -text whitespace=cr-at-eol

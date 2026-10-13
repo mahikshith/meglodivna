@@ -1,8 +1,8 @@
 {
   "worldId": "tide",
   "status": "won",
-  "time": 349.6333333331797,
-  "hp": 135,
+  "time": 106.23333333336394,
+  "hp": 21.119999999999987,
   "bosses": [
     {
       "id": "tide-warden",
@@ -19,15 +19,28 @@
   ],
   "retries": 0,
   "captures": [
-    "story-tide-scout",
-    "run-ruins",
+    "room-0-Salt-Lantern",
+    "story-tide-mira",
+    "room-1-Broken-Aqueduct",
+    "room-2-The-Pearl-Cistern",
+    "room-3-The-Sluice-Knight",
     "boss-tide-warden",
-    "story-tide-scholar",
+    "room-4-Sunken-Orchard",
+    "room-5-Pressure-Halls",
+    "room-6-The-Hanging-Bell",
+    "room-7-The-Undertow-Oracle",
     "boss-tide-hex",
-    "story-tide-deserter",
+    "room-8-Drowned-Tombs",
+    "room-9-Raincatcher",
+    "room-10-The-Leviathan-Engine",
     "boss-tide-regent",
     "campaign-victory"
   ],
   "runtimeErrors": [],
-  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback."
+  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback.",
+  "productionChecks": [
+    "development API absent",
+    "Power hold palette",
+    "Back closes palette before pausing"
+  ]
 }

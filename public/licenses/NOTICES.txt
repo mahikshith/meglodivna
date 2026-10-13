@@ -2,4 +2,8 @@ Third-party runtime notices
 
 Phaser 3.90.0: Copyright (c) 2024 Richard Davey, Phaser Studio Inc. MIT license; see Phaser-MIT.txt.
 AndroidX WebKit, Activity, and their AndroidX dependencies: Android Open Source Project contributors, Apache License 2.0; see Apache-2.0.txt. Native Android dependencies are used without source modifications.
-All game sprites, backgrounds, effects, level data, and dialogue are original work in this repository. Existing games are design references only.
+Selected Runeheart hero, creature, NPC and environment graphics are by Luis Zuno / Ansimuz, from his Gothicvania collection, Town and Bridge packages. Their canonical author pages label these graphics CC0 1.0; the packages contain public-domain or redistribution notices. See Gothicvania-CC0-NOTICE.txt and ../runeheart/LICENSE.txt. Source music and demonstration code are excluded.
+
+The retained reference atlas contains pixels extracted from four concept boards supplied by the user: 03_aether_character_sheet.png, 02_asset_pack_all_characters.png, 01_concept_board_full_world.png and Designer.png. Their source hashes and extraction provenance are in ../reference/manifest.json. These supplied pixels are not claimed as original repository artwork and are not covered by the Gothicvania CC0 notice.
+
+Other procedural game graphics and effects, level data, and dialogue were authored for this repository. Existing commercial games are design references; their franchise assets are not included.

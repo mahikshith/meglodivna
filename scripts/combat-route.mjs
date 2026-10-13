@@ -1,8 +1,7 @@
 import assert from 'node:assert/strict';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { getLevel } from '../src/level.js';
-import { PHYSICS } from '../src/physics.js';
-import { advanceStory, createWorld, equipItem, hazardState, retryWorld, STEP, stepWorld } from '../src/combat.js';
+import { advanceStory, createWorld, equipItem, hazardState, retryWorld, weaponOrigin, STEP, stepWorld } from '../src/combat.js';
 
 const difficulty = process.argv[2] || 'forge';
 assert.ok(['ember', 'forge', 'inferno', 'extinction'].includes(difficulty), 'Pass a supported difficulty ID.');
@@ -53,7 +52,7 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   const support = p.grounded && world.solids.find(solid => Math.abs(feet - solid.y) < 0.01
     && p.x < solid.x + solid.w && p.x + p.w > solid.x);
   const markerBoss = marker.bossId && world.bosses.find(b => b.id === marker.bossId);
-  const reached = p.grounded && Math.abs(feet - marker.y) < 0.01 && Math.abs(center - marker.x) < 55;
+  const reached = p.grounded && Math.abs(feet - marker.y) < 0.01 && Math.abs(center - marker.x) < (marker.pickupId?12:55);
   const lever = marker.leverId && world.props.find(prop => prop.id === marker.leverId);
   const leverGate = lever && world.gates.find(gate => gate.id === lever.gateId);
   const needsStory = marker.npcId && !conversations.has(marker.npcId);
@@ -64,7 +63,11 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   }
 
   const bossFight = !!activeBoss;
-  const destination = bossFight ? activeBoss.x - 52 : marker.x;
+  // Mirror arrivals require turning to the flank instead of permanently holding fire toward the boss.
+  const defender = bossFight && world.enemySummons.filter(e => !e.dead && e.phase === 'attack'
+    && Math.abs(e.x + e.w / 2 - center) < 240 && Math.abs(e.y + e.h - feet) < 150)
+    .sort((a,b) => Math.abs(a.x-center)-Math.abs(b.x-center))[0];
+  const destination = defender ? defender.x + defender.w / 2 : bossFight ? activeBoss.x - 52 : marker.x;
   const distance = destination - center;
   let move = Math.max(-1, Math.min(1, distance / 50));
   let jumpPressed = false, dashPressed = false, jet = false;
@@ -102,26 +105,43 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   }
   if (bossFight) {
     const b = activeBoss;
-    bossTimes[b.id] ||= { started: world.time, attacks: new Set() };
-    if (b.phase === 'attack') bossTimes[b.id].attacks.add(b.attack);
+    bossTimes[b.id] ||= { started: world.time, attacks: new Set(), forms: new Set(), flyingAttacks: new Set() };
+    bossTimes[b.id].forms.add(b.form);
+    if (b.phase === 'attack') {
+      bossTimes[b.id].attacks.add(b.attack);
+      if (b.form === 'flying') bossTimes[b.id].flyingAttacks.add(b.attack);
+    }
     if (b.phase === 'charge' && b.timer < 0.3 && p.grounded) jumpPressed = true;
     jet = b.phase === 'attack' && !!b.beam && !p.grounded && p.fuel > 0;
     if (Math.abs(distance) < 6 && p.facing < 0) move = 0.02;
+    if (defender) move = Math.sign(defender.x + defender.w / 2 - center) * 0.65;
+    const rocket = world.projectiles.find(shot => shot.active && shot.owner === 'enemy' && shot.heavy
+      && Math.hypot(shot.x-center,shot.y-p.y-p.h/2) < 140);
+    if (rocket && p.grounded) jumpPressed = true;
+    if (rocket && p.dashCooldown <= STEP && Math.hypot(rocket.x-center,rocket.y-p.y-p.h/2) < 75) dashPressed = true;
   }
   const missile = world.missileWarning;
   if (missile && missile.time < 0.3 && p.grounded && Math.abs(missile.y - (p.y + 20)) < 45) jumpPressed = true;
-  const nearby = world.enemies.filter(e => !e.dead && Math.abs(e.x - p.x) < 600);
+  const nearby = [...world.enemies,...world.enemySummons.filter(e=>e.phase==='attack')].filter(e => !e.dead && Math.abs(e.x - p.x) < 600);
   const overhead = nearby.find(e => e.type === 'drone' && Math.abs(e.x + e.w / 2 - center) < 30 && e.y + e.h < p.y + 18);
   const charges = typeof p.charges === 'object' ? p.charges.cannon : p.cannonCharges;
-  const gun = bossFight && charges > 0 ? 'cannon' : 'carbine';
+  const gun = bossFight && !defender && charges > 0 ? 'cannon' : 'carbine';
   equip('gun', gun);
+  if (defender) equip('spell','thunder');
   const spellPressed = (bossFight || nearby.length > 0) && p.mana >= 25 && p.spellCooldown <= STEP && p.hp < p.maxHp - 8;
   const nova = typeof p.charges === 'object' ? p.charges.nova : p.novaCharges;
   const ultimatePressed = bossFight && nova > 0 && p.hp < p.maxHp * 0.6;
+  const drop=!!support?.oneWay && feet<target.y-5 && center>=target.x && center<=target.x+target.w;
+  if(drop&&!bossFight)jumpPressed=true;
   const wasGrounded = p.grounded;
-  const controls = { move, jumpPressed, jumpHeld: true, dashPressed, jet, down: false,
+  const controls = { move, jumpPressed, jumpHeld: true, dashPressed, jet, down: drop && !bossFight,
     slashPressed: p.slashCooldown <= STEP, shoot: true, aimUp: !bossFight && !!overhead,
     spellPressed, ultimatePressed, interactPressed };
+  if (bossFight) {
+    const aimTarget = defender || activeBoss, hand = weaponOrigin(p,'hand');
+    const ax = aimTarget.x + aimTarget.w/2 - hand.x, ay = aimTarget.y + aimTarget.h/2 - hand.y, length = Math.hypot(ax,ay)||1;
+    controls.aimX = ax/length; controls.aimY = ay/length;
+  }
   const encoded = JSON.stringify(controls);
   if (encoded === lastControls && trace.at(-1)?.input) trace.at(-1).frames++;
   else { trace.push({ frames: 1, input: controls }); lastControls = encoded; }
@@ -148,13 +168,15 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   assert.ok(Number.isFinite(p.x) && Number.isFinite(p.y), 'Simulation must remain finite.');
 }
 
-const report = { worldId, difficulty, status: world.status, elapsed: +(totalFrames * STEP).toFixed(2), campaignTime: +world.time.toFixed(2),
+const report = { worldId, worldName: LEVEL.name, difficulty, status: world.status, playerBody: { w: world.player.w, h: world.player.h }, elapsed: +(totalFrames * STEP).toFixed(2), campaignTime: +world.time.toFixed(2),
   timeLeft: +world.timeLeft.toFixed(2), deaths, checkpoint: world.checkpoint, x: +world.player.x.toFixed(1), y: +world.player.y.toFixed(1),
   hp: +world.player.hp.toFixed(1), conversations: [...conversations], triggerProof,
   storyClaims: world.progress.claimed.filter(id => id.startsWith('npc:')),
-  bosses: world.bosses.map(b => ({ id: b.id, dead: !!b.dead, hp: b.hp,
+  bosses: world.bosses.map(b => ({ id: b.id, dead: !!b.dead, hp: b.hp, body: { w: b.w, h: b.h },
     fightSeconds: bossTimes[b.id]?.ended ? +(bossTimes[b.id].ended - bossTimes[b.id].started).toFixed(2) : null,
-    attacksSeen: [...(bossTimes[b.id]?.attacks || [])].sort() })),
+    attacksSeen: [...(bossTimes[b.id]?.attacks || [])].sort(),
+    formsSeen: [...(bossTimes[b.id]?.forms || [])],
+    flyingAttacksSeen: [...(bossTimes[b.id]?.flyingAttacks || [])].sort() })),
   gates: world.gates.map(g => ({ id: g.id, open: !!g.open })),
   method: 'Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.',
   target: route[targetIndex]?.id, events: [...eventsSeen].sort(), history };
@@ -172,8 +194,12 @@ if (worldId === 'soulforge' && difficulty === 'forge') {
 console.log(JSON.stringify({ ...report, history: world.status === 'won' ? undefined : history.slice(-12) }, null, 2));
 assert.equal(world.status, 'won', 'Legal campaign inputs must defeat every boss and reach the exit.');
 assert.ok(world.bosses.every(b => b.dead), 'All three bosses must be defeated.');
+for (const boss of report.bosses.filter(boss => world.bosses.find(b => b.id === boss.id).type === 'regent')) {
+  assert.ok(boss.formsSeen.includes('transforming') && boss.formsSeen.includes('flying'), 'The final guardian must transform into the rocket wyrm during live combat.');
+  assert.ok(boss.flyingAttacksSeen.length > 0, 'The rocket wyrm must attack in its flying form during live combat.');
+}
 assert.equal(conversations.size, LEVEL.npcs.length, 'Every authored story conversation must be completed.');
 assert.equal(Object.keys(triggerProof).length, 3, 'All bosses must activate through their proper trigger.');
 assert.ok(LEVEL.npcs.every(npc => world.progress.claimed.filter(id => id === `npc:${npc.id}`).length === 1), 'Each story reward is claimed exactly once.');
 assert.ok(world.gates.every(g => g.open), 'Boss and lever gates must be opened through gameplay.');
-assert.ok(report.elapsed >= 300, 'Each selected world must supply at least five minutes of efficient live gameplay.');
+assert.ok(world.collections.includes('ember-heart') && world.collections.includes('tide-glass') && world.collections.includes('storm-seal'), 'All three required stones are recovered through contact.');

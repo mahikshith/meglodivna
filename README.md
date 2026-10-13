@@ -1,124 +1,80 @@
-# ASH//SIGNAL: FRACTURED REALMS — v0.3
+# RUNE//HEART — ASH SIGNAL v0.5
 
-An original 2D action platformer where ancient souls power military machines. Five selectable worlds are authored for more than five minutes of live gameplay each. Exact legal-run durations, retries and check results are maintained in [LEVEL.md](LEVEL.md) and [VALIDATION.md](VALIDATION.md). Automated completion does not establish addictiveness, subjective balance or Android comfort.
+**Latest APK:** [Download Aether Revamp v0.4 Android test build](https://github.com/mahikshith/meglodivna/releases/download/v0.4.0-aether-revamp/ASH-SIGNAL-Aether-Revamp-debug.apk) — 14 October 2026, version `0.4.0-aether-revamp`, code **4**, Android 7.0+.
 
-| World | Main features |
+[Release and checksums](https://github.com/mahikshith/meglodivna/releases/tag/v0.4.0-aether-revamp) · [Passed Android CI](https://github.com/mahikshith/meglodivna/actions/runs/38458832513) · [54 action screenshots](artifacts/revamp-actions/contact-sheet.png). This link must be updated after every verified APK delivery; see [AGENTS.md](AGENTS.md).
+
+Runeheart rebuilds the game around three rune stones, guardian seals, vertical chambers and optional treasure vaults. The courier enters a sanctuary that burns people into light; recover its stones and sever the engine. This repository contains the v0.5 rebuild. The APK link above identifies the latest **verified published** delivery and is updated after upload verification.
+
+![Solid terrain in the sanctuary](artifacts/runeheart/gameplay/01-sanctuary.png)
+
+## What changed
+
+- Continuous solid floors with thick landing caps, shaded foundations, irregular stone faces and distinct platform undersides. Full-height backgrounds remain present during jetpack ascent; skyline layers sit behind the playable ground.
+- A full-proportion animated swordfighter, true run/jump/sword frames, a quadruped wolf and animated NPCs. Selected CC0 Gothicvania artwork by Ansimuz joins the retained robots, dragon and items from the supplied references. Sources, licenses and limitations: [ASSETS.md](ASSETS.md).
+- Enemies patrol, chase, retreat, jump obstacles and telegraph directional attacks. Sword combos buffer repeated presses, hold their attack direction and stagger smaller enemies. Dash cuts through enemies, while heavy guardian attacks require evasion.
+- A camera that follows vertical travel, looks ahead and widens around nearby threats. No attack-triggered zoom-in that hides the route.
+- Large, spaced touch controls in a curved bottom layout, a floating joystick, visible held-mode indicators and adjustable opacity. Gameplay keeps a dedicated region above the action buttons.
+
+## Worlds and objectives
+
+| Realm | Features |
 | --- | --- |
-| Soulforge — The Unbound Engine | Frozen borders, industrial foundries and the Warden/Hex/Regent chain. |
-| Tide — The Drowned Fleet | Shipwrecks, flooded tunnels, currents and moving rafts. |
-| Pyre — The Ember Dungeons | Volcanic prisons, steam, crumble floors and a furnace conduit. |
-| Neon — The Last Transit | Techno tunnels, maintenance lifts, shutters and missile pressure. |
-| Veil — The Mirror Graves | Wizard crypts, mirror passages, hostile summons and an ambiguous guide. |
+| Runeheart · Hollow Sanctuary | Broken roots, bell ascent, aqueduct, crypt, rune vault and guardian chain |
+| Drowned Choir · Sluice Kingdom | Currents, raft crossings and undertow guardians |
+| Cinder Coven · Furnace Below | Steamworks, crumbling spans and a furnace valve that weakens a guardian |
+| Storm Archive · Broken Circuit | Conduits, vertical maintenance lift and overload attacks |
+| Glass Necropolis · False Moon | Mirror summons, crypts and Ysra's blood-for-dragon pact |
 
-## Play locally
+Find Ember Heart, Tide Glass and Storm Seal to open the final gate. Stones also strengthen finishers, grant a shield and reward dash kills with fuel. Optional elevated vaults contain equipment and return portals. Three guardians protect each realm. The Regent transforms into a flying rocket wyrm.
 
-Use Node.js 22 and a modern browser. Runtime: Phaser 3.90.0; build: Vite 6.4.4.
+Five realms share room archetypes and systems but change their order, elevation and special mechanics. Optimized legal test routes take about **97–177 simulated seconds**, depending on realm/difficulty. A five-minute minimum and first-time human completion time are **not established**. See [LEVEL.md](LEVEL.md) for exact scope.
+
+Choose Ember, Forge, Inferno or Extinction. Difficulty changes damage, health, cadence, recovery, resources and deadline. The Forge deadline is fifteen minutes; dialogue and armory menus pause it.
+
+## Controls
+
+Touch any free gameplay area to place the analogue joystick under your finger. Its origin stays fixed during that drag; release stops movement and the stick disappears after eight seconds.
+
+| Touch action | Function |
+| --- | --- |
+| Jump · 100px | Press to jump; press again in air for the second jump; hold 350ms for jet thrust |
+| Attack · 100px | Press for immediate sword cut; hold 120ms to fire the equipped gun |
+| Dash · 92px | Sword dash; cannot repel heavy attacks |
+| Power · 80px | Tap to interact nearby or cast; hold 450ms for the paused power/equipment palette |
+| Gear / Pause · 48px | Direct menu access; opacity preference in paused settings |
+
+Targets have at least eight CSS pixels between them. Buttons use icons and a curved arrangement in a reserved 164px landscape gutter. Independent fingers can steer, jump and attack together. Browser tests do not establish physical thumb comfort or device latency; see [control evidence](docs/RUNEHEART-CONTROLS.md).
+
+Keyboard: **A/D or arrows** move, **Space** jump, **Shift** dash, **J** cut, **K** fire, **L/E** jet, **Q** spell, **F** interact, **C/V/X** cycle gun/sword/spell, **Z** nova, **Escape** pause and **R** retry. Up aims upward; down+jump drops through a one-way platform. Gamepad face/shoulder inputs are documented in [INTERFACES.md](INTERFACES.md). Android Back closes an open palette before pausing.
+
+## Equipment and progression
+
+Three swords, five guns, three armors, nine spells and six relics retain their catalog identities. Carbine, scattergun, rail, launcher and charged cannon have distinct fire. Cinder burns, Siphon drains, Skybreaker staggers, Veil conceals, Stillgrave slows and Eclipse consumes a finite charge. Echo, Wolf and Wyrm call temporary allies through summoning effects. Shields, jet boosts, overload pickups, destructible caches and explosive barrels affect combat.
+
+Discoveries and equipment persist. Encounter state is separate per realm. The new layout migrates older checkpoint positions while retaining discovered equipment. Retry returns to the relay and preserves spent charges and claims. Clearing app data removes saves.
+
+## Run and validate
+
+Use Node.js22, Phaser3.90.0 and Vite6.4.4.
 
 ```sh
 npm ci
 npm run dev
-```
-
-Open the printed address, normally `http://127.0.0.1:5173/`. Choose a realm and Ember (easy), Forge (medium/default), Inferno (hard) or Extinction (ultra hard). Tiers affect damage, enemy health, cadence, recovery, missile pressure and deadline. **WORLDS** returns to selection; each realm retains its own relay and encounter save.
-
-## Controls
-
-Gamepad labels follow the standard Xbox-style browser mapping.
-
-| Action | Keyboard | Gamepad |
-| --- | --- | --- |
-| Move | A/D or left/right arrows | Left stick horizontal |
-| Jump / double jump / wall jump | Space; hold for height | A |
-| Slash / deflect light shots | J | X |
-| Fire | Hold K | Right trigger |
-| Aim | Facing; W/up arrow aims up | Left stick direction |
-| Dash | Either Shift | B |
-| Jetpack | Hold L or E | Right bumper |
-| Drop through catwalk | S/down arrow + Space | Stick down + A |
-| Spell | Q | Left trigger |
-| Talk / use machinery / portal | F | Y |
-| Cycle gun / sword / spell | C / V / X | LB / D-pad left / D-pad right |
-| Eclipse Nova | Z | Right stick click |
-| Pause / resume | Escape | Start |
-| Retry at relay | R or Reconnect after death | A confirms death menu |
-
-Touch uses a **112 px circular analogue stick** and **four curved action buttons** in a reserved **112 px bottom gutter**, keeping controls separate from the adaptive game viewport. **Attack:** tap to slash; hold 180ms to fire. **Jump:** tap for jump/double jump; hold 350ms for thrust. **Power:** tap to cast or interact with a nearby target; hold 450ms to open the paused Sorcery/gear palette. **Dash:** press to dash. A 44 px pause button sits in the center. The stick has a deadzone and independent pointer capture so actions can stay held while steering. Android Back closes the palette or toggles pause; from a non-playing menu it exits. Physical Android comfort still requires device playtesting.
-
-Hold jump for height; release to cut the arc. Jump away from walls to climb. Jet fuel is finite and recharges on solid ground. Melee alternates overhead, horizontal and finisher cuts, with a dash lunge. Ordinary bullets can be parried; heavy rockets and beams need evasion or defenses. EMP disables dash/thrust, fire can burn, and mechanical traps/lasers warn before activating. Incoming missiles use a red edge/lane cue.
-
-## Equipment and powers
-
-| Category | Contents |
-| --- | --- |
-| Three swords | Rustfang: heavy cut. Storm Katana: fast cuts and third-strike lightning. Soul Saber: stronger cuts with life recovery. |
-| Five guns | Ash Carbine, Grave Scattergun, Storm Rail, Cinder Launcher and Oblivion Cannon. Rockets cost four resonance; cannon beams consume earned charges. |
-| Three armors | Courier Rig: balanced. Bulwark Plate: more health/defense, less soul energy and higher fuel drain. Wraith Weave: more soul energy and efficient thrust, lower protection. |
-| Nine spells | Cinder Plague, Soul Siphon, Skybreaker, Shadow Veil, Stillgrave, Eclipse Nova, Courier Echo, Ash Wolf and Cinder Wyrm. |
-| Six relics | Ember Heart, Tide Glass, Storm Seal, Eclipse Fragment, Regent Key and Unbound Soul. |
-
-Cinder burns, Siphon drains/lifesteals, Skybreaker staggers and suppresses sentinel wards, Veil conceals until attacking, Stillgrave slows threats, and Eclipse consumes a finite charge for damage/recovery. Echo calls a ten-second rifle clone, Wolf an eight-second pursuing companion, and Wyrm a seven-second flying fire companion. Summons cost resonance, announce arrival and expire.
-
-**Borrowed Spark** is light-parry recovery: five resonance per successful parry, capped at two rewards per swing. **Break Ward** is Skybreaker's three-second sentinel ward suppression, followed by restoration. These are mechanics, not additional buttons or equipment IDs.
-
-Named capsules restore resources, grant temporary shields/rapid fire/boosts, unlock gear or award relics and finite charges. Crates/caches break; barrels chain and can hurt the courier. Essential floors stay intact. Rafts, currents, steam, crumble floors, valves/conduits and mirror passages affect actual simulation.
-
-Boss variants advance, retreat, leap and recover, with shielded, weakened and enraged states. Directional shots/beams start at visible weapons/chest cores. Hex/Regent portal blinks announce exits before arrival. Survivors offer reward choices; some disclose an ambush or curse. Story and **ARMORY** pause the clock. Menus cover selection, pause, retry and victory; HUD shows soul energy, loadout, charges and deadline. Sound mute and reduced effects are available.
-
-Discoveries/equipment/relics are shared; relay, claims, destroyed props, bosses and gates are saved per world. Retry returns to that world's relay without duplicating rewards or restoring spent charges. Replaying a completed world resets its encounters while retaining discoveries. Existing Soulforge saves remain valid. Clearing browser/app data removes saves. Focus loss pauses and clears held input; sound starts after user interaction.
-
-## Checks and build
-
-```sh
 npm test
 npm run test:game -- forge soulforge
-npm run test:game -- forge tide
-npm run test:game -- forge pyre
-npm run test:game -- forge neon
-npm run test:game -- forge veil
+npm run test:deep
 npm run build
-npm run preview
 ```
 
-`test:game` also accepts ember/inferno/extinction; default is Forge/Soulforge. Reports/traces go to `artifacts/`. `npm run test:deep` runs the configured 30-minute wall-clock harness; see VALIDATION for delivered evidence. Browser checks need Playwright available to Node and matching Chromium; `CHROMIUM_EXECUTABLE` can select an existing browser. With development at 5173 and production preview at 4173, run `npm run test:browser` and `npm run test:replay`.
+Browser tests require a running dev server on port5173, production preview on4173 where specified, Playwright and Chromium. `CHROMIUM_EXECUTABLE` may point to an installed browser. See [VALIDATION.md](VALIDATION.md) for exact commands, scope and fresh reports.
 
-`dist/` bundles content for static HTTP hosting, without accounts, backend, CDN, telemetry or paid assets. Production omits development test hooks. Notices under `public/licenses/` include Phaser MIT and AndroidX Apache2.0.
-
-## Android debug APK
-
-Delivery: **ASH-SIGNAL-Fractured-Realms-debug.apk**, versionName `0.3.0-fractured-realms`, versionCode **3**, app ID `com.meglodivna.ashsignal`. Native output: `android/app/build/outputs/apk/debug/app-debug.apk`. It uses landscape/immersive presentation and bundled local WebView assets. Gameplay works offline; the manifest requests no Internet permission. Minimum Android 7.0/API 24, with a sufficiently recent System WebView.
-
-Rebuild with JDK 17, SDK platform 36, build-tools 36.0.0 and platform-tools. Configure JAVA_HOME/ANDROID_HOME and accept SDK licenses through SDK tools. First build downloads build dependencies.
+Android: JDK17, SDK36, minAPI24, landscape WebView with bundled offline assets. Keep `ASH_SIGNAL_DEBUG_KEYSTORE` pointed at the persistent test key so v0.3+ installations can update without clearing saves.
 
 ```sh
-npm ci
 npm run android:sync
+cd android
+./gradlew assembleDebug lintDebug --no-daemon
 ```
 
-From `android/`, run `./gradlew assembleDebug lintDebug --no-daemon` on macOS/Linux, or:
-
-```powershell
-.\gradlew.bat assembleDebug lintDebug --no-daemon
-```
-
-Repeat android:sync after web changes. Install using the device package installer or USB debugging:
-
-```sh
-adb install -r ASH-SIGNAL-Fractured-Realms-debug.apk
-adb shell am start -n com.meglodivna.ashsignal/.MainActivity
-```
-
-This v0.3 APK changes the signing certificate from the earlier Soulforge test APK. Android requires uninstalling that older test app before installing this build, which removes its local save. Subsequent CI builds use a persistent signing key from the repository's encrypted `ASH_SIGNAL_DEBUG_KEYSTORE_BASE64` secret. Keep that secret to preserve update compatibility. Package build/inspection does not prove sustained Android performance or comfort.
-
-## CI and architecture
-
-[Android CI](.github/workflows/android.yml) runs on main pushes, pull requests and manual dispatch. It checks unit tests, all four Soulforge tiers and Forge runs in the other worlds, builds offline assets, assembles/lints and uploads **ASH-SIGNAL-Fractured-Realms-debug-APK** plus evidence. It restores its test signing key from the repository secret. Fork pull requests do not receive that secret and cannot produce a signed APK.
-
-```sh
-gh workflow run android.yml --ref main
-gh run list --workflow android.yml
-gh run download --name ASH-SIGNAL-Fractured-Realms-debug-APK --dir artifacts/ci-apk
-```
-
-Simulation is fixed 120 Hz with swept collision/interpolation. physics.js owns movement; combat.js owns encounters/resources/weapon origins; level.js/worlds.js provide authored routes; catalog.js/progress.js define gear/validated saves. main.js connects Phaser to DOM UI, input and synthesized audio. Android hosts the production build without another simulation.
-
-[ROADMAP.md](ROADMAP.md), [PHASE3.md](PHASE3.md), [LEVEL.md](LEVEL.md) and [VALIDATION.md](VALIDATION.md) record scope/evidence. [ASSETS.md](ASSETS.md), `artifacts/refinement-art-sheet.png`, `artifacts/campaign-biomes.png` and `artifacts/assets/` document347 original textures and anchors, including Ysra's witch portrait.
+The Android workflow builds on `main`, `Revamp`, pull requests and manual dispatch. Its APK artifact is **ASH-SIGNAL-Runeheart-debug-APK**. Fork pull requests cannot access the signing secret. [REBUILD.md](REBUILD.md) records the task breakdown and research; [VALIDATION.md](VALIDATION.md) distinguishes simulation, browser and Android build evidence. This is a debug test build, not a commercially validated release.

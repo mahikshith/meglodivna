@@ -4,7 +4,7 @@ const STARTERS = { sword: 'rustfang', gun: 'carbine', armor: 'courier', spell: '
 export const WORLD_IDS = ['soulforge', 'tide', 'pyre', 'neon', 'veil'];
 const ENCOUNTER_KEYS = ['claimed', 'defeatedBosses', 'openedGates', 'destroyedProps'];
 export function defaultProgress() {
-  return { version: 1, unlocked: Object.fromEntries(Object.entries(STARTERS).map(([key, id]) => [key, [id]])),
+  return { version: 1, layoutVersion: 2, unlocked: Object.fromEntries(Object.entries(STARTERS).map(([key, id]) => [key, [id]])),
     equipped: { ...STARTERS }, collections: [], claimed: [], defeatedBosses: [], openedGates: [],
     destroyedProps: [], charges: { cannon: 0, nova: 0 }, checkpoint: 0,
     worldId: 'soulforge', worlds: {}, completedWorlds: [] };
@@ -69,8 +69,8 @@ export function restartWorldProgress(raw, id) {
 export function loadProgress(storage) {
   try {
     const raw = JSON.parse((storage ?? globalThis.localStorage)?.getItem('ash-signal-soulforge') || 'null');
-    // v0.2 relays and encounters used the shorter map. Keep discoveries, start the expanded map fresh.
-    if (raw && typeof raw === 'object' && raw.version === 1 && !Object.hasOwn(raw, 'worldId')) return newCampaignProgress(raw);
+    // Old relays name different rooms. Keep the armory, restart encounters at the new sanctuary.
+    if (raw && typeof raw === 'object' && raw.version === 1 && (raw.layoutVersion !== 2 || !Object.hasOwn(raw, 'worldId'))) return newCampaignProgress(raw);
     return validateProgress(raw);
   }
   catch { return defaultProgress(); }

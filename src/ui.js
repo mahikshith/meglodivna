@@ -6,6 +6,18 @@ export function createCampaignUI(catalog, callbacks = {}) {
   const labels = { sword: 'BLADES', gun: 'FIREPOWER', armor: 'ARMOR', spell: 'SORCERY', relic: 'RELICS' };
   let category = 'sword', currentWorld = null, storySignature = '', previousFocus = null;
   const modal = el('catalogue'), storyPanel = el('story-panel');
+  const runeStatus = el('rune-status'), runeIcons = [...(runeStatus?.querySelectorAll('[data-rune]') || [])];
+  const opacity = el('control-opacity');
+  if (opacity) {
+    const applyOpacity = value => {
+      const amount = Math.max(40, Math.min(100, Number(value) || 80));
+      opacity.value = String(amount); el('control-opacity-value').textContent = `${amount}%`;
+      el('touch').style.setProperty('--touch-opacity', String(amount / 100));
+      opacity.setAttribute('aria-valuetext', `${amount} percent`);
+    };
+    try { applyOpacity(localStorage.getItem('runeheart-touch-opacity') || 80); } catch { applyOpacity(80); }
+    opacity.addEventListener('input', () => { applyOpacity(opacity.value); try { localStorage.setItem('runeheart-touch-opacity', opacity.value); } catch {} });
+  }
   const name = (kind, id) => categories[kind]?.find(item => item.id === id)?.name || id || '—';
   const tint = value => typeof value === 'number' ? `#${value.toString(16).padStart(6, '0')}` : value;
   const close = () => { if (modal.open) modal.close(); };
@@ -65,7 +77,7 @@ export function createCampaignUI(catalog, callbacks = {}) {
     const signature = `${story.npcId}:${story.index}:${story.choices?.map(choice => choice.id).join(',')}`;
     if (signature === storySignature) return; storySignature = signature;
     const line = story.lines?.[story.index || 0] || {}, final = (story.index || 0) >= (story.lines?.length || 1) - 1;
-    el('story-speaker').textContent = line.speaker || story.speaker || 'SURVIVOR';
+    el('story-speaker').textContent = line.speaker === 'COURIER' ? 'AETHER' : line.speaker || story.speaker || 'SURVIVOR';
     el('story-text').textContent = line.text || (typeof line === 'string' ? line : '');
     const portraitKey = story.portrait || `portrait-${story.npcId}`;
     const portrait = callbacks.iconUrl?.(portraitKey.startsWith('portrait-') ? portraitKey : `portrait-${portraitKey}`); if (portrait) el('story-portrait').src = portrait;
@@ -74,13 +86,21 @@ export function createCampaignUI(catalog, callbacks = {}) {
       const button = document.createElement('button'); button.textContent = choice.label; button.addEventListener('click', () => callbacks.onStoryChoice?.(choice.id)); el('story-choices').append(button);
     }
     el('story-next').hidden = final && !!story.choices?.length;
-    el('story-next').textContent = final ? 'RETURN TO THE FRONTIER ↗' : 'CONTINUE ↗';
+    el('story-next').textContent = final ? 'Return to the frontier →' : 'Continue →';
     if (!storyPanel.open) { close(); storyPanel.showModal(); }
     (el('story-choices').firstElementChild || el('story-next')).focus();
   };
   const renderHUD = world => {
     currentWorld = world;
     const player = world.player;
+    const collections = world.collections || world.progress?.collections || [];
+    let recoveredRunes = 0;
+    for (const icon of runeIcons) {
+      const recovered = collections.includes(icon.dataset.rune); if (recovered) recoveredRunes++;
+      icon.dataset.recovered = String(recovered);
+      icon.setAttribute('aria-label', `${name('relic', icon.dataset.rune)}: ${recovered ? 'recovered' : 'not recovered'}`);
+    }
+    runeStatus?.setAttribute('aria-label', `Rune stones: ${recoveredRunes} of 3 recovered`);
     el('mana-bar').style.width = `${Math.max(0, Math.min(100, player.mana / (player.maxMana || 100) * 100))}%`;
     el('mana-value').textContent = Math.ceil(player.mana || 0);
     el('equipped').textContent = `${name('sword', player.sword)} / ${name('gun', player.gun)} / ${name('spell', player.spell)} · ${name('armor', player.armor)} · CANNON ${player.charges?.cannon || 0} / NOVA ${player.charges?.nova || 0}`;
@@ -95,7 +115,14 @@ export function createCampaignUI(catalog, callbacks = {}) {
     const nearby = (world.npcs || []).some(near) || (world.props || []).some(prop => ['lever','valve','conduit'].includes(prop.type) && !prop.used && near(prop)) || (world.level?.portals || []).some(near);
     el('touch').dataset.interact = String(nearby);
     const power = el('touch-power');
-    if (power) { power.dataset.nearby = String(nearby); power.setAttribute('aria-label', nearby ? 'Interact; hold for loadout' : 'Cast power; hold for loadout'); if (nearby) state('power', true); }
+    if (power) {
+      power.dataset.nearby = String(nearby);
+      power.setAttribute('aria-label', nearby ? 'Interact with nearby character or mechanism; hold for loadout' : `Cast ${selectedSpell?.name || 'power'}; hold for loadout`);
+      if (nearby) state('power', true);
+      const powerName = el('touch-power-name'), powerCost = el('touch-power-cost');
+      if (powerName) powerName.textContent = nearby ? 'INTERACT' : selectedSpell?.name || 'SORCERY';
+      if (powerCost) powerCost.textContent = nearby ? 'TAP TO USE' : player.spellCooldown > 0 ? `${Math.ceil(player.spellCooldown)}s recovery` : selectedSpell?.charge ? `${player.charges?.[selectedSpell.charge] || 0} charges` : `${selectedSpell?.cost || 0} soul`;
+    }
     el('countdown').textContent = time(world.timeLeft || 0); el('countdown').parentElement.classList.toggle('urgent', world.timeLeft < 60);
     el('missile-warning').hidden = !world.missileWarning || world.status !== 'playing';
     if (world.missileWarning) {
