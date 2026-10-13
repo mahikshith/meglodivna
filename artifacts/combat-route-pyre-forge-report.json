@@ -1,15 +1,20 @@
 {
   "worldId": "pyre",
+  "worldName": "TEMPEST // THUNDER CASTLE",
   "difficulty": "forge",
   "status": "won",
-  "elapsed": 336.77,
-  "campaignTime": 336.77,
-  "timeLeft": 283.23,
-  "deaths": 0,
+  "playerBody": {
+    "w": 28,
+    "h": 60
+  },
+  "elapsed": 350.11,
+  "campaignTime": 350.11,
+  "timeLeft": 269.89,
+  "deaths": 1,
   "checkpoint": 16,
-  "x": 83418.4,
-  "y": 564,
-  "hp": 135,
+  "x": 83412.6,
+  "y": 550,
+  "hp": 110,
   "conversations": [
     "pyre-scout",
     "pyre-scholar",
@@ -18,18 +23,18 @@
   "triggerProof": {
     "pyre-warden": {
       "triggerX": 25030,
-      "activatedX": 25031.23,
-      "activatedTime": 84.3
+      "activatedX": 25031.9,
+      "activatedTime": 84.31
     },
     "pyre-hex": {
       "triggerX": 51830,
-      "activatedX": 51831.07,
-      "activatedTime": 185.25
+      "activatedX": 51831.73,
+      "activatedTime": 185.26
     },
     "pyre-regent": {
       "triggerX": 80030,
-      "activatedX": 80031.07,
-      "activatedTime": 299.64
+      "activatedX": 80031.72,
+      "activatedTime": 311.47
     }
   },
   "storyClaims": [
@@ -42,30 +47,60 @@
       "id": "pyre-warden",
       "dead": true,
       "hp": 0,
-      "fightSeconds": 15.75,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 15.72,
       "attacksSeen": [
         0,
         1,
         2
-      ]
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
     },
     {
       "id": "pyre-hex",
       "dead": true,
       "hp": 0,
-      "fightSeconds": 27.36,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 27.64,
       "attacksSeen": [
         0,
         1,
         2
-      ]
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
     },
     {
       "id": "pyre-regent",
       "dead": true,
       "hp": 0,
-      "fightSeconds": 33.79,
+      "body": {
+        "w": 112,
+        "h": 86
+      },
+      "fightSeconds": 34.92,
       "attacksSeen": [
+        0,
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground",
+        "transforming",
+        "flying"
+      ],
+      "flyingAttacksSeen": [
         0,
         1,
         2
@@ -100,6 +135,7 @@
     "charge",
     "checkpoint",
     "dash",
+    "death",
     "debris",
     "enemyshot",
     "equip",
@@ -124,6 +160,7 @@
     "summonexpire",
     "taunt",
     "thunder",
+    "transform",
     "win"
   ],
   "history": [
@@ -135,473 +172,473 @@
     {
       "event": "landing",
       "id": "pyre-1-approach",
-      "x": 223.3,
+      "x": 221.3,
       "hp": 100,
       "time": 0.48
     },
     {
       "event": "checkpoint",
-      "x": 1580.7,
+      "x": 1578.7,
       "hp": 122,
       "time": 4.72
     },
     {
       "event": "landing",
       "id": "pyre-2-tower-entry",
-      "x": 1910.5,
+      "x": 1908.5,
       "hp": 122,
       "time": 5.8
     },
     {
       "event": "landing",
       "id": "pyre-2-tower-riser-1",
-      "x": 2145.4,
+      "x": 2143.4,
       "hp": 122,
       "time": 6.61
     },
     {
       "event": "landing",
       "id": "pyre-2-tower-riser-2",
-      "x": 2342.3,
+      "x": 2340.3,
       "hp": 122,
       "time": 7.31
     },
     {
       "event": "landing",
       "id": "pyre-2-tower-riser-3",
-      "x": 2534.7,
+      "x": 2532.7,
       "hp": 122,
       "time": 8.02
     },
     {
       "event": "landing",
       "id": "pyre-2-tower-wall",
-      "x": 2715.5,
+      "x": 2713.1,
       "hp": 122,
       "time": 8.88
     },
     {
       "event": "landing",
       "id": "pyre-2-tower-descent-1",
-      "x": 2926.4,
+      "x": 2924.4,
       "hp": 122,
       "time": 9.94
     },
     {
       "event": "landing",
       "id": "pyre-2-tower-descent-2",
-      "x": 3234.2,
+      "x": 3232.2,
       "hp": 122,
       "time": 11.2
     },
     {
       "event": "landing",
       "id": "pyre-2-tower-descent-3",
-      "x": 3637,
+      "x": 3635,
       "hp": 122,
       "time": 12.94
     },
     {
       "event": "landing",
       "id": "pyre-2-tower-exit",
-      "x": 3854.1,
+      "x": 3854.7,
       "hp": 122,
-      "time": 13.67
+      "time": 13.68
     },
     {
       "event": "landing",
       "id": "pyre-3-tunnel-entry",
-      "x": 4384.7,
+      "x": 4382.7,
       "hp": 122,
       "time": 15.33
     },
     {
       "event": "landing",
       "id": "pyre-3-tunnel-tunnel-0",
-      "x": 4905.6,
+      "x": 4903.6,
       "hp": 122,
       "time": 17.05
     },
     {
       "event": "landing",
       "id": "pyre-3-tunnel-tunnel-1",
-      "x": 5474.5,
+      "x": 5472.5,
       "hp": 122,
       "time": 18.86
     },
     {
       "event": "landing",
       "id": "pyre-3-tunnel-tunnel-2",
-      "x": 6098.4,
+      "x": 6096.4,
       "hp": 122,
       "time": 20.85
     },
     {
       "event": "landing",
       "id": "pyre-3-tunnel-exit",
-      "x": 6833.7,
+      "x": 6831.7,
       "hp": 122,
       "time": 23.17
     },
     {
       "event": "checkpoint",
-      "x": 6980.4,
+      "x": 6978.4,
       "hp": 135,
       "time": 23.62
     },
     {
       "event": "landing",
       "id": "pyre-4-machine-entry",
-      "x": 7524.4,
+      "x": 7522.4,
       "hp": 135,
       "time": 25.32
     },
     {
       "event": "landing",
       "id": "pyre-4-machine-machine-0",
-      "x": 8002.4,
+      "x": 8000.4,
       "hp": 135,
       "time": 26.88
     },
     {
       "event": "landing",
       "id": "pyre-4-machine-machine-1",
-      "x": 8823.8,
+      "x": 8821.8,
       "hp": 135,
       "time": 29.47
     },
     {
       "event": "landing",
       "id": "pyre-4-machine-machine-2",
-      "x": 9712.7,
+      "x": 9710.7,
       "hp": 135,
       "time": 32.26
     },
     {
       "event": "landing",
       "id": "pyre-4-machine-exit",
-      "x": 10445.5,
+      "x": 10443.5,
       "hp": 135,
       "time": 34.55
     },
     {
       "event": "landing",
       "id": "pyre-5-terrace-terrace-0",
-      "x": 11133.5,
+      "x": 11131.5,
       "hp": 135,
       "time": 36.7
     },
     {
       "event": "landing",
       "id": "pyre-5-terrace-terrace-1",
-      "x": 11935.2,
+      "x": 11931.2,
       "hp": 135,
       "time": 39.46
     },
     {
       "event": "landing",
       "id": "pyre-5-terrace-terrace-2",
-      "x": 12735.2,
+      "x": 12731.2,
       "hp": 135,
-      "time": 42.13
+      "time": 42.14
     },
     {
       "event": "landing",
       "id": "pyre-5-terrace-terrace-3",
-      "x": 13535.2,
+      "x": 13531.2,
       "hp": 135,
-      "time": 44.63
+      "time": 44.64
     },
     {
       "event": "landing",
       "id": "pyre-5-terrace-terrace-4",
-      "x": 14633.9,
+      "x": 14632.5,
       "hp": 135,
-      "time": 48.07
+      "time": 48.08
     },
     {
       "event": "checkpoint",
-      "x": 14780.5,
+      "x": 14779.2,
       "hp": 135,
-      "time": 48.52
+      "time": 48.54
     },
     {
       "event": "landing",
       "id": "pyre-6-bridge-entry",
-      "x": 15295.2,
+      "x": 15291.2,
       "hp": 135,
-      "time": 50.13
+      "time": 50.14
     },
     {
       "event": "landing",
       "id": "pyre-6-bridge-deck-1",
-      "x": 15763,
+      "x": 15761.3,
       "hp": 135,
-      "time": 51.62
+      "time": 51.63
     },
     {
       "event": "hurt",
-      "x": 15882.6,
+      "x": 15886.1,
       "hp": 117.8,
-      "time": 52
+      "time": 52.03
     },
     {
       "event": "hurt",
-      "x": 16116.1,
+      "x": 16112.1,
       "hp": 94.4,
-      "time": 53.44
+      "time": 53.42
     },
     {
       "event": "landing",
       "id": "pyre-6-bridge-deck-2",
-      "x": 16189.9,
+      "x": 16188.6,
       "hp": 94.4,
       "time": 54.56
     },
     {
       "event": "landing",
       "id": "pyre-6-bridge-deck-3",
-      "x": 16695.7,
+      "x": 16693.7,
       "hp": 94.4,
       "time": 56.29
     },
     {
       "event": "landing",
       "id": "pyre-6-bridge-exit",
-      "x": 17134.2,
+      "x": 17132.2,
       "hp": 94.4,
       "time": 57.94
     },
     {
       "event": "landing",
       "id": "pyre-6-bridge-exit",
-      "x": 17665.4,
+      "x": 17663.4,
       "hp": 94.4,
       "time": 59.65
     },
     {
       "event": "landing",
       "id": "pyre-7-refuge",
-      "x": 18865.4,
+      "x": 18863.4,
       "hp": 134.4,
       "time": 63.4
     },
     {
       "event": "checkpoint",
-      "x": 18980.1,
+      "x": 18978.1,
       "hp": 135,
       "time": 63.76
     },
     {
       "event": "landing",
       "id": "pyre-8-vault-entry",
-      "x": 19374.7,
+      "x": 19372.7,
       "hp": 135,
       "time": 64.99
     },
     {
       "event": "landing",
       "id": "pyre-8-vault-arch-1",
-      "x": 19675,
+      "x": 19673,
       "hp": 135,
       "time": 65.96
     },
     {
       "event": "landing",
       "id": "pyre-8-vault-arch-2",
-      "x": 20075.2,
+      "x": 20073.2,
       "hp": 135,
       "time": 67.51
     },
     {
       "event": "landing",
       "id": "pyre-8-vault-arch-3",
-      "x": 20396.3,
+      "x": 20394.3,
       "hp": 135,
       "time": 68.57
     },
     {
       "event": "landing",
       "id": "pyre-8-vault-arch-4",
-      "x": 20787.7,
+      "x": 20785.7,
       "hp": 135,
       "time": 69.9
     },
     {
       "event": "landing",
       "id": "pyre-8-vault-exit",
-      "x": 21288.9,
+      "x": 21286.9,
       "hp": 135,
       "time": 71.63
     },
     {
       "event": "landing",
       "id": "pyre-9-bridge-entry",
-      "x": 21893.1,
+      "x": 21891.1,
       "hp": 135,
       "time": 73.55
     },
     {
       "event": "landing",
       "id": "pyre-9-bridge-deck-1",
-      "x": 22363.3,
+      "x": 22361.3,
       "hp": 135,
       "time": 75.04
     },
     {
       "event": "landing",
       "id": "pyre-9-bridge-deck-2",
-      "x": 22814.1,
+      "x": 22812.1,
       "hp": 135,
       "time": 76.48
     },
     {
       "event": "landing",
       "id": "pyre-9-bridge-deck-3",
-      "x": 23295.4,
+      "x": 23293.4,
       "hp": 135,
       "time": 78.13
     },
     {
       "event": "landing",
       "id": "pyre-9-bridge-exit",
-      "x": 23734.4,
+      "x": 23732.4,
       "hp": 135,
       "time": 79.79
     },
     {
       "event": "landing",
       "id": "pyre-9-bridge-exit",
-      "x": 24265.5,
+      "x": 24263.5,
       "hp": 135,
       "time": 81.5
     },
     {
       "event": "checkpoint",
-      "x": 24396.1,
+      "x": 24394.1,
       "hp": 135,
       "time": 81.91
     },
     {
       "event": "gate",
-      "x": 24616.2,
+      "x": 24614.2,
       "hp": 135,
       "time": 82.95
     },
     {
       "event": "landing",
       "id": "pyre-arena-1",
-      "x": 24616.2,
+      "x": 24614.2,
       "hp": 135,
       "time": 82.95
     },
     {
       "event": "bossstart",
-      "x": 25031.2,
+      "x": 25031.9,
       "hp": 135,
-      "time": 84.3
+      "time": 84.31
     },
     {
       "event": "hurt",
-      "x": 25502.6,
+      "x": 25489.3,
       "hp": 135,
-      "time": 86.81
+      "time": 86.82
     },
     {
       "event": "hurt",
-      "x": 25513.7,
+      "x": 25500.4,
       "hp": 135,
       "time": 87.73
     },
     {
       "event": "hurt",
-      "x": 25561.2,
+      "x": 25547.9,
       "hp": 135,
-      "time": 88.63
+      "time": 88.64
     },
     {
       "event": "hurt",
-      "x": 25566.6,
+      "x": 25553.3,
       "hp": 135,
-      "time": 89.54
+      "time": 89.55
     },
     {
       "event": "hurt",
-      "x": 25624.5,
+      "x": 25611.2,
       "hp": 131.8,
-      "time": 92.55
+      "time": 92.56
     },
     {
       "event": "hurt",
-      "x": 25627.3,
+      "x": 25617.6,
       "hp": 127.9,
-      "time": 93.47
+      "time": 93.48
     },
     {
       "event": "hurt",
-      "x": 25666.6,
+      "x": 25651,
       "hp": 124,
       "time": 94.38
     },
     {
       "event": "hurt",
-      "x": 25669,
+      "x": 25652.8,
       "hp": 120.1,
-      "time": 95.28
+      "time": 95.29
     },
     {
       "event": "hurt",
-      "x": 25758.5,
+      "x": 25742.1,
       "hp": 110.7,
-      "time": 99.67
+      "time": 99.57
     },
     {
       "event": "bossdefeated",
       "id": "pyre-warden",
-      "time": 100.05,
+      "time": 100.03,
       "hp": 110.7
     },
     {
       "event": "gate",
-      "x": 25754.1,
+      "x": 25739.4,
       "hp": 110.7,
-      "time": 100.05
+      "time": 100.03
     },
     {
       "event": "landing",
       "id": "pyre-arena-1",
-      "x": 25754.1,
+      "x": 25739.4,
       "hp": 110.7,
-      "time": 100.05
+      "time": 100.03
     },
     {
       "event": "hurt",
-      "x": 25904.7,
+      "x": 25869.3,
       "hp": 106.8,
-      "time": 100.58
+      "time": 100.48
     },
     {
       "event": "hurt",
-      "x": 26193.5,
+      "x": 26158.1,
       "hp": 102.9,
-      "time": 101.49
+      "time": 101.39
     },
     {
       "event": "hurt",
-      "x": 26482.3,
+      "x": 26446.9,
       "hp": 99,
-      "time": 102.4
+      "time": 102.3
     },
     {
       "event": "landing",
       "id": "pyre-arena-1",
-      "x": 27265,
+      "x": 27261.6,
       "hp": 99,
       "time": 104.85
     },
     {
       "event": "checkpoint",
-      "x": 27382.3,
+      "x": 27379,
       "hp": 121,
       "time": 105.22
     },
@@ -613,411 +650,411 @@
     {
       "event": "landing",
       "id": "pyre-10-tunnel-entry",
-      "x": 27672,
+      "x": 27669.8,
       "hp": 121,
       "time": 106.31
     },
     {
       "event": "landing",
       "id": "pyre-10-tunnel-tunnel-0",
-      "x": 28305.3,
+      "x": 28303.3,
       "hp": 121,
       "time": 108.42
     },
     {
       "event": "landing",
       "id": "pyre-10-tunnel-tunnel-1",
-      "x": 28874.4,
+      "x": 28872.4,
       "hp": 121,
       "time": 110.23
     },
     {
       "event": "landing",
       "id": "pyre-10-tunnel-tunnel-2",
-      "x": 29498.4,
+      "x": 29496.4,
       "hp": 121,
       "time": 112.22
     },
     {
       "event": "landing",
       "id": "pyre-10-tunnel-exit",
-      "x": 30233.7,
+      "x": 30231.7,
       "hp": 121,
       "time": 114.53
     },
     {
       "event": "landing",
       "id": "pyre-11-terrace-terrace-0",
-      "x": 30935.1,
+      "x": 30933.1,
       "hp": 121,
       "time": 116.73
     },
     {
       "event": "landing",
       "id": "pyre-11-terrace-terrace-1",
-      "x": 31735.2,
+      "x": 31731.2,
       "hp": 121,
       "time": 119.48
     },
     {
       "event": "landing",
       "id": "pyre-11-terrace-terrace-2",
-      "x": 32535.2,
+      "x": 32531.2,
       "hp": 121,
-      "time": 122.15
+      "time": 122.16
     },
     {
       "event": "landing",
       "id": "pyre-11-terrace-terrace-3",
-      "x": 33335.2,
+      "x": 33331.2,
       "hp": 121,
-      "time": 124.65
+      "time": 124.66
     },
     {
       "event": "landing",
       "id": "pyre-11-terrace-terrace-4",
-      "x": 34433.9,
+      "x": 34432.5,
       "hp": 121,
-      "time": 128.08
+      "time": 128.1
     },
     {
       "event": "checkpoint",
-      "x": 34580.5,
+      "x": 34579.2,
       "hp": 135,
-      "time": 128.54
+      "time": 128.56
     },
     {
       "event": "landing",
       "id": "pyre-12-wire",
-      "x": 36264.6,
+      "x": 36263.3,
       "hp": 135,
-      "time": 133.56
+      "time": 133.58
     },
     {
       "event": "landing",
       "id": "pyre-13-machine-entry",
-      "x": 36923.3,
+      "x": 36921.9,
       "hp": 135,
-      "time": 135.62
+      "time": 135.63
     },
     {
       "event": "landing",
       "id": "pyre-13-machine-machine-0",
-      "x": 37403,
+      "x": 37400.3,
       "hp": 135,
-      "time": 137.18
+      "time": 137.19
     },
     {
       "event": "hurt",
-      "x": 37977.8,
+      "x": 37975.4,
       "hp": 121,
-      "time": 138.84
+      "time": 138.85
     },
     {
       "event": "landing",
       "id": "pyre-13-machine-machine-1",
-      "x": 38223.5,
+      "x": 38221.1,
       "hp": 121,
-      "time": 139.62
+      "time": 139.63
     },
     {
       "event": "landing",
       "id": "pyre-13-machine-machine-2",
-      "x": 39112.5,
+      "x": 39112.3,
       "hp": 121,
-      "time": 142.4
+      "time": 142.42
     },
     {
       "event": "landing",
       "id": "pyre-13-machine-exit",
-      "x": 39845.3,
+      "x": 39842.1,
       "hp": 121,
-      "time": 144.69
+      "time": 144.7
     },
     {
       "event": "checkpoint",
-      "x": 39981.3,
+      "x": 39978.1,
       "hp": 135,
-      "time": 145.12
+      "time": 145.13
     },
     {
       "event": "landing",
       "id": "pyre-14-bridge-entry",
-      "x": 40493.3,
+      "x": 40492.8,
       "hp": 135,
-      "time": 146.72
+      "time": 146.73
     },
     {
       "event": "landing",
       "id": "pyre-14-bridge-deck-1",
-      "x": 40963.4,
+      "x": 40960.6,
       "hp": 135,
-      "time": 148.21
+      "time": 148.22
     },
     {
       "event": "landing",
       "id": "pyre-14-bridge-deck-2",
-      "x": 41414.2,
+      "x": 41411.9,
       "hp": 135,
-      "time": 149.64
+      "time": 149.65
     },
     {
       "event": "landing",
       "id": "pyre-14-bridge-deck-3",
-      "x": 41895.4,
+      "x": 41893.3,
       "hp": 135,
-      "time": 151.3
+      "time": 151.31
     },
     {
       "event": "landing",
       "id": "pyre-14-bridge-exit",
-      "x": 42334.4,
+      "x": 42332.4,
       "hp": 135,
-      "time": 152.96
+      "time": 152.97
     },
     {
       "event": "landing",
       "id": "pyre-14-bridge-exit",
-      "x": 42865.5,
+      "x": 42863.5,
       "hp": 135,
-      "time": 154.67
+      "time": 154.68
     },
     {
       "event": "landing",
       "id": "pyre-15-vault-entry",
-      "x": 43374.8,
+      "x": 43372.8,
       "hp": 135,
-      "time": 156.26
+      "time": 156.27
     },
     {
       "event": "landing",
       "id": "pyre-15-vault-arch-1",
-      "x": 43675,
+      "x": 43673,
       "hp": 135,
       "time": 157.23
     },
     {
       "event": "landing",
       "id": "pyre-15-vault-arch-2",
-      "x": 44075.2,
+      "x": 44073.2,
       "hp": 135,
       "time": 158.78
     },
     {
       "event": "landing",
       "id": "pyre-15-vault-arch-3",
-      "x": 44396.3,
+      "x": 44394.3,
       "hp": 135,
-      "time": 159.83
+      "time": 159.84
     },
     {
       "event": "landing",
       "id": "pyre-15-vault-arch-4",
-      "x": 44787.4,
+      "x": 44785.4,
       "hp": 135,
       "time": 162.87
     },
     {
       "event": "landing",
       "id": "pyre-15-vault-exit",
-      "x": 45288.8,
+      "x": 45286.8,
       "hp": 135,
       "time": 164.59
     },
     {
       "event": "checkpoint",
-      "x": 45381.1,
+      "x": 45379.1,
       "hp": 135,
       "time": 164.92
     },
     {
       "event": "landing",
       "id": "pyre-16-approach",
-      "x": 46863.8,
+      "x": 46861.8,
       "hp": 135,
       "time": 169.55
     },
     {
       "event": "landing",
       "id": "pyre-17-tunnel-entry",
-      "x": 47383.8,
+      "x": 47381.8,
       "hp": 135,
       "time": 171.18
     },
     {
       "event": "landing",
       "id": "pyre-17-tunnel-tunnel-0",
-      "x": 47905.4,
+      "x": 47903.4,
       "hp": 135,
       "time": 172.89
     },
     {
       "event": "landing",
       "id": "pyre-17-tunnel-tunnel-1",
-      "x": 48474.4,
+      "x": 48472.4,
       "hp": 135,
       "time": 174.7
     },
     {
       "event": "landing",
       "id": "pyre-17-tunnel-tunnel-2",
-      "x": 49098.4,
+      "x": 49096.4,
       "hp": 135,
       "time": 176.69
     },
     {
       "event": "landing",
       "id": "pyre-17-tunnel-exit",
-      "x": 49833.7,
+      "x": 49831.7,
       "hp": 135,
       "time": 179.01
     },
     {
       "event": "checkpoint",
-      "x": 49980.4,
+      "x": 49978.4,
       "hp": 135,
       "time": 179.47
     },
     {
       "event": "landing",
       "id": "pyre-18-refuge",
-      "x": 51063.1,
+      "x": 51061.1,
       "hp": 135,
       "time": 182.85
     },
     {
       "event": "checkpoint",
-      "x": 51196.4,
+      "x": 51194.4,
       "hp": 135,
       "time": 183.27
     },
     {
       "event": "bossstart",
-      "x": 51831.1,
+      "x": 51831.7,
       "hp": 135,
-      "time": 185.25
+      "time": 185.26
     },
     {
       "event": "hurt",
-      "x": 52400.9,
+      "x": 52387.6,
       "hp": 135,
-      "time": 192.42
+      "time": 192.43
     },
     {
       "event": "hurt",
-      "x": 52740,
+      "x": 52695,
       "hp": 135,
-      "time": 194.77
+      "time": 194.47
     },
     {
       "event": "hurt",
-      "x": 52762.3,
+      "x": 52734.5,
       "hp": 135,
-      "time": 195.69
+      "time": 195.38
     },
     {
       "event": "hurt",
-      "x": 52805.5,
+      "x": 52781.3,
       "hp": 135,
-      "time": 196.6
+      "time": 196.29
     },
     {
       "event": "hurt",
-      "x": 52808.4,
+      "x": 52795.4,
       "hp": 131.8,
-      "time": 197.51
+      "time": 197.2
     },
     {
       "event": "hurt",
-      "x": 52901.4,
+      "x": 52888.1,
       "hp": 114.6,
-      "time": 202.02
+      "time": 202.03
     },
     {
       "event": "hurt",
-      "x": 53194.1,
+      "x": 53175.3,
       "hp": 125.6,
-      "time": 203.67
+      "time": 203.66
     },
     {
       "event": "hurt",
-      "x": 53259,
+      "x": 53232.8,
       "hp": 131.1,
-      "time": 204.59
+      "time": 204.57
     },
     {
       "event": "hurt",
-      "x": 53273.9,
+      "x": 53259.6,
       "hp": 131.1,
-      "time": 205.5
+      "time": 205.48
     },
     {
       "event": "hurt",
-      "x": 53274.1,
-      "hp": 127.2,
-      "time": 206.41
-    },
-    {
-      "event": "hurt",
-      "x": 53317.4,
+      "x": 53259.5,
       "hp": 116.3,
-      "time": 208.21
+      "time": 206.34
     },
     {
       "event": "hurt",
-      "x": 53359.5,
-      "hp": 109.6,
-      "time": 209.91
+      "x": 53304.1,
+      "hp": 116.3,
+      "time": 208.39
     },
     {
       "event": "hurt",
-      "x": 53672,
-      "hp": 125.6,
+      "x": 53346.2,
+      "hp": 110.6,
+      "time": 210.09
+    },
+    {
+      "event": "hurt",
+      "x": 53634,
+      "hp": 124.7,
       "time": 211.7
+    },
+    {
+      "event": "hurt",
+      "x": 53702,
+      "hp": 135,
+      "time": 212.62
     },
     {
       "event": "bossdefeated",
       "id": "pyre-hex",
-      "time": 212.61,
+      "time": 212.9,
       "hp": 135
     },
     {
       "event": "gate",
-      "x": 53724.2,
+      "x": 53716.2,
       "hp": 135,
-      "time": 212.61
+      "time": 212.9
     },
     {
       "event": "landing",
       "id": "pyre-arena-2",
-      "x": 53724.2,
+      "x": 53716.2,
       "hp": 135,
-      "time": 212.61
+      "time": 212.9
     },
     {
       "event": "hurt",
-      "x": 53726.3,
+      "x": 53897.5,
       "hp": 131.1,
-      "time": 212.62
-    },
-    {
-      "event": "hurt",
-      "x": 54015.1,
-      "hp": 127.2,
       "time": 213.52
     },
     {
-      "event": "landing",
-      "id": "pyre-arena-2",
-      "x": 54264.5,
+      "event": "hurt",
+      "x": 54186.3,
       "hp": 127.2,
-      "time": 214.31
+      "time": 214.43
     },
     {
-      "event": "hurt",
-      "x": 54303.9,
-      "hp": 123.3,
-      "time": 214.43
+      "event": "landing",
+      "id": "pyre-arena-2",
+      "x": 54262.3,
+      "hp": 127.2,
+      "time": 214.67
     },
     {
       "event": "story",
@@ -1027,514 +1064,580 @@
     {
       "event": "landing",
       "id": "pyre-19-tower-entry",
-      "x": 54673,
-      "hp": 123.3,
-      "time": 215.8
+      "x": 54669.8,
+      "hp": 127.2,
+      "time": 216.13
     },
     {
       "event": "landing",
       "id": "pyre-19-tower-riser-1",
-      "x": 54945.5,
-      "hp": 123.3,
-      "time": 216.75
+      "x": 54943.4,
+      "hp": 127.2,
+      "time": 217.08
     },
     {
       "event": "landing",
       "id": "pyre-19-tower-riser-2",
-      "x": 55142.3,
-      "hp": 123.3,
-      "time": 217.45
+      "x": 55140.3,
+      "hp": 127.2,
+      "time": 217.78
     },
     {
       "event": "landing",
       "id": "pyre-19-tower-riser-3",
-      "x": 55334.7,
-      "hp": 123.3,
-      "time": 218.16
+      "x": 55332.7,
+      "hp": 127.2,
+      "time": 218.49
     },
     {
       "event": "landing",
       "id": "pyre-19-tower-wall",
-      "x": 55515.5,
-      "hp": 123.3,
-      "time": 219.02
+      "x": 55513.1,
+      "hp": 127.2,
+      "time": 219.36
     },
     {
       "event": "landing",
       "id": "pyre-19-tower-descent-1",
-      "x": 55726.4,
-      "hp": 123.3,
-      "time": 220.08
+      "x": 55724.4,
+      "hp": 127.2,
+      "time": 220.42
     },
     {
       "event": "landing",
       "id": "pyre-19-tower-descent-2",
-      "x": 56034.2,
-      "hp": 123.3,
-      "time": 221.34
+      "x": 56032.2,
+      "hp": 127.2,
+      "time": 221.67
     },
     {
       "event": "landing",
       "id": "pyre-19-tower-descent-3",
-      "x": 56437,
-      "hp": 123.3,
-      "time": 223.08
+      "x": 56435,
+      "hp": 127.2,
+      "time": 223.42
     },
     {
       "event": "landing",
       "id": "pyre-19-tower-exit",
-      "x": 56654.1,
-      "hp": 123.3,
-      "time": 223.82
+      "x": 56654.7,
+      "hp": 127.2,
+      "time": 224.16
     },
     {
       "event": "checkpoint",
-      "x": 56782.1,
+      "x": 56780.1,
       "hp": 135,
-      "time": 224.22
+      "time": 224.55
     },
     {
       "event": "landing",
       "id": "pyre-20-machine-entry",
-      "x": 57323.4,
+      "x": 57321.4,
       "hp": 135,
-      "time": 225.91
+      "time": 226.24
     },
     {
       "event": "landing",
       "id": "pyre-20-machine-machine-0",
-      "x": 57802.2,
+      "x": 57800.2,
       "hp": 135,
-      "time": 227.47
-    },
-    {
-      "event": "hurt",
-      "x": 58377.4,
-      "hp": 121,
-      "time": 229.12
+      "time": 227.8
     },
     {
       "event": "landing",
       "id": "pyre-20-machine-machine-1",
-      "x": 58623.1,
-      "hp": 121,
-      "time": 229.9
+      "x": 58621.7,
+      "hp": 135,
+      "time": 230.39
     },
     {
       "event": "landing",
       "id": "pyre-20-machine-machine-2",
-      "x": 59514.2,
-      "hp": 121,
-      "time": 232.69
+      "x": 59510.7,
+      "hp": 135,
+      "time": 233.17
     },
     {
       "event": "landing",
       "id": "pyre-20-machine-exit",
-      "x": 60244.1,
-      "hp": 121,
-      "time": 234.97
+      "x": 60243.5,
+      "hp": 135,
+      "time": 235.47
     },
     {
       "event": "landing",
       "id": "pyre-21-tunnel-entry",
-      "x": 60785.4,
-      "hp": 121,
-      "time": 236.67
+      "x": 60782.1,
+      "hp": 135,
+      "time": 237.15
     },
     {
       "event": "landing",
       "id": "pyre-21-tunnel-tunnel-0",
-      "x": 61305.9,
-      "hp": 121,
-      "time": 238.38
+      "x": 61303.4,
+      "hp": 135,
+      "time": 238.87
     },
     {
       "event": "landing",
       "id": "pyre-21-tunnel-tunnel-1",
-      "x": 61874.7,
-      "hp": 121,
-      "time": 240.19
+      "x": 61872.4,
+      "hp": 135,
+      "time": 240.67
     },
     {
       "event": "landing",
       "id": "pyre-21-tunnel-tunnel-2",
-      "x": 62498.5,
-      "hp": 121,
-      "time": 242.18
+      "x": 62496.4,
+      "hp": 135,
+      "time": 242.67
     },
     {
       "event": "landing",
       "id": "pyre-21-tunnel-exit",
-      "x": 63233.8,
-      "hp": 121,
-      "time": 244.5
+      "x": 63231.7,
+      "hp": 135,
+      "time": 244.98
     },
     {
       "event": "checkpoint",
-      "x": 63380.4,
+      "x": 63378.4,
       "hp": 135,
-      "time": 244.96
+      "time": 245.44
     },
     {
       "event": "landing",
       "id": "pyre-22-terrace-terrace-0",
-      "x": 63935.1,
+      "x": 63933.1,
       "hp": 135,
-      "time": 246.69
+      "time": 247.17
     },
     {
       "event": "landing",
       "id": "pyre-22-terrace-terrace-1",
-      "x": 64735.2,
+      "x": 64731.2,
       "hp": 135,
-      "time": 249.44
+      "time": 249.92
     },
     {
       "event": "landing",
       "id": "pyre-22-terrace-terrace-2",
-      "x": 65535.2,
+      "x": 65531.2,
       "hp": 135,
-      "time": 252.12
+      "time": 252.61
     },
     {
       "event": "landing",
       "id": "pyre-22-terrace-terrace-3",
-      "x": 66335.2,
+      "x": 66331.2,
       "hp": 135,
-      "time": 254.62
+      "time": 255.11
     },
     {
       "event": "landing",
       "id": "pyre-22-terrace-terrace-4",
-      "x": 67433.9,
+      "x": 67432.5,
       "hp": 135,
-      "time": 258.05
+      "time": 258.55
     },
     {
       "event": "landing",
       "id": "pyre-23-bridge-entry",
-      "x": 68095.2,
+      "x": 68091.2,
       "hp": 135,
-      "time": 260.12
+      "time": 260.61
     },
     {
       "event": "landing",
       "id": "pyre-23-bridge-deck-1",
-      "x": 68563,
+      "x": 68561.3,
       "hp": 135,
-      "time": 261.6
+      "time": 262.1
     },
     {
       "event": "landing",
       "id": "pyre-23-bridge-deck-2",
-      "x": 69014.1,
+      "x": 69012.1,
       "hp": 135,
-      "time": 263.03
+      "time": 263.53
     },
     {
       "event": "landing",
       "id": "pyre-23-bridge-deck-3",
-      "x": 69473.6,
+      "x": 69493.7,
       "hp": 135,
-      "time": 264.24
+      "time": 266.77
     },
     {
       "event": "landing",
       "id": "pyre-23-bridge-exit",
-      "x": 69934.4,
+      "x": 69932.2,
       "hp": 135,
-      "time": 265.93
+      "time": 268.42
     },
     {
       "event": "landing",
       "id": "pyre-23-bridge-exit",
-      "x": 70465.5,
+      "x": 70463.4,
       "hp": 135,
-      "time": 267.64
+      "time": 270.12
     },
     {
       "event": "checkpoint",
-      "x": 70580.1,
+      "x": 70578.1,
       "hp": 135,
-      "time": 268
+      "time": 270.48
     },
     {
       "event": "landing",
       "id": "pyre-24-vault-entry",
-      "x": 70974.8,
+      "x": 70972.7,
       "hp": 135,
-      "time": 269.23
+      "time": 271.72
     },
     {
       "event": "landing",
       "id": "pyre-24-vault-arch-1",
-      "x": 71275,
+      "x": 71273,
       "hp": 135,
-      "time": 270.2
+      "time": 272.68
     },
     {
       "event": "landing",
       "id": "pyre-24-vault-arch-2",
-      "x": 71675.2,
+      "x": 71673.2,
       "hp": 135,
-      "time": 271.75
+      "time": 274.23
     },
     {
       "event": "landing",
       "id": "pyre-24-vault-arch-3",
-      "x": 71996.3,
+      "x": 71994.3,
       "hp": 135,
-      "time": 272.81
+      "time": 275.29
     },
     {
       "event": "landing",
       "id": "pyre-24-vault-arch-4",
-      "x": 72387.4,
+      "x": 72385.7,
       "hp": 135,
-      "time": 275.37
+      "time": 276.62
     },
     {
       "event": "landing",
       "id": "pyre-24-vault-exit",
-      "x": 72888.8,
+      "x": 72886.9,
       "hp": 135,
-      "time": 277.1
+      "time": 278.35
     },
     {
       "event": "landing",
       "id": "pyre-25-wire",
-      "x": 74664.5,
+      "x": 74662.6,
       "hp": 135,
-      "time": 282.69
+      "time": 283.48
     },
     {
       "event": "checkpoint",
-      "x": 74781.8,
+      "x": 74779.9,
       "hp": 135,
-      "time": 283.06
+      "time": 283.85
     },
     {
       "event": "landing",
       "id": "pyre-26-tunnel-entry",
-      "x": 75184.5,
+      "x": 75182.6,
       "hp": 135,
-      "time": 284.32
+      "time": 285.11
     },
     {
       "event": "landing",
       "id": "pyre-26-tunnel-tunnel-0",
-      "x": 75705.5,
+      "x": 75703.5,
       "hp": 135,
-      "time": 286.03
+      "time": 286.82
     },
     {
       "event": "landing",
       "id": "pyre-26-tunnel-tunnel-1",
-      "x": 76274.5,
+      "x": 76272.5,
       "hp": 135,
-      "time": 287.84
+      "time": 288.63
+    },
+    {
+      "event": "hurt",
+      "x": 76752,
+      "hp": 111.6,
+      "time": 293.32
+    },
+    {
+      "event": "hurt",
+      "x": 76752,
+      "hp": 88.2,
+      "time": 294.18
+    },
+    {
+      "event": "death",
+      "checkpoint": 15,
+      "x": 76791.2,
+      "y": 792.2,
+      "hp": 0,
+      "time": 294.74,
+      "target": "pyre-26-tunnel-tunnel-2"
+    },
+    {
+      "event": "landing",
+      "id": "pyre-26-tunnel-entry",
+      "x": 75183.2,
+      "hp": 135,
+      "time": 295.85
+    },
+    {
+      "event": "landing",
+      "id": "pyre-26-tunnel-tunnel-0",
+      "x": 75703.8,
+      "hp": 135,
+      "time": 297.57
+    },
+    {
+      "event": "hurt",
+      "x": 76256.6,
+      "hp": 122.5,
+      "time": 299.32
+    },
+    {
+      "event": "landing",
+      "id": "pyre-26-tunnel-tunnel-1",
+      "x": 76272.3,
+      "hp": 127.8,
+      "time": 299.67
     },
     {
       "event": "landing",
       "id": "pyre-26-tunnel-tunnel-2",
-      "x": 76898.4,
-      "hp": 135,
-      "time": 289.83
+      "x": 76896.4,
+      "hp": 129.8,
+      "time": 301.66
     },
     {
       "event": "landing",
       "id": "pyre-26-tunnel-exit",
-      "x": 77633.7,
-      "hp": 135,
-      "time": 292.15
+      "x": 77631.7,
+      "hp": 130.8,
+      "time": 303.97
     },
     {
       "event": "landing",
       "id": "pyre-27-approach",
-      "x": 79263.1,
+      "x": 79261.1,
       "hp": 135,
-      "time": 297.24
+      "time": 309.07
     },
     {
       "event": "checkpoint",
-      "x": 79396.4,
+      "x": 79394.4,
       "hp": 135,
-      "time": 297.66
+      "time": 309.48
     },
     {
       "event": "bossstart",
-      "x": 80031.1,
+      "x": 80031.7,
       "hp": 135,
-      "time": 299.64
-    },
-    {
-      "event": "hurt",
-      "x": 80502.6,
-      "hp": 125.6,
-      "time": 302.71
-    },
-    {
-      "event": "hurt",
-      "x": 80543.3,
-      "hp": 131.1,
-      "time": 303.62
-    },
-    {
-      "event": "hurt",
-      "x": 80565.3,
-      "hp": 135,
-      "time": 304.53
-    },
-    {
-      "event": "hurt",
-      "x": 80566.5,
-      "hp": 131.1,
-      "time": 305.44
-    },
-    {
-      "event": "hurt",
-      "x": 80907.4,
-      "hp": 117.8,
-      "time": 308.73
-    },
-    {
-      "event": "hurt",
-      "x": 80949.2,
-      "hp": 131.1,
-      "time": 309.65
-    },
-    {
-      "event": "hurt",
-      "x": 80996.9,
-      "hp": 131.1,
-      "time": 310.56
-    },
-    {
-      "event": "hurt",
-      "x": 81008.4,
-      "hp": 131.1,
       "time": 311.47
     },
     {
       "event": "hurt",
-      "x": 81081.8,
-      "hp": 117.8,
-      "time": 315.69
-    },
-    {
-      "event": "hurt",
-      "x": 81106.3,
-      "hp": 131.1,
-      "time": 316.61
-    },
-    {
-      "event": "hurt",
-      "x": 81331,
-      "hp": 131.1,
-      "time": 317.52
-    },
-    {
-      "event": "hurt",
-      "x": 81432.4,
-      "hp": 131.1,
-      "time": 318.42
-    },
-    {
-      "event": "hurt",
-      "x": 81466.9,
+      "x": 80486.1,
       "hp": 125.6,
-      "time": 320.25
+      "time": 314.47
     },
     {
       "event": "hurt",
-      "x": 81511.9,
-      "hp": 131.1,
-      "time": 321.17
-    },
-    {
-      "event": "hurt",
-      "x": 81515.2,
-      "hp": 131.1,
-      "time": 322.07
-    },
-    {
-      "event": "hurt",
-      "x": 81517.5,
-      "hp": 127.2,
-      "time": 322.98
-    },
-    {
-      "event": "hurt",
-      "x": 81874,
-      "hp": 117.8,
-      "time": 325.61
-    },
-    {
-      "event": "hurt",
-      "x": 81923.7,
+      "x": 80523.1,
       "hp": 133.1,
-      "time": 326.52
+      "time": 315.39
     },
     {
       "event": "hurt",
-      "x": 81927,
+      "x": 80548.7,
       "hp": 131.1,
-      "time": 327.43
+      "time": 316.3
     },
     {
       "event": "hurt",
-      "x": 81966.7,
+      "x": 80549.9,
       "hp": 131.1,
-      "time": 328.34
+      "time": 317.21
     },
     {
       "event": "hurt",
-      "x": 81988.9,
+      "x": 80564.3,
+      "hp": 113.9,
+      "time": 318.12
+    },
+    {
+      "event": "hurt",
+      "x": 80606.1,
+      "hp": 126,
+      "time": 319.03
+    },
+    {
+      "event": "hurt",
+      "x": 80704.9,
+      "hp": 130.8,
+      "time": 319.94
+    },
+    {
+      "event": "hurt",
+      "x": 80920.9,
       "hp": 117.8,
-      "time": 330.63
+      "time": 320.82
     },
     {
       "event": "hurt",
-      "x": 82017.8,
+      "x": 80944.2,
       "hp": 131.1,
-      "time": 331.55
+      "time": 321.76
     },
     {
       "event": "hurt",
-      "x": 82242.4,
+      "x": 80987.2,
       "hp": 131.1,
-      "time": 332.46
+      "time": 322.67
     },
     {
       "event": "hurt",
-      "x": 82355.3,
+      "x": 80990,
       "hp": 131.1,
-      "time": 333.37
+      "time": 323.57
+    },
+    {
+      "event": "hurt",
+      "x": 81063.4,
+      "hp": 117.8,
+      "time": 327.52
+    },
+    {
+      "event": "hurt",
+      "x": 81086.1,
+      "hp": 128.9,
+      "time": 328.44
+    },
+    {
+      "event": "hurt",
+      "x": 81310.8,
+      "hp": 131.1,
+      "time": 329.35
+    },
+    {
+      "event": "hurt",
+      "x": 81412.2,
+      "hp": 131.1,
+      "time": 330.26
+    },
+    {
+      "event": "hurt",
+      "x": 81443.2,
+      "hp": 125.6,
+      "time": 331.99
+    },
+    {
+      "event": "hurt",
+      "x": 81479,
+      "hp": 131.1,
+      "time": 332.91
+    },
+    {
+      "event": "hurt",
+      "x": 81484.7,
+      "hp": 131.1,
+      "time": 333.82
+    },
+    {
+      "event": "hurt",
+      "x": 81492.1,
+      "hp": 131.1,
+      "time": 334.72
+    },
+    {
+      "event": "hurt",
+      "x": 81852.6,
+      "hp": 117.8,
+      "time": 337.42
+    },
+    {
+      "event": "hurt",
+      "x": 81891.8,
+      "hp": 131.1,
+      "time": 338.33
+    },
+    {
+      "event": "hurt",
+      "x": 81894,
+      "hp": 131.1,
+      "time": 339.24
+    },
+    {
+      "event": "hurt",
+      "x": 81937,
+      "hp": 131.1,
+      "time": 340.15
+    },
+    {
+      "event": "hurt",
+      "x": 82307.9,
+      "hp": 117.8,
+      "time": 344.8
+    },
+    {
+      "event": "hurt",
+      "x": 82347.1,
+      "hp": 131.1,
+      "time": 345.72
     },
     {
       "event": "bossdefeated",
       "id": "pyre-regent",
-      "time": 333.43,
+      "time": 346.4,
       "hp": 135
     },
     {
       "event": "gate",
-      "x": 82365.4,
+      "x": 82347.6,
       "hp": 135,
-      "time": 333.43
+      "time": 346.4
     },
     {
       "event": "landing",
       "id": "pyre-arena-3",
-      "x": 82365.4,
+      "x": 82347.6,
       "hp": 135,
-      "time": 333.43
+      "time": 346.4
+    },
+    {
+      "event": "hurt",
+      "x": 82386.8,
+      "hp": 131.1,
+      "time": 346.62
+    },
+    {
+      "event": "hurt",
+      "x": 82675.2,
+      "hp": 127.2,
+      "time": 347.53
+    },
+    {
+      "event": "hurt",
+      "x": 83340.6,
+      "hp": 110,
+      "time": 349.62
     },
     {
       "event": "win",
-      "x": 83418.4,
-      "hp": 135,
-      "time": 336.77
+      "x": 83412.6,
+      "hp": 110,
+      "time": 350.11
     }
   ]
 }

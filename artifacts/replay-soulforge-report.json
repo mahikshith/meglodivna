@@ -1,7 +1,7 @@
 {
   "worldId": "soulforge",
   "status": "won",
-  "time": 335.699999999859,
+  "time": 339.04999999985597,
   "hp": 135,
   "bosses": [
     {
@@ -34,5 +34,10 @@
     "campaign-victory"
   ],
   "runtimeErrors": [],
-  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback."
+  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback.",
+  "productionChecks": [
+    "development API absent",
+    "Power hold palette",
+    "Back closes palette before pausing"
+  ]
 }

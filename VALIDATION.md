@@ -1,56 +1,93 @@
-# Fractured Realms v0.3 — verification
+# Aether Revamp v0.4 — verification
 
-Verified 13 October 2026. This replaces the v0.2 report. Automated evidence does not establish subjective fun, balance or physical touchscreen comfort.
+Branch **Revamp**, 14 October 2026. This records the supplied-art, floating-control and geometry rebuild. **113 regression tests pass; all eight refreshed legal campaigns and all five browser replays finish successfully.** Automated completion does not establish subjective fun, balance or physical touchscreen comfort.
 
-## Simulation and complete routes
+## Simulation and campaigns
 
-**100 Node tests pass.** Coverage includes fixed 120 Hz swept movement, jump/coyote/buffer/wall/double jump, finite thrust, one-way drop, dash sword damage, alternating melee, bounded light parries/heavy attack resistance, diagonal muzzle/core beams, projectile pools, enemy pursuit, shields and real boss power modifiers, warned portals, clone/wolf/dragon attacks and expiry, currents/platform carry/crumble, hazards, conduit weakness, damage/death/retry, isolated world saves and v0.2 migration.
+The suite covers fixed 120 Hz swept movement, coyote time, jump buffering, variable/wall/double jumps, finite thrust, one-way drops, dash damage, alternating melee, bounded light parries, heavy attack resistance, directional muzzle/core beams, projectile pools, pursuit, wards, boss modifiers, portals, summon attacks/expiry, moving platforms, currents, crumble, traps, conduit weakness, death/retry, isolated saves and migration.
 
-Eight live runs finish using legal movement, combat, gear and story inputs. No position, health, invulnerability, damage or clock overrides. Every world's three bosses activate at their triggers, expose attacks 0/1/2 and die; linked gates and story rewards complete.
+Revamp adds the 28×60 hero, authored center/feet preservation, native crawler/raider bodies, atlas attachment alignment in both directions, the Regent's announced ground-to-flight transformation, and scaled Aether clone muzzles. The **113-test** result includes that final clone correction.
 
-| World | Tier | Simulated gameplay | Retries |
+Eight refreshed campaigns use legal movement, combat, equipment and story inputs, without position, health, invulnerability, damage or clock overrides. Their three bosses activate at authored triggers, expose attacks 0/1/2 and die; linked gates and story rewards complete. Final Regents transform into the 112×86 Wyrm and perform its three flying patterns. The runs were regenerated after the final clone alignment correction.
+
+| World / stable ID | Tier | Recorded simulated gameplay | Retries |
 | --- | --- | ---: | ---: |
-| Soulforge | Ember / Easy |326.29s |0 |
-| Soulforge | Forge / Medium |335.70s |0 |
-| Soulforge | Inferno / Hard |357.59s |0 |
-| Soulforge | Extinction / Ultra hard |382.49s |1 |
-| Tide | Forge / Medium |349.63s |0 |
-| Pyre | Forge / Medium |336.77s |0 |
-| Neon | Forge / Medium |336.08s |0 |
-| Veil | Forge / Medium |336.59s |0 |
+| Verdant / soulforge | Ember / Easy | 355.84 s | 2 |
+| Verdant / soulforge | Forge / Medium | 339.05 s | 0 |
+| Verdant / soulforge | Inferno / Hard | 374.88 s | 1 |
+| Verdant / soulforge | Extinction / Ultra hard | 372.40 s | 0 |
+| Aerie / tide | Forge / Medium | 351.79 s | 0 |
+| Tempest / pyre | Forge / Medium | 350.11 s | 1 |
+| Zenith / neon | Forge / Medium | 338.23 s | 0 |
+| Prism / veil | Forge / Medium | 342.25 s | 0 |
 
-Each efficient completion exceeds five simulated minutes; reading, exploration and hit-stop change elapsed human play. Movement-only proofs take 270.88–283.79s and omit combat. Moving-surface fixtures exercise carry/collision; full routes can use stable surfaces. Fifteen named encounters use three physical boss families and different world power modifiers, rather than fifteen animation families.
+These efficient recorded completions exceed five simulated minutes. Reading, exploration, hit-stop and human execution change elapsed play. Retained movement-only proofs take 270.93–283.81 s and omit combat. Encounters reuse three physical boss families with world-specific powers plus the Wyrm form; they are not fifteen separately drawn animation families.
 
-Reports/traces: `artifacts/combat-route-{world}-{difficulty}-{report,inputs}.json`. Reproduce with `node scripts/combat-route.mjs forge tide` or another valid tier/world. Extinction's retry follows a real death and normal relay retry.
+Reports and traces use `artifacts/combat-route-{world}-{difficulty}-{report,inputs}.json`. For example, `node scripts/combat-route.mjs forge tide` runs Forge in Aerie and generates its replay input trace. Retries follow real deaths and normal relay recovery.
 
-## Thirty-minute development harness
+## Browser, touch and visible actions
 
-The requested harness ran **1800.002 actual seconds**, from 2026-10-12T18:44:35.538Z to 19:14:35.540Z, across 25 rounds. Fresh processes ran seeded checkpoint fixtures and Node regressions while implementation changed. It retained 17 transient failed rounds, including stale assertions and intermediate source failures; final rounds 24/25 passed. Full history: `artifacts/deep-harness-report.json`.
+`scripts/playtest.cjs` checks five worlds/four tiers, keyboard/gamepad input, catalogue locks/costs, dialogue choices, six biomes/five realms, missile icons, pause and touch macros. The final browser report is `artifacts/browser-report.json`; runtime import counts are **343 generated/composed textures, 174 atlas frames and 49 animation groups**. All checks pass with zero runtime errors and an approximately eight-second joystick fade.
 
-This was a development harness, not thirty clean minutes on the final build, a complete legal route or human playtesting. Frozen-source tests, legal routes and browser checks are separate evidence. `npm run test:deep` reproduces a 30-minute run; the script accepts 30–40 minutes.
+At 844×480, a 112 px floating analogue stick starts where a free gameplay touch lands, remains fixed while dragging, stops movement on release and hides after eight idle seconds. Independent movement/jump release, action-button exclusion, cancellation, fresh origins and modal isolation are checked. Curved Jump/Attack/Dash/Power targets are 84/80/76/72 px in a 112 px reserved bottom gutter, with a 44 px pause target. Action/pause faces exclude the canvas; the floating stick overlays the playfield where the player places it.
 
-## Browser, touch and art
+Attack reaches the next simulation tick on press, transitions to firing after a 120 ms hold, and adds no slash on release. Holding Jump enables thrust. Holding Power opens the paused palette without casting. These are synthetic browser checks, not a physical two-thumb comfort test.
 
-Chromium QA passes with **zero runtime errors** and 347 original textures. It checks five-world/four-tier selection, keyboard movement/combat, alternating slashes, jet/magic, catalogue locks/costs, paused dialogue/saved choices, six Soulforge biomes/five realms, red missile warning/launch, pause and synthetic gamepad input.
+`scripts/revamp-art-playtest.cjs` passes **54 action captures** with zero runtime errors. Images in `artifacts/revamp-actions/` cover movement, three slash forms, five guns in both directions, nine spells, live summons, damage/death and creature attacks. Its 41 attachment/emission checks measure at most 0.49 px alignment error. Twelve terminal-state checks cover Courier/Bulwark/Wraith corpses at different visual times with frozen protection/stealth timers: fully opaque, without standing armor overlays, gun, jet or cut effects. `artifacts/revamp-actions-report.json` distinguishes deliberate fixture setup/unlocks/resources from legal campaign proofs. The inspected gallery uses the normal Phaser camera pipeline.
 
-Touch QA at 844×480 checks a 112 px circular analogue stick, four curved SVG action buttons of 48 px or larger, simultaneous movement/jump and independent release, Attack tap/hold fire, Jump hold thrust, and Power tap/hold palette without unwanted mana spending. All controls lie in the reserved 112 px gutter below the canvas. Gear browsing pauses play. Physical reach/comfort still needs a phone.
+`node scripts/replay.cjs <world>` reproduces recorded legal Forge inputs in Chromium and checks production with development hooks absent, Power-hold palette and Android Back. All five current world reports pass with zero runtime errors. Playback uses accelerated fixed steps, not real time. Reports are `artifacts/replay-{world}-report.json`. Manual captures use Phaser's normal camera visibility filtering; an earlier capture-helper error that showed hidden pooled effects was corrected and all screenshots regenerated.
 
-347 exported textures have dimensions/anchors and 51,931,904RGBA source bytes (49.53MiB), before renderer/GPU overhead. Character drawing uses a finer grid than scenery. Platforms have material/rim contrast; mechanical traps, shields, rockets, summoning circles, slash poses and core beams follow simulation state. Contact sheets, mobile layout and environment captures were inspected. UI position fixtures isolate rendering and do not replace legal campaign proofs.
+## Extraction and memory
 
-`scripts/replay.cjs <world>` replays legal Forge traces in Chromium and checks production with development hooks absent, Power-hold palette and Android Back. Playback is accelerated fixed steps, not real time. Successful final reports are `artifacts/replay-{world}-report.json`.
+All four source boards remain unchanged. The three compiled reference files total **1,952,086 bytes**. Isolated regeneration matched them byte for byte; `artifacts/reference/extraction-report.json` records hashes. **174 frame keys represent 173 unique pixel payloads**; one terrain alias shares a rectangle. Printed board counts/JSON were not used as sprite metadata. Labels/divider fragments were removed; padding retains jets/tails. Sparse poses and baked lighting remain source limitations.
 
-## Build and distribution
+The 343 generated/composed textures account for 20,136,704 RGBA bytes. The 2048×2048 atlas adds 16,777,216 bytes: **36,913,920 bytes / 35.20 MiB** combined. `artifacts/reference/render-budget.json` records this dimensions-based pixel estimate. Renderer/GPU copies and process overhead are excluded; actual Android RAM and frame rate are unmeasured. Original boards/contact sheets do not ship in the runtime.
 
-Vite 6.4.4 production build passes; npm audit reports zero vulnerabilities. Android uses JDK17/SDK36/Gradle8.13, appID `com.meglodivna.ashsignal`, code 3/name `0.3.0-fractured-realms`, minimum API 24 and landscape. Assets/licenses are bundled; no Internet permission.
+## Android and distribution
 
-CI runs 100 tests, all eight legal routes, production build, Android assemble/lint, then uploads `ASH-SIGNAL-Fractured-Realms-debug-APK` and evidence. Exact distribution signature/hash/asset inspection is recorded in `artifacts/android-report.json`.
+The Vite 6.4.4 production build and dependency audit pass. Native configuration is JDK 17, SDK 36, Gradle 8.13, application ID `com.meglodivna.ashsignal`, version code **4**, version name **0.4.0-aether-revamp**, minimum API **24** and landscape orientation. It is configured for bundled offline assets without Internet permission. Local assemble/lint checks pass.
 
-[Run 38300900272 passed](https://github.com/mahikshith/meglodivna/actions/runs/38300900272) for source commit `1a9c52869f0216fbd6eb0bcf78d685ff78c23f6a`. The delivered CI APK is **2,762,535 bytes**. V2 signature verification passes with one signer; its certificate matches the persistent local/CI test key. All six embedded production/license files match `dist` byte-for-byte; no stale web files remain. Local `assembleDebug` and `lintDebug` also pass with zero lint errors. APK SHA256: `45C182025A54207FD29CFCEADCFC285D3D439FCB2F50BB18589551768A08DACB`.
+The [final Android CI run 38458832513](https://github.com/mahikshith/meglodivna/actions/runs/38458832513) passed for game source commit `743f09aa47179689108f0d359bd194650b6eb190`. The downloaded APK verifies with one valid v2 signer. Its certificate matches the delivered v0.3 key. All nine embedded production/license/reference files match the current `dist` byte for byte; no stale files or original boards are bundled. `artifacts/android-report.json` records the inspection and individual embedded hashes.
 
-The matching web archive is `ASH-SIGNAL-Fractured-Realms-web.zip`, SHA256 `175AE5FAA60A30BB8CF07A4AB15D34CA277D72B502AB1CFC155E12BB33BC4EC3`. The previous cache did not contain the generated debug key. The corrected workflow decodes a persistent encrypted repository secret and explicitly selects that key in Gradle. An initial workflow-context error was repaired before the passed distribution run; neither the earlier random-key artifact nor that failed run is the delivery.
+Delivery: [ASH-SIGNAL-Aether-Revamp-debug.apk](https://github.com/mahikshith/meglodivna/releases/download/v0.4.0-aether-revamp/ASH-SIGNAL-Aether-Revamp-debug.apk), **4,520,221 bytes**, SHA-256 `65a2a970d6f5784e4af3d066b30dd8fc4d3c0b6dff4cd4d26f2369fd1532f6fb`. Matching web archive: `ASH-SIGNAL-Aether-Revamp-web.zip`, **2,151,251 bytes**, SHA-256 `af11d10a516e452f53623a4ab67d763b80c9b225b520baf87747f0e64ba2d526`. Both uploaded release asset digests match the inspected local files. The [v0.4 prerelease](https://github.com/mahikshith/meglodivna/releases/tag/v0.4.0-aether-revamp) also includes the receipt and action contact sheet.
 
-No Android device/emulator was available. On-device boot, two-thumb comfort, sustained frame rate/thermal behavior, speaker mix, hardware gamepad calibration and human balance remain unchecked. This is a debug test build. The certificate changes from the earlier Soulforge APK; installing this build requires uninstalling that older app and removes its save. Subsequent CI builds restore the same persistent signing key from an encrypted repository secret. Local builds use that key only when ASH_SIGNAL_DEBUG_KEYSTORE points to it. v0.2 discoveries/equipment survive migration; old Soulforge encounter/checkpoint coordinates reset for its expanded route.
+CI runs the regression suite, eight legal campaigns, production build and Android assemble/lint, then uploads **ASH-SIGNAL-Aether-Revamp-debug-APK** and evidence. Local builds need `ASH_SIGNAL_DEBUG_KEYSTORE` pointed at the persistent key for update compatibility. The older v0.2 APK used another certificate and requires uninstalling it, which removes its local save. Later evidence/documentation commits do not change the delivered game payload.
 
-## Reproduce
+No Android device/emulator was available. On-device boot, two-thumb comfort, sustained frame rate/thermal behavior, speaker mix, hardware gamepad calibration and human balance remain unchecked. This is a debug test build.
 
-Run `npm test`, the eight `test:game` combinations in CI and `npm run build`. With dev at 5173 and preview at 4173, run `npm run test:browser` and `npm run test:replay -- veil` with Playwright/Chromium. Run `npm run android:sync`, then `android/gradlew assembleDebug lintDebug --no-daemon`. README covers SDK setup/installation.
+## Historical harness and reproduction
+
+The retained 30-minute harness ran 1,800.002 actual seconds during v0.3 development: 25 rounds, 17 transient failures, and final rounds 24/25 passing. `artifacts/deep-harness-report.json` preserves that history. It predates Revamp and does not establish thirty clean minutes on the final build or human playtesting.
+
+Run the unit suite, eight campaign combinations and build:
+
+```text
+npm test
+node scripts/combat-route.mjs ember soulforge
+node scripts/combat-route.mjs forge soulforge
+node scripts/combat-route.mjs inferno soulforge
+node scripts/combat-route.mjs extinction soulforge
+node scripts/combat-route.mjs forge tide
+node scripts/combat-route.mjs forge pyre
+node scripts/combat-route.mjs forge neon
+node scripts/combat-route.mjs forge veil
+npm run build
+```
+
+With development at port 5173 and production preview at port 4173, and Playwright/Chromium available:
+
+```text
+npm run test:browser
+npm run test:art
+npm run test:replay -- veil
+```
+
+For local Android validation, sync the web build, enter the Android directory and run its wrapper:
+
+```text
+npm run android:sync
+cd android
+./gradlew assembleDebug lintDebug --no-daemon
+```
+
+On Windows, use `.\gradlew.bat assembleDebug lintDebug --no-daemon`. `npm run test:deep` starts a fresh 30–40 minute harness. README covers SDK setup/installation; REVAMP records the implementation ledger.

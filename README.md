@@ -1,5 +1,9 @@
 # ASH//SIGNAL: AETHER REVAMP — v0.4
 
+**Latest APK:** [Download Aether Revamp v0.4 Android test build](https://github.com/mahikshith/meglodivna/releases/download/v0.4.0-aether-revamp/ASH-SIGNAL-Aether-Revamp-debug.apk) — 14 October 2026, version `0.4.0-aether-revamp`, code **4**, Android 7.0+.
+
+[Release and checksums](https://github.com/mahikshith/meglodivna/releases/tag/v0.4.0-aether-revamp) · [Passed Android CI](https://github.com/mahikshith/meglodivna/actions/runs/38458832513) · [54 action screenshots](artifacts/revamp-actions/contact-sheet.png). This link must be updated after every verified APK delivery; see [AGENTS.md](AGENTS.md).
+
 An original 2D action platformer where ancient souls power military machines. Five selectable worlds are authored for more than five minutes of live gameplay each. Exact legal-run durations, retries and check results are maintained in [LEVEL.md](LEVEL.md) and [VALIDATION.md](VALIDATION.md). Automated completion does not establish addictiveness, subjective balance or Android comfort.
 
 | World | Main features |

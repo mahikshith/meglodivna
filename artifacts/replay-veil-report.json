@@ -1,8 +1,8 @@
 {
   "worldId": "veil",
   "status": "won",
-  "time": 336.5916666665249,
-  "hp": 119.03999999999942,
+  "time": 342.24999999985306,
+  "hp": 135,
   "bosses": [
     {
       "id": "veil-warden",
@@ -30,5 +30,10 @@
     "campaign-victory"
   ],
   "runtimeErrors": [],
-  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback."
+  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback.",
+  "productionChecks": [
+    "development API absent",
+    "Power hold palette",
+    "Back closes palette before pausing"
+  ]
 }

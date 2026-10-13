@@ -1,8 +1,8 @@
 {
   "worldId": "pyre",
   "status": "won",
-  "time": 336.7666666665247,
-  "hp": 135,
+  "time": 350.10833333317925,
+  "hp": 110.03999999999999,
   "bosses": [
     {
       "id": "pyre-warden",
@@ -17,7 +17,7 @@
       "dead": true
     }
   ],
-  "retries": 0,
+  "retries": 1,
   "captures": [
     "story-pyre-scout",
     "run-furnace",

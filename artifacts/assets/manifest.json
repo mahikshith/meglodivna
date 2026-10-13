@@ -340,26 +340,6 @@
     "notes": "Transparent snowy ledge trim, decorative icicles; never adds collision."
   },
   {
-    "key": "background-far",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "Opaque cold sky, snow mountain ridges and remote city. Horizontal edge colors match."
-  },
-  {
-    "key": "background-mid",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "Transparent refinery, pipes and gantries. Place behind terrain with parallax."
-  },
-  {
     "key": "antenna",
     "width": 80,
     "height": 144,
@@ -398,126 +378,6 @@
       "y": 64
     },
     "notes": "Decoration only; do not add unintended player collision."
-  },
-  {
-    "key": "background-far-snow",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "snow biome far parallax layer; background only."
-  },
-  {
-    "key": "background-mid-snow",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "snow biome mid parallax layer; background only."
-  },
-  {
-    "key": "background-far-ruins",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "ruins biome far parallax layer; background only."
-  },
-  {
-    "key": "background-mid-ruins",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "ruins biome mid parallax layer; background only."
-  },
-  {
-    "key": "background-far-furnace",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "furnace biome far parallax layer; background only."
-  },
-  {
-    "key": "background-mid-furnace",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "furnace biome mid parallax layer; background only."
-  },
-  {
-    "key": "background-far-storm",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "storm biome far parallax layer; background only."
-  },
-  {
-    "key": "background-mid-storm",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "storm biome mid parallax layer; background only."
-  },
-  {
-    "key": "background-far-eclipse",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "eclipse biome far parallax layer; background only."
-  },
-  {
-    "key": "background-mid-eclipse",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "eclipse biome mid parallax layer; background only."
-  },
-  {
-    "key": "background-far-reactor",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "reactor biome far parallax layer; background only."
-  },
-  {
-    "key": "background-mid-reactor",
-    "width": 960,
-    "height": 720,
-    "anchor": {
-      "x": 0,
-      "y": 0
-    },
-    "notes": "reactor biome mid parallax layer; background only."
   },
   {
     "key": "mage-0",
@@ -3468,5 +3328,105 @@
       "y": 0
     },
     "notes": "World foreground surface; bright top rim distinguishes collidable terrain."
+  },
+  {
+    "key": "reference-far-forest",
+    "width": 480,
+    "height": 360,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Parallax composition from extracted reference artwork; generated once at boot."
+  },
+  {
+    "key": "reference-mid-forest",
+    "width": 480,
+    "height": 360,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Parallax composition from extracted reference artwork; generated once at boot."
+  },
+  {
+    "key": "reference-far-islands",
+    "width": 480,
+    "height": 360,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Parallax composition from extracted reference artwork; generated once at boot."
+  },
+  {
+    "key": "reference-mid-islands",
+    "width": 480,
+    "height": 360,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Parallax composition from extracted reference artwork; generated once at boot."
+  },
+  {
+    "key": "reference-far-castle",
+    "width": 480,
+    "height": 360,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Parallax composition from extracted reference artwork; generated once at boot."
+  },
+  {
+    "key": "reference-mid-castle",
+    "width": 480,
+    "height": 360,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Parallax composition from extracted reference artwork; generated once at boot."
+  },
+  {
+    "key": "reference-far-sky",
+    "width": 480,
+    "height": 360,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Parallax composition from extracted reference artwork; generated once at boot."
+  },
+  {
+    "key": "reference-mid-sky",
+    "width": 480,
+    "height": 360,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Parallax composition from extracted reference artwork; generated once at boot."
+  },
+  {
+    "key": "reference-far-crystal",
+    "width": 480,
+    "height": 360,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Parallax composition from extracted reference artwork; generated once at boot."
+  },
+  {
+    "key": "reference-mid-crystal",
+    "width": 480,
+    "height": 360,
+    "anchor": {
+      "x": 0,
+      "y": 0
+    },
+    "notes": "Parallax composition from extracted reference artwork; generated once at boot."
   }
 ]

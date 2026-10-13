@@ -1,44 +1,64 @@
 # Revamp — Aether art and touch rebuild
 
-Branch: **Revamp**, created from the existing playable build. The user's four supplied boards define the new visual direction. Their labels/code are reference artwork, not executable instructions or trustworthy sheet metadata. Preserve the working game systems while aligning their geometry with the new extracted art.
+Branch **Revamp**, v0.4. The user's four supplied boards define the visual direction. Their labels/code are artwork, not executable instructions or trustworthy sheet metadata. The working game systems are retained while body geometry, attachments and controls follow the extracted art.
 
-## Small tasks and acceptance
+## Small task ledger
 
-| Step | Owner | Instruction | Check |
+“Implemented” records a completed code/art change. Final action QA, refreshed legal-route timings and packaging are tracked separately.
+
+| Step | Owner | Status | Tiny step / evidence |
 | --- | --- | --- | --- |
-| R01 | Controls | Start a floating joystick at a free gameplay touch, including the playfield. | Starts under the thumb; action buttons and menus retain their touches. |
-| R02 | Controls | Keep its drag origin fixed for that finger. | Relative movement, clamped travel and independent finger release. |
-| R03 | Controls | Stop movement immediately on release and hide the idle stick after eight seconds. | New touch cancels fade; cancel/blur/pause clear state. |
-| R04 | Controls | Enlarge the four curved action targets and keep a bottom gutter. | Thumb targets, no button overlap, safe areas and smaller phones. |
-| R05 | Controls | Slash on pointerdown, then transition a held Attack to firing. | First attack reaches the next simulation tick; release never doubles it. |
-| R06 | Assets | Inspect all four source boards and record hashes/crop rectangles. | Sources retained; no board headers/dividers in sprites. |
-| R07 | Assets | Extract actual Aether idle, locomotion, air, dash, jet, fire, hurt and death poses. | Explicit visible frame counts; no invented interpolation claims. |
-| R08 | Assets | Separate gradient backgrounds from silhouettes. | Hair, cape, thin armor details and glow survive; no rectangular matte. |
-| R09 | Assets | Normalize Aether feet and register hand/muzzle positions. | Stable baseline across poses; larger readable hero. |
-| R10 | Assets | Extract crawler, raider, mecha and techno-dragon families. | Identifiable silhouettes, attack/hurt/death poses where provided. |
-| R11 | Assets | Extract NPCs, props, items, terrain/walls and scenic backgrounds. | Useful source artwork rather than board screenshots. |
-| R12 | Assets | Pack compiled art and a provenance manifest. | Runtime ships crops only; original boards are not bundled in the APK. |
-| R13 | Physics | Use a 28×60 hero body while preserving authored centers/feet. | Spawn/relay offset, collision clearance and existing jump metrics. |
-| R14 | Physics | Replace hero-specific hardcoded offsets with body dimensions. | Aim, camera, slash, shields and effects follow the new body. |
-| R15 | Physics | Align creature movement and directional fire with their anatomy. | Ground crawler, hovering raider, mecha launcher and dragon mouth. |
-| R16 | Physics | Preserve resource costs, heavy attacks and readable recovery. | No unlimited jet, summon or boss-parry shortcuts. |
-| R17 | Lead | Import the extracted atlas through Phaser loading. | No missing frames; offline Android-relative URLs work. |
-| R18 | Lead | Select real poses from physical state and anchor every frame. | Jump, double jump, dash, jet, slash, gun, spell, hurt and death captures. |
-| R19 | Lead | Rebuild foreground materials and scenic parallax around the boards. | Walls/platforms stay clear against the scenery. |
-| R20 | Lead | Combine new families with retained robots/characters that still fit. | Actual gameplay actors use the imported art and their own behavior. |
-| R21 | Lead | Show extracted sheets and in-game screenshots before final packaging. | Human visual inspection and visible evidence. |
-| R22 | QA | Test floating controls at several free touch positions. | Multitouch, release/fade, modal isolation and immediate attack. |
-| R23 | QA | Re-run collision, attack, resource and legal traversal checks. | Source geometry changes retain level playability. |
-| R24 | Lead | Commit Revamp milestones and build the updated game/APK. | Build/lint, signature, bundled files and honest device limitations. |
+| R01 | Controls | Implemented | Float the stick under a free gameplay touch; `src/input.js` and `artifacts/browser-report.json`. |
+| R02 | Controls | Implemented | Keep that finger's origin fixed, clamp travel and release independently; floating-stick checks. |
+| R03 | Controls | Implemented | Stop on release, clear on cancel/blur/pause, hide after eight idle seconds; browser timer checks. |
+| R04 | Controls | Implemented | Use four curved 72–84 px actions and a 112 px gutter; `src/style.css` and touch layout checks. |
+| R05 | Controls | Implemented | Slash on press, hold for fire, never slash again on release; touch macros reach simulation. |
+| R06 | Assets | Implemented | Inspect four boards and record hashes/native rectangles; `public/reference/manifest.json` and the extraction receipt. |
+| R07 | Assets | Implemented | Crop real Aether locomotion/air/fire/hurt/death poses; hero contact sheet and explicit group counts. |
+| R08 | Assets | Implemented | Remove gradient mattes and detached dividers; alpha methods, native previews and clear-edge assertions. |
+| R09 | Assets | Implemented | Register an 89 px silhouette around a forgiving 28×60 body; feet/hand/muzzle metadata. |
+| R10 | Assets | Implemented | Extract Crawler, Raider, Mecha and Wyrm families; creature contact sheet and animation groups. |
+| R11 | Assets | Implemented | Extract six NPCs/faces, props/items, terrain/walls and scenic panels; environment contact sheet. |
+| R12 | Assets | Implemented | Ship one atlas and two JSON files; 174 keys/173 unique images, unchanged source hashes, reproducible bytes. |
+| R13 | Physics | Implemented | Preserve authored player centers/feet with the 28×60 body; spawn/relay and collision tests. |
+| R14 | Physics | Implemented | Derive hero aim, camera, slash, shield and effects from body geometry; physics/combat regressions. |
+| R15 | Physics | Implemented | Align native creatures and directional emissions; source-anchor tests in both facings, including scaled clones. |
+| R16 | Physics | Implemented | Keep finite fuel/mana/charges/cooldowns, heavy attack resistance and timed ward exposure; resource regressions. |
+| R17 | Lead | Implemented | Preload `reference-art` through Phaser using Android-relative asset URLs; atlas frame import checks. |
+| R18 | Lead | Implemented | Select real poses and register bodies/attachments; action-capture script, anatomy checks and inspected screenshots. |
+| R19 | Lead | Implemented | Reuse extracted foreground tiles and five pairs of compact parallax layers; world renders and render budget. |
+| R20 | Lead | Implemented | Integrate imported families with retained bosses/summons; Wyrm transformation, death poses and Aether clone rendering. |
+| R21 | Lead | Verified and shown | Extracted sheets and actual in-game jump/attack screenshots inspected; 54 final action captures, including all guns/spells and three armor death states. |
+| R22 | QA | Implemented | Check several free touch origins, multitouch, release/fade, modal isolation and immediate Attack; `artifacts/browser-report.json`. |
+| R23 | QA | Verified | 113 regression tests and eight refreshed legal campaigns pass; all five Forge traces also win in Chromium with zero errors. |
+| R24 | Lead | Verified and delivered | Revamp source committed; final CI 38458832513 passed. APK signature, persistent certificate, nine bundled files and uploaded release hashes checked; README has the direct download. |
 
 ## Visual and physical contract
 
-Aether's source poses are normalized into foot-anchored frames, rather than assuming the boards are real 64×64 strips. The larger visual silhouette includes hair/cape outside a forgiving 28×60 body. Authored positions refer to the old center/feet and are translated when constructing the player. Atlas metadata is the renderer's authority for image dimensions and anchors; simulation geometry remains explicit.
+Aether uses actual source poses rather than fictional 64×64 strips. Hair/cape lie outside its forgiving 28×60 body. Authored coordinates preserve the old center/feet during player construction. Atlas metadata supplies frame size, trimmed body and anchors; explicit simulation geometry owns collision, damage and emissions. Jets/dash trails/Wyrm tails have extra transparent padding without changing attachment offsets.
 
-The first free gameplay finger owns movement. Other fingers can use action buttons. UI controls cannot turn into movement input. An idle joystick has no movement state. Action targets must be reachable and the reserved gutter keeps them away from scenery; the floating stick can overlay the playfield where the user explicitly places it.
+The first free gameplay finger owns the floating stick. Other fingers use four macro buttons. Action/menu touches cannot become movement input; an idle stick has no movement state. The reserved gutter separates action/pause targets from the canvas, while the stick appears on the playfield where the user places it.
 
-The reference sheets contain repeated characters and fewer visible poses than some printed labels claim. Extraction preserves those real poses. Missing animation between poses is a documented source limitation, not an excuse to fall back to the old courier's appearance.
+The boards contain repeated characters and fewer visible poses than printed labels claim. The packet records 174 keys, 49 groups and 173 unique images. Missing in-between animation remains a source limitation; primary Aether states reuse actual Aether poses.
 
-## Evidence
+## Added design ideas
 
-In progress. Source inspection, exported crop sheets, in-game action screenshots, tests and package inspection will be recorded here as completed. Android comfort and sustained performance require a physical device.
+1. **Announced Wyrm awakening:** the wounded Regent telegraphs its transformation for 0.9 s before acquiring a real flying body and mouth-based attacks.
+2. **Finite counterplay:** timed ward suppression/core exposure, resource costs and recovery reward a deliberate response; heavy attacks do not become unlimited parry rewards.
+3. **Source-aware forgiving bodies:** character hair, wings and trails stay outside trimmed hurtboxes; feet and weapon origins still align with play.
+4. **Four fluid macros:** Jump, Attack, Dash and Power combine immediate presses with held thrust/fire/paused palette actions, reducing button clutter.
+
+These are implemented mechanics and layout choices. Human balance and physical Android comfort remain unverified.
+
+## Evidence and remaining checks
+
+- `artifacts/reference/{hero,creatures,environment}-contact-sheet.png`: inspected extracted pixels.
+- `artifacts/reference/extraction-report.json`: source hashes and byte-identical regeneration.
+- `artifacts/reference/render-budget.json`: 343 generated/composed textures plus atlas; 35.20 MiB RGBA pixel estimate.
+- `artifacts/browser-report.json`: synthetic browser UI/control/import checks.
+- `artifacts/revamp-actions/` and `artifacts/revamp-actions-report.json`: 54 passed visible fixtures, 41 attachment checks and 12 armor death-state checks.
+- `artifacts/combat-route-{world}-{difficulty}-{report,inputs}.json`: eight final refreshed legal campaigns. The driver regenerates the large input traces locally.
+- `VALIDATION.md`: 113-test status, recorded route timings and reproduction commands.
+- `artifacts/android-report.json`: inspected final v0.4 APK/web archive, source commit, successful CI, certificate and per-file hashes.
+
+All 24 implementation steps are complete. Remaining device validation: install the APK, test two-thumb reach and responsiveness, then measure sustained frame rate, thermal behavior and audio mix. Asset allocation estimates do not establish those hardware results.

@@ -1,15 +1,20 @@
 {
   "worldId": "neon",
+  "worldName": "ZENITH // SKY CITY",
   "difficulty": "forge",
   "status": "won",
-  "elapsed": 336.08,
-  "campaignTime": 336.08,
-  "timeLeft": 283.92,
+  "playerBody": {
+    "w": 28,
+    "h": 60
+  },
+  "elapsed": 338.23,
+  "campaignTime": 338.22,
+  "timeLeft": 281.78,
   "deaths": 0,
   "checkpoint": 16,
-  "x": 83418.3,
-  "y": 564,
-  "hp": 119,
+  "x": 83412.6,
+  "y": 550,
+  "hp": 119.9,
   "conversations": [
     "neon-scout",
     "neon-scholar",
@@ -18,18 +23,18 @@
   "triggerProof": {
     "neon-warden": {
       "triggerX": 25030,
-      "activatedX": 25030.71,
-      "activatedTime": 84.23
+      "activatedX": 25031.38,
+      "activatedTime": 83.88
     },
     "neon-hex": {
       "triggerX": 51830,
-      "activatedX": 51831.2,
-      "activatedTime": 185.61
+      "activatedX": 51831.87,
+      "activatedTime": 185.62
     },
     "neon-regent": {
       "triggerX": 80030,
-      "activatedX": 80031.13,
-      "activatedTime": 301.29
+      "activatedX": 80031.55,
+      "activatedTime": 302.05
     }
   },
   "storyClaims": [
@@ -42,30 +47,60 @@
       "id": "neon-warden",
       "dead": true,
       "hp": 0,
-      "fightSeconds": 14.74,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 15.01,
       "attacksSeen": [
         0,
         1,
         2
-      ]
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
     },
     {
       "id": "neon-hex",
       "dead": true,
       "hp": 0,
-      "fightSeconds": 25.77,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 26.03,
       "attacksSeen": [
         0,
         1,
         2
-      ]
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
     },
     {
       "id": "neon-regent",
       "dead": true,
       "hp": 0,
-      "fightSeconds": 30.8,
+      "body": {
+        "w": 112,
+        "h": 86
+      },
+      "fightSeconds": 32.07,
       "attacksSeen": [
+        0,
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground",
+        "transforming",
+        "flying"
+      ],
+      "flyingAttacksSeen": [
         0,
         1,
         2
@@ -121,6 +156,7 @@
     "summonexpire",
     "taunt",
     "thunder",
+    "transform",
     "win"
   ],
   "history": [
@@ -132,420 +168,426 @@
     {
       "event": "landing",
       "id": "neon-1-approach",
-      "x": 223.3,
+      "x": 221.3,
       "hp": 100,
       "time": 0.48
     },
     {
       "event": "checkpoint",
-      "x": 1580.7,
+      "x": 1578.7,
       "hp": 122,
       "time": 4.72
     },
     {
       "event": "landing",
       "id": "neon-2-machine-entry",
-      "x": 2158.7,
+      "x": 2156.7,
       "hp": 122,
       "time": 6.57
     },
     {
       "event": "landing",
       "id": "neon-2-machine-machine-0",
-      "x": 2603,
+      "x": 2601,
       "hp": 122,
       "time": 8.04
     },
     {
       "event": "hurt",
-      "x": 3088.1,
+      "x": 3091.4,
       "hp": 104.8,
-      "time": 9.58
+      "time": 9.6
     },
     {
       "event": "landing",
       "id": "neon-2-machine-machine-1",
-      "x": 3424.2,
+      "x": 3422.2,
       "hp": 104.8,
       "time": 10.94
     },
     {
       "event": "landing",
       "id": "neon-2-machine-machine-2",
-      "x": 4313,
+      "x": 4311,
       "hp": 104.8,
       "time": 13.72
     },
     {
       "event": "landing",
       "id": "neon-2-machine-exit",
-      "x": 5043.1,
+      "x": 5041.1,
       "hp": 104.8,
       "time": 16.01
     },
     {
       "event": "landing",
       "id": "neon-3-bridge-entry",
-      "x": 5693.7,
+      "x": 5691.7,
       "hp": 104.8,
       "time": 18.04
     },
     {
       "event": "landing",
       "id": "neon-3-bridge-deck-1",
-      "x": 6167.3,
+      "x": 6165.3,
       "hp": 104.8,
       "time": 19.56
     },
     {
       "event": "landing",
       "id": "neon-3-bridge-deck-2",
-      "x": 6616.9,
+      "x": 6614.9,
       "hp": 104.8,
       "time": 21
     },
     {
       "event": "landing",
       "id": "neon-3-bridge-deck-3",
-      "x": 7093.9,
+      "x": 7091.9,
       "hp": 104.8,
       "time": 22.62
     },
     {
       "event": "landing",
       "id": "neon-3-bridge-exit",
-      "x": 7534.1,
+      "x": 7532.1,
       "hp": 104.8,
       "time": 24.27
     },
     {
       "event": "landing",
       "id": "neon-3-bridge-exit",
-      "x": 8065.4,
+      "x": 8063.4,
       "hp": 104.8,
       "time": 25.98
     },
     {
       "event": "checkpoint",
-      "x": 8180,
+      "x": 8178,
       "hp": 126.8,
       "time": 26.34
     },
     {
       "event": "landing",
       "id": "neon-4-terrace-terrace-0",
-      "x": 8734.7,
+      "x": 8732.7,
       "hp": 126.8,
       "time": 28.07
     },
     {
       "event": "landing",
       "id": "neon-4-terrace-terrace-1",
-      "x": 9535.2,
+      "x": 9531.2,
       "hp": 126.8,
       "time": 30.73
     },
     {
       "event": "landing",
       "id": "neon-4-terrace-terrace-2",
-      "x": 10335.2,
+      "x": 10331.2,
       "hp": 126.8,
-      "time": 33.39
+      "time": 33.4
     },
     {
       "event": "landing",
       "id": "neon-4-terrace-terrace-3",
-      "x": 11135.2,
+      "x": 11131.2,
       "hp": 126.8,
-      "time": 35.89
+      "time": 35.9
     },
     {
       "event": "landing",
       "id": "neon-4-terrace-terrace-4",
-      "x": 12233.9,
+      "x": 12232.5,
       "hp": 126.8,
-      "time": 39.32
+      "time": 39.34
     },
     {
       "event": "landing",
       "id": "neon-5-tunnel-entry",
-      "x": 12836.9,
+      "x": 12834.9,
       "hp": 126.8,
-      "time": 41.63
+      "time": 41.64
     },
     {
       "event": "landing",
       "id": "neon-5-tunnel-tunnel-0",
-      "x": 13305.6,
+      "x": 13303.5,
       "hp": 126.8,
-      "time": 43.24
+      "time": 43.25
     },
     {
       "event": "landing",
       "id": "neon-5-tunnel-tunnel-1",
-      "x": 13874.5,
+      "x": 13872.5,
       "hp": 126.8,
-      "time": 45.05
+      "time": 45.06
     },
     {
       "event": "landing",
       "id": "neon-5-tunnel-tunnel-2",
-      "x": 14498.4,
+      "x": 14496.4,
       "hp": 126.8,
-      "time": 47.04
+      "time": 47.05
     },
     {
       "event": "landing",
       "id": "neon-5-tunnel-exit",
-      "x": 15233.7,
+      "x": 15231.7,
       "hp": 126.8,
-      "time": 49.36
+      "time": 49.37
     },
     {
       "event": "checkpoint",
-      "x": 15380.4,
+      "x": 15378.4,
       "hp": 135,
       "time": 49.82
     },
     {
       "event": "landing",
       "id": "neon-6-tower-entry",
-      "x": 15710.4,
+      "x": 15708.4,
       "hp": 135,
-      "time": 50.9
+      "time": 50.91
     },
     {
       "event": "hurt",
-      "x": 15783.5,
+      "x": 15786.8,
       "hp": 117.8,
-      "time": 51.15
+      "time": 51.17
     },
     {
       "event": "landing",
       "id": "neon-6-tower-riser-1",
-      "x": 15909.5,
+      "x": 15907.5,
       "hp": 117.8,
-      "time": 51.84
+      "time": 51.85
     },
     {
       "event": "landing",
       "id": "neon-6-tower-riser-2",
-      "x": 16142.3,
+      "x": 16140.3,
       "hp": 117.8,
-      "time": 52.63
+      "time": 52.64
     },
     {
       "event": "landing",
       "id": "neon-6-tower-riser-3",
-      "x": 16334.7,
+      "x": 16332.7,
       "hp": 117.8,
-      "time": 53.34
+      "time": 53.35
     },
     {
       "event": "landing",
       "id": "neon-6-tower-wall",
-      "x": 16515.5,
+      "x": 16513.1,
       "hp": 117.8,
-      "time": 54.21
+      "time": 54.22
     },
     {
       "event": "landing",
       "id": "neon-6-tower-descent-1",
-      "x": 16726.4,
+      "x": 16724.4,
       "hp": 117.8,
       "time": 55.27
     },
     {
       "event": "landing",
       "id": "neon-6-tower-descent-2",
-      "x": 17034.2,
+      "x": 17032.2,
       "hp": 117.8,
-      "time": 56.52
+      "time": 56.53
     },
     {
       "event": "landing",
       "id": "neon-6-tower-descent-3",
-      "x": 17437,
+      "x": 17435,
       "hp": 117.8,
       "time": 58.27
     },
     {
       "event": "landing",
       "id": "neon-6-tower-exit",
-      "x": 17654.1,
+      "x": 17654.7,
       "hp": 117.8,
-      "time": 59
+      "time": 59.02
     },
     {
       "event": "landing",
       "id": "neon-7-refuge",
-      "x": 18864.7,
+      "x": 18862.7,
       "hp": 135,
-      "time": 62.78
+      "time": 62.79
     },
     {
       "event": "checkpoint",
-      "x": 18982.1,
+      "x": 18980.1,
       "hp": 135,
-      "time": 63.15
+      "time": 63.16
     },
     {
       "event": "landing",
       "id": "neon-8-vault-entry",
-      "x": 19374.1,
+      "x": 19372.1,
       "hp": 135,
-      "time": 64.37
+      "time": 64.38
     },
     {
       "event": "landing",
       "id": "neon-8-vault-arch-1",
-      "x": 19674.8,
+      "x": 19672.8,
       "hp": 135,
-      "time": 65.34
+      "time": 65.35
     },
     {
       "event": "hurt",
-      "x": 19713.5,
+      "x": 19716.8,
       "hp": 117.8,
-      "time": 65.47
+      "time": 65.5
     },
     {
       "event": "landing",
       "id": "neon-8-vault-arch-2",
-      "x": 20024.5,
+      "x": 20021.9,
       "hp": 117.8,
-      "time": 67.74
+      "time": 67.39
     },
     {
       "event": "landing",
       "id": "neon-8-vault-arch-3",
-      "x": 20396.4,
+      "x": 20393.9,
       "hp": 117.8,
-      "time": 68.91
+      "time": 68.56
     },
     {
       "event": "landing",
       "id": "neon-8-vault-arch-4",
-      "x": 20787.7,
+      "x": 20785.5,
       "hp": 117.8,
-      "time": 70.24
+      "time": 69.89
     },
     {
       "event": "landing",
       "id": "neon-8-vault-exit",
-      "x": 21288.9,
+      "x": 21286.9,
       "hp": 117.8,
-      "time": 71.97
+      "time": 71.62
     },
     {
       "event": "landing",
       "id": "neon-9-bridge-entry",
-      "x": 21893.1,
+      "x": 21891.1,
       "hp": 117.8,
-      "time": 73.89
+      "time": 73.54
     },
     {
       "event": "landing",
       "id": "neon-9-bridge-deck-1",
-      "x": 22367.2,
+      "x": 22365.1,
       "hp": 117.8,
-      "time": 75.41
+      "time": 75.06
     },
     {
       "event": "landing",
       "id": "neon-9-bridge-deck-2",
-      "x": 22816.9,
+      "x": 22814.9,
       "hp": 117.8,
-      "time": 76.85
+      "time": 76.5
     },
     {
       "event": "landing",
       "id": "neon-9-bridge-deck-3",
-      "x": 23293.9,
+      "x": 23291.9,
       "hp": 117.8,
-      "time": 78.48
+      "time": 78.13
     },
     {
       "event": "landing",
       "id": "neon-9-bridge-exit",
-      "x": 23734.1,
+      "x": 23732.1,
       "hp": 117.8,
-      "time": 80.13
+      "time": 79.78
     },
     {
       "event": "landing",
       "id": "neon-9-bridge-exit",
-      "x": 24265.4,
+      "x": 24263.4,
       "hp": 135,
-      "time": 81.83
+      "time": 81.48
     },
     {
       "event": "checkpoint",
-      "x": 24396,
+      "x": 24394,
       "hp": 135,
-      "time": 82.24
+      "time": 81.89
     },
     {
       "event": "bossstart",
-      "x": 25030.7,
+      "x": 25031.4,
       "hp": 135,
-      "time": 84.23
+      "time": 83.88
     },
     {
       "event": "hurt",
-      "x": 25502.6,
+      "x": 25489.3,
       "hp": 135,
-      "time": 86.68
+      "time": 86.33
     },
     {
       "event": "hurt",
-      "x": 25594.3,
+      "x": 25581,
       "hp": 135,
-      "time": 91.93
+      "time": 91.58
     },
     {
       "event": "hurt",
-      "x": 25596.8,
+      "x": 25582.1,
       "hp": 134.1,
-      "time": 92.99
+      "time": 92.6
     },
     {
       "event": "hurt",
-      "x": 25623.1,
+      "x": 25609.9,
       "hp": 117,
-      "time": 94.33
+      "time": 93.98
+    },
+    {
+      "event": "hurt",
+      "x": 25679.2,
+      "hp": 107.6,
+      "time": 98.76
     },
     {
       "event": "bossdefeated",
       "id": "neon-warden",
-      "time": 98.97,
-      "hp": 117
+      "time": 98.89,
+      "hp": 107.6
     },
     {
       "event": "gate",
-      "x": 25692.5,
-      "hp": 117,
-      "time": 98.97
+      "x": 25663.9,
+      "hp": 107.6,
+      "time": 98.89
     },
     {
       "event": "landing",
       "id": "neon-arena-1",
-      "x": 25692.5,
-      "hp": 117,
-      "time": 98.97
+      "x": 25663.9,
+      "hp": 107.6,
+      "time": 98.89
     },
     {
       "event": "landing",
       "id": "neon-arena-1",
-      "x": 27263.4,
-      "hp": 117,
-      "time": 103.93
+      "x": 27263.2,
+      "hp": 107.6,
+      "time": 103.98
     },
     {
       "event": "checkpoint",
-      "x": 27380.8,
-      "hp": 135,
-      "time": 104.3
+      "x": 27380.5,
+      "hp": 129.6,
+      "time": 104.34
     },
     {
       "event": "story",
@@ -555,381 +597,381 @@
     {
       "event": "landing",
       "id": "neon-10-tunnel-entry",
-      "x": 27671.8,
-      "hp": 135,
-      "time": 105.39
+      "x": 27670,
+      "hp": 129.6,
+      "time": 105.43
     },
     {
       "event": "landing",
       "id": "neon-10-tunnel-tunnel-0",
-      "x": 28306,
-      "hp": 135,
-      "time": 107.51
+      "x": 28304,
+      "hp": 129.6,
+      "time": 107.55
     },
     {
       "event": "landing",
       "id": "neon-10-tunnel-tunnel-1",
-      "x": 28874.7,
-      "hp": 135,
-      "time": 109.32
+      "x": 28872.7,
+      "hp": 129.6,
+      "time": 109.36
     },
     {
       "event": "hurt",
-      "x": 29170.7,
-      "hp": 117.8,
+      "x": 29155.4,
+      "hp": 112.4,
       "time": 110.24
     },
     {
       "event": "hurt",
-      "x": 29356,
-      "hp": 94.4,
-      "time": 111.27
+      "x": 29352,
+      "hp": 89,
+      "time": 111.33
     },
     {
       "event": "landing",
       "id": "neon-10-tunnel-tunnel-2",
-      "x": 29464.5,
-      "hp": 94.4,
-      "time": 112.18
+      "x": 29463.3,
+      "hp": 89,
+      "time": 112.26
     },
     {
       "event": "landing",
       "id": "neon-10-tunnel-exit",
-      "x": 30235.2,
-      "hp": 94.4,
-      "time": 114.58
+      "x": 30231.3,
+      "hp": 89,
+      "time": 114.66
     },
     {
       "event": "landing",
       "id": "neon-11-wire",
-      "x": 32063.3,
-      "hp": 94.4,
-      "time": 120.05
+      "x": 32062,
+      "hp": 89,
+      "time": 120.13
     },
     {
       "event": "checkpoint",
-      "x": 32180.6,
-      "hp": 116.4,
-      "time": 120.42
+      "x": 32179.3,
+      "hp": 111,
+      "time": 120.5
     },
     {
       "event": "landing",
       "id": "neon-12-machine-entry",
-      "x": 32758.6,
-      "hp": 116.4,
-      "time": 122.27
+      "x": 32756.2,
+      "hp": 111,
+      "time": 122.34
     },
     {
       "event": "landing",
       "id": "neon-12-machine-machine-0",
-      "x": 33203,
-      "hp": 116.4,
-      "time": 123.74
+      "x": 33201,
+      "hp": 111,
+      "time": 123.82
     },
     {
       "event": "hurt",
-      "x": 33688,
-      "hp": 100.7,
-      "time": 125.28
+      "x": 33691.4,
+      "hp": 95.3,
+      "time": 125.38
     },
     {
       "event": "landing",
       "id": "neon-12-machine-machine-1",
-      "x": 34024.2,
-      "hp": 103.2,
-      "time": 126.64
-    },
-    {
-      "event": "hurt",
-      "x": 34584.2,
-      "hp": 86,
-      "time": 128.39
+      "x": 34022.2,
+      "hp": 98.6,
+      "time": 126.72
     },
     {
       "event": "landing",
       "id": "neon-12-machine-machine-2",
-      "x": 34899.2,
-      "hp": 86,
-      "time": 129.38
+      "x": 34911,
+      "hp": 98.6,
+      "time": 129.5
     },
     {
       "event": "landing",
       "id": "neon-12-machine-exit",
-      "x": 35643.2,
-      "hp": 86,
-      "time": 131.71
+      "x": 35641.1,
+      "hp": 98.6,
+      "time": 131.78
     },
     {
       "event": "landing",
       "id": "neon-13-vault-entry",
-      "x": 36173.8,
-      "hp": 86,
-      "time": 133.37
+      "x": 36171.7,
+      "hp": 98.6,
+      "time": 133.44
     },
     {
       "event": "landing",
       "id": "neon-13-vault-arch-1",
-      "x": 36474.7,
-      "hp": 86,
-      "time": 134.33
+      "x": 36472.7,
+      "hp": 98.6,
+      "time": 134.41
     },
     {
       "event": "landing",
       "id": "neon-13-vault-arch-2",
-      "x": 36875.2,
-      "hp": 86,
-      "time": 135.88
+      "x": 36873.2,
+      "hp": 98.6,
+      "time": 135.96
     },
     {
       "event": "landing",
       "id": "neon-13-vault-arch-3",
-      "x": 37196.3,
-      "hp": 86,
-      "time": 136.94
+      "x": 37194.3,
+      "hp": 98.6,
+      "time": 137.02
     },
     {
       "event": "landing",
       "id": "neon-13-vault-arch-4",
-      "x": 37587.7,
-      "hp": 86,
-      "time": 138.28
+      "x": 37585.7,
+      "hp": 98.6,
+      "time": 138.35
     },
     {
       "event": "landing",
       "id": "neon-13-vault-exit",
-      "x": 38088.9,
-      "hp": 86,
-      "time": 140
+      "x": 38086.9,
+      "hp": 98.6,
+      "time": 140.08
     },
     {
       "event": "checkpoint",
-      "x": 38181.1,
-      "hp": 108,
-      "time": 140.33
+      "x": 38179.1,
+      "hp": 120.6,
+      "time": 140.4
     },
     {
       "event": "landing",
       "id": "neon-14-terrace-terrace-0",
-      "x": 38733.1,
-      "hp": 109.4,
-      "time": 142.05
+      "x": 38731.1,
+      "hp": 122,
+      "time": 142.13
     },
     {
       "event": "hurt",
-      "x": 38977.6,
-      "hp": 93.1,
-      "time": 142.91
+      "x": 38975.8,
+      "hp": 104.8,
+      "time": 143.01
     },
     {
       "event": "landing",
       "id": "neon-14-terrace-terrace-1",
-      "x": 39583.4,
-      "hp": 99.6,
+      "x": 39577.2,
+      "hp": 112.1,
       "time": 145.33
     },
     {
       "event": "landing",
       "id": "neon-14-terrace-terrace-2",
-      "x": 40335.2,
-      "hp": 99.6,
+      "x": 40331.2,
+      "hp": 112.1,
       "time": 147.88
     },
     {
       "event": "landing",
       "id": "neon-14-terrace-terrace-3",
-      "x": 41135.2,
-      "hp": 99.6,
+      "x": 41131.2,
+      "hp": 112.1,
       "time": 150.38
     },
     {
       "event": "landing",
       "id": "neon-14-terrace-terrace-4",
-      "x": 42233.9,
-      "hp": 99.6,
-      "time": 153.82
+      "x": 42232.5,
+      "hp": 112.1,
+      "time": 153.83
     },
     {
       "event": "landing",
       "id": "neon-15-bridge-entry",
-      "x": 42895.2,
-      "hp": 99.6,
+      "x": 42891.2,
+      "hp": 112.1,
       "time": 155.88
     },
     {
       "event": "landing",
       "id": "neon-15-bridge-deck-1",
-      "x": 43366.9,
-      "hp": 99.6,
-      "time": 157.39
+      "x": 43365.2,
+      "hp": 112.1,
+      "time": 157.4
     },
     {
       "event": "landing",
       "id": "neon-15-bridge-deck-2",
-      "x": 43816.9,
-      "hp": 99.6,
-      "time": 158.83
+      "x": 43814.9,
+      "hp": 112.1,
+      "time": 158.84
     },
     {
       "event": "landing",
       "id": "neon-15-bridge-deck-3",
-      "x": 44293.9,
-      "hp": 99.6,
-      "time": 160.46
+      "x": 44291.9,
+      "hp": 112.1,
+      "time": 160.47
     },
     {
       "event": "landing",
       "id": "neon-15-bridge-exit",
-      "x": 44734.1,
-      "hp": 99.6,
-      "time": 162.11
+      "x": 44732.1,
+      "hp": 112.1,
+      "time": 162.12
     },
     {
       "event": "landing",
       "id": "neon-15-bridge-exit",
-      "x": 45265.4,
-      "hp": 99.6,
-      "time": 163.82
+      "x": 45263.4,
+      "hp": 112.1,
+      "time": 163.83
     },
     {
       "event": "checkpoint",
-      "x": 45380,
-      "hp": 121.6,
+      "x": 45378,
+      "hp": 134.1,
       "time": 164.18
     },
     {
       "event": "hurt",
-      "x": 45508,
-      "hp": 104.4,
-      "time": 164.58
+      "x": 45500.7,
+      "hp": 117,
+      "time": 164.57
     },
     {
       "event": "landing",
       "id": "neon-16-approach",
-      "x": 46865.5,
-      "hp": 104.4,
+      "x": 46863.5,
+      "hp": 117,
       "time": 169.13
     },
     {
       "event": "landing",
       "id": "neon-17-tunnel-entry",
-      "x": 47436.9,
-      "hp": 104.4,
-      "time": 171.33
+      "x": 47434.9,
+      "hp": 117,
+      "time": 171.34
     },
     {
       "event": "landing",
       "id": "neon-17-tunnel-tunnel-0",
-      "x": 47905.6,
-      "hp": 104.4,
-      "time": 172.94
+      "x": 47903.6,
+      "hp": 117,
+      "time": 172.95
     },
     {
       "event": "landing",
       "id": "neon-17-tunnel-tunnel-1",
-      "x": 48474.5,
-      "hp": 104.4,
-      "time": 174.75
+      "x": 48472.5,
+      "hp": 117,
+      "time": 174.76
     },
     {
       "event": "landing",
       "id": "neon-17-tunnel-tunnel-2",
-      "x": 49098.4,
-      "hp": 104.4,
-      "time": 176.74
+      "x": 49096.4,
+      "hp": 117,
+      "time": 176.75
     },
     {
       "event": "landing",
       "id": "neon-17-tunnel-exit",
-      "x": 49833.7,
-      "hp": 104.4,
-      "time": 179.06
+      "x": 49831.7,
+      "hp": 117,
+      "time": 179.07
     },
     {
       "event": "checkpoint",
-      "x": 49980.4,
-      "hp": 129.4,
-      "time": 179.52
+      "x": 49978.4,
+      "hp": 135,
+      "time": 179.53
     },
     {
       "event": "hurt",
-      "x": 50188.4,
-      "hp": 115.4,
-      "time": 180.17
+      "x": 50194.4,
+      "hp": 117.8,
+      "time": 180.2
     },
     {
       "event": "landing",
       "id": "neon-18-refuge",
-      "x": 51063.2,
+      "x": 51061.2,
       "hp": 135,
-      "time": 183.21
+      "time": 183.22
     },
     {
       "event": "checkpoint",
-      "x": 51196.5,
+      "x": 51194.5,
       "hp": 135,
-      "time": 183.62
+      "time": 183.63
     },
     {
       "event": "bossstart",
-      "x": 51831.2,
+      "x": 51831.9,
       "hp": 135,
-      "time": 185.61
+      "time": 185.62
     },
     {
       "event": "hurt",
-      "x": 52385.7,
+      "x": 52372.4,
       "hp": 135,
-      "time": 192.51
+      "time": 192.52
     },
     {
       "event": "hurt",
-      "x": 52710.7,
+      "x": 52695.9,
       "hp": 135,
-      "time": 194.62
+      "time": 194.58
     },
     {
       "event": "hurt",
-      "x": 52789,
+      "x": 52775.7,
       "hp": 124.8,
-      "time": 199.28
+      "time": 199.3
     },
     {
       "event": "hurt",
-      "x": 53131.6,
-      "hp": 125.6,
-      "time": 202.69
+      "x": 52803.5,
+      "hp": 117.8,
+      "time": 201
     },
     {
       "event": "hurt",
-      "x": 53525.9,
+      "x": 53114.2,
       "hp": 125.6,
-      "time": 209.89
+      "time": 202.63
+    },
+    {
+      "event": "hurt",
+      "x": 53510.4,
+      "hp": 125.6,
+      "time": 209.9
     },
     {
       "event": "bossdefeated",
       "id": "neon-hex",
-      "time": 211.37,
+      "time": 211.66,
       "hp": 135
     },
     {
       "event": "gate",
-      "x": 53596.3,
+      "x": 53583.2,
       "hp": 135,
-      "time": 211.37
+      "time": 211.66
     },
     {
       "event": "landing",
       "id": "neon-arena-2",
-      "x": 53596.3,
+      "x": 53583.2,
       "hp": 135,
-      "time": 211.37
+      "time": 211.66
     },
     {
       "event": "landing",
       "id": "neon-arena-2",
-      "x": 54265.1,
+      "x": 54262.4,
       "hp": 135,
-      "time": 213.57
+      "time": 213.88
     },
     {
       "event": "story",
@@ -939,436 +981,472 @@
     {
       "event": "landing",
       "id": "neon-19-tower-entry",
-      "x": 54672,
+      "x": 54669.8,
       "hp": 135,
-      "time": 215.02
+      "time": 215.34
     },
     {
       "event": "landing",
       "id": "neon-19-tower-riser-1",
-      "x": 54945.4,
+      "x": 54943.4,
       "hp": 135,
-      "time": 215.97
+      "time": 216.29
     },
     {
       "event": "landing",
       "id": "neon-19-tower-riser-2",
-      "x": 55142.3,
+      "x": 55140.3,
       "hp": 135,
-      "time": 216.67
+      "time": 216.99
     },
     {
       "event": "landing",
       "id": "neon-19-tower-riser-3",
-      "x": 55334.7,
+      "x": 55332.7,
       "hp": 135,
-      "time": 217.38
+      "time": 217.7
     },
     {
       "event": "landing",
       "id": "neon-19-tower-wall",
-      "x": 55515.5,
+      "x": 55513.1,
       "hp": 135,
-      "time": 218.25
+      "time": 218.57
     },
     {
       "event": "landing",
       "id": "neon-19-tower-descent-1",
-      "x": 55726.4,
+      "x": 55724.4,
       "hp": 135,
-      "time": 219.31
+      "time": 219.62
     },
     {
       "event": "landing",
       "id": "neon-19-tower-descent-2",
-      "x": 56034.2,
+      "x": 56032.2,
       "hp": 135,
-      "time": 220.57
+      "time": 220.88
     },
     {
       "event": "landing",
       "id": "neon-19-tower-descent-3",
-      "x": 56437,
+      "x": 56435,
       "hp": 135,
-      "time": 222.31
+      "time": 222.62
     },
     {
       "event": "landing",
       "id": "neon-19-tower-exit",
-      "x": 56654.1,
+      "x": 56654.7,
       "hp": 135,
-      "time": 223.04
+      "time": 223.37
     },
     {
       "event": "checkpoint",
-      "x": 56782.1,
+      "x": 56780.1,
       "hp": 135,
-      "time": 223.44
+      "time": 223.76
     },
     {
       "event": "hurt",
-      "x": 57338.2,
+      "x": 57341.5,
       "hp": 117.8,
-      "time": 224.93
+      "time": 225.27
     },
     {
       "event": "landing",
       "id": "neon-20-wire",
-      "x": 58463.5,
-      "hp": 124.9,
-      "time": 228.72
+      "x": 58461.5,
+      "hp": 125.7,
+      "time": 229.03
     },
     {
       "event": "hurt",
-      "x": 59036.7,
-      "hp": 101.5,
-      "time": 230.9
+      "x": 59034.7,
+      "hp": 102.3,
+      "time": 231.22
     },
     {
       "event": "landing",
       "id": "neon-21-tunnel-entry",
-      "x": 59047.2,
-      "hp": 101.5,
-      "time": 231.16
+      "x": 59045.2,
+      "hp": 102.3,
+      "time": 231.47
     },
     {
       "event": "landing",
       "id": "neon-21-tunnel-tunnel-0",
-      "x": 59505.3,
-      "hp": 101.5,
-      "time": 232.76
+      "x": 59503.3,
+      "hp": 102.3,
+      "time": 233.07
     },
     {
       "event": "landing",
       "id": "neon-21-tunnel-tunnel-1",
-      "x": 60074.4,
-      "hp": 101.5,
-      "time": 234.57
+      "x": 60072.4,
+      "hp": 102.3,
+      "time": 234.88
     },
     {
       "event": "landing",
       "id": "neon-21-tunnel-tunnel-2",
-      "x": 60698.4,
-      "hp": 101.5,
-      "time": 236.56
+      "x": 60696.4,
+      "hp": 102.3,
+      "time": 236.87
     },
     {
       "event": "landing",
       "id": "neon-21-tunnel-exit",
-      "x": 61433.7,
-      "hp": 101.5,
-      "time": 238.87
+      "x": 61431.7,
+      "hp": 102.3,
+      "time": 239.19
     },
     {
       "event": "checkpoint",
-      "x": 61580.4,
-      "hp": 123.5,
-      "time": 239.33
+      "x": 61578.4,
+      "hp": 124.3,
+      "time": 239.65
     },
     {
       "event": "landing",
       "id": "neon-22-machine-entry",
-      "x": 62158.5,
-      "hp": 123.5,
-      "time": 241.18
+      "x": 62156.5,
+      "hp": 124.3,
+      "time": 241.5
     },
     {
       "event": "landing",
       "id": "neon-22-machine-machine-0",
-      "x": 62603,
-      "hp": 123.5,
-      "time": 242.66
+      "x": 62601,
+      "hp": 124.3,
+      "time": 242.97
     },
     {
       "event": "landing",
       "id": "neon-22-machine-machine-1",
-      "x": 63424,
-      "hp": 123.5,
-      "time": 245.25
+      "x": 63422,
+      "hp": 124.3,
+      "time": 245.57
     },
     {
       "event": "landing",
       "id": "neon-22-machine-machine-2",
-      "x": 64312.9,
-      "hp": 123.5,
-      "time": 248.03
+      "x": 64310.9,
+      "hp": 124.3,
+      "time": 248.35
     },
     {
       "event": "landing",
       "id": "neon-22-machine-exit",
-      "x": 65045.7,
-      "hp": 123.5,
-      "time": 250.32
+      "x": 65043.7,
+      "hp": 124.3,
+      "time": 250.64
     },
     {
       "event": "landing",
       "id": "neon-23-terrace-terrace-0",
-      "x": 65733.7,
-      "hp": 123.5,
-      "time": 252.47
+      "x": 65731.7,
+      "hp": 124.3,
+      "time": 252.79
     },
     {
       "event": "landing",
       "id": "neon-23-terrace-terrace-1",
-      "x": 66535.2,
-      "hp": 123.5,
-      "time": 255.14
+      "x": 66531.7,
+      "hp": 124.3,
+      "time": 255.29
     },
     {
       "event": "landing",
       "id": "neon-23-terrace-terrace-2",
-      "x": 67335.2,
-      "hp": 123.5,
-      "time": 257.8
+      "x": 67331.2,
+      "hp": 124.3,
+      "time": 257.96
     },
     {
       "event": "landing",
       "id": "neon-23-terrace-terrace-3",
-      "x": 68135.2,
-      "hp": 123.5,
-      "time": 260.3
+      "x": 68131.2,
+      "hp": 124.3,
+      "time": 260.46
     },
     {
       "event": "landing",
       "id": "neon-23-terrace-terrace-4",
-      "x": 69233.9,
-      "hp": 123.5,
-      "time": 263.73
+      "x": 69232.5,
+      "hp": 124.3,
+      "time": 263.9
     },
     {
       "event": "checkpoint",
-      "x": 69380.5,
+      "x": 69379.2,
       "hp": 135,
-      "time": 264.19
+      "time": 264.36
     },
     {
       "event": "landing",
       "id": "neon-24-bridge-entry",
-      "x": 69895.2,
+      "x": 69891.2,
       "hp": 135,
-      "time": 265.8
+      "time": 265.96
     },
     {
       "event": "landing",
       "id": "neon-24-bridge-deck-1",
-      "x": 70366.9,
+      "x": 70365.2,
       "hp": 135,
-      "time": 267.31
+      "time": 267.47
     },
     {
       "event": "hurt",
-      "x": 70476.4,
+      "x": 70479.8,
       "hp": 117.8,
-      "time": 267.67
+      "time": 267.85
     },
     {
       "event": "hurt",
-      "x": 70716,
-      "hp": 99.3,
-      "time": 269.02
+      "x": 70712,
+      "hp": 102.3,
+      "time": 269.16
     },
     {
       "event": "landing",
       "id": "neon-24-bridge-deck-2",
-      "x": 70789.9,
+      "x": 70788.5,
       "hp": 102.3,
-      "time": 270.05
+      "time": 270.19
     },
     {
       "event": "landing",
       "id": "neon-24-bridge-deck-3",
-      "x": 71293.9,
+      "x": 71291.9,
       "hp": 102.3,
-      "time": 271.75
+      "time": 271.89
+    },
+    {
+      "event": "hurt",
+      "x": 71722.9,
+      "hp": 85.2,
+      "time": 273.36
     },
     {
       "event": "landing",
       "id": "neon-24-bridge-exit",
-      "x": 71734.1,
-      "hp": 102.3,
-      "time": 273.4
+      "x": 71732.4,
+      "hp": 85.2,
+      "time": 273.88
     },
     {
       "event": "landing",
       "id": "neon-24-bridge-exit",
-      "x": 72265.4,
-      "hp": 102.3,
-      "time": 275.11
+      "x": 72263.5,
+      "hp": 85.2,
+      "time": 275.59
     },
     {
       "event": "landing",
       "id": "neon-25-vault-entry",
-      "x": 72774.7,
-      "hp": 102.3,
-      "time": 276.7
+      "x": 72772.8,
+      "hp": 85.2,
+      "time": 277.18
     },
     {
       "event": "landing",
       "id": "neon-25-vault-arch-1",
-      "x": 73075,
-      "hp": 102.3,
-      "time": 277.67
+      "x": 73073,
+      "hp": 85.2,
+      "time": 278.15
     },
     {
       "event": "landing",
       "id": "neon-25-vault-arch-2",
-      "x": 73475.2,
-      "hp": 102.3,
-      "time": 279.22
+      "x": 73473.2,
+      "hp": 85.2,
+      "time": 279.7
     },
     {
       "event": "landing",
       "id": "neon-25-vault-arch-3",
-      "x": 73796.3,
-      "hp": 102.3,
-      "time": 280.27
+      "x": 73794.3,
+      "hp": 85.2,
+      "time": 280.76
     },
     {
       "event": "landing",
       "id": "neon-25-vault-arch-4",
-      "x": 74187.7,
-      "hp": 102.3,
-      "time": 281.61
+      "x": 74185.7,
+      "hp": 85.2,
+      "time": 282.09
     },
     {
       "event": "landing",
       "id": "neon-25-vault-exit",
-      "x": 74688.9,
-      "hp": 102.3,
-      "time": 283.33
+      "x": 74686.9,
+      "hp": 85.2,
+      "time": 283.82
     },
     {
       "event": "checkpoint",
-      "x": 74781.1,
-      "hp": 124.3,
-      "time": 283.66
+      "x": 74779.1,
+      "hp": 107.2,
+      "time": 284.14
     },
     {
       "event": "landing",
       "id": "neon-26-tunnel-entry",
-      "x": 75236.9,
-      "hp": 124.3,
-      "time": 285.5
+      "x": 75234.9,
+      "hp": 107.2,
+      "time": 285.98
+    },
+    {
+      "event": "hurt",
+      "x": 75236.1,
+      "hp": 83.8,
+      "time": 286.01
     },
     {
       "event": "landing",
       "id": "neon-26-tunnel-tunnel-0",
-      "x": 75705.5,
-      "hp": 125.7,
-      "time": 287.11
+      "x": 75707.3,
+      "hp": 85.2,
+      "time": 287.62
     },
     {
       "event": "hurt",
-      "x": 75925.2,
-      "hp": 108.6,
-      "time": 287.82
+      "x": 75916.6,
+      "hp": 68,
+      "time": 288.31
+    },
+    {
+      "event": "hurt",
+      "x": 76250.1,
+      "hp": 61,
+      "time": 289.66
     },
     {
       "event": "landing",
       "id": "neon-26-tunnel-tunnel-1",
-      "x": 76274.6,
-      "hp": 115.9,
-      "time": 289.22
+      "x": 76271.4,
+      "hp": 62.8,
+      "time": 289.99
+    },
+    {
+      "event": "hurt",
+      "x": 76719.4,
+      "hp": 45.7,
+      "time": 291.39
     },
     {
       "event": "landing",
       "id": "neon-26-tunnel-tunnel-2",
-      "x": 76898.4,
-      "hp": 115.9,
-      "time": 291.22
-    },
-    {
-      "event": "hurt",
-      "x": 76940.4,
-      "hp": 98.7,
-      "time": 291.37
+      "x": 76863.6,
+      "hp": 45.7,
+      "time": 292.15
     },
     {
       "event": "landing",
       "id": "neon-26-tunnel-exit",
-      "x": 77633.8,
-      "hp": 98.7,
-      "time": 293.8
+      "x": 77631.6,
+      "hp": 45.7,
+      "time": 294.55
     },
     {
       "event": "landing",
       "id": "neon-27-approach",
-      "x": 79263.1,
-      "hp": 133.7,
-      "time": 298.89
+      "x": 79263.6,
+      "hp": 80.7,
+      "time": 299.65
     },
     {
       "event": "checkpoint",
-      "x": 79396.5,
-      "hp": 135,
-      "time": 299.31
+      "x": 79394.2,
+      "hp": 102.7,
+      "time": 300.06
     },
     {
       "event": "bossstart",
-      "x": 80031.1,
-      "hp": 135,
-      "time": 301.29
+      "x": 80031.6,
+      "hp": 102.7,
+      "time": 302.05
     },
     {
       "event": "hurt",
-      "x": 80904.6,
-      "hp": 117.8,
-      "time": 309.99
-    },
-    {
-      "event": "hurt",
-      "x": 81321,
-      "hp": 117.8,
-      "time": 317.91
-    },
-    {
-      "event": "hurt",
-      "x": 81369.3,
+      "x": 80486.1,
       "hp": 125.6,
-      "time": 319.9
+      "time": 305.05
     },
     {
       "event": "hurt",
-      "x": 81697.6,
+      "x": 80885.6,
       "hp": 117.8,
-      "time": 324.74
+      "time": 310.72
     },
     {
       "event": "hurt",
-      "x": 81840.3,
-      "hp": 117.8,
-      "time": 329.72
+      "x": 80943.6,
+      "hp": 125.6,
+      "time": 313.67
     },
     {
       "event": "hurt",
-      "x": 82175.6,
+      "x": 81316.1,
       "hp": 117.8,
-      "time": 331.93
+      "time": 318.93
+    },
+    {
+      "event": "hurt",
+      "x": 81378.9,
+      "hp": 125.6,
+      "time": 321.7
+    },
+    {
+      "event": "hurt",
+      "x": 81427.4,
+      "hp": 117.8,
+      "time": 324.97
+    },
+    {
+      "event": "hurt",
+      "x": 81761.8,
+      "hp": 117.8,
+      "time": 327.27
+    },
+    {
+      "event": "hurt",
+      "x": 81796.7,
+      "hp": 125.6,
+      "time": 328.56
+    },
+    {
+      "event": "hurt",
+      "x": 82183.2,
+      "hp": 117.8,
+      "time": 334.12
     },
     {
       "event": "bossdefeated",
       "id": "neon-regent",
-      "time": 332.09,
-      "hp": 119
+      "time": 334.12,
+      "hp": 119.9
     },
     {
       "event": "gate",
-      "x": 82160.4,
-      "hp": 119,
-      "time": 332.09
+      "x": 82181.5,
+      "hp": 119.9,
+      "time": 334.12
     },
     {
       "event": "landing",
       "id": "neon-arena-3",
-      "x": 82160.4,
-      "hp": 119,
-      "time": 332.09
+      "x": 82181.5,
+      "hp": 119.9,
+      "time": 334.12
     },
     {
       "event": "win",
-      "x": 83418.3,
-      "hp": 119,
-      "time": 336.08
+      "x": 83412.6,
+      "hp": 119.9,
+      "time": 338.22
     }
   ]
 }

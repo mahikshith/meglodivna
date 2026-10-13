@@ -1,7 +1,7 @@
 {
   "worldId": "tide",
   "status": "won",
-  "time": 349.6333333331797,
+  "time": 351.79166666651105,
   "hp": 135,
   "bosses": [
     {
@@ -29,5 +29,10 @@
     "campaign-victory"
   ],
   "runtimeErrors": [],
-  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback."
+  "method": "Recorded legal campaign movement/combat/menu/story inputs reproduced in browser simulation. No position/health/boss overrides. Fixed-step replay is not wall-clock playback.",
+  "productionChecks": [
+    "development API absent",
+    "Power hold palette",
+    "Back closes palette before pausing"
+  ]
 }
