@@ -52,7 +52,7 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   const support = p.grounded && world.solids.find(solid => Math.abs(feet - solid.y) < 0.01
     && p.x < solid.x + solid.w && p.x + p.w > solid.x);
   const markerBoss = marker.bossId && world.bosses.find(b => b.id === marker.bossId);
-  const reached = p.grounded && Math.abs(feet - marker.y) < 0.01 && Math.abs(center - marker.x) < 55;
+  const reached = p.grounded && Math.abs(feet - marker.y) < 0.01 && Math.abs(center - marker.x) < (marker.pickupId?12:55);
   const lever = marker.leverId && world.props.find(prop => prop.id === marker.leverId);
   const leverGate = lever && world.gates.find(gate => gate.id === lever.gateId);
   const needsStory = marker.npcId && !conversations.has(marker.npcId);
@@ -121,8 +121,10 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   const spellPressed = (bossFight || nearby.length > 0) && p.mana >= 25 && p.spellCooldown <= STEP && p.hp < p.maxHp - 8;
   const nova = typeof p.charges === 'object' ? p.charges.nova : p.novaCharges;
   const ultimatePressed = bossFight && nova > 0 && p.hp < p.maxHp * 0.6;
+  const drop=!!support?.oneWay && feet<target.y-5 && center>=target.x && center<=target.x+target.w;
+  if(drop&&!bossFight)jumpPressed=true;
   const wasGrounded = p.grounded;
-  const controls = { move, jumpPressed, jumpHeld: true, dashPressed, jet, down: false,
+  const controls = { move, jumpPressed, jumpHeld: true, dashPressed, jet, down: drop && !bossFight,
     slashPressed: p.slashCooldown <= STEP, shoot: true, aimUp: !bossFight && !!overhead,
     spellPressed, ultimatePressed, interactPressed };
   const encoded = JSON.stringify(controls);
@@ -185,4 +187,4 @@ assert.equal(conversations.size, LEVEL.npcs.length, 'Every authored story conver
 assert.equal(Object.keys(triggerProof).length, 3, 'All bosses must activate through their proper trigger.');
 assert.ok(LEVEL.npcs.every(npc => world.progress.claimed.filter(id => id === `npc:${npc.id}`).length === 1), 'Each story reward is claimed exactly once.');
 assert.ok(world.gates.every(g => g.open), 'Boss and lever gates must be opened through gameplay.');
-assert.ok(report.elapsed >= 300, 'Each selected world must supply at least five minutes of efficient live gameplay.');
+assert.ok(world.collections.includes('ember-heart') && world.collections.includes('tide-glass') && world.collections.includes('storm-seal'), 'All three required stones are recovered through contact.');

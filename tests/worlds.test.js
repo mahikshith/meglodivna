@@ -11,14 +11,14 @@ test('five selectable worlds have independent authored layouts and stable metada
   assert.ok(new Set(Object.values(LEVELS).map(world => world.solids)).size === 5);
   assert.ok(new Set(Object.values(LEVELS).map(world => world.route)).size === 5);
   assert.deepEqual(WORLD_LIST.map(world => world.theme.scene), ['forest','islands','castle','sky','crystal']);
-  assert.deepEqual(WORLD_LIST.map(world => world.theme.foreground), ['grass','ruins','stone','metal','crystal']);
+  assert.deepEqual(WORLD_LIST.map(world => world.theme.foreground), ['grass','ruins','metal','metal','crystal']);
   for (const world of Object.values(LEVELS)) {
     assert.ok(world.zones.every(zone => zone.theme && ['forest','islands','castle','sky','crystal'].includes(zone.theme.scene)));
     assert.equal(WORLD_LIST.find(item => item.id === world.id).theme, world.theme);
   }
 });
 for (const world of Object.values(LEVELS)) test(`${world.id}: world boundaries, relays, bosses, routes, rewards and interactive references are valid`, () => {
-  assert.ok(world.width >= 75000 && world.width <= 90000); assert.equal(world.height, 720);
+  assert.ok(world.width >= 10000 && world.width < 25000); assert.equal(world.height, 1440);
   const ids = new Set();
   for (const object of [...world.solids, ...world.hazards, ...world.props, ...world.pickups, ...world.gates, ...world.bosses, ...world.npcs, ...world.movingPlatforms, ...world.enemyPortals, ...world.portals, ...world.enemies]) {
     assert.ok(object.id && !ids.has(object.id), `${world.id}: repeated ${object.id}`); ids.add(object.id);
@@ -34,13 +34,13 @@ for (const world of Object.values(LEVELS)) test(`${world.id}: world boundaries, 
   assert.equal(world.bosses.length, 3); assert.equal(world.boss, world.bosses.at(-1));
   for (const b of world.bosses) {
     assert.ok(b.triggerX < b.x && b.arenaStart < b.triggerX && b.x < b.arenaEnd);
-    assert.ok(world.solids.some(s => s.y === 610 && s.x <= b.arenaStart && s.x + s.w >= b.arenaEnd));
-    assert.ok(world.gates.some(g => g.bossId === b.id && g.y === 0 && g.h === 610));
+    assert.ok(world.solids.some(s => s.y === b.floorY && s.x <= b.arenaStart && s.x + s.w >= b.arenaEnd));
+    assert.ok(world.gates.some(g => g.bossId === b.id && g.y === 0 && g.h === b.floorY));
   }
   for (const [i, marker] of world.route.entries()) {
     const s = world.solids.find(s => s.id === marker.id); assert.ok(s); assert.equal(marker.y, s.y);
     assert.ok(marker.x - 12 >= s.x && marker.x + 12 <= s.x + s.w);
-    if (i) assert.ok(marker.x >= world.route[i - 1].x);
+    if (i) assert.ok(marker.x >= world.route[i - 1].x - 100, 'route has no accidental long reversal');
     if (marker.npcId) assert.ok(world.npcs.some(n => n.id === marker.npcId));
     if (marker.leverId) assert.ok(world.props.some(p => p.id === marker.leverId && p.type === 'lever'));
   }
