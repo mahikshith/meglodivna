@@ -170,7 +170,7 @@ test('ordinary destructible crates award authored recovery contents exactly once
 });
 
 test('bypassing a gate cannot win before every campaign boss is defeated', () => {
-  const state = world(); Object.assign(state.player, { x: LEVEL.exit.x + 8, y: 564 });
+  const state = world(); Object.assign(state.player, { x: LEVEL.exit.x + 8, y: 610 - state.player.h });
   state.boss.dead = true; state.boss.hp = 0; state.bossDefeated = true;
   stepWorld(state, {}, STEP);
   assert.equal(state.status, 'playing');

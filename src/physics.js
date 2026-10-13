@@ -1,5 +1,7 @@
 export const PHYSICS = Object.freeze({
   fixedStep: 1 / 120,
+  playerWidth: 28,
+  playerHeight: 60,
   runSpeed: 320,
   groundAcceleration: 2600,
   airAcceleration: 1500,
@@ -38,7 +40,7 @@ export function overlaps(a, b) {
 export function createPlayer(x, y) {
   if (!Number.isFinite(x) || !Number.isFinite(y)) throw new TypeError('Player position must be finite.');
   return {
-    x, y, w: 24, h: 46, vx: 0, vy: 0, facing: 1,
+    x, y, w: PHYSICS.playerWidth, h: PHYSICS.playerHeight, vx: 0, vy: 0, facing: 1,
     grounded: false, wall: 0, onOneWay: false, fuel: 100,
     dashTime: 0, dashCooldown: 0, jumps: 1, state: 'fall',
     coyote: 0, jumpBuffer: 0, wallLock: 0, dropThrough: 0,

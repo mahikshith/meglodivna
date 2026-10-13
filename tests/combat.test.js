@@ -112,14 +112,14 @@ test('EMP disables dash and jet, reduces movement, and clears after leaving the 
   stepWorld(world, input(), STEP);
   assert.equal(p.impaired, 2);
   p.x = LEVEL.spawn.x;
-  p.y = LEVEL.spawn.y;
+  p.y = LEVEL.spawn.y + 46 - p.h;
   stepWorld(world, input({ move: 1, dashPressed: true, jet: true }), STEP);
   assert.equal(p.dashTime, 0);
   assert.equal(p.jetActive, false);
   tick(world, 120, input({ move: 1 }));
   assert.ok(p.vx <= 192.001);
   p.x = LEVEL.spawn.x;
-  p.y = LEVEL.spawn.y;
+  p.y = LEVEL.spawn.y + 46 - p.h;
   tick(world, 130);
   assert.equal(p.impaired, 0);
   stepWorld(world, input({ dashPressed: true }), STEP);
@@ -129,21 +129,21 @@ test('EMP disables dash and jet, reduces movement, and clears after leaving the 
 test('checkpoint activation restores resources and respawn uses that checkpoint', () => {
   const world = isolatedWorld();
   const cp = LEVEL.checkpoints[2];
-  Object.assign(world.player, { x: cp.x, y: cp.y, hp: 40, fuel: 5 });
+  Object.assign(world.player, { x: cp.x + 12 - world.player.w / 2, y: cp.y + 46 - world.player.h, hp: 40, fuel: 5 });
   stepWorld(world, input(), STEP);
   assert.equal(world.checkpoint, 2);
   assert.equal(world.player.hp, 62);
   assert.equal(world.player.fuel, 100);
   const respawned = createWorld(world.checkpoint);
-  assert.equal(respawned.player.x, cp.x);
-  assert.equal(respawned.player.y, cp.y);
+  assert.equal(respawned.player.x + respawned.player.w / 2, cp.x + 12);
+  assert.equal(respawned.player.y + respawned.player.h, cp.y + 46);
   assert.equal(respawned.player.hp, 100);
   assert.ok(respawned.enemies.filter(enemy => enemy.x < cp.x - 350).every(enemy => enemy.dead));
 });
 
 test('terminal worlds stop advancing and exit requires boss defeat', () => {
   const world = isolatedWorld();
-  Object.assign(world.player, { x: LEVEL.exit.x + 8, y: 564, invincible: 1 });
+  Object.assign(world.player, { x: LEVEL.exit.x + 8, y: 610 - world.player.h, invincible: 1 });
   stepWorld(world, input(), STEP);
   assert.equal(world.status, 'playing');
   world.bossDefeated = true;
@@ -163,7 +163,7 @@ test('terminal worlds stop advancing and exit requires boss defeat', () => {
 test('lethal damage on the exit cannot be overwritten by victory or a health pickup', () => {
   const world = isolatedWorld();
   const p = world.player;
-  Object.assign(p, { x: LEVEL.exit.x + 8, y: 564, hp: 1, invincible: 0 });
+  Object.assign(p, { x: LEVEL.exit.x + 8, y: 610 - p.h, hp: 1, invincible: 0 });
   world.bossDefeated = true;
   world.boss.dead = true;
   world.enemies = [target(p.x, p.y)];
@@ -176,7 +176,7 @@ test('lethal damage on the exit cannot be overwritten by victory or a health pic
 
 test('boss cycles through readable charge/attack/recovery and all three attacks', () => {
   const world = isolatedWorld();
-  Object.assign(world.player, { x: world.boss.arenaStart + 150, y: 564, invincible: 100 });
+  Object.assign(world.player, { x: world.boss.arenaStart + 150, y: 610 - world.player.h, invincible: 100 });
   Object.assign(world.boss, { active: true, timer: 0.01 });
   const phases = new Set();
   const attacks = new Set();
@@ -193,7 +193,7 @@ test('boss cycles through readable charge/attack/recovery and all three attacks'
 
 test('boss death opens exit and clears hostile projectiles', () => {
   const world = isolatedWorld();
-  Object.assign(world.player, { x: world.boss.x - 200, y: 564, invincible: 1 });
+  Object.assign(world.player, { x: world.boss.x - 200, y: 610 - world.player.h, invincible: 1 });
   Object.assign(world.boss, { active: true, hp: 8, shield: 0, timer: 100 });
   const hostile = spawnProjectile(world, world.player.x - 400, 300, 0, 0, 'enemy');
   spawnProjectile(world, world.boss.x - 3, world.boss.y + 30, 920, 0, 'player');

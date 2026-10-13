@@ -1,64 +1,83 @@
-# Fractured Realms — original pixel assets
+# v0.4 — Aether and extracted reference artwork
 
-src/art.js creates/reuses **347** deterministic original raster textures and exports PALETTE, WORLD_ART and createArtTextures(scene). No franchise art, external images or paid assets were copied. Characters/objects use **one-pixel detail**; backgrounds/terrain use **two-pixel clusters**. Nearest-neighbor rendering and binary alpha preserve crisp edges.
+The primary Aether, Rift Crawler, Hexwing Raider, Crimson Mecha, Wyrm, friendly NPC and environment artwork comes from actual crops of the user's four local concept boards. Background masking and nearest-neighbor normalization prepare those pixels for play; no lookalike imagery or missing in-between frames was generated. Original procedural assets remain for other characters, weapons, wards, summons and effects.
 
-Creation returns `{key,width,height,anchor:{x,y},notes}`. Inspect the dynamic manifest instead of asserting the old 121 count. Art generation happens during loading, not per gameplay frame. Original keys are preserved.
+The frozen packet contains **174 frame keys, 49 animation groups and 173 unique pixel payloads**. One stone/snow fallback alias shares an atlas rectangle. Printed “64×64,” frame counts and JSON on the boards are illustrative labels, not sheet metadata.
 
-## Frames and anchors
+## Packet and provenance
 
-| Family / keys | Size | Pixel anchor |
+Only atlas.png, atlas.json and manifest.json live in public/reference/. The pipeline is scripts/extract-reference-art.py; contact sheets and receipts are in artifacts/reference/. The full originals remain untouched in C:/Users/mahik/Downloads and are excluded from the Android payload.
+
+| Source, all 1536×1024 | SHA-256 |
+| --- | --- |
+| 03_aether_character_sheet.png | c89e1a24bcd32acee81e2051910bf42e3b4555c41e80369c34d51a2aa2ccade4 |
+| 02_asset_pack_all_characters.png | e5ac7d62c65ba90fa0c0f670e0aceac8f9032245485ee7b04b7941046b4e215a |
+| 01_concept_board_full_world.png | 305b247a16240cab407cc4102f10fb0419dfe85eb794d0f507d6a5d004cb6283 |
+| Designer.png | 6194801c4acc3d545aeda448e9ed822bf02c6ff284d4e9996dd28e165e4b3717 |
+
+Each frame records source file/native sourceRect, scale, crop offset, mask method, pixel digest, dimensions, anchor and visible bounds. Actors additionally record trimmed body and attachment points. Crops avoid labels/dividers. Gradient fitting, source-alpha cleanup and dominant-component filtering remove the matte and detached neighboring fragments; edge-color unmixing limits halos. Extracted hair and glows retain soft alpha. Opaque tiles/scenery preserve their painted lighting.
+
+artifacts/reference/extraction-report.json records isolated regeneration whose three output files matched the frozen packet byte for byte. Source and packet hashes were rechecked for render-budget.json. These receipts establish local provenance and reproducibility, not independent authorship/license verification.
+
+## Import and registration
+
+src/reference-art.js exports preloadReferenceArt(scene) and createReferenceArt(scene). Preload loads atlas reference-art and cached JSON reference-art-manifest; creation returns {atlasKey,frames,animations,sources,...} and checks every named frame. Render using sprite.setTexture('reference-art',frameKey), with metadata origins. All frames share one atlas texture.
+
+| Family | Canvas and pixel anchor | Trimmed body x,y,w,h |
 | --- | --- | --- |
-| player-idle-0..3, player-run-0..7, player-jump/fall-0 |64×72 | feet32,68 |
-| player-slash-0..3; player-slash-overhead/horizontal/finisher-0..3; player-lunge-0..3 |128×160 | feet64,152 |
-| player-shoot-0..3, player-hurt-0..1, allied-clone-0..3 |64×72 | feet32,68 |
-| guard-0..3 /drone-0..3 /turret-0 |48×56 /56×40 /56×56 | feet24,54 /center28,20 /feet28,54 |
-| mage/shade/sentinel-0..3; mage-idle/cast/hurt-0..3 |64×80 | feet32,76 |
-| wizard/witch-idle/cast/hurt-0..3 |80×96 | feet40,92 |
-| boss-0..3; boss-warden-0..3 and run/attack/hurt-0..3 |128×144 | feet64,138 |
-| boss-hex/regent-0..3 and run/attack/hurt-0..3 |160×192 | feet80,184 |
-| npc-mira/orren/vesper and -0..3 idle frames |64×80 | feet32,76 |
-| portrait-mira/orren/vesper/ysra |96×96 | center48,48 |
-| weapon-carbine/scatter/rail/cannon/launcher/rocket |80×40 | handle16,24; muzzle74,20 |
-| projectile-bullet/carbine/scatter/rail/rocket/pressure/fire/hex/needle/arc/dragonfire/ally |48×24 | center24,12 |
-| shield-0..3 |96×112 | center48,56 |
-| summon-circle/portal-0..3 |128×128 | center64,64 |
-| wolf-0..3 /dragon-0..3 |96×64 /160×112 | feet48,60 /center80,56 |
-| spike-trap-0..3 |96×64 |48,60 |
-| pickup-{type}; pickup-{type}-0..3 |40×48 /64×80 | center20,24 /32,40 |
-| icon-{catalogId},26 gear/spell/relic glyphs |48×48 | center24,24 |
-| tile-steel/wall/tide/pyre/neon/veil; tile-snow |64×64 /64×32 |0,0 /0,16 |
-| background-far/mid, plus far/mid-{snow,ruins,furnace,storm,eclipse,reactor} |960×720 |0,0 |
+| Aether ordinary | 128×128; feet 64,116 | 50,56,28,60 |
+| Aether doublejump/jetidle/jet | 128×160; feet 64,116 | 50,56,28,60 |
+| Aether dashtrail | 160×128; feet 96,116 | 82,56,28,60 |
+| Crawler | 128×112; feet 64,100 | 34,59,60,41 |
+| Raider | 128×112; anchor 64,100 | 47,43,34,45 |
+| Mecha | 144×144; feet 64,128 | 38,57,52,71 |
+| Wyrm | 256×224; fly 256×256; anchor 128,200 | 72,114,112,86 |
+| Six NPCs | 96×128; feet 48,106 | 32,43,32,63 |
 
-Pickup types: health/fuel/rapid/shield/boost/mana/weapon/sword/armor/spell/treasure/cannon/nova. New icon IDs include rocket/clone/wolf/dragon. Antenna/pipe/lamp/crate and barrel/cache/lever/gate sizes/anchors remain in the manifest.
+Aether's idle silhouette is **89 native pixels** tall. Extra transparent padding preserves jets, dash trails and folded Wyrm flight tails without changing body/attachment offsets. All fixed actor canvases have a clear outer edge. Read dimensions per frame instead of assuming 128×128.
 
-## Physical alignment
+Actual Aether groups: idle 3/run 5/jump 3/doublejump 3/fall 2/dash 3/dashtrail 2/jetidle 3/jet 6/fire 3/hurt 3/death 4. The first printed Shoot drawing remains ref-aether-fire-0 in aether-ready; aether-fire uses raised-hand frames 1–3. Crawler groups are idle 1/walk 3/attack 2/hurt 2/death 1; Raider idle 1/fly 4/fire 2/hurt 1/death 1; Mecha idle 1/walk 1/attack 2/fire 1/hurt 1/death 3; Wyrm idle 1/fly 2/fire 3/hurt 3/death 1. These enumerate real drawings, not complete authored animation strips.
 
-Sprites face right; flip for left. Divide pixel anchors by frame dimensions to obtain Phaser origins. Feet align at `(body.x+body.w/2,body.y+body.h)`. The courier stays64×72 inside enlarged melee frames at offset32,84: change origin when switching textures, not body scale. Simulation vertical/horizontal/finisher/dash selects overhead/horizontal/finisher/lunge art.
+NPC keys are ref-npc-villager/mage/blacksmith/scientist/merchant/healer; matching ref-face-* crops and ref-face-aether support dialogue. Every equipment/effect/environment key and all 49 groups are in the manifest.
 
-Gun-ready hand local37,41 matches `(centerX+facing*5,y+h*.42)`. Separate guns render at **.6scale** around handle16,24. Their handle-to-muzzle vector58,-4 becomes34.8,-2.4. At aim angle a, the physical muzzle is `hand+(cos(a)*34.8+sin(a)*2.4,sin(a)*34.8-cos(a)*2.4)`. Shared weaponOrigin/projectileAim helpers are authoritative; boss/foe weaponSlot selects core/hand/gun/rocket.
+Art faces right. The renderer mirrors around the trimmed body center, scales uniformly by entity.h/body.h and aligns body center/bottom to simulation. Transparent wings, capes, trails and launchers do not enlarge hurtboxes. weaponOrigin and actual beam/projectile geometry remain authoritative.
 
-Chest cores: Warden local62,61; Hex80,106; Regent80,98. These align with `(centerX,y+h*.35)` at the listed feet anchors. Aimed overlays use beam endpoints x0/y0/x1/y1 and width, and projectile angle/velocity. Artwork does not define damage boxes or rays. Shields/circles/portals have transparent centers.
+| Canonical attachment in frame pixels | Body-relative placement |
+| --- | --- |
+| Aether hand 80,75; muzzle 93,75 | hand center±16,feet−41; horizontal muzzle center±29,feet−41 |
+| Crawler muzzle 94,65 | center±30,body top+6 at native body size |
+| Raider muzzle 94,65 | center±30,body top+22 at native body size |
+| Mecha muzzle 120,80 | center±56×scale,feet−48×scale |
+| Wyrm mouth 228,128; launcher 156,100 | mouth center±100,feet−72; launcher center±28,feet−100 at native 112×86 body size |
 
-Trap frames show retracted/warning/extended/retracting states; simulation owns timing/damage. Ally action/lifetime, portal arrival, pickup consumption and prop destruction are simulation-owned. Decoration adds no collision.
+Aether attachments describe its canonical raised-fire stance, rather than a skeletal rig shared by every illustration. Aimed offsets rotate around the physical hand. Wyrm mouth registration is common across normalized poses; painted torso core coordinates remain per frame. Attack overlays use physical endpoints and projectile angles.
 
-## World themes and budget
+Original Warden 128×144/feet64,138 and Hex 160×192/feet 80,184 remain procedural. Chest points are 62,61 and 80,106; Warden has a 2px horizontal/±1px vertical art bob. Original Regent art remains available while reference Mecha/Wyrm supply the revamped transformation. Spellcasters, allied clone/wolf/dragon, traps, pickup glyphs and weapons remain in the generated manifest. Simulation owns state, damage, destruction, summons and trap timing; decoration adds no collision.
 
-| World ID | Reused far/mid layer | Foreground / compact pieces |
-| --- | --- | --- |
-| soulforge | snow; renderer may use all six campaign biomes | tile-steel, tech-console |
-| tide | ruins | tile-tide, sea-wave-0..3, sea-rock |
-| pyre | furnace | tile-pyre, fire-column-0..3, dungeon-arch |
-| neon | reactor | tile-neon, tech-cables, tech-console |
-| veil | eclipse | tile-veil, wizard-tree, dungeon-arch |
+## Environment and budget
 
-WORLD_ART supplies far/mid/decor/tile keys. Bright top rims distinguish collidable surfaces from architecture. Compact wave256×96, fire96×128, arch128×160, console96×80, tree128×192, cables128×128 and rock128×96 textures can be reused/culled without another fullscreen image per room. Far layers are opaque; mid layers transparent. No triangular stage spotlight assets are added.
+The atlas includes foreground tiles, platforms, ladders, spikes, arches, gates, trees, crystals, statues, water, torches, collectibles and forest/island/castle/cave/city panels. ref-tile-snow aliases the stone crop; it is not extracted snow terrain. Backgrounds are small painted panels, not seamless full-resolution panoramas.
 
-Total source allocation: **51,931,904 RGBA bytes /49.53MiB**, below the55MiB native validation budget. Ysra's96×96 witch portrait adds36,864 bytes; its pointed hat, violet eyes and long hair distinguish the guide from Orren. Fourteen960×720 full backgrounds are retained and reused across worlds. This is a source-pixel estimate; GPU copies/renderer overhead are additional and unmeasured.
+With reference art present, createArtTextures creates/reuses **333** procedural textures and skips 14 legacy 960×720 backgrounds. The renderer adds ten reusable **480×360** far/mid compositions for five scenic themes: **343 generated textures**, plus one 2048×2048 atlas. These compositions reuse extracted panels/props once at boot, not per room. Procedural characters use one-pixel details; procedural terrain uses two-pixel clusters. Extracted pixels retain their source raster with nearest-neighbor sampling. Binary procedural alpha does not apply to extracted glows.
 
-## Evidence and sound
+| Allocation / file | Bytes | Size |
+| --- | ---: | ---: |
+| 333 procedural texture pixels | 13,224,704 | 12.61MiB |
+| Ten 480×360 composition pixels | 6,912,000 | 6.59MiB |
+| 343 generated textures combined | 20,136,704 | 19.20MiB |
+| One 2048×2048 atlas pixels | 16,777,216 | 16.00MiB |
+| Combined RGBA pixel allocation estimate | **36,913,920** | **35.20MiB** |
+| atlas.png | 1,722,171 | |
+| atlas.json | 63,622 | |
+| manifest.json | 166,293 | |
+| Three reference files combined | **1,952,086** | **1.86MiB** |
 
-artifacts/assets/ contains PNGs and the dynamic manifest. **artifacts/refinement-art-sheet.png** shows actions, bosses, spellcasters, survivors, summons, traps, weapons and theme pieces; the final export incorporates portrait-ysra. **artifacts/refinement-asset-report.json** records asset dimensions, nonempty pixels, binary alpha, anchors, restart reuse and budget checks. Final integrated scene/browser/Android evidence belongs in VALIDATION.md.
+artifacts/reference/render-budget.json contains the 343-key inventory and packet digests. This is a dimensions-based pixel estimate, not measured GPU/process memory. Built-in/font textures, GPU copies, framebuffers, temporary canvases, JS heap, audio and browser/native overhead are excluded.
 
-Touch interface art uses a 112 px analogue stick, four curved gesture buttons and a 44 px center pause control in a reserved 112 px bottom gutter. Attack tap/180ms hold means slash/fire; Jump tap/350ms hold means leap/thrust; Power tap/450ms hold means cast-or-context-interact/paused Sorcery-gearing palette; Dash is direct. The root renderer adapts the full-width game viewport above the controls. These interface assets are separate from the 347 raster textures and do not change combat geometry.
+## Inspection and limits
 
-Sound.play accepts event objects or legacy strings and differentiates carbine/scatter/rail/rocket, shield activation and summons. Finisher metadata selects heavier slash feedback. Thunder, cannon, destruction and sorcery remain brief; voices cap at24 and disconnect when finished. Mute/reduced effects remain available. Speaker mix, perceived feel and physical Android comfort are not established by asset checks.
+Final native previews are artifacts/reference/hero-contact-sheet.png, creatures-contact-sheet.png and environment-contact-sheet.png. Inspection found clean silhouettes without sheet labels or detached divider strokes; padding preserves jets/trails/tails. Creature families, survivor faces, foreground materials and collectibles remain distinguishable. The sheets fit differing canvas sizes into cells, so thumbnail size is not runtime scale.
+
+Flattened boards supply sparse, sometimes inconsistent poses. Masking can lose extremely low-contrast pixels; scenery retains baked lighting; several idle/death groups contain one drawing. Asset checks establish extraction, padding, registration and budget arithmetic. Integrated gameplay/performance/Android evidence belongs in VALIDATION.md.
+
+Touch glyphs and menus are separate SVG/CSS/DOM surfaces outside the texture count. Synthesized sound retains capped voices, event-specific feedback, mute and reduced effects. Physical Android comfort, speaker mix and subjective game feel are not established by this audit.

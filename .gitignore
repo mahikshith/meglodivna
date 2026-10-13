@@ -11,3 +11,4 @@ android/app/src/main/assets/public/
 artifacts/*.json
 artifacts/*.log
 artifacts/ci-apk/
+__pycache__/

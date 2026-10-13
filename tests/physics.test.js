@@ -5,7 +5,7 @@ import { PHYSICS, createPlayer, moveBody, overlaps, stepPlayer } from '../src/ph
 const DT = PHYSICS.fixedStep;
 const floor = [{ x: -1000, y: 610, w: 3000, h: 100 }];
 const controls = (changes = {}) => ({ move: 0, jumpPressed: false, jumpHeld: false, dashPressed: false, jet: false, down: false, ...changes });
-function settledPlayer(solids = floor, x = 100, y = 564) {
+function settledPlayer(solids = floor, x = 100, y = 610 - PHYSICS.playerHeight) {
   const player = createPlayer(x, y);
   stepPlayer(player, controls(), solids, DT);
   assert.ok(player.grounded);
@@ -18,7 +18,7 @@ function jumpApex(holdFrames) {
     stepPlayer(player, controls({ jumpPressed: frame === 0, jumpHeld: frame < holdFrames }), floor, DT);
     apex = Math.min(apex, player.y);
   }
-  return 564 - apex;
+  return 610 - PHYSICS.playerHeight - apex;
 }
 
 test('full jump reaches authored height and releasing jump produces a short hop', () => {
@@ -62,7 +62,7 @@ test('coyote time expires and buffered jump fires on landing', () => {
   stepPlayer(player, controls({ jumpPressed: true, jumpHeld: true }), [], DT);
   assert.equal(player.jumps, 0, 'Expired coyote must consume the air jump');
   player.x = 100;
-  player.y = 549;
+  player.y = 610 - player.h - 15;
   player.vy = 300;
   player.jumpBuffer = 0;
   let events = stepPlayer(player, controls({ jumpPressed: true, jumpHeld: true }), floor, DT);
@@ -114,10 +114,10 @@ test('one-way platforms permit rising and down+jump dropping, but catch descendi
   const player = createPlayer(50, 130);
   player.vy = -600;
   for (let frame = 0; frame < 20; frame++) moveBody(player, platforms, DT);
-  assert.ok(player.y < 54);
+  assert.ok(player.y < 100 - player.h);
   player.vy = 600;
   for (let frame = 0; frame < 30; frame++) moveBody(player, platforms, DT);
-  assert.equal(player.y, 54);
+  assert.equal(player.y, 100 - player.h);
   assert.equal(player.onOneWay, true);
   stepPlayer(player, controls({ down: true, jumpPressed: true, jumpHeld: true }), platforms, DT);
   assert.equal(player.grounded, false);
@@ -128,7 +128,7 @@ test('one-way platforms permit rising and down+jump dropping, but catch descendi
 
 test('wall slide limits falling speed and wall jump pushes away without instant input reversal', () => {
   const walls = [{ x: 200, y: -100, w: 30, h: 800 }];
-  const player = createPlayer(176, 150);
+  const player = createPlayer(200 - PHYSICS.playerWidth, 150);
   player.vy = 500;
   stepPlayer(player, controls({ move: 1 }), walls, DT);
   stepPlayer(player, controls({ move: 1 }), walls, DT);
@@ -176,7 +176,7 @@ test('jet fuel exhausts, cannot sustain ascent, and refills only while grounded'
   assert.equal(player.jetActive, false);
   assert.ok(player.vy > 0);
   assert.ok(lowestY > -400, `Finite ascent reached ${lowestY}`);
-  player.y = 564;
+  player.y = 610 - player.h;
   player.vy = 0;
   stepPlayer(player, controls(), floor, DT);
   for (let frame = 0; frame < 240; frame++) stepPlayer(player, controls({ jet: true }), floor, DT);

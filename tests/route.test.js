@@ -4,7 +4,7 @@ import { LEVELS } from '../src/level.js';
 import { createPlayer, PHYSICS, stepPlayer, overlaps } from '../src/physics.js';
 
 for (const LEVEL of Object.values(LEVELS)) test(`${LEVEL.id}: entire authored route is traversable with legal movement inputs`, context => {
-  const player = createPlayer(LEVEL.spawn.x, LEVEL.spawn.y);
+  const player = createPlayer(LEVEL.spawn.x + 12 - PHYSICS.playerWidth / 2, LEVEL.spawn.y + 46 - PHYSICS.playerHeight);
   const visited = [];
   const actions = new Set();
   const route = LEVEL.route;

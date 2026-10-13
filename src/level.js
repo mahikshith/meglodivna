@@ -116,9 +116,9 @@ const BASE_LEVEL = {
     { id: 'regent-gate', bossId: 'regent', x: 64720, y: 0, w: 32, h: 610 },
   ],
   checkpoints: [
-    { x: 100, y: 560, label: 'ICEBREAK' }, { x: 4250, y: 564, label: 'REFUGEE RELAY' },
-    { x: 8870, y: 564, label: 'WARDEN LOCK' }, { x: 10870, y: 564, label: 'TIDE ARCHIVE' },
-    { x: 17480, y: 564, label: 'DROWNED GARDEN' }, { x: 21670, y: 564, label: 'CRYPT GATE' },
+    { x: 100, y: 560, label: 'ROOTBOUND GATE' }, { x: 4250, y: 564, label: 'REFUGEE RELAY' },
+    { x: 8870, y: 564, label: 'WARDEN LOCK' }, { x: 10870, y: 564, label: 'AETHER ARCHIVE' },
+    { x: 17480, y: 564, label: 'HANGING GARDEN' }, { x: 21670, y: 564, label: 'CASTLE GATE' },
     { x: 26770, y: 564, label: 'OSSUARY RELAY' }, { x: 30070, y: 564, label: 'MATRIARCH LOCK' },
     { x: 32470, y: 564, label: 'STORM LANDING' }, { x: 36670, y: 564, label: 'SPIRE FOOT' },
     { x: 43270, y: 564, label: 'ECLIPSE COURT' }, { x: 48170, y: 564, label: 'RAMPART RELAY' },
@@ -126,27 +126,27 @@ const BASE_LEVEL = {
     { x: 62070, y: 564, label: 'THE LAST RELAY' },
   ],
   zones: [
-    { x: 0, label: 'SNOW BORDER', subtitle: 'Carry the last unbound soul beyond the Warden.', biome: 'snow', tint: 0x87c7d9, sky: 0x07151f },
-    { x: 10800, label: 'FLOODED RUINS', subtitle: 'Find the drowned archive. Open the ancient sluice.', biome: 'ruins', tint: 0x68c6ba, sky: 0x081c20 },
-    { x: 21600, label: 'FURNACE CRYPT', subtitle: 'The dead fuel this war. Sever the Matriarch’s tether.', biome: 'furnace', tint: 0xef8051, sky: 0x250f18 },
-    { x: 32400, label: 'STORM SPIRE', subtitle: 'Climb through the storm. Claim forbidden firepower.', biome: 'storm', tint: 0x8ab5ff, sky: 0x10192f },
-    { x: 43200, label: 'ECLIPSE CITADEL', subtitle: 'The Regent’s shadows guard the final seal.', biome: 'eclipse', tint: 0xc295e8, sky: 0x180c26 },
-    { x: 54000, label: 'SOUL REACTOR', subtitle: 'End the Regent. Release the souls before the core collapses.', biome: 'reactor', tint: 0xeb637b, sky: 0x230b17 },
+    { x: 0, label: 'FOREST RUINS', subtitle: 'Carry the last unbound soul beyond the root-bound Warden.', theme: { scene: 'forest', foreground: 'grass' }, biome: 'snow', tint: 0x7bbf94, sky: 0x102a30 },
+    { x: 10800, label: 'FLOATING AQUEDUCT', subtitle: 'Find the aether archive. Open the ancient sluice.', theme: { scene: 'islands', foreground: 'ruins' }, biome: 'ruins', tint: 0x86d9ee, sky: 0x193343 },
+    { x: 21600, label: 'THUNDER CASTLE', subtitle: 'The castle forges bind the dead. Sever the Matriarch’s tether.', theme: { scene: 'castle', foreground: 'stone' }, biome: 'furnace', tint: 0xb28fde, sky: 0x201431 },
+    { x: 32400, label: 'SKY CITY', subtitle: 'Climb through the storm. Claim forbidden firepower.', theme: { scene: 'sky', foreground: 'metal' }, biome: 'storm', tint: 0x8ab5ff, sky: 0x16334a },
+    { x: 43200, label: 'CRYSTAL CAVES', subtitle: 'The Regent’s reflections guard the final seal.', theme: { scene: 'crystal', foreground: 'crystal' }, biome: 'eclipse', tint: 0xc295e8, sky: 0x180c26 },
+    { x: 54000, label: 'THE AETHER ENGINE', subtitle: 'Break the Regent’s core. Face the rocket wyrm within.', theme: { scene: 'castle', foreground: 'metal' }, biome: 'reactor', tint: 0xeb637b, sky: 0x230b17 },
   ],
   guides: [
-    { x: 250, y: 465, text: 'HOLD JUMP FOR HEIGHT • SECOND JUMP IN AIR', action: 'jump' },
+    { x: 250, y: 465, text: 'SHORT JUMP • SECOND JUMP • HOLD FOR THE JET', action: 'jump' },
     { x: 810, y: 405, text: 'BLADE CLOSE • RIFLE FAR • BREAK THE CACHE', action: 'combat' },
     { x: 1550, y: 460, text: 'KEEP MOMENTUM • JET CORRECTS A MISSED LANDING', action: 'jet' },
     { x: 4350, y: 465, text: 'INTERACT WITH ALLIES • CHOOSE YOUR REWARD', action: 'interact' },
     { x: 5920, y: 185, text: 'PUSH INTO STEEL • JUMP OFF THE WALL', action: 'wall-jump' },
-    { x: 7810, y: 280, text: 'AMBER WARNS • CROSS WHEN THE BEAM GOES DARK', action: 'laser' },
+    { x: 7810, y: 280, text: 'WATCH THE BEAM WINDUP • CROSS THE DARK BEAT', action: 'laser' },
     { x: 12300, y: 425, text: 'SHADOWS LUNGE • OVERHEAD SLASH CUTS ABOVE', action: 'slash' },
     { x: 17950, y: 465, text: 'CINDER BURNS • SOUL DRAIN RETURNS LIFE', action: 'spell' },
     { x: 21110, y: 465, text: 'INTERACT WITH THE SLUICE LEVER', action: 'interact' },
     { x: 25200, y: 465, text: 'EMP STRIPS THE JET • JUMP THE FLOOR GLYPH', action: 'emp' },
     { x: 32750, y: 465, text: 'CANNON AND ECLIPSE HAVE FINITE CHARGES', action: 'power' },
     { x: 43480, y: 465, text: 'VEIL BREAKS TARGET LOCK • STASIS SLOWS PURSUIT', action: 'spell' },
-    { x: 61740, y: 465, text: 'BREAK THE LAST CACHE • READ THE REGENT’S WINDUP', action: 'boss' },
+    { x: 61740, y: 465, text: 'BREAK THE LAST CACHE • THE CORE HIDES A ROCKET WYRM', action: 'boss' },
   ],
   npcs: [
     { id: 'mira', name: 'MIRA // BORDER SCOUT', x: 4450, y: 564, portrait: 'portrait-mira', lines: [
@@ -179,6 +179,6 @@ const BASE_LEVEL = {
 BASE_LEVEL.enemies = enemies;
 export const LEVEL = extendSoulforge(BASE_LEVEL);
 export const LEVELS = { soulforge: LEVEL, ...buildNewWorlds() };
-export const WORLD_LIST = Object.values(LEVELS).map(level => ({ id: level.id, name: level.name, description: level.description, width: level.width, timeLimit: level.timeLimit, tint: level.zones[0].tint }));
+export const WORLD_LIST = Object.values(LEVELS).map(level => ({ id: level.id, name: level.name, description: level.description, theme: level.theme, width: level.width, timeLimit: level.timeLimit, tint: level.zones[0].tint }));
 export function getLevel(id = 'soulforge') { return LEVELS[id] || LEVEL; }
 export function createEnemies(level = LEVEL) { return level.enemies.map(enemy => ({ ...enemy })); }

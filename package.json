@@ -1,6 +1,6 @@
 {
   "name": "ash-signal",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,6 +11,7 @@
     "test:browser": "node scripts/playtest.cjs",
     "test:game": "node scripts/combat-route.mjs",
     "test:replay": "node scripts/replay.cjs",
+    "test:art": "node scripts/revamp-art-playtest.cjs",
     "android:sync": "npm run build && node scripts/sync-android.mjs",
     "test:deep": "node scripts/deep-harness.mjs 30"
   },

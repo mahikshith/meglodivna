@@ -111,34 +111,34 @@ function mechanism(layout, id, x, biome) {
 }
 const ROOM_LENGTH = { approach: 1600, bridge: 3000, tunnel: 3000, terrace: 4200, machine: 3600, vault: 2400, refuge: 1200, tower: 2400, wire: 1800 };
 const DEFINITIONS = {
-  tide: { name: 'TIDE // THE DROWNED FLEET', description: 'Shipwrecks, flooded tunnels, shifting rafts and the fleet that sold its souls.', biome: 'ruins', tint: 0x64c9c5, sky: 0x071923,
+  tide: { name: 'AERIE // FLOATING ISLANDS', description: 'Grass-crowned ruins above the clouds, wind currents, drifting rafts and the stolen island engines.', theme: { scene: 'islands', foreground: 'ruins' }, biome: 'ruins', tint: 0x86d9ee, sky: 0x193343,
     chapters: [
       ['approach','tunnel','terrace','bridge','machine','vault','refuge','tower','bridge'],
       ['tunnel','machine','vault','terrace','wire','bridge','approach','tunnel','refuge'],
       ['tower','tunnel','terrace','bridge','machine','vault','wire','tunnel','approach'],
-    ], bosses: ['CUTLASS ADMIRAL','DROWNED ORACLE','LEVIATHAN ENGINE'], chaptersNames: ['WRECK COAST','DROWNED HOLD','ABYSSAL ENGINE'],
-    npcs: ['SELK // WRECK ENGINEER','ORREN // TIDE KEEPER','VESPER // MUTINOUS CAPTAIN'], stakes: 'Free the souls powering a dead fleet before its last voyage consumes the coast.' },
-  pyre: { name: 'PYRE // THE EMBER DUNGEONS', description: 'Volcanic prisons, crumbling basalt, steam vents and a soul furnace with a breakable conduit.', biome: 'furnace', tint: 0xf28b56, sky: 0x241015,
+    ], bosses: ['SKYWARD ADMIRAL','CLOUD ORACLE','AETHER-ROCKET WYRM'], chaptersNames: ['CLOUDROOT LANDING','HANGING AQUEDUCT','THE AETHER DOCK'],
+    npcs: ['SELK // ISLAND ENGINEER','ORREN // WIND KEEPER','VESPER // SKYFLEET DESERTER'], stakes: 'Return the souls to the island engines before the skyfleet tears their roots from the clouds.' },
+  pyre: { name: 'TEMPEST // THUNDER CASTLE', description: 'Storm-lit battlements, cracked masonry and steaming castle forges; a pressure conduit seals the guardian’s armor.', theme: { scene: 'castle', foreground: 'stone' }, biome: 'furnace', tint: 0xb28fde, sky: 0x201431,
     chapters: [
       ['approach','tower','tunnel','machine','terrace','bridge','refuge','vault','bridge'],
       ['tunnel','terrace','wire','machine','bridge','vault','approach','tunnel','refuge'],
       ['tower','machine','tunnel','terrace','bridge','vault','wire','tunnel','approach'],
-    ], bosses: ['INFERNAL MARSHAL','ASH WITCH','MAGMA REGENT'], chaptersNames: ['BASALT PRISON','STEAM OSSUARY','HEART OF PYRE'],
-    npcs: ['NOX // CONDUIT SMITH','CAIRN // ASH PRISONER','VARRA // FIRE EXORCIST'], stakes: 'Open the pressure conduit. Break the furnace shield. Release the prisoners from the mountain.' },
-  neon: { name: 'NEON // THE LAST TRANSIT', description: 'Abandoned stations, moving maintenance lifts and ceiling-mounted security shutters.', biome: 'storm', tint: 0x87ddff, sky: 0x07122a,
+    ], bosses: ['THUNDER MARSHAL','TEMPEST WITCH','STORMFORGED WYRM'], chaptersNames: ['IRONROOT PRISON','THE STEAM BATTLEMENTS','CROWN OF THUNDER'],
+    npcs: ['NOX // CASTLE SMITH','CAIRN // TOWER PRISONER','VARRA // STORM EXORCIST'], stakes: 'Open the pressure conduit. Break the castle guardian’s shield. Release the prisoners beneath the storm.' },
+  neon: { name: 'ZENITH // SKY CITY', description: 'Crystal-powered towers, old stone and new machinery, moving maintenance lifts and timed security shutters.', theme: { scene: 'sky', foreground: 'metal' }, biome: 'storm', tint: 0x87ddff, sky: 0x16334a,
     chapters: [
       ['approach','machine','bridge','terrace','tunnel','tower','refuge','vault','bridge'],
       ['tunnel','wire','machine','vault','terrace','bridge','approach','tunnel','refuge'],
       ['tower','wire','tunnel','machine','terrace','bridge','vault','tunnel','approach'],
-    ], bosses: ['LINE ZERO','CIPHER SIBYL','OMNINET'], chaptersNames: ['TRANSIT GRAVEYARD','SHUTTER EXCHANGE','SIGNAL CENTRAL'],
-    npcs: ['FINCH // LINE TECHNICIAN','ADA // CIPHER EXILE','ROOK // CORPORATE DESERTER'], stakes: 'Carry the living signal through a transit system that treats every human as obsolete cargo.' },
-  veil: { name: 'VEIL // THE MIRROR GRAVES', description: 'Wizard crypts, signposted mirror portals, hostile summoning rifts and a guide with a costly pact.', biome: 'eclipse', tint: 0xc4a0ed, sky: 0x160b24,
+    ], bosses: ['LINE ZERO','CIPHER SIBYL','ZENITH ROCKET WYRM'], chaptersNames: ['CLOUDLINE STATION','PRISM EXCHANGE','THE CITY CROWN'],
+    npcs: ['FINCH // SKYLINE TECHNICIAN','ADA // CIPHER EXILE','ROOK // CITY WATCH DESERTER'], stakes: 'Carry the living aether signal through the towers before the city’s machines erase the people who built them.' },
+  veil: { name: 'PRISM // CRYSTAL CAVES', description: 'Luminous crystal grottoes, ancient arches, mirror portals and a witch whose dragon pact conceals an ambush.', theme: { scene: 'crystal', foreground: 'crystal' }, biome: 'eclipse', tint: 0xc4a0ed, sky: 0x160b24,
     chapters: [
       ['approach','vault','tunnel','terrace','bridge','machine','refuge','tower','bridge'],
       ['tunnel','vault','machine','wire','terrace','bridge','approach','tunnel','refuge'],
       ['tower','tunnel','wire','terrace','machine','bridge','vault','tunnel','approach'],
-    ], bosses: ['BONEWARD SENTINEL','WITCH OF MIRRORS','GRAVE SOVEREIGN'], chaptersNames: ['IVORY CATACOMBS','COUNTERFEIT SANCTUM','THRONE OF NAMES'],
-    npcs: ['ILEX // GRAVE WARDEN','ORREN // NAMELESS SCHOLAR','VESPER // BOUND KNIGHT'], stakes: 'Recover your stolen name. Every mirror offers passage; every promise demands a price.' },
+    ], bosses: ['PRISM SENTINEL','WITCH OF MIRRORS','CRYSTALBOUND WYRM'], chaptersNames: ['LUMINOUS GROTTO','THE MIRROR SANCTUM','HEART OF THE PRISM'],
+    npcs: ['ILEX // CRYSTAL WARDEN','ORREN // PRISM SCHOLAR','VESPER // BOUND KNIGHT'], stakes: 'Recover your stolen name from the crystal archive. Every mirror offers passage; every promise demands a price.' },
 };
 function addEnvironment(world, layout, id, x, room, kind) {
   const surface = room.entry;
@@ -163,19 +163,19 @@ function addEnvironment(world, layout, id, x, room, kind) {
   if (world.id === 'veil' && kind === 'refuge') {
     world.portals.push({ id: `${id}-mirror`, name: 'MIRROR PASSAGE', x: x + 610, y: 500, w: 42, h: 110,
       to: { x: x + 920, y: 564 }, oneWay: true, tint: 0xc4a0ed });
-    world.guides.push({ x: x + 610, y: 435, text: 'F / MIRROR PASSAGE • ARRIVES AT THE FAR ARCH', action: 'portal' });
+    world.guides.push({ x: x + 610, y: 435, text: 'MIRROR PASSAGE • ARRIVES AT THE FAR ARCH', action: 'portal' });
   }
 }
 function newWorld(id, definition) {
   const layout = createLayout(), biome = definition.biome;
-  const world = { id, name: definition.name, description: definition.description, biome, height: 720, timeLimit: 620,
+  const world = { id, name: definition.name, description: definition.description, theme: definition.theme, biome, height: 720, timeLimit: 620,
     spawn: { x: 100, y: 560 }, solids: layout.solids, hazards: layout.hazards, route: layout.route, enemies: layout.enemies,
     props: [], pickups: [], gates: [], bosses: [], checkpoints: [{ x: 100, y: 560, label: `${id.toUpperCase()} / ENTRY` }],
     zones: [], guides: [], npcs: [], currents: [], movingPlatforms: [], crumble: [], enemyPortals: [], portals: [] };
   let x = 0, roomNumber = 0;
   for (let chapter = 0; chapter < 3; chapter++) {
     const chapterX = x;
-    world.zones.push({ x, label: definition.chaptersNames[chapter], subtitle: definition.stakes, biome, tint: definition.tint, sky: definition.sky });
+    world.zones.push({ x, label: definition.chaptersNames[chapter], subtitle: definition.stakes, theme: definition.theme, biome, tint: definition.tint, sky: definition.sky });
     const npcId = `${id}-${['scout','scholar','deserter'][chapter]}`;
     let npcPlaced = false;
     for (const kind of definition.chapters[chapter]) {
@@ -195,7 +195,7 @@ function newWorld(id, definition) {
         world.npcs.push({ id: npcId, name: definition.npcs[chapter], x: npcX, y: 564, skin: ['mira','wizard','vesper'][chapter], portrait: `portrait-${['mira','orren','vesper'][chapter]}`,
           lines: [{ speaker: definition.npcs[chapter].split(' // ')[0], text: definition.stakes },
             { speaker: 'COURIER', text: chapter === 0 ? 'I will carry the living soul beyond your border.' : chapter === 1 ? 'The first guardian is gone. Show me the next chain.' : 'The final engine will not own another name.' },
-            { speaker: definition.npcs[chapter].split(' // ')[0], text: chapter === 0 ? 'Take protection or a spirit companion. The drowned and the machines both hunt warmth.' : chapter === 1 ? 'A stolen soul can heal, or be reflected into an ally. Choose what keeps you alive.' : 'This power is finite. Find the final cache and make the last strike count.' }],
+            { speaker: definition.npcs[chapter].split(' // ')[0], text: chapter === 0 ? 'Take protection or a spirit companion. The creatures and the machines both hunt your aether.' : chapter === 1 ? 'A stolen soul can heal, or be reflected into an ally. Choose what keeps you alive.' : 'This power is finite. Find the final cache and make the last strike count.' }],
           choices: chapter === 0 ? [
             { id: `${npcId}-armor`, label: 'Bulwark Plate — sturdy protection', reward: { type: 'armor', itemId: 'bulwark' } },
             { id: `${npcId}-wolf`, label: 'Moonfang — summon a wolf spirit', reward: { type: 'spell', itemId: 'wolf' } },
@@ -242,13 +242,13 @@ function newWorld(id, definition) {
     world.props.push({ id: `${bossId}-cache`, type: 'cache', x: x + 310, y: 570, w: 42, h: 40, hp: 24,
       contents: [{ type: 'health', value: 35 }, { type: 'mana', value: 50 }, ...(chapter === 2 ? [{ type: 'cannon', value: 2 }, { type: 'nova', value: 1 }] : [{ type: 'shield', value: 35 }])] });
     layout.solid(`${bossId}-flank`, bossX + 650, 505, 240, 20, biome, true);
-    world.guides.push({ x: x + 180, y: 435, text: 'BREAK THE CACHE • READ THE GUARDIAN’S WINDUP', action: 'boss' });
+    world.guides.push({ x: x + 180, y: 435, text: chapter === 2 ? 'BREAK THE CACHE • THE CORE HIDES A ROCKET WYRM' : 'BREAK THE CACHE • READ THE GUARDIAN’S WINDUP', action: 'boss' });
     if (id === 'pyre' && chapter === 0) {
       const leverId = 'pyre-pressure-valve', gateId = 'pyre-conduit-lock';
       world.props.push({ id: leverId, type: 'lever', x: x + 230, y: 564, w: 28, h: 46, gateId });
       world.gates.push({ id: gateId, leverId, x: x + 490, y: 0, w: 32, h: 610 }); world.bosses.at(-1).shieldGateId = gateId;
       const index = layout.route.findIndex(marker => marker.bossId === bossId); layout.route.splice(index, 0, { id: arena.id, x: x + 230, y: 610, verb: 'run', leverId });
-      world.guides.push({ x: x + 230, y: 400, text: 'F / OPEN PRESSURE VALVE • STRIP THE MARSHAL’S SHIELD', action: 'interact' });
+      world.guides.push({ x: x + 230, y: 400, text: 'OPEN PRESSURE VALVE • STRIP THE MARSHAL’S SHIELD', action: 'interact' });
     }
     if (id === 'veil' && chapter === 1) {
       const witchId = 'veil-ysra', portalId = 'veil-betrayal-rift';
@@ -265,8 +265,8 @@ function newWorld(id, definition) {
     x += arenaLength;
   }
   world.width = x; world.boss = world.bosses.at(-1); world.exit = { x: x - 160, y: 540, w: 50, h: 70 };
-  world.guides.unshift({ x: 280, y: 440, text: 'HOLD JUMP • SECOND JUMP • F / SPEAK WITH SURVIVORS', action: 'jump' });
-  world.guides.push({ x: 4100, y: 400, text: id === 'tide' ? 'UNDERTOW PULLS LEFT • RAFTS REACH THE SIDE CACHES' : id === 'pyre' ? 'BASALT CRUMBLES • KEEP MOVING • READ THE STEAM' : id === 'neon' ? 'SHUTTERS LIVE IN THE CEILING • CROSS THE DARK BEAT' : 'MIRRORS SHOW THEIR DESTINATION • PROMISES HAVE A COST', action: 'environment' });
+  world.guides.unshift({ x: 280, y: 440, text: 'SHORT JUMP • SECOND JUMP • HOLD FOR THE JET', action: 'jump' });
+  world.guides.push({ x: 4100, y: 400, text: id === 'tide' ? 'CROSSWINDS PULL LEFT • RAFTS REACH THE SIDE CACHES' : id === 'pyre' ? 'MASONRY CRUMBLES • KEEP MOVING • READ THE STEAM' : id === 'neon' ? 'CEILING SHUTTERS • CROSS THE DARK BEAT' : 'MIRRORS SHOW THEIR DESTINATION • PROMISES HAVE A COST', action: 'environment' });
   return world;
 }
 export function buildNewWorlds() { return Object.fromEntries(Object.entries(DEFINITIONS).map(([id, definition]) => [id, newWorld(id, definition)])); }
@@ -279,7 +279,7 @@ export function extendSoulforge(base) {
     for (const key of ['x','triggerX','arenaStart','arenaEnd','minX','maxX']) if (Number.isFinite(clone[key])) clone[key] += offset(clone[key]);
     return clone;
   };
-  const world = { ...base, id: 'soulforge', name: 'SOULFORGE // THE UNBOUND ENGINE', description: 'Industrial soul foundries, frozen borders, drowned archives and a stolen human soul.',
+  const world = { ...base, id: 'soulforge', name: 'VERDANT // FOREST RUINS', description: 'Root-covered ruins, floating aqueducts and ancient machines; Aether carries a living soul into the heart of the forest.', theme: { scene: 'forest', foreground: 'grass' },
     biome: 'furnace', timeLimit: 620, width: base.width + 19400, spawn: { ...base.spawn }, exit: translate(base.exit),
     currents: [], movingPlatforms: [], crumble: [], enemyPortals: [], portals: [] };
   for (const key of ['solids','hazards','route','enemies','props','pickups','gates','bosses','checkpoints','zones','guides','npcs']) world[key] = base[key].map(translate);

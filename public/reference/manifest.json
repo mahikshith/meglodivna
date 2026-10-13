@@ -1,0 +1,7550 @@
+{
+  "version": 1,
+  "atlasKey": "reference-art",
+  "frames": {
+    "ref-aether-idle-0": {
+      "key": "ref-aether-idle-0",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 12,
+        "y": 339,
+        "w": 45,
+        "h": 85
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        33,
+        16
+      ],
+      "pixelSha256": "32c1282af8d7586a4d72392720d70de75b1eb2dbae0b0ea330769eb22e1b4d1a",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5427450980392157
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "idle",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 37,
+        "y": 27,
+        "w": 48,
+        "h": 89
+      }
+    },
+    "ref-aether-idle-1": {
+      "key": "ref-aether-idle-1",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 60,
+        "y": 339,
+        "w": 46,
+        "h": 85
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        36,
+        16
+      ],
+      "pixelSha256": "ae45441c9e9b8eb39db7d795e78914e9e4d81559e5a597b71af250312b19bde8",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5782608695652174
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "idle",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 39,
+        "y": 27,
+        "w": 45,
+        "h": 89
+      }
+    },
+    "ref-aether-idle-2": {
+      "key": "ref-aether-idle-2",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 106,
+        "y": 339,
+        "w": 42,
+        "h": 85
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        38,
+        16
+      ],
+      "pixelSha256": "6d3921c56a0707bd8d830fbd34ef439ee2cd9b6c34db129c783f0528983e8c21",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5355742296918767
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "idle",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 38,
+        "y": 27,
+        "w": 46,
+        "h": 89
+      }
+    },
+    "ref-aether-run-0": {
+      "key": "ref-aether-run-0",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 154,
+        "y": 340,
+        "w": 41,
+        "h": 84
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        35,
+        17
+      ],
+      "pixelSha256": "6792f5865cf0514641ba0dccabf97a9f7e869508e2bcca302807481d3c46c70b",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6054006968641115
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "run",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 40,
+        "y": 28,
+        "w": 44,
+        "h": 85
+      }
+    },
+    "ref-aether-run-1": {
+      "key": "ref-aether-run-1",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 195,
+        "y": 340,
+        "w": 44,
+        "h": 84
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        32,
+        17
+      ],
+      "pixelSha256": "5374127915319ffc8536cd2fdddee86255fb346d23d6974ef34889a2765ca879",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6190476190476191
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "run",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 32,
+        "y": 29,
+        "w": 49,
+        "h": 84
+      }
+    },
+    "ref-aether-run-2": {
+      "key": "ref-aether-run-2",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 239,
+        "y": 342,
+        "w": 42,
+        "h": 82
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        34,
+        20
+      ],
+      "pixelSha256": "5419a73795f4d2fee7f290194c734e3888d5b05fc1a7376a621b019ab51fd636",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6300813008130082
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "run",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 34,
+        "y": 34,
+        "w": 42,
+        "h": 79
+      }
+    },
+    "ref-aether-run-3": {
+      "key": "ref-aether-run-3",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 281,
+        "y": 345,
+        "w": 45,
+        "h": 79
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        34,
+        24
+      ],
+      "pixelSha256": "1272c69e0ca3d3074b7b8a06789fab9fb0e993898b40cb5c18fce5902930d9de",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6590717299578059
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "run",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 34,
+        "y": 38,
+        "w": 45,
+        "h": 76
+      }
+    },
+    "ref-aether-run-4": {
+      "key": "ref-aether-run-4",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 326,
+        "y": 345,
+        "w": 38,
+        "h": 79
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        39,
+        24
+      ],
+      "pixelSha256": "31df39f032e0af37f73456e1d2695fe80489770089134f4acd9403b589fe1bf8",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.617255163224517
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "run",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 39,
+        "y": 38,
+        "w": 40,
+        "h": 76
+      }
+    },
+    "ref-aether-jump-0": {
+      "key": "ref-aether-jump-0",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 369,
+        "y": 338,
+        "w": 39,
+        "h": 86
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        36,
+        15
+      ],
+      "pixelSha256": "319e7883db90f708ffff810d7847881af735c83256ea91dbf000d5eb87a514be",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6046511627906976
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "jump",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 40,
+        "y": 30,
+        "w": 40,
+        "h": 84
+      }
+    },
+    "ref-aether-jump-1": {
+      "key": "ref-aether-jump-1",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 408,
+        "y": 329,
+        "w": 37,
+        "h": 80
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        36,
+        22
+      ],
+      "pixelSha256": "12b66512e4b0fb2b0348d6647edabb40545b5699944099aa79e1973e6da16370",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.606418918918919
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "jump",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 37,
+        "y": 34,
+        "w": 41,
+        "h": 81
+      }
+    },
+    "ref-aether-jump-2": {
+      "key": "ref-aether-jump-2",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 448,
+        "y": 316,
+        "w": 36,
+        "h": 75
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        43,
+        40
+      ],
+      "pixelSha256": "69343296b31ba8c83328120f0d3ef744df5ef3ff03925ce721cbf1cd1eaaae0f",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6133333333333333
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "jump",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 43,
+        "y": 46,
+        "w": 40,
+        "h": 69
+      }
+    },
+    "ref-aether-doublejump-0": {
+      "key": "ref-aether-doublejump-0",
+      "width": 128,
+      "height": 160,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 491,
+        "y": 314,
+        "w": 50,
+        "h": 81
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        30,
+        34
+      ],
+      "pixelSha256": "b9092e249662cc287a9908c3d31d604d8d8eed64c040473d4b83afa3fac03bfc",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6232098765432099
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "doublejump",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 36,
+        "y": 46,
+        "w": 55,
+        "h": 88
+      }
+    },
+    "ref-aether-doublejump-1": {
+      "key": "ref-aether-doublejump-1",
+      "width": 128,
+      "height": 160,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 542,
+        "y": 328,
+        "w": 44,
+        "h": 86
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        35,
+        25
+      ],
+      "pixelSha256": "cb303727b5f13a2fa6bde363884d9658ca46654ae92d300300190a13b926df8e",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5969873150105708
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "doublejump",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 35,
+        "y": 44,
+        "w": 49,
+        "h": 86
+      }
+    },
+    "ref-aether-doublejump-2": {
+      "key": "ref-aether-doublejump-2",
+      "width": 128,
+      "height": 160,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 589,
+        "y": 339,
+        "w": 33,
+        "h": 85
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        44,
+        16
+      ],
+      "pixelSha256": "81d15a612a8d8a25d7600f8a561b417d18df877ddd99b7adb0d4a1dfcec8e97c",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5354723707664885
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "doublejump",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 44,
+        "y": 30,
+        "w": 37,
+        "h": 83
+      }
+    },
+    "ref-aether-fall-0": {
+      "key": "ref-aether-fall-0",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 631,
+        "y": 340,
+        "w": 49,
+        "h": 84
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        30,
+        17
+      ],
+      "pixelSha256": "3e384ebfce5e00ffdfa560d7bdfa77db7660feaa63eee9b95cda4ae371dcb2dc",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6338678328474247
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "fall",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 31,
+        "y": 31,
+        "w": 53,
+        "h": 84
+      }
+    },
+    "ref-aether-fall-1": {
+      "key": "ref-aether-fall-1",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 680,
+        "y": 339,
+        "w": 47,
+        "h": 85
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        35,
+        16
+      ],
+      "pixelSha256": "5b0f80bfbbf1949f81a863bc09f6f3e412f1a684391a35929169d1c9706a69ec",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6080100125156446
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "fall",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 35,
+        "y": 28,
+        "w": 49,
+        "h": 88
+      }
+    },
+    "ref-aether-dash-0": {
+      "key": "ref-aether-dash-0",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 736,
+        "y": 349,
+        "w": 54,
+        "h": 75
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        20,
+        35
+      ],
+      "pixelSha256": "ae6d4d0982955ee715ebd7e9413d70e5398cd6e9018279ec5bec70e5b14461c2",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5804938271604938
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "dash",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 25,
+        "y": 45,
+        "w": 63,
+        "h": 74
+      }
+    },
+    "ref-aether-dash-1": {
+      "key": "ref-aether-dash-1",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 787,
+        "y": 349,
+        "w": 52,
+        "h": 75
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        22,
+        34
+      ],
+      "pixelSha256": "9594d139baf1c9036de91f87c64d734eade3342522b49dfd539f3b211799a973",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5169230769230769
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "dash",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 22,
+        "y": 47,
+        "w": 64,
+        "h": 72
+      }
+    },
+    "ref-aether-dash-2": {
+      "key": "ref-aether-dash-2",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 837,
+        "y": 347,
+        "w": 57,
+        "h": 77
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        14,
+        32
+      ],
+      "pixelSha256": "e8581b2fa05044eb2f674fb98596fc3cf89c4f65a7ab3316c32ede970c517292",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.7024379129642288
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "dash",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 25,
+        "y": 46,
+        "w": 55,
+        "h": 73
+      }
+    },
+    "ref-aether-dashtrail-0": {
+      "key": "ref-aether-dashtrail-0",
+      "width": 160,
+      "height": 128,
+      "anchor": {
+        "x": 96,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 899,
+        "y": 348,
+        "w": 89,
+        "h": 76
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        21,
+        34
+      ],
+      "pixelSha256": "f8e6998661d619dcbbeb1463be259188106126cfa01474f30d0c4b40a6169916",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6085156712004731
+      },
+      "body": {
+        "x": 82,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "dashtrail",
+      "hand": [
+        112,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 30,
+        "y": 48,
+        "w": 86,
+        "h": 74
+      }
+    },
+    "ref-aether-dashtrail-1": {
+      "key": "ref-aether-dashtrail-1",
+      "width": 160,
+      "height": 128,
+      "anchor": {
+        "x": 96,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 981,
+        "y": 348,
+        "w": 87,
+        "h": 76
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        16,
+        34
+      ],
+      "pixelSha256": "e0c7e9dba61b0c5b21a78d3cdceeb85469c242500376bca3b8345bed8c785eae",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.47186932849364793
+      },
+      "body": {
+        "x": 82,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "dashtrail",
+      "hand": [
+        112,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 16,
+        "y": 48,
+        "w": 104,
+        "h": 74
+      }
+    },
+    "ref-aether-jetidle-0": {
+      "key": "ref-aether-jetidle-0",
+      "width": 128,
+      "height": 160,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 11,
+        "y": 509,
+        "w": 51,
+        "h": 84
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        30,
+        31
+      ],
+      "pixelSha256": "a6b92cdb876933da2af80f2668fd806fd1145dd7ed6d6595a91a8d9f3d958190",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5725957049486461
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "jetidle",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 36,
+        "y": 42,
+        "w": 48,
+        "h": 94
+      }
+    },
+    "ref-aether-jetidle-1": {
+      "key": "ref-aether-jetidle-1",
+      "width": 128,
+      "height": 160,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 63,
+        "y": 509,
+        "w": 47,
+        "h": 84
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        36,
+        31
+      ],
+      "pixelSha256": "f5ce38ae7aceb9244b25c6dec389b00fc35c96948a19fc81675a679eda446f22",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5491388044579534
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "jetidle",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 36,
+        "y": 41,
+        "w": 46,
+        "h": 95
+      }
+    },
+    "ref-aether-jetidle-2": {
+      "key": "ref-aether-jetidle-2",
+      "width": 128,
+      "height": 160,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 109,
+        "y": 509,
+        "w": 48,
+        "h": 84
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        35,
+        31
+      ],
+      "pixelSha256": "c41e79e11f167f6a45bbb99cf93f22bdb8983b848a391f41cf89b3c5587989be",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5558035714285714
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "jetidle",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 36,
+        "y": 42,
+        "w": 46,
+        "h": 94
+      }
+    },
+    "ref-aether-jet-0": {
+      "key": "ref-aether-jet-0",
+      "width": 128,
+      "height": 160,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 163,
+        "y": 508,
+        "w": 44,
+        "h": 88
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        29,
+        27
+      ],
+      "pixelSha256": "72d15013cca60b558c68d3798dbb145baaff84230a26dfdb3429980f3c1f0b8e",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6004648760330579
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "jet",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 29,
+        "y": 39,
+        "w": 44,
+        "h": 94
+      }
+    },
+    "ref-aether-jet-1": {
+      "key": "ref-aether-jet-1",
+      "width": 128,
+      "height": 160,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 208,
+        "y": 507,
+        "w": 43,
+        "h": 89
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        33,
+        26
+      ],
+      "pixelSha256": "371659441f76b4e290fb17eed13ab29ea8a0754c6826afdf7a04699df2ef8248",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5850535667624771
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "jet",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 33,
+        "y": 40,
+        "w": 46,
+        "h": 92
+      }
+    },
+    "ref-aether-jet-2": {
+      "key": "ref-aether-jet-2",
+      "width": 128,
+      "height": 160,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 252,
+        "y": 507,
+        "w": 46,
+        "h": 89
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        30,
+        26
+      ],
+      "pixelSha256": "2dd10110bfc97d2c02e0a125ee3982725091fd34f6e00d1be07d1e8fb41d6221",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6182217879824133
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "jet",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 30,
+        "y": 41,
+        "w": 52,
+        "h": 86
+      }
+    },
+    "ref-aether-jet-3": {
+      "key": "ref-aether-jet-3",
+      "width": 128,
+      "height": 160,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 299,
+        "y": 507,
+        "w": 43,
+        "h": 89
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        35,
+        26
+      ],
+      "pixelSha256": "fd03d801a6798a459f184505306b570cb4ead20fae2f96c40499eea2f812d62e",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6532532009406846
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "jet",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 35,
+        "y": 41,
+        "w": 45,
+        "h": 84
+      }
+    },
+    "ref-aether-jet-4": {
+      "key": "ref-aether-jet-4",
+      "width": 128,
+      "height": 160,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 343,
+        "y": 507,
+        "w": 45,
+        "h": 89
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        35,
+        26
+      ],
+      "pixelSha256": "7041c048dac0c6203c4aa9c00ecaaba974f8d38268c245c033a67e62c3179dac",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6601747815230962
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "jet",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 35,
+        "y": 41,
+        "w": 41,
+        "h": 90
+      }
+    },
+    "ref-aether-jet-5": {
+      "key": "ref-aether-jet-5",
+      "width": 128,
+      "height": 160,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 389,
+        "y": 507,
+        "w": 35,
+        "h": 89
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        40,
+        26
+      ],
+      "pixelSha256": "607525b41fc4e9e6505edc14d81d5b6a7f68a1b946ea708a7814528151360940",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5897271268057785
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "jet",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 40,
+        "y": 41,
+        "w": 34,
+        "h": 91
+      }
+    },
+    "ref-aether-fire-0": {
+      "key": "ref-aether-fire-0",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 430,
+        "y": 525,
+        "w": 47,
+        "h": 79
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        34,
+        26
+      ],
+      "pixelSha256": "39cd4808f81b4bb53fbba42ff9f50d636409fe3e9c7cf3d948e86d61d8be7030",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5900888769189335
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "fire",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": [
+        93,
+        75
+      ],
+      "readyPose": true,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 38,
+        "y": 37,
+        "w": 47,
+        "h": 80
+      }
+    },
+    "ref-aether-fire-1": {
+      "key": "ref-aether-fire-1",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 479,
+        "y": 525,
+        "w": 47,
+        "h": 79
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        38,
+        26
+      ],
+      "pixelSha256": "1be3cbb54bb00729294bd72e79ef28b20b38b9292ec26de9548d8bdb4ecf5319",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5628871532453542
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "fire",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": [
+        93,
+        75
+      ],
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 38,
+        "y": 36,
+        "w": 59,
+        "h": 81
+      }
+    },
+    "ref-aether-fire-2": {
+      "key": "ref-aether-fire-2",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 530,
+        "y": 525,
+        "w": 52,
+        "h": 79
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        38,
+        26
+      ],
+      "pixelSha256": "0a56269c576862a843eaadaa6eaec8a9b1bf913b6ec59f551c5407f48381fbe5",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.578383641674781
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "fire",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": [
+        93,
+        75
+      ],
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 38,
+        "y": 36,
+        "w": 65,
+        "h": 81
+      }
+    },
+    "ref-aether-fire-3": {
+      "key": "ref-aether-fire-3",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 584,
+        "y": 525,
+        "w": 46,
+        "h": 79
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        38,
+        26
+      ],
+      "pixelSha256": "2b1d31d42857e13089168bfe0b61c7fc308dee257ef78a4bb01c7a502acbd04a",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6023665382498624
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "fire",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": [
+        93,
+        75
+      ],
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 38,
+        "y": 40,
+        "w": 58,
+        "h": 76
+      }
+    },
+    "ref-aether-hurt-0": {
+      "key": "ref-aether-hurt-0",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 683,
+        "y": 522,
+        "w": 48,
+        "h": 84
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        33,
+        22
+      ],
+      "pixelSha256": "73a1d108891add618eea6ffb2e3506d2ef6b46d922f95313f3827cd2d5b9702f",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5709325396825397
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "hurt",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 38,
+        "y": 31,
+        "w": 53,
+        "h": 86
+      }
+    },
+    "ref-aether-hurt-1": {
+      "key": "ref-aether-hurt-1",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 735,
+        "y": 523,
+        "w": 49,
+        "h": 83
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        34,
+        24
+      ],
+      "pixelSha256": "d6ee45dedaa30525dcfc2c1abb6313c2d188475b0fce8c88c16a77275f9b21ac",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5866732235062699
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "hurt",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 39,
+        "y": 33,
+        "w": 52,
+        "h": 85
+      }
+    },
+    "ref-aether-hurt-2": {
+      "key": "ref-aether-hurt-2",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 785,
+        "y": 525,
+        "w": 46,
+        "h": 81
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        36,
+        26
+      ],
+      "pixelSha256": "168b00709cfa8d7677bb579179a491aa039671e5e657fdb67ed0a9caeccb671c",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5850778314546431
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "hurt",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 36,
+        "y": 37,
+        "w": 48,
+        "h": 80
+      }
+    },
+    "ref-aether-death-0": {
+      "key": "ref-aether-death-0",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 838,
+        "y": 546,
+        "w": 63,
+        "h": 60
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        29,
+        52
+      ],
+      "pixelSha256": "0d240a8f69031ccaadec0f05dfb13b1c92504b3dfd4c63d12761ded66921cf80",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6457671957671958
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "death",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 34,
+        "y": 62,
+        "w": 69,
+        "h": 53
+      }
+    },
+    "ref-aether-death-1": {
+      "key": "ref-aether-death-1",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 898,
+        "y": 559,
+        "w": 56,
+        "h": 47
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        28,
+        68
+      ],
+      "pixelSha256": "fd22223d489d42e9f1aae0d0664a594d73c6665c97729207d2edfff9a91a2928",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5672492401215805
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "death",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 28,
+        "y": 71,
+        "w": 66,
+        "h": 42
+      }
+    },
+    "ref-aether-death-2": {
+      "key": "ref-aether-death-2",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 950,
+        "y": 563,
+        "w": 56,
+        "h": 43
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        28,
+        74
+      ],
+      "pixelSha256": "99f07c87b6f075f33799bee3813f700c42edcba6c4c85482e8a1b132ee0a04ff",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.5693521594684385
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "death",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 32,
+        "y": 77,
+        "w": 66,
+        "h": 38
+      }
+    },
+    "ref-aether-death-3": {
+      "key": "ref-aether-death-3",
+      "width": 128,
+      "height": 128,
+      "anchor": {
+        "x": 64,
+        "y": 116
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 1003,
+        "y": 563,
+        "w": 65,
+        "h": 43
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        23,
+        74
+      ],
+      "pixelSha256": "9fb97e9c72492c69dd213cda2111c5d370c273011f79ba1d32be47ff9c38f6d5",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.6604651162790698
+      },
+      "body": {
+        "x": 50,
+        "y": 56,
+        "w": 28,
+        "h": 60
+      },
+      "family": "aether",
+      "action": "death",
+      "hand": [
+        80,
+        75
+      ],
+      "muzzle": null,
+      "readyPose": false,
+      "attachmentRole": "canonical-raised-fire",
+      "visibleBounds": {
+        "x": 29,
+        "y": 83,
+        "w": 69,
+        "h": 32
+      }
+    },
+    "ref-fx-attack-0": {
+      "key": "ref-fx-attack-0",
+      "width": 30,
+      "height": 31,
+      "anchor": {
+        "x": 15.0,
+        "y": 30
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 18,
+        "y": 710,
+        "w": 42,
+        "h": 45
+      },
+      "scale": 1,
+      "cropOffset": [
+        -6,
+        -8
+      ],
+      "pixelSha256": "88f8632a8cc45ba704233a26b42cfeed76e0765b49aa51f0035e3d5b158f5441",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.5962962962962963
+      },
+      "family": "effect",
+      "action": "attack",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 30,
+        "h": 31
+      }
+    },
+    "ref-fx-attack-1": {
+      "key": "ref-fx-attack-1",
+      "width": 63,
+      "height": 37,
+      "anchor": {
+        "x": 31.5,
+        "y": 36
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 63,
+        "y": 704,
+        "w": 68,
+        "h": 55
+      },
+      "scale": 1,
+      "cropOffset": [
+        -4,
+        -12
+      ],
+      "pixelSha256": "92f7ef779551d368180acde13aa4ebd16321bfaaf08fc9a08eb870d59df07600",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.5836898395721926
+      },
+      "family": "effect",
+      "action": "attack",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 63,
+        "h": 37
+      }
+    },
+    "ref-fx-attack-2": {
+      "key": "ref-fx-attack-2",
+      "width": 62,
+      "height": 36,
+      "anchor": {
+        "x": 31.0,
+        "y": 35
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 139,
+        "y": 704,
+        "w": 68,
+        "h": 55
+      },
+      "scale": 1,
+      "cropOffset": [
+        -2,
+        -11
+      ],
+      "pixelSha256": "3704ae8f7f5238561a5aee921d9df2ae5ad0934ca57469d12dd4d4cea4d4c142",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.6120320855614974
+      },
+      "family": "effect",
+      "action": "attack",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 62,
+        "h": 36
+      }
+    },
+    "ref-fx-attack-3": {
+      "key": "ref-fx-attack-3",
+      "width": 58,
+      "height": 63,
+      "anchor": {
+        "x": 29.0,
+        "y": 62
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 210,
+        "y": 697,
+        "w": 69,
+        "h": 74
+      },
+      "scale": 1,
+      "cropOffset": [
+        -9,
+        -5
+      ],
+      "pixelSha256": "95456bede02582658839a1237622244d858cb5223cd864a3892462350465f672",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.6010575793184488
+      },
+      "family": "effect",
+      "action": "attack",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 58,
+        "h": 63
+      }
+    },
+    "ref-fx-attack-4": {
+      "key": "ref-fx-attack-4",
+      "width": 67,
+      "height": 51,
+      "anchor": {
+        "x": 33.5,
+        "y": 50
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 280,
+        "y": 705,
+        "w": 73,
+        "h": 53
+      },
+      "scale": 1,
+      "cropOffset": [
+        -5,
+        -2
+      ],
+      "pixelSha256": "e7a1931e8f3660af38adc4bfbd4c08d9f17c9dd110f799f21fe6d64b7574ae42",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.40966658051176014
+      },
+      "family": "effect",
+      "action": "attack",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 67,
+        "h": 51
+      }
+    },
+    "ref-fx-attack-5": {
+      "key": "ref-fx-attack-5",
+      "width": 44,
+      "height": 44,
+      "anchor": {
+        "x": 22.0,
+        "y": 43
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 366,
+        "y": 703,
+        "w": 47,
+        "h": 65
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        -9
+      ],
+      "pixelSha256": "5bcf25daa69d7e33cee7326e6badac1ffab5961822a041e0815817cd05ab227e",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.6238952536824878
+      },
+      "family": "effect",
+      "action": "attack",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 44,
+        "h": 44
+      }
+    },
+    "ref-fx-attack-6": {
+      "key": "ref-fx-attack-6",
+      "width": 49,
+      "height": 61,
+      "anchor": {
+        "x": 24.5,
+        "y": 60
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 418,
+        "y": 699,
+        "w": 53,
+        "h": 70
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        -5
+      ],
+      "pixelSha256": "b4416f3ff44b6d6b68f8cb8d633a67b5325e89bae0b73d83cba78d16ad3083ee",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.5272237196765499
+      },
+      "family": "effect",
+      "action": "attack",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 49,
+        "h": 61
+      }
+    },
+    "ref-fx-jet-0": {
+      "key": "ref-fx-jet-0",
+      "width": 48,
+      "height": 64,
+      "anchor": {
+        "x": 24.0,
+        "y": 63
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 514,
+        "y": 702,
+        "w": 59,
+        "h": 68
+      },
+      "scale": 1,
+      "cropOffset": [
+        -4,
+        -4
+      ],
+      "pixelSha256": "f19d4719cf7a62d476467fbcae8f0064ed9628963d3873d7148f887716ae81f0",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.4339481555333998
+      },
+      "family": "effect",
+      "action": "jet",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "ref-fx-jet-1": {
+      "key": "ref-fx-jet-1",
+      "width": 40,
+      "height": 62,
+      "anchor": {
+        "x": 20.0,
+        "y": 61
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 582,
+        "y": 705,
+        "w": 58,
+        "h": 65
+      },
+      "scale": 1,
+      "cropOffset": [
+        -11,
+        -2
+      ],
+      "pixelSha256": "9f175057649d3ea0aa703b7d2878fe7e16e4f6236f3e1598676f0a8b4fc8360e",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.5562334217506631
+      },
+      "family": "effect",
+      "action": "jet",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 40,
+        "h": 62
+      }
+    },
+    "ref-fx-jet-2": {
+      "key": "ref-fx-jet-2",
+      "width": 30,
+      "height": 44,
+      "anchor": {
+        "x": 15.0,
+        "y": 43
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 646,
+        "y": 717,
+        "w": 50,
+        "h": 53
+      },
+      "scale": 1,
+      "cropOffset": [
+        -7,
+        0
+      ],
+      "pixelSha256": "88f0457128ff64a617bf0551a30f05360d014efc2a650941451729703e1b5738",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.6664150943396226
+      },
+      "family": "effect",
+      "action": "jet",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 30,
+        "h": 44
+      }
+    },
+    "ref-fx-jet-3": {
+      "key": "ref-fx-jet-3",
+      "width": 29,
+      "height": 41,
+      "anchor": {
+        "x": 14.5,
+        "y": 40
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 702,
+        "y": 721,
+        "w": 35,
+        "h": 48
+      },
+      "scale": 1,
+      "cropOffset": [
+        -1,
+        0
+      ],
+      "pixelSha256": "71fa7008b0f91168f9d6b0748678c232e0ebb11c66bea91ed0c485486cc1b59d",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.5946428571428571
+      },
+      "family": "effect",
+      "action": "jet",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 29,
+        "h": 41
+      }
+    },
+    "ref-fx-dash-0": {
+      "key": "ref-fx-dash-0",
+      "width": 88,
+      "height": 52,
+      "anchor": {
+        "x": 44.0,
+        "y": 51
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 797,
+        "y": 706,
+        "w": 100,
+        "h": 56
+      },
+      "scale": 1,
+      "cropOffset": [
+        -1,
+        -4
+      ],
+      "pixelSha256": "7cbd1e5b6ee3edff59d70639c0b5b6514128b4eafb75902171dd6991ca4c1fec",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.4067857142857143
+      },
+      "family": "effect",
+      "action": "dash",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 88,
+        "h": 52
+      }
+    },
+    "ref-fx-dash-1": {
+      "key": "ref-fx-dash-1",
+      "width": 71,
+      "height": 51,
+      "anchor": {
+        "x": 35.5,
+        "y": 50
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 899,
+        "y": 706,
+        "w": 83,
+        "h": 62
+      },
+      "scale": 1,
+      "cropOffset": [
+        -4,
+        -5
+      ],
+      "pixelSha256": "ee957f5e241e02db450d5c9e78147ddaab37b0b5e18752f76fbb1dbf695cfa6c",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.4875631558492033
+      },
+      "family": "effect",
+      "action": "dash",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 71,
+        "h": 51
+      }
+    },
+    "ref-fx-dash-2": {
+      "key": "ref-fx-dash-2",
+      "width": 50,
+      "height": 46,
+      "anchor": {
+        "x": 25.0,
+        "y": 45
+      },
+      "source": "03_aether_character_sheet.png",
+      "sourceRect": {
+        "x": 990,
+        "y": 709,
+        "w": 59,
+        "h": 57
+      },
+      "scale": 1,
+      "cropOffset": [
+        -4,
+        -7
+      ],
+      "pixelSha256": "92efb1a7157d82aaebded52b76d5e6ab59bee51a6b2fcef89cc79dffd5f0525d",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.7487362473981564
+      },
+      "family": "effect",
+      "action": "dash",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 50,
+        "h": 46
+      }
+    },
+    "ref-crawler-idle-0": {
+      "key": "ref-crawler-idle-0",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 697,
+        "y": 42,
+        "w": 72,
+        "h": 70
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        19,
+        21
+      ],
+      "pixelSha256": "cd8849c71d19ef6b67354d2ba5f7a4b7ff49c956fffcbb830156718a1774e590",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5144841269841269
+      },
+      "body": {
+        "x": 34,
+        "y": 59,
+        "w": 60,
+        "h": 41
+      },
+      "family": "crawler",
+      "action": "idle",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 21,
+        "y": 27,
+        "w": 84,
+        "h": 71
+      }
+    },
+    "ref-crawler-walk-0": {
+      "key": "ref-crawler-walk-0",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 775,
+        "y": 44,
+        "w": 75,
+        "h": 66
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        18,
+        25
+      ],
+      "pixelSha256": "69492c92ec96cc16ec8a63c074dcdf413b3d8a8f4e425cedbceb902782fad42e",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5143434343434343
+      },
+      "body": {
+        "x": 34,
+        "y": 59,
+        "w": 60,
+        "h": 41
+      },
+      "family": "crawler",
+      "action": "walk",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 22,
+        "y": 32,
+        "w": 85,
+        "h": 66
+      }
+    },
+    "ref-crawler-walk-1": {
+      "key": "ref-crawler-walk-1",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 851,
+        "y": 43,
+        "w": 74,
+        "h": 68
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        19,
+        22
+      ],
+      "pixelSha256": "c44fba8dc442367283c70e69651a936994a3e601f4645eb4a04f02e3d7e20196",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5447138314785374
+      },
+      "body": {
+        "x": 34,
+        "y": 59,
+        "w": 60,
+        "h": 41
+      },
+      "family": "crawler",
+      "action": "walk",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 24,
+        "y": 31,
+        "w": 82,
+        "h": 66
+      }
+    },
+    "ref-crawler-walk-2": {
+      "key": "ref-crawler-walk-2",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 928,
+        "y": 43,
+        "w": 76,
+        "h": 69
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        18,
+        22
+      ],
+      "pixelSha256": "6883f2c7e6a4faa62cf2b82817a80cdaa3767e05c17a9bd7e65dea2c9e7b39ca",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5766590389016019
+      },
+      "body": {
+        "x": 34,
+        "y": 59,
+        "w": 60,
+        "h": 41
+      },
+      "family": "crawler",
+      "action": "walk",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 24,
+        "y": 38,
+        "w": 87,
+        "h": 60
+      }
+    },
+    "ref-crawler-attack-0": {
+      "key": "ref-crawler-attack-0",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 697,
+        "y": 144,
+        "w": 74,
+        "h": 66
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        19,
+        25
+      ],
+      "pixelSha256": "e4153cc4d2381ead15b0bd863516b6cbfec4fde2fbb2bff0fa52d9119d815d85",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.4965192465192465
+      },
+      "body": {
+        "x": 34,
+        "y": 59,
+        "w": 60,
+        "h": 41
+      },
+      "family": "crawler",
+      "action": "attack",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 20,
+        "y": 34,
+        "w": 84,
+        "h": 66
+      }
+    },
+    "ref-crawler-attack-1": {
+      "key": "ref-crawler-attack-1",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 774,
+        "y": 148,
+        "w": 78,
+        "h": 61
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        14,
+        30
+      ],
+      "pixelSha256": "cf62afcd9fd5d905cd0317b01801948739530316befdac713a020d43c08ed665",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.4697351828499369
+      },
+      "body": {
+        "x": 34,
+        "y": 59,
+        "w": 60,
+        "h": 41
+      },
+      "family": "crawler",
+      "action": "attack",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 20,
+        "y": 34,
+        "w": 92,
+        "h": 66
+      }
+    },
+    "ref-crawler-hurt-0": {
+      "key": "ref-crawler-hurt-0",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 853,
+        "y": 143,
+        "w": 76,
+        "h": 69
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        15,
+        24
+      ],
+      "pixelSha256": "60d6f34fa8427b604e0f5501a244b5b2041ccafc096d162b5d13b61e437bf23b",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5753241800152555
+      },
+      "body": {
+        "x": 34,
+        "y": 59,
+        "w": 60,
+        "h": 41
+      },
+      "family": "crawler",
+      "action": "hurt",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 29,
+        "y": 33,
+        "w": 81,
+        "h": 67
+      }
+    },
+    "ref-crawler-hurt-1": {
+      "key": "ref-crawler-hurt-1",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 932,
+        "y": 146,
+        "w": 75,
+        "h": 65
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        16,
+        26
+      ],
+      "pixelSha256": "3358934c8d9217a9859ce02125e61da3675c4bc08de519e35cb722eea6a08f84",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.563076923076923
+      },
+      "body": {
+        "x": 34,
+        "y": 59,
+        "w": 60,
+        "h": 41
+      },
+      "family": "crawler",
+      "action": "hurt",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 32,
+        "y": 38,
+        "w": 78,
+        "h": 60
+      }
+    },
+    "ref-crawler-death-0": {
+      "key": "ref-crawler-death-0",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1009,
+        "y": 156,
+        "w": 88,
+        "h": 55
+      },
+      "scale": 1.25,
+      "cropOffset": [
+        13,
+        39
+      ],
+      "pixelSha256": "2158478461ab6e6c6ea7434f980f2915c4080dcf7cc7b075246a680419f0ec1e",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5764462809917356
+      },
+      "body": {
+        "x": 34,
+        "y": 59,
+        "w": 60,
+        "h": 41
+      },
+      "family": "crawler",
+      "action": "death",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 24,
+        "y": 48,
+        "w": 93,
+        "h": 52
+      }
+    },
+    "ref-raider-idle-0": {
+      "key": "ref-raider-idle-0",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1126,
+        "y": 41,
+        "w": 69,
+        "h": 72
+      },
+      "scale": 1.15,
+      "cropOffset": [
+        20,
+        26
+      ],
+      "pixelSha256": "92e066832e31d38e105e992db578492173e8bcc19a8764d3e8f08940e875ec4c",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.552938808373591
+      },
+      "body": {
+        "x": 47,
+        "y": 43,
+        "w": 34,
+        "h": 45
+      },
+      "family": "raider",
+      "action": "idle",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 21,
+        "y": 31,
+        "w": 72,
+        "h": 77
+      }
+    },
+    "ref-raider-fly-0": {
+      "key": "ref-raider-fly-0",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1203,
+        "y": 39,
+        "w": 69,
+        "h": 72
+      },
+      "scale": 1.15,
+      "cropOffset": [
+        21,
+        24
+      ],
+      "pixelSha256": "cfbd77cbf9ae580cb9b3e3f27c1bb5eebe45f933cae007f323178e060d82363b",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.660024154589372
+      },
+      "body": {
+        "x": 47,
+        "y": 43,
+        "w": 34,
+        "h": 45
+      },
+      "family": "raider",
+      "action": "fly",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 31,
+        "y": 33,
+        "w": 62,
+        "h": 74
+      }
+    },
+    "ref-raider-fly-1": {
+      "key": "ref-raider-fly-1",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1280,
+        "y": 38,
+        "w": 67,
+        "h": 73
+      },
+      "scale": 1.15,
+      "cropOffset": [
+        26,
+        23
+      ],
+      "pixelSha256": "0174550c6bdb54e586021f7a6e46db24893a9b6eefed283f0390b5b01f10c7fe",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.595992639542016
+      },
+      "body": {
+        "x": 47,
+        "y": 43,
+        "w": 34,
+        "h": 45
+      },
+      "family": "raider",
+      "action": "fly",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 29,
+        "y": 32,
+        "w": 60,
+        "h": 74
+      }
+    },
+    "ref-raider-fly-2": {
+      "key": "ref-raider-fly-2",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1350,
+        "y": 40,
+        "w": 70,
+        "h": 72
+      },
+      "scale": 1.15,
+      "cropOffset": [
+        25,
+        25
+      ],
+      "pixelSha256": "e763a6dd1f6279af16f544e1f8dac1c023153248eeea2fbcc398d60d3bae3163",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5757936507936507
+      },
+      "body": {
+        "x": 47,
+        "y": 43,
+        "w": 34,
+        "h": 45
+      },
+      "family": "raider",
+      "action": "fly",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 27,
+        "y": 32,
+        "w": 70,
+        "h": 76
+      }
+    },
+    "ref-raider-fly-3": {
+      "key": "ref-raider-fly-3",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1429,
+        "y": 40,
+        "w": 74,
+        "h": 71
+      },
+      "scale": 1.15,
+      "cropOffset": [
+        23,
+        25
+      ],
+      "pixelSha256": "20e4a4e0704673e35cff37d8201b4364aece057b024826146253deebae0f646f",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.6071564522268748
+      },
+      "body": {
+        "x": 47,
+        "y": 43,
+        "w": 34,
+        "h": 45
+      },
+      "family": "raider",
+      "action": "fly",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 25,
+        "y": 32,
+        "w": 74,
+        "h": 75
+      }
+    },
+    "ref-raider-fire-0": {
+      "key": "ref-raider-fire-0",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1127,
+        "y": 136,
+        "w": 67,
+        "h": 81
+      },
+      "scale": 1.15,
+      "cropOffset": [
+        23,
+        20
+      ],
+      "pixelSha256": "c07013af2bce48a83cd6be50a10e0d04b4e9a1751f4f36a8422da02ddda26741",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.6150727842270131
+      },
+      "body": {
+        "x": 47,
+        "y": 43,
+        "w": 34,
+        "h": 45
+      },
+      "family": "raider",
+      "action": "fire",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 25,
+        "y": 26,
+        "w": 60,
+        "h": 80
+      }
+    },
+    "ref-raider-fire-1": {
+      "key": "ref-raider-fire-1",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1202,
+        "y": 141,
+        "w": 67,
+        "h": 73
+      },
+      "scale": 1.15,
+      "cropOffset": [
+        21,
+        25
+      ],
+      "pixelSha256": "36361ac9976be01ea3f69317a52b6e584c9ff4eaa6b7ce9546b5e6f4b2b3a342",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5739112655898589
+      },
+      "body": {
+        "x": 47,
+        "y": 43,
+        "w": 34,
+        "h": 45
+      },
+      "family": "raider",
+      "action": "fire",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 29,
+        "y": 28,
+        "w": 69,
+        "h": 80
+      }
+    },
+    "ref-raider-hurt-0": {
+      "key": "ref-raider-hurt-0",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1360,
+        "y": 158,
+        "w": 73,
+        "h": 54
+      },
+      "scale": 1.15,
+      "cropOffset": [
+        24,
+        45
+      ],
+      "pixelSha256": "b13a70d4bce75c242bf58a284b87786f99cd59f1066ac800cc4c732d981bb3ab",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5284119736174531
+      },
+      "body": {
+        "x": 47,
+        "y": 43,
+        "w": 34,
+        "h": 45
+      },
+      "family": "raider",
+      "action": "hurt",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 33,
+        "y": 51,
+        "w": 69,
+        "h": 51
+      }
+    },
+    "ref-raider-death-0": {
+      "key": "ref-raider-death-0",
+      "width": 128,
+      "height": 112,
+      "anchor": {
+        "x": 64,
+        "y": 100
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1434,
+        "y": 163,
+        "w": 94,
+        "h": 50
+      },
+      "scale": 1.15,
+      "cropOffset": [
+        18,
+        49
+      ],
+      "pixelSha256": "dd91113be508c1d7baf2e383f8763bf7bed9260b0eb44603ed4912a20460e3c0",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5206382978723404
+      },
+      "body": {
+        "x": 47,
+        "y": 43,
+        "w": 34,
+        "h": 45
+      },
+      "family": "raider",
+      "action": "death",
+      "muzzle": [
+        94,
+        65
+      ],
+      "core": [
+        64,
+        74
+      ],
+      "visibleBounds": {
+        "x": 23,
+        "y": 63,
+        "w": 98,
+        "h": 37
+      }
+    },
+    "ref-mecha-idle-0": {
+      "key": "ref-mecha-idle-0",
+      "width": 144,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 128
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 696,
+        "y": 293,
+        "w": 76,
+        "h": 92
+      },
+      "scale": 1.05,
+      "cropOffset": [
+        22,
+        40
+      ],
+      "pixelSha256": "dcd39272c65233235cda2ffa1e7b69b5353a693adc3df65da4e8a9d4c2103304",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.4806922196796339
+      },
+      "body": {
+        "x": 38,
+        "y": 57,
+        "w": 52,
+        "h": 71
+      },
+      "family": "mecha",
+      "action": "idle",
+      "muzzle": [
+        120,
+        80
+      ],
+      "core": [
+        64,
+        79
+      ],
+      "visibleBounds": {
+        "x": 27,
+        "y": 46,
+        "w": 69,
+        "h": 85
+      }
+    },
+    "ref-mecha-walk-0": {
+      "key": "ref-mecha-walk-0",
+      "width": 144,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 128
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 775,
+        "y": 294,
+        "w": 70,
+        "h": 91
+      },
+      "scale": 1.05,
+      "cropOffset": [
+        26,
+        41
+      ],
+      "pixelSha256": "fda814b4eee7f58f15f78812c1a39a65197bfcb34845a3e258a8d33f2495f84f",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.46828885400313974
+      },
+      "body": {
+        "x": 38,
+        "y": 57,
+        "w": 52,
+        "h": 71
+      },
+      "family": "mecha",
+      "action": "walk",
+      "muzzle": [
+        120,
+        80
+      ],
+      "core": [
+        64,
+        79
+      ],
+      "visibleBounds": {
+        "x": 31,
+        "y": 46,
+        "w": 66,
+        "h": 84
+      }
+    },
+    "ref-mecha-attack-0": {
+      "key": "ref-mecha-attack-0",
+      "width": 144,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 128
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 850,
+        "y": 292,
+        "w": 53,
+        "h": 94
+      },
+      "scale": 1.05,
+      "cropOffset": [
+        36,
+        39
+      ],
+      "pixelSha256": "8383fe25ceda2ec9fc27313735aa823cdf0aaa07b013406f8f121530d3d87cfb",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.4763147330389402
+      },
+      "body": {
+        "x": 38,
+        "y": 57,
+        "w": 52,
+        "h": 71
+      },
+      "family": "mecha",
+      "action": "attack",
+      "muzzle": [
+        120,
+        80
+      ],
+      "core": [
+        64,
+        79
+      ],
+      "visibleBounds": {
+        "x": 36,
+        "y": 46,
+        "w": 52,
+        "h": 84
+      }
+    },
+    "ref-mecha-attack-1": {
+      "key": "ref-mecha-attack-1",
+      "width": 144,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 128
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 902,
+        "y": 309,
+        "w": 69,
+        "h": 77
+      },
+      "scale": 1.05,
+      "cropOffset": [
+        25,
+        57
+      ],
+      "pixelSha256": "23508798e5cf92bf00f4b72497dc8687640856d3fb510807e5df17869653581a",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.49632975719932243
+      },
+      "body": {
+        "x": 38,
+        "y": 57,
+        "w": 52,
+        "h": 71
+      },
+      "family": "mecha",
+      "action": "attack",
+      "muzzle": [
+        120,
+        80
+      ],
+      "core": [
+        64,
+        79
+      ],
+      "visibleBounds": {
+        "x": 25,
+        "y": 62,
+        "w": 66,
+        "h": 68
+      }
+    },
+    "ref-mecha-fire-0": {
+      "key": "ref-mecha-fire-0",
+      "width": 144,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 128
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 972,
+        "y": 295,
+        "w": 93,
+        "h": 91
+      },
+      "scale": 1.05,
+      "cropOffset": [
+        25,
+        42
+      ],
+      "pixelSha256": "d6ab06773686b1e4208a00b6f59bdaa3530146eacffc00c4a74027e5d1be648c",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.56516601677892
+      },
+      "body": {
+        "x": 38,
+        "y": 57,
+        "w": 52,
+        "h": 71
+      },
+      "family": "mecha",
+      "action": "fire",
+      "muzzle": [
+        120,
+        80
+      ],
+      "core": [
+        64,
+        79
+      ],
+      "visibleBounds": {
+        "x": 29,
+        "y": 53,
+        "w": 94,
+        "h": 77
+      }
+    },
+    "ref-mecha-hurt-0": {
+      "key": "ref-mecha-hurt-0",
+      "width": 144,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 128
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 695,
+        "y": 397,
+        "w": 91,
+        "h": 88
+      },
+      "scale": 1.05,
+      "cropOffset": [
+        23,
+        48
+      ],
+      "pixelSha256": "65396e1b8622d525f0a695e8f6d193749da98169e4a88b01032b05aab482c911",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5829170829170829
+      },
+      "body": {
+        "x": 38,
+        "y": 57,
+        "w": 52,
+        "h": 71
+      },
+      "family": "mecha",
+      "action": "hurt",
+      "muzzle": [
+        120,
+        80
+      ],
+      "core": [
+        64,
+        79
+      ],
+      "visibleBounds": {
+        "x": 29,
+        "y": 54,
+        "w": 83,
+        "h": 76
+      }
+    },
+    "ref-mecha-death-0": {
+      "key": "ref-mecha-death-0",
+      "width": 144,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 128
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 788,
+        "y": 421,
+        "w": 73,
+        "h": 64
+      },
+      "scale": 1.05,
+      "cropOffset": [
+        27,
+        72
+      ],
+      "pixelSha256": "2d3ce7552fcf985d24e2d56276ae9dd5f29c2e091fbdcba98b324bd32cef410a",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.566138698630137
+      },
+      "body": {
+        "x": 38,
+        "y": 57,
+        "w": 52,
+        "h": 71
+      },
+      "family": "mecha",
+      "action": "death",
+      "muzzle": [
+        120,
+        80
+      ],
+      "core": [
+        64,
+        79
+      ],
+      "visibleBounds": {
+        "x": 31,
+        "y": 80,
+        "w": 64,
+        "h": 49
+      }
+    },
+    "ref-mecha-death-1": {
+      "key": "ref-mecha-death-1",
+      "width": 144,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 128
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 862,
+        "y": 420,
+        "w": 52,
+        "h": 65
+      },
+      "scale": 1.05,
+      "cropOffset": [
+        34,
+        71
+      ],
+      "pixelSha256": "6032425c4e9382cd320298e1fca7540261d51dffb6111d9108994fa6a29fabce",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.512130177514793
+      },
+      "body": {
+        "x": 38,
+        "y": 57,
+        "w": 52,
+        "h": 71
+      },
+      "family": "mecha",
+      "action": "death",
+      "muzzle": [
+        120,
+        80
+      ],
+      "core": [
+        64,
+        79
+      ],
+      "visibleBounds": {
+        "x": 37,
+        "y": 77,
+        "w": 49,
+        "h": 52
+      }
+    },
+    "ref-mecha-death-2": {
+      "key": "ref-mecha-death-2",
+      "width": 144,
+      "height": 144,
+      "anchor": {
+        "x": 64,
+        "y": 128
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 916,
+        "y": 420,
+        "w": 85,
+        "h": 64
+      },
+      "scale": 1.05,
+      "cropOffset": [
+        19,
+        71
+      ],
+      "pixelSha256": "3b4b3cbffde76550796286057f2434ffcd577969253248eaa550ee205112ed2e",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5770220588235294
+      },
+      "body": {
+        "x": 38,
+        "y": 57,
+        "w": 52,
+        "h": 71
+      },
+      "family": "mecha",
+      "action": "death",
+      "muzzle": [
+        120,
+        80
+      ],
+      "core": [
+        64,
+        79
+      ],
+      "visibleBounds": {
+        "x": 26,
+        "y": 78,
+        "w": 75,
+        "h": 50
+      }
+    },
+    "ref-wyrm-idle-0": {
+      "key": "ref-wyrm-idle-0",
+      "width": 256,
+      "height": 224,
+      "anchor": {
+        "x": 128,
+        "y": 200
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 10,
+        "y": 551,
+        "w": 269,
+        "h": 152
+      },
+      "scale": 0.82,
+      "cropOffset": [
+        19,
+        70
+      ],
+      "pixelSha256": "f4de4292feb5f42290c49a9e667829a36047add8c79b5f628495a6fddd4c05b2",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.471801017413422
+      },
+      "body": {
+        "x": 72,
+        "y": 114,
+        "w": 112,
+        "h": 86
+      },
+      "mouth": [
+        228,
+        128
+      ],
+      "core": [
+        145,
+        146
+      ],
+      "launcher": [
+        156,
+        100
+      ],
+      "family": "wyrm",
+      "action": "idle",
+      "sourceMouth": [
+        265,
+        622
+      ],
+      "sourceCore": [
+        164,
+        644
+      ],
+      "visibleBounds": {
+        "x": 20,
+        "y": 73,
+        "w": 219,
+        "h": 119
+      }
+    },
+    "ref-wyrm-fly-0": {
+      "key": "ref-wyrm-fly-0",
+      "width": 256,
+      "height": 256,
+      "anchor": {
+        "x": 128,
+        "y": 200
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 279,
+        "y": 551,
+        "w": 140,
+        "h": 126
+      },
+      "scale": 1.48,
+      "cropOffset": [
+        43,
+        53
+      ],
+      "pixelSha256": "0f0f5421cffef490132ca845206478d7e0645ee2aecd919472d32f61c76df2a7",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.6434807256235827
+      },
+      "body": {
+        "x": 72,
+        "y": 114,
+        "w": 112,
+        "h": 86
+      },
+      "mouth": [
+        228,
+        128
+      ],
+      "core": [
+        144,
+        165
+      ],
+      "launcher": [
+        156,
+        100
+      ],
+      "family": "wyrm",
+      "action": "fly",
+      "sourceMouth": [
+        404,
+        602
+      ],
+      "sourceCore": [
+        347,
+        627
+      ],
+      "visibleBounds": {
+        "x": 47,
+        "y": 60,
+        "w": 194,
+        "h": 170
+      }
+    },
+    "ref-wyrm-fly-1": {
+      "key": "ref-wyrm-fly-1",
+      "width": 256,
+      "height": 256,
+      "anchor": {
+        "x": 128,
+        "y": 200
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 417,
+        "y": 550,
+        "w": 132,
+        "h": 123
+      },
+      "scale": 1.5,
+      "cropOffset": [
+        47,
+        62
+      ],
+      "pixelSha256": "05be87d416bef63a365a5f8b9d72f29d1f3cb55bcb9d0a1253692bfc280e0dbb",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.644370534614437
+      },
+      "body": {
+        "x": 72,
+        "y": 114,
+        "w": 112,
+        "h": 86
+      },
+      "mouth": [
+        228,
+        128
+      ],
+      "core": [
+        140,
+        176
+      ],
+      "launcher": [
+        156,
+        100
+      ],
+      "family": "wyrm",
+      "action": "fly",
+      "sourceMouth": [
+        538,
+        594
+      ],
+      "sourceCore": [
+        479,
+        626
+      ],
+      "visibleBounds": {
+        "x": 47,
+        "y": 69,
+        "w": 169,
+        "h": 164
+      }
+    },
+    "ref-wyrm-fire-0": {
+      "key": "ref-wyrm-fire-0",
+      "width": 256,
+      "height": 224,
+      "anchor": {
+        "x": 128,
+        "y": 200
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 646,
+        "y": 551,
+        "w": 177,
+        "h": 137
+      },
+      "scale": 1.45,
+      "cropOffset": [
+        -1,
+        35
+      ],
+      "pixelSha256": "4112deda2ba5f9112cb545e7f521ee10d1e09a6900de4b45c44bbf5c4b4e6187",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.6668728607365252
+      },
+      "body": {
+        "x": 72,
+        "y": 114,
+        "w": 112,
+        "h": 86
+      },
+      "mouth": [
+        228,
+        128
+      ],
+      "core": [
+        132,
+        164
+      ],
+      "launcher": [
+        156,
+        100
+      ],
+      "family": "wyrm",
+      "action": "fire",
+      "sourceMouth": [
+        804,
+        615
+      ],
+      "sourceCore": [
+        738,
+        640
+      ],
+      "visibleBounds": {
+        "x": 25,
+        "y": 44,
+        "w": 219,
+        "h": 167
+      }
+    },
+    "ref-wyrm-fire-1": {
+      "key": "ref-wyrm-fire-1",
+      "width": 256,
+      "height": 224,
+      "anchor": {
+        "x": 128,
+        "y": 200
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 12,
+        "y": 714,
+        "w": 170,
+        "h": 132
+      },
+      "scale": 1.3,
+      "cropOffset": [
+        25,
+        41
+      ],
+      "pixelSha256": "a74740427bee59e62f6da3f1ac9202342a3826777acda816d7634bbf463a551b",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.6397504456327986
+      },
+      "body": {
+        "x": 72,
+        "y": 114,
+        "w": 112,
+        "h": 86
+      },
+      "mouth": [
+        228,
+        128
+      ],
+      "core": [
+        142,
+        168
+      ],
+      "launcher": [
+        156,
+        100
+      ],
+      "family": "wyrm",
+      "action": "fire",
+      "sourceMouth": [
+        168,
+        781
+      ],
+      "sourceCore": [
+        102,
+        812
+      ],
+      "visibleBounds": {
+        "x": 26,
+        "y": 44,
+        "w": 208,
+        "h": 160
+      }
+    },
+    "ref-wyrm-fire-2": {
+      "key": "ref-wyrm-fire-2",
+      "width": 256,
+      "height": 224,
+      "anchor": {
+        "x": 128,
+        "y": 200
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 164,
+        "y": 735,
+        "w": 119,
+        "h": 110
+      },
+      "scale": 1.48,
+      "cropOffset": [
+        70,
+        57
+      ],
+      "pixelSha256": "7cc7d8a95690cb9dbcc66df36d0624e165b93ceea63eadefa5dbe93bcc114eab",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.6547746371275783
+      },
+      "body": {
+        "x": 72,
+        "y": 114,
+        "w": 112,
+        "h": 86
+      },
+      "mouth": [
+        228,
+        128
+      ],
+      "core": [
+        166,
+        164
+      ],
+      "launcher": [
+        156,
+        100
+      ],
+      "family": "wyrm",
+      "action": "fire",
+      "sourceMouth": [
+        271,
+        783
+      ],
+      "sourceCore": [
+        229,
+        807
+      ],
+      "visibleBounds": {
+        "x": 70,
+        "y": 64,
+        "w": 167,
+        "h": 120
+      }
+    },
+    "ref-wyrm-hurt-0": {
+      "key": "ref-wyrm-hurt-0",
+      "width": 256,
+      "height": 224,
+      "anchor": {
+        "x": 128,
+        "y": 200
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 285,
+        "y": 708,
+        "w": 130,
+        "h": 145
+      },
+      "scale": 1.4,
+      "cropOffset": [
+        64,
+        31
+      ],
+      "pixelSha256": "49614585cc402915dac8fc669712611a6f85a1650965ae5612147b24b386bc57",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.6327320954907162
+      },
+      "body": {
+        "x": 72,
+        "y": 114,
+        "w": 112,
+        "h": 86
+      },
+      "mouth": [
+        228,
+        128
+      ],
+      "core": [
+        155,
+        173
+      ],
+      "launcher": [
+        156,
+        100
+      ],
+      "family": "wyrm",
+      "action": "hurt",
+      "sourceMouth": [
+        402,
+        777
+      ],
+      "sourceCore": [
+        350,
+        809
+      ],
+      "visibleBounds": {
+        "x": 64,
+        "y": 32,
+        "w": 155,
+        "h": 181
+      }
+    },
+    "ref-wyrm-hurt-1": {
+      "key": "ref-wyrm-hurt-1",
+      "width": 256,
+      "height": 224,
+      "anchor": {
+        "x": 128,
+        "y": 200
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 383,
+        "y": 716,
+        "w": 96,
+        "h": 126
+      },
+      "scale": 1.42,
+      "cropOffset": [
+        112,
+        44
+      ],
+      "pixelSha256": "6481538589c9b3424b56494c134bd7c2b8912f3279a4201c3db0b4745406d004",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5856481481481481
+      },
+      "body": {
+        "x": 72,
+        "y": 114,
+        "w": 112,
+        "h": 86
+      },
+      "mouth": [
+        228,
+        128
+      ],
+      "core": [
+        171,
+        165
+      ],
+      "launcher": [
+        156,
+        100
+      ],
+      "family": "wyrm",
+      "action": "hurt",
+      "sourceMouth": [
+        465,
+        775
+      ],
+      "sourceCore": [
+        425,
+        801
+      ],
+      "visibleBounds": {
+        "x": 112,
+        "y": 44,
+        "w": 128,
+        "h": 162
+      }
+    },
+    "ref-wyrm-hurt-2": {
+      "key": "ref-wyrm-hurt-2",
+      "width": 256,
+      "height": 224,
+      "anchor": {
+        "x": 128,
+        "y": 200
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 475,
+        "y": 725,
+        "w": 143,
+        "h": 129
+      },
+      "scale": 1.38,
+      "cropOffset": [
+        64,
+        22
+      ],
+      "pixelSha256": "63dda5415609840f83575ea22b335ac9e1fb535c10b19265f602f5072b1d2ebe",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.6128909849840083
+      },
+      "body": {
+        "x": 72,
+        "y": 114,
+        "w": 112,
+        "h": 86
+      },
+      "mouth": [
+        228,
+        128
+      ],
+      "core": [
+        152,
+        158
+      ],
+      "launcher": [
+        156,
+        100
+      ],
+      "family": "wyrm",
+      "action": "hurt",
+      "sourceMouth": [
+        594,
+        802
+      ],
+      "sourceCore": [
+        539,
+        824
+      ],
+      "visibleBounds": {
+        "x": 64,
+        "y": 22,
+        "w": 171,
+        "h": 152
+      }
+    },
+    "ref-wyrm-death-0": {
+      "key": "ref-wyrm-death-0",
+      "width": 256,
+      "height": 224,
+      "anchor": {
+        "x": 128,
+        "y": 200
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 615,
+        "y": 763,
+        "w": 212,
+        "h": 70
+      },
+      "scale": 0.97,
+      "cropOffset": [
+        38,
+        80
+      ],
+      "pixelSha256": "19f227e12f1cbdaf0695ec66f5836a13e12dfa7556721486fed05e326e93ef7e",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.5318733153638814
+      },
+      "body": {
+        "x": 72,
+        "y": 114,
+        "w": 112,
+        "h": 86
+      },
+      "mouth": [
+        228,
+        128
+      ],
+      "core": [
+        102,
+        113
+      ],
+      "launcher": [
+        156,
+        100
+      ],
+      "family": "wyrm",
+      "action": "death",
+      "sourceMouth": [
+        811,
+        813
+      ],
+      "sourceCore": [
+        681,
+        798
+      ],
+      "visibleBounds": {
+        "x": 39,
+        "y": 86,
+        "w": 203,
+        "h": 53
+      }
+    },
+    "ref-npc-villager": {
+      "key": "ref-npc-villager",
+      "width": 96,
+      "height": 128,
+      "anchor": {
+        "x": 48,
+        "y": 106
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 626,
+        "y": 165,
+        "w": 53,
+        "h": 93
+      },
+      "scale": 1.12,
+      "cropOffset": [
+        21,
+        11
+      ],
+      "pixelSha256": "4f2b3f8d84525bb8eff39e00a0724cf794ed3e039835cb5c74f56a0098d9d90f",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.36843173057415296
+      },
+      "body": {
+        "x": 32,
+        "y": 43,
+        "w": 32,
+        "h": 63
+      },
+      "family": "npc",
+      "name": "villager",
+      "visibleBounds": {
+        "x": 21,
+        "y": 17,
+        "w": 52,
+        "h": 98
+      }
+    },
+    "ref-face-villager": {
+      "key": "ref-face-villager",
+      "width": 30,
+      "height": 33,
+      "anchor": {
+        "x": 15.0,
+        "y": 32
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 637,
+        "y": 175,
+        "w": 30,
+        "h": 33
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "49e474fcd28d72e278c19671c46935f4d0cd40d85b3336d1866ad69648ac29aa",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.09696969696969697
+      },
+      "family": "portrait",
+      "name": "villager",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 30,
+        "h": 33
+      }
+    },
+    "ref-npc-mage": {
+      "key": "ref-npc-mage",
+      "width": 96,
+      "height": 128,
+      "anchor": {
+        "x": 48,
+        "y": 106
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 687,
+        "y": 168,
+        "w": 67,
+        "h": 89
+      },
+      "scale": 1.12,
+      "cropOffset": [
+        16,
+        14
+      ],
+      "pixelSha256": "b8ea3a2516a811a4919786ab5eb2163e3a95056b2ff1b8ec6beaa157197b5295",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.33305383196377664
+      },
+      "body": {
+        "x": 32,
+        "y": 43,
+        "w": 32,
+        "h": 63
+      },
+      "family": "npc",
+      "name": "mage",
+      "visibleBounds": {
+        "x": 19,
+        "y": 14,
+        "w": 71,
+        "h": 97
+      }
+    },
+    "ref-face-mage": {
+      "key": "ref-face-mage",
+      "width": 30,
+      "height": 30,
+      "anchor": {
+        "x": 15.0,
+        "y": 29
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 700,
+        "y": 183,
+        "w": 30,
+        "h": 30
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "d10d028ca8e8ff90f82121624909d67364cef54a1071267ec463778e612ca845",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.056666666666666664
+      },
+      "family": "portrait",
+      "name": "mage",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 30,
+        "h": 30
+      }
+    },
+    "ref-npc-blacksmith": {
+      "key": "ref-npc-blacksmith",
+      "width": 96,
+      "height": 128,
+      "anchor": {
+        "x": 48,
+        "y": 106
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 763,
+        "y": 168,
+        "w": 73,
+        "h": 91
+      },
+      "scale": 1.12,
+      "cropOffset": [
+        12,
+        13
+      ],
+      "pixelSha256": "880ce92b20a1d191121ebd79c72da2397d2f92d223b9a5fc5aec3c12bee355ed",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.4522053289176577
+      },
+      "body": {
+        "x": 32,
+        "y": 43,
+        "w": 32,
+        "h": 63
+      },
+      "family": "npc",
+      "name": "blacksmith",
+      "visibleBounds": {
+        "x": 15,
+        "y": 15,
+        "w": 73,
+        "h": 96
+      }
+    },
+    "ref-face-blacksmith": {
+      "key": "ref-face-blacksmith",
+      "width": 32,
+      "height": 39,
+      "anchor": {
+        "x": 16.0,
+        "y": 38
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 780,
+        "y": 174,
+        "w": 32,
+        "h": 39
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "a53d7b439afcef8261487643df79a29ff14503e34c13385387bffeb6693161aa",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.05048076923076923
+      },
+      "family": "portrait",
+      "name": "blacksmith",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 39
+      }
+    },
+    "ref-npc-scientist": {
+      "key": "ref-npc-scientist",
+      "width": 96,
+      "height": 128,
+      "anchor": {
+        "x": 48,
+        "y": 106
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 842,
+        "y": 174,
+        "w": 51,
+        "h": 84
+      },
+      "scale": 1.12,
+      "cropOffset": [
+        21,
+        19
+      ],
+      "pixelSha256": "bfa5c1ab674c0fdd58a6cd18d277e63fe5e32cce1786df12c385e2e8792b1be7",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.4437441643323996
+      },
+      "body": {
+        "x": 32,
+        "y": 43,
+        "w": 32,
+        "h": 63
+      },
+      "family": "npc",
+      "name": "scientist",
+      "visibleBounds": {
+        "x": 25,
+        "y": 23,
+        "w": 45,
+        "h": 86
+      }
+    },
+    "ref-face-scientist": {
+      "key": "ref-face-scientist",
+      "width": 32,
+      "height": 35,
+      "anchor": {
+        "x": 16.0,
+        "y": 34
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 850,
+        "y": 179,
+        "w": 33,
+        "h": 35
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "c0ce595d49ed1953c9c1481cea8aa597491158e8d849ba8c138e7146006087a1",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.15324675324675324
+      },
+      "family": "portrait",
+      "name": "scientist",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 35
+      }
+    },
+    "ref-npc-merchant": {
+      "key": "ref-npc-merchant",
+      "width": 96,
+      "height": 128,
+      "anchor": {
+        "x": 48,
+        "y": 106
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 905,
+        "y": 166,
+        "w": 65,
+        "h": 91
+      },
+      "scale": 1.12,
+      "cropOffset": [
+        14,
+        11
+      ],
+      "pixelSha256": "408400b4a697170432894d64eb1d0368a17cf73dac9620be8e123194db4c9232",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.3546914623837701
+      },
+      "body": {
+        "x": 32,
+        "y": 43,
+        "w": 32,
+        "h": 63
+      },
+      "family": "npc",
+      "name": "merchant",
+      "visibleBounds": {
+        "x": 18,
+        "y": 13,
+        "w": 61,
+        "h": 100
+      }
+    },
+    "ref-face-merchant": {
+      "key": "ref-face-merchant",
+      "width": 33,
+      "height": 38,
+      "anchor": {
+        "x": 16.5,
+        "y": 37
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 919,
+        "y": 174,
+        "w": 33,
+        "h": 38
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "1b9dfd396b33b618d67b5ece0a23481c90f1b208c9c480c89e019cc12f7d6915",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.027910685805422646
+      },
+      "family": "portrait",
+      "name": "merchant",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 33,
+        "h": 38
+      }
+    },
+    "ref-npc-healer": {
+      "key": "ref-npc-healer",
+      "width": 96,
+      "height": 128,
+      "anchor": {
+        "x": 48,
+        "y": 106
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 983,
+        "y": 166,
+        "w": 50,
+        "h": 92
+      },
+      "scale": 1.12,
+      "cropOffset": [
+        19,
+        10
+      ],
+      "pixelSha256": "46560fd99dd6ec720bc4408d60b989a073676a27bbf95c74c4f4abf6ebe39373",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": true,
+        "transparentFraction": 0.3823913043478261
+      },
+      "body": {
+        "x": 32,
+        "y": 43,
+        "w": 32,
+        "h": 63
+      },
+      "family": "npc",
+      "name": "healer",
+      "visibleBounds": {
+        "x": 21,
+        "y": 14,
+        "w": 52,
+        "h": 96
+      }
+    },
+    "ref-face-healer": {
+      "key": "ref-face-healer",
+      "width": 30,
+      "height": 37,
+      "anchor": {
+        "x": 15.0,
+        "y": 36
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 993,
+        "y": 175,
+        "w": 30,
+        "h": 37
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "72e862af2cfd6580e628a27d123fccae8b81fb5e5a467b0aff39796a4ed43851",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.025225225225225224
+      },
+      "family": "portrait",
+      "name": "healer",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 30,
+        "h": 37
+      }
+    },
+    "ref-face-aether": {
+      "key": "ref-face-aether",
+      "width": 63,
+      "height": 84,
+      "anchor": {
+        "x": 31.5,
+        "y": 83
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 631,
+        "y": 883,
+        "w": 63,
+        "h": 84
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "d4f9bcfba40162dba745da815a73afc536690c58fdc5c4ac9ea4f23bd22d6dca",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": true,
+        "transparentFraction": 0.07539682539682539
+      },
+      "family": "portrait",
+      "name": "aether",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 63,
+        "h": 84
+      }
+    },
+    "ref-tile-grass": {
+      "key": "ref-tile-grass",
+      "width": 64,
+      "height": 64,
+      "anchor": {
+        "x": 32.0,
+        "y": 63
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 19,
+        "y": 555,
+        "w": 39,
+        "h": 43
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "10398bf7494087bba64127ab6efae27d800ca728d6f1ad136a6af7148a3bcdba",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "tile",
+      "targetSize": [
+        64,
+        64
+      ],
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "ref-tile-dirt": {
+      "key": "ref-tile-dirt",
+      "width": 64,
+      "height": 64,
+      "anchor": {
+        "x": 32.0,
+        "y": 63
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 65,
+        "y": 555,
+        "w": 38,
+        "h": 43
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "3918d8dc204372a557eb2990031102bb2ef730807ad75c58bf2db955955d39f6",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "tile",
+      "targetSize": [
+        64,
+        64
+      ],
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "ref-tile-stone": {
+      "key": "ref-tile-stone",
+      "width": 64,
+      "height": 64,
+      "anchor": {
+        "x": 32.0,
+        "y": 63
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 109,
+        "y": 555,
+        "w": 39,
+        "h": 43
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "3a4b46cc849649fe40c74abaaaf01c0de6110d4f47cf75331f6db6e32f1652e4",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "tile",
+      "targetSize": [
+        64,
+        64
+      ],
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "ref-tile-moss": {
+      "key": "ref-tile-moss",
+      "width": 64,
+      "height": 64,
+      "anchor": {
+        "x": 32.0,
+        "y": 63
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 153,
+        "y": 555,
+        "w": 40,
+        "h": 43
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "126a0fff38699f109a9ae5d6691394c9129f17dcb966e4cd263bb3007e95a10b",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "tile",
+      "targetSize": [
+        64,
+        64
+      ],
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "ref-tile-crystal": {
+      "key": "ref-tile-crystal",
+      "width": 64,
+      "height": 64,
+      "anchor": {
+        "x": 32.0,
+        "y": 63
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 197,
+        "y": 555,
+        "w": 39,
+        "h": 43
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "8bdbe17b925550783d92709a4d6a0204c2aa2e09d4427ad157ef418e40775431",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "tile",
+      "targetSize": [
+        64,
+        64
+      ],
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "ref-tile-ruins": {
+      "key": "ref-tile-ruins",
+      "width": 64,
+      "height": 64,
+      "anchor": {
+        "x": 32.0,
+        "y": 63
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 576,
+        "y": 552,
+        "w": 42,
+        "h": 49
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "0340cdf481c5a798484709938bb486afd3cda60ead74244c27b624b0dc2751ec",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "tile",
+      "targetSize": [
+        64,
+        64
+      ],
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "ref-tile-cave": {
+      "key": "ref-tile-cave",
+      "width": 64,
+      "height": 64,
+      "anchor": {
+        "x": 32.0,
+        "y": 63
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 14,
+        "y": 701,
+        "w": 49,
+        "h": 62
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "5a1a0de2c70076bc7664398f45164fe4b0f326af45f6359aa26fd70980983066",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "tile",
+      "targetSize": [
+        64,
+        64
+      ],
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "ref-tile-cave-wall": {
+      "key": "ref-tile-cave-wall",
+      "width": 64,
+      "height": 64,
+      "anchor": {
+        "x": 32.0,
+        "y": 63
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 69,
+        "y": 701,
+        "w": 44,
+        "h": 62
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "60f281163c852d94f8bee9c5cf4a8ad2b91e3caf2353e421c0af29c9f8d01fb4",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "tile",
+      "targetSize": [
+        64,
+        64
+      ],
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "ref-tile-metal": {
+      "key": "ref-tile-metal",
+      "width": 64,
+      "height": 64,
+      "anchor": {
+        "x": 32.0,
+        "y": 63
+      },
+      "source": "01_concept_board_full_world.png",
+      "sourceRect": {
+        "x": 657,
+        "y": 42,
+        "w": 49,
+        "h": 51
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "32627fc530c648ed10a41532693334e9f9bb8e635f8b8214c9d23f32f9cc353e",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "tile",
+      "targetSize": [
+        64,
+        64
+      ],
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "ref-tile-snow": {
+      "key": "ref-tile-snow",
+      "width": 64,
+      "height": 64,
+      "anchor": {
+        "x": 32.0,
+        "y": 63
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 109,
+        "y": 555,
+        "w": 39,
+        "h": 43
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "3a4b46cc849649fe40c74abaaaf01c0de6110d4f47cf75331f6db6e32f1652e4",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "tile",
+      "targetSize": [
+        64,
+        64
+      ],
+      "aliasOf": "ref-tile-stone",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      }
+    },
+    "ref-prop-platform": {
+      "key": "ref-prop-platform",
+      "width": 53,
+      "height": 22,
+      "anchor": {
+        "x": 26.5,
+        "y": 21
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 288,
+        "y": 554,
+        "w": 56,
+        "h": 24
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        -2
+      ],
+      "pixelSha256": "21f96d7af28b73f6df2f7a4c979d902f474bd985f81aefc86e00e4e800526de5",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.1636904761904762
+      },
+      "family": "prop",
+      "name": "platform",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 53,
+        "h": 22
+      }
+    },
+    "ref-prop-platform-moving": {
+      "key": "ref-prop-platform-moving",
+      "width": 53,
+      "height": 22,
+      "anchor": {
+        "x": 26.5,
+        "y": 21
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 288,
+        "y": 576,
+        "w": 56,
+        "h": 23
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "222631d1eb603665f85e1c6f88313ff6a3ca7cc15030f3e2b39d79643fdb1580",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.2360248447204969
+      },
+      "family": "prop",
+      "name": "platform-moving",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 53,
+        "h": 22
+      }
+    },
+    "ref-prop-ladder": {
+      "key": "ref-prop-ladder",
+      "width": 32,
+      "height": 60,
+      "anchor": {
+        "x": 16.0,
+        "y": 59
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 352,
+        "y": 549,
+        "w": 36,
+        "h": 62
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        -2
+      ],
+      "pixelSha256": "c996125586ea899341e78811005db4bf6eb5e496df6e089e0416f7bf0eb06b26",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.20967741935483872
+      },
+      "family": "prop",
+      "name": "ladder",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 60
+      }
+    },
+    "ref-prop-spikes": {
+      "key": "ref-prop-spikes",
+      "width": 49,
+      "height": 44,
+      "anchor": {
+        "x": 24.5,
+        "y": 43
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 396,
+        "y": 555,
+        "w": 50,
+        "h": 49
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        -5
+      ],
+      "pixelSha256": "835064dd1a89211c2ae540639130ec13b68b4bd873ffe35209164f7c14ab457a",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.28530612244897957
+      },
+      "family": "prop",
+      "name": "spikes",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 49,
+        "h": 44
+      }
+    },
+    "ref-prop-arch": {
+      "key": "ref-prop-arch",
+      "width": 42,
+      "height": 54,
+      "anchor": {
+        "x": 21.0,
+        "y": 53
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 745,
+        "y": 550,
+        "w": 46,
+        "h": 58
+      },
+      "scale": 1,
+      "cropOffset": [
+        -1,
+        0
+      ],
+      "pixelSha256": "607f754dc336c17bed23deb5122f0ca5a4da0505f4f1eaabd166df6fe7dc8cf1",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.32796101949025486
+      },
+      "family": "prop",
+      "name": "arch",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 42,
+        "h": 54
+      }
+    },
+    "ref-prop-pillar": {
+      "key": "ref-prop-pillar",
+      "width": 30,
+      "height": 57,
+      "anchor": {
+        "x": 15.0,
+        "y": 56
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 706,
+        "y": 550,
+        "w": 37,
+        "h": 57
+      },
+      "scale": 1,
+      "cropOffset": [
+        -2,
+        0
+      ],
+      "pixelSha256": "cfb930a9ce266c37a7fd03ab7ab746b712df7e2d65c3528c7fe8648411d29d36",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.3134186818397345
+      },
+      "family": "prop",
+      "name": "pillar",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 30,
+        "h": 57
+      }
+    },
+    "ref-prop-gate": {
+      "key": "ref-prop-gate",
+      "width": 61,
+      "height": 104,
+      "anchor": {
+        "x": 30.5,
+        "y": 103
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1460,
+        "y": 688,
+        "w": 64,
+        "h": 108
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "057fec41e1bd8dad9b46f6f6bd1e691f429d3c561d2664b5f7dc5a2172b025ca",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.3250868055555556
+      },
+      "family": "prop",
+      "name": "gate",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 61,
+        "h": 104
+      }
+    },
+    "ref-prop-teleporter": {
+      "key": "ref-prop-teleporter",
+      "width": 70,
+      "height": 93,
+      "anchor": {
+        "x": 35.0,
+        "y": 92
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1387,
+        "y": 689,
+        "w": 76,
+        "h": 110
+      },
+      "scale": 1,
+      "cropOffset": [
+        -6,
+        -10
+      ],
+      "pixelSha256": "00a0a3151495114a1fabebb83ff5507fd6dfff1b87f29be7076d4a76b5be4d9a",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.43779904306220097
+      },
+      "family": "prop",
+      "name": "teleporter",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 70,
+        "h": 93
+      }
+    },
+    "ref-prop-tree": {
+      "key": "ref-prop-tree",
+      "width": 68,
+      "height": 105,
+      "anchor": {
+        "x": 34.0,
+        "y": 104
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1130,
+        "y": 683,
+        "w": 68,
+        "h": 110
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "3becb269700630061da493bd75538493c079e5a79027b993998326e67d45331a",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.4605614973262032
+      },
+      "family": "prop",
+      "name": "tree",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 68,
+        "h": 105
+      }
+    },
+    "ref-prop-dead-tree": {
+      "key": "ref-prop-dead-tree",
+      "width": 59,
+      "height": 82,
+      "anchor": {
+        "x": 29.5,
+        "y": 81
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1190,
+        "y": 706,
+        "w": 64,
+        "h": 88
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        -4
+      ],
+      "pixelSha256": "ae577f7de78051f3059eda0313f84ac736693426516b9fcee67783c9973078d1",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.4891690340909091
+      },
+      "family": "prop",
+      "name": "dead-tree",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 59,
+        "h": 82
+      }
+    },
+    "ref-prop-crystal": {
+      "key": "ref-prop-crystal",
+      "width": 84,
+      "height": 99,
+      "anchor": {
+        "x": 42.0,
+        "y": 98
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1247,
+        "y": 686,
+        "w": 86,
+        "h": 109
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        -9
+      ],
+      "pixelSha256": "9466aa6519eeaae68ffcdd86a4d2a11e338fc426c33e2b7b4f27aed33cccf17a",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.5069340729677833
+      },
+      "family": "prop",
+      "name": "crystal",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 84,
+        "h": 99
+      }
+    },
+    "ref-prop-statue": {
+      "key": "ref-prop-statue",
+      "width": 41,
+      "height": 106,
+      "anchor": {
+        "x": 20.5,
+        "y": 105
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1335,
+        "y": 686,
+        "w": 52,
+        "h": 111
+      },
+      "scale": 1,
+      "cropOffset": [
+        -3,
+        0
+      ],
+      "pixelSha256": "3d4be544ee5de0364486b54cddbf08723229fbb1a64cfa02db48f8df5f04e63a",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.4407484407484408
+      },
+      "family": "prop",
+      "name": "statue",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 41,
+        "h": 106
+      }
+    },
+    "ref-prop-torch": {
+      "key": "ref-prop-torch",
+      "width": 19,
+      "height": 50,
+      "anchor": {
+        "x": 9.5,
+        "y": 49
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 900,
+        "y": 550,
+        "w": 30,
+        "h": 55
+      },
+      "scale": 1,
+      "cropOffset": [
+        -7,
+        -3
+      ],
+      "pixelSha256": "f6f29b4bb19b44d405bef6dd052f3fc93a68325d2977e922b1233d5b07eceacc",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.5981818181818181
+      },
+      "family": "prop",
+      "name": "torch",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 19,
+        "h": 50
+      }
+    },
+    "ref-prop-chain": {
+      "key": "ref-prop-chain",
+      "width": 24,
+      "height": 55,
+      "anchor": {
+        "x": 12.0,
+        "y": 54
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 866,
+        "y": 550,
+        "w": 31,
+        "h": 58
+      },
+      "scale": 1,
+      "cropOffset": [
+        -1,
+        -1
+      ],
+      "pixelSha256": "9f14be0b94a950ae197cb229e256b85622ba9814868934b35c968275a4db856c",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.6323692992213571
+      },
+      "family": "prop",
+      "name": "chain",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 55
+      }
+    },
+    "ref-prop-chest": {
+      "key": "ref-prop-chest",
+      "width": 70,
+      "height": 48,
+      "anchor": {
+        "x": 35.0,
+        "y": 47
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1416,
+        "y": 149,
+        "w": 86,
+        "h": 51
+      },
+      "scale": 1,
+      "cropOffset": [
+        -4,
+        -3
+      ],
+      "pixelSha256": "33dfcaa4697dc1328fba3030750359d446e467f19fcc456c281249c3a304b370",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.29001367989056087
+      },
+      "family": "prop",
+      "name": "chest",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 70,
+        "h": 48
+      }
+    },
+    "ref-prop-turret": {
+      "key": "ref-prop-turret",
+      "width": 50,
+      "height": 70,
+      "anchor": {
+        "x": 25.0,
+        "y": 69
+      },
+      "source": "01_concept_board_full_world.png",
+      "sourceRect": {
+        "x": 1100,
+        "y": 651,
+        "w": 61,
+        "h": 80
+      },
+      "scale": 1,
+      "cropOffset": [
+        -2,
+        -6
+      ],
+      "pixelSha256": "ba3c49f99df4f65bbd1f7c6b18c99fe980568d92dadea140db1a439d93570283",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.5596311475409836
+      },
+      "family": "prop",
+      "name": "turret",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 50,
+        "h": 70
+      }
+    },
+    "ref-prop-banner": {
+      "key": "ref-prop-banner",
+      "width": 43,
+      "height": 61,
+      "anchor": {
+        "x": 21.5,
+        "y": 60
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 500,
+        "y": 548,
+        "w": 45,
+        "h": 63
+      },
+      "scale": 1,
+      "cropOffset": [
+        -1,
+        0
+      ],
+      "pixelSha256": "7abea1d0f4e5b3120353a3ba4c3100a6170bf8b2d262c48d0f0758dd9ba8c4ce",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.2571428571428571
+      },
+      "family": "prop",
+      "name": "banner",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 61
+      }
+    },
+    "ref-prop-water": {
+      "key": "ref-prop-water",
+      "width": 48,
+      "height": 62,
+      "anchor": {
+        "x": 24.0,
+        "y": 61
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 426,
+        "y": 704,
+        "w": 48,
+        "h": 62
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "e46f2b49d575a5f7b51bc73eb63b13cf44d37b1dd27e40289238bb35177d1dfb",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.041666666666666664
+      },
+      "family": "prop",
+      "name": "water",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 48,
+        "h": 62
+      }
+    },
+    "ref-prop-waterfall": {
+      "key": "ref-prop-waterfall",
+      "width": 41,
+      "height": 67,
+      "anchor": {
+        "x": 20.5,
+        "y": 66
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 486,
+        "y": 699,
+        "w": 43,
+        "h": 68
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        -1
+      ],
+      "pixelSha256": "62c278ffe4e89e8681b6049061c6018d9756c807bffbb510b5925118ab4baf73",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.106703146374829
+      },
+      "family": "prop",
+      "name": "waterfall",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 41,
+        "h": 67
+      }
+    },
+    "ref-prop-crystal-plant": {
+      "key": "ref-prop-crystal-plant",
+      "width": 66,
+      "height": 58,
+      "anchor": {
+        "x": 33.0,
+        "y": 57
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 347,
+        "y": 702,
+        "w": 71,
+        "h": 60
+      },
+      "scale": 1,
+      "cropOffset": [
+        -3,
+        -2
+      ],
+      "pixelSha256": "5e68e55849fa62f4daef4afed66eb38d421a6fb3878a40c8a937b5e6ed84b203",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.3636150234741784
+      },
+      "family": "prop",
+      "name": "crystal-plant",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 66,
+        "h": 58
+      }
+    },
+    "ref-prop-door": {
+      "key": "ref-prop-door",
+      "width": 60,
+      "height": 57,
+      "anchor": {
+        "x": 30.0,
+        "y": 56
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 796,
+        "y": 550,
+        "w": 62,
+        "h": 58
+      },
+      "scale": 1,
+      "cropOffset": [
+        -1,
+        -1
+      ],
+      "pixelSha256": "a063c68ae6bfa9400a553ec60e49eea2fba6dd2773c9f71a6bec3b9fd09f667c",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.19299221357063404
+      },
+      "family": "prop",
+      "name": "door",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 60,
+        "h": 57
+      }
+    },
+    "ref-prop-sign": {
+      "key": "ref-prop-sign",
+      "width": 38,
+      "height": 43,
+      "anchor": {
+        "x": 19.0,
+        "y": 42
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 452,
+        "y": 554,
+        "w": 43,
+        "h": 49
+      },
+      "scale": 1,
+      "cropOffset": [
+        -2,
+        -6
+      ],
+      "pixelSha256": "50454ecc7f1a3bdfe772da262763c20982b9773ec3380521e26bac291c429a37",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.45230185097294734
+      },
+      "family": "prop",
+      "name": "sign",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 38,
+        "h": 43
+      }
+    },
+    "ref-bg-forest": {
+      "key": "ref-bg-forest",
+      "width": 100,
+      "height": 123,
+      "anchor": {
+        "x": 50.0,
+        "y": 122
+      },
+      "source": "01_concept_board_full_world.png",
+      "sourceRect": {
+        "x": 1020,
+        "y": 13,
+        "w": 100,
+        "h": 123
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "717f7afd115481c36e4f8343a0518708d3935c4a6f3219a66fec8d94f41a5f1e",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "forest",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 123
+      }
+    },
+    "ref-bg-sky": {
+      "key": "ref-bg-sky",
+      "width": 104,
+      "height": 123,
+      "anchor": {
+        "x": 52.0,
+        "y": 122
+      },
+      "source": "01_concept_board_full_world.png",
+      "sourceRect": {
+        "x": 1125,
+        "y": 13,
+        "w": 104,
+        "h": 123
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "426bf46b824a87a9fc882b7dbfa2e8936efc5ce1a9dc075c0ab72e57db7df9e7",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "sky",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 104,
+        "h": 123
+      }
+    },
+    "ref-bg-castle": {
+      "key": "ref-bg-castle",
+      "width": 96,
+      "height": 123,
+      "anchor": {
+        "x": 48.0,
+        "y": 122
+      },
+      "source": "01_concept_board_full_world.png",
+      "sourceRect": {
+        "x": 1232,
+        "y": 13,
+        "w": 96,
+        "h": 123
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "6da7efa86cfa8fac6399b1f8b93095f61bb471f61cbb9e17762865a63a2ca0ec",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "castle",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 123
+      }
+    },
+    "ref-bg-cave": {
+      "key": "ref-bg-cave",
+      "width": 94,
+      "height": 123,
+      "anchor": {
+        "x": 47.0,
+        "y": 122
+      },
+      "source": "01_concept_board_full_world.png",
+      "sourceRect": {
+        "x": 1331,
+        "y": 13,
+        "w": 94,
+        "h": 123
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "93d60e3e0ace6ef6db00ff628df039213d94e7687fa28a89f05cd6c2e77488fe",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "cave",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 94,
+        "h": 123
+      }
+    },
+    "ref-bg-city": {
+      "key": "ref-bg-city",
+      "width": 96,
+      "height": 123,
+      "anchor": {
+        "x": 48.0,
+        "y": 122
+      },
+      "source": "01_concept_board_full_world.png",
+      "sourceRect": {
+        "x": 1429,
+        "y": 13,
+        "w": 96,
+        "h": 123
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "4b32107896349b14f95a52d8a4106a8bd2df3f058a0a27a63bf0876f032a6304",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "city",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 123
+      }
+    },
+    "ref-bg-sky-wide": {
+      "key": "ref-bg-sky-wide",
+      "width": 491,
+      "height": 85,
+      "anchor": {
+        "x": 245.5,
+        "y": 84
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 617,
+        "y": 682,
+        "w": 491,
+        "h": 85
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "657add6ef2c9038555768f90b6b8b517653655c3b15bd0a98a62121fd74a5f90",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "sky-wide",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 491,
+        "h": 85
+      }
+    },
+    "ref-bg-forest-wide": {
+      "key": "ref-bg-forest-wide",
+      "width": 241,
+      "height": 58,
+      "anchor": {
+        "x": 120.5,
+        "y": 57
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 618,
+        "y": 774,
+        "w": 241,
+        "h": 58
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "06492d8db05561e01032aeb0f6ad194bc62cdbdef5e07bfa36c823d81f79e57a",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "forest-wide",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 241,
+        "h": 58
+      }
+    },
+    "ref-bg-cave-wide": {
+      "key": "ref-bg-cave-wide",
+      "width": 245,
+      "height": 58,
+      "anchor": {
+        "x": 122.5,
+        "y": 57
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 863,
+        "y": 774,
+        "w": 245,
+        "h": 58
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "5c46479eacf4768b85d08949912d08b590460766452e714904f384a1b81ae208",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "cave-wide",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 245,
+        "h": 58
+      }
+    },
+    "ref-bg-islands-wide": {
+      "key": "ref-bg-islands-wide",
+      "width": 295,
+      "height": 60,
+      "anchor": {
+        "x": 147.5,
+        "y": 59
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1229,
+        "y": 575,
+        "w": 295,
+        "h": 60
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "fea3071397a225479303ba0a02b952ea111abb72800c4b6b51f30d1ca1f69a89",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "islands-wide",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 295,
+        "h": 60
+      }
+    },
+    "ref-bg-ruins-wide": {
+      "key": "ref-bg-ruins-wide",
+      "width": 295,
+      "height": 69,
+      "anchor": {
+        "x": 147.5,
+        "y": 68
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1229,
+        "y": 641,
+        "w": 295,
+        "h": 69
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "72345feb3ff60b6f32e81e3c16014d509172283d62b5c22f7876970c8317c82c",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "ruins-wide",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 295,
+        "h": 69
+      }
+    },
+    "ref-bg-castle-wide": {
+      "key": "ref-bg-castle-wide",
+      "width": 157,
+      "height": 65,
+      "anchor": {
+        "x": 78.5,
+        "y": 64
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1229,
+        "y": 716,
+        "w": 157,
+        "h": 65
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "5f8e14129831ed87f1edd7da6b9111f3c8e0d1d381f12bd5106378d17b48de96",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "castle-wide",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 65
+      }
+    },
+    "ref-bg-crystals-wide": {
+      "key": "ref-bg-crystals-wide",
+      "width": 135,
+      "height": 65,
+      "anchor": {
+        "x": 67.5,
+        "y": 64
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1389,
+        "y": 716,
+        "w": 135,
+        "h": 65
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "ec80f7623e0bea7d4ebfb9344b90b45db0d7b7b062ba7c66cf5cc509b2c201ce",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "crystals-wide",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 135,
+        "h": 65
+      }
+    },
+    "ref-bg-cavern-wide": {
+      "key": "ref-bg-cavern-wide",
+      "width": 295,
+      "height": 65,
+      "anchor": {
+        "x": 147.5,
+        "y": 64
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1229,
+        "y": 787,
+        "w": 295,
+        "h": 65
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "8d025732f28682ca39a00f9187066920749c6a83a9733f248c8d9a8fb57bec65",
+      "mask": {
+        "method": "literal-opaque-panel-crop"
+      },
+      "family": "background",
+      "name": "cavern-wide",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 295,
+        "h": 65
+      }
+    },
+    "ref-item-coin": {
+      "key": "ref-item-coin",
+      "width": 33,
+      "height": 36,
+      "anchor": {
+        "x": 16.5,
+        "y": 35
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1089,
+        "y": 151,
+        "w": 42,
+        "h": 49
+      },
+      "scale": 1,
+      "cropOffset": [
+        -1,
+        -6
+      ],
+      "pixelSha256": "cfdd6b745d403fbbbb3a3088ca433a4702d08bf8ef7d74c542afb4c49eab05be",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.5267249757045676
+      },
+      "family": "item",
+      "name": "coin",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 33,
+        "h": 36
+      }
+    },
+    "ref-item-crystal": {
+      "key": "ref-item-crystal",
+      "width": 26,
+      "height": 38,
+      "anchor": {
+        "x": 13.0,
+        "y": 37
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1148,
+        "y": 151,
+        "w": 42,
+        "h": 48
+      },
+      "scale": 1,
+      "cropOffset": [
+        -7,
+        -5
+      ],
+      "pixelSha256": "0cb37f2116b22de67d66144828bc3c8619e49bb752e0ca3fc7fb8ccb2087104f",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.6671626984126984
+      },
+      "family": "item",
+      "name": "crystal",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 26,
+        "h": 38
+      }
+    },
+    "ref-item-health": {
+      "key": "ref-item-health",
+      "width": 35,
+      "height": 34,
+      "anchor": {
+        "x": 17.5,
+        "y": 33
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1205,
+        "y": 151,
+        "w": 47,
+        "h": 46
+      },
+      "scale": 1,
+      "cropOffset": [
+        -8,
+        -7
+      ],
+      "pixelSha256": "0d165cacc09f5094121227e940337c277aca44e167cde6be64113e4bcd298157",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.5985198889916744
+      },
+      "family": "item",
+      "name": "health",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 35,
+        "h": 34
+      }
+    },
+    "ref-item-mana": {
+      "key": "ref-item-mana",
+      "width": 34,
+      "height": 37,
+      "anchor": {
+        "x": 17.0,
+        "y": 36
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1273,
+        "y": 150,
+        "w": 46,
+        "h": 50
+      },
+      "scale": 1,
+      "cropOffset": [
+        -5,
+        -6
+      ],
+      "pixelSha256": "9852b880446c4041f0d0a78b21ee7b7e879af199c555d7fb010d89af4dca617d",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.542608695652174
+      },
+      "family": "item",
+      "name": "mana",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 34,
+        "h": 37
+      }
+    },
+    "ref-item-key": {
+      "key": "ref-item-key",
+      "width": 37,
+      "height": 41,
+      "anchor": {
+        "x": 18.5,
+        "y": 40
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1335,
+        "y": 148,
+        "w": 50,
+        "h": 55
+      },
+      "scale": 1,
+      "cropOffset": [
+        -4,
+        -8
+      ],
+      "pixelSha256": "c788e27ffdba1cab65eb8504b80821872d1c9b88db84b07a82a05acae8669675",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.6825454545454546
+      },
+      "family": "item",
+      "name": "key",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 37,
+        "h": 41
+      }
+    },
+    "ref-item-treasure": {
+      "key": "ref-item-treasure",
+      "width": 70,
+      "height": 51,
+      "anchor": {
+        "x": 35.0,
+        "y": 50
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1417,
+        "y": 148,
+        "w": 86,
+        "h": 55
+      },
+      "scale": 1,
+      "cropOffset": [
+        -3,
+        -4
+      ],
+      "pixelSha256": "f060c48bf2f82cb4945edc50be13479d8aa536fbaba0b6ffc31ec21faf5b6b6a",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.3217758985200846
+      },
+      "family": "item",
+      "name": "treasure",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 70,
+        "h": 51
+      }
+    },
+    "ref-item-health-potion": {
+      "key": "ref-item-health-potion",
+      "width": 29,
+      "height": 42,
+      "anchor": {
+        "x": 14.5,
+        "y": 41
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1087,
+        "y": 225,
+        "w": 41,
+        "h": 46
+      },
+      "scale": 1,
+      "cropOffset": [
+        -6,
+        -1
+      ],
+      "pixelSha256": "0863155ff73db6b864649780c6363796d80db28a604666cbc4ab7963358aebfe",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.5106044538706257
+      },
+      "family": "item",
+      "name": "health-potion",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 29,
+        "h": 42
+      }
+    },
+    "ref-item-mana-potion": {
+      "key": "ref-item-mana-potion",
+      "width": 31,
+      "height": 41,
+      "anchor": {
+        "x": 15.5,
+        "y": 40
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1161,
+        "y": 225,
+        "w": 40,
+        "h": 46
+      },
+      "scale": 1,
+      "cropOffset": [
+        -6,
+        -1
+      ],
+      "pixelSha256": "b305922e587655fba75dcedbfb5c37e732001e6e05dd8a2d57eb4f3abc5dcd06",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.5021739130434782
+      },
+      "family": "item",
+      "name": "mana-potion",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 31,
+        "h": 41
+      }
+    },
+    "ref-item-shield": {
+      "key": "ref-item-shield",
+      "width": 37,
+      "height": 43,
+      "anchor": {
+        "x": 18.5,
+        "y": 42
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1230,
+        "y": 225,
+        "w": 46,
+        "h": 46
+      },
+      "scale": 1,
+      "cropOffset": [
+        -4,
+        0
+      ],
+      "pixelSha256": "265844f4bee828d16fbd67fe30645126630dc7a0476efb9c4495b0397f05bd67",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.4220226843100189
+      },
+      "family": "item",
+      "name": "shield",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 37,
+        "h": 43
+      }
+    },
+    "ref-item-jetpack": {
+      "key": "ref-item-jetpack",
+      "width": 49,
+      "height": 35,
+      "anchor": {
+        "x": 24.5,
+        "y": 34
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1296,
+        "y": 224,
+        "w": 57,
+        "h": 43
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        -3
+      ],
+      "pixelSha256": "db1cf7c523627a72e10f82e15149fe73e34def244f5ee9c32a33b0f513b6cfca",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.5565075479396164
+      },
+      "family": "item",
+      "name": "jetpack",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 49,
+        "h": 35
+      }
+    },
+    "ref-item-dash": {
+      "key": "ref-item-dash",
+      "width": 44,
+      "height": 32,
+      "anchor": {
+        "x": 22.0,
+        "y": 31
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1369,
+        "y": 225,
+        "w": 58,
+        "h": 43
+      },
+      "scale": 1,
+      "cropOffset": [
+        -6,
+        -4
+      ],
+      "pixelSha256": "973c816b6ccb0ee4aca2920821d58885694cb1f2e1fce529d6c805a038ca2ed8",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.5601443464314354
+      },
+      "family": "item",
+      "name": "dash",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 44,
+        "h": 32
+      }
+    },
+    "ref-item-scroll": {
+      "key": "ref-item-scroll",
+      "width": 43,
+      "height": 44,
+      "anchor": {
+        "x": 21.5,
+        "y": 43
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 1452,
+        "y": 222,
+        "w": 51,
+        "h": 51
+      },
+      "scale": 1,
+      "cropOffset": [
+        -6,
+        -2
+      ],
+      "pixelSha256": "a6d5196cf4ae8dfbb9f741828997682d3caa54b10ac8388b929235cb9930a244",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.39369473279507883
+      },
+      "family": "item",
+      "name": "scroll",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 44
+      }
+    },
+    "ref-fx-shot": {
+      "key": "ref-fx-shot",
+      "width": 29,
+      "height": 30,
+      "anchor": {
+        "x": 14.5,
+        "y": 29
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1253,
+        "y": 292,
+        "w": 38,
+        "h": 38
+      },
+      "scale": 1,
+      "cropOffset": [
+        -7,
+        -6
+      ],
+      "pixelSha256": "5af842858203e899a625ee30302249fbcd493f00412a97eb8d2f5cdea2655ab1",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.5810249307479224
+      },
+      "family": "effect",
+      "action": "shot",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 29,
+        "h": 30
+      }
+    },
+    "ref-fx-bolt": {
+      "key": "ref-fx-bolt",
+      "width": 45,
+      "height": 15,
+      "anchor": {
+        "x": 22.5,
+        "y": 14
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1293,
+        "y": 294,
+        "w": 61,
+        "h": 37
+      },
+      "scale": 1,
+      "cropOffset": [
+        -8,
+        -11
+      ],
+      "pixelSha256": "116ef0b5d821aac890793b178a981c46bfa650dab5bad91f3948c1a2ee915e44",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.8059370846256092
+      },
+      "family": "effect",
+      "action": "bolt",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 45,
+        "h": 15
+      }
+    },
+    "ref-fx-charged": {
+      "key": "ref-fx-charged",
+      "width": 26,
+      "height": 29,
+      "anchor": {
+        "x": 13.0,
+        "y": 28
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1357,
+        "y": 289,
+        "w": 46,
+        "h": 48
+      },
+      "scale": 1,
+      "cropOffset": [
+        -10,
+        -10
+      ],
+      "pixelSha256": "39215fabdee6ef50ee3b2aff60c001fe7a05ecbf977a987ad11b2f0cf5436a87",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.7758152173913043
+      },
+      "family": "effect",
+      "action": "charged",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 26,
+        "h": 29
+      }
+    },
+    "ref-fx-star": {
+      "key": "ref-fx-star",
+      "width": 39,
+      "height": 44,
+      "anchor": {
+        "x": 19.5,
+        "y": 43
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1412,
+        "y": 288,
+        "w": 46,
+        "h": 48
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "44f1f305c1a038208450726fa73bfbc1eb12414a23fc29e22f98d85609512344",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.7309782608695652
+      },
+      "family": "effect",
+      "action": "star",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 39,
+        "h": 44
+      }
+    },
+    "ref-fx-enemy-shot": {
+      "key": "ref-fx-enemy-shot",
+      "width": 20,
+      "height": 17,
+      "anchor": {
+        "x": 10.0,
+        "y": 16
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1258,
+        "y": 341,
+        "w": 35,
+        "h": 33
+      },
+      "scale": 1,
+      "cropOffset": [
+        -6,
+        -9
+      ],
+      "pixelSha256": "c3e5b13a9ab53ff122dd2c13a1b6dbd8d2a1a2e7e0f24e9a52e0cd9d389177c6",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.7792207792207793
+      },
+      "family": "effect",
+      "action": "enemy-shot",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 20,
+        "h": 17
+      }
+    },
+    "ref-fx-enemy-bolt": {
+      "key": "ref-fx-enemy-bolt",
+      "width": 31,
+      "height": 12,
+      "anchor": {
+        "x": 15.5,
+        "y": 11
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1295,
+        "y": 342,
+        "w": 57,
+        "h": 32
+      },
+      "scale": 1,
+      "cropOffset": [
+        -7,
+        -10
+      ],
+      "pixelSha256": "212523b3d3ce850f38c3916c5189e726a9219d64b6186954c9f2512d1915f5d1",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.8574561403508771
+      },
+      "family": "effect",
+      "action": "enemy-bolt",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 31,
+        "h": 12
+      }
+    },
+    "ref-fx-fire": {
+      "key": "ref-fx-fire",
+      "width": 31,
+      "height": 33,
+      "anchor": {
+        "x": 15.5,
+        "y": 32
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1353,
+        "y": 334,
+        "w": 45,
+        "h": 46
+      },
+      "scale": 1,
+      "cropOffset": [
+        -7,
+        -7
+      ],
+      "pixelSha256": "b581bcfd44b59734ff96fad4fae13afb33620ceb27d50a4f81f86819d273e91e",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.6840579710144927
+      },
+      "family": "effect",
+      "action": "fire",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 31,
+        "h": 33
+      }
+    },
+    "ref-fx-explosion": {
+      "key": "ref-fx-explosion",
+      "width": 41,
+      "height": 52,
+      "anchor": {
+        "x": 20.5,
+        "y": 51
+      },
+      "source": "02_asset_pack_all_characters.png",
+      "sourceRect": {
+        "x": 1411,
+        "y": 327,
+        "w": 59,
+        "h": 54
+      },
+      "scale": 1,
+      "cropOffset": [
+        -5,
+        0
+      ],
+      "pixelSha256": "2f41a629484ec24c724f0d278ae7a24794be95bc19303459e86d80efad7a6ec5",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.6042059008160703
+      },
+      "family": "effect",
+      "action": "explosion",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 41,
+        "h": 52
+      }
+    },
+    "ref-fx-shield-0": {
+      "key": "ref-fx-shield-0",
+      "width": 56,
+      "height": 59,
+      "anchor": {
+        "x": 28.0,
+        "y": 58
+      },
+      "source": "01_concept_board_full_world.png",
+      "sourceRect": {
+        "x": 1275,
+        "y": 294,
+        "w": 63,
+        "h": 64
+      },
+      "scale": 1,
+      "cropOffset": [
+        -6,
+        -5
+      ],
+      "pixelSha256": "e3a21c2c47b145bcda7f8e24fe210e1bf60dce26700814a3e3af1eb69e9d0869",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.36929563492063494
+      },
+      "family": "effect",
+      "action": "shield",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 56,
+        "h": 59
+      }
+    },
+    "ref-fx-teleport-0": {
+      "key": "ref-fx-teleport-0",
+      "width": 42,
+      "height": 79,
+      "anchor": {
+        "x": 21.0,
+        "y": 78
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 307,
+        "y": 866,
+        "w": 42,
+        "h": 83
+      },
+      "scale": 1,
+      "cropOffset": [
+        0,
+        0
+      ],
+      "pixelSha256": "461639eaa0e0db433bbb67c1c24ea97023be8c78a574934a0ecf708c9fff8e2b",
+      "mask": {
+        "method": "robust-gradient-matte/unmix",
+        "dominantComponent": false,
+        "transparentFraction": 0.4242685025817556
+      },
+      "family": "effect",
+      "action": "teleport",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 42,
+        "h": 79
+      }
+    },
+    "ref-fx-slash-0": {
+      "key": "ref-fx-slash-0",
+      "width": 54,
+      "height": 54,
+      "anchor": {
+        "x": 27.0,
+        "y": 53
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 15,
+        "y": 876,
+        "w": 62,
+        "h": 67
+      },
+      "scale": 1,
+      "cropOffset": [
+        -3,
+        -13
+      ],
+      "pixelSha256": "f94b29d1ce81086a47bc19863b01f3039bb6740355c750b111c4352da1977c2d",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.6162734713529129
+      },
+      "family": "effect",
+      "action": "slash",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 54,
+        "h": 54
+      }
+    },
+    "ref-fx-flame-0": {
+      "key": "ref-fx-flame-0",
+      "width": 28,
+      "height": 57,
+      "anchor": {
+        "x": 14.0,
+        "y": 56
+      },
+      "source": "Designer.png",
+      "sourceRect": {
+        "x": 361,
+        "y": 881,
+        "w": 36,
+        "h": 66
+      },
+      "scale": 1,
+      "cropOffset": [
+        -7,
+        -6
+      ],
+      "pixelSha256": "f3f82f79c7f66749fe05e78e902376a8a75dc1582713d17f44d8135a7ca59497",
+      "mask": {
+        "method": "source-alpha-cleanup",
+        "dominantComponent": false,
+        "transparentFraction": 0.523989898989899
+      },
+      "family": "effect",
+      "action": "flame",
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 28,
+        "h": 57
+      }
+    }
+  },
+  "animations": {
+    "aether-idle": [
+      "ref-aether-idle-0",
+      "ref-aether-idle-1",
+      "ref-aether-idle-2"
+    ],
+    "aether-run": [
+      "ref-aether-run-0",
+      "ref-aether-run-1",
+      "ref-aether-run-2",
+      "ref-aether-run-3",
+      "ref-aether-run-4"
+    ],
+    "aether-jump": [
+      "ref-aether-jump-0",
+      "ref-aether-jump-1",
+      "ref-aether-jump-2"
+    ],
+    "aether-doublejump": [
+      "ref-aether-doublejump-0",
+      "ref-aether-doublejump-1",
+      "ref-aether-doublejump-2"
+    ],
+    "aether-fall": [
+      "ref-aether-fall-0",
+      "ref-aether-fall-1"
+    ],
+    "aether-dash": [
+      "ref-aether-dash-0",
+      "ref-aether-dash-1",
+      "ref-aether-dash-2"
+    ],
+    "aether-dashtrail": [
+      "ref-aether-dashtrail-0",
+      "ref-aether-dashtrail-1"
+    ],
+    "aether-jetidle": [
+      "ref-aether-jetidle-0",
+      "ref-aether-jetidle-1",
+      "ref-aether-jetidle-2"
+    ],
+    "aether-jet": [
+      "ref-aether-jet-0",
+      "ref-aether-jet-1",
+      "ref-aether-jet-2",
+      "ref-aether-jet-3",
+      "ref-aether-jet-4",
+      "ref-aether-jet-5"
+    ],
+    "aether-fire": [
+      "ref-aether-fire-1",
+      "ref-aether-fire-2",
+      "ref-aether-fire-3"
+    ],
+    "aether-hurt": [
+      "ref-aether-hurt-0",
+      "ref-aether-hurt-1",
+      "ref-aether-hurt-2"
+    ],
+    "aether-death": [
+      "ref-aether-death-0",
+      "ref-aether-death-1",
+      "ref-aether-death-2",
+      "ref-aether-death-3"
+    ],
+    "fx-attack": [
+      "ref-fx-attack-0",
+      "ref-fx-attack-1",
+      "ref-fx-attack-2",
+      "ref-fx-attack-3",
+      "ref-fx-attack-4",
+      "ref-fx-attack-5",
+      "ref-fx-attack-6"
+    ],
+    "fx-jet": [
+      "ref-fx-jet-0",
+      "ref-fx-jet-1",
+      "ref-fx-jet-2",
+      "ref-fx-jet-3"
+    ],
+    "fx-dash": [
+      "ref-fx-dash-0",
+      "ref-fx-dash-1",
+      "ref-fx-dash-2"
+    ],
+    "crawler-idle": [
+      "ref-crawler-idle-0"
+    ],
+    "crawler-walk": [
+      "ref-crawler-walk-0",
+      "ref-crawler-walk-1",
+      "ref-crawler-walk-2"
+    ],
+    "crawler-attack": [
+      "ref-crawler-attack-0",
+      "ref-crawler-attack-1"
+    ],
+    "crawler-hurt": [
+      "ref-crawler-hurt-0",
+      "ref-crawler-hurt-1"
+    ],
+    "crawler-death": [
+      "ref-crawler-death-0"
+    ],
+    "raider-idle": [
+      "ref-raider-idle-0"
+    ],
+    "raider-fly": [
+      "ref-raider-fly-0",
+      "ref-raider-fly-1",
+      "ref-raider-fly-2",
+      "ref-raider-fly-3"
+    ],
+    "raider-fire": [
+      "ref-raider-fire-0",
+      "ref-raider-fire-1"
+    ],
+    "raider-hurt": [
+      "ref-raider-hurt-0"
+    ],
+    "raider-death": [
+      "ref-raider-death-0"
+    ],
+    "mecha-idle": [
+      "ref-mecha-idle-0"
+    ],
+    "mecha-walk": [
+      "ref-mecha-walk-0"
+    ],
+    "mecha-attack": [
+      "ref-mecha-attack-0",
+      "ref-mecha-attack-1"
+    ],
+    "mecha-fire": [
+      "ref-mecha-fire-0"
+    ],
+    "mecha-hurt": [
+      "ref-mecha-hurt-0"
+    ],
+    "mecha-death": [
+      "ref-mecha-death-0",
+      "ref-mecha-death-1",
+      "ref-mecha-death-2"
+    ],
+    "wyrm-idle": [
+      "ref-wyrm-idle-0"
+    ],
+    "wyrm-fly": [
+      "ref-wyrm-fly-0",
+      "ref-wyrm-fly-1"
+    ],
+    "wyrm-fire": [
+      "ref-wyrm-fire-0",
+      "ref-wyrm-fire-1",
+      "ref-wyrm-fire-2"
+    ],
+    "wyrm-hurt": [
+      "ref-wyrm-hurt-0",
+      "ref-wyrm-hurt-1",
+      "ref-wyrm-hurt-2"
+    ],
+    "wyrm-death": [
+      "ref-wyrm-death-0"
+    ],
+    "fx-shot": [
+      "ref-fx-shot"
+    ],
+    "fx-bolt": [
+      "ref-fx-bolt"
+    ],
+    "fx-charged": [
+      "ref-fx-charged"
+    ],
+    "fx-star": [
+      "ref-fx-star"
+    ],
+    "fx-enemy-shot": [
+      "ref-fx-enemy-shot"
+    ],
+    "fx-enemy-bolt": [
+      "ref-fx-enemy-bolt"
+    ],
+    "fx-fire": [
+      "ref-fx-fire"
+    ],
+    "fx-explosion": [
+      "ref-fx-explosion"
+    ],
+    "fx-shield": [
+      "ref-fx-shield-0"
+    ],
+    "fx-teleport": [
+      "ref-fx-teleport-0"
+    ],
+    "fx-slash": [
+      "ref-fx-slash-0"
+    ],
+    "fx-flame": [
+      "ref-fx-flame-0"
+    ],
+    "aether-ready": [
+      "ref-aether-fire-0"
+    ]
+  },
+  "sources": [
+    {
+      "file": "03_aether_character_sheet.png",
+      "sha256": "c89e1a24bcd32acee81e2051910bf42e3b4555c41e80369c34d51a2aa2ccade4",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "02_asset_pack_all_characters.png",
+      "sha256": "e5ac7d62c65ba90fa0c0f670e0aceac8f9032245485ee7b04b7941046b4e215a",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "01_concept_board_full_world.png",
+      "sha256": "305b247a16240cab407cc4102f10fb0419dfe85eb794d0f507d6a5d004cb6283",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "Designer.png",
+      "sha256": "6194801c4acc3d545aeda448e9ed822bf02c6ff284d4e9996dd28e165e4b3717",
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "duplicates": [
+    {
+      "key": "ref-tile-snow",
+      "samePixelsAs": "ref-tile-stone"
+    }
+  ],
+  "budget": {
+    "frameCount": 174,
+    "atlasWidth": 2048,
+    "atlasHeight": 2048,
+    "atlasRGBABytes": 16777216
+  },
+  "limitations": [
+    "Flattened concept illustrations are not uniform original animation sheets.",
+    "Only distinct visible source poses were extracted; printed frame counts are ignored.",
+    "No generated in-between frames.",
+    "Opaque scenery panels contain their source painted lighting.",
+    "Background masking may lose extremely low-contrast source pixels; inspect the contact sheets.",
+    "User supplied sources; provenance recorded, independent ownership/license verification not performed."
+  ]
+}

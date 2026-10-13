@@ -1,7 +1,6 @@
 import assert from 'node:assert/strict';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { getLevel } from '../src/level.js';
-import { PHYSICS } from '../src/physics.js';
 import { advanceStory, createWorld, equipItem, hazardState, retryWorld, STEP, stepWorld } from '../src/combat.js';
 
 const difficulty = process.argv[2] || 'forge';
@@ -102,8 +101,12 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   }
   if (bossFight) {
     const b = activeBoss;
-    bossTimes[b.id] ||= { started: world.time, attacks: new Set() };
-    if (b.phase === 'attack') bossTimes[b.id].attacks.add(b.attack);
+    bossTimes[b.id] ||= { started: world.time, attacks: new Set(), forms: new Set(), flyingAttacks: new Set() };
+    bossTimes[b.id].forms.add(b.form);
+    if (b.phase === 'attack') {
+      bossTimes[b.id].attacks.add(b.attack);
+      if (b.form === 'flying') bossTimes[b.id].flyingAttacks.add(b.attack);
+    }
     if (b.phase === 'charge' && b.timer < 0.3 && p.grounded) jumpPressed = true;
     jet = b.phase === 'attack' && !!b.beam && !p.grounded && p.fuel > 0;
     if (Math.abs(distance) < 6 && p.facing < 0) move = 0.02;
@@ -148,13 +151,15 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   assert.ok(Number.isFinite(p.x) && Number.isFinite(p.y), 'Simulation must remain finite.');
 }
 
-const report = { worldId, difficulty, status: world.status, elapsed: +(totalFrames * STEP).toFixed(2), campaignTime: +world.time.toFixed(2),
+const report = { worldId, worldName: LEVEL.name, difficulty, status: world.status, playerBody: { w: world.player.w, h: world.player.h }, elapsed: +(totalFrames * STEP).toFixed(2), campaignTime: +world.time.toFixed(2),
   timeLeft: +world.timeLeft.toFixed(2), deaths, checkpoint: world.checkpoint, x: +world.player.x.toFixed(1), y: +world.player.y.toFixed(1),
   hp: +world.player.hp.toFixed(1), conversations: [...conversations], triggerProof,
   storyClaims: world.progress.claimed.filter(id => id.startsWith('npc:')),
-  bosses: world.bosses.map(b => ({ id: b.id, dead: !!b.dead, hp: b.hp,
+  bosses: world.bosses.map(b => ({ id: b.id, dead: !!b.dead, hp: b.hp, body: { w: b.w, h: b.h },
     fightSeconds: bossTimes[b.id]?.ended ? +(bossTimes[b.id].ended - bossTimes[b.id].started).toFixed(2) : null,
-    attacksSeen: [...(bossTimes[b.id]?.attacks || [])].sort() })),
+    attacksSeen: [...(bossTimes[b.id]?.attacks || [])].sort(),
+    formsSeen: [...(bossTimes[b.id]?.forms || [])],
+    flyingAttacksSeen: [...(bossTimes[b.id]?.flyingAttacks || [])].sort() })),
   gates: world.gates.map(g => ({ id: g.id, open: !!g.open })),
   method: 'Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.',
   target: route[targetIndex]?.id, events: [...eventsSeen].sort(), history };
@@ -172,6 +177,10 @@ if (worldId === 'soulforge' && difficulty === 'forge') {
 console.log(JSON.stringify({ ...report, history: world.status === 'won' ? undefined : history.slice(-12) }, null, 2));
 assert.equal(world.status, 'won', 'Legal campaign inputs must defeat every boss and reach the exit.');
 assert.ok(world.bosses.every(b => b.dead), 'All three bosses must be defeated.');
+for (const boss of report.bosses.filter(boss => world.bosses.find(b => b.id === boss.id).type === 'regent')) {
+  assert.ok(boss.formsSeen.includes('transforming') && boss.formsSeen.includes('flying'), 'The final guardian must transform into the rocket wyrm during live combat.');
+  assert.ok(boss.flyingAttacksSeen.length > 0, 'The rocket wyrm must attack in its flying form during live combat.');
+}
 assert.equal(conversations.size, LEVEL.npcs.length, 'Every authored story conversation must be completed.');
 assert.equal(Object.keys(triggerProof).length, 3, 'All bosses must activate through their proper trigger.');
 assert.ok(LEVEL.npcs.every(npc => world.progress.claimed.filter(id => id === `npc:${npc.id}`).length === 1), 'Each story reward is claimed exactly once.');

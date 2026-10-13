@@ -91,11 +91,11 @@ test('currents change movement, moving platforms carry riders, and crumbling flo
   const flow = isolated(); flow.level.currents = [{ x: 0, y: 0, w: 800, h: 610, vx: 80, vy: 0 }];
   const start = flow.player.x; tick(flow, 120); assert.ok(flow.player.x > start + 70);
   const raft = isolated(); raft.movingPlatforms = [{ id: 'raft', x: 100, y: 500, baseX: 100, baseY: 500, w: 180, h: 20, axis: 'x', distance: 50, period: 4 }];
-  Object.assign(raft.player, { x: 140, y: 454, grounded: true });
+  Object.assign(raft.player, { x: 140, y: 500 - raft.player.h, grounded: true });
   const offset = raft.player.x - raft.movingPlatforms[0].x; tick(raft, 60);
   assert.ok(Math.abs(raft.player.x - raft.movingPlatforms[0].x - offset) < 0.01);
   const crumble = isolated(); crumble.crumble = [{ solidId: floor.id, delay: 0.1, restore: 0.4, timer: 0, missing: 0 }];
-  tick(crumble, 24); assert.equal(crumble.staticSolids[0].missing, true); assert.ok(crumble.player.y > 564);
+  tick(crumble, 24); assert.equal(crumble.staticSolids[0].missing, true); assert.ok(crumble.player.y > 610 - crumble.player.h);
   crumble.player.x = 2200; tick(crumble, 70); assert.equal(crumble.staticSolids[0].missing, false);
 });
 

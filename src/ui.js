@@ -65,7 +65,7 @@ export function createCampaignUI(catalog, callbacks = {}) {
     const signature = `${story.npcId}:${story.index}:${story.choices?.map(choice => choice.id).join(',')}`;
     if (signature === storySignature) return; storySignature = signature;
     const line = story.lines?.[story.index || 0] || {}, final = (story.index || 0) >= (story.lines?.length || 1) - 1;
-    el('story-speaker').textContent = line.speaker || story.speaker || 'SURVIVOR';
+    el('story-speaker').textContent = line.speaker === 'COURIER' ? 'AETHER' : line.speaker || story.speaker || 'SURVIVOR';
     el('story-text').textContent = line.text || (typeof line === 'string' ? line : '');
     const portraitKey = story.portrait || `portrait-${story.npcId}`;
     const portrait = callbacks.iconUrl?.(portraitKey.startsWith('portrait-') ? portraitKey : `portrait-${portraitKey}`); if (portrait) el('story-portrait').src = portrait;
