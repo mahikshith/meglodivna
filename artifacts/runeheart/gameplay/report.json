@@ -1,0 +1,406 @@
+{
+  "kind": "Isolated render/action fixtures, not legal campaign completion or device performance",
+  "captures": [
+    {
+      "name": "01-sanctuary",
+      "player": {
+        "x": 98,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 0,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "02-jump",
+      "player": {
+        "x": 112.91666666666663,
+        "y": 1106.083333333335,
+        "h": 60,
+        "state": "jump",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 0,
+        "top": 823,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-jump-1",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "03-jet-high",
+      "player": {
+        "x": 98,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 0,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "04-sword-1",
+      "player": {
+        "x": 98,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "vertical"
+      },
+      "screen": {
+        "left": 0,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-slash-air-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "05-sword-2",
+      "player": {
+        "x": 98,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "finisher"
+      },
+      "screen": {
+        "left": 0,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-slash-low-2",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "06-sword-3",
+      "player": {
+        "x": 98,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 0,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-slash-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "07-dash",
+      "player": {
+        "x": 129.00000000000003,
+        "y": 1200,
+        "h": 60,
+        "state": "dash",
+        "slashMode": "dash"
+      },
+      "screen": {
+        "left": 0,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-slash-low-1",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "08-shield",
+      "player": {
+        "x": 98,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 0,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "09-guardian",
+      "player": {
+        "x": 4940,
+        "y": 800,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 4736,
+        "top": 554,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "10-enemy-windup",
+      "player": {
+        "x": 944.3354166666666,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 478,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "11-crypt",
+      "player": {
+        "x": 11180,
+        "y": 1020,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 10714,
+        "top": 769,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "12-aqueduct",
+      "player": {
+        "x": 6320,
+        "y": 800,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 5854,
+        "top": 549,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "13-spirit-wolf",
+      "player": {
+        "x": 98,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 0,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "14-dragon",
+      "player": {
+        "x": 98,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 0,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "15-echo",
+      "player": {
+        "x": 98,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 0,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "16-wyrm",
+      "player": {
+        "x": 17690,
+        "y": 620,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 17455,
+        "top": 371,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "soulforge"
+    },
+    {
+      "name": "realm-tide",
+      "player": {
+        "x": 1250,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 784,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "tide"
+    },
+    {
+      "name": "realm-pyre",
+      "player": {
+        "x": 1840,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 1374,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "pyre"
+    },
+    {
+      "name": "realm-neon",
+      "player": {
+        "x": 1140,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 674,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "neon"
+    },
+    {
+      "name": "realm-veil",
+      "player": {
+        "x": 1250,
+        "y": 1200,
+        "h": 60,
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "screen": {
+        "left": 784,
+        "top": 900,
+        "width": 960,
+        "height": 540
+      },
+      "texture": "runeheart-art",
+      "frame": "rh-hero-idle-3",
+      "status": "playing",
+      "worldId": "veil"
+    }
+  ],
+  "errors": []
+}

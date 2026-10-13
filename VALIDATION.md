@@ -1,93 +1,53 @@
-# Aether Revamp v0.4 — verification
+# Runeheart v0.5 validation
 
-Branch **Revamp**, 14 October 2026. This records the supplied-art, floating-control and geometry rebuild. **113 regression tests pass; all eight refreshed legal campaigns and all five browser replays finish successfully.** Automated completion does not establish subjective fun, balance or physical touchscreen comfort.
+This document describes the new rebuild, not the older v0.3/v0.4 evidence. Source work is on `codex/runeheart-rebuild`, merged to `main` for Android delivery. APK publication details are recorded in `artifacts/android-report.json` after release verification.
 
-## Simulation and campaigns
+## Physics and legal campaigns
 
-The suite covers fixed 120 Hz swept movement, coyote time, jump buffering, variable/wall/double jumps, finite thrust, one-way drops, dash damage, alternating melee, bounded light parries, heavy attack resistance, directional muzzle/core beams, projectile pools, pursuit, wards, boss modifiers, portals, summon attacks/expiry, moving platforms, currents, crumble, traps, conduit weakness, death/retry, isolated saves and migration.
+**140 Node tests pass.** Coverage includes swept collision, frame-rate stability, buffered/variable/double/wall jumps, jet resources, dash collision, facing-locked sword combos, enemy support/patrol/chase/retreat/cover jumping, directional emission, ordinary/heavy attack distinctions, boss guard/recovery, rune-gate dependencies, rewards and save migration.
 
-Revamp adds the 28×60 hero, authored center/feet preservation, native crawler/raider bodies, atlas attachment alignment in both directions, the Regent's announced ground-to-flight transformation, and scaled Aether clone muzzles. The **113-test** result includes that final clone correction.
+The continuous harness ran **1801.588 actual seconds** from 2026-10-13T20:42:20.080Z to 2026-10-13T21:12:21.668Z: **245 rounds, 392 full legal campaigns, zero failures**, 5,040,480 caller steps and 98,000.00000000447 simulated stress seconds. Every round reran the regression suite and varied simulation inputs; every fifth round reran all eight campaign/difficulty combinations. Eight simulation/driver files were hash-locked for the entire run. Aggregate SHA-256: `2cb57ec19ffd16a00065659d21562ee7491247085d049eff9159463c8152c4b3`. Rendering and UI were polished separately while this simulation ran. This proves simulation stability over that run, not Android performance or thirty minutes of human play.
 
-Eight refreshed campaigns use legal movement, combat, equipment and story inputs, without position, health, invulnerability, damage or clock overrides. Their three bosses activate at authored triggers, expose attacks 0/1/2 and die; linked gates and story rewards complete. Final Regents transform into the 112×86 Wyrm and perform its three flying patterns. The runs were regenerated after the final clone alignment correction.
+[Full harness report](artifacts/deep-harness-report.json). `npm run test:deep` requires 30–40 actual minutes. The final campaign driver uses normal movement, attacks, equipment, dialogue and retries; it does not inject position, health, boss damage or completion. Optimized clean routes measure about97–177 simulated seconds, so a guaranteed five-minute minimum is not claimed.
 
-| World / stable ID | Tier | Recorded simulated gameplay | Retries |
-| --- | --- | ---: | ---: |
-| Verdant / soulforge | Ember / Easy | 355.84 s | 2 |
-| Verdant / soulforge | Forge / Medium | 339.05 s | 0 |
-| Verdant / soulforge | Inferno / Hard | 374.88 s | 1 |
-| Verdant / soulforge | Extinction / Ultra hard | 372.40 s | 0 |
-| Aerie / tide | Forge / Medium | 351.79 s | 0 |
-| Tempest / pyre | Forge / Medium | 350.11 s | 1 |
-| Zenith / neon | Forge / Medium | 338.23 s | 0 |
-| Prism / veil | Forge / Medium | 342.25 s | 0 |
+All five Forge campaign traces were replayed through the actual browser simulation and reached victory with all three guardians defeated and zero runtime errors. Reports: `artifacts/replay-{world}-report.json`. Production checks verify the development API is absent, a Power hold opens the palette, and Android Back closes it before pausing. Replays are accelerated fixed-step playback, not wall-clock device play.
 
-These efficient recorded completions exceed five simulated minutes. Reading, exploration, hit-stop and human execution change elapsed play. Retained movement-only proofs take 270.93–283.81 s and omit combat. Encounters reuse three physical boss families with world-specific powers plus the Wyrm form; they are not fifteen separately drawn animation families.
+## Controls and rendered actions
 
-Reports and traces use `artifacts/combat-route-{world}-{difficulty}-{report,inputs}.json`. For example, `node scripts/combat-route.mjs forge tide` runs Forge in Aerie and generates its replay input trace. Retries follow real deaths and normal relay recovery.
+The control fixture measures 844×480, 740×360, 640×360 and390×844 layouts, action targets/gaps, canvas separation, pointer ownership, real eight-second joystick fade, hold gestures, opacity, cancellation, keyboard/gamepad and modal behavior. It is an isolated UI/input fixture.
 
-## Browser, touch and visible actions
+The final **48-capture integrated playtest** sends real keyboard and Chromium touch input at844×480 and740×360. It covers jump/double jump, jet ascent, three sword forms, held fire, dash, Mira interaction and reward choice, legal spell equip/cast, simultaneous stick/actions, pause/retry, fall death/touch reconnect, preserved spell unlock and rotation restoration. No player/world position or resource injection is used. Source hashes stayed unchanged and browser errors were zero. This is not a complete human campaign or physical phone test. See [live report](artifacts/runeheart/live-play/report.json) and [control documentation](docs/RUNEHEART-CONTROLS.md).
 
-`scripts/playtest.cjs` checks five worlds/four tiers, keyboard/gamepad input, catalogue locks/costs, dialogue choices, six biomes/five realms, missile icons, pause and touch macros. The final browser report is `artifacts/browser-report.json`; runtime import counts are **343 generated/composed textures, 174 atlas frames and 49 animation groups**. All checks pass with zero runtime errors and an approximately eight-second joystick fade.
+**54 isolated action fixtures** cover all five guns in both directions, nine spells, three live summons, damage, three armor death presentations, three sword poses, enemy windup/discharge and Regent transformation/rockets/beams. Twenty-one attachment/emission comparisons have maximum rounding error below0.49 world pixels. Twelve terminal presentation checks verify no live weapon/armor/effect overlays after death. These fixtures deliberately set valid equipment/resources and reposition authored actors; they are separate from legal campaign proof. [Action report](artifacts/runeheart/actions-report.json), [contact sheet](artifacts/runeheart/actions/contact-sheet.png).
 
-At 844×480, a 112 px floating analogue stick starts where a free gameplay touch lands, remains fixed while dragging, stops movement on release and hides after eight idle seconds. Independent movement/jump release, action-button exclusion, cancellation, fresh origins and modal isolation are checked. Curved Jump/Attack/Dash/Power targets are 84/80/76/72 px in a 112 px reserved bottom gutter, with a 44 px pause target. Action/pause faces exclude the canvas; the floating stick overlays the playfield where the player places it.
+**20 environment/action captures** inspect solid foundations, landing rims, crypt ceilings, aqueducts, high jet travel, summons and all five realms. Old room-title watermarks were removed. A modular castle source was recomposed before use, and skyline layers were aligned above the solid ground. [Visual report](artifacts/runeheart/gameplay/report.json). Root visually inspected sanctuary, crypt and city; asset review additionally inspected poses, backgrounds and contrast.
 
-Attack reaches the next simulation tick on press, transitions to firing after a 120 ms hold, and adds no slash on release. Holding Jump enables thrust. Holding Power opens the paused palette without casting. These are synthetic browser checks, not a physical two-thumb comfort test.
+## Assets and budget
 
-`scripts/revamp-art-playtest.cjs` passes **54 action captures** with zero runtime errors. Images in `artifacts/revamp-actions/` cover movement, three slash forms, five guns in both directions, nine spells, live summons, damage/death and creature attacks. Its 41 attachment/emission checks measure at most 0.49 px alignment error. Twelve terminal-state checks cover Courier/Bulwark/Wraith corpses at different visual times with frozen protection/stealth timers: fully opaque, without standing armor overlays, gun, jet or cut effects. `artifacts/revamp-actions-report.json` distinguishes deliberate fixture setup/unlocks/resources from legal campaign proofs. The inspected gallery uses the normal Phaser camera pipeline.
+The new selected graphics packet contains184 frame keys,166 unique rectangles and62 animation groups. Its twelve compiled files total465,343bytes. Canonical CC0 sources, author permissions, hashes and isolated regeneration are in[ASSETS.md](ASSETS.md) and `artifacts/runeheart/`.
 
-`node scripts/replay.cjs <world>` reproduces recorded legal Forge inputs in Chromium and checks production with development hooks absent, Power-hold palette and Android Back. All five current world reports pass with zero runtime errors. Playback uses accelerated fixed steps, not real time. Reports are `artifacts/replay-{world}-report.json`. Manual captures use Phaser's normal camera visibility filtering; an earlier capture-helper error that showed hidden pooled effects was corrected and all screenshots regenerated.
+All loaded texture pixels together estimate **50.42MiB per uncompressed copy**:333 generated textures, two2048² atlases and eight background paintings. A CPU+GPU two-copy scenario is100.83MiB before screen buffers, browser, geometry and caches. This is an allocation estimate, not measured device RAM. Original boards, unused source packs, music and demos are excluded from the shipped bundle.
 
-## Extraction and memory
+## Android and limitations
 
-All four source boards remain unchanged. The three compiled reference files total **1,952,086 bytes**. Isolated regeneration matched them byte for byte; `artifacts/reference/extraction-report.json` records hashes. **174 frame keys represent 173 unique pixel payloads**; one terrain alias shares a rectangle. Printed board counts/JSON were not used as sprite metadata. Labels/divider fragments were removed; padding retains jets/tails. Sparse poses and baked lighting remain source limitations.
+Local production build, offline asset sync, Android assemble and lint have passed. Version name0.5.0-runeheart, code5, application ID `com.meglodivna.ashsignal`, minAPI24, target36, persistent v0.3+ signing certificate. CI runs the regression suite, eight campaigns and native build/lint. Final signed APK hash, embedded file matches and CI URL belong in the delivery receipt.
 
-The 343 generated/composed textures account for 20,136,704 RGBA bytes. The 2048×2048 atlas adds 16,777,216 bytes: **36,913,920 bytes / 35.20 MiB** combined. `artifacts/reference/render-budget.json` records this dimensions-based pixel estimate. Renderer/GPU copies and process overhead are excluded; actual Android RAM and frame rate are unmeasured. Original boards/contact sheets do not ship in the runtime.
+There is no connected Android device/emulator. Two-thumb comfort, touchscreen latency, sustained frame rate, thermal behavior, speaker mix and actual human balance remain unmeasured. At740×360, a cape edge can crop during extreme jet/threat framing while the physical body and head remain visible. The opening area becomes exposed to incoming fire after play progresses; dialogue and armory themselves pause simulation. The five realms share room archetypes. Commercial readiness and a five-minute minimum are not established.
 
-## Android and distribution
+## Reproduction
 
-The Vite 6.4.4 production build and dependency audit pass. Native configuration is JDK 17, SDK 36, Gradle 8.13, application ID `com.meglodivna.ashsignal`, version code **4**, version name **0.4.0-aether-revamp**, minimum API **24** and landscape orientation. It is configured for bundled offline assets without Internet permission. Local assemble/lint checks pass.
-
-The [final Android CI run 38458832513](https://github.com/mahikshith/meglodivna/actions/runs/38458832513) passed for game source commit `743f09aa47179689108f0d359bd194650b6eb190`. The downloaded APK verifies with one valid v2 signer. Its certificate matches the delivered v0.3 key. All nine embedded production/license/reference files match the current `dist` byte for byte; no stale files or original boards are bundled. `artifacts/android-report.json` records the inspection and individual embedded hashes.
-
-Delivery: [ASH-SIGNAL-Aether-Revamp-debug.apk](https://github.com/mahikshith/meglodivna/releases/download/v0.4.0-aether-revamp/ASH-SIGNAL-Aether-Revamp-debug.apk), **4,520,221 bytes**, SHA-256 `65a2a970d6f5784e4af3d066b30dd8fc4d3c0b6dff4cd4d26f2369fd1532f6fb`. Matching web archive: `ASH-SIGNAL-Aether-Revamp-web.zip`, **2,151,251 bytes**, SHA-256 `af11d10a516e452f53623a4ab67d763b80c9b225b520baf87747f0e64ba2d526`. Both uploaded release asset digests match the inspected local files. The [v0.4 prerelease](https://github.com/mahikshith/meglodivna/releases/tag/v0.4.0-aether-revamp) also includes the receipt and action contact sheet.
-
-CI runs the regression suite, eight legal campaigns, production build and Android assemble/lint, then uploads **ASH-SIGNAL-Aether-Revamp-debug-APK** and evidence. Local builds need `ASH_SIGNAL_DEBUG_KEYSTORE` pointed at the persistent key for update compatibility. The older v0.2 APK used another certificate and requires uninstalling it, which removes its local save. Later evidence/documentation commits do not change the delivered game payload.
-
-No Android device/emulator was available. On-device boot, two-thumb comfort, sustained frame rate/thermal behavior, speaker mix, hardware gamepad calibration and human balance remain unchecked. This is a debug test build.
-
-## Historical harness and reproduction
-
-The retained 30-minute harness ran 1,800.002 actual seconds during v0.3 development: 25 rounds, 17 transient failures, and final rounds 24/25 passing. `artifacts/deep-harness-report.json` preserves that history. It predates Revamp and does not establish thirty clean minutes on the final build or human playtesting.
-
-Run the unit suite, eight campaign combinations and build:
-
-```text
+```sh
 npm test
-node scripts/combat-route.mjs ember soulforge
 node scripts/combat-route.mjs forge soulforge
-node scripts/combat-route.mjs inferno soulforge
-node scripts/combat-route.mjs extinction soulforge
 node scripts/combat-route.mjs forge tide
 node scripts/combat-route.mjs forge pyre
 node scripts/combat-route.mjs forge neon
 node scripts/combat-route.mjs forge veil
-npm run build
-```
-
-With development at port 5173 and production preview at port 4173, and Playwright/Chromium available:
-
-```text
+npm run test:deep
 npm run test:browser
 npm run test:art
-npm run test:replay -- veil
+npm run test:visual
+node scripts/replay.cjs soulforge
 ```
 
-For local Android validation, sync the web build, enter the Android directory and run its wrapper:
-
-```text
-npm run android:sync
-cd android
-./gradlew assembleDebug lintDebug --no-daemon
-```
-
-On Windows, use `.\gradlew.bat assembleDebug lintDebug --no-daemon`. `npm run test:deep` starts a fresh 30–40 minute harness. README covers SDK setup/installation; REVAMP records the implementation ledger.
+Browser commands require Playwright/Chromium and a dev server on5173. Replay production checks additionally require the latest built preview on4173. Failures while adapting old fixtures (old floor height, old frame names, array-versus-object attachment metadata and windup timing) were corrected in the harness; final reports describe current behavior rather than reusing old screenshots.

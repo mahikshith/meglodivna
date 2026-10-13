@@ -1,0 +1,542 @@
+{
+  "kind": "actual integrated game, real keyboard and Chromium touch inputs",
+  "campaignWin": false,
+  "physicalDevice": false,
+  "sourceHashes": {
+    "src/main.js": "e1c29fb4720a62a07fb35ba80684d0e3c780d5b4afc02d4eb69f9ec4ff66bd56",
+    "src/combat.js": "1c6d209bb5a11639456c8e5aa6068625925195b50c91010ba16ee80e097f08d6",
+    "src/physics.js": "b1dbac12e7e743cee40ab48b1fb1aeb330357abf43a5a5ffbfd060b9277ce4ab",
+    "src/input.js": "ee87e090f5614279a55e3515d2b57595031e822c5b10804116dee9dcd894757d",
+    "src/ui.js": "2ad22c9e0c8ca751e86acf6387316494ce2d4f67fe47a437e6b16fd3a4aece88",
+    "src/style.css": "7133367861993f8df3ae0593dba3a59129935243bcf8fdaa1ebaed7a635a9dd4",
+    "src/runeheart-art.js": "0d934d6ac495fcaccf797343d99f7cd9b52511fed031df21dd17688dafe23f73",
+    "src/terrain.js": "ccfd3ff1f6eb5d478789831e4133694fcbee3feea4f0ef41e5dabda4b5bcf2a1"
+  },
+  "sizes": [
+    {
+      "viewport": {
+        "width": 844,
+        "height": 480
+      },
+      "screenshots": [
+        "844x480-menu.png",
+        "844x480-spawn.png",
+        "844x480-jump.png",
+        "844x480-double-jump.png",
+        "844x480-jet-ascent.png",
+        "844x480-slash-1.png",
+        "844x480-slash-2.png",
+        "844x480-slash-3.png",
+        "844x480-keyboard-fire.png",
+        "844x480-keyboard-dash.png",
+        "844x480-mira-dialogue.png",
+        "844x480-mira-choice.png"
+      ],
+      "states": [
+        {
+          "label": "menu",
+          "mode": "menu",
+          "x": 98,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "w": 28,
+          "h": 60,
+          "grounded": false,
+          "jumps": 1,
+          "state": "fall",
+          "fuel": 100,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashId": 0,
+          "parries": 0,
+          "dashTime": 0,
+          "time": 0,
+          "projectiles": [],
+          "camera": {
+            "x": 0,
+            "y": 900,
+            "zoom": 1,
+            "height": 540
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-jump-2",
+            "visible": true,
+            "alpha": 0.45
+          },
+          "level": "soulforge"
+        },
+        {
+          "label": "spawn",
+          "mode": "playing",
+          "x": 98,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "w": 28,
+          "h": 60,
+          "grounded": true,
+          "jumps": 1,
+          "state": "idle",
+          "fuel": 100,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashMode": "horizontal",
+          "slashId": 0,
+          "parries": 0,
+          "dashTime": 0,
+          "time": 0.4416666666666672,
+          "projectiles": [],
+          "camera": {
+            "x": 0,
+            "y": 1040.4084665753755,
+            "zoom": 1,
+            "height": 359
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-idle-3",
+            "visible": true,
+            "alpha": 0.45
+          },
+          "level": "soulforge"
+        },
+        {
+          "label": "jump",
+          "mode": "playing",
+          "x": 98,
+          "y": 1154.9166666666688,
+          "vx": 0,
+          "vy": 80,
+          "w": 28,
+          "h": 60,
+          "grounded": false,
+          "jumps": 1,
+          "state": "fall",
+          "fuel": 100,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashMode": "horizontal",
+          "slashId": 0,
+          "parries": 0,
+          "dashTime": 0,
+          "time": 0.7083333333333333,
+          "projectiles": [],
+          "camera": {
+            "x": 0,
+            "y": 998.878926358253,
+            "zoom": 1,
+            "height": 359
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-jump-2",
+            "visible": true,
+            "alpha": 1
+          },
+          "level": "soulforge"
+        },
+        {
+          "label": "double-jump",
+          "mode": "playing",
+          "x": 98,
+          "y": 1078.7083333333371,
+          "vx": 0,
+          "vy": -325,
+          "w": 28,
+          "h": 60,
+          "grounded": false,
+          "jumps": 0,
+          "state": "jump",
+          "fuel": 100,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashMode": "horizontal",
+          "slashId": 0,
+          "parries": 0,
+          "dashTime": 0,
+          "time": 0.8916666666666659,
+          "projectiles": [],
+          "camera": {
+            "x": 0,
+            "y": 924.0849604056308,
+            "zoom": 1,
+            "height": 359
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-slash-air-1",
+            "visible": true,
+            "alpha": 1
+          },
+          "level": "soulforge"
+        },
+        {
+          "label": "jet-ascent",
+          "mode": "playing",
+          "x": 98,
+          "y": 928.4861111111152,
+          "vx": 0,
+          "vy": -330,
+          "w": 28,
+          "h": 60,
+          "grounded": false,
+          "jumps": 0,
+          "state": "jet",
+          "fuel": 77.49999999999974,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashMode": "horizontal",
+          "slashId": 0,
+          "parries": 0,
+          "dashTime": 0,
+          "time": 1.3749999999999976,
+          "projectiles": [],
+          "camera": {
+            "x": 0,
+            "y": 773.3213192351475,
+            "zoom": 1,
+            "height": 359
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-jump-4",
+            "visible": true,
+            "alpha": 1
+          },
+          "level": "soulforge"
+        },
+        {
+          "label": "slash-1",
+          "mode": "playing",
+          "x": 98,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "w": 28,
+          "h": 60,
+          "grounded": true,
+          "jumps": 1,
+          "state": "idle",
+          "fuel": 91.33333333333292,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashMode": "horizontal",
+          "slashId": 1,
+          "parries": 0,
+          "dashTime": 0,
+          "time": 2.4333333333333274,
+          "projectiles": [],
+          "camera": {
+            "x": 0,
+            "y": 1041.6649961316668,
+            "zoom": 1,
+            "height": 359
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-idle-3",
+            "visible": true,
+            "alpha": 1
+          },
+          "level": "soulforge"
+        },
+        {
+          "label": "slash-2",
+          "mode": "playing",
+          "x": 98,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "w": 28,
+          "h": 60,
+          "grounded": true,
+          "jumps": 1,
+          "state": "idle",
+          "fuel": 100,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashMode": "vertical",
+          "slashId": 2,
+          "parries": 0,
+          "dashTime": 0,
+          "time": 3.0166666666666586,
+          "projectiles": [],
+          "camera": {
+            "x": 0,
+            "y": 1043.3113135127794,
+            "zoom": 1,
+            "height": 359
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-idle-3",
+            "visible": true,
+            "alpha": 1
+          },
+          "level": "soulforge"
+        },
+        {
+          "label": "slash-3",
+          "mode": "playing",
+          "x": 98,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "w": 28,
+          "h": 60,
+          "grounded": true,
+          "jumps": 1,
+          "state": "idle",
+          "fuel": 100,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashMode": "finisher",
+          "slashId": 3,
+          "parries": 0,
+          "dashTime": 0,
+          "time": 3.62499999999999,
+          "projectiles": [],
+          "camera": {
+            "x": 0,
+            "y": 1043.319962489762,
+            "zoom": 1,
+            "height": 359
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-idle-0",
+            "visible": true,
+            "alpha": 1
+          },
+          "level": "soulforge"
+        },
+        {
+          "label": "keyboard-fire",
+          "mode": "playing",
+          "x": 98,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "w": 28,
+          "h": 60,
+          "grounded": true,
+          "jumps": 1,
+          "state": "idle",
+          "fuel": 100,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashMode": "finisher",
+          "slashId": 3,
+          "parries": 0,
+          "dashTime": 0,
+          "time": 4.141666666666662,
+          "projectiles": [
+            {
+              "kind": "carbine",
+              "x": 325,
+              "y": 1219
+            },
+            {
+              "kind": "carbine",
+              "x": 163.99999999999997,
+              "y": 1219
+            }
+          ],
+          "camera": {
+            "x": 0,
+            "y": 1043.319999651848,
+            "zoom": 1,
+            "height": 359
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-idle-0",
+            "visible": true,
+            "alpha": 1
+          },
+          "level": "soulforge"
+        },
+        {
+          "label": "keyboard-dash",
+          "mode": "playing",
+          "x": 263.3541666666665,
+          "y": 1200,
+          "vx": 215,
+          "vy": 0,
+          "w": 28,
+          "h": 60,
+          "grounded": true,
+          "jumps": 1,
+          "state": "run",
+          "fuel": 100,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashMode": "finisher",
+          "slashId": 4,
+          "parries": 2,
+          "dashTime": 0,
+          "time": 4.550000000000016,
+          "projectiles": [
+            {
+              "kind": "carbine",
+              "x": 539.666666666667,
+              "y": 1219
+            }
+          ],
+          "camera": {
+            "x": 0,
+            "y": 1043.3199999907656,
+            "zoom": 1,
+            "height": 359
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-run-0",
+            "visible": true,
+            "alpha": 1
+          },
+          "level": "soulforge"
+        },
+        {
+          "label": "before-mira",
+          "mode": "playing",
+          "x": 267.6041666666666,
+          "y": 1200,
+          "vx": 147.5,
+          "vy": 0,
+          "w": 28,
+          "h": 60,
+          "grounded": true,
+          "jumps": 1,
+          "state": "run",
+          "fuel": 100,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashMode": "finisher",
+          "slashId": 4,
+          "parries": 2,
+          "dashTime": 0,
+          "time": 4.575000000000017,
+          "projectiles": [
+            {
+              "kind": "carbine",
+              "x": 562.6666666666669,
+              "y": 1219
+            }
+          ],
+          "camera": {
+            "x": 0,
+            "y": 1043.319999992627,
+            "zoom": 1,
+            "height": 359
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-run-0",
+            "visible": true,
+            "alpha": 1
+          },
+          "level": "soulforge"
+        },
+        {
+          "label": "mira-dialogue",
+          "mode": "story",
+          "x": 271.0416666666667,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "w": 28,
+          "h": 60,
+          "grounded": true,
+          "jumps": 1,
+          "state": "idle",
+          "fuel": 100,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashMode": "finisher",
+          "slashId": 4,
+          "parries": 2,
+          "dashTime": 0,
+          "time": 4.983333333333371,
+          "projectiles": [],
+          "camera": {
+            "x": 0,
+            "y": 1043.3199999999963,
+            "zoom": 1,
+            "height": 359
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-idle-3",
+            "visible": true,
+            "alpha": 1
+          },
+          "level": "soulforge"
+        },
+        {
+          "label": "mira-choice",
+          "mode": "story",
+          "x": 271.0416666666667,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "w": 28,
+          "h": 60,
+          "grounded": true,
+          "jumps": 1,
+          "state": "idle",
+          "fuel": 100,
+          "hp": 100,
+          "mana": 100,
+          "spell": "cinder",
+          "slashMode": "finisher",
+          "slashId": 4,
+          "parries": 2,
+          "dashTime": 0,
+          "time": 4.983333333333371,
+          "projectiles": [],
+          "camera": {
+            "x": 0,
+            "y": 1043.3199999999995,
+            "zoom": 1,
+            "height": 359
+          },
+          "sprite": {
+            "texture": "runeheart-art",
+            "frame": "rh-hero-idle-0",
+            "visible": true,
+            "alpha": 1
+          },
+          "level": "soulforge"
+        }
+      ],
+      "navigations": [
+        {
+          "url": "http://127.0.0.1:5173/",
+          "time": "2026-10-13T21:01:27.98Z"
+        }
+      ],
+      "pending": true
+    }
+  ],
+  "errors": [],
+  "passed": false,
+  "failure": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.catalogue-item').filter({ has: getByRole('heading', { name: 'Soul Siphon', exact: true }) }).getByRole('button', { name: 'EQUIP', exact: true })\u001b[22m\n",
+  "sourceUnchanged": true,
+  "classification": "Resolved test-harness assumption: NPC reward equips immediately",
+  "supersededBy": "report.json"
+}

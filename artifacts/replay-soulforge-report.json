@@ -1,36 +1,39 @@
 {
   "worldId": "soulforge",
   "status": "won",
-  "time": 339.04999999985597,
-  "hp": 135,
+  "time": 100.33333333335925,
+  "hp": 75.72,
   "bosses": [
     {
-      "id": "warden",
+      "id": "soulforge-warden",
       "dead": true
     },
     {
-      "id": "hex",
+      "id": "soulforge-hex",
       "dead": true
     },
     {
-      "id": "regent",
+      "id": "soulforge-regent",
       "dead": true
     }
   ],
   "retries": 0,
   "captures": [
-    "run-snow",
-    "story-mira",
-    "boss-warden",
-    "story-orren",
-    "run-ruins",
-    "run-furnace",
-    "boss-hex",
-    "story-vesper",
-    "run-storm",
-    "run-eclipse",
-    "run-reactor",
-    "boss-regent",
+    "room-0-The-Last-Lantern",
+    "story-soulforge-mira",
+    "room-1-Roots-of-Iron",
+    "room-2-The-Bell-Stair",
+    "room-3-Keeper-of-Embers",
+    "boss-soulforge-warden",
+    "room-4-The-Drowned-Choir",
+    "room-5-Tideglass-Vault",
+    "room-6-The-Ash-Ossuary",
+    "room-7-Mother-of-Cinders",
+    "boss-soulforge-hex",
+    "room-8-Stormwell-Ascent",
+    "room-9-The-Silent-Engine",
+    "room-10-The-Unbinding",
+    "boss-soulforge-regent",
     "campaign-victory"
   ],
   "runtimeErrors": [],

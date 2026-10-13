@@ -1,0 +1,380 @@
+{
+  "kind": "isolated control/UI fixtures using real Chromium touch events",
+  "physicalDeviceTest": false,
+  "sizes": [
+    {
+      "viewport": {
+        "width": 844,
+        "height": 480
+      },
+      "bounds": {
+        "game": {
+          "x": 0,
+          "y": 0,
+          "w": 844,
+          "h": 316,
+          "bottom": 316,
+          "right": 844
+        },
+        "buttons": [
+          {
+            "id": "touch-pause",
+            "x": 24,
+            "y": 418,
+            "w": 48,
+            "h": 48,
+            "bottom": 466,
+            "right": 72,
+            "text": ""
+          },
+          {
+            "id": "touch-gear",
+            "x": 88,
+            "y": 418,
+            "w": 48,
+            "h": 48,
+            "bottom": 466,
+            "right": 136,
+            "text": ""
+          },
+          {
+            "id": "touch-power",
+            "x": 388,
+            "y": 352,
+            "w": 80,
+            "h": 80,
+            "bottom": 432,
+            "right": 468,
+            "text": ""
+          },
+          {
+            "id": "touch-dash",
+            "x": 498,
+            "y": 380,
+            "w": 92,
+            "h": 92,
+            "bottom": 472,
+            "right": 590,
+            "text": ""
+          },
+          {
+            "id": "touch-attack",
+            "x": 606,
+            "y": 324,
+            "w": 100,
+            "h": 100,
+            "bottom": 424,
+            "right": 706,
+            "text": ""
+          },
+          {
+            "id": "touch-jump",
+            "x": 720,
+            "y": 372,
+            "w": 100,
+            "h": 100,
+            "bottom": 472,
+            "right": 820,
+            "text": ""
+          }
+        ],
+        "font": "16px"
+      },
+      "checks": [
+        "100/100/92px main targets",
+        "separated contextual power",
+        "all buttons outside canvas",
+        "simultaneous move/jump/fire",
+        "immediate slash",
+        "gun/jet icon state feedback",
+        "independent release",
+        "floating neutral origin and cancel",
+        "power tap vs palette hold",
+        "gear shortcut",
+        "modal cleanup",
+        "16px dialogue/52px choices"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 740,
+        "height": 360
+      },
+      "bounds": {
+        "game": {
+          "x": 0,
+          "y": 0,
+          "w": 740,
+          "h": 196,
+          "bottom": 196,
+          "right": 740
+        },
+        "buttons": [
+          {
+            "id": "touch-pause",
+            "x": 24,
+            "y": 298,
+            "w": 48,
+            "h": 48,
+            "bottom": 346,
+            "right": 72,
+            "text": ""
+          },
+          {
+            "id": "touch-gear",
+            "x": 88,
+            "y": 298,
+            "w": 48,
+            "h": 48,
+            "bottom": 346,
+            "right": 136,
+            "text": ""
+          },
+          {
+            "id": "touch-power",
+            "x": 294,
+            "y": 232,
+            "w": 80,
+            "h": 80,
+            "bottom": 312,
+            "right": 374,
+            "text": ""
+          },
+          {
+            "id": "touch-dash",
+            "x": 400,
+            "y": 260,
+            "w": 92,
+            "h": 92,
+            "bottom": 352,
+            "right": 492,
+            "text": ""
+          },
+          {
+            "id": "touch-attack",
+            "x": 508,
+            "y": 204,
+            "w": 100,
+            "h": 100,
+            "bottom": 304,
+            "right": 608,
+            "text": ""
+          },
+          {
+            "id": "touch-jump",
+            "x": 622,
+            "y": 252,
+            "w": 100,
+            "h": 100,
+            "bottom": 352,
+            "right": 722,
+            "text": ""
+          }
+        ],
+        "font": "16px"
+      },
+      "checks": [
+        "100/100/92px main targets",
+        "separated contextual power",
+        "all buttons outside canvas",
+        "simultaneous move/jump/fire",
+        "immediate slash",
+        "gun/jet icon state feedback",
+        "independent release",
+        "floating neutral origin and cancel",
+        "power tap vs palette hold",
+        "gear shortcut",
+        "modal cleanup",
+        "16px dialogue/52px choices"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 640,
+        "height": 360
+      },
+      "bounds": {
+        "game": {
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 196,
+          "bottom": 196,
+          "right": 640
+        },
+        "buttons": [
+          {
+            "id": "touch-pause",
+            "x": 24,
+            "y": 298,
+            "w": 48,
+            "h": 48,
+            "bottom": 346,
+            "right": 72,
+            "text": ""
+          },
+          {
+            "id": "touch-gear",
+            "x": 88,
+            "y": 298,
+            "w": 48,
+            "h": 48,
+            "bottom": 346,
+            "right": 136,
+            "text": ""
+          },
+          {
+            "id": "touch-power",
+            "x": 194,
+            "y": 232,
+            "w": 80,
+            "h": 80,
+            "bottom": 312,
+            "right": 274,
+            "text": ""
+          },
+          {
+            "id": "touch-dash",
+            "x": 300,
+            "y": 260,
+            "w": 92,
+            "h": 92,
+            "bottom": 352,
+            "right": 392,
+            "text": ""
+          },
+          {
+            "id": "touch-attack",
+            "x": 408,
+            "y": 204,
+            "w": 100,
+            "h": 100,
+            "bottom": 304,
+            "right": 508,
+            "text": ""
+          },
+          {
+            "id": "touch-jump",
+            "x": 522,
+            "y": 252,
+            "w": 100,
+            "h": 100,
+            "bottom": 352,
+            "right": 622,
+            "text": ""
+          }
+        ],
+        "font": "16px"
+      },
+      "checks": [
+        "100/100/92px main targets",
+        "separated contextual power",
+        "all buttons outside canvas",
+        "simultaneous move/jump/fire",
+        "immediate slash",
+        "gun/jet icon state feedback",
+        "independent release",
+        "floating neutral origin and cancel",
+        "power tap vs palette hold",
+        "gear shortcut",
+        "modal cleanup",
+        "16px dialogue/52px choices"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "bounds": {
+        "game": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 558,
+          "bottom": 558,
+          "right": 390
+        },
+        "buttons": [
+          {
+            "id": "touch-pause",
+            "x": 16,
+            "y": 590,
+            "w": 48,
+            "h": 48,
+            "bottom": 638,
+            "right": 64,
+            "text": ""
+          },
+          {
+            "id": "touch-gear",
+            "x": 80,
+            "y": 590,
+            "w": 48,
+            "h": 48,
+            "bottom": 638,
+            "right": 128,
+            "text": ""
+          },
+          {
+            "id": "touch-power",
+            "x": 174,
+            "y": 567,
+            "w": 80,
+            "h": 80,
+            "bottom": 647,
+            "right": 254,
+            "text": ""
+          },
+          {
+            "id": "touch-dash",
+            "x": 54,
+            "y": 736,
+            "w": 92,
+            "h": 92,
+            "bottom": 828,
+            "right": 146,
+            "text": ""
+          },
+          {
+            "id": "touch-attack",
+            "x": 162,
+            "y": 680,
+            "w": 100,
+            "h": 100,
+            "bottom": 780,
+            "right": 262,
+            "text": ""
+          },
+          {
+            "id": "touch-jump",
+            "x": 276,
+            "y": 728,
+            "w": 100,
+            "h": 100,
+            "bottom": 828,
+            "right": 376,
+            "text": ""
+          }
+        ],
+        "font": "16px"
+      },
+      "checks": [
+        "100/100/92px main targets",
+        "separated contextual power",
+        "all buttons outside canvas",
+        "simultaneous move/jump/fire",
+        "immediate slash",
+        "gun/jet icon state feedback",
+        "independent release",
+        "floating neutral origin and cancel",
+        "power tap vs palette hold",
+        "gear shortcut",
+        "modal cleanup",
+        "16px dialogue/52px choices"
+      ]
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

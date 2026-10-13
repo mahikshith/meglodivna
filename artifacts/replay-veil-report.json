@@ -1,8 +1,8 @@
 {
   "worldId": "veil",
   "status": "won",
-  "time": 342.24999999985306,
-  "hp": 135,
+  "time": 104.1583333333623,
+  "hp": 81.96000000000001,
   "bosses": [
     {
       "id": "veil-warden",
@@ -19,13 +19,21 @@
   ],
   "retries": 0,
   "captures": [
-    "story-veil-scout",
-    "run-eclipse",
+    "room-0-The-Unlit-Shrine",
+    "story-veil-mira",
+    "room-1-Mirror-Reliquary",
+    "room-2-Names-Beneath-Stone",
+    "room-3-The-Hollow-Paladin",
     "boss-veil-warden",
-    "story-veil-scholar",
+    "room-4-Moonshaft",
+    "room-5-The-Pale-Crossing",
+    "room-6-The-Mourning-Garden",
     "story-veil-ysra",
+    "room-7-The-Promise-Eater",
     "boss-veil-hex",
-    "story-veil-deserter",
+    "room-8-The-Last-Stair",
+    "room-9-Soul-Pipes",
+    "room-10-The-Counterfeit-Sun",
     "boss-veil-regent",
     "campaign-victory"
   ],

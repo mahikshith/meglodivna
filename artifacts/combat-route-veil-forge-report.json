@@ -1,48 +1,44 @@
 {
   "worldId": "veil",
-  "worldName": "PRISM // CRYSTAL CAVES",
+  "worldName": "GLASS NECROPOLIS · The False Moon",
   "difficulty": "forge",
   "status": "won",
   "playerBody": {
     "w": 28,
     "h": 60
   },
-  "elapsed": 342.25,
-  "campaignTime": 342.25,
-  "timeLeft": 277.75,
+  "elapsed": 104.16,
+  "campaignTime": 104.16,
+  "timeLeft": 795.84,
   "deaths": 0,
-  "checkpoint": 16,
-  "x": 83414.6,
-  "y": 550,
-  "hp": 135,
+  "checkpoint": 6,
+  "x": 18683.1,
+  "y": 400,
+  "hp": 82,
   "conversations": [
-    "veil-scout",
-    "veil-scholar",
-    "veil-ysra",
-    "veil-deserter"
+    "veil-mira",
+    "veil-ysra"
   ],
   "triggerProof": {
     "veil-warden": {
-      "triggerX": 25030,
-      "activatedX": 25031.51,
-      "activatedTime": 85.12
+      "triggerX": 5140,
+      "activatedX": 5140.1,
+      "activatedTime": 18.42
     },
     "veil-hex": {
-      "triggerX": 51830,
-      "activatedX": 51831.89,
-      "activatedTime": 187.72
+      "triggerX": 12520,
+      "activatedX": 12520.01,
+      "activatedTime": 55.65
     },
     "veil-regent": {
-      "triggerX": 80030,
-      "activatedX": 80031.54,
-      "activatedTime": 303.45
+      "triggerX": 17670,
+      "activatedX": 17670.17,
+      "activatedTime": 86.72
     }
   },
   "storyClaims": [
-    "npc:veil-scout",
-    "npc:veil-scholar",
-    "npc:veil-ysra",
-    "npc:veil-deserter"
+    "npc:veil-mira",
+    "npc:veil-ysra"
   ],
   "bosses": [
     {
@@ -53,7 +49,7 @@
         "w": 96,
         "h": 120
       },
-      "fightSeconds": 16.61,
+      "fightSeconds": 10.04,
       "attacksSeen": [
         0,
         1,
@@ -72,7 +68,7 @@
         "w": 96,
         "h": 120
       },
-      "fightSeconds": 26.86,
+      "fightSeconds": 14.17,
       "attacksSeen": [
         0,
         1,
@@ -91,7 +87,7 @@
         "w": 112,
         "h": 86
       },
-      "fightSeconds": 35.49,
+      "fightSeconds": 15.58,
       "attacksSeen": [
         0,
         1,
@@ -103,7 +99,6 @@
         "flying"
       ],
       "flyingAttacksSeen": [
-        0,
         1,
         2
       ]
@@ -111,20 +106,32 @@
   ],
   "gates": [
     {
-      "id": "veil-warden-gate",
+      "id": "veil-tide-seal-11",
       "open": true
     },
     {
-      "id": "veil-hex-gate",
+      "id": "veil-guardian-seal-34",
       "open": true
     },
     {
-      "id": "veil-regent-gate",
+      "id": "veil-guardian-seal-81",
+      "open": true
+    },
+    {
+      "id": "veil-pressure-door-99",
+      "open": true
+    },
+    {
+      "id": "veil-guardian-seal-110",
+      "open": true
+    },
+    {
+      "id": "veil-three-stone-seal",
       "open": true
     }
   ],
   "method": "Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.",
-  "target": "veil-arena-3",
+  "target": "veil-arena-105",
   "events": [
     "bossdead",
     "bossstart",
@@ -135,6 +142,7 @@
     "dash",
     "debris",
     "enemyshot",
+    "enemywindup",
     "equip",
     "explode",
     "gate",
@@ -152,6 +160,7 @@
     "slash",
     "spark",
     "spell",
+    "stagger",
     "story",
     "summon",
     "summonarrival",
@@ -163,725 +172,350 @@
   ],
   "history": [
     {
-      "event": "story",
-      "npcId": "veil-scout",
-      "choiceId": "veil-scout-armor"
-    },
-    {
       "event": "landing",
-      "id": "veil-1-approach",
-      "x": 221.3,
+      "id": "veil-sanctuary-1",
+      "x": 98.1,
       "hp": 100,
-      "time": 0.48
+      "time": 0.01
     },
     {
-      "event": "checkpoint",
-      "x": 1578.7,
-      "hp": 122,
-      "time": 4.72
-    },
-    {
-      "event": "landing",
-      "id": "veil-2-vault-entry",
-      "x": 1973.3,
-      "hp": 122,
-      "time": 5.95
+      "event": "story",
+      "npcId": "veil-mira",
+      "choiceId": "veil-ward"
     },
     {
       "event": "landing",
-      "id": "veil-2-vault-arch-1",
-      "x": 2271.9,
-      "hp": 122,
-      "time": 6.91
+      "id": "veil-sanctuary-1",
+      "x": 273.2,
+      "hp": 100,
+      "time": 0.62
     },
     {
       "event": "landing",
-      "id": "veil-2-vault-arch-2",
-      "x": 2622.8,
-      "hp": 122,
-      "time": 8.02
+      "id": "veil-sanctuary-1",
+      "x": 793.2,
+      "hp": 100,
+      "time": 2.24
     },
     {
       "event": "landing",
-      "id": "veil-2-vault-arch-3",
-      "x": 2992.5,
-      "hp": 122,
-      "time": 9.18
+      "id": "veil-vault-entry-4",
+      "x": 1232.6,
+      "hp": 100,
+      "time": 3.87
     },
     {
       "event": "landing",
-      "id": "veil-2-vault-arch-4",
-      "x": 3395.3,
-      "hp": 122,
-      "time": 10.93
+      "id": "veil-vault-upper-5",
+      "x": 1587.5,
+      "hp": 100,
+      "time": 5.25
     },
     {
       "event": "landing",
-      "id": "veil-2-vault-exit",
-      "x": 3886.4,
-      "hp": 122,
-      "time": 12.64
+      "id": "veil-rune-reliquary-6",
+      "x": 1863.2,
+      "hp": 100,
+      "time": 6.16
+    },
+    {
+      "event": "gate",
+      "x": 1949.3,
+      "hp": 100,
+      "time": 6.45
     },
     {
       "event": "landing",
-      "id": "veil-3-tunnel-entry",
-      "x": 4381.6,
-      "hp": 122,
-      "time": 14.22
+      "id": "veil-rune-reliquary-6",
+      "x": 1964.3,
+      "hp": 100,
+      "time": 6.58
     },
     {
       "event": "landing",
-      "id": "veil-3-tunnel-tunnel-0",
-      "x": 4903.3,
-      "hp": 122,
-      "time": 15.94
+      "id": "veil-vault-exit-9",
+      "x": 2485.5,
+      "hp": 100,
+      "time": 8.77
     },
     {
       "event": "landing",
-      "id": "veil-3-tunnel-tunnel-1",
-      "x": 5472.4,
-      "hp": 122,
-      "time": 17.75
+      "id": "veil-vault-exit-9",
+      "x": 2771.5,
+      "hp": 100,
+      "time": 9.72
     },
     {
       "event": "landing",
-      "id": "veil-3-tunnel-tunnel-2",
-      "x": 6096.4,
-      "hp": 122,
-      "time": 19.74
+      "id": "veil-crypt-lip-19",
+      "x": 3152.6,
+      "hp": 125,
+      "time": 11.17
     },
     {
       "event": "landing",
-      "id": "veil-3-tunnel-exit",
-      "x": 6831.7,
-      "hp": 122,
-      "time": 22.06
-    },
-    {
-      "event": "checkpoint",
-      "x": 6978.4,
-      "hp": 135,
-      "time": 22.52
+      "id": "veil-crypt-stair-20",
+      "x": 3466.9,
+      "hp": 125,
+      "time": 12.62
     },
     {
       "event": "landing",
-      "id": "veil-4-terrace-terrace-0",
-      "x": 7533.1,
-      "hp": 135,
-      "time": 24.25
-    },
-    {
-      "event": "landing",
-      "id": "veil-4-terrace-terrace-1",
-      "x": 8331.2,
-      "hp": 135,
-      "time": 26.88
-    },
-    {
-      "event": "landing",
-      "id": "veil-4-terrace-terrace-2",
-      "x": 9131.2,
-      "hp": 135,
-      "time": 29.61
-    },
-    {
-      "event": "landing",
-      "id": "veil-4-terrace-terrace-3",
-      "x": 9931.2,
-      "hp": 135,
-      "time": 32.11
-    },
-    {
-      "event": "landing",
-      "id": "veil-4-terrace-terrace-4",
-      "x": 11032.5,
-      "hp": 135,
-      "time": 35.55
-    },
-    {
-      "event": "landing",
-      "id": "veil-5-bridge-entry",
-      "x": 11691.2,
-      "hp": 135,
-      "time": 37.61
+      "id": "veil-crypt-floor-21",
+      "x": 3742.5,
+      "hp": 125,
+      "time": 13.53
     },
     {
       "event": "hurt",
-      "x": 11752.5,
-      "hp": 117.8,
-      "time": 37.8
-    },
-    {
-      "event": "landing",
-      "id": "veil-5-bridge-deck-1",
-      "x": 12132.5,
-      "hp": 117.8,
-      "time": 39.6
-    },
-    {
-      "event": "landing",
-      "id": "veil-5-bridge-deck-2",
-      "x": 12613.1,
-      "hp": 117.8,
-      "time": 41.12
-    },
-    {
-      "event": "landing",
-      "id": "veil-5-bridge-deck-3",
-      "x": 13093.2,
-      "hp": 117.8,
-      "time": 42.77
-    },
-    {
-      "event": "landing",
-      "id": "veil-5-bridge-exit",
-      "x": 13532.6,
-      "hp": 117.8,
-      "time": 44.43
-    },
-    {
-      "event": "landing",
-      "id": "veil-5-bridge-exit",
-      "x": 14063.5,
-      "hp": 117.8,
-      "time": 46.14
-    },
-    {
-      "event": "checkpoint",
-      "x": 14178.2,
-      "hp": 135,
-      "time": 46.5
-    },
-    {
-      "event": "landing",
-      "id": "veil-6-machine-entry",
-      "x": 14722.2,
-      "hp": 135,
-      "time": 48.2
-    },
-    {
-      "event": "landing",
-      "id": "veil-6-machine-machine-0",
-      "x": 15200.3,
-      "hp": 135,
-      "time": 49.76
-    },
-    {
-      "event": "landing",
-      "id": "veil-6-machine-machine-1",
-      "x": 16021.7,
-      "hp": 135,
-      "time": 52.35
-    },
-    {
-      "event": "landing",
-      "id": "veil-6-machine-machine-2",
-      "x": 16945.9,
-      "hp": 135,
-      "time": 56.11
-    },
-    {
-      "event": "landing",
-      "id": "veil-6-machine-exit",
-      "x": 17642.3,
-      "hp": 135,
-      "time": 58.34
-    },
-    {
-      "event": "landing",
-      "id": "veil-7-refuge",
-      "x": 18863.6,
-      "hp": 135,
-      "time": 62.16
-    },
-    {
-      "event": "checkpoint",
-      "x": 18978.3,
-      "hp": 135,
-      "time": 62.52
-    },
-    {
-      "event": "landing",
-      "id": "veil-8-tower-entry",
-      "x": 19308.4,
-      "hp": 135,
-      "time": 63.6
-    },
-    {
-      "event": "landing",
-      "id": "veil-8-tower-riser-1",
-      "x": 19543.4,
-      "hp": 135,
-      "time": 64.41
-    },
-    {
-      "event": "landing",
-      "id": "veil-8-tower-riser-2",
-      "x": 19740.3,
-      "hp": 135,
-      "time": 65.11
-    },
-    {
-      "event": "landing",
-      "id": "veil-8-tower-riser-3",
-      "x": 19932.7,
-      "hp": 135,
-      "time": 65.82
-    },
-    {
-      "event": "landing",
-      "id": "veil-8-tower-wall",
-      "x": 20113.1,
-      "hp": 135,
-      "time": 66.68
-    },
-    {
-      "event": "landing",
-      "id": "veil-8-tower-descent-1",
-      "x": 20324.4,
-      "hp": 135,
-      "time": 67.74
-    },
-    {
-      "event": "landing",
-      "id": "veil-8-tower-descent-2",
-      "x": 20632.2,
-      "hp": 135,
-      "time": 69
-    },
-    {
-      "event": "landing",
-      "id": "veil-8-tower-descent-3",
-      "x": 21035,
-      "hp": 135,
-      "time": 70.74
-    },
-    {
-      "event": "landing",
-      "id": "veil-8-tower-exit",
-      "x": 21254.7,
-      "hp": 135,
-      "time": 71.48
-    },
-    {
-      "event": "landing",
-      "id": "veil-9-bridge-entry",
-      "x": 21892.1,
-      "hp": 135,
-      "time": 73.48
+      "x": 4187.8,
+      "hp": 125,
+      "time": 14.92
     },
     {
       "event": "hurt",
-      "x": 22065.4,
-      "hp": 117.8,
-      "time": 74.02
+      "x": 4395.3,
+      "hp": 125,
+      "time": 15.84
     },
     {
       "event": "hurt",
-      "x": 22289.3,
-      "hp": 94.4,
-      "time": 75.03
+      "x": 4684.1,
+      "hp": 125,
+      "time": 16.75
     },
     {
       "event": "landing",
-      "id": "veil-9-bridge-deck-1",
-      "x": 22332.7,
-      "hp": 94.4,
-      "time": 76.18
-    },
-    {
-      "event": "landing",
-      "id": "veil-9-bridge-deck-2",
-      "x": 22813.1,
-      "hp": 94.4,
-      "time": 77.69
-    },
-    {
-      "event": "landing",
-      "id": "veil-9-bridge-deck-3",
-      "x": 23293.2,
-      "hp": 94.4,
-      "time": 79.34
-    },
-    {
-      "event": "landing",
-      "id": "veil-9-bridge-exit",
-      "x": 23732.6,
-      "hp": 94.4,
-      "time": 81.01
-    },
-    {
-      "event": "landing",
-      "id": "veil-9-bridge-exit",
-      "x": 24263.5,
-      "hp": 129.4,
-      "time": 82.72
+      "id": "veil-crypt-floor-21",
+      "x": 4726.2,
+      "hp": 135,
+      "time": 16.92
     },
     {
       "event": "checkpoint",
-      "x": 24394.2,
+      "x": 4845.6,
       "hp": 135,
-      "time": 83.13
+      "time": 17.32
+    },
+    {
+      "event": "hurt",
+      "x": 4954.3,
+      "hp": 135,
+      "time": 17.66
     },
     {
       "event": "bossstart",
-      "x": 25031.5,
+      "x": 5140.1,
       "hp": 135,
-      "time": 85.12
+      "time": 18.42
     },
     {
       "event": "hurt",
-      "x": 25489.3,
+      "x": 5640.9,
       "hp": 135,
-      "time": 87.63
+      "time": 21.1
     },
     {
       "event": "hurt",
-      "x": 25611.2,
+      "x": 5657.6,
       "hp": 135,
-      "time": 93.37
-    },
-    {
-      "event": "hurt",
-      "x": 25612.4,
-      "hp": 134.1,
-      "time": 94.49
-    },
-    {
-      "event": "hurt",
-      "x": 25649.7,
-      "hp": 117,
-      "time": 96.11
-    },
-    {
-      "event": "hurt",
-      "x": 25742.1,
-      "hp": 107.6,
-      "time": 100.82
+      "time": 26.58
     },
     {
       "event": "bossdefeated",
       "id": "veil-warden",
-      "time": 101.73,
-      "hp": 107.6
+      "time": 28.47,
+      "hp": 135
     },
     {
       "event": "gate",
-      "x": 25757.3,
-      "hp": 107.6,
-      "time": 101.73
+      "x": 5708.5,
+      "hp": 135,
+      "time": 28.47
     },
     {
       "event": "landing",
-      "id": "veil-arena-1",
-      "x": 25757.3,
-      "hp": 107.6,
-      "time": 101.73
+      "id": "veil-arena-29",
+      "x": 5708.5,
+      "hp": 135,
+      "time": 28.47
     },
     {
       "event": "landing",
-      "id": "veil-arena-1",
-      "x": 27262.8,
-      "hp": 107.6,
-      "time": 106.47
+      "id": "veil-arena-29",
+      "x": 6134.3,
+      "hp": 135,
+      "time": 30
+    },
+    {
+      "event": "landing",
+      "id": "veil-arena-29",
+      "x": 6134.3,
+      "hp": 135,
+      "time": 30
     },
     {
       "event": "checkpoint",
-      "x": 27380.2,
-      "hp": 129.6,
-      "time": 106.83
-    },
-    {
-      "event": "story",
-      "npcId": "veil-scholar",
-      "choiceId": "veil-scholar-siphon"
-    },
-    {
-      "event": "landing",
-      "id": "veil-10-tunnel-entry",
-      "x": 27669.9,
-      "hp": 129.6,
-      "time": 107.93
-    },
-    {
-      "event": "landing",
-      "id": "veil-10-tunnel-tunnel-0",
-      "x": 28303.3,
-      "hp": 129.6,
-      "time": 110.03
-    },
-    {
-      "event": "landing",
-      "id": "veil-10-tunnel-tunnel-1",
-      "x": 28872.4,
-      "hp": 129.6,
-      "time": 111.84
-    },
-    {
-      "event": "landing",
-      "id": "veil-10-tunnel-tunnel-2",
-      "x": 29496.4,
-      "hp": 129.6,
-      "time": 113.83
-    },
-    {
-      "event": "landing",
-      "id": "veil-10-tunnel-exit",
-      "x": 30231.7,
-      "hp": 129.6,
-      "time": 116.15
-    },
-    {
-      "event": "landing",
-      "id": "veil-11-vault-entry",
-      "x": 30773.1,
-      "hp": 129.6,
-      "time": 117.84
-    },
-    {
-      "event": "landing",
-      "id": "veil-11-vault-arch-1",
-      "x": 31073.1,
-      "hp": 129.6,
-      "time": 118.81
-    },
-    {
-      "event": "landing",
-      "id": "veil-11-vault-arch-2",
-      "x": 31473.2,
-      "hp": 129.6,
-      "time": 120.36
-    },
-    {
-      "event": "landing",
-      "id": "veil-11-vault-arch-3",
-      "x": 31794.3,
-      "hp": 129.6,
-      "time": 121.42
-    },
-    {
-      "event": "landing",
-      "id": "veil-11-vault-arch-4",
-      "x": 32185.7,
-      "hp": 129.6,
-      "time": 122.75
-    },
-    {
-      "event": "landing",
-      "id": "veil-11-vault-exit",
-      "x": 32686.9,
-      "hp": 129.6,
-      "time": 124.48
-    },
-    {
-      "event": "checkpoint",
-      "x": 32779.1,
+      "x": 6220.1,
       "hp": 135,
-      "time": 124.8
+      "time": 30.3
     },
     {
       "event": "landing",
-      "id": "veil-12-machine-entry",
-      "x": 33323.1,
+      "id": "veil-tower-foot-38",
+      "x": 6482.8,
       "hp": 135,
-      "time": 126.5
+      "time": 31.38
     },
     {
       "event": "landing",
-      "id": "veil-12-machine-machine-0",
-      "x": 33800.8,
+      "id": "veil-tower-step-39",
+      "x": 6699.5,
       "hp": 135,
-      "time": 128.06
+      "time": 32.17
+    },
+    {
+      "event": "landing",
+      "id": "veil-tower-step-40",
+      "x": 6917.6,
+      "hp": 135,
+      "time": 32.92
     },
     {
       "event": "hurt",
-      "x": 34291.3,
-      "hp": 117.8,
-      "time": 129.62
+      "x": 7113.5,
+      "hp": 126.5,
+      "time": 33.55
     },
     {
       "event": "landing",
-      "id": "veil-12-machine-machine-1",
-      "x": 34622.1,
-      "hp": 121.7,
-      "time": 130.96
+      "id": "veil-tower-step-41",
+      "x": 7107.2,
+      "hp": 126.5,
+      "time": 33.82
     },
     {
       "event": "landing",
-      "id": "veil-12-machine-machine-2",
-      "x": 35510.9,
-      "hp": 121.7,
-      "time": 133.74
+      "id": "veil-tower-step-43",
+      "x": 7357.7,
+      "hp": 126.5,
+      "time": 34.66
     },
     {
       "event": "landing",
-      "id": "veil-12-machine-exit",
-      "x": 36241,
-      "hp": 121.7,
-      "time": 136.03
+      "id": "veil-tower-crown-44",
+      "x": 7573,
+      "hp": 126.5,
+      "time": 35.62
+    },
+    {
+      "event": "gate",
+      "x": 7648.8,
+      "hp": 126.5,
+      "time": 35.93
     },
     {
       "event": "landing",
-      "id": "veil-13-wire",
-      "x": 38061.6,
-      "hp": 121.7,
-      "time": 143.28
+      "id": "veil-tower-crown-44",
+      "x": 7664,
+      "hp": 126.5,
+      "time": 36.06
+    },
+    {
+      "event": "landing",
+      "id": "veil-tower-crown-44",
+      "x": 7963.4,
+      "hp": 135,
+      "time": 37.02
     },
     {
       "event": "checkpoint",
-      "x": 38178.9,
+      "x": 8099.4,
       "hp": 135,
-      "time": 143.65
+      "time": 37.45
     },
     {
       "event": "landing",
-      "id": "veil-14-terrace-terrace-0",
-      "x": 38733.6,
+      "id": "veil-sluice-entry-50",
+      "x": 8368.6,
       "hp": 135,
-      "time": 145.38
+      "time": 38.44
     },
     {
       "event": "landing",
-      "id": "veil-14-terrace-terrace-1",
-      "x": 39531.2,
+      "id": "veil-aqueduct-span-51",
+      "x": 8732.6,
       "hp": 135,
-      "time": 148.02
+      "time": 39.87
     },
     {
       "event": "landing",
-      "id": "veil-14-terrace-terrace-2",
-      "x": 40331.2,
+      "id": "veil-aqueduct-span-52",
+      "x": 9064.8,
       "hp": 135,
-      "time": 150.74
+      "time": 41.37
     },
     {
       "event": "landing",
-      "id": "veil-14-terrace-terrace-3",
-      "x": 41131.2,
+      "id": "veil-aqueduct-span-54",
+      "x": 9391.2,
       "hp": 135,
-      "time": 153.24
+      "time": 42.66
     },
     {
       "event": "landing",
-      "id": "veil-14-terrace-terrace-4",
-      "x": 42232.5,
+      "id": "veil-aqueduct-span-55",
+      "x": 9724.8,
       "hp": 135,
-      "time": 156.68
+      "time": 44.16
     },
     {
       "event": "landing",
-      "id": "veil-15-bridge-entry",
-      "x": 42891.2,
+      "id": "veil-cistern-bank-56",
+      "x": 10192.7,
       "hp": 135,
-      "time": 158.74
+      "time": 45.67
     },
     {
       "event": "landing",
-      "id": "veil-15-bridge-deck-1",
-      "x": 43359.8,
+      "id": "veil-root-bank-61",
+      "x": 10698.4,
       "hp": 135,
-      "time": 160.23
+      "time": 47.34
     },
     {
       "event": "landing",
-      "id": "veil-15-bridge-deck-2",
-      "x": 43813.4,
+      "id": "veil-broken-root-63",
+      "x": 11010.6,
       "hp": 135,
-      "time": 161.67
+      "time": 49.66
     },
     {
       "event": "landing",
-      "id": "veil-15-bridge-deck-3",
-      "x": 44293.2,
+      "id": "veil-hanging-root-65",
+      "x": 11433.7,
       "hp": 135,
-      "time": 163.32
+      "time": 51.12
     },
     {
       "event": "landing",
-      "id": "veil-15-bridge-exit",
-      "x": 44732.6,
+      "id": "veil-orchard-bank-66",
+      "x": 11795.8,
       "hp": 135,
-      "time": 164.98
+      "time": 52.98
     },
     {
       "event": "landing",
-      "id": "veil-15-bridge-exit",
-      "x": 45263.5,
+      "id": "veil-orchard-bank-66",
+      "x": 12081.6,
       "hp": 135,
-      "time": 166.69
+      "time": 53.93
     },
     {
       "event": "checkpoint",
-      "x": 45378.2,
+      "x": 12268.3,
       "hp": 135,
-      "time": 167.05
-    },
-    {
-      "event": "landing",
-      "id": "veil-16-approach",
-      "x": 46863.5,
-      "hp": 135,
-      "time": 171.69
-    },
-    {
-      "event": "landing",
-      "id": "veil-17-tunnel-entry",
-      "x": 47383.5,
-      "hp": 135,
-      "time": 173.32
-    },
-    {
-      "event": "landing",
-      "id": "veil-17-tunnel-tunnel-0",
-      "x": 47903.9,
-      "hp": 135,
-      "time": 175.03
-    },
-    {
-      "event": "landing",
-      "id": "veil-17-tunnel-tunnel-1",
-      "x": 48472.7,
-      "hp": 135,
-      "time": 176.84
-    },
-    {
-      "event": "landing",
-      "id": "veil-17-tunnel-tunnel-2",
-      "x": 49096.5,
-      "hp": 135,
-      "time": 178.83
-    },
-    {
-      "event": "landing",
-      "id": "veil-17-tunnel-exit",
-      "x": 49831.8,
-      "hp": 135,
-      "time": 181.15
-    },
-    {
-      "event": "checkpoint",
-      "x": 49978.4,
-      "hp": 135,
-      "time": 181.61
-    },
-    {
-      "event": "hurt",
-      "x": 50194.4,
-      "hp": 117.8,
-      "time": 182.28
-    },
-    {
-      "event": "landing",
-      "id": "veil-18-refuge",
-      "x": 51061.2,
-      "hp": 135,
-      "time": 185.3
-    },
-    {
-      "event": "checkpoint",
-      "x": 51194.6,
-      "hp": 135,
-      "time": 185.72
+      "time": 54.52
     },
     {
       "event": "story",
@@ -890,571 +524,237 @@
     },
     {
       "event": "landing",
-      "id": "veil-arena-2",
-      "x": 51551.9,
+      "id": "veil-arena-76",
+      "x": 12313.3,
       "hp": 110,
-      "time": 186.84
+      "time": 54.78
     },
     {
       "event": "bossstart",
-      "x": 51831.9,
-      "hp": 110.8,
-      "time": 187.72
-    },
-    {
-      "event": "hurt",
-      "x": 52387.6,
+      "x": 12520,
       "hp": 135,
-      "time": 194.89
+      "time": 55.65
     },
     {
       "event": "hurt",
-      "x": 52692.9,
-      "hp": 135,
-      "time": 196.92
-    },
-    {
-      "event": "hurt",
-      "x": 52738.2,
-      "hp": 134.1,
-      "time": 197.97
-    },
-    {
-      "event": "hurt",
-      "x": 52792.2,
-      "hp": 115.4,
-      "time": 199.72
-    },
-    {
-      "event": "hurt",
-      "x": 52852.2,
+      "x": 13079.8,
       "hp": 117.8,
-      "time": 202.02
+      "time": 62.82
     },
     {
       "event": "hurt",
-      "x": 52888.1,
-      "hp": 117.8,
-      "time": 204.49
+      "x": 12921.2,
+      "hp": 108.5,
+      "time": 64.82
     },
     {
       "event": "hurt",
-      "x": 53211.9,
-      "hp": 125.6,
-      "time": 206.62
-    },
-    {
-      "event": "hurt",
-      "x": 53304,
-      "hp": 117.8,
-      "time": 210.55
-    },
-    {
-      "event": "hurt",
-      "x": 53350.1,
-      "hp": 117.8,
-      "time": 213.02
-    },
-    {
-      "event": "hurt",
-      "x": 53666.9,
-      "hp": 125.6,
-      "time": 214.42
+      "x": 12804.5,
+      "hp": 92.9,
+      "time": 65.68
     },
     {
       "event": "bossdefeated",
       "id": "veil-hex",
-      "time": 214.57,
-      "hp": 135
+      "time": 69.82,
+      "hp": 92.9
     },
     {
       "event": "gate",
-      "x": 53651.6,
-      "hp": 135,
-      "time": 214.57
+      "x": 12855.4,
+      "hp": 92.9,
+      "time": 69.82
     },
     {
       "event": "landing",
-      "id": "veil-arena-2",
-      "x": 53651.6,
-      "hp": 135,
-      "time": 214.57
+      "id": "veil-arena-76",
+      "x": 12855.4,
+      "hp": 92.9,
+      "time": 69.82
     },
     {
       "event": "landing",
-      "id": "veil-arena-2",
-      "x": 54261.6,
-      "hp": 135,
-      "time": 216.55
-    },
-    {
-      "event": "story",
-      "npcId": "veil-deserter",
-      "choiceId": "veil-deserter-cannon"
-    },
-    {
-      "event": "landing",
-      "id": "veil-19-tower-entry",
-      "x": 54669.8,
-      "hp": 135,
-      "time": 218.01
-    },
-    {
-      "event": "landing",
-      "id": "veil-19-tower-riser-1",
-      "x": 54943.4,
-      "hp": 135,
-      "time": 218.96
-    },
-    {
-      "event": "landing",
-      "id": "veil-19-tower-riser-2",
-      "x": 55140.3,
-      "hp": 135,
-      "time": 219.66
-    },
-    {
-      "event": "landing",
-      "id": "veil-19-tower-riser-3",
-      "x": 55332.7,
-      "hp": 135,
-      "time": 220.37
-    },
-    {
-      "event": "landing",
-      "id": "veil-19-tower-wall",
-      "x": 55513.1,
-      "hp": 135,
-      "time": 221.23
-    },
-    {
-      "event": "landing",
-      "id": "veil-19-tower-descent-1",
-      "x": 55724.4,
-      "hp": 135,
-      "time": 222.29
-    },
-    {
-      "event": "landing",
-      "id": "veil-19-tower-descent-2",
-      "x": 56032.2,
-      "hp": 135,
-      "time": 223.55
-    },
-    {
-      "event": "landing",
-      "id": "veil-19-tower-descent-3",
-      "x": 56435,
-      "hp": 135,
-      "time": 225.29
-    },
-    {
-      "event": "landing",
-      "id": "veil-19-tower-exit",
-      "x": 56654.7,
-      "hp": 135,
-      "time": 226.03
+      "id": "veil-arena-76",
+      "x": 13511.5,
+      "hp": 92.9,
+      "time": 71.96
     },
     {
       "event": "checkpoint",
-      "x": 56780.1,
-      "hp": 135,
-      "time": 226.42
+      "x": 13599.5,
+      "hp": 114.9,
+      "time": 72.23
     },
     {
       "event": "landing",
-      "id": "veil-20-tunnel-entry",
-      "x": 57182.7,
-      "hp": 135,
-      "time": 227.68
+      "id": "veil-tower-foot-84",
+      "x": 13862.7,
+      "hp": 114.9,
+      "time": 73.32
     },
     {
       "event": "landing",
-      "id": "veil-20-tunnel-tunnel-0",
-      "x": 57703.6,
-      "hp": 135,
-      "time": 229.4
+      "id": "veil-tower-step-85",
+      "x": 14079.5,
+      "hp": 114.9,
+      "time": 74.1
     },
     {
       "event": "landing",
-      "id": "veil-20-tunnel-tunnel-1",
-      "x": 58272.5,
-      "hp": 135,
-      "time": 231.21
+      "id": "veil-tower-step-86",
+      "x": 14297.6,
+      "hp": 114.9,
+      "time": 74.85
     },
     {
       "event": "landing",
-      "id": "veil-20-tunnel-tunnel-2",
-      "x": 58896.4,
-      "hp": 135,
-      "time": 233.2
+      "id": "veil-tower-step-87",
+      "x": 14517.1,
+      "hp": 114.9,
+      "time": 75.6
     },
     {
       "event": "landing",
-      "id": "veil-20-tunnel-exit",
-      "x": 59631.7,
-      "hp": 135,
-      "time": 235.52
+      "id": "veil-tower-step-89",
+      "x": 14737.9,
+      "hp": 114.9,
+      "time": 76.36
     },
     {
       "event": "landing",
-      "id": "veil-21-wire",
-      "x": 61463.4,
-      "hp": 135,
-      "time": 241.9
-    },
-    {
-      "event": "checkpoint",
-      "x": 61578.1,
-      "hp": 135,
-      "time": 242.26
-    },
-    {
-      "event": "landing",
-      "id": "veil-22-terrace-terrace-0",
-      "x": 62132.7,
-      "hp": 135,
-      "time": 243.99
-    },
-    {
-      "event": "landing",
-      "id": "veil-22-terrace-terrace-1",
-      "x": 62931.2,
-      "hp": 135,
-      "time": 246.62
-    },
-    {
-      "event": "landing",
-      "id": "veil-22-terrace-terrace-2",
-      "x": 63731.2,
-      "hp": 135,
-      "time": 249.35
-    },
-    {
-      "event": "landing",
-      "id": "veil-22-terrace-terrace-3",
-      "x": 64531.2,
-      "hp": 135,
-      "time": 251.85
-    },
-    {
-      "event": "landing",
-      "id": "veil-22-terrace-terrace-4",
-      "x": 65632.5,
-      "hp": 135,
-      "time": 255.29
-    },
-    {
-      "event": "landing",
-      "id": "veil-23-machine-entry",
-      "x": 66323.2,
-      "hp": 135,
-      "time": 257.45
-    },
-    {
-      "event": "landing",
-      "id": "veil-23-machine-machine-0",
-      "x": 66800.8,
-      "hp": 135,
-      "time": 259.01
-    },
-    {
-      "event": "landing",
-      "id": "veil-23-machine-machine-1",
-      "x": 67622,
-      "hp": 135,
-      "time": 261.6
-    },
-    {
-      "event": "landing",
-      "id": "veil-23-machine-machine-2",
-      "x": 68510.9,
-      "hp": 135,
-      "time": 264.38
-    },
-    {
-      "event": "landing",
-      "id": "veil-23-machine-exit",
-      "x": 69243.6,
-      "hp": 135,
-      "time": 266.67
-    },
-    {
-      "event": "checkpoint",
-      "x": 69379.6,
-      "hp": 135,
-      "time": 267.1
-    },
-    {
-      "event": "landing",
-      "id": "veil-24-bridge-entry",
-      "x": 69891.6,
-      "hp": 135,
-      "time": 268.7
-    },
-    {
-      "event": "landing",
-      "id": "veil-24-bridge-deck-1",
-      "x": 70360,
-      "hp": 135,
-      "time": 270.18
+      "id": "veil-tower-crown-90",
+      "x": 14953,
+      "hp": 114.9,
+      "time": 77.33
     },
     {
       "event": "hurt",
-      "x": 70487.9,
-      "hp": 117.8,
-      "time": 270.59
-    },
-    {
-      "event": "hurt",
-      "x": 70712,
-      "hp": 99.9,
-      "time": 271.95
+      "x": 15145,
+      "hp": 97.7,
+      "time": 77.98
     },
     {
       "event": "landing",
-      "id": "veil-24-bridge-deck-2",
-      "x": 70788.5,
-      "hp": 99.9,
-      "time": 273.07
+      "id": "veil-tower-crown-90",
+      "x": 15342.3,
+      "hp": 122.7,
+      "time": 78.86
     },
     {
       "event": "landing",
-      "id": "veil-24-bridge-deck-3",
-      "x": 71293.3,
-      "hp": 99.9,
-      "time": 274.8
+      "id": "veil-engine-walk-94",
+      "x": 15631.5,
+      "hp": 122.7,
+      "time": 79.83
     },
     {
       "event": "landing",
-      "id": "veil-24-bridge-exit",
-      "x": 71732.6,
-      "hp": 99.9,
-      "time": 276.47
+      "id": "veil-engine-walk-94",
+      "x": 15961.6,
+      "hp": 122.7,
+      "time": 80.89
     },
     {
       "event": "landing",
-      "id": "veil-24-bridge-exit",
-      "x": 72263.5,
-      "hp": 99.9,
-      "time": 278.17
+      "id": "veil-engine-duct-96",
+      "x": 16401.9,
+      "hp": 122.7,
+      "time": 82.39
     },
     {
       "event": "landing",
-      "id": "veil-25-vault-entry",
-      "x": 72772.8,
-      "hp": 99.9,
-      "time": 279.77
+      "id": "veil-engine-switchyard-97",
+      "x": 16744.7,
+      "hp": 122.7,
+      "time": 83.6
+    },
+    {
+      "event": "gate",
+      "x": 16811.6,
+      "hp": 122.7,
+      "time": 83.85
     },
     {
       "event": "landing",
-      "id": "veil-25-vault-arch-1",
-      "x": 73073,
-      "hp": 99.9,
-      "time": 280.73
+      "id": "veil-engine-switchyard-97",
+      "x": 16811.6,
+      "hp": 122.7,
+      "time": 83.85
     },
     {
       "event": "landing",
-      "id": "veil-25-vault-arch-2",
-      "x": 73473.2,
-      "hp": 99.9,
-      "time": 282.28
-    },
-    {
-      "event": "landing",
-      "id": "veil-25-vault-arch-3",
-      "x": 73794.3,
-      "hp": 99.9,
-      "time": 283.34
-    },
-    {
-      "event": "landing",
-      "id": "veil-25-vault-arch-4",
-      "x": 74185.7,
-      "hp": 99.9,
-      "time": 284.67
-    },
-    {
-      "event": "landing",
-      "id": "veil-25-vault-exit",
-      "x": 74686.9,
-      "hp": 99.9,
-      "time": 286.4
-    },
-    {
-      "event": "checkpoint",
-      "x": 74779.1,
-      "hp": 121.9,
-      "time": 286.72
-    },
-    {
-      "event": "landing",
-      "id": "veil-26-tunnel-entry",
-      "x": 75181.8,
-      "hp": 121.9,
-      "time": 287.98
-    },
-    {
-      "event": "landing",
-      "id": "veil-26-tunnel-tunnel-0",
-      "x": 75703.4,
-      "hp": 121.9,
-      "time": 289.7
-    },
-    {
-      "event": "hurt",
-      "x": 75974,
-      "hp": 98.5,
-      "time": 290.6
-    },
-    {
-      "event": "landing",
-      "id": "veil-26-tunnel-tunnel-1",
-      "x": 76271.2,
-      "hp": 98.5,
-      "time": 291.64
-    },
-    {
-      "event": "landing",
-      "id": "veil-26-tunnel-tunnel-2",
-      "x": 76896,
-      "hp": 98.5,
-      "time": 293.63
-    },
-    {
-      "event": "landing",
-      "id": "veil-26-tunnel-exit",
-      "x": 77631.5,
-      "hp": 98.5,
-      "time": 295.95
-    },
-    {
-      "event": "landing",
-      "id": "veil-27-approach",
-      "x": 79263.5,
-      "hp": 133.5,
-      "time": 301.05
-    },
-    {
-      "event": "checkpoint",
-      "x": 79394.2,
+      "id": "veil-engine-switchyard-97",
+      "x": 17251.6,
       "hp": 135,
-      "time": 301.46
+      "time": 85.23
+    },
+    {
+      "event": "checkpoint",
+      "x": 17374.3,
+      "hp": 135,
+      "time": 85.61
     },
     {
       "event": "bossstart",
-      "x": 80031.5,
+      "x": 17670.2,
       "hp": 135,
-      "time": 303.45
+      "time": 86.72
     },
     {
       "event": "hurt",
-      "x": 80486.1,
+      "x": 18065.6,
       "hp": 125.6,
-      "time": 306.45
+      "time": 90.28
     },
     {
       "event": "hurt",
-      "x": 80562.3,
-      "hp": 117.8,
-      "time": 310.06
+      "x": 18222.5,
+      "hp": 108.5,
+      "time": 93.73
     },
     {
       "event": "hurt",
-      "x": 80918.3,
-      "hp": 117.8,
-      "time": 312.73
+      "x": 17980.9,
+      "hp": 91.3,
+      "time": 96.68
     },
     {
       "event": "hurt",
-      "x": 80987.1,
-      "hp": 125.6,
-      "time": 315.89
-    },
-    {
-      "event": "hurt",
-      "x": 81063.4,
-      "hp": 117.8,
-      "time": 319.5
-    },
-    {
-      "event": "hurt",
-      "x": 81354.3,
-      "hp": 117.8,
-      "time": 321.48
-    },
-    {
-      "event": "hurt",
-      "x": 81516.2,
-      "hp": 117.8,
-      "time": 326.92
-    },
-    {
-      "event": "hurt",
-      "x": 81687.8,
-      "hp": 117.8,
-      "time": 328.41
-    },
-    {
-      "event": "hurt",
-      "x": 81866.8,
-      "hp": 117.8,
-      "time": 329.53
-    },
-    {
-      "event": "hurt",
-      "x": 81890.2,
-      "hp": 125.6,
-      "time": 330.66
-    },
-    {
-      "event": "hurt",
-      "x": 81936.5,
-      "hp": 111.6,
-      "time": 332.88
-    },
-    {
-      "event": "hurt",
-      "x": 81982.6,
-      "hp": 117.8,
-      "time": 335.12
-    },
-    {
-      "event": "hurt",
-      "x": 82310.5,
-      "hp": 117.8,
-      "time": 336.74
-    },
-    {
-      "event": "hurt",
-      "x": 82345.5,
-      "hp": 125.6,
-      "time": 338.04
+      "x": 17960.7,
+      "hp": 82,
+      "time": 98.23
     },
     {
       "event": "bossdefeated",
       "id": "veil-regent",
-      "time": 338.94,
-      "hp": 135
+      "time": 102.29,
+      "hp": 82
     },
     {
       "event": "gate",
-      "x": 82367.5,
-      "hp": 135,
-      "time": 338.94
+      "x": 18100.9,
+      "hp": 82,
+      "time": 102.29
     },
     {
       "event": "landing",
-      "id": "veil-arena-3",
-      "x": 82367.5,
-      "hp": 135,
-      "time": 338.94
+      "id": "veil-arena-105",
+      "x": 18100.9,
+      "hp": 82,
+      "time": 102.29
+    },
+    {
+      "event": "landing",
+      "id": "veil-arena-105",
+      "x": 18663.2,
+      "hp": 82,
+      "time": 104.09
     },
     {
       "event": "win",
-      "x": 83414.6,
-      "hp": 135,
-      "time": 342.25
+      "x": 18683.1,
+      "hp": 82,
+      "time": 104.16
     }
   ]
 }

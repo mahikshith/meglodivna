@@ -1,85 +1,87 @@
-# v0.4 — Aether and extracted reference artwork
+# v0.5 — Runeheart crisp pixel assets
 
-The primary Aether, Rift Crawler, Hexwing Raider, Crimson Mecha, Wyrm, friendly NPC and environment artwork comes from actual crops of the user's four local concept boards. Background masking and nearest-neighbor normalization prepare those pixels for play; no lookalike imagery or missing in-between frames was generated. Original procedural assets remain for other characters, weapons, wards, summons and effects.
+Runeheart uses genuine animation and environment graphics by **Luis Zuno / Ansimuz**, selected from his [Gothicvania Patreon collection](https://opengameart.org/content/gothicvania-patreons-collection), [Gothicvania Town](https://opengameart.org/content/gothicvania-town) and [Bridge expansion](https://opengameart.org/content/gothicvania-bridge-expansion-pack-1). The author's pages label the graphics CC0; the downloaded packages also contain public-domain/commercial-use notices. The Bridge notice explicitly allows modification and redistribution. Graphics alone are imported. Source music has separate terms and is excluded, as is demo game code.
 
-The frozen packet contains **174 frame keys, 49 animation groups and 173 unique pixel payloads**. One stone/snow fallback alias shares an atlas rectangle. Printed “64×64,” frame counts and JSON on the boards are illustrative labels, not sheet metadata.
+The previous v0.4 concept-board packet remains a compatibility source for equipment/effects and the existing mechanical boss/Wyrm forms. The new hero, Hellhound, Dark Ghost, town inhabitants and main scenery use the licensed pixel package. The runtime deliberately retains the old Mecha/Wyrm animation aliases because their attack anatomy and frozen collision geometry already agree; the newly packaged Hell Beast/Winged Demon are available for a future visual adapter with visible casting sockets.
 
-## Packet and provenance
+## Files and reproducibility
 
-Only atlas.png, atlas.json and manifest.json live in public/reference/. The pipeline is scripts/extract-reference-art.py; contact sheets and receipts are in artifacts/reference/. The full originals remain untouched in C:/Users/mahik/Downloads and are excluded from the Android payload.
+- Source ZIPs and their unmodified extracted files: `reference/runeheart-sources/`, outside the public/Android payload.
+- Deterministic selection/translation/packing: `scripts/build-runeheart-assets.py`.
+- Runtime: `public/runeheart/` contains twelve files: atlas PNG/JSON, manifest, license notices and eight background PNGs.
+- Contact sheets, authored-motion GIF and audit receipts: `artifacts/runeheart/`.
+- Runtime adapter: `src/runeheart-art.js`.
 
-| Source, all 1536×1024 | SHA-256 |
+Run the asset builder with the installed Python/Pillow runtime. It requires the three preserved source ZIP extractions. Manifest entries record source filename, SHA-256, actual crop rectangle or GIF frame index, normalization, dimensions, body, anchor and sockets. Aliases reuse atlas rectangles. Source ZIP hashes:
+
+| Package | Bytes | SHA-256 |
+| --- | ---: | --- |
+| Gothicvania collection | 4,001,163 | 081a88f814d1c38b57a97af3659723bb15ed655e00847fcba0d8c08f4b98757f |
+| Town | 9,084,942 | 11c32d7416814e1832c502e76426623065792c3d95a8514be42e59fe6b0b0651 |
+| Bridge | 170,400 | d46c5f739bbde80be9b7372559a9316987bb5e13ead4b64fcb436fe6745cfb26 |
+
+The source hero PNG strips have inconsistent opaque export remnants. The clean author GIF frames are used instead. No inferred frame-count labels, flattened concept crops, matte removal or AI interpolation are involved in the new hero sequences.
+
+## Real animations and registration
+
+The packet has **184 frame keys, 166 unique pixel payloads and 62 animation groups**, including compatibility/state aliases. These are group/frame counts, not a claim of 62 independently authored sequences. Every imported actor pixel has alpha 0 or 255 and uses nearest-neighbor rendering.
+
+| Source family | Authored selected sequences |
 | --- | --- |
-| 03_aether_character_sheet.png | c89e1a24bcd32acee81e2051910bf42e3b4555c41e80369c34d51a2aa2ccade4 |
-| 02_asset_pack_all_characters.png | e5ac7d62c65ba90fa0c0f670e0aceac8f9032245485ee7b04b7941046b4e215a |
-| 01_concept_board_full_world.png | 305b247a16240cab407cc4102f10fb0419dfe85eb794d0f507d6a5d004cb6283 |
-| Designer.png | 6194801c4acc3d545aeda448e9ed822bf02c6ff284d4e9996dd28e165e4b3717 |
+| Hero | idle 4, run 12, jump 5, grounded slash 6, air slash 6, low slash 4, hurt 3, crouch 3, climb 7 |
+| Hellhound | idle 6, walk 12, run 5, jump 6 |
+| Dark Ghost | idle 7, shriek 4, vanish 7 |
+| Hell Beast | idle 6, breath 4, burn 6 |
+| Winged Demon | idle 6, attack 8 |
+| Wolf | run 4 |
+| Town people | woman idle 7, bearded idle 5, hat man idle 4, old man idle 8 |
 
-Each frame records source file/native sourceRect, scale, crop offset, mask method, pixel digest, dimensions, anchor and visible bounds. Actors additionally record trimmed body and attachment points. Crops avoid labels/dividers. Gradient fitting, source-alpha cleanup and dominant-component filtering remove the matte and detached neighboring fragments; edge-color unmixing limits halos. Extracted hair and glows retain soft alpha. Opaque tiles/scenery preserve their painted lighting.
+Hero keys use `rh-hero-{state}-{index}`. Both `hero-*` and existing `aether-*` animation names resolve to the new frames, including `aether-air-slash` and `aether-crouch-slash`. Dash maps to real low-slash/lunge poses. Double-jump, jet and firearm states reuse authored poses with runtime effects/held weapons. Hero and Demon death aliases hold a final pose and fade; the package does not contain dedicated death animations for them. Wolf idle/attack reuse its run strip. Creature hit/walk aliases without a matching source strip also reuse documented source poses.
 
-artifacts/reference/extraction-report.json records isolated regeneration whose three output files matched the frozen packet byte for byte. Source and packet hashes were rechecked for render-budget.json. These receipts establish local provenance and reproducibility, not independent authorship/license verification.
-
-## Import and registration
-
-src/reference-art.js exports preloadReferenceArt(scene) and createReferenceArt(scene). Preload loads atlas reference-art and cached JSON reference-art-manifest; creation returns {atlasKey,frames,animations,sources,...} and checks every named frame. Render using sprite.setTexture('reference-art',frameKey), with metadata origins. All frames share one atlas texture.
-
-| Family | Canvas and pixel anchor | Trimmed body x,y,w,h |
+| Family | Native canvas; anchor | Trimmed body x,y,w,h |
 | --- | --- | --- |
-| Aether ordinary | 128×128; feet 64,116 | 50,56,28,60 |
-| Aether doublejump/jetidle/jet | 128×160; feet 64,116 | 50,56,28,60 |
-| Aether dashtrail | 160×128; feet 96,116 | 82,56,28,60 |
-| Crawler | 128×112; feet 64,100 | 34,59,60,41 |
-| Raider | 128×112; anchor 64,100 | 47,43,34,45 |
-| Mecha | 144×144; feet 64,128 | 38,57,52,71 |
-| Wyrm | 256×224; fly 256×256; anchor 128,200 | 72,114,112,86 |
-| Six NPCs | 96×128; feet 48,106 | 32,43,32,63 |
+| Hero | 128×112; feet 64,96 | 57,66,14,30 |
+| Hellhound | 96×64; feet 48,56 | 33,36,30,20 |
+| Dark Ghost | 80×96; anchor 40,80 | 31.5,57.5,17,22.5 |
+| Hell Beast | 128×128; feet 64,112 | 52,76.5,24,35.5 |
+| Winged Demon | 256×208; anchor 128,184 | 100,141,56,43 |
+| Wolf | 80×48; feet 40,40 | 25,24,30,16 |
+| Town NPC | 80×80; feet 40,72 | 32,40,16,32 |
 
-Aether's idle silhouette is **89 native pixels** tall. Extra transparent padding preserves jets, dash trails and folded Wyrm flight tails without changing body/attachment offsets. All fixed actor canvases have a clear outer edge. Read dimensions per frame instead of assuming 128×128.
+The hero body renders at exactly 2× for the simulation's 28×60 hurtbox, with approximately 78 visible pixels of standing height. Cape, hair and blade extend outside that forgiving body. GIF jump poses are translated to stable feet; the physical jump is not counted twice. Source pixels are preserved without smoothing. All hero frames have at least a two-pixel clear outer edge.
 
-Actual Aether groups: idle 3/run 5/jump 3/doublejump 3/fall 2/dash 3/dashtrail 2/jetidle 3/jet 6/fire 3/hurt 3/death 4. The first printed Shoot drawing remains ref-aether-fire-0 in aether-ready; aether-fire uses raised-hand frames 1–3. Crawler groups are idle 1/walk 3/attack 2/hurt 2/death 1; Raider idle 1/fly 4/fire 2/hurt 1/death 1; Mecha idle 1/walk 1/attack 2/fire 1/hurt 1/death 3; Wyrm idle 1/fly 2/fire 3/hurt 3/death 1. These enumerate real drawings, not complete authored animation strips.
+Hero hand is native **(72,75.5)** and muzzle **(78.5,75.5)**. Relative to feet (64,96), 2× gives hand center ±16 / feet−41, then a 13-world-pixel aimed muzzle offset. These preserve authoritative `weaponOrigin`; the held weapon overlay must use its own handle/muzzle registration. For new creature art, natural claws/skulls do not necessarily match the simulation's historical gun/rocket sockets. Manifest attachment notes identify explicit casting/emitter overlays; they are not assertions that every source drawing contains a physical gun at that point.
 
-NPC keys are ref-npc-villager/mage/blacksmith/scientist/merchant/healer; matching ref-face-* crops and ref-face-aether support dialogue. Every equipment/effect/environment key and all 49 groups are in the manifest.
+## Adapter and environment
 
-Art faces right. The renderer mirrors around the trimmed body center, scales uniformly by entity.h/body.h and aligns body center/bottom to simulation. Transparent wings, capes, trails and launchers do not enlarge hurtboxes. weaponOrigin and actual beam/projectile geometry remain authoritative.
+`preloadRuneheartArt(scene)` loads atlas `runeheart-art`, its cached manifest and eight large paintings. `createRuneheartArt(scene, legacyManifest?)` validates named frames and returns `{atlasKey,frames,animations,backgrounds,...}`. When merging the old packet, each frame's `atlasKey` is authoritative: render with `meta.atlasKey || art.atlasKey`. Body/feet alignment remains `scale=entity.h/meta.body.h`, centered on the physical body and mirrored around that center.
 
-| Canonical attachment in frame pixels | Body-relative placement |
-| --- | --- |
-| Aether hand 80,75; muzzle 93,75 | hand center±16,feet−41; horizontal muzzle center±29,feet−41 |
-| Crawler muzzle 94,65 | center±30,body top+6 at native body size |
-| Raider muzzle 94,65 | center±30,body top+22 at native body size |
-| Mecha muzzle 120,80 | center±56×scale,feet−48×scale |
-| Wyrm mouth 228,128; launcher 156,100 | mouth center±100,feet−72; launcher center±28,feet−100 at native 112×86 body size |
+`createRuneheartParallax(scene, theme, viewportH)` returns `update(cameraX,cameraY,floorScreenY?)`, `resize(width,height)`, `destroy()` and layer views. The optional horizon is measured before the renderer adds its screen offset. With the renderer's −120 vertical overscan offset, it passes `room.floorY-cameraY+120`. Themes include soulforge/forest, tide/town, pyre/crypt, neon/night-city, veil/moon and citadel. The helper preserves image aspect ratio, uses integer scale and wraps whole panoramas rather than miniature tree patterns. Its opaque backing covers upper routes, and vertical parallax stays bounded by painting overscan.
 
-Aether attachments describe its canonical raised-fire stance, rather than a skeletal rig shared by every illustration. Aimed offsets rotate around the physical hand. Wyrm mouth registration is common across normalized poses; painted torso core coordinates remain per frame. Attack overlays use physical endpoints and projectile angles.
+Neon splits its existing PNG into sky and building subframes without another GPU image. Buildings and town/moon foregrounds render at native 2×, align their bottom to the room horizon and use four persistent panorama copies for wrap. Foreground alpha is 0.4. The forest uses a cooler tint and lighter backing at 0.7 alpha, and crypt/cloud paintings are subdued so combat and terrain stay brighter.
 
-Original Warden 128×144/feet64,138 and Hex 160×192/feet 80,184 remain procedural. Chest points are 62,61 and 80,106; Warden has a 2px horizontal/±1px vertical art bob. Original Regent art remains available while reference Mecha/Wyrm supply the revamped transformation. Spellcasters, allied clone/wolf/dragon, traps, pickup glyphs and weapons remain in the generated manifest. Simulation owns state, damage, destruction, summons and trap timing; decoration adds no collision.
+The source Gothic Castle “background” is a **modular panel sheet**, not a seamless painting. The builder now crops its chapel, stairs, window and statue panels individually, removes their RGB7 empty backing, and assembles one opaque masonry hall with columns/cornice. Its transparent gutters are never displayed. The forest combines three large licensed tree props with original pixel sky/trunks; the city combines three grounded authored building clusters with an original dusk sky. Town/cloud paintings and their transparent foreground layers stay separate. The renderer supplies substantial solid floor foundations, capstones and structural supports; transparent terrain strips alone do not form a complete floor.
 
-Summoned clones render extracted Aether fire poses at their ally body scale (entity.h/60), using the same scaled canonical hand/muzzle geometry. Generated allied-clone-* textures remain fallback assets.
+New compatible environment keys include `ref-tile-{stone,steel,wood,glass,circuit,grass}` and `ref-prop-{platform,castle,house,tree,house-a,house-b,house-c,barrel,crate,crate-stack,street-lamp,wagon,well,sign,chest,pillar,statue,arch,torch}`. The platform frame is a horizontal wood cap. The grass frame is a top strip intended for an opaque floor backing. NPC idle loops are `npc-villager-idle`, `npc-mage-idle`, `npc-scientist-idle`, `npc-healer-idle`; static `ref-npc-*` aliases remain available.
 
-## Environment and budget
+## Budget and verification
 
-The atlas includes foreground tiles, platforms, ladders, spikes, arches, gates, trees, crystals, statues, water, torches, collectibles and forest/island/castle/cave/city panels. ref-tile-snow aliases the stone crop; it is not extracted snow terrain. Backgrounds are small painted panels, not seamless full-resolution panoramas.
+The new packet alone occupies **465,343 compressed bytes**. Its 2048×2048 RGBA atlas is 16 MiB; eight native paintings total 6,086,656 RGBA bytes. Combined uncompressed texture storage for this packet is **21.80 MiB**. The retained reference atlas and generated assets also remain loaded; this is the new-packet subtotal.
 
-With reference art present, createArtTextures creates/reuses **333** procedural textures and skips 14 legacy 960×720 backgrounds. The renderer adds ten reusable **480×360** far/mid compositions for five scenic themes: **343 generated textures**, plus one 2048×2048 atlas. These compositions reuse extracted panels/props once at boot, not per room. Procedural characters use one-pixel details; procedural terrain uses two-pixel clusters. Extracted pixels retain their source raster with nearest-neighbor sampling. Binary procedural alpha does not apply to extracted glows.
+`artifacts/runeheart/asset-budget.json` records every compiled file hash and confirms nonempty frames, binary alpha, atlas bounds, source existence, clear hero edges, opaque composed backgrounds and unchanged hero sockets. Native hero/creature/environment contact sheets and `hero-authored-animation.gif` were visually inspected. A second deterministic build matched the compiled hashes. Root's refreshed suite contains twenty integrated render fixtures: the skyline is visible behind the ground, the forest is subdued, and solid floor foundations retain readable landing rims. These fixtures are separate from legal route proofs and do not establish Android comfort or device performance.
 
-| Allocation / file | Bytes | Size |
-| --- | ---: | ---: |
-| 333 procedural texture pixels | 13,224,704 | 12.61MiB |
-| Ten 480×360 composition pixels | 6,912,000 | 6.59MiB |
-| 343 generated textures combined | 20,136,704 | 19.20MiB |
-| One 2048×2048 atlas pixels | 16,777,216 | 16.00MiB |
-| Combined RGBA pixel allocation estimate | **36,913,920** | **35.20MiB** |
-| atlas.png | 1,722,171 | |
-| atlas.json | 63,622 | |
-| manifest.json | 166,293 | |
-| Three reference files combined | **1,952,086** | **1.86MiB** |
+The combined current runtime source-image budget is:
 
-artifacts/reference/render-budget.json contains the 343-key inventory and packet digests. This is a dimensions-based pixel estimate, not measured GPU/process memory. Built-in/font textures, GPU copies, framebuffers, temporary canvases, JS heap, audio and browser/native overhead are excluded.
+| Loaded source images | Count | RGBA bytes | MiB per copy |
+| --- | ---: | ---: | ---: |
+| Generated characters, weapons, effects and props | 333 | 13,224,704 | 12.61 |
+| Runeheart atlas | 1 | 16,777,216 | 16.00 |
+| Runeheart paintings | 8 | 6,086,656 | 5.80 |
+| Retained reference atlas | 1 | 16,777,216 | 16.00 |
+| **Total** | **343** | **52,865,792** | **50.42** |
 
-## Inspection and limits
+`artifacts/runeheart/runtime-texture-budget.json` derives this from the current generated manifest and loaded image dimensions. Background subframes and aliases share their source texture and are not counted twice. The ten old hidden synthesized backdrop textures were removed; generated `background-*` textures are also skipped when reference art is present.
 
-Final native previews are artifacts/reference/hero-contact-sheet.png, creatures-contact-sheet.png and environment-contact-sheet.png. Inspection found clean silhouettes without sheet labels or detached divider strokes; padding preserves jets/trails/tails. Creature families, survivor faces, foreground materials and collectibles remain distinguishable. The sheets fit differing canvas sizes into cells, so thumbnail size is not runtime scale.
+This **50.42 MiB is one uncompressed RGBA copy**, not measured process RAM. A scenario retaining both decoded CPU images/canvases and GPU copies is approximately **100.83 MiB**, before render buffers, graphics geometry, cached icon canvases/data URLs, transient painter canvases, browser overhead and driver allocations. Actual retention depends on the browser/device.
 
-Flattened boards supply sparse, sometimes inconsistent poses. Masking can lose extremely low-contrast pixels; scenery retains baked lighting; several idle/death groups contain one drawing. Asset checks establish extraction, padding, registration and budget arithmetic. Integrated gameplay/performance/Android evidence belongs in VALIDATION.md.
-
-Touch glyphs and menus are separate SVG/CSS/DOM surfaces outside the texture count. Synthesized sound retains capped voices, event-specific feedback, mute and reduced effects. Physical Android comfort, speaker mix and subjective game feel are not established by this audit.
+Distribution attribution is in `public/licenses/NOTICES.txt` and `Gothicvania-CC0-NOTICE.txt`. They distinguish licensed Gothicvania graphics, user-supplied reference-board pixels and original procedural work; the reference atlas is not claimed under the Gothicvania CC0 license.

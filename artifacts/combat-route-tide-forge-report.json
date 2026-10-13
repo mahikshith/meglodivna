@@ -1,46 +1,42 @@
 {
   "worldId": "tide",
-  "worldName": "AERIE // FLOATING ISLANDS",
+  "worldName": "DROWNED CHOIR · The Sluice Kingdom",
   "difficulty": "forge",
   "status": "won",
   "playerBody": {
     "w": 28,
     "h": 60
   },
-  "elapsed": 351.79,
-  "campaignTime": 351.79,
-  "timeLeft": 268.21,
+  "elapsed": 106.23,
+  "campaignTime": 106.23,
+  "timeLeft": 793.77,
   "deaths": 0,
-  "checkpoint": 16,
-  "x": 83413.3,
-  "y": 550,
-  "hp": 135,
+  "checkpoint": 6,
+  "x": 18683.4,
+  "y": 620,
+  "hp": 21.1,
   "conversations": [
-    "tide-scout",
-    "tide-scholar",
-    "tide-deserter"
+    "tide-mira"
   ],
   "triggerProof": {
     "tide-warden": {
-      "triggerX": 25030,
-      "activatedX": 25031.28,
-      "activatedTime": 83.93
+      "triggerX": 5520,
+      "activatedX": 5520.07,
+      "activatedTime": 20.45
     },
     "tide-hex": {
-      "triggerX": 51830,
-      "activatedX": 51831.22,
-      "activatedTime": 188.24
+      "triggerX": 12490,
+      "activatedX": 12490.22,
+      "activatedTime": 56.53
     },
     "tide-regent": {
-      "triggerX": 80030,
-      "activatedX": 80030.88,
-      "activatedTime": 307.41
+      "triggerX": 17670,
+      "activatedX": 17670.15,
+      "activatedTime": 86.12
     }
   },
   "storyClaims": [
-    "npc:tide-scout",
-    "npc:tide-scholar",
-    "npc:tide-deserter"
+    "npc:tide-mira"
   ],
   "bosses": [
     {
@@ -51,7 +47,7 @@
         "w": 96,
         "h": 120
       },
-      "fightSeconds": 19.03,
+      "fightSeconds": 11.59,
       "attacksSeen": [
         0,
         1,
@@ -70,7 +66,7 @@
         "w": 96,
         "h": 120
       },
-      "fightSeconds": 29.56,
+      "fightSeconds": 11.69,
       "attacksSeen": [
         0,
         1,
@@ -89,7 +85,7 @@
         "w": 112,
         "h": 86
       },
-      "fightSeconds": 41.45,
+      "fightSeconds": 18.74,
       "attacksSeen": [
         0,
         1,
@@ -101,7 +97,6 @@
         "flying"
       ],
       "flyingAttacksSeen": [
-        0,
         1,
         2
       ]
@@ -109,20 +104,32 @@
   ],
   "gates": [
     {
-      "id": "tide-warden-gate",
+      "id": "tide-tide-seal-22",
       "open": true
     },
     {
-      "id": "tide-hex-gate",
+      "id": "tide-guardian-seal-35",
       "open": true
     },
     {
-      "id": "tide-regent-gate",
+      "id": "tide-pressure-door-59",
+      "open": true
+    },
+    {
+      "id": "tide-guardian-seal-80",
+      "open": true
+    },
+    {
+      "id": "tide-guardian-seal-110",
+      "open": true
+    },
+    {
+      "id": "tide-three-stone-seal",
       "open": true
     }
   ],
   "method": "Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.",
-  "target": "tide-arena-3",
+  "target": "tide-arena-105",
   "events": [
     "bossdead",
     "bossstart",
@@ -134,6 +141,7 @@
     "dash",
     "debris",
     "enemyshot",
+    "enemywindup",
     "equip",
     "explode",
     "gate",
@@ -151,6 +159,7 @@
     "slash",
     "spark",
     "spell",
+    "stagger",
     "story",
     "summon",
     "summonarrival",
@@ -162,1238 +171,577 @@
   ],
   "history": [
     {
-      "event": "story",
-      "npcId": "tide-scout",
-      "choiceId": "tide-scout-armor"
-    },
-    {
       "event": "landing",
-      "id": "tide-1-approach",
-      "x": 221.3,
+      "id": "tide-sanctuary-1",
+      "x": 98.1,
       "hp": 100,
-      "time": 0.48
+      "time": 0.01
+    },
+    {
+      "event": "story",
+      "npcId": "tide-mira",
+      "choiceId": "tide-ward"
+    },
+    {
+      "event": "landing",
+      "id": "tide-sanctuary-1",
+      "x": 273.2,
+      "hp": 100,
+      "time": 0.62
+    },
+    {
+      "event": "landing",
+      "id": "tide-sanctuary-1",
+      "x": 793.2,
+      "hp": 100,
+      "time": 2.24
     },
     {
       "event": "checkpoint",
-      "x": 1578.7,
+      "x": 958.5,
       "hp": 122,
-      "time": 4.72
+      "time": 2.76
     },
     {
       "event": "landing",
-      "id": "tide-2-tunnel-entry",
-      "x": 1981.3,
+      "id": "tide-sluice-entry-4",
+      "x": 1228.4,
       "hp": 122,
-      "time": 5.98
+      "time": 3.75
     },
     {
       "event": "landing",
-      "id": "tide-2-tunnel-tunnel-0",
-      "x": 2503.3,
+      "id": "tide-aqueduct-span-5",
+      "x": 1587.2,
       "hp": 122,
-      "time": 7.69
+      "time": 5.18
     },
     {
       "event": "landing",
-      "id": "tide-2-tunnel-tunnel-1",
-      "x": 3071.1,
+      "id": "tide-aqueduct-span-6",
+      "x": 1918.3,
       "hp": 122,
-      "time": 9.53
+      "time": 6.74
     },
     {
       "event": "landing",
-      "id": "tide-2-tunnel-tunnel-2",
-      "x": 3666.2,
+      "id": "tide-aqueduct-span-8",
+      "x": 2243.1,
       "hp": 122,
-      "time": 11.75
+      "time": 8.08
     },
     {
       "event": "landing",
-      "id": "tide-2-tunnel-exit",
-      "x": 4433.5,
+      "id": "tide-aqueduct-span-9",
+      "x": 2578.8,
       "hp": 122,
-      "time": 14.17
+      "time": 9.63
     },
     {
       "event": "landing",
-      "id": "tide-3-terrace-terrace-0",
-      "x": 5132.2,
+      "id": "tide-cistern-bank-10",
+      "x": 3051.4,
       "hp": 122,
-      "time": 16.36
+      "time": 11.27
     },
     {
       "event": "landing",
-      "id": "tide-3-terrace-terrace-1",
-      "x": 5931.2,
-      "hp": 122,
-      "time": 18.98
+      "id": "tide-vault-entry-15",
+      "x": 3542.6,
+      "hp": 135,
+      "time": 13.06
     },
     {
       "event": "landing",
-      "id": "tide-3-terrace-terrace-2",
-      "x": 6733.6,
-      "hp": 122,
-      "time": 21.99
+      "id": "tide-vault-upper-16",
+      "x": 3897.5,
+      "hp": 135,
+      "time": 14.43
     },
     {
       "event": "landing",
-      "id": "tide-3-terrace-terrace-3",
-      "x": 7533.6,
-      "hp": 122,
-      "time": 24.49
+      "id": "tide-rune-reliquary-17",
+      "x": 4173.2,
+      "hp": 135,
+      "time": 15.34
+    },
+    {
+      "event": "gate",
+      "x": 4259.3,
+      "hp": 135,
+      "time": 15.63
     },
     {
       "event": "landing",
-      "id": "tide-3-terrace-terrace-4",
-      "x": 8632.2,
-      "hp": 122,
-      "time": 27.92
+      "id": "tide-rune-reliquary-17",
+      "x": 4274.3,
+      "hp": 135,
+      "time": 15.76
+    },
+    {
+      "event": "landing",
+      "id": "tide-vault-exit-20",
+      "x": 4795.5,
+      "hp": 135,
+      "time": 17.95
+    },
+    {
+      "event": "landing",
+      "id": "tide-vault-exit-20",
+      "x": 5081.5,
+      "hp": 135,
+      "time": 18.9
     },
     {
       "event": "checkpoint",
-      "x": 8778.9,
+      "x": 5225.5,
       "hp": 135,
-      "time": 28.38
-    },
-    {
-      "event": "landing",
-      "id": "tide-4-bridge-entry",
-      "x": 9293.6,
-      "hp": 135,
-      "time": 29.99
-    },
-    {
-      "event": "landing",
-      "id": "tide-4-bridge-deck-1",
-      "x": 9766.2,
-      "hp": 135,
-      "time": 31.51
-    },
-    {
-      "event": "landing",
-      "id": "tide-4-bridge-deck-2",
-      "x": 10211.9,
-      "hp": 135,
-      "time": 32.93
-    },
-    {
-      "event": "landing",
-      "id": "tide-4-bridge-deck-3",
-      "x": 10692.9,
-      "hp": 135,
-      "time": 34.58
-    },
-    {
-      "event": "landing",
-      "id": "tide-4-bridge-exit",
-      "x": 11131.7,
-      "hp": 135,
-      "time": 36.22
-    },
-    {
-      "event": "landing",
-      "id": "tide-4-bridge-exit",
-      "x": 11663.3,
-      "hp": 135,
-      "time": 37.92
-    },
-    {
-      "event": "landing",
-      "id": "tide-5-machine-entry",
-      "x": 12321.9,
-      "hp": 135,
-      "time": 39.98
-    },
-    {
-      "event": "landing",
-      "id": "tide-5-machine-machine-0",
-      "x": 12800.3,
-      "hp": 135,
-      "time": 41.54
-    },
-    {
-      "event": "landing",
-      "id": "tide-5-machine-machine-1",
-      "x": 13623,
-      "hp": 135,
-      "time": 44.42
-    },
-    {
-      "event": "landing",
-      "id": "tide-5-machine-machine-2",
-      "x": 14510.4,
-      "hp": 135,
-      "time": 47.42
-    },
-    {
-      "event": "landing",
-      "id": "tide-5-machine-exit",
-      "x": 15243.3,
-      "hp": 135,
-      "time": 49.72
-    },
-    {
-      "event": "checkpoint",
-      "x": 15379.3,
-      "hp": 135,
-      "time": 50.14
-    },
-    {
-      "event": "landing",
-      "id": "tide-6-vault-entry",
-      "x": 15771.3,
-      "hp": 135,
-      "time": 51.37
-    },
-    {
-      "event": "landing",
-      "id": "tide-6-vault-arch-1",
-      "x": 16072.5,
-      "hp": 135,
-      "time": 52.33
-    },
-    {
-      "event": "hurt",
-      "x": 16119.4,
-      "hp": 117.8,
-      "time": 52.49
-    },
-    {
-      "event": "landing",
-      "id": "tide-6-vault-arch-2",
-      "x": 16421.9,
-      "hp": 117.8,
-      "time": 54.34
-    },
-    {
-      "event": "landing",
-      "id": "tide-6-vault-arch-3",
-      "x": 16794,
-      "hp": 117.8,
-      "time": 55.51
-    },
-    {
-      "event": "landing",
-      "id": "tide-6-vault-arch-4",
-      "x": 17184.9,
-      "hp": 117.8,
-      "time": 56.83
-    },
-    {
-      "event": "landing",
-      "id": "tide-6-vault-exit",
-      "x": 17686.3,
-      "hp": 117.8,
-      "time": 58.55
-    },
-    {
-      "event": "landing",
-      "id": "tide-7-refuge",
-      "x": 18861.6,
-      "hp": 135,
-      "time": 62.26
-    },
-    {
-      "event": "checkpoint",
-      "x": 18978.9,
-      "hp": 135,
-      "time": 62.62
-    },
-    {
-      "event": "landing",
-      "id": "tide-8-tower-entry",
-      "x": 19308.5,
-      "hp": 135,
-      "time": 63.71
-    },
-    {
-      "event": "landing",
-      "id": "tide-8-tower-riser-1",
-      "x": 19543.5,
-      "hp": 135,
-      "time": 64.52
-    },
-    {
-      "event": "landing",
-      "id": "tide-8-tower-riser-2",
-      "x": 19740.3,
-      "hp": 135,
-      "time": 65.22
-    },
-    {
-      "event": "landing",
-      "id": "tide-8-tower-riser-3",
-      "x": 19932.7,
-      "hp": 135,
-      "time": 65.92
-    },
-    {
-      "event": "landing",
-      "id": "tide-8-tower-wall",
-      "x": 20113.1,
-      "hp": 135,
-      "time": 66.79
-    },
-    {
-      "event": "landing",
-      "id": "tide-8-tower-descent-1",
-      "x": 20324.4,
-      "hp": 135,
-      "time": 67.85
-    },
-    {
-      "event": "landing",
-      "id": "tide-8-tower-descent-2",
-      "x": 20632.2,
-      "hp": 135,
-      "time": 69.11
-    },
-    {
-      "event": "landing",
-      "id": "tide-8-tower-descent-3",
-      "x": 21035,
-      "hp": 135,
-      "time": 70.85
-    },
-    {
-      "event": "landing",
-      "id": "tide-8-tower-exit",
-      "x": 21254.7,
-      "hp": 135,
-      "time": 71.59
-    },
-    {
-      "event": "landing",
-      "id": "tide-9-bridge-entry",
-      "x": 21892.1,
-      "hp": 135,
-      "time": 73.58
-    },
-    {
-      "event": "landing",
-      "id": "tide-9-bridge-deck-1",
-      "x": 22366.5,
-      "hp": 135,
-      "time": 75.11
-    },
-    {
-      "event": "landing",
-      "id": "tide-9-bridge-deck-2",
-      "x": 22812,
-      "hp": 135,
-      "time": 76.53
-    },
-    {
-      "event": "landing",
-      "id": "tide-9-bridge-deck-3",
-      "x": 23292.9,
-      "hp": 135,
-      "time": 78.18
-    },
-    {
-      "event": "landing",
-      "id": "tide-9-bridge-exit",
-      "x": 23731.7,
-      "hp": 135,
-      "time": 79.82
-    },
-    {
-      "event": "landing",
-      "id": "tide-9-bridge-exit",
-      "x": 24263.3,
-      "hp": 135,
-      "time": 81.53
-    },
-    {
-      "event": "checkpoint",
-      "x": 24393.9,
-      "hp": 135,
-      "time": 81.93
+      "time": 19.35
     },
     {
       "event": "bossstart",
-      "x": 25031.3,
+      "x": 5520.1,
       "hp": 135,
-      "time": 83.93
+      "time": 20.45
     },
     {
       "event": "hurt",
-      "x": 25500,
+      "x": 5910.4,
       "hp": 135,
-      "time": 86.38
+      "time": 23.22
     },
     {
       "event": "hurt",
-      "x": 25622.1,
+      "x": 6017.2,
       "hp": 135,
-      "time": 92.18
+      "time": 24.08
     },
     {
       "event": "hurt",
-      "x": 25616.8,
-      "hp": 134.1,
-      "time": 93.29
+      "x": 6157,
+      "hp": 135,
+      "time": 28.98
     },
     {
       "event": "hurt",
-      "x": 25682.9,
-      "hp": 117,
-      "time": 95.27
-    },
-    {
-      "event": "hurt",
-      "x": 25767.4,
-      "hp": 107.6,
-      "time": 100.01
-    },
-    {
-      "event": "hurt",
-      "x": 25813.9,
-      "hp": 90.4,
-      "time": 102.22
+      "x": 6274.9,
+      "hp": 127.3,
+      "time": 31.44
     },
     {
       "event": "bossdefeated",
       "id": "tide-warden",
-      "time": 102.96,
-      "hp": 90.4
+      "time": 32.04,
+      "hp": 127.3
     },
     {
       "event": "gate",
-      "x": 25834.8,
-      "hp": 90.4,
-      "time": 102.96
+      "x": 6270.2,
+      "hp": 127.3,
+      "time": 32.04
     },
     {
       "event": "landing",
-      "id": "tide-arena-1",
-      "x": 25834.8,
-      "hp": 90.4,
-      "time": 102.96
+      "id": "tide-arena-30",
+      "x": 6270.2,
+      "hp": 127.3,
+      "time": 32.04
     },
     {
       "event": "landing",
-      "id": "tide-arena-1",
-      "x": 27261.1,
-      "hp": 90.4,
-      "time": 107.48
-    },
-    {
-      "event": "checkpoint",
-      "x": 27378.5,
-      "hp": 112.4,
-      "time": 107.84
-    },
-    {
-      "event": "story",
-      "npcId": "tide-scholar",
-      "choiceId": "tide-scholar-siphon"
+      "id": "tide-arena-30",
+      "x": 6514.5,
+      "hp": 127.3,
+      "time": 32.98
     },
     {
       "event": "landing",
-      "id": "tide-10-tunnel-entry",
-      "x": 27669.8,
-      "hp": 112.4,
-      "time": 108.93
-    },
-    {
-      "event": "landing",
-      "id": "tide-10-tunnel-tunnel-0",
-      "x": 28303.3,
-      "hp": 112.4,
-      "time": 111.04
-    },
-    {
-      "event": "landing",
-      "id": "tide-10-tunnel-tunnel-1",
-      "x": 28871.1,
-      "hp": 112.4,
-      "time": 112.88
-    },
-    {
-      "event": "landing",
-      "id": "tide-10-tunnel-tunnel-2",
-      "x": 29466.2,
-      "hp": 112.4,
-      "time": 115.1
-    },
-    {
-      "event": "landing",
-      "id": "tide-10-tunnel-exit",
-      "x": 30233.5,
-      "hp": 112.4,
-      "time": 117.53
-    },
-    {
-      "event": "landing",
-      "id": "tide-11-machine-entry",
-      "x": 30921.5,
-      "hp": 112.4,
-      "time": 119.68
-    },
-    {
-      "event": "landing",
-      "id": "tide-11-machine-machine-0",
-      "x": 31400.2,
-      "hp": 112.4,
-      "time": 121.23
-    },
-    {
-      "event": "landing",
-      "id": "tide-11-machine-machine-1",
-      "x": 32248.6,
-      "hp": 112.4,
-      "time": 123.98
-    },
-    {
-      "event": "landing",
-      "id": "tide-11-machine-machine-2",
-      "x": 33111.7,
-      "hp": 112.4,
-      "time": 126.9
-    },
-    {
-      "event": "landing",
-      "id": "tide-11-machine-exit",
-      "x": 33841.6,
-      "hp": 112.4,
-      "time": 129.18
-    },
-    {
-      "event": "checkpoint",
-      "x": 33980.2,
-      "hp": 134.4,
-      "time": 129.62
-    },
-    {
-      "event": "landing",
-      "id": "tide-12-vault-entry",
-      "x": 34372.2,
-      "hp": 134.4,
-      "time": 130.84
-    },
-    {
-      "event": "landing",
-      "id": "tide-12-vault-arch-1",
-      "x": 34672.8,
-      "hp": 134.4,
-      "time": 131.81
+      "id": "tide-arena-30",
+      "x": 6514.5,
+      "hp": 127.3,
+      "time": 32.98
     },
     {
       "event": "hurt",
-      "x": 34716.8,
-      "hp": 117.3,
-      "time": 131.96
+      "x": 6896.7,
+      "hp": 117.9,
+      "time": 34.22
     },
     {
       "event": "landing",
-      "id": "tide-12-vault-arch-2",
-      "x": 35021.9,
-      "hp": 123.6,
-      "time": 133.81
+      "id": "tide-root-bank-39",
+      "x": 6919,
+      "hp": 117.9,
+      "time": 34.67
     },
     {
       "event": "landing",
-      "id": "tide-12-vault-arch-3",
-      "x": 35394,
-      "hp": 123.6,
-      "time": 134.98
+      "id": "tide-broken-root-41",
+      "x": 7230.6,
+      "hp": 117.9,
+      "time": 36.99
     },
     {
       "event": "landing",
-      "id": "tide-12-vault-arch-4",
-      "x": 35784.9,
-      "hp": 123.6,
-      "time": 136.3
+      "id": "tide-hanging-root-43",
+      "x": 7653.7,
+      "hp": 117.9,
+      "time": 38.45
     },
     {
       "event": "landing",
-      "id": "tide-12-vault-exit",
-      "x": 36286.3,
-      "hp": 123.6,
-      "time": 138.02
+      "id": "tide-orchard-bank-44",
+      "x": 8015.8,
+      "hp": 117.9,
+      "time": 40.32
     },
     {
       "event": "landing",
-      "id": "tide-13-terrace-terrace-0",
-      "x": 36933.6,
-      "hp": 123.6,
-      "time": 140.08
+      "id": "tide-orchard-bank-44",
+      "x": 8301.6,
+      "hp": 117.9,
+      "time": 41.27
     },
     {
       "event": "landing",
-      "id": "tide-13-terrace-terrace-1",
-      "x": 37731.2,
-      "hp": 123.6,
-      "time": 142.69
+      "id": "tide-engine-walk-54",
+      "x": 8601.5,
+      "hp": 135,
+      "time": 42.27
     },
     {
       "event": "landing",
-      "id": "tide-13-terrace-terrace-2",
-      "x": 38533.2,
-      "hp": 123.6,
-      "time": 145.55
+      "id": "tide-engine-walk-54",
+      "x": 8931.6,
+      "hp": 135,
+      "time": 43.33
     },
     {
       "event": "landing",
-      "id": "tide-13-terrace-terrace-3",
-      "x": 39333.2,
-      "hp": 123.6,
-      "time": 148.05
+      "id": "tide-engine-duct-56",
+      "x": 9371.8,
+      "hp": 135,
+      "time": 44.83
     },
     {
       "event": "landing",
-      "id": "tide-13-terrace-terrace-4",
-      "x": 40431.9,
-      "hp": 123.6,
-      "time": 151.48
+      "id": "tide-engine-switchyard-57",
+      "x": 9714.7,
+      "hp": 135,
+      "time": 46.04
+    },
+    {
+      "event": "gate",
+      "x": 9781.6,
+      "hp": 135,
+      "time": 46.29
+    },
+    {
+      "event": "landing",
+      "id": "tide-engine-switchyard-57",
+      "x": 9781.6,
+      "hp": 135,
+      "time": 46.29
+    },
+    {
+      "event": "landing",
+      "id": "tide-engine-switchyard-57",
+      "x": 10221.6,
+      "hp": 135,
+      "time": 47.67
     },
     {
       "event": "checkpoint",
-      "x": 40578.6,
+      "x": 10320.3,
       "hp": 135,
-      "time": 151.94
+      "time": 47.97
     },
     {
       "event": "landing",
-      "id": "tide-14-wire",
-      "x": 42262.6,
+      "id": "tide-tower-foot-65",
+      "x": 10582.8,
       "hp": 135,
-      "time": 156.96
+      "time": 49.06
     },
     {
       "event": "landing",
-      "id": "tide-15-bridge-entry",
-      "x": 42892,
+      "id": "tide-tower-step-66",
+      "x": 10799.5,
       "hp": 135,
-      "time": 158.93
+      "time": 49.84
     },
     {
       "event": "landing",
-      "id": "tide-15-bridge-deck-1",
-      "x": 43366.5,
+      "id": "tide-tower-step-67",
+      "x": 11017.6,
       "hp": 135,
-      "time": 160.45
+      "time": 50.59
     },
     {
       "event": "landing",
-      "id": "tide-15-bridge-deck-2",
-      "x": 43812,
+      "id": "tide-tower-step-68",
+      "x": 11237.1,
       "hp": 135,
-      "time": 161.88
+      "time": 51.34
     },
     {
       "event": "landing",
-      "id": "tide-15-bridge-deck-3",
-      "x": 44292.9,
+      "id": "tide-tower-step-70",
+      "x": 11457.9,
       "hp": 135,
-      "time": 163.53
+      "time": 52.1
     },
     {
       "event": "landing",
-      "id": "tide-15-bridge-exit",
-      "x": 44731.7,
+      "id": "tide-tower-crown-71",
+      "x": 11673,
       "hp": 135,
-      "time": 165.16
+      "time": 53.07
     },
     {
       "event": "landing",
-      "id": "tide-15-bridge-exit",
-      "x": 45263.3,
+      "id": "tide-tower-crown-71",
+      "x": 12113.3,
       "hp": 135,
-      "time": 166.87
+      "time": 54.78
     },
     {
       "event": "checkpoint",
-      "x": 45380.6,
+      "x": 12193,
       "hp": 135,
-      "time": 167.23
-    },
-    {
-      "event": "landing",
-      "id": "tide-16-approach",
-      "x": 46863.3,
-      "hp": 135,
-      "time": 171.87
-    },
-    {
-      "event": "landing",
-      "id": "tide-17-tunnel-entry",
-      "x": 47383.3,
-      "hp": 135,
-      "time": 173.49
-    },
-    {
-      "event": "landing",
-      "id": "tide-17-tunnel-tunnel-0",
-      "x": 47903.9,
-      "hp": 135,
-      "time": 175.21
-    },
-    {
-      "event": "landing",
-      "id": "tide-17-tunnel-tunnel-1",
-      "x": 48471.4,
-      "hp": 135,
-      "time": 177.05
-    },
-    {
-      "event": "landing",
-      "id": "tide-17-tunnel-tunnel-2",
-      "x": 49066.4,
-      "hp": 135,
-      "time": 179.27
-    },
-    {
-      "event": "landing",
-      "id": "tide-17-tunnel-exit",
-      "x": 49831.1,
-      "hp": 135,
-      "time": 181.68
-    },
-    {
-      "event": "checkpoint",
-      "x": 49980.4,
-      "hp": 135,
-      "time": 182.15
+      "time": 55.08
     },
     {
       "event": "hurt",
-      "x": 50193.8,
+      "x": 12487.3,
       "hp": 117.8,
-      "time": 182.82
-    },
-    {
-      "event": "landing",
-      "id": "tide-18-refuge",
-      "x": 51063.2,
-      "hp": 135,
-      "time": 185.84
-    },
-    {
-      "event": "checkpoint",
-      "x": 51193.9,
-      "hp": 135,
-      "time": 186.25
+      "time": 56.13
     },
     {
       "event": "bossstart",
-      "x": 51831.2,
-      "hp": 135,
-      "time": 188.24
-    },
-    {
-      "event": "hurt",
-      "x": 52728.7,
-      "hp": 135,
-      "time": 197.74
-    },
-    {
-      "event": "hurt",
-      "x": 52802.4,
-      "hp": 135,
-      "time": 200.25
-    },
-    {
-      "event": "hurt",
-      "x": 52828.8,
-      "hp": 124.8,
-      "time": 202.03
-    },
-    {
-      "event": "hurt",
-      "x": 52842.4,
-      "hp": 116.3,
-      "time": 202.92
-    },
-    {
-      "event": "hurt",
-      "x": 53165.9,
-      "hp": 125.6,
-      "time": 206.19
-    },
-    {
-      "event": "hurt",
-      "x": 53325.9,
+      "x": 12490.2,
       "hp": 117.8,
-      "time": 212.6
+      "time": 56.53
     },
     {
       "event": "hurt",
-      "x": 53640.1,
-      "hp": 125.6,
-      "time": 214.22
+      "x": 13058.4,
+      "hp": 100.7,
+      "time": 63.71
+    },
+    {
+      "event": "hurt",
+      "x": 12832.1,
+      "hp": 85.1,
+      "time": 65.39
     },
     {
       "event": "bossdefeated",
       "id": "tide-hex",
-      "time": 217.8,
-      "hp": 135
+      "time": 68.23,
+      "hp": 85.1
     },
     {
       "event": "gate",
-      "x": 53738.2,
-      "hp": 135,
-      "time": 217.8
+      "x": 12708.1,
+      "hp": 85.1,
+      "time": 68.23
     },
     {
       "event": "landing",
-      "id": "tide-arena-2",
-      "x": 53738.2,
-      "hp": 135,
-      "time": 217.8
+      "id": "tide-arena-75",
+      "x": 12708.1,
+      "hp": 85.1,
+      "time": 68.23
     },
     {
       "event": "landing",
-      "id": "tide-arena-2",
-      "x": 54262.7,
-      "hp": 135,
-      "time": 219.49
-    },
-    {
-      "event": "story",
-      "npcId": "tide-deserter",
-      "choiceId": "tide-deserter-cannon"
+      "id": "tide-arena-75",
+      "x": 13481.8,
+      "hp": 85.1,
+      "time": 70.77
     },
     {
       "event": "landing",
-      "id": "tide-19-tower-entry",
-      "x": 54669.9,
-      "hp": 135,
-      "time": 220.95
+      "id": "tide-crypt-lip-83",
+      "x": 13832.7,
+      "hp": 85.1,
+      "time": 72.13
     },
     {
       "event": "landing",
-      "id": "tide-19-tower-riser-1",
-      "x": 54943.4,
-      "hp": 135,
-      "time": 221.9
+      "id": "tide-crypt-stair-84",
+      "x": 14147.2,
+      "hp": 85.1,
+      "time": 73.63
     },
     {
       "event": "landing",
-      "id": "tide-19-tower-riser-2",
-      "x": 55140.3,
-      "hp": 135,
-      "time": 222.6
+      "id": "tide-crypt-floor-85",
+      "x": 14459.1,
+      "hp": 85.1,
+      "time": 74.82
     },
     {
       "event": "landing",
-      "id": "tide-19-tower-riser-3",
-      "x": 55332.7,
-      "hp": 135,
-      "time": 223.31
-    },
-    {
-      "event": "landing",
-      "id": "tide-19-tower-wall",
-      "x": 55513.1,
-      "hp": 135,
-      "time": 224.17
-    },
-    {
-      "event": "landing",
-      "id": "tide-19-tower-descent-1",
-      "x": 55724.4,
-      "hp": 135,
-      "time": 225.23
-    },
-    {
-      "event": "landing",
-      "id": "tide-19-tower-descent-2",
-      "x": 56032.2,
-      "hp": 135,
-      "time": 226.49
-    },
-    {
-      "event": "landing",
-      "id": "tide-19-tower-descent-3",
-      "x": 56435,
-      "hp": 135,
-      "time": 228.23
-    },
-    {
-      "event": "landing",
-      "id": "tide-19-tower-exit",
-      "x": 56654.7,
-      "hp": 135,
-      "time": 228.97
+      "id": "tide-crypt-floor-85",
+      "x": 15371.2,
+      "hp": 85.1,
+      "time": 77.71
     },
     {
       "event": "checkpoint",
-      "x": 56780.1,
+      "x": 15499.2,
+      "hp": 132.1,
+      "time": 78.11
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-foot-93",
+      "x": 15762.6,
+      "hp": 132.1,
+      "time": 79.19
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-step-94",
+      "x": 15979.5,
+      "hp": 132.1,
+      "time": 79.98
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-step-95",
+      "x": 16197.6,
+      "hp": 132.1,
+      "time": 80.73
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-step-96",
+      "x": 16417.1,
+      "hp": 132.1,
+      "time": 81.48
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-step-98",
+      "x": 16637.9,
+      "hp": 132.1,
+      "time": 82.23
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-crown-99",
+      "x": 16853,
+      "hp": 132.1,
+      "time": 83.2
+    },
+    {
+      "event": "gate",
+      "x": 16928.8,
+      "hp": 132.1,
+      "time": 83.51
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-crown-99",
+      "x": 16944,
+      "hp": 132.1,
+      "time": 83.63
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-crown-99",
+      "x": 17243.4,
       "hp": 135,
-      "time": 229.37
-    },
-    {
-      "event": "landing",
-      "id": "tide-20-tunnel-entry",
-      "x": 57182.7,
-      "hp": 135,
-      "time": 230.62
-    },
-    {
-      "event": "landing",
-      "id": "tide-20-tunnel-tunnel-0",
-      "x": 57703.6,
-      "hp": 135,
-      "time": 232.34
-    },
-    {
-      "event": "landing",
-      "id": "tide-20-tunnel-tunnel-1",
-      "x": 58271.2,
-      "hp": 135,
-      "time": 234.18
-    },
-    {
-      "event": "hurt",
-      "x": 58750.5,
-      "hp": 111.6,
-      "time": 236.05
-    },
-    {
-      "event": "landing",
-      "id": "tide-20-tunnel-tunnel-2",
-      "x": 58861.6,
-      "hp": 111.6,
-      "time": 237.04
-    },
-    {
-      "event": "landing",
-      "id": "tide-20-tunnel-exit",
-      "x": 59632.6,
-      "hp": 111.6,
-      "time": 239.48
-    },
-    {
-      "event": "landing",
-      "id": "tide-21-terrace-terrace-0",
-      "x": 60331.3,
-      "hp": 111.6,
-      "time": 241.67
-    },
-    {
-      "event": "landing",
-      "id": "tide-21-terrace-terrace-1",
-      "x": 61131.2,
-      "hp": 111.6,
-      "time": 244.29
-    },
-    {
-      "event": "landing",
-      "id": "tide-21-terrace-terrace-2",
-      "x": 61933.6,
-      "hp": 111.6,
-      "time": 247.3
-    },
-    {
-      "event": "landing",
-      "id": "tide-21-terrace-terrace-3",
-      "x": 62733.6,
-      "hp": 111.6,
-      "time": 249.8
-    },
-    {
-      "event": "landing",
-      "id": "tide-21-terrace-terrace-4",
-      "x": 63832.2,
-      "hp": 111.6,
-      "time": 253.23
+      "time": 84.6
     },
     {
       "event": "checkpoint",
-      "x": 63989.6,
-      "hp": 133.6,
-      "time": 253.72
-    },
-    {
-      "event": "landing",
-      "id": "tide-22-bridge-entry",
-      "x": 64493.6,
-      "hp": 133.6,
-      "time": 255.3
-    },
-    {
-      "event": "landing",
-      "id": "tide-22-bridge-deck-1",
-      "x": 64966.2,
-      "hp": 133.6,
-      "time": 256.82
-    },
-    {
-      "event": "landing",
-      "id": "tide-22-bridge-deck-2",
-      "x": 65411.9,
-      "hp": 133.6,
-      "time": 258.24
-    },
-    {
-      "event": "landing",
-      "id": "tide-22-bridge-deck-3",
-      "x": 65892.9,
-      "hp": 133.6,
-      "time": 259.89
-    },
-    {
-      "event": "landing",
-      "id": "tide-22-bridge-exit",
-      "x": 66331.7,
-      "hp": 133.6,
-      "time": 261.52
-    },
-    {
-      "event": "landing",
-      "id": "tide-22-bridge-exit",
-      "x": 66863.3,
-      "hp": 133.6,
-      "time": 263.23
-    },
-    {
-      "event": "landing",
-      "id": "tide-23-machine-entry",
-      "x": 67521.9,
-      "hp": 133.6,
-      "time": 265.29
-    },
-    {
-      "event": "landing",
-      "id": "tide-23-machine-machine-0",
-      "x": 68000.3,
-      "hp": 133.6,
-      "time": 266.85
-    },
-    {
-      "event": "landing",
-      "id": "tide-23-machine-machine-1",
-      "x": 68823,
-      "hp": 133.6,
-      "time": 269.73
-    },
-    {
-      "event": "landing",
-      "id": "tide-23-machine-machine-2",
-      "x": 69745.6,
-      "hp": 133.6,
-      "time": 273.42
-    },
-    {
-      "event": "landing",
-      "id": "tide-23-machine-exit",
-      "x": 70442.2,
-      "hp": 133.6,
-      "time": 275.66
-    },
-    {
-      "event": "checkpoint",
-      "x": 70578.2,
+      "x": 17374,
       "hp": 135,
-      "time": 276.08
-    },
-    {
-      "event": "landing",
-      "id": "tide-24-vault-entry",
-      "x": 70972.9,
-      "hp": 135,
-      "time": 277.32
-    },
-    {
-      "event": "landing",
-      "id": "tide-24-vault-arch-1",
-      "x": 71273,
-      "hp": 135,
-      "time": 278.28
-    },
-    {
-      "event": "hurt",
-      "x": 71316.7,
-      "hp": 117.8,
-      "time": 278.43
-    },
-    {
-      "event": "landing",
-      "id": "tide-24-vault-arch-2",
-      "x": 71621.9,
-      "hp": 124.1,
-      "time": 280.28
-    },
-    {
-      "event": "landing",
-      "id": "tide-24-vault-arch-3",
-      "x": 71994,
-      "hp": 124.1,
-      "time": 281.45
-    },
-    {
-      "event": "landing",
-      "id": "tide-24-vault-arch-4",
-      "x": 72384.9,
-      "hp": 124.1,
-      "time": 282.77
-    },
-    {
-      "event": "landing",
-      "id": "tide-24-vault-exit",
-      "x": 72886.3,
-      "hp": 124.1,
-      "time": 284.49
-    },
-    {
-      "event": "landing",
-      "id": "tide-25-wire",
-      "x": 74711.4,
-      "hp": 124.1,
-      "time": 290.2
-    },
-    {
-      "event": "checkpoint",
-      "x": 74779.2,
-      "hp": 135,
-      "time": 290.46
-    },
-    {
-      "event": "landing",
-      "id": "tide-26-tunnel-entry",
-      "x": 75181.9,
-      "hp": 135,
-      "time": 291.72
-    },
-    {
-      "event": "landing",
-      "id": "tide-26-tunnel-tunnel-0",
-      "x": 75703.4,
-      "hp": 135,
-      "time": 293.43
-    },
-    {
-      "event": "landing",
-      "id": "tide-26-tunnel-tunnel-1",
-      "x": 76271.2,
-      "hp": 135,
-      "time": 295.27
-    },
-    {
-      "event": "landing",
-      "id": "tide-26-tunnel-tunnel-2",
-      "x": 76866.2,
-      "hp": 135,
-      "time": 297.49
-    },
-    {
-      "event": "landing",
-      "id": "tide-26-tunnel-exit",
-      "x": 77633.5,
-      "hp": 135,
-      "time": 299.92
-    },
-    {
-      "event": "landing",
-      "id": "tide-27-approach",
-      "x": 79262.9,
-      "hp": 135,
-      "time": 305.01
-    },
-    {
-      "event": "checkpoint",
-      "x": 79393.5,
-      "hp": 135,
-      "time": 305.42
+      "time": 85.01
     },
     {
       "event": "bossstart",
-      "x": 80030.9,
+      "x": 17670.1,
       "hp": 135,
-      "time": 307.41
+      "time": 86.12
     },
     {
       "event": "hurt",
-      "x": 80498.5,
+      "x": 18070.4,
       "hp": 125.6,
-      "time": 310.37
+      "time": 89.24
     },
     {
       "event": "hurt",
-      "x": 80923.7,
-      "hp": 117.8,
-      "time": 316.67
+      "x": 18210.6,
+      "hp": 102.2,
+      "time": 91.91
     },
     {
       "event": "hurt",
-      "x": 81001.4,
-      "hp": 125.6,
-      "time": 319.82
+      "x": 18235,
+      "hp": 85.1,
+      "time": 93.26
     },
     {
       "event": "hurt",
-      "x": 81394.8,
-      "hp": 117.8,
-      "time": 325.79
+      "x": 18105.2,
+      "hp": 69.5,
+      "time": 95.83
     },
     {
       "event": "hurt",
-      "x": 81481.8,
-      "hp": 125.6,
-      "time": 328.42
+      "x": 18039.1,
+      "hp": 53.9,
+      "time": 96.68
     },
     {
       "event": "hurt",
-      "x": 81601.7,
-      "hp": 125.6,
-      "time": 334.52
+      "x": 18095.1,
+      "hp": 44.5,
+      "time": 100.18
     },
     {
       "event": "hurt",
-      "x": 81650.6,
-      "hp": 111.6,
-      "time": 336.76
-    },
-    {
-      "event": "hurt",
-      "x": 81656.7,
-      "hp": 94.4,
-      "time": 338.02
-    },
-    {
-      "event": "hurt",
-      "x": 82005.6,
-      "hp": 112,
-      "time": 340.47
-    },
-    {
-      "event": "hurt",
-      "x": 82060.3,
-      "hp": 125.6,
-      "time": 341.91
-    },
-    {
-      "event": "hurt",
-      "x": 82470.3,
-      "hp": 117.8,
-      "time": 347.97
+      "x": 18187.6,
+      "hp": 21.1,
+      "time": 102.73
     },
     {
       "event": "bossdefeated",
       "id": "tide-regent",
-      "time": 348.86,
-      "hp": 135
+      "time": 104.86,
+      "hp": 21.1
     },
     {
       "event": "gate",
-      "x": 82506.1,
-      "hp": 135,
-      "time": 348.86
+      "x": 18262.9,
+      "hp": 21.1,
+      "time": 104.86
     },
     {
       "event": "landing",
-      "id": "tide-arena-3",
-      "x": 82506.1,
-      "hp": 135,
-      "time": 348.86
+      "id": "tide-arena-105",
+      "x": 18262.9,
+      "hp": 21.1,
+      "time": 104.86
+    },
+    {
+      "event": "landing",
+      "id": "tide-arena-105",
+      "x": 18663.6,
+      "hp": 21.1,
+      "time": 106.17
     },
     {
       "event": "win",
-      "x": 83413.3,
-      "hp": 135,
-      "time": 351.79
+      "x": 18683.4,
+      "hp": 21.1,
+      "time": 106.23
     }
   ]
 }

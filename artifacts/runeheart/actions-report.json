@@ -1,0 +1,3583 @@
+{
+  "method": "Isolated render and combat fixtures. Known catalog unlocks, valid charges and relocated authored actors; unrelated actors/cover disabled. Actual120Hz stepWorld inputs; only hurt/death use exported damagePlayer. Regent transformation begins from a valid wounded-health fixture. Death menu suppressed only for corpse inspection. Terminal stealth is seeded for a frozen-timer regression; lethal-hit invincibility is actual simulation state. Not a legal campaign or difficulty proof.",
+  "counts": {
+    "captures": 54,
+    "guns": 5,
+    "spells": 9,
+    "deathArmors": 3,
+    "deathVisualChecks": 12
+  },
+  "captures": [
+    {
+      "id": "01-idle",
+      "label": "Aether / Idle",
+      "filename": "artifacts/runeheart/actions/01-idle.png",
+      "steps": 2,
+      "time": 0.016666666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": []
+    },
+    {
+      "id": "02-run",
+      "label": "Aether / Run right",
+      "filename": "artifacts/runeheart/actions/02-run.png",
+      "steps": 32,
+      "time": 0.26666666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 321.6250000000003,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 320,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-run-3",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-run-3",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": []
+    },
+    {
+      "id": "02-run-left",
+      "label": "Aether / Run left",
+      "filename": "artifacts/runeheart/actions/02-run-left.png",
+      "steps": 32,
+      "time": 0.26666666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 198.3750000000002,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": -320,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-run-3",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-run-3",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": []
+    },
+    {
+      "id": "03-jump",
+      "label": "Aether / Jump",
+      "filename": "artifacts/runeheart/actions/03-jump.png",
+      "steps": 18,
+      "time": 0.15,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1127.6666666666679,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": -430,
+        "grounded": false,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-jump-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-jump-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "jump"
+      ]
+    },
+    {
+      "id": "04-double-jump",
+      "label": "Aether / Double jump",
+      "filename": "artifacts/runeheart/actions/04-double-jump.png",
+      "steps": 29,
+      "time": 0.24166666666666664,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1079.000000000002,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": -475,
+        "grounded": false,
+        "jumps": 0,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-slash-air-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-slash-air-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "jump",
+        "jump"
+      ]
+    },
+    {
+      "id": "05-jetpack",
+      "label": "Aether / Jet thrust",
+      "filename": "artifacts/runeheart/actions/05-jetpack.png",
+      "steps": 35,
+      "time": 0.29166666666666674,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1078.5416666666683,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": -330,
+        "grounded": false,
+        "jumps": 1,
+        "jet": true,
+        "fuel": 86.66666666666652,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-jump-2",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-jump-2",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [
+        "hero-jet"
+      ],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "jump",
+        "jet"
+      ]
+    },
+    {
+      "id": "06-dash",
+      "label": "Aether / Sword dash",
+      "filename": "artifacts/runeheart/actions/06-dash.png",
+      "steps": 11,
+      "time": 0.09166666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 306.50000000000017,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 620,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "dash",
+        "slashTime": 0.09333333333333335,
+        "dashTime": 0.09333333333333335,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-slash-low-2",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-slash-low-2",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [
+        "hero-dash"
+      ],
+      "heroGunVisible": false,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "dash"
+      ]
+    },
+    {
+      "id": "07-combo-1",
+      "label": "Aether / horizontal slash",
+      "filename": "artifacts/runeheart/actions/07-combo-1.png",
+      "steps": 13,
+      "time": 0.10833333333333332,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0.1166666666666667,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-slash-2",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-slash-2",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": false,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "slash"
+      ]
+    },
+    {
+      "id": "07-combo-2",
+      "label": "Aether / vertical slash",
+      "filename": "artifacts/runeheart/actions/07-combo-2.png",
+      "steps": 49,
+      "time": 0.40833333333333377,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "vertical",
+        "slashTime": 0.1166666666666667,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-slash-air-2",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-slash-air-2",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": false,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "slash",
+        "slash"
+      ]
+    },
+    {
+      "id": "07-combo-3",
+      "label": "Aether / finisher slash",
+      "filename": "artifacts/runeheart/actions/07-combo-3.png",
+      "steps": 85,
+      "time": 0.7083333333333333,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "finisher",
+        "slashTime": 0.1166666666666667,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-slash-low-1",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-slash-low-1",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": false,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "slash",
+        "slash",
+        "slash"
+      ]
+    },
+    {
+      "id": "08-gun-carbine",
+      "label": "Firepower / Ash Carbine",
+      "filename": "artifacts/runeheart/actions/08-gun-carbine.png",
+      "steps": 11,
+      "time": 0.09166666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [
+        {
+          "owner": "player",
+          "kind": "carbine",
+          "missile": false,
+          "x": 372.00000000000017,
+          "y": 1219
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "shot"
+      ]
+    },
+    {
+      "id": "08-gun-carbine-left",
+      "label": "Firepower left / Ash Carbine",
+      "filename": "artifacts/runeheart/actions/08-gun-carbine-left.png",
+      "steps": 11,
+      "time": 0.09166666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [
+        {
+          "owner": "player",
+          "kind": "carbine",
+          "missile": false,
+          "x": 176.00000000000009,
+          "y": 1219
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "shot"
+      ]
+    },
+    {
+      "id": "08-gun-scatter",
+      "label": "Firepower / Grave Scattergun",
+      "filename": "artifacts/runeheart/actions/08-gun-scatter.png",
+      "steps": 11,
+      "time": 0.09166666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [
+        {
+          "owner": "player",
+          "kind": "scatter",
+          "missile": false,
+          "x": 355.6721446110301,
+          "y": 1207.0985218533701
+        },
+        {
+          "owner": "player",
+          "kind": "scatter",
+          "missile": false,
+          "x": 356.6670094611,
+          "y": 1213.0123380604634
+        },
+        {
+          "owner": "player",
+          "kind": "scatter",
+          "missile": false,
+          "x": 357,
+          "y": 1219
+        },
+        {
+          "owner": "player",
+          "kind": "scatter",
+          "missile": false,
+          "x": 356.6670094611,
+          "y": 1224.9876619395366
+        },
+        {
+          "owner": "player",
+          "kind": "scatter",
+          "missile": false,
+          "x": 355.6721446110301,
+          "y": 1230.9014781466299
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "shot"
+      ]
+    },
+    {
+      "id": "08-gun-scatter-left",
+      "label": "Firepower left / Grave Scattergun",
+      "filename": "artifacts/runeheart/actions/08-gun-scatter-left.png",
+      "steps": 11,
+      "time": 0.09166666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [
+        {
+          "owner": "player",
+          "kind": "scatter",
+          "missile": false,
+          "x": 192.3278553889699,
+          "y": 1230.9014781466299
+        },
+        {
+          "owner": "player",
+          "kind": "scatter",
+          "missile": false,
+          "x": 191.33299053889974,
+          "y": 1224.9876619395366
+        },
+        {
+          "owner": "player",
+          "kind": "scatter",
+          "missile": false,
+          "x": 191,
+          "y": 1219
+        },
+        {
+          "owner": "player",
+          "kind": "scatter",
+          "missile": false,
+          "x": 191.33299053889974,
+          "y": 1213.0123380604634
+        },
+        {
+          "owner": "player",
+          "kind": "scatter",
+          "missile": false,
+          "x": 192.3278553889699,
+          "y": 1207.0985218533701
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "shot"
+      ]
+    },
+    {
+      "id": "08-gun-rail",
+      "label": "Firepower / Storm Rail",
+      "filename": "artifacts/runeheart/actions/08-gun-rail.png",
+      "steps": 11,
+      "time": 0.09166666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [
+        {
+          "owner": "player",
+          "kind": "rail",
+          "missile": false,
+          "x": 422.99999999999983,
+          "y": 1219
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "shot"
+      ]
+    },
+    {
+      "id": "08-gun-rail-left",
+      "label": "Firepower left / Storm Rail",
+      "filename": "artifacts/runeheart/actions/08-gun-rail-left.png",
+      "steps": 11,
+      "time": 0.09166666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [
+        {
+          "owner": "player",
+          "kind": "rail",
+          "missile": false,
+          "x": 124.99999999999993,
+          "y": 1219
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "shot"
+      ]
+    },
+    {
+      "id": "08-gun-rocket",
+      "label": "Firepower / Cinder Launcher",
+      "filename": "artifacts/runeheart/actions/08-gun-rocket.png",
+      "steps": 11,
+      "time": 0.09166666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 96.16666666666663,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [
+        {
+          "owner": "player",
+          "kind": "rocket",
+          "missile": true,
+          "x": 339,
+          "y": 1219
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "shot"
+      ]
+    },
+    {
+      "id": "08-gun-rocket-left",
+      "label": "Firepower left / Cinder Launcher",
+      "filename": "artifacts/runeheart/actions/08-gun-rocket-left.png",
+      "steps": 11,
+      "time": 0.09166666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 96.16666666666663,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [
+        {
+          "owner": "player",
+          "kind": "rocket",
+          "missile": true,
+          "x": 209,
+          "y": 1219
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "shot"
+      ]
+    },
+    {
+      "id": "08-gun-cannon",
+      "label": "Firepower / Oblivion Cannon",
+      "filename": "artifacts/runeheart/actions/08-gun-cannon.png",
+      "steps": 11,
+      "time": 0.09166666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 1,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "cannon"
+      ]
+    },
+    {
+      "id": "08-gun-cannon-left",
+      "label": "Firepower left / Oblivion Cannon",
+      "filename": "artifacts/runeheart/actions/08-gun-cannon-left.png",
+      "steps": 11,
+      "time": 0.09166666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 1,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "cannon"
+      ]
+    },
+    {
+      "id": "09-spell-cinder",
+      "label": "Sorcery / Cinder Plague",
+      "filename": "artifacts/runeheart/actions/09-spell-cinder.png",
+      "steps": 13,
+      "time": 0.10833333333333332,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 55.20833333333336,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-walk-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "spell",
+        "burn"
+      ]
+    },
+    {
+      "id": "09-spell-siphon",
+      "label": "Sorcery / Soul Siphon",
+      "filename": "artifacts/runeheart/actions/09-spell-siphon.png",
+      "steps": 13,
+      "time": 0.10833333333333332,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 75.20833333333329,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 5.9166666666666625,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "spell",
+        "hit"
+      ]
+    },
+    {
+      "id": "09-spell-thunder",
+      "label": "Sorcery / Skybreaker",
+      "filename": "artifacts/runeheart/actions/09-spell-thunder.png",
+      "steps": 13,
+      "time": 0.10833333333333332,
+      "status": "playing",
+      "kills": 1,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 71.20833333333329,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-idle-5",
+        "alpha": 0.8611111111111112
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "spell",
+        "hit",
+        "explode",
+        "thunder"
+      ]
+    },
+    {
+      "id": "09-spell-veil",
+      "label": "Sorcery / Shadow Veil",
+      "filename": "artifacts/runeheart/actions/09-spell-veil.png",
+      "steps": 13,
+      "time": 0.10833333333333332,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 75.20833333333329,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 5.9166666666666625,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-walk-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "spell"
+      ]
+    },
+    {
+      "id": "09-spell-stasis",
+      "label": "Sorcery / Stillgrave",
+      "filename": "artifacts/runeheart/actions/09-spell-stasis.png",
+      "steps": 13,
+      "time": 0.10833333333333332,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 60.20833333333336,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-walk-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "spell"
+      ]
+    },
+    {
+      "id": "09-spell-eclipse",
+      "label": "Sorcery / Eclipse Nova",
+      "filename": "artifacts/runeheart/actions/09-spell-eclipse.png",
+      "steps": 13,
+      "time": 0.10833333333333332,
+      "status": "playing",
+      "kills": 1,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 1
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-idle-5",
+        "alpha": 0.8611111111111112
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "spell",
+        "hit",
+        "explode"
+      ]
+    },
+    {
+      "id": "09-spell-clone",
+      "label": "Sorcery / Courier Echo",
+      "filename": "artifacts/runeheart/actions/09-spell-clone.png",
+      "steps": 13,
+      "time": 0.10833333333333332,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 55.20833333333336,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-walk-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [
+        {
+          "type": "clone",
+          "phase": "arrive",
+          "life": 9.908333333333339
+        }
+      ],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "spell",
+        "summon"
+      ]
+    },
+    {
+      "id": "10-summon-clone",
+      "label": "Summoned ally / Courier Echo",
+      "filename": "artifacts/runeheart/actions/10-summon-clone.png",
+      "steps": 113,
+      "time": 0.9416666666666658,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 57.29166666666693,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-walk-8",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-3",
+      "projectiles": [],
+      "allies": [
+        {
+          "type": "clone",
+          "phase": "attack",
+          "life": 9.075000000000053
+        }
+      ],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "Echo muzzle",
+          "physical": {
+            "x": 282.33333333333337,
+            "y": 1212.6666666666667
+          },
+          "rendered": {
+            "x": 282.3333333333333,
+            "y": 1212.6666666666667
+          },
+          "error": 5.684341886080802e-14
+        }
+      ],
+      "events": [
+        "equip",
+        "spell",
+        "summon",
+        "summonarrival"
+      ]
+    },
+    {
+      "id": "09-spell-wolf",
+      "label": "Sorcery / Ash Wolf",
+      "filename": "artifacts/runeheart/actions/09-spell-wolf.png",
+      "steps": 13,
+      "time": 0.10833333333333332,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 65.20833333333329,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-walk-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [
+        {
+          "type": "wolf",
+          "phase": "arrive",
+          "life": 7.908333333333329
+        }
+      ],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "spell",
+        "summon"
+      ]
+    },
+    {
+      "id": "10-summon-wolf",
+      "label": "Summoned ally / Ash Wolf",
+      "filename": "artifacts/runeheart/actions/10-summon-wolf.png",
+      "steps": 113,
+      "time": 0.9416666666666658,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 67.29166666666615,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-walk-8",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-3",
+      "projectiles": [],
+      "allies": [
+        {
+          "type": "wolf",
+          "phase": "attack",
+          "life": 7.074999999999954
+        }
+      ],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "spell",
+        "summon",
+        "summonarrival"
+      ]
+    },
+    {
+      "id": "09-spell-dragon",
+      "label": "Sorcery / Cinder Wyrm",
+      "filename": "artifacts/runeheart/actions/09-spell-dragon.png",
+      "steps": 13,
+      "time": 0.10833333333333332,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 35.20833333333336,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-walk-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [
+        {
+          "type": "dragon",
+          "phase": "arrive",
+          "life": 6.908333333333329
+        }
+      ],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "spell",
+        "summon"
+      ]
+    },
+    {
+      "id": "10-summon-dragon",
+      "label": "Summoned ally / Cinder Wyrm",
+      "filename": "artifacts/runeheart/actions/10-summon-dragon.png",
+      "steps": 113,
+      "time": 0.9416666666666658,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 37.29166666666693,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-walk-8",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-3",
+      "projectiles": [],
+      "allies": [
+        {
+          "type": "dragon",
+          "phase": "attack",
+          "life": 6.074999999999954
+        }
+      ],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "spell",
+        "summon",
+        "summonarrival"
+      ]
+    },
+    {
+      "id": "11-hurt",
+      "label": "Aether / Actual damage reaction",
+      "filename": "artifacts/runeheart/actions/11-hurt.png",
+      "steps": 2,
+      "time": 0.016666666666666666,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": -230,
+        "vy": -170,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 82,
+        "armor": "courier",
+        "invincible": 0.85,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-hurt-0",
+        "alpha": 0.45
+      },
+      "heroFrame": "rh-hero-hurt-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "hurt"
+      ]
+    },
+    {
+      "id": "12-death",
+      "label": "Aether courier / Fully opaque death interrupts live actions",
+      "filename": "artifacts/runeheart/actions/12-death.png",
+      "steps": 20,
+      "time": 0.16666666666666666,
+      "status": "dead",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1120.8750000000014,
+        "w": 28,
+        "h": 60,
+        "vx": -230,
+        "vy": -170,
+        "grounded": false,
+        "jumps": 1,
+        "jet": true,
+        "fuel": 92.91666666666659,
+        "mana": 100,
+        "hp": 0,
+        "armor": "courier",
+        "invincible": 0.85,
+        "slashMode": "horizontal",
+        "slashTime": 0.2,
+        "dashTime": 0,
+        "stealth": 1,
+        "siphon": 0,
+        "charges": {
+          "cannon": 1,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-hurt-2",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-hurt-2",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": false,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "jump",
+        "jet",
+        "equip",
+        "slash",
+        "cannon",
+        "hurt",
+        "death"
+      ],
+      "deathChecks": [
+        {
+          "visualTime": 0.16666666666666666,
+          "invincible": 0.85,
+          "stealth": 0,
+          "alpha": 1,
+          "frame": "rh-hero-hurt-2",
+          "standingArmorOverlays": []
+        },
+        {
+          "visualTime": 0.22916666666666666,
+          "invincible": 0.85,
+          "stealth": 0,
+          "alpha": 1,
+          "frame": "rh-hero-hurt-2",
+          "standingArmorOverlays": []
+        },
+        {
+          "visualTime": 0.16666666666666666,
+          "invincible": 0.85,
+          "stealth": 1,
+          "alpha": 1,
+          "frame": "rh-hero-hurt-2",
+          "standingArmorOverlays": []
+        },
+        {
+          "visualTime": 0.22916666666666666,
+          "invincible": 0.85,
+          "stealth": 1,
+          "alpha": 1,
+          "frame": "rh-hero-hurt-2",
+          "standingArmorOverlays": []
+        }
+      ]
+    },
+    {
+      "id": "12-death-bulwark",
+      "label": "Aether bulwark / Fully opaque death interrupts live actions",
+      "filename": "artifacts/runeheart/actions/12-death-bulwark.png",
+      "steps": 20,
+      "time": 0.16666666666666666,
+      "status": "dead",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1120.8750000000014,
+        "w": 28,
+        "h": 60,
+        "vx": -230,
+        "vy": -170,
+        "grounded": false,
+        "jumps": 1,
+        "jet": true,
+        "fuel": 90.79166666666659,
+        "mana": 80,
+        "hp": 0,
+        "armor": "bulwark",
+        "invincible": 0.85,
+        "slashMode": "horizontal",
+        "slashTime": 0.2,
+        "dashTime": 0,
+        "stealth": 1,
+        "siphon": 0,
+        "charges": {
+          "cannon": 1,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-hurt-2",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-hurt-2",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": false,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "jump",
+        "jet",
+        "equip",
+        "slash",
+        "cannon",
+        "hurt",
+        "death"
+      ],
+      "deathChecks": [
+        {
+          "visualTime": 0.16666666666666666,
+          "invincible": 0.85,
+          "stealth": 0,
+          "alpha": 1,
+          "frame": "rh-hero-hurt-2",
+          "standingArmorOverlays": []
+        },
+        {
+          "visualTime": 0.22916666666666666,
+          "invincible": 0.85,
+          "stealth": 0,
+          "alpha": 1,
+          "frame": "rh-hero-hurt-2",
+          "standingArmorOverlays": []
+        },
+        {
+          "visualTime": 0.16666666666666666,
+          "invincible": 0.85,
+          "stealth": 1,
+          "alpha": 1,
+          "frame": "rh-hero-hurt-2",
+          "standingArmorOverlays": []
+        },
+        {
+          "visualTime": 0.22916666666666666,
+          "invincible": 0.85,
+          "stealth": 1,
+          "alpha": 1,
+          "frame": "rh-hero-hurt-2",
+          "standingArmorOverlays": []
+        }
+      ]
+    },
+    {
+      "id": "12-death-wraith",
+      "label": "Aether wraith / Fully opaque death interrupts live actions",
+      "filename": "artifacts/runeheart/actions/12-death-wraith.png",
+      "steps": 20,
+      "time": 0.16666666666666666,
+      "status": "dead",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1120.8750000000014,
+        "w": 28,
+        "h": 60,
+        "vx": -230,
+        "vy": -170,
+        "grounded": false,
+        "jumps": 1,
+        "jet": true,
+        "fuel": 94.33333333333341,
+        "mana": 100.37499999999991,
+        "hp": 0,
+        "armor": "wraith",
+        "invincible": 0.85,
+        "slashMode": "horizontal",
+        "slashTime": 0.2,
+        "dashTime": 0,
+        "stealth": 1,
+        "siphon": 0,
+        "charges": {
+          "cannon": 1,
+          "nova": 2
+        }
+      },
+      "actor": null,
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hero-hurt-2",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-hurt-2",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": false,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "equip",
+        "jump",
+        "jet",
+        "equip",
+        "slash",
+        "cannon",
+        "hurt",
+        "death"
+      ],
+      "deathChecks": [
+        {
+          "visualTime": 0.16666666666666666,
+          "invincible": 0.85,
+          "stealth": 0,
+          "alpha": 1,
+          "frame": "rh-hero-hurt-2",
+          "standingArmorOverlays": []
+        },
+        {
+          "visualTime": 0.22916666666666666,
+          "invincible": 0.85,
+          "stealth": 0,
+          "alpha": 1,
+          "frame": "rh-hero-hurt-2",
+          "standingArmorOverlays": []
+        },
+        {
+          "visualTime": 0.16666666666666666,
+          "invincible": 0.85,
+          "stealth": 1,
+          "alpha": 1,
+          "frame": "rh-hero-hurt-2",
+          "standingArmorOverlays": []
+        },
+        {
+          "visualTime": 0.22916666666666666,
+          "invincible": 0.85,
+          "stealth": 1,
+          "alpha": 1,
+          "frame": "rh-hero-hurt-2",
+          "standingArmorOverlays": []
+        }
+      ]
+    },
+    {
+      "id": "13-riftcrawler-left-windup",
+      "label": "riftcrawler / Left attack windup",
+      "filename": "artifacts/runeheart/actions/13-riftcrawler-left-windup.png",
+      "steps": 24,
+      "time": 0.19999999999999998,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0.00333333333333391,
+        "slot": "gun",
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-jump-1",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-1",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "enemywindup"
+      ]
+    },
+    {
+      "id": "14-riftcrawler-left-fire",
+      "label": "riftcrawler / Directional discharge",
+      "filename": "artifacts/runeheart/actions/14-riftcrawler-left-fire.png",
+      "steps": 25,
+      "time": 0.20833333333333331,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "slot": "gun",
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-jump-1",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-1",
+      "projectiles": [
+        {
+          "owner": "enemy",
+          "kind": "bullet",
+          "missile": false,
+          "x": 592.8045089577784,
+          "y": 1225.0440401234655
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "emitted shot",
+          "physical": {
+            "x": 595.6374999999991,
+            "y": 1225
+          },
+          "rendered": {
+            "x": 595.6374999999991,
+            "y": 1225
+          },
+          "error": 0
+        }
+      ],
+      "events": [
+        "enemywindup",
+        "enemyshot"
+      ]
+    },
+    {
+      "id": "13-riftcrawler-right-windup",
+      "label": "riftcrawler / Right attack windup",
+      "filename": "artifacts/runeheart/actions/13-riftcrawler-right-windup.png",
+      "steps": 24,
+      "time": 0.19999999999999998,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 900,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0.00333333333333391,
+        "slot": "gun",
+        "facing": 1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-jump-1",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-1",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "enemywindup"
+      ]
+    },
+    {
+      "id": "14-riftcrawler-right-fire",
+      "label": "riftcrawler / Directional discharge",
+      "filename": "artifacts/runeheart/actions/14-riftcrawler-right-fire.png",
+      "steps": 25,
+      "time": 0.20833333333333331,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 900,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-guard-5",
+        "family": "riftcrawler",
+        "windup": 0,
+        "slot": "gun",
+        "facing": 1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-hound-jump-1",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-1",
+      "projectiles": [
+        {
+          "owner": "enemy",
+          "kind": "bullet",
+          "missile": false,
+          "x": 712.3616532596951,
+          "y": 1225.069263829634
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "emitted shot",
+          "physical": {
+            "x": 709.5291666666674,
+            "y": 1225
+          },
+          "rendered": {
+            "x": 709.5291666666674,
+            "y": 1225
+          },
+          "error": 0
+        }
+      ],
+      "events": [
+        "enemywindup",
+        "enemyshot"
+      ]
+    },
+    {
+      "id": "13-hexwing-left-windup",
+      "label": "hexwing / Left attack windup",
+      "filename": "artifacts/runeheart/actions/13-hexwing-left-windup.png",
+      "steps": 14,
+      "time": 0.11666666666666665,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-drone-7",
+        "family": "hexwing",
+        "windup": 3.3306690738754696e-16,
+        "slot": "gun",
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-ghost-shriek-1",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "enemywindup"
+      ]
+    },
+    {
+      "id": "14-hexwing-left-fire",
+      "label": "hexwing / Directional discharge",
+      "filename": "artifacts/runeheart/actions/14-hexwing-left-fire.png",
+      "steps": 15,
+      "time": 0.12499999999999999,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-drone-7",
+        "family": "hexwing",
+        "windup": 0,
+        "slot": "gun",
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-ghost-shriek-1",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [
+        {
+          "owner": "enemy",
+          "kind": "bullet",
+          "missile": false,
+          "x": 591.8093963855449,
+          "y": 1092.748618459489
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "emitted shot",
+          "physical": {
+            "x": 593.8749999999994,
+            "y": 1091.8565524821352
+          },
+          "rendered": {
+            "x": 593.8749999999994,
+            "y": 1091.8565524821352
+          },
+          "error": 0
+        }
+      ],
+      "events": [
+        "enemywindup",
+        "enemyshot"
+      ]
+    },
+    {
+      "id": "13-hexwing-right-windup",
+      "label": "hexwing / Right attack windup",
+      "filename": "artifacts/runeheart/actions/13-hexwing-right-windup.png",
+      "steps": 14,
+      "time": 0.11666666666666665,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 900,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-drone-7",
+        "family": "hexwing",
+        "windup": 3.3306690738754696e-16,
+        "slot": "gun",
+        "facing": 1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-ghost-shriek-1",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [],
+      "events": [
+        "enemywindup"
+      ]
+    },
+    {
+      "id": "14-hexwing-right-fire",
+      "label": "hexwing / Directional discharge",
+      "filename": "artifacts/runeheart/actions/14-hexwing-right-fire.png",
+      "steps": 15,
+      "time": 0.12499999999999999,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 900,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-drone-7",
+        "family": "hexwing",
+        "windup": 0,
+        "slot": "gun",
+        "facing": 1
+      },
+      "sprite": {
+        "texture": "runeheart-art",
+        "frame": "rh-ghost-shriek-1",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [
+        {
+          "owner": "enemy",
+          "kind": "bullet",
+          "missile": false,
+          "x": 678.029114549478,
+          "y": 1092.986346914277
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "emitted shot",
+          "physical": {
+            "x": 676.0833333333333,
+            "y": 1091.8565524821352
+          },
+          "rendered": {
+            "x": 676.0833333333333,
+            "y": 1091.8565524821352
+          },
+          "error": 0
+        }
+      ],
+      "events": [
+        "enemywindup",
+        "enemyshot"
+      ]
+    },
+    {
+      "id": "13-crimsonmecha-left-windup",
+      "label": "crimsonmecha / Left attack windup",
+      "filename": "artifacts/runeheart/actions/13-crimsonmecha-left-windup.png",
+      "steps": 3,
+      "time": 0.025,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-sentinel-10",
+        "family": "crimsonmecha",
+        "windup": 0.15833333333333338,
+        "slot": "gun",
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "reference-art",
+        "frame": "ref-mecha-fire-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "atlas muzzle",
+          "physical": {
+            "x": 592.75,
+            "y": 1212
+          },
+          "rendered": {
+            "x": 593,
+            "y": 1212
+          },
+          "error": 0.25
+        }
+      ],
+      "events": [
+        "enemywindup"
+      ]
+    },
+    {
+      "id": "14-crimsonmecha-left-fire",
+      "label": "crimsonmecha / Directional discharge",
+      "filename": "artifacts/runeheart/actions/14-crimsonmecha-left-fire.png",
+      "steps": 4,
+      "time": 0.03333333333333333,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 260,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": -230,
+        "vy": -170,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 78,
+        "armor": "courier",
+        "invincible": 0.85,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-sentinel-10",
+        "family": "crimsonmecha",
+        "windup": 0,
+        "beamTime": 0.27166666666666667,
+        "slot": "gun",
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "reference-art",
+        "frame": "ref-mecha-fire-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-hurt-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "atlas muzzle",
+          "physical": {
+            "x": 592.375,
+            "y": 1212
+          },
+          "rendered": {
+            "x": 592,
+            "y": 1212
+          },
+          "error": 0.375
+        },
+        {
+          "kind": "beam origin",
+          "physical": {
+            "x": 592.375,
+            "y": 1212
+          },
+          "rendered": {
+            "x": 592.375,
+            "y": 1212
+          },
+          "error": 0
+        }
+      ],
+      "events": [
+        "enemywindup",
+        "thunder",
+        "hurt"
+      ]
+    },
+    {
+      "id": "13-crimsonmecha-right-windup",
+      "label": "crimsonmecha / Right attack windup",
+      "filename": "artifacts/runeheart/actions/13-crimsonmecha-right-windup.png",
+      "steps": 3,
+      "time": 0.025,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 900,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-sentinel-10",
+        "family": "crimsonmecha",
+        "windup": 0.15833333333333338,
+        "slot": "gun",
+        "facing": 1
+      },
+      "sprite": {
+        "texture": "reference-art",
+        "frame": "ref-mecha-fire-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "atlas muzzle",
+          "physical": {
+            "x": 706.25,
+            "y": 1212
+          },
+          "rendered": {
+            "x": 706,
+            "y": 1212
+          },
+          "error": 0.25
+        }
+      ],
+      "events": [
+        "enemywindup"
+      ]
+    },
+    {
+      "id": "14-crimsonmecha-right-fire",
+      "label": "crimsonmecha / Directional discharge",
+      "filename": "artifacts/runeheart/actions/14-crimsonmecha-right-fire.png",
+      "steps": 4,
+      "time": 0.03333333333333333,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 900,
+        "y": 1200,
+        "w": 28,
+        "h": 60,
+        "vx": 230,
+        "vy": -170,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 78,
+        "armor": "courier",
+        "invincible": 0.85,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-sentinel-10",
+        "family": "crimsonmecha",
+        "windup": 0,
+        "beamTime": 0.27166666666666667,
+        "slot": "gun",
+        "facing": 1
+      },
+      "sprite": {
+        "texture": "reference-art",
+        "frame": "ref-mecha-fire-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-hurt-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "atlas muzzle",
+          "physical": {
+            "x": 706.625,
+            "y": 1212
+          },
+          "rendered": {
+            "x": 707,
+            "y": 1212
+          },
+          "error": 0.375
+        },
+        {
+          "kind": "beam origin",
+          "physical": {
+            "x": 706.625,
+            "y": 1212
+          },
+          "rendered": {
+            "x": 706.625,
+            "y": 1212
+          },
+          "error": 0
+        }
+      ],
+      "events": [
+        "enemywindup",
+        "thunder",
+        "hurt"
+      ]
+    },
+    {
+      "id": "17-regent-ground-rockets",
+      "label": "Regent ground / Shoulder rockets",
+      "filename": "artifacts/runeheart/actions/17-regent-ground-rockets.png",
+      "steps": 170,
+      "time": 1.416666666666664,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 17830,
+        "y": 620,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-regent",
+        "family": "crimsonmecha",
+        "phase": "attack",
+        "form": "ground",
+        "slot": "rocket",
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "reference-art",
+        "frame": "ref-mecha-fire-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-3",
+      "projectiles": [
+        {
+          "owner": "enemy",
+          "kind": "missile",
+          "missile": true,
+          "x": 18422.252707459484,
+          "y": 582.8905894308945
+        },
+        {
+          "owner": "enemy",
+          "kind": "missile",
+          "missile": true,
+          "x": 18422.17419404737,
+          "y": 582.5330526670242
+        },
+        {
+          "owner": "enemy",
+          "kind": "missile",
+          "missile": true,
+          "x": 18422.168277265857,
+          "y": 582.1670446273624
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "atlas muzzle",
+          "physical": {
+            "x": 18389.88732394366,
+            "y": 590.7605633802817
+          },
+          "rendered": {
+            "x": 18389.88732394366,
+            "y": 590.7605633802817
+          },
+          "error": 0
+        },
+        {
+          "kind": "emitted shot",
+          "physical": {
+            "x": 18424,
+            "y": 582.32
+          },
+          "rendered": {
+            "x": 18424,
+            "y": 582.32
+          },
+          "error": 0
+        }
+      ],
+      "events": [
+        "portalwarning",
+        "charge",
+        "portalarrival",
+        "enemyshot",
+        "enemyshot",
+        "enemyshot",
+        "enemyshot"
+      ]
+    },
+    {
+      "id": "17-regent-ground-beam",
+      "label": "Regent ground / Aimed core beam",
+      "filename": "artifacts/runeheart/actions/17-regent-ground-beam.png",
+      "steps": 136,
+      "time": 1.1333333333333317,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 17830,
+        "y": 620,
+        "w": 28,
+        "h": 60,
+        "vx": -230,
+        "vy": -170,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 70,
+        "armor": "courier",
+        "invincible": 0.85,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-regent",
+        "family": "crimsonmecha",
+        "phase": "attack",
+        "form": "ground",
+        "slot": "core",
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "reference-art",
+        "frame": "ref-mecha-fire-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-hurt-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "atlas muzzle",
+          "physical": {
+            "x": 18127.637323943658,
+            "y": 590.7605633802817
+          },
+          "rendered": {
+            "x": 18127.88732394366,
+            "y": 590.7605633802817
+          },
+          "error": 0.250000000003638
+        },
+        {
+          "kind": "beam origin",
+          "physical": {
+            "x": 18231.749999999996,
+            "y": 594.2
+          },
+          "rendered": {
+            "x": 18231.749999999996,
+            "y": 594.2
+          },
+          "error": 0
+        }
+      ],
+      "events": [
+        "charge",
+        "hurt"
+      ]
+    },
+    {
+      "id": "15-regent-transform-warning",
+      "label": "Regent / Wyrm transformation warning",
+      "filename": "artifacts/runeheart/actions/15-regent-transform-warning.png",
+      "steps": 3,
+      "time": 0.025,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 17830,
+        "y": 620,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-regent",
+        "family": "crimsonmecha",
+        "phase": "transform",
+        "form": "transforming",
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "reference-art",
+        "frame": "ref-mecha-idle-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-0",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "atlas muzzle",
+          "physical": {
+            "x": 18129.053990610326,
+            "y": 590.7605633802817
+          },
+          "rendered": {
+            "x": 18128.88732394366,
+            "y": 590.7605633802817
+          },
+          "error": 0.16666666666424135
+        }
+      ],
+      "events": [
+        "taunt",
+        "transform"
+      ]
+    },
+    {
+      "id": "16-regent-wyrm-flight",
+      "label": "Regent / Physical Wyrm flight",
+      "filename": "artifacts/runeheart/actions/16-regent-wyrm-flight.png",
+      "steps": 111,
+      "time": 0.9249999999999992,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 17830,
+        "y": 620,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-regent",
+        "family": "wyrm",
+        "phase": "idle",
+        "form": "flying",
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "reference-art",
+        "frame": "ref-wyrm-fly-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-3",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "atlas muzzle",
+          "physical": {
+            "x": 18133.166666666664,
+            "y": 608
+          },
+          "rendered": {
+            "x": 18133,
+            "y": 608
+          },
+          "error": 0.16666666666424135
+        }
+      ],
+      "events": [
+        "taunt",
+        "transform",
+        "transform"
+      ]
+    },
+    {
+      "id": "17-regent-flying-rockets",
+      "label": "Regent flying / Shoulder rockets",
+      "filename": "artifacts/runeheart/actions/17-regent-flying-rockets.png",
+      "steps": 279,
+      "time": 2.3249999999999944,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 17830,
+        "y": 620,
+        "w": 28,
+        "h": 60,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 100,
+        "armor": "courier",
+        "invincible": 0,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-regent",
+        "family": "wyrm",
+        "phase": "attack",
+        "form": "flying",
+        "slot": "rocket",
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "reference-art",
+        "frame": "ref-wyrm-fire-2",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-idle-2",
+      "projectiles": [
+        {
+          "owner": "enemy",
+          "kind": "missile",
+          "missile": true,
+          "x": 18464.30278927983,
+          "y": 528.1121597914511
+        },
+        {
+          "owner": "enemy",
+          "kind": "missile",
+          "missile": true,
+          "x": 18464.19650183166,
+          "y": 527.7618743767365
+        },
+        {
+          "owner": "enemy",
+          "kind": "missile",
+          "missile": true,
+          "x": 18464.161924024993,
+          "y": 527.3974552928694
+        }
+      ],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "atlas muzzle",
+          "physical": {
+            "x": 18394,
+            "y": 555.4064124626306
+          },
+          "rendered": {
+            "x": 18394,
+            "y": 555
+          },
+          "error": 0.40641246263055564
+        },
+        {
+          "kind": "emitted shot",
+          "physical": {
+            "x": 18466,
+            "y": 527.4064124626306
+          },
+          "rendered": {
+            "x": 18466,
+            "y": 527.4064124626306
+          },
+          "error": 0
+        }
+      ],
+      "events": [
+        "taunt",
+        "transform",
+        "transform",
+        "portalwarning",
+        "charge",
+        "portalarrival",
+        "enemyshot",
+        "enemyshot",
+        "enemyshot",
+        "enemyshot"
+      ]
+    },
+    {
+      "id": "17-regent-flying-beam",
+      "label": "Regent flying / Aimed core beam",
+      "filename": "artifacts/runeheart/actions/17-regent-flying-beam.png",
+      "steps": 245,
+      "time": 2.041666666666662,
+      "status": "playing",
+      "kills": 0,
+      "player": {
+        "x": 17830,
+        "y": 620,
+        "w": 28,
+        "h": 60,
+        "vx": -230,
+        "vy": -170,
+        "grounded": true,
+        "jumps": 1,
+        "jet": false,
+        "fuel": 100,
+        "mana": 100,
+        "hp": 70,
+        "armor": "courier",
+        "invincible": 0.85,
+        "slashMode": "horizontal",
+        "slashTime": 0,
+        "dashTime": 0,
+        "stealth": 0,
+        "siphon": 0,
+        "charges": {
+          "cannon": 2,
+          "nova": 2
+        }
+      },
+      "actor": {
+        "id": "soulforge-regent",
+        "family": "wyrm",
+        "phase": "attack",
+        "form": "flying",
+        "slot": "core",
+        "facing": -1
+      },
+      "sprite": {
+        "texture": "reference-art",
+        "frame": "ref-wyrm-fire-0",
+        "alpha": 1
+      },
+      "heroFrame": "rh-hero-hurt-1",
+      "projectiles": [],
+      "allies": [],
+      "terminalEffects": [],
+      "heroGunVisible": true,
+      "standingArmorOverlays": [],
+      "alignments": [
+        {
+          "kind": "atlas muzzle",
+          "physical": {
+            "x": 18131.466666666664,
+            "y": 562.8759384594276
+          },
+          "rendered": {
+            "x": 18131,
+            "y": 563
+          },
+          "error": 0.4828758055898275
+        },
+        {
+          "kind": "beam origin",
+          "physical": {
+            "x": 18131.466666666664,
+            "y": 562.8759384594276
+          },
+          "rendered": {
+            "x": 18131.466666666664,
+            "y": 562.8759384594276
+          },
+          "error": 0
+        }
+      ],
+      "events": [
+        "taunt",
+        "transform",
+        "transform",
+        "charge",
+        "hurt"
+      ]
+    }
+  ],
+  "runtimeErrors": [],
+  "contactSheet": "artifacts/runeheart/actions/contact-sheet.png",
+  "limitations": "Physical Android feel, audio mix, legal-route balance and source-art ownership are not verified here. Creature emission origins and atlas markers are checked within1.5px render rounding."
+}

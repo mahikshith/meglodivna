@@ -1,0 +1,27 @@
+Selected Gothicvania graphics
+
+Artist: Luis Zuno / Ansimuz
+Artist site: https://ansimuz.itch.io/
+License: CC0 1.0 Universal, as declared on the canonical source pages.
+CC0 notice: https://creativecommons.org/publicdomain/zero/1.0/
+Legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
+
+Canonical author uploads:
+https://opengameart.org/content/gothicvania-patreons-collection
+https://opengameart.org/content/gothicvania-town
+https://opengameart.org/content/gothicvania-bridge-expansion-pack-1
+
+The Collection and Town packages include author notices declaring the graphics
+public domain and free for personal or commercial use. The Bridge package
+explicitly permits commercial use, modification and redistribution. The original
+graphics notices are reproduced in ../runeheart/LICENSE.txt. Attribution is not
+required by these author notices; this project credits the artist voluntarily.
+
+Only selected graphics are included. No package music, demo game code, preview
+backdrops sold separately, or paid replacement art is included. Source ZIP hashes,
+selected frame/crop coordinates and transformations are in ../runeheart/manifest.json.
+The private full-source ZIPs are excluded from the web and Android runtime payload.
+
+The repository's original sky/masonry compositions and adaptations combine these
+licensed pixels with original procedural elements. This notice does not license
+the separate user-supplied concept-board reference atlas.
