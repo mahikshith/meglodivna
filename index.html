@@ -58,7 +58,7 @@
               <p><kbd>Q</kbd> sorcery · <kbd>F</kbd> interact · <kbd>C</kbd> gun · <kbd>V</kbd> sword · <kbd>X</kbd> spell · <kbd>Z</kbd> eclipse nova</p>
               <p>Jump against a wall to climb. Hold jump for height. Fuel recharges on solid ground. <kbd>S + Space</kbd> drops through catwalks.</p>
               <p>Gamepad: stick move/aim · A jump · X slash · RT fire · B dash · RB thrust · LT magic · Y interact · LB gun · D-pad left/right sword/spell · right stick click nova.</p>
-              <p>Touch: round stick moves and aims. Tap sword to slash; hold to fire. Tap jump to leap; hold to thrust. Tap the power rune for magic or nearby interaction; hold it to open your paused spell and gear palette. Equip Eclipse Nova or companions there. Down + jump drops through catwalks.</p>
+              <p>Touch anywhere clear to place your stick, then drag to move and aim. It fades eight seconds after release. Sword attacks immediately; hold to fire. Tap jump to leap; hold to thrust. Tap the power rune for magic or nearby interaction; hold it to open your paused spell and gear palette. Equip Eclipse Nova or companions there. Down + jump drops through catwalks.</p>
               <p>Fire spreads. Shadow hides. Lightning staggers foes. Sorcery consumes soul energy; cannon and nova charges are finite. Explore caches and speak to survivors for gear.</p>
             </div>
           </details>
@@ -67,7 +67,7 @@
       </div>
       <div id="progress" class="progress" hidden><i></i></div>
       <div id="touch" class="touch" hidden aria-label="Touch controls">
-        <div id="joystick" class="joystick" role="group" aria-label="Movement and aiming joystick"><svg class="joystick-directions" viewBox="0 0 100 100" aria-hidden="true"><path d="m50 9-6 8h12Zm0 82-6-8h12ZM9 50l8-6v12Zm82 0-8-6v12Z"/></svg><span class="joystick-thumb"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 7v18M7 16h18"/><circle cx="16" cy="16" r="6"/></svg></span></div>
+        <div id="joystick" class="joystick" role="group" aria-label="Floating movement and aiming joystick" hidden><svg class="joystick-directions" viewBox="0 0 100 100" aria-hidden="true"><path d="m50 9-6 8h12Zm0 82-6-8h12ZM9 50l8-6v12Zm82 0-8-6v12Z"/></svg><span class="joystick-thumb"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 7v18M7 16h18"/><circle cx="16" cy="16" r="6"/></svg></span></div>
         <button id="touch-pause" class="touch-pause" aria-label="Pause and settings"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M10 7h4v18h-4Zm8 0h4v18h-4Z"/></svg></button>
         <div class="touch-fight">
           <button id="touch-power" data-action="power" aria-label="Cast power; hold for loadout"><svg class="power-magic" viewBox="0 0 32 32" aria-hidden="true"><path d="m16 3 4 9 10 4-10 4-4 9-4-9-10-4 10-4ZM6 3v5m-3-2h6m17 19v5m-3-2h6"/></svg><svg class="power-interact" viewBox="0 0 32 32" aria-hidden="true"><path d="M8 24v-8q0-4 3-2V7q0-3 3 0v8-10q0-3 3 0v10-7q0-3 3 0v8-4q0-3 3 0v9l-4 6H12Zm-5-8 5 3"/></svg></button>

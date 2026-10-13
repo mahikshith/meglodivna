@@ -47,18 +47,22 @@ html{-webkit-text-size-adjust:100%;overscroll-behavior:none}button,a,summary{tou
   :root{--control-gutter:112px}
   .stage[data-touch=true] #game{height:calc(100% - var(--control-gutter));bottom:var(--control-gutter);top:0}
   .stage[data-touch=true]{background:#09121b}
+  .stage[data-touch=true][data-mode=playing]:not(:has(dialog[open])){touch-action:none}
   .touch{height:var(--control-gutter);left:0;right:0;bottom:0;background:linear-gradient(#101e28cc,#07111af5);border-top:1px solid #60768733}
-  .joystick{left:max(18px,env(safe-area-inset-left));bottom:0;width:112px;height:112px;border-width:1px;opacity:.66}
+  .joystick{left:0;top:0;bottom:auto;width:112px;height:112px;border-width:1px;opacity:.48;pointer-events:none;z-index:20}
   .joystick-directions{inset:4px;width:102px;height:102px}.joystick-thumb{width:50px;height:50px;left:30px;top:30px;border-width:1px}.joystick-thumb svg{width:26px;height:26px;margin:11px}
-  .touch-fight{position:absolute;right:max(18px,env(safe-area-inset-right));bottom:2px;width:216px;height:106px;display:block}
-  .touch-fight button{position:absolute;border-width:1px;background:#273c4c44;box-shadow:none;opacity:.75;padding:10px;margin:0}
-  #touch-jump{width:56px;height:56px;min-width:56px;min-height:56px;right:0;bottom:0;padding:13px;background:#78684d38}
-  #touch-attack{width:52px;height:52px;min-width:52px;min-height:52px;right:18px;bottom:57px}
-  #touch-dash{width:48px;height:48px;min-width:48px;min-height:48px;right:76px;bottom:56px}
-  #touch-power{width:48px;height:48px;min-width:48px;min-height:48px;right:128px;bottom:26px;color:#d9b3ff;border-color:#c79df075}
+  .touch-fight{position:absolute;right:max(18px,env(safe-area-inset-right));bottom:2px;width:344px;height:110px;display:block;z-index:21}
+  .touch-fight button{position:absolute;border-width:1px;background:#273c4c30;box-shadow:none;opacity:.56;padding:17px;margin:0;transition:none}
+  .touch-fight button.active{opacity:.85;background:#a7894d66}
+  #touch-jump{width:84px;height:84px;min-width:84px;min-height:84px;right:0;bottom:0;padding:20px;background:#78684d28}
+  #touch-attack{width:80px;height:80px;min-width:80px;min-height:80px;right:92px;bottom:28px}
+  #touch-dash{width:76px;height:76px;min-width:76px;min-height:76px;right:180px;bottom:30px}
+  #touch-power{width:72px;height:72px;min-width:72px;min-height:72px;right:264px;bottom:0;color:#d9b3ff;border-color:#c79df075}
   .touch .touch-pause{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:44px;height:44px;min-width:44px;min-height:44px;padding:12px;opacity:.6;background:#14232c55;border:1px solid #c0cbd43a;box-shadow:none}
   .touch .touch-pause:active{transform:translateX(-50%) scale(.96)}
   #app:has(.stage[data-mode=playing]) .topbar,#app:has(.stage[data-mode=story]) .topbar{display:none}
   .topbar #sound,.topbar #motion{display:block}
   .stage[data-touch=true] .dialogue{bottom:calc(var(--control-gutter) + 12px);max-width:75%}
 }
+@media(pointer:coarse) and (max-width:760px){.touch .touch-pause{left:max(18px,env(safe-area-inset-left));transform:none;bottom:14px}.touch .touch-pause:active{transform:scale(.96)}}
+@media(pointer:coarse) and (max-width:420px){:root{--control-gutter:120px}.touch-fight{width:324px;right:12px}#touch-power{right:252px}#touch-dash{right:172px}#touch-attack{right:88px}.touch .touch-pause{left:8px;bottom:72px}}
