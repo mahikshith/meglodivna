@@ -58,8 +58,17 @@ const nearby = (a, b, distance = 1500) => Math.abs(a.x - b.x) < distance;
 const living = world => [...world.enemies.filter(e => !e.dead), ...world.enemySummons.filter(e => !e.dead && e.phase === 'attack'), ...world.bosses.filter(b => b.active && !b.dead)];
 const inBossArena = (world, boss) => nearby(world.player, boss)
   && world.player.x + world.player.w >= (boss.arenaStart ?? boss.x - 1500)
-  && world.player.x <= (boss.arenaEnd ?? boss.x + 1500);
+  && world.player.x <= (boss.arenaEnd ?? boss.x + 1500)
+  && Math.abs(world.player.y + world.player.h - (boss.floorY ?? boss.baseY + boss.h)) < 600;
+const hasRunes = (world, object) => [object.requiresRelic, ...(object.requiresRelics || [])]
+  .filter(Boolean).every(id => world.collections.includes(id));
+const bossFloor = boss => boss.floorY ?? boss.baseY + boss.h;
 function refreshSolids(world) {
+  for (const gate of world.gates) if (!gate.open && (gate.requiresRelic || gate.requiresRelics?.length)
+    && hasRunes(world, gate) && (!gate.bossId || world.progress.defeatedBosses.includes(gate.bossId))) {
+    gate.open = true; addOnce(world.progress.openedGates, gate.id);
+    emit(world, 'gate', gate.x, gate.y, { gateId: gate.id, rune: true });
+  }
   world.solids = [...(world.staticSolids || world.level.solids).filter(solid => !solid.missing), ...(world.movingPlatforms || []), ...world.props.filter(p => !p.dead && p.collidable), ...world.gates.filter(g => !g.open)];
 }
 function applyArmor(player, armor, fill = false) {
@@ -70,18 +79,20 @@ function applyArmor(player, armor, fill = false) {
 function alignEnemyBody(enemy, solids) {
   enemy.visualFamily ||= { guard: 'riftcrawler', drone: 'hexwing', sentinel: 'crimsonmecha' }[enemy.type] || enemy.type;
   const size = enemy.visualFamily === 'riftcrawler' ? [60, 41] : enemy.visualFamily === 'hexwing' ? [34, 45] : null;
-  if (!size) return enemy;
   const center = enemy.x + enemy.w / 2, feet = enemy.y + enemy.h;
-  const dx = (enemy.w - size[0]) / 2;
-  enemy.y += enemy.visualFamily === 'hexwing' ? (enemy.h - size[1]) / 2 : enemy.h - size[1];
-  enemy.x += dx; [enemy.w, enemy.h] = size; enemy.baseY = enemy.y;
-  if (Number.isFinite(enemy.minX)) enemy.minX += dx;
-  if (Number.isFinite(enemy.maxX)) enemy.maxX += dx;
-  if (enemy.visualFamily === 'riftcrawler') {
+  if (size) {
+    enemy.y += enemy.visualFamily === 'hexwing' ? (enemy.h - size[1]) / 2 : enemy.h - size[1];
+    enemy.x += (enemy.w - size[0]) / 2; [enemy.w, enemy.h] = size;
+  }
+  enemy.baseY = enemy.y; enemy.homeX = enemy.x; enemy.patrolDirection = enemy.facing || 1;
+  // Old +/-55px patrol hints are not combat leashes. Use the actual safe supporting span.
+  enemy.minX = Number.isFinite(enemy.leashX) ? enemy.leashX : Math.max(0, enemy.x - 700);
+  enemy.maxX = Number.isFinite(enemy.leashW) ? enemy.minX + enemy.leashW - enemy.w : enemy.x + 700;
+  if (enemy.type !== 'drone') {
     const support = solids.find(solid => Math.abs(solid.y - feet) < 0.001 && center >= solid.x && center <= solid.x + solid.w && solid.w >= enemy.w);
     if (support) {
-      enemy.minX = Math.max(support.x, enemy.minX ?? support.x);
-      enemy.maxX = Math.min(support.x + support.w - enemy.w, enemy.maxX ?? support.x + support.w - enemy.w);
+      enemy.minX = Math.max(support.x, enemy.minX);
+      enemy.maxX = Math.min(support.x + support.w - enemy.w, enemy.maxX);
       enemy.minX = Math.min(enemy.minX, enemy.maxX);
       enemy.x = Math.max(enemy.minX, Math.min(enemy.maxX, enemy.x));
     }
@@ -91,7 +102,7 @@ function alignEnemyBody(enemy, solids) {
 export function createWorld(checkpoint = 0, options = {}) {
   const sourceProgress = options.progress || options.previous?.progress;
   const worldId = options.worldId || options.previous?.worldId || sourceProgress?.worldId || 'soulforge';
-  const level = Levels.getLevel?.(worldId) || Levels.LEVEL;
+  const level = options.level || options.previous?.level || Levels.getLevel?.(worldId) || Levels.LEVEL;
   const rules = DIFFICULTIES.find(mode => mode.id === options.difficulty) || DIFFICULTIES[1];
   const progress = switchWorldProgress(sourceProgress, level.id || worldId);
   const index = Number.isInteger(checkpoint) && level.checkpoints[checkpoint] ? checkpoint : 0;
@@ -99,7 +110,7 @@ export function createWorld(checkpoint = 0, options = {}) {
   // Authored relay positions use the original 24×46 body; preserve their center and feet.
   const player = Object.assign(createPlayer(cp.x + 12 - PHYSICS.playerWidth / 2, cp.y + 46 - PHYSICS.playerHeight), {
     visualFamily: 'aether', hp: 100, maxHp: 100, mana: 100, maxMana: 100, invincible: 0.7,
-    shootCooldown: 0, slashCooldown: 0, slashTime: 0, slashId: 0, combo: 0, comboWindow: 0,
+    shootCooldown: 0, slashCooldown: 0, slashTime: 0, slashId: 0, combo: 0, comboWindow: 0, slashBuffer: 0, slashFacing: 1,
     rapid: 0, shield: 0, impaired: 0, stealth: 0, siphon: 0, boost: 0, burn: 0, burnTick: 0,
     spellCooldown: 0, laserTime: 0, beam: null, parryTime: 0, parries: 0, dashSlashId: -1,
     charges: progress.charges, ...progress.equipped,
@@ -196,11 +207,15 @@ function die(world, reason) {
   world.player.hp = 0; world.status = 'dead'; world.deathReason = reason;
   emit(world, 'death', world.player.x + world.player.w / 2, world.player.y + world.player.h / 2, { reason });
 }
-function hitEnemy(world, enemy, amount, feedback = true) {
+function hitEnemy(world, enemy, amount, feedback = true, kind = 'power') {
   if (enemy.dead || enemy.hp <= 0 || amount <= 0) return;
+  const boss = world.bosses.includes(enemy);
+  if (boss && (enemy.form === 'transforming' || enemy.phase === 'transform')) return;
   const locked = enemy.shieldGateId && world.gates.some(gate => gate.id === enemy.shieldGateId && !gate.open);
   const shielded = enemy.shield > 0 && (enemy.weakened || 0) <= 0;
-  const resisted = amount * (locked ? 0.15 : shielded ? 0.4 : enemy.weakened > 0 ? 1.25 : 1);
+  const timing = boss && enemy.phase === 'charge' && kind === 'ranged' ? 0.35
+    : boss && enemy.phase === 'idle' && kind === 'melee' ? 1.25 : 1;
+  const resisted = amount * timing * (locked ? 0.15 : shielded ? 0.4 : enemy.weakened > 0 ? 1.25 : 1);
   if (shielded) enemy.shield = Math.max(0, enemy.shield - amount * 0.3);
   const damage = Math.min(enemy.hp, resisted);
   enemy.hp = Math.max(0, enemy.hp - damage);
@@ -241,7 +256,12 @@ export function rewardPlayer(world, reward, claimId) {
   if (reward.type === 'rapid') p.rapid = value ?? 12;
   if (reward.type === 'shield') p.shield = Math.min(100, p.shield + (value ?? 35));
   if (reward.type === 'boost') p.boost = value ?? 10;
-  if (reward.type === 'treasure') addOnce(world.collections, reward.itemId);
+  if (reward.type === 'treasure') {
+    const fresh = !world.collections.includes(reward.itemId);
+    addOnce(world.collections, reward.itemId);
+    if (fresh && reward.itemId === 'tide-glass') p.shield = Math.min(100, p.shield + 20);
+    refreshSolids(world);
+  }
   if (reward.type === 'cannon' || reward.type === 'nova') {
     p.charges[reward.type] = Math.min(9, p.charges[reward.type] + Math.floor(value ?? 1));
     addOnce(world.progress.unlocked[reward.type === 'cannon' ? 'gun' : 'spell'], reward.type === 'cannon' ? 'cannon' : 'eclipse');
@@ -252,6 +272,7 @@ export function rewardPlayer(world, reward, claimId) {
 }
 function openGate(world, gate) {
   if (gate.open) return;
+  if (!hasRunes(world, gate)) return;
   gate.open = true; addOnce(world.progress.openedGates, gate.id); refreshSolids(world);
   for (const boss of world.bosses) if (boss.shieldGateId === gate.id) { boss.shield = 0; boss.weakened = 8; }
   emit(world, 'gate', gate.x, gate.y, { gateId: gate.id });
@@ -268,6 +289,7 @@ export function interact(world) {
   if (objectCenter !== p.x + p.w / 2) p.facing = objectCenter > p.x + p.w / 2 ? 1 : -1;
   if (!object.type) object.facing = -p.facing;
   if (object.type === 'portal') {
+    if (!hasRunes(world, object)) { say(world, 'RUNE SEAL // Recover the missing heart before crossing.', 2); return false; }
     if (!object.to || !Number.isFinite(object.to.x) || !Number.isFinite(object.to.y)) return false;
     const to = { x: object.to.x + 12 - p.w / 2, y: object.to.y + 46 - p.h };
     if (to.x < 0 || to.x > world.level.width - p.w || to.y < 0 || to.y > world.level.height - p.h) return false;
@@ -383,7 +405,7 @@ function shoot(world, input) {
     p.charges.cannon--; p.laserTime = 0.25;
     const aim = { x: x + (up ? 0 : p.facing * gun.range), y: y + (up ? -gun.range : 0), w: 0, h: 0 };
     p.beam = aimedBeam(p, aim, 'gun', gun.range, 34, gun.tint);
-    for (const enemy of living(world)) if (beamHit(p.beam, enemy)) { enemy.shield = 0; hitEnemy(world, enemy, gun.damage); }
+    for (const enemy of living(world)) if (beamHit(p.beam, enemy)) { enemy.shield = 0; hitEnemy(world, enemy, gun.damage, true, 'ranged'); }
     for (const prop of world.props) if (!prop.dead && beamHit(p.beam, prop)) destroyProp(world, prop);
     for (const projectile of world.projectiles) if (projectile.active && beamHit(p.beam, projectile)) projectile.active = false;
     emit(world, 'cannon', x, y, { beam: { ...p.beam }, tint: gun.tint }); return;
@@ -415,52 +437,85 @@ function enemyFire(world, enemy, missile = false, spread = 0, kind = 'bullet') {
   emit(world, 'enemyshot', x, y, { kind, weaponSlot: enemy.weaponSlot, angle: aim.angle });
 }
 function updateEnemy(world, enemy, dt, solids) {
-  const p = world.player, tick = dt * (enemy.slow > 0 ? 0.3 : 1), distance = Math.abs(enemy.x + enemy.w / 2 - p.x - p.w / 2);
+  const p = world.player, tick = dt * (enemy.slow > 0 ? 0.3 : 1);
+  const dx = p.x + p.w / 2 - enemy.x - enemy.w / 2, distance = Math.abs(dx), toward = Math.sign(dx) || enemy.facing || 1;
+  const alert = distance < 900 && Math.abs(p.y - enemy.y) < 420 && p.stealth <= 0;
   enemy.flash = Math.max(0, (enemy.flash || 0) - dt); enemy.dashTime = Math.max(0, (enemy.dashTime || 0) - tick);
+  enemy.stagger = Math.max(0, (enemy.stagger || 0) - dt); enemy.attackTime = Math.max(0, (enemy.attackTime || 0) - tick);
+  enemy.jumpCooldown = Math.max(0, (enemy.jumpCooldown || 0) - tick);
+  enemy.patrolDirection ||= enemy.facing || 1;
+  if (enemy.x <= (enemy.minX ?? 0) + 2) enemy.patrolDirection = 1;
+  if (enemy.x >= (enemy.maxX ?? world.level.width - enemy.w) - 2) enemy.patrolDirection = -1;
+  if (alert && enemy.dashTime === 0) enemy.facing = toward;
+  let desired = 0;
   if (enemy.type === 'drone') {
-    enemy.patrolDirection ||= enemy.facing; enemy.x += enemy.patrolDirection * 38 * tick;
-    if (enemy.x <= enemy.minX) enemy.patrolDirection = 1;
-    if (enemy.x >= enemy.maxX) enemy.patrolDirection = -1;
-    enemy.y = enemy.baseY + Math.sin(world.time * 1.7 + enemy.x * 0.01) * 24;
+    enemy.intent = !alert ? 'patrol' : distance < 150 ? 'retreat' : 'strafe';
+    desired = !alert ? enemy.patrolDirection * 70 : distance < 150 ? -toward * 120 : toward * (distance > 280 ? 145 : 60);
+    if (enemy.stagger <= 0) enemy.vx = desired;
+    const desiredY = alert ? Math.max(30, Math.min(enemy.baseY + 150, Math.max(enemy.baseY - 150, p.y - 90)))
+      + Math.sin(world.time * 2.4) * 32 : enemy.baseY + Math.sin(world.time * 2.4) * 32;
+    enemy.vy = enemy.stagger > 0 ? enemy.vy || 0 : Math.max(-160, Math.min(160, (desiredY - enemy.y) * 3));
+    moveBody(enemy, solids, tick);
   } else if (['guard', 'shade', 'mage', 'sentinel'].includes(enemy.type)) {
-    const toward = p.x + p.w / 2 < enemy.x + enemy.w / 2 ? -1 : 1;
-    const speed = enemy.type === 'shade' ? 90 : enemy.type === 'mage' ? 48 : enemy.type === 'sentinel' ? 35 : 62;
-    const desired = enemy.type === 'shade' ? toward * speed : distance < 150 ? -toward * speed : distance > 340 ? toward * speed : 0;
-    enemy.vx = enemy.dashTime > 0 ? enemy.dashFacing * 360 : enemy.windup > 0 ? 0 : desired;
-    const ahead = enemy.x + (enemy.vx > 0 ? enemy.w + 12 : -12);
-    if (enemy.grounded && !solids.some(solid => ahead >= solid.x && ahead <= solid.x + solid.w && Math.abs(solid.y - enemy.y - enemy.h) < 80)) enemy.vx = 0;
-    if (enemy.grounded && enemy.wall && enemy.type !== 'sentinel') enemy.vy = -430;
-    enemy.vy = (enemy.vy || 0) + 1800 * tick; moveBody(enemy, solids, tick);
-    if (Number.isFinite(enemy.minX)) enemy.x = Math.max(enemy.minX, enemy.x);
-    if (Number.isFinite(enemy.maxX)) enemy.x = Math.min(enemy.maxX, enemy.x);
-  }
-  enemy.emotion = enemy.weakened > 0 ? 'weakened' : distance < 150 ? 'retreat' : enemy.windup > 0 ? 'aiming' : 'pursue';
-  if (distance < 650 && p.stealth <= 0) {
-    if (enemy.dashTime <= 0) enemy.facing = p.x + p.w / 2 < enemy.x + enemy.w / 2 ? -1 : 1;
-    enemy.cooldown -= tick;
-    if (enemy.cooldown < 0.6) {
-      if (!enemy.windup) { enemy.aimX = p.x + p.w / 2; enemy.aimY = p.y + p.h / 2;
-        if (enemy.type === 'sentinel') enemy.telegraph = aimedBeam(enemy, p, 'gun', 700, 18, 0x82e8ff); }
-      enemy.windup = 0.6 - Math.max(0, enemy.cooldown);
+    const melee = enemy.type === 'guard' || enemy.type === 'shade';
+    const speed = enemy.type === 'shade' ? 175 : enemy.type === 'guard' ? 145 : enemy.type === 'mage' ? 105 : 90;
+    enemy.intent = !alert ? 'patrol' : !melee && distance < 210 ? 'retreat' : 'chase';
+    desired = !alert ? enemy.patrolDirection * speed * 0.55 : enemy.intent === 'retreat' ? -toward * speed
+      : toward * speed * (melee && distance < 68 ? 0.25 : 1);
+    if (enemy.windup > 0) desired *= melee ? 0.3 : 0.5;
+    if (enemy.stagger <= 0) enemy.vx = enemy.dashTime > 0 ? enemy.dashFacing * 360 : desired;
+    const feet = enemy.y + enemy.h, ahead = enemy.x + (enemy.vx > 0 ? enemy.w + 10 : -10);
+    const supported = solids.some(s => ahead >= s.x && ahead <= s.x + s.w && Math.abs(s.y - feet) < 30);
+    const obstacle = solids.find(s => !s.oneWay && ahead >= s.x && ahead <= s.x + s.w && s.y < feet && s.y >= feet - 110);
+    if (enemy.grounded && enemy.jumpCooldown === 0 && enemy.stagger <= 0
+      && (obstacle || enemy.wall || (alert && p.y + p.h < feet - 55 && distance < 260))) {
+      enemy.vy = -520; enemy.jumpCooldown = 1.2; enemy.action = 'jump';
+    } else if (enemy.grounded && !supported && !obstacle) { enemy.vx = 0; enemy.patrolDirection *= -1; }
+    enemy.vy = Math.min(900, (enemy.vy || 0) + PHYSICS.gravity * tick); moveBody(enemy, solids, tick);
+  } else enemy.intent = 'aim';
+  enemy.x = Math.max(enemy.minX ?? 0, Math.min(enemy.maxX ?? world.level.width - enemy.w, enemy.x));
+  enemy.x = Math.max(0, Math.min(world.level.width - enemy.w, enemy.x)); enemy.y = Math.max(0, enemy.y);
+  if (enemy.y > world.level.height + 70) { enemy.dead = true; return; }
+  enemy.action = enemy.stagger > 0 ? 'hurt' : enemy.dashTime > 0 || enemy.attackTime > 0 ? 'attack'
+    : enemy.windup > 0 ? 'windup' : enemy.vy < -20 ? 'jump' : Math.abs(enemy.vx || 0) > 8 ? 'run' : 'idle';
+  enemy.emotion = enemy.weakened > 0 ? 'weakened' : enemy.stagger > 0 ? 'staggered' : enemy.windup > 0 ? 'aiming' : enemy.intent;
+  if (enemy.stagger > 0) { enemy.windup = 0; enemy.telegraph = null; return; }
+  if (alert) {
+    enemy.cooldown = (enemy.cooldown ?? 1) - tick;
+    const windup = enemy.type === 'guard' ? 0.32 : enemy.type === 'shade' ? 0.45 : enemy.type === 'drone' ? 0.4 : 0.65;
+    if (enemy.cooldown < windup) {
+      if (!enemy.windup) {
+        enemy.aimX = p.x + p.w / 2; enemy.aimY = p.y + p.h / 2;
+        enemy.attackKind = enemy.type === 'guard' && distance < 180 ? 'bite' : enemy.type === 'shade' ? 'lunge' : enemy.type === 'sentinel' ? 'beam' : 'shot';
+        emit(world, 'enemywindup', enemy.x + enemy.w / 2, enemy.y, { enemyId: enemy.id, attack: enemy.attackKind, time: windup });
+      }
+      enemy.windup = windup - Math.max(0, enemy.cooldown);
+      enemy.weaponSlot = enemy.type === 'mage' ? 'hand' : enemy.type === 'turret' ? 'rocket' : 'gun';
+      const locked = { x: enemy.aimX, y: enemy.aimY, w: 0, h: 0 };
+      enemy.telegraph = aimedBeam(enemy, locked, enemy.weaponSlot, enemy.attackKind === 'bite' || enemy.attackKind === 'lunge' ? 120 : 700, 8, 0xff825f);
+      enemy.aimAngle = enemy.telegraph.angle;
     }
     if (enemy.cooldown <= 0) {
-      if (enemy.type === 'shade') { enemy.dashTime = 0.28; enemy.dashFacing = enemy.facing; }
-      else if (enemy.type === 'sentinel') {
-        enemy.beam = aimedBeam(enemy, p, 'gun', 700, 18, 0x82e8ff); enemy.beamTime = 0.28; enemy.aimAngle = enemy.beam.angle;
-        emit(world, 'thunder', enemy.aimX, 80, { beam: enemy.beam });
+      if (enemy.attackKind === 'bite' || enemy.attackKind === 'lunge') {
+        enemy.dashTime = enemy.attackKind === 'bite' ? 0.18 : 0.28; enemy.dashFacing = enemy.facing;
+      } else if (enemy.type === 'sentinel') {
+        enemy.beam = aimedBeam(enemy, { x: enemy.aimX, y: enemy.aimY, w: 0, h: 0 }, 'gun', 700, 18, 0x82e8ff);
+        enemy.beamTime = 0.28; enemy.aimAngle = enemy.beam.angle; emit(world, 'thunder', enemy.beam.x0, enemy.beam.y0, { beam: enemy.beam });
       } else if (enemy.type === 'mage') for (const spread of [-0.2, 0, 0.2]) enemyFire(world, enemy, false, spread, 'fire');
       else enemyFire(world, enemy, enemy.type === 'turret');
-      enemy.cooldown = (enemy.type === 'drone' ? 1.7 : enemy.type === 'turret' ? 2.4 : enemy.type === 'mage' ? 2.3 : enemy.type === 'shade' ? 2 : enemy.type === 'sentinel' ? 2.8 : 1.45) * world.rules.cadence;
+      enemy.attackTime = 0.2; enemy.action = 'attack';
+      enemy.cooldown = (enemy.type === 'drone' ? 1.7 : enemy.type === 'turret' ? 2.4 : enemy.type === 'mage' ? 2.3 : enemy.type === 'shade' ? 1.8 : enemy.type === 'sentinel' ? 2.6 : 1.15) * world.rules.cadence;
       enemy.windup = 0; enemy.telegraph = null;
     }
-  }
-  enemy.hidden = enemy.type === 'shade' && enemy.cooldown > 0.6 && enemy.dashTime <= 0;
+  } else { enemy.windup = 0; enemy.telegraph = null; }
+  enemy.hidden = false;
   if (enemy.beamTime > 0) { enemy.beamTime -= tick; if (enemy.beamTime <= 0) enemy.beam = null; else if (beamHit(enemy.beam, p)) damagePlayer(world, 22, enemy.x); }
-  if (overlaps(p, enemy)) damagePlayer(world, enemy.type === 'shade' ? 22 : 16, enemy.x);
+  if (overlaps(p, enemy)) damagePlayer(world, enemy.type === 'shade' ? 22 : enemy.type === 'guard' ? 12 : 16, enemy.x);
 }
 function finishBossAttack(boss, world) {
   boss.phase = 'idle'; boss.timer = (boss.hp < boss.maxHp / 2 ? 0.7 : 1.1) * world.rules.cadence * (boss.power === 'overload' ? 0.75 : 1);
   boss.phaseTime = 0; boss.beam = null; boss.telegraph = null; boss.portalSource = null; boss.portalExit = null;
+  boss.guarding = false; boss.recovering = true;
 }
 function updateBoss(world, boss, dt) {
   if (boss.dead) return;
@@ -472,6 +527,7 @@ function updateBoss(world, boss, dt) {
   }
   if (!boss.active) return;
   world.activeBoss = boss;
+  boss.guarding = boss.phase === 'charge' || boss.phase === 'transform'; boss.recovering = boss.phase === 'idle';
   boss.facing = p.x + p.w / 2 < boss.x + boss.w / 2 ? -1 : 1;
   boss.weakened = Math.max(0, (boss.weakened || 0) - dt);
   boss.tauntTime = Math.max(0, (boss.tauntTime || 0) - dt);
@@ -510,7 +566,8 @@ function updateBoss(world, boss, dt) {
   boss.emotion = boss.form === 'transforming' ? 'transforming' : boss.weakened > 0 ? 'weakened' : boss.enraged ? 'enraged' : boss.phase === 'charge' ? 'focused' : boss.phase === 'attack' ? 'furious' : 'watching';
   const distance = Math.abs(p.x + p.w / 2 - boss.x - boss.w / 2);
   const direction = p.x + p.w / 2 < boss.x + boss.w / 2 ? -1 : 1;
-  boss.vx = boss.phase === 'idle' ? (distance < 140 ? -direction * 55 : distance > 300 ? direction * 75 : 0) * (boss.enraged ? 1.2 : 1) : 0;
+  boss.intent = distance < 160 ? 'retreat' : 'chase';
+  boss.vx = boss.phase === 'idle' ? (distance < 160 ? -direction * 105 : direction * (distance > 300 ? 170 : 80)) * (boss.enraged ? 1.2 : 1) : 0;
   if (boss.form === 'transforming') { boss.vx = 0; boss.vy = 0; }
   else if (boss.form === 'flying') {
     const desiredY = Math.max(40, boss.baseY - 45 + Math.sin(world.time * 1.7) * 16);
@@ -535,18 +592,19 @@ function updateBoss(world, boss, dt) {
     return;
   }
   if (boss.phase === 'idle' && boss.timer <= 0) {
-    boss.attack = (boss.attack + 1) % 3; boss.phase = 'charge'; boss.phaseTime = 0;
+    boss.attack = (boss.attack + 1) % 3; boss.phase = 'charge'; boss.phaseTime = 0; boss.guarding = true; boss.recovering = false;
     boss.weaponSlot = boss.attack === 2 || boss.type === 'hex' ? 'core'
       : boss.type === 'regent' && boss.attack === 0 || boss.type === 'warden' && boss.attack === 1 ? 'rocket' : 'gun';
-    boss.timer = boss.attack === 2 ? 1.1 : boss.type === 'hex' ? 0.9 : 0.7;
+    boss.timer = boss.attack === 2 ? 1.1 : boss.type === 'hex' ? 0.9 : 0.85;
     if (boss.power === 'undertow') {
-      boss.powerPulse = { x: Math.max(boss.arenaStart, Math.min(boss.arenaEnd - 280, p.x - 120)), y: 0, w: 280, h: 610,
+      const floor = bossFloor(boss);
+      boss.powerPulse = { x: Math.max(boss.arenaStart, Math.min(boss.arenaEnd - 280, p.x - 120)), y: Math.max(0, floor - 400), w: 280, h: Math.min(400, floor),
         vx: p.x < boss.x ? 80 : -80, vy: 0, phase: 'warning', time: 0.7 };
-      emit(world, 'currentwarning', boss.powerPulse.x, 560, { bossId: boss.id, pulse: { ...boss.powerPulse } });
+      emit(world, 'currentwarning', boss.powerPulse.x, floor - 50, { bossId: boss.id, pulse: { ...boss.powerPulse } });
     }
     if (boss.power === 'mirror') {
-      boss.mirrorExit = { x: Math.max(boss.arenaStart + 60, Math.min(boss.arenaEnd - 80, p.x + (p.x < boss.x ? -150 : 150))), y: 566, time: 0.9 };
-      emit(world, 'portalwarning', boss.mirrorExit.x, 610, { bossId: boss.id, time: 0.9 });
+      boss.mirrorExit = { x: Math.max(boss.arenaStart + 60, Math.min(boss.arenaEnd - 80, p.x + (p.x < boss.x ? -150 : 150))), y: bossFloor(boss) - 44, time: 0.9 };
+      emit(world, 'portalwarning', boss.mirrorExit.x, bossFloor(boss), { bossId: boss.id, time: 0.9 });
     }
     if (boss.attack === 0 && ['hex', 'regent'].includes(boss.type)) {
       const away = p.x < boss.x ? 1 : -1;
@@ -560,7 +618,7 @@ function updateBoss(world, boss, dt) {
         emit(world, 'portalwarning', exitX, exitY + boss.h, { bossId: boss.id, time: 0.8 });
       }
     }
-    boss.aimY = Math.min(580, p.y + p.h / 2); boss.aimX = p.x + p.w / 2;
+    boss.aimY = p.y + p.h / 2; boss.aimX = p.x + p.w / 2;
     const origin = weaponOrigin(boss, 'core');
     const range = Math.min(1400, boss.facing > 0 ? boss.arenaEnd - origin.x : origin.x - boss.arenaStart);
     boss.telegraph = aimedBeam(boss, { x: boss.aimX, y: boss.aimY, w: 0, h: 0 }, 'core', range, 14, boss.type === 'regent' ? 0xff6689 : 0x82e8ff);
@@ -568,7 +626,7 @@ function updateBoss(world, boss, dt) {
     if (boss.attack === 0 && boss.type !== 'hex' && boss.form !== 'flying' && boss.grounded) boss.vy = -360;
     emit(world, 'charge', boss.x, boss.y + 55, { bossId: boss.id, attack: boss.attack });
   } else if (boss.phase === 'charge' && boss.timer <= 0) {
-    boss.phase = 'attack'; boss.phaseTime = 0; boss.shots = 0;
+    boss.phase = 'attack'; boss.phaseTime = 0; boss.shots = 0; boss.guarding = false; boss.recovering = false;
     boss.timer = boss.attack === 2 || (boss.type === 'hex' && boss.attack === 1) ? 0.85 : 0.14;
   }
   if (boss.phase === 'charge' && boss.telegraph) {
@@ -584,7 +642,7 @@ function updateBoss(world, boss, dt) {
     boss.beam = aimedBeam(boss, { x: boss.aimX, y: boss.aimY, w: 0, h: 0 }, 'core', range, 14, boss.telegraph.tint);
     boss.weaponSlot = 'core';
     boss.aimAngle = boss.beam.angle;
-    if (boss.type === 'hex' && boss.attack === 2 && boss.shots === 0) { queueEnemySummon(world, 'shade', p.x + 110, 566, 8, boss.id); boss.shots++; }
+    if (boss.type === 'hex' && boss.attack === 2 && boss.shots === 0) { queueEnemySummon(world, 'shade', p.x + 110, bossFloor(boss) - 44, 8, boss.id); boss.shots++; }
     if (boss.type === 'regent' && boss.attack === 2 && boss.phaseTime > 0.3 && boss.shots === 0) {
       for (const spread of [-0.3, 0, 0.3]) enemyFire(world, boss, true, spread, 'hex'); boss.shots++;
     }
@@ -720,7 +778,7 @@ function updateSummons(world, dt) {
 function updatePressure(world, dt) {
   world.pressureTimer -= dt;
   if (!world.missileWarning && world.pressureTimer <= 0) {
-    world.missileWarning = { y: Math.min(580, Math.max(100, world.player.y + world.player.h / 2)), time: 1.1 };
+    world.missileWarning = { y: Math.min(world.level.height - 30, Math.max(30, world.player.y + world.player.h / 2)), time: 1.1 };
     emit(world, 'missilewarning', world.player.x + 900, world.missileWarning.y);
   }
   if (!world.missileWarning) return;
@@ -765,7 +823,7 @@ function updateProjectiles(world, slashBox, dt) {
         .sort((a, b) => Math.abs(a.x - oldX) - Math.abs(b.x - oldX));
       for (const target of contacts) {
         projectile.hitIds.push(target.id);
-        if (world.props.includes(target)) hitProp(world, target, projectile.damage); else hitEnemy(world, target, projectile.damage);
+        if (world.props.includes(target)) hitProp(world, target, projectile.damage); else hitEnemy(world, target, projectile.damage, true, 'ranged');
         if (projectile.kind === 'rocket') {
           for (const other of living(world)) if (other !== target && nearby(other, target, 100)) hitEnemy(world, other, 15);
           emit(world, 'explode', projectile.x, projectile.y, { radius: 90 });
@@ -781,13 +839,21 @@ function updateProjectiles(world, slashBox, dt) {
 }
 export function stepWorld(world, input = {}, dt = STEP) {
   if (!Number.isFinite(dt) || dt <= 0) throw new RangeError('Simulation step must be positive and finite.');
+  if (dt > STEP + 1e-9) {
+    const held = Object.fromEntries(Object.entries(input).map(([key, value]) => [key, key.endsWith('Pressed') ? false : value]));
+    for (let remaining = dt, first = true; remaining > 1e-9 && world.status === 'playing' && !world.story; first = false) {
+      const tick = Math.min(STEP, remaining); stepWorld(world, first ? input : held, tick); remaining -= tick;
+    }
+    return;
+  }
   if (world.status !== 'playing' || world.story) return;
   const p = world.player;
   world.time += dt; world.timeLeft = Math.max(0, world.timeLeft - dt);
   updateEnvironment(world, dt);
   if (world.timeLeft === 0) { die(world, 'deadline'); return; }
   world.dialogueTime = Math.max(0, world.dialogueTime - dt); world.stasis = Math.max(0, world.stasis - dt); p.aimUp = !!input.aimUp;
-  for (const key of ['invincible', 'shootCooldown', 'slashCooldown', 'slashTime', 'comboWindow', 'rapid', 'impaired', 'stealth', 'siphon', 'boost', 'burn', 'burnTick', 'spellCooldown', 'laserTime', 'parryTime']) p[key] = Math.max(0, p[key] - dt);
+  for (const key of ['invincible', 'shootCooldown', 'slashCooldown', 'slashTime', 'slashBuffer', 'comboWindow', 'rapid', 'impaired', 'stealth', 'siphon', 'boost', 'burn', 'burnTick', 'spellCooldown', 'laserTime', 'parryTime']) p[key] = Math.max(0, (p[key] || 0) - dt);
+  if (input.slashPressed) p.slashBuffer = 0.12;
   if (p.laserTime === 0) p.beam = null;
   p.mana = Math.min(p.maxMana, p.mana + 2.5 * dt);
   if (p.burn > 0 && p.burnTick === 0) { damagePlayer(world, 5, p.x); p.burnTick = 0.9; }
@@ -804,15 +870,19 @@ export function stepWorld(world, input = {}, dt = STEP) {
   const previousX = p.x, previousY = p.y;
   for (const name of stepPlayer(p, physicsInput, solids, dt)) {
     emit(world, name, p.x + p.w / 2, p.y + p.h);
-    if (name === 'dash') { p.slashId++; p.dashSlashId = p.slashId; p.slashTime = p.dashTime; }
+    if (name === 'dash') {
+      p.slashId++; p.dashSlashId = p.slashId; p.slashTime = p.dashTime; p.slashFacing = p.facing;
+      p.parryTime = 0; p.parries = 2; p.slashBuffer = 0; p.stealth = 0;
+    }
   }
   p.x = Math.max(0, Math.min(world.level.width - p.w, p.x));
   if (p.y < 0) { p.y = 0; p.vy = Math.max(0, p.vy); }
   if (p.y > world.level.height + 70) { die(world, 'fall'); return; }
   const sword = item('sword', p.sword);
-  if (input.slashPressed && p.slashCooldown <= 0 && p.dashTime <= 0) {
+  if (p.slashBuffer > 0 && p.slashCooldown <= 0 && p.dashTime <= 0) {
     p.combo = p.comboWindow > 0 ? (p.combo + 1) % 3 : 0;
     p.comboWindow = 0.65; p.slashCooldown = sword.cooldown; p.slashTime = 0.2; p.slashId++; p.stealth = 0; p.parryTime = 0.1; p.parries = 0;
+    p.slashBuffer = 0; p.slashFacing = p.facing;
     const blade = weaponOrigin(p, 'blade');
     emit(world, 'slash', blade.x, blade.y, { facing: p.facing, sword: p.sword, tint: sword.tint });
   }
@@ -821,7 +891,7 @@ export function stepWorld(world, input = {}, dt = STEP) {
   p.slashMode = p.dashTime > 0 ? 'dash' : ['horizontal', 'vertical', 'finisher'][p.combo];
   const horizontal = p.slashMode === 'horizontal' || p.slashMode === 'dash';
   const reach = horizontal ? sword.width + 20 : sword.width;
-  const slashBox = { x: p.facing > 0 ? p.x + 3 : p.x + p.w - reach - 3,
+  const slashBox = { x: p.slashFacing > 0 ? p.x + 3 : p.x + p.w - reach - 3,
     y: horizontal ? p.y + p.h - 68 : p.y + p.h - 3 - sword.height, w: reach, h: horizontal ? 72 : sword.height };
   if (p.dashTime > 0) { slashBox.x = Math.min(slashBox.x, slashBox.x + previousX - p.x); slashBox.w += Math.abs(p.x - previousX); slashBox.y = Math.min(slashBox.y, slashBox.y + previousY - p.y); slashBox.h += Math.abs(p.y - previousY); }
   p.slashBox = slashBox;
@@ -842,10 +912,21 @@ export function stepWorld(world, input = {}, dt = STEP) {
       }
     }
     if (enemy.dead || !nearby(enemy, p)) continue;
-    if (p.slashTime > 0 && enemy.lastSlash !== p.slashId && overlaps(slashBox, enemy)) {
+    const blocked = world.solids.some(solid => !solid.oneWay && solid !== enemy && segmentHit(p.x + p.w / 2, p.y + p.h / 2,
+      enemy.x + enemy.w / 2, enemy.y + enemy.h / 2, solid));
+    if (p.slashTime > 0 && enemy.lastSlash !== p.slashId && overlaps(slashBox, enemy) && !blocked) {
       enemy.lastSlash = p.slashId;
       const damage = sword.damage * (p.dashTime > 0 ? 1.4 : p.combo === 2 ? 40 / 27 : 1) * (world.bosses.includes(enemy) ? 0.7 : 1);
-      hitEnemy(world, enemy, damage);
+      hitEnemy(world, enemy, damage, true, 'melee');
+      if (world.collections.includes('ember-heart') && p.combo === 2 && p.dashTime <= 0) enemy.burn = Math.max(enemy.burn || 0, 2);
+      if (enemy.dead && p.dashTime > 0 && world.collections.includes('storm-seal')) p.fuel = Math.min(100, p.fuel + 15);
+      if (!enemy.dead && !world.bosses.includes(enemy)) {
+        enemy.stagger = p.combo === 2 || p.dashTime > 0 ? 0.2 : 0.12;
+        enemy.vx = p.slashFacing * (p.dashTime > 0 ? 340 : p.combo === 2 ? 280 : 190);
+        enemy.vy = Math.min(enemy.vy || 0, p.slashMode === 'vertical' ? -240 : -100);
+        enemy.windup = 0; enemy.telegraph = null; enemy.beamTime = 0; enemy.beam = null;
+        emit(world, 'stagger', enemy.x + enemy.w / 2, enemy.y + enemy.h / 2, { facing: p.slashFacing });
+      }
       if (sword.id === 'saber') p.hp = Math.min(p.maxHp, p.hp + damage * 0.06);
       if (sword.id === 'katana' && p.combo === 2) { for (const other of living(world)) if (other !== enemy && nearby(other, enemy, 150)) hitEnemy(world, other, 12); emit(world, 'thunder', enemy.x, enemy.y, { tint: sword.tint }); }
       world.hitstop = 0.035;

@@ -8,9 +8,9 @@ test('closed authored forcefields cannot be crossed with legal wall jumps, dash,
     const world = createWorld();
     world.enemies = []; world.pickups = [];
     const gate = world.gates.find(candidate => candidate.id === authored.id);
-    Object.assign(world.player, { x: gate.x - 70, y: 610 - world.player.h });
+    Object.assign(world.player, { x: gate.x - 70, y: gate.y + gate.h - world.player.h });
     assert.equal(gate.y, 0);
-    assert.equal(gate.h, 610);
+    assert.equal(gate.h, authored.h);
     assert.ok(world.solids.includes(gate), 'Visible gate and actual collider share geometry');
     let wallJumps = 0;
     for (let frame = 0; frame < 120 * 8; frame++) {

@@ -27,7 +27,7 @@ async function main(){
         used++;
         const w=g.world,p=w.player;
         const zone=[...g.LEVEL.zones].reverse().find(z=>p.x>=z.x)||g.LEVEL.zones[0];
-        if(!window.__replayCaptures[zone.biome]&&p.x>zone.x+1600)capture=`run-${zone.biome}`;
+        const roomKey=`room-${g.LEVEL.zones.indexOf(zone)}-${zone.label.replace(/[^a-z0-9]/gi,'-')}`;if(!window.__replayCaptures[roomKey]&&p.x>zone.x+240)capture=roomKey;
         if(w.story&&!window.__replayCaptures[`story-${w.story.npcId}`])capture=`story-${w.story.npcId}`;
         if(w.activeBoss?.phase==='attack'&&w.activeBoss.attack===2&&!window.__replayCaptures[`boss-${w.activeBoss.id}`])capture=`boss-${w.activeBoss.id}`;
         if(w.status==='won')capture='campaign-victory';
@@ -38,7 +38,7 @@ async function main(){
     },{records:batch,step:trace.step});
     index+=result.used;retries+=result.retries;
     if(result.capture&&!captures.has(result.capture)){
-      await page.evaluate(()=>{const g=window.__ASH,s=g.scene,p=g.world.player;s.previousPlayer={x:p.x,y:p.y};s.cameraX=Math.max(0,Math.min(g.LEVEL.width-960,p.x-300));s.cameraY=Math.max(0,Math.min(180,p.y-310));g.world.hitstop=0;s.accumulator=0;s.update(0,0);s.children.depthSort();s.sys.game.renderer.preRender();s.cameras.render(s.sys.game.renderer,s.children);s.sys.game.renderer.postRender();});
+      await page.evaluate(()=>{const g=window.__ASH,s=g.scene,p=g.world.player;s.previousPlayer={x:p.x,y:p.y};s.cameraX=Math.max(0,Math.min(g.LEVEL.width-960,p.x-300));s.cameraY=Math.max(0,Math.min(g.LEVEL.height-s.viewportH,p.y-s.viewportH*.52));g.world.hitstop=0;s.accumulator=0;s.update(0,0);s.children.depthSort();s.sys.game.renderer.preRender();s.cameras.render(s.sys.game.renderer,s.children);s.sys.game.renderer.postRender();});
       await page.screenshot({path:`artifacts/${worldId}-${result.capture}.png`});captures.add(result.capture);
       // Story UI is validated separately; replay invokes the recorded valid choices directly.
       await page.evaluate(()=>{const g=window.__ASH;if(g.mode==='story'){g.ui.renderStory(null);g.start();g.scene.game.loop.sleep();}});

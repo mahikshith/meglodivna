@@ -2,10 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createWorld, retryWorld, stepWorld, STEP, weaponOrigin, projectileAim, beamHit, spawnProjectile, rewardPlayer, equipItem, castSpell, interact, advanceStory } from '../src/combat.js';
 import { defaultProgress, switchWorldProgress, validateProgress, restartWorldProgress, newCampaignProgress } from '../src/progress.js';
+import { getLevel } from '../src/legacy-level.js';
 
 const floor = { id: 'fixture-floor', x: 0, y: 610, w: 2000, h: 110 };
 function isolated(id = 'soulforge') {
-  const world = createWorld(0, { worldId: id });
+  const world = createWorld(0, { worldId: id, level: getLevel(id) });
   world.level = { ...world.level, solids: [floor], hazards: [], currents: [], portals: [] };
   world.staticSolids = [{ ...floor }]; world.enemies = []; world.pickups = []; world.props = []; world.gates = [];
   world.movingPlatforms = []; world.crumble = []; world.enemyPortals = [];

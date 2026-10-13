@@ -33,3 +33,13 @@ Original ideas: stone-powered seals make discoveries alter the route; a salvage 
 ## Evidence policy
 
 An automated win proves a route can be completed under the recorded controls. A screenshot proves a rendered state. Neither proves that a game is enjoyable, commercially ready, or comfortable on a physical phone. Record failures and repair them; do not carry over the prior build’s completion claims.
+
+## Integration decisions and latest feedback
+
+The user's final terrain correction is implemented through opaque architectural solids, not transparent repeated tile bands. Deep ground and thin platforms have distinct side faces and matching collision tops. The castle source sheet was found to contain modular pieces rather than a finished panorama; it is assembled into an opaque composition before shipping. Giant in-world room-name watermarks were removed.
+
+New art is selected CC0 Gothicvania animation from Ansimuz, with retained user-supplied robots/dragon and selected effect/item assets. The hero is full proportion, with authored run, jump and three sword pose sets. Retaining old weapon sockets avoids shifting physical projectiles independently from visible emitters.
+
+Mobile has three large core actions, a separate Power button, contextual interaction, hold gestures, an eight-second fading floating stick, adjustable opacity and a reserved bottom control region. New camera logic follows height, looks ahead and widens for nearby guardians without losing the hero.
+
+Current legal optimized routes take roughly 1.6–3 minutes. The previous guaranteed five-minute claim was removed. Five worlds reuse traversal/combat systems and some room archetypes; they are not five entirely separate art sets or proof of five-minute human sessions. Physical phone comfort and paid-app quality remain user testing criteria.

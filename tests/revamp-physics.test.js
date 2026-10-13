@@ -3,10 +3,11 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { PHYSICS, createPlayer, stepPlayer, overlaps } from '../src/physics.js';
 import { LEVELS } from '../src/level.js';
+import { LEVEL as LEGACY_LEVEL } from '../src/legacy-level.js';
 import { createWorld, retryWorld, stepWorld, weaponOrigin, projectileAim, interact, spawnProjectile, damagePlayer, rewardPlayer, castSpell, STEP } from '../src/combat.js';
 
 function fixture() {
-  const world = createWorld();
+  const world = createWorld(0, { level: LEGACY_LEVEL });
   world.level = { ...world.level, solids: [{ id: 'floor', x: 0, y: 610, w: 2000, h: 110 }], hazards: [], currents: [], portals: [] };
   world.staticSolids = world.level.solids.map(s => ({ ...s })); world.props = []; world.gates = []; world.enemies = []; world.pickups = []; world.npcs = [];
   world.movingPlatforms = []; world.crumble = []; world.enemyPortals = [];
@@ -153,7 +154,7 @@ test('native crawler/raider bodies preserve every authored placement and clamp f
     }
   }
   const world = fixture(), crawler = world.level.enemies.find(enemy => enemy.type === 'guard');
-  const runtime = createWorld().enemies.find(enemy => enemy.id === crawler.id);
+  const runtime = createWorld(0, { level: LEGACY_LEVEL }).enemies.find(enemy => enemy.id === crawler.id);
   world.enemies = [runtime]; world.player.invincible = 100;
   for (const x of [50, 1500]) {
     world.player.x = x;

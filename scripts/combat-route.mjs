@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { getLevel } from '../src/level.js';
-import { advanceStory, createWorld, equipItem, hazardState, retryWorld, STEP, stepWorld } from '../src/combat.js';
+import { advanceStory, createWorld, equipItem, hazardState, retryWorld, weaponOrigin, STEP, stepWorld } from '../src/combat.js';
 
 const difficulty = process.argv[2] || 'forge';
 assert.ok(['ember', 'forge', 'inferno', 'extinction'].includes(difficulty), 'Pass a supported difficulty ID.');
@@ -63,7 +63,11 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   }
 
   const bossFight = !!activeBoss;
-  const destination = bossFight ? activeBoss.x - 52 : marker.x;
+  // Mirror arrivals require turning to the flank instead of permanently holding fire toward the boss.
+  const defender = bossFight && world.enemySummons.filter(e => !e.dead && e.phase === 'attack'
+    && Math.abs(e.x + e.w / 2 - center) < 240 && Math.abs(e.y + e.h - feet) < 150)
+    .sort((a,b) => Math.abs(a.x-center)-Math.abs(b.x-center))[0];
+  const destination = defender ? defender.x + defender.w / 2 : bossFight ? activeBoss.x - 52 : marker.x;
   const distance = destination - center;
   let move = Math.max(-1, Math.min(1, distance / 50));
   let jumpPressed = false, dashPressed = false, jet = false;
@@ -110,14 +114,20 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
     if (b.phase === 'charge' && b.timer < 0.3 && p.grounded) jumpPressed = true;
     jet = b.phase === 'attack' && !!b.beam && !p.grounded && p.fuel > 0;
     if (Math.abs(distance) < 6 && p.facing < 0) move = 0.02;
+    if (defender) move = Math.sign(defender.x + defender.w / 2 - center) * 0.65;
+    const rocket = world.projectiles.find(shot => shot.active && shot.owner === 'enemy' && shot.heavy
+      && Math.hypot(shot.x-center,shot.y-p.y-p.h/2) < 140);
+    if (rocket && p.grounded) jumpPressed = true;
+    if (rocket && p.dashCooldown <= STEP && Math.hypot(rocket.x-center,rocket.y-p.y-p.h/2) < 75) dashPressed = true;
   }
   const missile = world.missileWarning;
   if (missile && missile.time < 0.3 && p.grounded && Math.abs(missile.y - (p.y + 20)) < 45) jumpPressed = true;
-  const nearby = world.enemies.filter(e => !e.dead && Math.abs(e.x - p.x) < 600);
+  const nearby = [...world.enemies,...world.enemySummons.filter(e=>e.phase==='attack')].filter(e => !e.dead && Math.abs(e.x - p.x) < 600);
   const overhead = nearby.find(e => e.type === 'drone' && Math.abs(e.x + e.w / 2 - center) < 30 && e.y + e.h < p.y + 18);
   const charges = typeof p.charges === 'object' ? p.charges.cannon : p.cannonCharges;
-  const gun = bossFight && charges > 0 ? 'cannon' : 'carbine';
+  const gun = bossFight && !defender && charges > 0 ? 'cannon' : 'carbine';
   equip('gun', gun);
+  if (defender) equip('spell','thunder');
   const spellPressed = (bossFight || nearby.length > 0) && p.mana >= 25 && p.spellCooldown <= STEP && p.hp < p.maxHp - 8;
   const nova = typeof p.charges === 'object' ? p.charges.nova : p.novaCharges;
   const ultimatePressed = bossFight && nova > 0 && p.hp < p.maxHp * 0.6;
@@ -127,6 +137,11 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   const controls = { move, jumpPressed, jumpHeld: true, dashPressed, jet, down: drop && !bossFight,
     slashPressed: p.slashCooldown <= STEP, shoot: true, aimUp: !bossFight && !!overhead,
     spellPressed, ultimatePressed, interactPressed };
+  if (bossFight) {
+    const aimTarget = defender || activeBoss, hand = weaponOrigin(p,'hand');
+    const ax = aimTarget.x + aimTarget.w/2 - hand.x, ay = aimTarget.y + aimTarget.h/2 - hand.y, length = Math.hypot(ax,ay)||1;
+    controls.aimX = ax/length; controls.aimY = ay/length;
+  }
   const encoded = JSON.stringify(controls);
   if (encoded === lastControls && trace.at(-1)?.input) trace.at(-1).frames++;
   else { trace.push({ frames: 1, input: controls }); lastControls = encoded; }

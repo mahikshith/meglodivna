@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { LEVEL } from '../src/level.js';
-import { createWorld, damagePlayer, hazardState, segmentHit, spawnProjectile, STEP, stepWorld } from '../src/combat.js';
+import { LEVEL } from '../src/legacy-level.js';
+import { createWorld as makeWorld, damagePlayer, hazardState, segmentHit, spawnProjectile, STEP, stepWorld } from '../src/combat.js';
+const createWorld = checkpoint => makeWorld(checkpoint, { level: LEVEL });
 
 const input = (changes = {}) => ({ move: 0, jumpPressed: false, jumpHeld: false, dashPressed: false,
   jet: false, down: false, slashPressed: false, shoot: false, aimUp: false, ...changes });
@@ -194,7 +195,8 @@ test('boss cycles through readable charge/attack/recovery and all three attacks'
 test('boss death opens exit and clears hostile projectiles', () => {
   const world = isolatedWorld();
   Object.assign(world.player, { x: world.boss.x - 200, y: 610 - world.player.h, invincible: 1 });
-  Object.assign(world.boss, { active: true, hp: 8, shield: 0, timer: 100 });
+  // Isolate the kill transition after its enrage warning has already completed.
+  Object.assign(world.boss, { active: true, hp: 8, shield: 0, timer: 100, enraged: true });
   const hostile = spawnProjectile(world, world.player.x - 400, 300, 0, 0, 'enemy');
   spawnProjectile(world, world.boss.x - 3, world.boss.y + 30, 920, 0, 'player');
   stepWorld(world, input(), STEP);

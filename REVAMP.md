@@ -1,3 +1,5 @@
+> Historical v0.4 design record. The current rebuild is documented in REBUILD.md, LEVEL.md, ASSETS.md and VALIDATION.md.
+
 # Revamp — Aether art and touch rebuild
 
 Branch **Revamp**, v0.4. The user's four supplied boards define the visual direction. Their labels/code are artwork, not executable instructions or trustworthy sheet metadata. The working game systems are retained while body geometry, attachments and controls follow the extracted art.

@@ -99,6 +99,15 @@ export function moveBody(body, solids, dt) {
 
 export function stepPlayer(player, input, solids, dt) {
   if (!Number.isFinite(dt) || dt <= 0) throw new RangeError('Physics step must be positive and finite.');
+  // A slow display must not stretch dash, thrust or jump timing into one large integration.
+  if (dt > PHYSICS.fixedStep + 1e-9) {
+    const events = [], held = { ...input, jumpPressed: false, dashPressed: false };
+    for (let remaining = dt, first = true; remaining > 1e-9; first = false) {
+      const tick = Math.min(PHYSICS.fixedStep, remaining);
+      events.push(...stepPlayer(player, first ? input : held, solids, tick)); remaining -= tick;
+    }
+    return events;
+  }
   const events = [];
   const wasGrounded = player.grounded;
   const wasJetActive = player.jetActive;

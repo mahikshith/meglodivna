@@ -9,6 +9,10 @@ export function cameraTarget(player,level,width,height,threat=null){
   focusX=(px+tx)/2;focusY=(py+ty)/2+20;
  }
  const vw=width/zoom,vh=height/zoom;
+ // A very high jet ascent can put a boss outside any readable shared view. Prioritize the
+ // hero in that case; the renderer supplies a directional threat marker at the edge.
+ focusX=clamp(focusX,px-vw/2+65,px+vw/2-65);
+ focusY=clamp(focusY,py-vh*.48+player.h/2+25,py+vh*.52-player.h/2-25);
  // Phaser scroll remains measured from the unzoomed viewport centre.
  return {x:clamp(focusX-vw/2,0,level.width-vw)+(vw-width)/2,
   y:clamp(focusY-vh*.52,0,level.height-vh)+(vh-height)/2,zoom};
