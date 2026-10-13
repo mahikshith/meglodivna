@@ -43,3 +43,7 @@ New art is selected CC0 Gothicvania animation from Ansimuz, with retained user-s
 Mobile has three large core actions, a separate Power button, contextual interaction, hold gestures, an eight-second fading floating stick, adjustable opacity and a reserved bottom control region. New camera logic follows height, looks ahead and widens for nearby guardians without losing the hero.
 
 Current legal optimized routes take roughly 1.6–3 minutes. The previous guaranteed five-minute claim was removed. Five worlds reuse traversal/combat systems and some room archetypes; they are not five entirely separate art sets or proof of five-minute human sessions. Physical phone comfort and paid-app quality remain user testing criteria.
+
+## Delivered checkpoint
+
+Implemented all work packages above for v0.5. Validation:140 tests,245 clean harness rounds over30 minutes1.588 seconds,392 legal campaigns,5 browser replays,48 live input screenshots,54 action fixtures and20 environment captures. Android CI passed on main; signed APK and uploaded hashes verified. Latest link is in README. Remaining limitations:physical device feel/performance, minor cape clipping at extreme short-screen ascent, repeated room archetypes and no verified five-minute minimum. These are not hidden by the automated pass.

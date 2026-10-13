@@ -1,10 +1,10 @@
 # RUNE//HEART — ASH SIGNAL v0.5
 
-**Latest APK:** [Download Aether Revamp v0.4 Android test build](https://github.com/mahikshith/meglodivna/releases/download/v0.4.0-aether-revamp/ASH-SIGNAL-Aether-Revamp-debug.apk) — 14 October 2026, version `0.4.0-aether-revamp`, code **4**, Android 7.0+.
+**Latest APK:** [Download Runeheart v0.5 Android test build](https://github.com/mahikshith/meglodivna/releases/download/v0.5.0-runeheart/ASH-SIGNAL-Runeheart-debug.apk) — 14 October 2026, version `0.5.0-runeheart`, code **5**, Android 7.0+.
 
-[Release and checksums](https://github.com/mahikshith/meglodivna/releases/tag/v0.4.0-aether-revamp) · [Passed Android CI](https://github.com/mahikshith/meglodivna/actions/runs/38458832513) · [54 action screenshots](artifacts/revamp-actions/contact-sheet.png). This link must be updated after every verified APK delivery; see [AGENTS.md](AGENTS.md).
+[Release and checksums](https://github.com/mahikshith/meglodivna/releases/tag/v0.5.0-runeheart) · [Passed Android CI](https://github.com/mahikshith/meglodivna/actions/runs/38470313614) · [Action screenshots](artifacts/runeheart/actions/contact-sheet.png). Latest APK links are updated after upload verification; see [AGENTS.md](AGENTS.md).
 
-Runeheart rebuilds the game around three rune stones, guardian seals, vertical chambers and optional treasure vaults. The courier enters a sanctuary that burns people into light; recover its stones and sever the engine. This repository contains the v0.5 rebuild. The APK link above identifies the latest **verified published** delivery and is updated after upload verification.
+Runeheart rebuilds the game around three rune stones, guardian seals, vertical chambers and optional treasure vaults. The courier enters a sanctuary that burns people into light; recover its stones and sever the engine. The APK above is the verified CI build of this rebuild.
 
 ![Solid terrain in the sanctuary](artifacts/runeheart/gameplay/01-sanctuary.png)
 

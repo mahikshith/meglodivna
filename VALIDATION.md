@@ -51,3 +51,9 @@ node scripts/replay.cjs soulforge
 ```
 
 Browser commands require Playwright/Chromium and a dev server on5173. Replay production checks additionally require the latest built preview on4173. Failures while adapting old fixtures (old floor height, old frame names, array-versus-object attachment metadata and windup timing) were corrected in the harness; final reports describe current behavior rather than reusing old screenshots.
+
+## Verified delivery — 14 October 2026
+
+The [main-branch CI run38470313614](https://github.com/mahikshith/meglodivna/actions/runs/38470313614) passed for source commit `83e0af57d626c32f6b754a88713d685df7892207`. The downloaded CI APK is4,874,043bytes with SHA-256 `701c98700a6a5f3717587dcd3da8aa55d4c8d3a7e1b2b73b71141cc741a8f247`. It has one valid v2 signer, matching the persistent certificate, version5 and no Internet permission. All22 embedded web/art/license files match local `dist` byte for byte; there are no stale files. Local Android lint reports zero errors.
+
+[Download Runeheart APK](https://github.com/mahikshith/meglodivna/releases/download/v0.5.0-runeheart/ASH-SIGNAL-Runeheart-debug.apk). Uploaded APK, web archive, receipt and crypt screenshot hashes and byte counts match the inspected files. Receipt:[android-report.json](artifacts/android-report.json). The web archive is2,480,705bytes, SHA-256 `e34591a68155767b08ec6ec271048ab2ce8b01e61a247b0f46e665e336e743c5`. Later documentation/checker commits do not change the delivered game payload.
