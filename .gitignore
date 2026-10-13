@@ -12,3 +12,5 @@ artifacts/*.json
 artifacts/*.log
 artifacts/ci-apk/
 __pycache__/
+artifacts/reference/early-*.png
+artifacts/reference/reproducibility/

@@ -183,7 +183,7 @@ class Soulforge extends Phaser.Scene {
     const heroAnimation=p.hp<=0?'aether-death':this.heroHurtUntil>t?'aether-hurt':p.dashTime>0?'aether-dash':p.jetActive?'aether-jet':slashing||p.shootCooldown>0?'aether-fire':p.state==='run'?'aether-run':p.grounded?'aether-idle':p.vy>=0?'aether-fall':p.jumps===0?'aether-doublejump':'aether-jump';
     const heroFrames=this.referenceArt.animations[heroAnimation],heroKey=p.hp<=0?heroFrames?.at(-1):this.referenceKey(heroAnimation,t,p.state==='run'?12:slashing?15:8);
     if(!this.setReference(this.playerSprite,heroKey||this.referenceKey('aether-idle'),{...p,x:px,y:py}))this.playerSprite.setTexture(frame).setOrigin(.5,slashing||p.dashTime>0?152/160:68/72).setScale(1).setPosition(Math.round(px+p.w/2),Math.round(py+p.h)).setFlipX(p.facing<0);
-    const armor=catalog.ARMORS.find(a=>a.id===p.armor),opacity=p.stealth>0?.3:p.invincible>0&&Math.floor(t*16)%2===0?.45:1;
+    const armor=catalog.ARMORS.find(a=>a.id===p.armor),opacity=!heroActive?1:p.stealth>0?.3:p.invincible>0&&Math.floor(t*16)%2===0?.45:1;
     this.playerSprite.setAlpha(opacity).setTint(p.impaired>0?0x89899e:p.armor==='courier'?0xffffff:armor?.tint||0xffffff);
     const near=e=>e.x+(e.w||100)>this.cameraX-160&&e.x<this.cameraX+1120;
     for(const sprite of this.enemySprites.values())sprite.setVisible(false);
@@ -269,8 +269,8 @@ class Soulforge extends Phaser.Scene {
     if(heroActive&&p.jetActive){this.referenceEffect('hero-jet','ref-fx-jet-0',px+p.w/2-p.facing*9,py+p.h+8,36,54);if(Math.random()<.3)this.burst(px+p.w/2-p.facing*9,py+p.h,'shot',2,C.cyan);}
     if(heroActive&&p.dashTime>0){this.referenceEffect('hero-dash','ref-fx-dash-0',px+p.w/2-p.facing*38,py+p.h*.45,118,62,0,p.facing);for(let i=1;i<=3;i++){g.lineStyle(2,bladeTint,.3/i);g.lineBetween(px-p.facing*i*15,py+p.h*.45,px+p.facing*(74-i*8),py+18);}g.lineStyle(5,bladeTint,.8);g.lineBetween(px+p.w/2,py+p.h*.4,px+p.w/2+p.facing*96,py+16);}
     if(heroActive&&p.burn>0)this.flames(g,px-4,py+18,p.w+8,30,t);
-    if(p.armor==='bulwark'){g.fillStyle(0x88949f);g.fillRect(px-6,py+10,9,11);g.fillRect(px+19,py+10,9,11);g.fillStyle(0xd4d9da);g.fillRect(px-5,py+10,7,2);g.fillRect(px+20,py+10,7,2);}
-    if(p.armor==='wraith'){g.lineStyle(1,0xceabed,.65);g.strokeEllipse(px+p.w/2,py+p.h/2,37,55);}
+    if(heroActive&&p.armor==='bulwark'){g.fillStyle(0x88949f);g.fillRect(px-6,py+10,9,11);g.fillRect(px+19,py+10,9,11);g.fillStyle(0xd4d9da);g.fillRect(px-5,py+10,7,2);g.fillRect(px+20,py+10,7,2);}
+    if(heroActive&&p.armor==='wraith'){g.lineStyle(1,0xceabed,.65);g.strokeEllipse(px+p.w/2,py+p.h/2,37,55);}
     if(heroActive&&p.shield>0)this.drawShield('hero',px+p.w/2,py+p.h/2,60,78,t,C.cyan);
     if(heroActive&&(p.rapid>0||p.boost>0)){g.lineStyle(2,p.boost>0?C.violet:C.cyan,.3);for(let i=0;i<4;i++){const a=t*4+i*Math.PI/2;g.strokeCircle(px+p.w/2+Math.cos(a)*24,py+p.h*.4+Math.sin(a)*34,3);}}
     if(heroActive&&p.stealth>0){g.fillStyle(C.violet,.07);g.fillEllipse(px+p.w/2,py+p.h/2,60,80);}

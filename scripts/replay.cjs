@@ -38,7 +38,7 @@ async function main(){
     },{records:batch,step:trace.step});
     index+=result.used;retries+=result.retries;
     if(result.capture&&!captures.has(result.capture)){
-      await page.evaluate(()=>{const g=window.__ASH,s=g.scene,p=g.world.player;s.previousPlayer={x:p.x,y:p.y};s.cameraX=Math.max(0,Math.min(g.LEVEL.width-960,p.x-300));s.cameraY=Math.max(0,Math.min(180,p.y-310));g.world.hitstop=0;s.accumulator=0;s.update(0,0);s.children.depthSort();s.sys.game.renderer.preRender();s.sys.game.renderer.render(s,s.children.list,s.cameras.main);s.sys.game.renderer.postRender();});
+      await page.evaluate(()=>{const g=window.__ASH,s=g.scene,p=g.world.player;s.previousPlayer={x:p.x,y:p.y};s.cameraX=Math.max(0,Math.min(g.LEVEL.width-960,p.x-300));s.cameraY=Math.max(0,Math.min(180,p.y-310));g.world.hitstop=0;s.accumulator=0;s.update(0,0);s.children.depthSort();s.sys.game.renderer.preRender();s.cameras.render(s.sys.game.renderer,s.children);s.sys.game.renderer.postRender();});
       await page.screenshot({path:`artifacts/${worldId}-${result.capture}.png`});captures.add(result.capture);
       // Story UI is validated separately; replay invokes the recorded valid choices directly.
       await page.evaluate(()=>{const g=window.__ASH;if(g.mode==='story'){g.ui.renderStory(null);g.start();g.scene.game.loop.sleep();}});

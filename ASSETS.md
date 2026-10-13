@@ -54,6 +54,8 @@ Aether attachments describe its canonical raised-fire stance, rather than a skel
 
 Original Warden 128×144/feet64,138 and Hex 160×192/feet 80,184 remain procedural. Chest points are 62,61 and 80,106; Warden has a 2px horizontal/±1px vertical art bob. Original Regent art remains available while reference Mecha/Wyrm supply the revamped transformation. Spellcasters, allied clone/wolf/dragon, traps, pickup glyphs and weapons remain in the generated manifest. Simulation owns state, damage, destruction, summons and trap timing; decoration adds no collision.
 
+Summoned clones render extracted Aether fire poses at their ally body scale (entity.h/60), using the same scaled canonical hand/muzzle geometry. Generated allied-clone-* textures remain fallback assets.
+
 ## Environment and budget
 
 The atlas includes foreground tiles, platforms, ladders, spikes, arches, gates, trees, crystals, statues, water, torches, collectibles and forest/island/castle/cave/city panels. ref-tile-snow aliases the stone crop; it is not extracted snow terrain. Backgrounds are small painted panels, not seamless full-resolution panoramas.
