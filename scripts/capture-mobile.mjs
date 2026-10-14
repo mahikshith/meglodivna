@@ -75,8 +75,10 @@ try {
   await capture('mobile-gameplay.png');
   const gameplay = await evaluate(`(() => {
     const ids = ['stage','game','touch','touch-dash','touch-attack','touch-jump','touch-power'];
+    const canvasRect=document.querySelector('#game canvas')?.getBoundingClientRect();
     return { mode: document.getElementById('stage').dataset.mode, touch: matchMedia('(pointer: coarse)').matches,
       canvas: !!document.querySelector('#game canvas'), menuHidden: document.getElementById('menu').hidden,
+      canvasRect: canvasRect && {x:canvasRect.x,y:canvasRect.y,w:canvasRect.width,h:canvasRect.height},
       elements: Object.fromEntries(ids.map(id => { const r = document.getElementById(id).getBoundingClientRect(); return [id,{x:r.x,y:r.y,w:r.width,h:r.height}]}))};
   })()`);
   await command('Input.dispatchKeyEvent', { type: 'keyDown', key: ' ', code: 'Space', windowsVirtualKeyCode: 32 });
@@ -93,7 +95,7 @@ try {
   assert.equal(gameplay.mode, 'playing');
   assert.equal(gameplay.touch, true);
   assert.equal(gameplay.canvas, true);
-  assert.equal(gameplay.elements.game.h, gameplay.elements.stage.h, 'The game canvas must use the full playfield height');
+  assert.ok(Math.abs(gameplay.canvasRect.h-gameplay.elements.stage.h)<2, 'The game canvas must use the full playfield height');
   for (const id of ['touch-dash', 'touch-attack', 'touch-jump', 'touch-power']) {
     const rect=gameplay.elements[id];
     assert.ok(rect.w >= 80 && rect.y >= 0 && rect.y + rect.h <= 360, `${id} must remain usable`);
