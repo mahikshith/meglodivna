@@ -17,11 +17,13 @@ export const GUNS = [
   { id: 'cannon', name: 'Oblivion Cannon', description: 'One charge erases foes and destructible cover along a huge soul beam.', tint: 0xc49bff, damage: 100, cooldown: 0.9, range: 1800, cost: 1 },
 ];
 export const ARMORS = [
+  { id: 'lanternplate', name: 'Lantern Plate', description: 'Ivory plates resist 30% of wounds. Heavy thrusters drain 50% more fuel; resonance reserve is 70.', tint: 0xffd99a, maxHp: 120, maxMana: 70, damageTaken: 0.7, fuelRate: 1.5 },
   { id: 'courier', name: 'Courier Rig', description: 'Balanced protection, resonance, and fuel economy.', tint: 0xeab76f, maxHp: 100, maxMana: 100, damageTaken: 1, fuelRate: 1 },
   { id: 'bulwark', name: 'Bulwark Plate', description: 'More health and 22% damage resistance; less resonance and faster fuel drain.', tint: 0xbec9d1, maxHp: 135, maxMana: 80, damageTaken: 0.78, fuelRate: 1.3 },
   { id: 'wraith', name: 'Wraith Weave', description: 'Larger resonance reserve and efficient thrusters; fragile against direct hits.', tint: 0xc49bff, maxHp: 85, maxMana: 140, damageTaken: 1.1, fuelRate: 0.8 },
 ];
 export const SPELLS = [
+  { id: 'raven', name: 'Bell Raven', description: 'An ivory spirit dives through wards, briefly exposing its target to your next attacks.', tint: 0xa8eadc, cost: 40, cooldown: 10, duration: 9 },
   { id: 'cinder', name: 'Cinder Plague', description: 'Ignite every living soldier for five seconds.', tint: 0xff825f, cost: 45, cooldown: 5, duration: 5 },
   { id: 'siphon', name: 'Soul Siphon', description: 'Rip nearby souls and steal life from subsequent attacks.', tint: 0xbc8dff, cost: 25, cooldown: 4, duration: 6 },
   { id: 'thunder', name: 'Skybreaker', description: 'Lightning staggers nearby foes. Break the Ward: ordinary sentinel shields fall for three seconds; boss conduit shields remain protected.', tint: 0x82e8ff, cost: 35, cooldown: 4, radius: 680 },
@@ -41,3 +43,9 @@ export const RELICS = [
   { id: 'soul-core', name: 'Unbound Soul', description: 'The last soul belongs to no machine.', tint: 0xf0d8ff },
 ];
 export const CATALOG = { sword: SWORDS, gun: GUNS, armor: ARMORS, spell: SPELLS, relic: RELICS };
+export const SOUL_UPGRADES = [
+  { id: 'armor', kind: 'armor', name: 'Tempered Plates', description: 'Each rank adds 10 health and reduces incoming damage by 3%. Applies to every rig.', costs: [25, 45, 65], cost: 25, maxLevel: 3 },
+  { id: 'artifact', kind: 'artifact', name: 'Lantern Core', description: 'Each rank adds 15 resonance, 1.5 seconds to companions and a wider soul collection reach.', costs: [30, 50, 70], cost: 30, maxLevel: 3 },
+  { id: 'lanternplate', kind: 'armor', name: 'Lantern Plate', description: 'Unlock ivory armor: 30% resistance, 120 health, 70 resonance and 50% more fuel drain.', costs: [40], cost: 40, maxLevel: 1, unlockCategory: 'armor', unlockId: 'lanternplate' },
+  { id: 'raven', kind: 'artifact', name: 'Bell Raven Pact', description: 'Unlock a diving companion that exposes enemy wards for follow-up attacks.', costs: [35], cost: 35, maxLevel: 1, unlockCategory: 'spell', unlockId: 'raven' },
+];

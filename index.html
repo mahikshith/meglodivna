@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0b1b20" />
+  <link rel="preload" href="/fonts/Alegreya-Variable.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="/fonts/AlegreyaSans-Regular.ttf" as="font" type="font/ttf" crossorigin />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1b20'/%3E%3Cpath d='M12 8V5h8v3M10 10h12v16H10zm-2 18h16M16 13v10' fill='none' stroke='%23e9c982' stroke-width='2'/%3E%3C/svg%3E" />
   <title>The Last Lantern — Runeheart</title>
 </head>
@@ -29,6 +31,7 @@
           <div class="meter-row" aria-label="Magic energy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/></svg><span class="sr-only">Magic energy</span><div class="meter mana"><i id="mana-bar"></i></div><b id="mana-value">100</b></div>
           <div id="equipped" class="equipped">RUSTFANG / CARBINE / CINDER PLAGUE</div>
           <div id="buff" class="buff"></div>
+          <div class="soul-purse" aria-label="Souls available"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-1 6-7 7-7 13a7 7 0 0 0 14 0c0-4-3-7-3-10-1 3-2 4-4 5 1-3 1-5 0-8Z"/><path d="M12 13c-4 5-1 8 2 6 1-2-1-3-2-6Z"/></svg><b id="hud-souls">0</b><span>souls</span></div>
         </div>
         <div class="mission"><span id="zone-label">THE HOLLOW SANCTUARY</span><p id="objective">FIND MIRA</p><small id="timer">00:00</small><div class="threat-clock"><span>LANTERN</span><div id="rune-status" class="rune-status" role="group" aria-label="Rune stones: 0 of 3 recovered"><span data-rune="ember-heart" data-recovered="false" role="img" aria-label="Ember Heart: not recovered"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 7 9 10 6 16-3 6-14 3-13-4 0-4 4-7 7-12Zm0 10c-5 5-2 9 2 8 3-2 1-5-2-8Z"/></svg></span><span data-rune="tide-glass" data-recovered="false" role="img" aria-label="Tide Glass: not recovered"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C9 6 5 11 5 15a7 7 0 0 0 14 0c0-4-4-9-7-13Zm-3 14q0 3 4 3"/></svg></span><span data-rune="storm-seal" data-recovered="false" role="img" aria-label="Storm Seal: not recovered"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-8Z"/></svg></span></div><b id="countdown">05:00</b></div></div>
       </div>
@@ -56,11 +59,12 @@
           <div class="menu-detail" id="menu-detail">A light worth keeping.</div>
           <details id="controls"><summary>Field guide <span aria-hidden="true">+</span></summary>
             <div class="manual" role="dialog" aria-modal="true" aria-label="Field guide">
-              <header class="catalogue-header"><div><span class="eyebrow">A KEEPER'S COMPANION</span><h2>Field guide</h2></div><button id="manual-close" aria-label="Close field guide">Close ×</button></header>
+              <header class="catalogue-header"><div><span class="eyebrow">A COURIER'S COMPANION</span><h2>Field guide</h2></div><button id="manual-close" aria-label="Close field guide">Close ×</button></header>
               <div class="manual-body" tabindex="0" aria-label="Field guide instructions">
                 <section><h3>Touch · two ways to act</h3><p>Drag an empty part of the screen to move and aim. The stick stays where your finger first lands.</p><dl class="guide-actions"><div><dt>Attack</dt><dd>Tap to slash. Hold to fire.</dd></div><div><dt>Jump</dt><dd>Tap to leap. Hold to thrust.</dd></div><div><dt>Dash</dt><dd>Tap to evade. Wait for its rune to recover.</dd></div><div><dt>Power rune</dt><dd>Tap to cast, or interact when someone or something is nearby. Hold to open equipment.</dd></div></dl><p>The small gear opens equipment while the world is paused. Hold down + Jump to drop through a thin platform.</p></section>
                 <section><h3>Movement &amp; survival</h3><p>Jump again in the air. Hold a jump for more height; jump against a wall to climb. Thrust uses fuel, which refills on solid ground.</p><p>Read an enemy's windup, evade the strike, then punish its recovery. Slash incoming projectiles to deflect them. Find caches and speak to survivors for equipment.</p><p>Sorcery consumes resonance. Cannon and nova charges are finite. Collect the three runes to open the sanctuary's heart.</p></section>
                 <section><h3>Keyboard</h3><p><kbd>A D</kbd> / <kbd>← →</kbd> move · <kbd>Space</kbd> jump<br><kbd>J</kbd> slash · <kbd>K</kbd> fire · <kbd>W ↑</kbd> aim up<br><kbd>Shift</kbd> dash · hold <kbd>L</kbd> / <kbd>E</kbd> thrust<br><kbd>Q</kbd> power · <kbd>F</kbd> interact<br><kbd>C</kbd> gun · <kbd>V</kbd> blade · <kbd>X</kbd> spell<br><kbd>Z</kbd> nova · <kbd>S + Space</kbd> drop through<br><kbd>Esc</kbd> pause</p></section>
+                <section><h3>Portals &amp; the Soul Engine</h3><p>Walk into an active portal to travel. Step clear before entering again.</p><p>Gather souls released by fallen guardians. Open Gear → Soul Engine to forge armor and strengthen your lantern. Your forged upgrades remain after a fall.</p></section>
                 <section><h3>Gamepad</h3><p>Stick move/aim · A jump · X slash · RT fire · B dash · RB thrust · LT power · Y interact · LB gun · D-pad left/right blade/spell · right stick click nova · Start pause.</p></section>
               </div>
             </div>
@@ -71,8 +75,11 @@
       <div id="progress" class="progress" hidden><i></i></div>
       <div id="touch" class="touch" hidden aria-label="Touch controls">
         <div id="joystick" class="joystick" role="group" aria-label="Floating movement and aiming joystick" hidden><svg class="joystick-directions" viewBox="0 0 100 100" aria-hidden="true"><path d="m50 9-6 8h12Zm0 82-6-8h12ZM9 50l8-6v12Zm82 0-8-6v12Z"/></svg><span class="joystick-thumb"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 7v18M7 16h18"/><circle cx="16" cy="16" r="6"/></svg></span></div>
-        <button id="touch-pause" class="touch-pause" aria-label="Pause and settings"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M10 7h4v18h-4Zm8 0h4v18h-4Z"/></svg></button>
-        <button id="touch-gear" class="touch-gear" aria-label="Choose weapons and powers" aria-haspopup="dialog"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m13 3-1 4-4 2-4-1-2 5 3 3v4l-3 3 3 5 4-1 4 2 1 4h5l1-4 4-2 4 1 3-5-3-3v-4l3-3-3-5-4 1-4-2-1-4Z" transform="translate(1 -2) scale(.95)"/><circle cx="16" cy="16" r="5"/></svg></button>
+        <div class="touch-utilities" role="group" aria-label="Journey controls">
+          <button id="touch-pause" class="touch-pause" aria-label="Pause journey"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m5 10 11-7 11 7M7 12v14h18V12M12 11v11m8-11v11M5 28h22"/></svg><span>Pause</span></button>
+          <button id="touch-settings" class="touch-settings" aria-label="Open settings" aria-haspopup="dialog"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 8h6m6 0h12M4 16h16m6 0h2M4 24h3m6 0h15m-15-19 3 3-3 3-3-3Zm10 8 3 3-3 3-3-3ZM10 21l3 3-3 3-3-3Z"/></svg><span>Settings</span></button>
+          <button id="touch-gear" class="touch-gear" aria-label="Equipment and Soul Engine" aria-haspopup="dialog"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m7 9 5-4h8l5 4v18H7Zm0 7h18M12 5v11m8-11V5m-7 11v5h6v-5M5 27h22"/></svg><span>Gear</span></button>
+        </div>
         <div class="touch-hints" aria-hidden="true"><span class="move-hint">DRAG ANYWHERE TO MOVE</span><span class="hold-hint">HOLD ATTACK → FIRE<br>HOLD JUMP → JET</span><span id="touch-feedback" class="touch-feedback"></span></div>
         <div class="touch-secondary">
           <button id="touch-power" data-action="power" aria-label="Cast power; hold for loadout"><svg class="power-magic" viewBox="0 0 32 32" aria-hidden="true"><path d="m16 3 4 9 10 4-10 4-4 9-4-9-10-4 10-4ZM6 3v5m-3-2h6m17 19v5m-3-2h6"/></svg><svg class="power-interact" viewBox="0 0 32 32" aria-hidden="true"><path d="M8 24v-8q0-4 3-2V7q0-3 3 0v8-10q0-3 3 0v10-7q0-3 3 0v8-4q0-3 3 0v9l-4 6H12Zm-5-8 5 3"/></svg></button>
@@ -85,9 +92,10 @@
         </div>
       </div>
       <dialog id="catalogue" class="catalogue" aria-labelledby="armoury-title">
-        <header class="catalogue-header"><div><span class="eyebrow">THE KEEPER'S BELONGINGS</span><h2 id="armoury-title">Equipment &amp; relics</h2></div><button id="catalogue-close" aria-label="Close equipment">Close ×</button></header>
+        <header class="catalogue-header"><div><span class="eyebrow">THE COURIER'S BELONGINGS</span><h2 id="armoury-title">Equipment</h2></div><div id="soul-balance" class="soul-balance"><b id="soul-balance-value">0</b><span>souls</span></div><button id="catalogue-close" aria-label="Close equipment">Close ×</button></header>
         <div id="catalogue-tabs" class="catalogue-tabs" role="tablist" aria-label="Equipment categories"></div>
         <p id="catalogue-note" class="catalogue-note">Discover caches and help survivors to unlock equipment.</p>
+        <p id="engine-status" class="engine-status" role="status" aria-live="polite" hidden></p>
         <div class="control-options"><label for="control-opacity">Button opacity</label><input id="control-opacity" type="range" min="40" max="100" step="5" value="80" /><output id="control-opacity-value" for="control-opacity">80%</output></div>
         <div id="catalogue-grid" class="catalogue-grid" role="tabpanel" tabindex="0"></div>
       </dialog>

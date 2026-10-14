@@ -1,0 +1,526 @@
+{
+  "kind": "Isolated state and rendering fixtures",
+  "physicalDevice": false,
+  "legalCampaign": false,
+  "sourceHashes": {
+    "src/art.js": "525873ea6b871cb3f1d61992836ee9f2b1caccd6c88326ece6bbf46d8a6aa660",
+    "src/audio.js": "173fc305073d5289329c6df71069a5a64bd0801f2ced09d7e0a1ce69d5ed82e6",
+    "src/blade-motion.js": "17da85f89cd946ef640e0b61706f291c3a79eda5383158eabbd2f90a18819982",
+    "src/camera.js": "332f75f253599e3633ba3dfb27242b323eaaf5b8482204d91cbbda3f6922a3d0",
+    "src/catalog.js": "9c39eedb16c6593a8ec8e7e0d49d2d19a55a21bdc973a093844ac5785bbbb78d",
+    "src/combat.js": "d9f3b8c8eca046dd46fdeda963201746ffa10425229e9e29fcc6743ca39e4cf4",
+    "src/enemy-motion.js": "6d6afd0e24489ff9fb45b71e5a02dd5a08f64b8dc36bcf5e8b6f5de25327aed2",
+    "src/input.js": "08e0bc3fe3e5c47c68aa356b8adea72b54f61c68f4c201efe160558f4e14549e",
+    "src/lantern-art.js": "e3b8e6265a6406170cd6972d8d41805e69c05b6baebe48723ed23f603860dfb5",
+    "src/lantern-fx.js": "cd7308bd9c2fa85255510f89568519f7aa9a6d329d82640b2d679f0a7748d730",
+    "src/legacy-level.js": "21614250e936233c0bfea0ce0626a528f618651ac9dc679ab7e27691e0e0f1fa",
+    "src/level.js": "ebed4be76751f4ebd5b07bb6e88d857476d93113fe4ae5e558a2440894dd2ca1",
+    "src/main.js": "a7a8f82656f4d0dde72981f2ed81c7d0e2f63fb563580432bb18dbb09492f23c",
+    "src/physics.js": "5bb1a2a30dd842028d675f9d5a96f0d2fcb61a1507418eeb05fbaaa9cff569ba",
+    "src/progress.js": "bc4b9d2b030caa51598bfac727a025c39c3f50506d4e40539a207b34c49c6a61",
+    "src/reference-art.js": "1ee6f6283cce08057c812ee0632609f8d1b720359dc160bfbc775f9e7866738e",
+    "src/rune-worlds.js": "c02590241d8f0eff531de9073347a0154dc54a4d88dfced3c7cf0a29b0eaaa91",
+    "src/runeheart-art.js": "c7614f53442cb46fa5a7b3a0c7fbe3bd80d631a55e374900a52e92e95ab9e4e4",
+    "src/style.css": "e193cb7c1f439593f8d1c85439e7f8c125ff81c60b3c3a7681d8f7809b125974",
+    "src/terrain.js": "ee301bc025e320747b086f228a098ee5c0bbaf48717c967727511322f74f9268",
+    "src/ui.js": "d2dd6cbaa4c6d6b051f5da47cfa465bc911866becaed158fcfb6c5ba43d6d1da",
+    "src/worlds.js": "f3e899199f1fe72be50fa777d268ddde5133aa8c32bab81a56bc975d29af9daa",
+    "public/lantern-motion/atlas.png": "6627135d5a4f69110fc146148ab79e1cc86f14b9e1b12bb6f1cbec1b3fa33207",
+    "public/lantern-motion/manifest.json": "e00cd44dce3bad0bd6ae889398636838905038bacd54389d805f1a9ed3ffe59e",
+    "public/lantern-fx/atlas.png": "29f05805e7aaaff24eb20067b35c0f9e221f8edd52440eb18344a881ae023dfe"
+  },
+  "fixtures": [
+    {
+      "kind": "horizontal",
+      "steps": 14,
+      "playerFrame": "lm-courier-slash-1",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lm-courier-slash-0",
+        "lm-courier-slash-1"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakViews": 0,
+      "bladeVisible": true,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0",
+        "blade-trail"
+      ]
+    },
+    {
+      "kind": "vertical",
+      "steps": 14,
+      "playerFrame": "lm-courier-overhead-1",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lm-courier-overhead-0",
+        "lm-courier-overhead-1"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakViews": 0,
+      "bladeVisible": true,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0",
+        "blade-trail"
+      ]
+    },
+    {
+      "kind": "plate-horizontal",
+      "steps": 14,
+      "playerFrame": "lm-lanternplate-slash-1",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lm-lanternplate-slash-0",
+        "lm-lanternplate-slash-1"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakViews": 0,
+      "bladeVisible": true,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0",
+        "blade-trail"
+      ]
+    },
+    {
+      "kind": "plate-vertical",
+      "steps": 14,
+      "playerFrame": "lm-lanternplate-overhead-1",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lm-lanternplate-overhead-0",
+        "lm-lanternplate-overhead-1"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakViews": 0,
+      "bladeVisible": true,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0",
+        "blade-trail"
+      ]
+    },
+    {
+      "kind": "jet",
+      "steps": 50,
+      "playerFrame": "lantern-hero-air-2",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-air-0",
+        "lantern-hero-air-1",
+        "lantern-hero-air-2"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "jump",
+        "jet"
+      ],
+      "peakViews": 11,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "dash",
+      "steps": 8,
+      "playerFrame": "lantern-hero-dash-1",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-dash-1"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "dash"
+      ],
+      "peakViews": 11,
+      "bladeVisible": true,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0",
+        "blade-trail"
+      ]
+    },
+    {
+      "kind": "stalker",
+      "steps": 71,
+      "playerFrame": "lantern-hero-idle-0",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-idle-1",
+        "lantern-hero-idle-2",
+        "lantern-hero-idle-3"
+      ],
+      "enemyFrames": [
+        "lm-stalker-walk-0",
+        "lm-stalker-walk-1",
+        "lm-stalker-walk-2",
+        "lm-stalker-walk-3"
+      ],
+      "phases": [
+        "walk"
+      ],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "caster",
+      "steps": 71,
+      "playerFrame": "lantern-hero-idle-0",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-idle-1",
+        "lantern-hero-idle-2",
+        "lantern-hero-idle-3"
+      ],
+      "enemyFrames": [
+        "ln-caster-0",
+        "lm-caster-walk-0",
+        "lm-caster-walk-1",
+        "lm-caster-walk-2"
+      ],
+      "phases": [
+        "idle",
+        "walk"
+      ],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "guardian",
+      "steps": 71,
+      "playerFrame": "lantern-hero-idle-0",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-idle-1",
+        "lantern-hero-idle-2",
+        "lantern-hero-idle-3"
+      ],
+      "enemyFrames": [
+        "ln-guardian-0",
+        "lm-guardian-walk-0",
+        "lm-guardian-walk-1"
+      ],
+      "phases": [
+        "idle",
+        "walk"
+      ],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "slam",
+      "steps": 117,
+      "playerFrame": "lantern-hero-idle-3",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-idle-1",
+        "lantern-hero-idle-2",
+        "lantern-hero-idle-3"
+      ],
+      "enemyFrames": [
+        "ln-guardian-0",
+        "lm-guardian-walk-0",
+        "lm-guardian-attack-0",
+        "lm-guardian-attack-1",
+        "lm-guardian-attack-2",
+        "lm-guardian-attack-3",
+        "lm-guardian-attack-4",
+        "lm-guardian-attack-5"
+      ],
+      "phases": [
+        "idle",
+        "walk",
+        "lift",
+        "downswing",
+        "contact"
+      ],
+      "events": [
+        "land",
+        "enemywindup",
+        "slam",
+        "enemyattack"
+      ],
+      "peakViews": 11,
+      "bladeVisible": false,
+      "cracks": 1,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "wispknight",
+      "steps": 71,
+      "playerFrame": "lantern-hero-idle-0",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-idle-1",
+        "lantern-hero-idle-2",
+        "lantern-hero-idle-3"
+      ],
+      "enemyFrames": [
+        "lm-wispknight-walk-0",
+        "lm-wispknight-walk-1",
+        "lm-wispknight-walk-2",
+        "lm-wispknight-walk-3"
+      ],
+      "phases": [
+        "walk"
+      ],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "bellbeast",
+      "steps": 155,
+      "playerFrame": "lantern-hero-idle-2",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-idle-1",
+        "lantern-hero-idle-2",
+        "lantern-hero-idle-3"
+      ],
+      "enemyFrames": [
+        "lm-bellbeast-walk-0",
+        "lm-bellbeast-attack-0",
+        "lm-bellbeast-attack-1",
+        "lm-bellbeast-attack-2"
+      ],
+      "phases": [
+        "idle",
+        "walk",
+        "lift",
+        "downswing",
+        "contact"
+      ],
+      "events": [
+        "land",
+        "enemywindup",
+        "slam",
+        "enemyattack"
+      ],
+      "peakViews": 11,
+      "bladeVisible": false,
+      "cracks": 1,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "raven",
+      "steps": 111,
+      "playerFrame": "lantern-hero-idle-3",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-idle-1",
+        "lantern-hero-idle-2",
+        "lantern-hero-idle-3"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "spell",
+        "summon",
+        "summonarrival"
+      ],
+      "peakViews": 11,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [
+        {
+          "type": "raven",
+          "frame": "lm-raven-fly-3"
+        }
+      ],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "water",
+      "steps": 2,
+      "playerFrame": "lantern-hero-air-2",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-air-2"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "water:0",
+        "relay:3"
+      ]
+    },
+    {
+      "kind": "conduit",
+      "steps": 2,
+      "playerFrame": "lantern-hero-idle-0",
+      "frames": [
+        "lantern-hero-idle-0"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "emitter:soulforge-steam-jet-100",
+        "cap:soulforge-steam-jet-100",
+        "gate:soulforge-pressure-door-99:300",
+        "gate:soulforge-pressure-door-99:450",
+        "gate:soulforge-pressure-door-99:600",
+        "relay:6"
+      ]
+    },
+    {
+      "kind": "portals",
+      "steps": 2,
+      "playerFrame": "lantern-hero-idle-0",
+      "frames": [
+        "lantern-hero-idle-0"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [
+        {
+          "id": "travel:fixture-open",
+          "frame": "ln-portal-2"
+        },
+        {
+          "id": "travel:fixture-closed",
+          "frame": "ln-portal-0"
+        }
+      ],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "souls",
+      "steps": 2,
+      "playerFrame": "lm-lanternplate-idle-0",
+      "frames": [
+        "lantern-hero-idle-0",
+        "lm-lanternplate-idle-0"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0",
+        "soul:fixture-soul"
+      ]
+    }
+  ],
+  "errors": [],
+  "sourceUnchanged": true,
+  "passed": true
+}

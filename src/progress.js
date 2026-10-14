@@ -7,13 +7,23 @@ export function defaultProgress() {
   return { version: 1, layoutVersion: 2, unlocked: Object.fromEntries(Object.entries(STARTERS).map(([key, id]) => [key, [id]])),
     equipped: { ...STARTERS }, collections: [], claimed: [], defeatedBosses: [], openedGates: [],
     destroyedProps: [], charges: { cannon: 0, nova: 0 }, checkpoint: 0,
-    worldId: 'soulforge', worlds: {}, completedWorlds: [] };
+    worldId: 'soulforge', worlds: {}, completedWorlds: [], souls: 0, soulClaims: [], pendingSouls: [], upgrades: { armor: 0, artifact: 0 } };
 }
 const safeIds = value => Array.isArray(value)
   ? [...new Set(value.filter(id => typeof id === 'string' && /^[a-zA-Z0-9:_-]{1,80}$/.test(id)))].slice(0, 2048) : [];
 export function validateProgress(raw) {
   const progress = defaultProgress();
   if (!raw || typeof raw !== 'object' || raw.version !== 1) return progress;
+  progress.souls = Number.isSafeInteger(raw.souls) ? Math.max(0, Math.min(999999, raw.souls)) : 0;
+  progress.soulClaims = safeIds(raw.soulClaims);
+  for (const key of ['armor', 'artifact']) progress.upgrades[key] = Number.isInteger(raw.upgrades?.[key]) ? Math.max(0, Math.min(3, raw.upgrades[key])) : 0;
+  const dropIds = new Set();
+  progress.pendingSouls = (Array.isArray(raw.pendingSouls) ? raw.pendingSouls : []).filter(drop => {
+    if (!drop || !safeIds([drop.id]).length || dropIds.has(drop.id) || progress.soulClaims.includes(drop.id)
+      || !WORLD_IDS.includes(drop.worldId) || ![drop.x, drop.y].every(Number.isFinite)
+      || drop.x < 0 || drop.x > 100000 || drop.y < 0 || drop.y > 10000 || !Number.isInteger(drop.value) || drop.value <= 0 || drop.value > 1000) return false;
+    dropIds.add(drop.id); return true;
+  }).slice(0, 2048).map(({ id, worldId, x, y, value }) => ({ id, worldId, x, y, value }));
   for (const [category, starter] of Object.entries(STARTERS)) {
     const known = CATALOG[category].map(item => item.id);
     progress.unlocked[category] = [...new Set([starter, ...safeIds(raw.unlocked?.[category]).filter(id => known.includes(id))])];

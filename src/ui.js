@@ -2,8 +2,8 @@ const el = id => document.getElementById(id);
 const time = seconds => `${Math.floor(Math.max(0, seconds) / 60).toString().padStart(2, '0')}:${Math.floor(Math.max(0, seconds) % 60).toString().padStart(2, '0')}`;
 
 export function createCampaignUI(catalog, callbacks = {}) {
-  const categories = { sword: catalog.SWORDS, gun: catalog.GUNS, armor: catalog.ARMORS, spell: catalog.SPELLS, relic: catalog.RELICS };
-  const labels = { sword: 'BLADES', gun: 'FIREARMS', armor: 'VESTMENTS', spell: 'SORCERY', relic: 'RELICS' };
+  const categories = { engine: [], sword: catalog.SWORDS, gun: catalog.GUNS, armor: catalog.ARMORS, spell: catalog.SPELLS, relic: catalog.RELICS };
+  const labels = { engine: 'SOUL ENGINE', sword: 'BLADES', gun: 'FIREARMS', armor: 'ARMOR', spell: 'SORCERY', relic: 'RELICS' };
   let category = 'sword', currentWorld = null, storySignature = '', previousFocus = null;
   const modal = el('catalogue'), storyPanel = el('story-panel');
   const runeStatus = el('rune-status'), runeIcons = [...(runeStatus?.querySelectorAll('[data-rune]') || [])];
@@ -23,17 +23,54 @@ export function createCampaignUI(catalog, callbacks = {}) {
   const name = (kind, id) => categories[kind]?.find(item => item.id === id)?.name || id || '—';
   const tint = value => typeof value === 'number' ? `#${value.toString(16).padStart(6, '0')}` : value;
   const close = () => { if (modal.open) modal.close(); };
+  const balance = world => {
+    const amount = Math.max(0, Math.floor(world.progress?.souls || 0));
+    for (const id of ['hud-souls', 'soul-balance-value']) {
+      const value = el(id); if (value && value.textContent !== String(amount)) value.textContent = String(amount);
+    }
+    el('soul-balance')?.setAttribute('aria-label', `${amount} souls available`);
+  };
+  const renderEngine = world => {
+    const engine = callbacks.soulEngine?.(world) || { balance: world.progress?.souls || 0, offers: [] };
+    for (const offer of engine.offers) {
+      const card = document.createElement('article'); card.className = 'catalogue-item engine-offer';
+      const image = document.createElement('img'); image.alt = ''; image.width = image.height = 64;
+      const url = callbacks.iconUrl?.(`icon-${offer.id}`); if (url) image.src = url; else image.hidden = true;
+      const title = document.createElement('h3'); title.textContent = offer.name;
+      const rank = document.createElement('span'); rank.className = 'item-kind';
+      rank.textContent = offer.complete ? 'FORGED' : offer.maxLevel > 1 ? `RANK ${offer.level} → ${offer.level + 1}` : 'NEW EQUIPMENT';
+      const description = document.createElement('p'); description.textContent = offer.description;
+      const cost = document.createElement('p'); cost.className = 'item-traits';
+      cost.textContent = offer.complete ? 'Your forge remembers.' : `${offer.cost} souls · ${engine.balance} available`;
+      const action = document.createElement('button'); action.dataset.upgradeId = offer.id;
+      action.disabled = offer.complete || !offer.affordable || !callbacks.onUpgrade;
+      action.textContent = offer.complete ? 'Forged' : offer.affordable ? `Forge · ${offer.cost} souls` : `Need ${Math.max(0, offer.cost - engine.balance)} more souls`;
+      action.setAttribute('aria-label', offer.complete ? `${offer.name} fully forged` : `Forge ${offer.name} for ${offer.cost} souls`);
+      action.addEventListener('click', () => {
+        const result = callbacks.onUpgrade?.(offer.kind, offer.id);
+        refresh(currentWorld); balance(currentWorld);
+        const status = el('engine-status'); status.hidden = false;
+        status.textContent = result?.ok ? `${offer.name} forged.` : 'The forge could not complete this. Check your souls and try again.';
+        const next = el('catalogue-grid').querySelector(`[data-upgrade-id="${offer.id}"]`);
+        (next && !next.disabled ? next : el('catalogue-grid')).focus({ preventScroll: true });
+      });
+      card.append(image, title, rank, description, cost, action); el('catalogue-grid').append(card);
+    }
+  };
   const refresh = world => {
     if (world) currentWorld = world;
     if (!currentWorld) return;
     const progress = currentWorld.progress || {}, player = currentWorld.player || {};
-    el('catalogue-grid').replaceChildren();
+    balance(currentWorld);
+    el('catalogue-grid').replaceChildren(); el('catalogue-grid').dataset.category = category;
+    el('armoury-title').textContent = category === 'engine' ? 'Soul Engine' : 'Equipment';
+    if (category === 'engine') renderEngine(currentWorld);
     for (const item of categories[category] || []) {
       const unlocked = category === 'relic' ? (progress.collections || currentWorld.collections || []).includes(item.id) : (progress.unlocked?.[category] || currentWorld.unlocks?.[category] || []).includes(item.id);
       const equipped = category !== 'relic' && (player[category] || progress.equipped?.[category]) === item.id;
       const card = document.createElement('article'); card.className = `catalogue-item${unlocked ? '' : ' locked'}`;
       const image = document.createElement('img'); image.alt = ''; image.width = image.height = 48;
-      const url = callbacks.iconUrl?.(`icon-${item.id}`); if (url) image.src = url;
+      const url = callbacks.iconUrl?.(`icon-${item.id}`); if (url) image.src = url; else image.hidden = true;
       const title = document.createElement('h3'); title.textContent = item.name;
       const kind = document.createElement('span'); kind.className = 'item-kind'; kind.textContent = equipped ? 'EQUIPPED' : unlocked ? category === 'relic' ? 'RECOVERED' : 'AVAILABLE' : 'UNDISCOVERED';
       const description = document.createElement('p'); description.textContent = item.description || item.lore || '';
@@ -46,15 +83,25 @@ export function createCampaignUI(catalog, callbacks = {}) {
       traits.textContent = category === 'spell' ? `${item.charge ? `1 ${item.charge} charge` : `${item.cost || 0} resonance`} · ${item.cooldown}s recovery${item.duration ? ` · ${item.duration}s duration` : ''}`
         : category === 'armor' ? `${item.maxHp} health · ${item.maxMana} resonance · ${Math.round((1 - item.damageTaken) * 100)}% resistance · ${item.fuelRate}× fuel drain`
         : category === 'gun' || category === 'sword' ? `${item.damage}${item.pellets ? ` × ${item.pellets}` : ''} damage · ${item.cooldown}s recovery${item.pierce ? ` · pierces ${item.pierce}` : ''}${item.cost ? category === 'gun' && item.id === 'cannon' ? ' · 1 cannon charge' : ` · ${item.cost} resonance` : ''}` : '';
-      card.append(image, title, kind, description); if (traits.textContent) card.append(traits); card.append(action); el('catalogue-grid').append(card);
+      card.append(image, title, kind, description); if (traits.textContent) card.append(traits);
+      if (category === 'armor' && !equipped) {
+        const worn = catalog.ARMORS.find(armor => armor.id === (player.armor || progress.equipped?.armor));
+        if (worn) {
+          const comparison = document.createElement('p'); comparison.className = 'item-comparison';
+          const hp = item.maxHp - worn.maxHp, resistance = Math.round((worn.damageTaken - item.damageTaken) * 100);
+          comparison.textContent = `${hp >= 0 ? '+' : ''}${hp} health · ${resistance >= 0 ? '+' : ''}${resistance}% resistance vs worn`;
+          card.append(comparison);
+        }
+      }
+      card.append(action); el('catalogue-grid').append(card);
     }
     for (const tab of el('catalogue-tabs').children) { const selected = tab.dataset.category === category; tab.setAttribute('aria-selected', String(selected)); tab.tabIndex = selected ? 0 : -1; if (selected) el('catalogue-grid').setAttribute('aria-labelledby', tab.id); }
-    el('catalogue-note').textContent = category === 'relic' ? 'Each recovered relic carries a memory of the sanctuary.' : 'Choose what you carry. Find caches and help survivors to discover new equipment.';
+    el('catalogue-note').textContent = category === 'engine' ? 'Gather souls from fallen guardians. Forge gifts that remain with you.' : category === 'relic' ? 'Each recovered relic carries a memory of the sanctuary.' : 'Choose what you carry. Find caches and help survivors to discover new equipment.';
   };
   for (const key of Object.keys(categories)) {
     const tab = document.createElement('button'); tab.textContent = labels[key]; tab.dataset.category = key; tab.setAttribute('role', 'tab'); tab.setAttribute('aria-controls', 'catalogue-grid');
     tab.id = `catalogue-tab-${key}`;
-    tab.addEventListener('click', () => { category = key; refresh(); el('catalogue-grid').setAttribute('aria-labelledby', tab.id); });
+    tab.addEventListener('click', () => { category = key; el('engine-status').hidden = true; refresh(); el('catalogue-grid').setAttribute('aria-labelledby', tab.id); });
     tab.addEventListener('keydown', event => {
       if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
       event.preventDefault(); const tabs = [...el('catalogue-tabs').children], index = tabs.indexOf(tab);
@@ -85,7 +132,7 @@ export function createCampaignUI(catalog, callbacks = {}) {
   el('start')?.addEventListener('click', () => { if (guide) guide.open = false; });
   el('touch')?.addEventListener('open-loadout', () => { category = 'spell'; open(); });
   modal.addEventListener('close', () => { callbacks.onClose?.(); previousFocus?.focus?.({ preventScroll: true }); });
-  storyPanel.addEventListener('cancel', event => event.preventDefault());
+  storyPanel.addEventListener('cancel', event => { event.preventDefault(); callbacks.onStoryPause?.(); });
   el('story-next').addEventListener('click', () => callbacks.onStoryNext?.());
 
   const renderStory = story => {
@@ -108,6 +155,7 @@ export function createCampaignUI(catalog, callbacks = {}) {
   };
   const renderHUD = world => {
     currentWorld = world;
+    balance(world);
     el('touch').dataset.taught = String((world.time || 0) > 15);
     const player = world.player;
     const collections = world.collections || world.progress?.collections || [];
@@ -129,7 +177,7 @@ export function createCampaignUI(catalog, callbacks = {}) {
     state('power', player.spellCooldown <= 0 && (selectedSpell?.charge ? player.charges?.[selectedSpell.charge] > 0 : player.mana >= (selectedSpell?.cost || 0)), player.spellCooldown > 0);
     state('dash', player.dashCooldown <= 0, player.dashCooldown > 0);
     const near = target => !target.dead && Math.abs(target.x - player.x) < 110 && Math.abs(target.y - player.y) < 100;
-    const nearby = (world.npcs || []).some(near) || (world.props || []).some(prop => ['lever','valve','conduit'].includes(prop.type) && !prop.used && near(prop)) || (world.level?.portals || []).some(near);
+    const nearby = (world.npcs || []).some(near) || (world.props || []).some(prop => ['lever','valve','conduit'].includes(prop.type) && !prop.used && near(prop));
     el('touch').dataset.interact = String(nearby);
     const power = el('touch-power');
     if (power) {
@@ -138,7 +186,7 @@ export function createCampaignUI(catalog, callbacks = {}) {
       if (nearby) state('power', true);
       const powerName = el('touch-power-name'), powerCost = el('touch-power-cost');
       if (powerName) powerName.textContent = nearby ? 'INTERACT' : selectedSpell?.name || 'SORCERY';
-      if (powerCost) powerCost.textContent = nearby ? 'TAP TO USE' : player.spellCooldown > 0 ? `${Math.ceil(player.spellCooldown)}s recovery` : selectedSpell?.charge ? `${player.charges?.[selectedSpell.charge] || 0} charges` : `${selectedSpell?.cost || 0} soul`;
+      if (powerCost) powerCost.textContent = nearby ? 'TAP TO USE' : player.spellCooldown > 0 ? `${Math.ceil(player.spellCooldown)}s recovery` : selectedSpell?.charge ? `${player.charges?.[selectedSpell.charge] || 0} charges` : `${selectedSpell?.cost || 0} resonance`;
     }
     el('countdown').textContent = time(world.timeLeft || 0); el('countdown').parentElement.classList.toggle('urgent', world.timeLeft < 60);
     el('missile-warning').hidden = !world.missileWarning || world.status !== 'playing';

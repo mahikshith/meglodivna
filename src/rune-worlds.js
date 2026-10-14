@@ -84,8 +84,27 @@ function createRealm(id,d) {
    {id:'soulforge-hollow-choir-boost',type:'boost',x:6320,y:832,value:8},
    {id:'soulforge-hollow-crypt-rapid',type:'rapid',x:11200,y:1052,value:8},
    {id:'soulforge-hollow-storm-fuel',type:'fuel',x:14330,y:852,value:60});
-  const guidance={refuge:'Find Mira. Hold jump to reach the low shelf; release to land sooner.',roots:'Watch the stalker wind up. Evade its lunge, then strike.',stair:'Climb the bell walkways and find Orren.',warden:'Let the Keeper commit. Strike during recovery to claim Ember.',aqueduct:'Cross the broken choir. The amber booster strengthens thrust.',vault:'Take Tideglass from the upper reliquary. Side vaults are optional.',crypt:'Break the cinder vessels and follow the descending passage.',hex:'Break the coven and awaken the dragon pact.',spire:'Climb above the engine to recover the Storm stone.',conduit:'Turn the pressure valve. Cross the steam while it rests.',regent:'Carry the three stones into the heart. Unbind the captive souls.'};
+  const guidance={refuge:'Find Mira. Hold jump to reach the low shelf; release to land sooner.',roots:'Watch the stalker wind up. Evade its lunge, then strike.',stair:'Climb the bell walkways and find Orren.',warden:'Let the Keeper commit. Strike during recovery to claim Ember.',aqueduct:'Cross the broken choir. The amber booster strengthens thrust.',vault:'Take Tideglass from the upper reliquary. Side vaults are optional.',crypt:'A sleeping bell waits through the raised rift. The descending passage leads onward.',hex:'Break the coven and awaken the dragon pact.',spire:'Climb above the engine to recover the Storm stone.',conduit:'The conduit flashes before it fires. Cross while it rests.',regent:'Carry the three stones into the heart. Unbind the captive souls.'};
   w.zones.forEach((zone,index)=>zone.subtitle=guidance[w.rooms[index].kind]);
+  // Optional upper crypt: explicit IDs keep every existing claim and relay stable.
+  const beastFloor={id:'soulforge-bellbeast-floor',x:10550,y:460,w:1500,h:48,kind:'platform',material:d.surface,biome:d.biome};
+  w.solids.push(beastFloor,
+    {id:'soulforge-bellbeast-entry-ledge',x:10350,y:760,w:170,h:24,oneWay:true,kind:'platform',material:d.surface,biome:d.biome},
+    {id:'soulforge-bellbeast-perch-west',x:10800,y:350,w:180,h:24,oneWay:true,kind:'platform',material:d.surface,biome:d.biome},
+    {id:'soulforge-bellbeast-perch-east',x:11600,y:350,w:180,h:24,oneWay:true,kind:'platform',material:d.surface,biome:d.biome});
+  w.enemies.push({id:'soulforge-bellbeast',name:'THE BELLBEAST',type:'bellbeast',visualFamily:'bellbeast',major:true,soulValue:80,
+    x:11450,y:294,w:190,h:166,hp:580,shield:35,facing:-1,minX:10550,maxX:11860,leashX:10550,leashW:1500});
+  w.portals.push({id:'soulforge-bellbeast-entry',pairId:'soulforge-bellbeast-pair',x:10440,y:714,w:34,h:46,
+    to:{x:10640,y:414},label:'The sleeping bell',destinationId:'soulforge-bellbeast-return'});
+  w.landmarks.push({type:'altar',x:11300,y:460,seed:127});
+  w.optionalEncounters=[{id:'soulforge-bellbeast',portalId:'soulforge-bellbeast-entry',floorId:beastFloor.id,reward:80}];
+ }
+ // Each authored entrance has a visible dormant partner. Its reverse activates
+ // only after passage, so old main-route destinations cannot steal a first run.
+ for(const portal of [...w.portals]){
+  portal.pairId ||= `${portal.id}-pair`;portal.destinationId ||= `${portal.id}-destination`;
+  w.portals.push({id:portal.destinationId,pairId:portal.pairId,destinationId:portal.id,dormant:true,
+    x:portal.to.x,y:portal.to.y,w:portal.w,h:portal.h,to:{x:portal.x,y:portal.y},label:portal.label});
  }
  w.width=x;w.boss=w.bosses.at(-1);w.exit={x:x-60,y:floor-70,w:50,h:70};path(w.solids.find(s=>s.kind==='ground'&&s.x+s.w===x),x-35);w.gates.push({id:`${id}-three-stone-seal`,requiresRelics:['ember-heart','tide-glass','storm-seal'],x:x-100,y:0,w:24,h:floor});return w;
 }

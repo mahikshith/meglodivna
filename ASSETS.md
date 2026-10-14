@@ -1,4 +1,51 @@
-# Current rebuild — Lantern artwork for Hollow Sanctuary
+## Sanctuary effects and material consistency pass
+
+`public/lantern-fx` contains 16 shared-canvas flame/smoke/cut frames plus 9 textures: water, masonry, bronze-root platform, energy emitter/cap, lever, ward, bolt and spirit orb. All are original built-in image generations with approved sanctuary reference art. Exact prompts and unmodified sources are retained in `reference/lantern-fx-source`; reproduce with `python scripts/build-lantern-fx.py` (Pillow). Soft FX retain fractional alpha and use Lanczos reduction to preserve fine wisps. Row-shared crops prevent flame socket jitter. Effects use bounded reused views and pause with simulation.
+
+The lever, ward, shots and checkpoint lantern replace unrelated legacy runtime visuals. Approved Mira/Orren, companions and collectible artwork remain. Water is aligned to the lethal water boundary; damage and art no longer describe different surface heights. Terrain geometry remains authoritative at the top edge.
+
+| Generated source | SHA-256 |
+| --- | --- |
+| `effects-raw.png` | `83cd3cafcb20670a8339e7cc5625b26eb81bf9aaebaa78ee2ec4f6313d113218` |
+| `materials-raw.png` | `621f5d9ef4e140abd8c35a3740f715da2c54a91e16d392007e4e333d47f5098e` |
+| `props-raw.png` | `191e1951acd0f975c5f7c068df9f23d4a94799d6ea87514c1376032e06899dec` |
+
+# Current motion refinement — authored Sanctuary movement
+
+The motion packet adds **79 frame keys and 54 animation/state aliases** in `public/lantern-motion`, using atlas key `lantern-motion`. Its 2048x1024 atlas occupies 8 MiB for one uncompressed RGBA copy; atlas PNG plus both JSON files total 598,712 bytes at this revision. This is an additional packet, not the game's combined memory budget or a device-performance measurement.
+
+All five original image generations and exact prompts are preserved in [reference/lantern-motion-source](reference/lantern-motion-source/), with prompt keys in [prompts.json](reference/lantern-motion-source/prompts.json). They were produced using the built-in `image_gen` tool and inspected before extraction. `approved-courier.png` and `approved-enemies.png` are transparent reference seeds extracted from the earlier approved Lantern art. No third-party character art was downloaded.
+
+| Original source | Prompt key | Actual pixels | SHA-256 |
+| --- | --- | --- | --- |
+| `enemies-motion-raw.png` | `enemies` | 1122x1402 | `e428bdd974d60c3b06c3835b632bfcede923edff0a1447e4b9639e95fc835ac6` |
+| `creatures-motion-raw.png` | `newCreatures` | 1122x1402 | `a71294b739d46f06f0cf77281a6e828ca53939e92e58018c0d569eda1aeb20b6` |
+| `armor-motion-raw.png` | `armor` | 1024x1536 | `b75951a46596a03641ee76294a8d01b701c350c43462bace419f274707f9f988` |
+| `sword-motion-raw.png` | `swordCorrection` | 1448x1086 | `76030716b221841cb9a7f64c6c0173a044ef60d63a2b6a937c2be42b35e5c274` |
+| `equipment-icons-raw.png` | `equipmentIcons` | 2172x724 | `683cce6692992d701c6e1fb92e225f3a310612e786a0ee83e3e15b29daa4c7c7` |
+
+Run `python scripts/build-lantern-motion-assets.py` with Pillow, NumPy and SciPy. It reuses the established whole-silhouette alpha extractor; it never cuts sprites at a nominal sheet grid. Alpha below 32 is removed and retained alpha becomes opaque. Disconnected details belong to the nearest complete silhouette. Explicit inspected anatomical pivots, one scale per sequence and nearest-neighbor resizing preserve complete weapons and moving limbs. Source coordinates, source hashes and registration details are recorded per frame. The player render body remains 20x60 throughout; asset metadata does not change simulation collisions.
+
+| Authored content | Frames | Animation names |
+| --- | ---: | --- |
+| Stalker stride; caster articulated hover; guardian stride | 12 | `stalker-walk`, `caster-walk/hover`, `guardian-walk` |
+| Guardian axe brace, lift, overhead, downstroke, contact and recovery | 8 | `guardian-attack`, phase aliases `lift/windup/downswing/contact/recovery` |
+| Wispknight stride and crouch/leap/claw/brake | 8 | `wispknight-walk/attack`, phase aliases |
+| Bellbeast stride and rear/slam/contact/recovery | 8 | `bellbeast-walk/attack`, phase aliases |
+| Raven wing cycle and dive/talon/brake | 8 | `raven-fly/attack/idle` |
+| Full Lanternplate player identity: idle/run/air/horizontal/dash/overhead | 24 | `lanternplate-*` |
+| Corrected base courier horizontal and overhead swords | 8 | `courier-slash/overhead`, overrides `aether-slash/overhead`, `hero-slash-air/low` |
+| Complete Lanternplate, Bellheart and raven inventory silhouettes | 3 | `lm-icon-lanternplate`, `lm-icon-bellheart`, `lm-icon-raven` |
+
+The original armor overhead contact pose pointed backward and was rejected. The replacement source contains the correct complete downstroke sword; only that replacement row ships. Rectangular armor and bell crops were also rejected in favor of complete standalone inventory silhouettes. This is why the final count is 79 rather than all 83 source poses.
+
+Guardian attack phases use frames 0–3 for lift, 4 for downswing, 5 for contact and 6–7 for recovery. Bellbeast and Wispknight use four authored phases. `motionProfiles` records these selections; simulation phase/progress must drive them rather than an unrelated clock. Per-frame `sockets.hand`, `bladeTip`, `weaponTip`, `contact`, `frontFoot` and raven `beak` coordinates are native canvas coordinates and must receive the same pivot, scale and facing transform as the sprite. Sword sequences use four canonical poses, with contact around progress 0.55; this is presentation guidance, not a new damage rule.
+
+These are real distinct limb/weapon poses, not positional bobbing of one texture. They remain short pixel-art cycles: caster movement is a hovering arm/hem cycle, the Wispknight belongs to the stalker's avian-mask faction, and the Bellbeast has four strike poses rather than a continuous rig. Lanternplate firearm state reuses idle and hurt/death use the landing crouch; those are explicitly limited fallbacks, not bespoke animations. Existing NPCs, pickups, wolf, dragon, portal and scenery remain in the original Lantern packet. The older Runeheart/reference packets are retained for compatibility and unconverted realms/equipment. Their historical license notices below remain intact.
+
+Build assertions verify complete retained-alpha extraction, clear frame/source borders, atlas capacity, valid aliases and unique image payloads within every authored sequence. The normalized contact sheets and looping GIFs are in [artifacts/lantern-motion](artifacts/lantern-motion/), including guardian axe phases, both courier blade sequences, Lanternplate states, all locomotion families, raven wings and inventory icons. Inspected contact strips establish registration and silhouette quality. GIF files provide isolated animation review; the image viewer exposes a still frame. Neither constitutes legal gameplay completion, physical-device comfort or device-performance evidence; those require the separate integration/playtest reports.
+
+# Baseline rebuild — Lantern artwork for Hollow Sanctuary
 
 Hollow Sanctuary now uses original artwork generated for this project with the built-in `image_gen` tool: the courier, three enemy identities, wolf, flame dragon, portal, Mira, Orren, pickups, chest, sanctuary panorama and modular scenery. These generated images are separate from the licensed Gothicvania graphics and the older user-supplied reference boards. No franchise artwork was downloaded for this rebuild. The historical sources and their license notices remain documented below without changing their terms.
 

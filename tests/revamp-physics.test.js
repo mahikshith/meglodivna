@@ -40,7 +40,8 @@ test('revamped attacks start on their first simulation tick with body-based muzz
   const expected = weaponOrigin(p, 'gun');
   stepWorld(world, { slashPressed: true, shoot: true }, STEP);
   assert.ok(p.slashTime > 0); assert.equal(p.slashId, 1);
-  assert.equal(p.slashBox.y + p.slashBox.h, p.y + p.h + 4);
+  assert.ok(Math.abs(p.slashBox.y + p.slashBox.h - (p.y + p.h)) < 8);
+  assert.equal(p.slashActive, false, 'first tick shows anticipation before blade contact');
   const shot = world.projectiles.find(projectile => projectile.active);
   assert.ok(Math.abs(shot.x - expected.x - shot.vx * STEP) < 0.001);
   assert.ok(Math.abs(shot.y - expected.y - shot.vy * STEP) < 0.001);
@@ -54,8 +55,8 @@ test('revamped attacks start on their first simulation tick with body-based muzz
 
 test('authored mirror exits translate to the larger body without embedding at ground level', () => {
   const world = fixture(), p = world.player;
-  world.level.portals = [{ id: 'door', x: p.x, y: p.y, w: 30, h: 60, to: { x: 400, y: 564 } }];
-  assert.equal(interact(world), true); assert.equal(p.x + p.w / 2, 412); assert.equal(p.y + p.h, 610);
+  world.portals = [{ id: 'door', x: p.x, y: p.y, w: 30, h: 60, to: { x: 400, y: 564 } }];
+  stepWorld(world, {}, STEP); assert.equal(p.x + p.w / 2, 412); assert.equal(p.y + p.h, 610);
   assert.ok(!overlaps(p, world.staticSolids[0]));
 });
 

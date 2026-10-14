@@ -14,7 +14,7 @@ export class Controls {
     this.pressTimes = new Map(); this.pressContexts = new Map(); this.paletteOpened = new Set(); this.element = element;
     this.actionButtons = new Map([...element.querySelectorAll('[data-action]')].map(button => [button.dataset.action, button]));
     this.feedback = element.querySelector('#touch-feedback');
-    for (const [selector, activate] of [['#touch-pause', onPause], ['#touch-gear', () => element.dispatchEvent(new Event('open-loadout'))]]) {
+    for (const [selector, activate] of [['#touch-pause', onPause], ['#touch-settings', () => element.dispatchEvent(new Event('open-settings'))], ['#touch-gear', () => element.dispatchEvent(new Event('open-loadout'))]]) {
       const button = element.querySelector(selector); if (!button) continue;
       let touchActivation = -Infinity;
       // Secondary fingers do not reliably synthesize clicks while another action is held.

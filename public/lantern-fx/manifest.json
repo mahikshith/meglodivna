@@ -1,0 +1,39 @@
+{
+  "source": "reference/lantern-fx-source",
+  "generator": "OpenAI image generation",
+  "extraction": "scripts/build-lantern-fx.py",
+  "frameSize": [
+    128,
+    128
+  ],
+  "flameSocket": [
+    64,
+    12
+  ],
+  "animations": {
+    "flame": [
+      "flame-0",
+      "flame-1",
+      "flame-2",
+      "flame-3"
+    ],
+    "smoke": [
+      "smoke-0",
+      "smoke-1",
+      "smoke-2",
+      "smoke-3"
+    ],
+    "slash": [
+      "slash-0",
+      "slash-1",
+      "slash-2",
+      "slash-3"
+    ],
+    "overhead": [
+      "overhead-0",
+      "overhead-1",
+      "overhead-2",
+      "overhead-3"
+    ]
+  }
+}

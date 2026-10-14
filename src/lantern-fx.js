@@ -5,6 +5,7 @@ export class LanternEffects {
     this.graphics = scene.add.graphics().setDepth(11);
     this.particles = Array.from({ length: 240 }, () => ({ life: 0 }));
     this.ghosts = [];
+    this.views = []; this.viewIndex = 0; this.fractures = [];
     this.clock = 0;
     this.nextJet = this.nextStep = this.nextGhost = this.nextFlame = 0;
     this.seed = 173;
@@ -14,6 +15,8 @@ export class LanternEffects {
     for (const p of this.particles) p.life = 0;
     for (const ghost of this.ghosts) { ghost.life = 0; ghost.view.setVisible(false); }
     this.graphics.clear();
+    for (const view of this.views) view.setVisible(false);
+    this.fractures.length = 0;
   }
   particle(kind, x, y, vx, vy, life, size, tint) {
     const p = this.particles.find(item => item.life <= 0);
@@ -37,9 +40,11 @@ export class LanternEffects {
       if (e.kind === 'air') this.sparks(x, y, Math.ceil(12 * n), 0xb6e6d3);
       else this.dust(x, y, Math.ceil(8 * n), .7);
     } else if (e.type === 'slam') {
-      for (let i = -1; i <= 1; i++) this.dust(x + i * (e.radius || 120) * .6, y, Math.ceil(10 * n), 1.5, 0xb9ac87);
+      for (let i = 0; i < 3; i++) this.dust(e.bounds ? e.bounds.x + e.bounds.w * (i + .5) / 3 : x + (i-1) * 70, y, Math.ceil(10 * n), 1.5, 0xb9ac87);
       this.sparks(x, y - 4, Math.ceil(16 * n));
-      this.particle('shock', x, y, 0, 0, .35, e.radius || 150, 0xffc77f);
+      if(e.bounds) this.fractures.push({ ...e.bounds, y:e.surfaceY ?? y, age:0, life:.65 });
+    } else if (e.type === 'soulcollect' || e.type === 'pickup') {
+      this.sparks(x,y,Math.ceil(9*n),0xe9d9a7);
     } else if (e.type === 'transform') {
       for (let i = 0; i < Math.ceil(30 * n); i++) {
         const a = this.random() * Math.PI * 2;
@@ -54,19 +59,18 @@ export class LanternEffects {
       this.sparks(x, y, Math.ceil((e.type === 'death' ? 16 : e.type.includes('shot') ? 4 : 8) * n), e.tint || 0xffd3a0, e.facing || 0);
     }
   }
-  plume(x, y, facing, t, size = 1, vertical = false) {
-    const g = this.graphics;
-    const length = (27 + Math.sin(t * 49) * 5) * size;
-    for (let i = 4; i >= 0; i--) {
-      const along = i * length / 5, width = (12 - i * 2) * size;
-      g.fillStyle(i > 2 ? 0xe46a36 : i ? 0xffb65b : 0xfff1bf, i > 2 ? .6 : .95);
-      if (vertical) g.fillRect(Math.round(x - width / 2 + Math.sin(t * 29 + i) * 2), Math.round(y + along), Math.ceil(width), Math.ceil(length / 4));
-      else g.fillRect(Math.round(x + facing * along - length / 8), Math.round(y - width / 2), Math.ceil(length / 4), Math.ceil(width));
-    }
+  image(frame,x,y,width,height,rotation=0,alpha=1,originY=.5) {
+    let view=this.views[this.viewIndex++];
+    if(!view){view=this.scene.add.image(0,0,'lantern-fx',frame).setDepth(11);this.views.push(view);}
+    view.setTexture('lantern-fx',frame).setPosition(x,y).setOrigin(.5,originY).setDisplaySize(width,height).setRotation(rotation).setAlpha(alpha).setVisible(true);
+    return view;
+  }
+  plume(x,y,facing,t,size=1,vertical=false) {
+    return this.image(`flame-${Math.floor(t*15)%4}`,x,y,48*size,58*size,vertical?0:facing>0?-Math.PI/2:Math.PI/2,1,12/128);
   }
   update(dt, world, reduced = false, hero = world.player) {
     const g = this.graphics, p = world.player;
-    g.clear(); this.clock += dt;
+    g.clear(); for(const view of this.views)view.setVisible(false); this.viewIndex=0; this.clock += dt;
     const t = this.clock;
     if (dt > 0 && p.hp > 0 && world.status === 'playing') {
       if (p.jetActive && t >= this.nextJet) {
@@ -101,13 +105,9 @@ export class LanternEffects {
       q.life = Math.max(0, q.life - dt); q.x += q.vx * dt; q.y += q.vy * dt;
       q.vy += (q.kind === 'smoke' || q.kind === 'spirit' ? -35 : q.kind === 'ember' ? -70 : 220) * dt;
       const a = q.life / q.maxLife, age = 1 - a;
-      if (q.kind === 'shock') {
-        const r = q.size * Math.min(1, age * 2);
-        g.lineStyle(3, q.tint, a * .7); g.strokeEllipse(q.x, q.y - 2, r * 2, 8 + age * 12);
-      } else if (q.kind === 'smoke') {
-        const r = Math.round(q.size * (1 + age * 2));
-        g.fillStyle(q.tint, a * .2); g.fillRect(Math.round(q.x - r), Math.round(q.y - r / 2), r * 2, r);
-        g.fillStyle(q.tint, a * .12); g.fillRect(Math.round(q.x - r * .6), Math.round(q.y - r), Math.ceil(r * 1.3), r * 2);
+      if (q.kind === 'smoke') {
+        const r=q.size*(1+age*2);
+        this.image(`smoke-${Math.min(3,Math.floor(age*4))}`,q.x,q.y,r*5,r*5,0,a*.36);
       } else if (q.kind === 'spark') {
         g.lineStyle(Math.ceil(q.size), q.tint, a); g.lineBetween(q.x, q.y, q.x - q.vx * .025, q.y - q.vy * .025);
       } else {
@@ -119,14 +119,21 @@ export class LanternEffects {
     for (const ghost of this.ghosts) {
       ghost.life = Math.max(0, ghost.life - dt); ghost.view.setAlpha(ghost.life / .18 * .32).setVisible(ghost.life > 0);
     }
+    for(const crack of this.fractures){
+      crack.age+=dt;const a=Math.max(0,1-crack.age/crack.life),reach=Math.min(1,crack.age/.12);
+      g.lineStyle(2,0xf3c58d,a);g.beginPath();
+      for(let i=0;i<=24;i++){const x=crack.x+crack.w*i/24,y=crack.y+2+(i%3)*3;i?g.lineTo(x,y):g.moveTo(x,y);}
+      g.strokePath();g.lineStyle(1,0x0e1e20,a);
+      for(let i=1;i<12*reach;i++){const x=crack.x+crack.w*i/12;g.lineBetween(x,crack.y+4,x+6,crack.y+15);g.lineBetween(x+6,crack.y+15,x+3,crack.y+22);}
+    }
+    this.fractures=this.fractures.filter(c=>c.age<c.life);
     for(const shot of world.projectiles){
       if(!shot.active||!['fire','dragonfire'].includes(shot.kind))continue;
       const angle=Math.atan2(shot.vy,shot.vx),size=shot.kind==='dragonfire'?1.3:1;
-      for(let i=4;i>=0;i--){const radius=Math.max(2,(7-i)*size);g.fillStyle(i>2?0xe3753d:i?0xffb75d:0xfff2b9,i>2?.35:.9);g.fillRect(Math.round(shot.x-Math.cos(angle)*i*5-radius/2),Math.round(shot.y-Math.sin(angle)*i*5-radius/2),radius,radius);}
+      this.image(`flame-${Math.floor(t*16)%4}`,shot.x,shot.y,35*size,55*size,angle+Math.PI/2,.95,12/128);
     }
     for(const boss of world.bosses){if(boss.phase!=='transform'||boss.dead)continue;
-      const x=boss.x+boss.w/2,y=boss.y+boss.h/2,r=boss.w*.65;
-      g.lineStyle(3,0xffbd68,.5);g.strokeEllipse(x,y,r*2,r*1.6);this.plume(x,y,boss.facing,t,2);
+      for(let i=0;i<3;i++)this.plume(boss.x+boss.w*(i+1)/4,boss.y+boss.h,boss.facing,t+i*.2,1.5,true).setRotation(Math.PI);
     }
     if (p.hp > 0 && p.jetActive) this.plume(hero.x + p.w / 2 - p.facing * 12, hero.y + p.h * .67, 1, t, p.boost > 0 ? 1.4 : 1, true);
   }

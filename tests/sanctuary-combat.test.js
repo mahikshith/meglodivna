@@ -34,8 +34,9 @@ test('stalkers never shoot at range and commit to the warned side through lunge 
     until(world, () => foe.dashTime === 0);
     assert.ok(foe.x < start - 45); assert.ok(foe.recovery > 0.3);
     const recoveryX = foe.x;
-    for (let i = 0; i < 20; i++) stepWorld(world, {}, STEP);
-    assert.equal(foe.x, recoveryX); assert.ok(!world.projectiles.some(p => p.active));
+    for (let i = 0; i < 38; i++) stepWorld(world, {}, STEP);
+    assert.ok(Math.abs(foe.x - recoveryX) < 70, 'lunge brakes over a bounded distance');
+    assert.ok(Math.abs(foe.vx) < 1, 'feet settle before another attack'); assert.ok(!world.projectiles.some(p => p.active));
   }
 });
 
@@ -62,7 +63,8 @@ test('heavy sentinel braces, slams only the low floor band, and leaves a punisha
     until(world, () => foe.windup > 0);
     const braceX = foe.x;
     for (let i = 0; i < 20; i++) stepWorld(world, {}, STEP);
-    assert.equal(foe.x, braceX);
+    assert.ok(Math.abs(foe.x - braceX) < 10, 'heavy inertia settles within the warning');
+    assert.equal(foe.vx, 0);
     world.player.invincible = 0;
     world.player.x = foe.x - 80;
     if (airborne) stepWorld(world, { jumpPressed: true, jumpHeld: true }, STEP);
@@ -126,9 +128,9 @@ test('movement and slash events expose exact effect direction and air jump ident
 
 test('portal arrival clears old dash, thrust and support state and announces the destination', () => {
   const world = arena(), p = world.player;
-  world.level.portals = [{ id: 'return', x: p.x, y: p.y, w: 30, h: 60, to: { x: 800, y: 564 } }];
+  world.portals = [{ id: 'return', x: p.x, y: p.y, w: 30, h: 60, to: { x: 800, y: 564 } }];
   Object.assign(p, { dashTime: 0.1, jetActive: true, grounded: true, wall: 1, vx: 620, vy: -300 });
-  assert.equal(interact(world), true);
+  stepWorld(world, {}, STEP);
   assert.equal(p.vx, 0); assert.equal(p.vy, 0); assert.equal(p.dashTime, 0);
   assert.equal(p.jetActive, false); assert.equal(p.grounded, false); assert.equal(p.wall, 0);
   const arrival = world.events.find(e => e.type === 'portalarrival');

@@ -6,6 +6,7 @@ import { advanceStory, createWorld, equipItem, hazardState, retryWorld, weaponOr
 const difficulty = process.argv[2] || 'forge';
 assert.ok(['ember', 'forge', 'inferno', 'extinction'].includes(difficulty), 'Pass a supported difficulty ID.');
 const worldId = process.argv[3] || 'soulforge';
+const optional = process.argv.includes('--bellbeast');
 const LEVEL = getLevel(worldId);
 assert.equal(LEVEL.id, worldId, 'Pass a supported world ID.');
 const route = LEVEL.route;
@@ -15,6 +16,8 @@ let world = createWorld(0, { difficulty, worldId });
 let targetIndex = 0, sinceJump = 0, launched = false, deaths = 0, totalFrames = 0;
 const history = [], trace = [], eventsSeen = new Set(), conversations = new Set(), bossTimes = {}, triggerProof = {};
 let lastControls = '';
+let optionalStage = 'approach', optionalDone = false, optionalStarted = false;
+const optionalProof = { method: 'Fresh campaign followed by ordinary jump, walk, combat, automatic portal contact and soul collection; no state overrides.', phases: new Set(), attacks: new Set(), soulsBefore: 0, entries: 0 };
 function recordAction(action) { trace.push(action); lastControls = ''; }
 function equip(category, id) {
   if (world.player[category] !== id && equipItem(world, category, id)) recordAction({ equip: { category, id } });
@@ -27,6 +30,7 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
       time: +world.time.toFixed(2), target: route[targetIndex]?.id });
     recordAction({ retry: world.checkpoint });
     deaths++; world = retryWorld(world);
+    if (optionalStarted && !optionalDone) { optionalStage = 'approach'; optionalStarted = false; }
     targetIndex = route.findIndex(marker => marker.x >= world.player.x + world.player.w / 2);
     if (targetIndex < 0) targetIndex = route.length - 1;
     sinceJump = 0; launched = false; continue;
@@ -45,6 +49,43 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   equip('armor', 'bulwark');
   equip('sword', 'saber');
   equip('spell', 'siphon');
+  if (optional && !optionalDone && (optionalStarted || p.x > 10275 && p.x < 10550)) {
+    optionalStarted = true;
+    const beast = world.enemies.find(enemy => enemy.id === 'soulforge-bellbeast');
+    const center = p.x + p.w / 2, feet = p.y + p.h;
+    let targetX = 10452, jumpPressed = false, dashPressed = false, shoot = false, spellPressed = false;
+    if (optionalStage === 'approach') {
+      if (p.grounded && feet > 800 && Math.abs(center - 10410) < 75) jumpPressed = true;
+      if (feet < 600) { optionalStage = 'fight'; optionalProof.entries++; optionalProof.soulsBefore = world.progress.souls; }
+    }
+    if (optionalStage === 'fight') {
+      optionalProof.phases.add(beast.attackPhase || 'walk');
+      if (beast.attackPhase === 'contact') optionalProof.attacks.add(beast.attackKind);
+      targetX = Math.max(10730, beast.x - 150);
+      jumpPressed = p.grounded && (beast.attackPhase === 'downswing' || beast.attackPhase === 'lift' && beast.attackProgress > .7);
+      dashPressed = beast.attackKind === 'charge' && beast.attackPhase === 'contact' && Math.abs(beast.x - p.x) < 170 && p.dashCooldown <= STEP;
+      shoot = !beast.dead;
+      spellPressed = !beast.dead && p.mana >= 25 && p.spellCooldown <= STEP && p.hp < p.maxHp - 10;
+      if (beast.dead) optionalStage = 'collect';
+    }
+    if (optionalStage === 'collect') {
+      const soul = world.souls.find(drop => drop.id === 'soul:soulforge-bellbeast' && !drop.taken);
+      targetX = soul?.x ?? center;
+      if (!soul && world.progress.soulClaims.includes('soul:soulforge-bellbeast')) optionalStage = 'return';
+    }
+    if (optionalStage === 'return') {
+      targetX = 10652;
+      if (feet > 650) { optionalDone = true; optionalProof.collected = world.progress.souls - optionalProof.soulsBefore; optionalProof.returnedAt = world.time; }
+    }
+    const controls = { move: Math.max(-1, Math.min(1, (targetX - center) / 45)), jumpPressed, jumpHeld: true, dashPressed,
+      slashPressed: optionalStage === 'fight' && p.slashCooldown <= STEP, shoot, spellPressed };
+    if (shoot) { const origin = weaponOrigin(p, 'hand'); const dx = beast.x + beast.w / 2 - origin.x, dy = beast.y + beast.h / 2 - origin.y, length = Math.hypot(dx, dy); controls.aimX = dx / length; controls.aimY = dy / length; }
+    recordAction({ frames: 1, input: controls }); stepWorld(world, controls, STEP); totalFrames++;
+    for (const event of world.events) eventsSeen.add(event.type);
+    world.events.length = 0;
+    if (optionalDone) { targetIndex = route.findIndex(marker => marker.x > 10480); sinceJump = 0; launched = false; }
+    continue;
+  }
   const activeBoss = world.activeBoss && !world.activeBoss.dead ? world.activeBoss : world.bosses.find(b => b.active && !b.dead);
   const marker = route[targetIndex] || route.at(-1);
   const target = LEVEL.solids.find(solid => solid.id === marker.id);
@@ -124,6 +165,11 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   if (missile && missile.time < 0.3 && p.grounded && Math.abs(missile.y - (p.y + 20)) < 45) jumpPressed = true;
   const nearby = [...world.enemies,...world.enemySummons.filter(e=>e.phase==='attack')].filter(e => !e.dead && Math.abs(e.x - p.x) < 600);
   const overhead = nearby.find(e => e.type === 'drone' && Math.abs(e.x + e.w / 2 - center) < 30 && e.y + e.h < p.y + 18);
+  // Clear a visible occupied upper landing before committing a jump into its body.
+  // This is an ordinary aimed-fire strategy, with live incoming attacks and fuel.
+  const ledgeThreat = !bossFight && support && target.y < support.y - 30 && nearby.find(e => e.grounded
+    && Math.abs(e.y + e.h - target.y) < 5 && e.x >= target.x && e.x <= target.x + target.w && Math.abs(e.x - center) < 450);
+  if (ledgeThreat) { move = 0; jumpPressed = false; }
   const charges = typeof p.charges === 'object' ? p.charges.cannon : p.cannonCharges;
   const gun = bossFight && !defender && charges > 0 ? 'cannon' : 'carbine';
   equip('gun', gun);
@@ -141,6 +187,9 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
     const aimTarget = defender || activeBoss, hand = weaponOrigin(p,'hand');
     const ax = aimTarget.x + aimTarget.w/2 - hand.x, ay = aimTarget.y + aimTarget.h/2 - hand.y, length = Math.hypot(ax,ay)||1;
     controls.aimX = ax/length; controls.aimY = ay/length;
+  } else if (ledgeThreat) {
+    const hand = weaponOrigin(p, 'hand'), ax = ledgeThreat.x + ledgeThreat.w / 2 - hand.x, ay = ledgeThreat.y + ledgeThreat.h / 2 - hand.y, length = Math.hypot(ax, ay) || 1;
+    controls.aimX = ax / length; controls.aimY = ay / length; controls.aimUp = false;
   }
   const encoded = JSON.stringify(controls);
   if (encoded === lastControls && trace.at(-1)?.input) trace.at(-1).frames++;
@@ -168,7 +217,7 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   assert.ok(Number.isFinite(p.x) && Number.isFinite(p.y), 'Simulation must remain finite.');
 }
 
-const report = { worldId, worldName: LEVEL.name, difficulty, status: world.status, playerBody: { w: world.player.w, h: world.player.h }, elapsed: +(totalFrames * STEP).toFixed(2), campaignTime: +world.time.toFixed(2),
+const report = { worldId, worldName: LEVEL.name, difficulty, status: world.status, optional: optional ? { ...optionalProof, phases: [...optionalProof.phases], attacks: [...optionalProof.attacks], complete: optionalDone } : undefined, playerBody: { w: world.player.w, h: world.player.h }, elapsed: +(totalFrames * STEP).toFixed(2), campaignTime: +world.time.toFixed(2),
   timeLeft: +world.timeLeft.toFixed(2), deaths, checkpoint: world.checkpoint, x: +world.player.x.toFixed(1), y: +world.player.y.toFixed(1),
   hp: +world.player.hp.toFixed(1), conversations: [...conversations], triggerProof,
   storyClaims: world.progress.claimed.filter(id => id.startsWith('npc:')),
@@ -181,6 +230,13 @@ const report = { worldId, worldName: LEVEL.name, difficulty, status: world.statu
   method: 'Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.',
   target: route[targetIndex]?.id, events: [...eventsSeen].sort(), history };
 mkdirSync(new URL('../artifacts/', import.meta.url), { recursive: true });
+if (optional) {
+  writeFileSync(new URL(`../artifacts/bellbeast-route-${difficulty}-report.json`, import.meta.url), JSON.stringify(report, null, 2));
+  writeFileSync(new URL(`../artifacts/bellbeast-route-${difficulty}-inputs.json`, import.meta.url), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
+  assert.ok(optionalDone && optionalProof.collected === 80, 'Optional encounter must be reached, defeated, collected and returned through ordinary inputs.');
+  assert.ok(['lift', 'downswing', 'contact', 'recovery'].every(phase => optionalProof.phases.has(phase)), 'The live optional fight must expose its complete attack cycle.');
+}
+if (!optional) {
 writeFileSync(new URL(`../artifacts/combat-route-${worldId}-${difficulty}-report.json`, import.meta.url), JSON.stringify(report, null, 2));
 writeFileSync(new URL(`../artifacts/combat-route-${worldId}-${difficulty}-inputs.json`, import.meta.url), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
 if (worldId === 'soulforge') {
@@ -190,6 +246,7 @@ if (worldId === 'soulforge') {
 if (worldId === 'soulforge' && difficulty === 'forge') {
   writeFileSync(new URL('../artifacts/combat-route-report.json', import.meta.url), JSON.stringify(report, null, 2));
   writeFileSync(new URL('../artifacts/combat-route-inputs.json', import.meta.url), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
+}
 }
 console.log(JSON.stringify({ ...report, history: world.status === 'won' ? undefined : history.slice(-12) }, null, 2));
 assert.equal(world.status, 'won', 'Legal campaign inputs must defeat every boss and reach the exit.');

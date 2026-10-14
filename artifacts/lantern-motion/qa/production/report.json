@@ -1,0 +1,190 @@
+{
+  "kind": "Production Vite preview Chromium smoke with real UI inputs",
+  "physicalDevice": false,
+  "campaignCompletion": false,
+  "viewport": {
+    "width": 740,
+    "height": 360
+  },
+  "started": "2026-10-14T19:31:07.977Z",
+  "distHashes": {
+    "dist/index.html": "1e4ac4406be2987cde4ae9b8f9cd035d15adc0f6ad4cb8f0f167da658d85e6c0",
+    "dist/assets/index-CUWrWAb7.js": "5fe9a3b6aa9e143d80c8047be34b07409a382c446285609702a10707362028ad",
+    "dist/assets/index-syjbANy3.css": "51f9d125ab51a83f135cab5241e71cf72fdff2e2dc60549517545c6d17012634"
+  },
+  "sourceHashes": {
+    "src/main.js": "a7a8f82656f4d0dde72981f2ed81c7d0e2f63fb563580432bb18dbb09492f23c",
+    "src/ui.js": "d2dd6cbaa4c6d6b051f5da47cfa465bc911866becaed158fcfb6c5ba43d6d1da",
+    "src/style.css": "e193cb7c1f439593f8d1c85439e7f8c125ff81c60b3c3a7681d8f7809b125974",
+    "src/lantern-art.js": "e3b8e6265a6406170cd6972d8d41805e69c05b6baebe48723ed23f603860dfb5",
+    "src/lantern-fx.js": "cd7308bd9c2fa85255510f89568519f7aa9a6d329d82640b2d679f0a7748d730"
+  },
+  "checks": [
+    "Production omits window.__ASH debug hook; served index SHA-256 matches current dist",
+    "17 Lantern/motion/FX PNGs decoded; all 3 bundled fonts loaded",
+    "Home settings, start, keyboard movement/jump inputs, pause, paused settings, all six equipment tabs, close-to-pause and resume"
+  ],
+  "screenshots": [
+    "01-home.png",
+    "02-home-settings.png",
+    "03-play.png",
+    "04-pause.png",
+    "05-paused-settings.png",
+    "06-equipment-engine.png",
+    "06-equipment-armor.png",
+    "06-equipment-spell.png",
+    "07-resumed.png"
+  ],
+  "runtimeErrors": [],
+  "failedResources": [],
+  "servedBundles": [
+    "dist/assets/index-CUWrWAb7.js",
+    "dist/assets/index-syjbANy3.css"
+  ],
+  "images": [
+    {
+      "url": "/lantern/arch.png",
+      "width": 176,
+      "height": 208,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/atlas.png",
+      "width": 2048,
+      "height": 1024,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/lantern.png",
+      "width": 90,
+      "height": 203,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/platform.png",
+      "width": 225,
+      "height": 97,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/root.png",
+      "width": 224,
+      "height": 201,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/sanctuary.png",
+      "width": 768,
+      "height": 512,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-motion/atlas.png",
+      "width": 2048,
+      "height": 1024,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/atlas.png",
+      "width": 512,
+      "height": 512,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/bolt.png",
+      "width": 100,
+      "height": 26,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/emitter-cap.png",
+      "width": 84,
+      "height": 57,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/emitter.png",
+      "width": 124,
+      "height": 85,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/lever.png",
+      "width": 74,
+      "height": 76,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/orb.png",
+      "width": 100,
+      "height": 56,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/platform.png",
+      "width": 306,
+      "height": 126,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/stone.png",
+      "width": 303,
+      "height": 306,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/ward.png",
+      "width": 121,
+      "height": 176,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/water.png",
+      "width": 306,
+      "height": 306,
+      "decoded": true
+    }
+  ],
+  "fonts": [
+    {
+      "url": "/fonts/Alegreya-Variable.ttf",
+      "status": "loaded"
+    },
+    {
+      "url": "/fonts/AlegreyaSans-Bold.ttf",
+      "status": "loaded"
+    },
+    {
+      "url": "/fonts/AlegreyaSans-Regular.ttf",
+      "status": "loaded"
+    }
+  ],
+  "equipmentTabs": [
+    {
+      "category": "engine",
+      "count": 4
+    },
+    {
+      "category": "sword",
+      "count": 3
+    },
+    {
+      "category": "gun",
+      "count": 5
+    },
+    {
+      "category": "armor",
+      "count": 4
+    },
+    {
+      "category": "spell",
+      "count": 10
+    },
+    {
+      "category": "relic",
+      "count": 6
+    }
+  ],
+  "status": "pass",
+  "finished": "2026-10-14T19:31:13.721Z"
+}

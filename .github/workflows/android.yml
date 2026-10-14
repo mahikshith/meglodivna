@@ -43,6 +43,7 @@ jobs:
           node scripts/combat-route.mjs forge
           node scripts/combat-route.mjs inferno
           node scripts/combat-route.mjs extinction
+          node scripts/combat-route.mjs forge soulforge --bellbeast
           node scripts/combat-route.mjs forge tide
           node scripts/combat-route.mjs forge pyre
           node scripts/combat-route.mjs forge neon
@@ -92,19 +93,19 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
           mkdir -p release-upload downloaded
-          cp release-apk/app-debug.apk release-upload/ASH-SIGNAL-Lantern-v0.6.0.apk
+          cp release-apk/app-debug.apk release-upload/ASH-SIGNAL-Lantern-v0.7.0.apk
           cp release-evidence/artifacts/android-report.json release-upload/android-report.json
           python - <<'PY'
           import hashlib, json, os
           from pathlib import Path
-          apk = Path('release-upload/ASH-SIGNAL-Lantern-v0.6.0.apk')
+          apk = Path('release-upload/ASH-SIGNAL-Lantern-v0.7.0.apk')
           report = json.loads(Path('release-upload/android-report.json').read_text())
           assert hashlib.sha256(apk.read_bytes()).hexdigest() == report['sha256']
-          assert report['version'] == '0.6.0-lantern' and report['versionCode'] == 7
+          assert report['version'] == '0.7.0-lantern' and report['versionCode'] == 8
           assert os.environ['RELEASE_TAG'] == 'v' + report['version'], 'Release tag and verified APK version differ'
           Path('release-upload/SHA256SUMS.txt').write_text(report['sha256'] + '  ' + apk.name + '\n')
           PY
-          gh release create "$RELEASE_TAG" release-upload/* --verify-tag --prerelease --title "The Last Lantern v0.6.0 — Hollow Sanctuary test build" --notes-file docs/LANTERN-RELEASE.md
-          gh release download "$RELEASE_TAG" --dir downloaded --pattern ASH-SIGNAL-Lantern-v0.6.0.apk
-          cmp release-upload/ASH-SIGNAL-Lantern-v0.6.0.apk downloaded/ASH-SIGNAL-Lantern-v0.6.0.apk
+          gh release create "$RELEASE_TAG" release-upload/* --verify-tag --prerelease --title "The Last Lantern v0.7.0 — Hollow Sanctuary test build" --notes-file docs/LANTERN-MOTION-RELEASE.md
+          gh release download "$RELEASE_TAG" --dir downloaded --pattern ASH-SIGNAL-Lantern-v0.7.0.apk
+          cmp release-upload/ASH-SIGNAL-Lantern-v0.7.0.apk downloaded/ASH-SIGNAL-Lantern-v0.7.0.apk
           echo "Uploaded APK downloaded again and matched byte for byte." >> "$GITHUB_STEP_SUMMARY"

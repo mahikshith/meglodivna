@@ -20,10 +20,12 @@ test('overhead sword covers a tall vertical arc and never re-hits one target dur
   stepWorld(state, { slashPressed: true }, STEP);
   assert.equal(state.player.slashMode, 'horizontal');
   tick(state, 35);
-  const target = enemy('overhead', state.player.x + 40, state.player.y - 100);
+  const target = enemy('overhead', state.player.x + 40, state.player.y - 70);
   state.enemies = [target];
   stepWorld(state, { slashPressed: true }, STEP);
-  assert.ok(state.player.slashBox.h >= 135);
+  assert.equal(state.player.slashActive, false);
+  assert.equal(state.player.slashBox.h, 90, 'blade reaches above the courier without the old oversized box');
+  tick(state, 11);
   assert.equal(target.hp, 173);
   tick(state, 20);
   assert.equal(target.hp, 173);
@@ -36,6 +38,7 @@ test('sword and armor equipment changes real damage, lifesteal, defense, and res
   const target = enemy('saber', state.player.x + 40);
   state.enemies = [target];
   stepWorld(state, { slashPressed: true }, STEP);
+  tick(state, 8);
   assert.equal(target.hp, 165);
   assert.ok(state.player.hp > 50);
   rewardPlayer(state, { type: 'armor', itemId: 'bulwark' });
@@ -231,6 +234,7 @@ test('mage, shade, and sentinel attacks have distinct live powers', () => {
     if (type === 'mage') assert.equal(state.projectiles.filter(projectile => projectile.active && projectile.kind === 'fire').length, 3);
     if (type === 'shade') { assert.ok(target.dashTime > 0); const x = target.x; stepWorld(state, {}, STEP); assert.ok(target.x < x); }
     if (type === 'sentinel') {
+      for (let frame = 0; frame < 240 && !target.attackBox; frame++) stepWorld(state, {}, STEP);
       assert.equal(target.attackKind, 'slam'); assert.equal(target.attackBox.w, 300);
       assert.equal(target.attackBox.h, 25); assert.ok(target.recovery > 0.6);
       assert.ok(!target.beam && state.events.some(event => event.type === 'slam'));

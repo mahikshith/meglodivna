@@ -1,0 +1,87 @@
+{
+  "kind": "isolated UI transactions with seeded souls and actual spending/save APIs",
+  "physicalDeviceTest": false,
+  "sizes": [
+    {
+      "viewport": {
+        "width": 740,
+        "height": 360
+      },
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 640,
+        "height": 360
+      },
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true
+    }
+  ],
+  "started": "2026-10-14T19:28:45.530Z",
+  "sourceHashes": {
+    "index.html": "9d5f1de9ab776e03ef96948ebad979687b91abd31160bf28b251d4452ac7f1cf",
+    "src/art.js": "525873ea6b871cb3f1d61992836ee9f2b1caccd6c88326ece6bbf46d8a6aa660",
+    "src/audio.js": "173fc305073d5289329c6df71069a5a64bd0801f2ced09d7e0a1ce69d5ed82e6",
+    "src/blade-motion.js": "17da85f89cd946ef640e0b61706f291c3a79eda5383158eabbd2f90a18819982",
+    "src/camera.js": "332f75f253599e3633ba3dfb27242b323eaaf5b8482204d91cbbda3f6922a3d0",
+    "src/catalog.js": "9c39eedb16c6593a8ec8e7e0d49d2d19a55a21bdc973a093844ac5785bbbb78d",
+    "src/combat.js": "d9f3b8c8eca046dd46fdeda963201746ffa10425229e9e29fcc6743ca39e4cf4",
+    "src/enemy-motion.js": "6d6afd0e24489ff9fb45b71e5a02dd5a08f64b8dc36bcf5e8b6f5de25327aed2",
+    "src/input.js": "08e0bc3fe3e5c47c68aa356b8adea72b54f61c68f4c201efe160558f4e14549e",
+    "src/lantern-art.js": "e3b8e6265a6406170cd6972d8d41805e69c05b6baebe48723ed23f603860dfb5",
+    "src/lantern-fx.js": "cd7308bd9c2fa85255510f89568519f7aa9a6d329d82640b2d679f0a7748d730",
+    "src/legacy-level.js": "21614250e936233c0bfea0ce0626a528f618651ac9dc679ab7e27691e0e0f1fa",
+    "src/level.js": "ebed4be76751f4ebd5b07bb6e88d857476d93113fe4ae5e558a2440894dd2ca1",
+    "src/main.js": "a7a8f82656f4d0dde72981f2ed81c7d0e2f63fb563580432bb18dbb09492f23c",
+    "src/physics.js": "5bb1a2a30dd842028d675f9d5a96f0d2fcb61a1507418eeb05fbaaa9cff569ba",
+    "src/progress.js": "bc4b9d2b030caa51598bfac727a025c39c3f50506d4e40539a207b34c49c6a61",
+    "src/reference-art.js": "1ee6f6283cce08057c812ee0632609f8d1b720359dc160bfbc775f9e7866738e",
+    "src/rune-worlds.js": "c02590241d8f0eff531de9073347a0154dc54a4d88dfced3c7cf0a29b0eaaa91",
+    "src/runeheart-art.js": "c7614f53442cb46fa5a7b3a0c7fbe3bd80d631a55e374900a52e92e95ab9e4e4",
+    "src/style.css": "e193cb7c1f439593f8d1c85439e7f8c125ff81c60b3c3a7681d8f7809b125974",
+    "src/terrain.js": "ee301bc025e320747b086f228a098ee5c0bbaf48717c967727511322f74f9268",
+    "src/ui.js": "d2dd6cbaa4c6d6b051f5da47cfa465bc911866becaed158fcfb6c5ba43d6d1da",
+    "src/worlds.js": "f3e899199f1fe72be50fa777d268ddde5133aa8c32bab81a56bc975d29af9daa",
+    "public/lantern/arch.png": "cdcedbb44deac72ac75922ded61c6fc253a3be5897568ec15e9eb30fd5efef0e",
+    "public/lantern/atlas.json": "d0ee315ea51b66689513ecba32b47f5c6c6380e157895d407901364a3c7086e1",
+    "public/lantern/atlas.png": "2e99d80a62c416e6f92196e12dcfca683683da848183e997ad2cc0cf0f933c7d",
+    "public/lantern/environment.json": "a522045ac7bdd13de239653d990f6124b911c516f304aa059acd504257ddc0c8",
+    "public/lantern/lantern.png": "1772b068c0220fdc5e7bda31b1cfb4dd3913bcefee7a0f577b97b89967678dbb",
+    "public/lantern/manifest.json": "254dcc91785a493f25bc1d6001c5414e8be8bd0a329a45890c7a72cb4b764bb7",
+    "public/lantern/platform.png": "5177bc1bfc59a4f742c974ef76f9e7a550cdd6d7d7e38762c13bf5c05f9aabae",
+    "public/lantern/root.png": "ae701faa77bf5fe90ec91e876151b064ce78b7ddcec662ffc353bc2769f2c448",
+    "public/lantern/sanctuary.png": "281a9213a5f7e2de780c3356ac1c91d97e4747b247a63c83c8ddfcfa075c60e2",
+    "public/lantern-motion/atlas.json": "c2c2000effc7f264ec998e1c9ab23546c64f34eebc83d9410f09badd56004605",
+    "public/lantern-motion/atlas.png": "6627135d5a4f69110fc146148ab79e1cc86f14b9e1b12bb6f1cbec1b3fa33207",
+    "public/lantern-motion/manifest.json": "e00cd44dce3bad0bd6ae889398636838905038bacd54389d805f1a9ed3ffe59e",
+    "public/lantern-fx/atlas.json": "d928285b35b8ad9696d3265d39e028227dcaebf7b30f0c0060f7e3b8d71faa24",
+    "public/lantern-fx/atlas.png": "29f05805e7aaaff24eb20067b35c0f9e221f8edd52440eb18344a881ae023dfe",
+    "public/lantern-fx/bolt.png": "ef1dfe262f90bdfc5c6c7ce8d8d79fbbbe8aefecb000aab1dd65399d9adc4e16",
+    "public/lantern-fx/emitter-cap.png": "f4848d0bfc2762eeef6e64e96aa26b215735235dc476c3879cd2a87940de4d2c",
+    "public/lantern-fx/emitter.png": "777542c8e814ec47b404ab5108c88ffe571308d403d78eea3ef7cc2748e4510a",
+    "public/lantern-fx/lever.png": "a30c85c5051b13f6c15b26b26015724a12c8329ab20f8bef5004af3e7f71bb3c",
+    "public/lantern-fx/manifest.json": "30df2f51325b6a3c931f145418939a2705362ab6da4590141ba378336fb4e5e4",
+    "public/lantern-fx/orb.png": "9f5f14e4ac52dacd9819e5815a00a10e101e37bad22ebd09ac75bc92a2ee519f",
+    "public/lantern-fx/platform.png": "ab6b6be05c7eb1fb551d334e0c84b4af1e50b5192049e9414b8618c111e1bc11",
+    "public/lantern-fx/stone.png": "6c209bb3b64d8076b50d1111d88f5363d5e6e1d1ca7598d2eec4704fc5e1ae33",
+    "public/lantern-fx/ward.png": "932dc6a7b1303251e170555df952c4ac384598819d67cda301112fa68daf9703",
+    "public/lantern-fx/water.png": "77a761e329db3a0751d8dfb8fc7d8ca4e7178675c76b3d93269eaad235531bc4",
+    "public/fonts/Alegreya-OFL.txt": "f6f60d5d4cf4f4b1fc4e41353c897a2f5a16e6396c0cd8fa8bdfd2f4586a9a68",
+    "public/fonts/Alegreya-Variable.ttf": "ba5564634b93a8f8ba57b48cd4f1ae7417d2b4656fbac779028679b00de3cf12",
+    "public/fonts/AlegreyaSans-Bold.ttf": "a3055a1893759bdbd7504bb22abc583769e7974c49353176eac0b03792c9fb8e",
+    "public/fonts/AlegreyaSans-OFL.txt": "0677891e6a143f297350d260ad766ad33bfc18ed5fa4f213acf648d6b597ec1a",
+    "public/fonts/AlegreyaSans-Regular.ttf": "8fab634196007afca839f1e5a6fb300976daff55d8528b590ef032f01b14ea10",
+    "public/fonts/SOURCES.json": "77c36eeab44c26bbef761e6ff0877f67c2aacb7759d9ff8240fa65efb5f63a0d"
+  },
+  "finished": "2026-10-14T19:29:09.594Z",
+  "sourceUnchanged": true,
+  "passed": true,
+  "runtimeErrors": []
+}

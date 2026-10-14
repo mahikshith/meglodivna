@@ -64,8 +64,8 @@ test('a fresh lantern bearer can climb the optional Roots vault, recover its bla
 
   walkTo(vault, portal.x - 35);
   const departure = { x: world.player.x, y: world.player.y };
-  tick({ interactPressed: true });
-  assert.ok(events.some(event => event.type === 'portal'), 'interact activates the return rift');
+  for (let frame = 0; frame < 120 && !events.some(event => event.type === 'portal'); frame++) tick({ move: 1 });
+  assert.ok(events.some(event => event.type === 'portal'), 'walking into the return rift activates passage');
   assert.ok(events.some(event => event.type === 'portalarrival'), 'arrival has its own effect event');
   assert.ok(world.player.x < departure.x - 250 && world.player.y > departure.y + 200, 'the rift returns from the upper vault to the lower route');
   assert.equal(world.player.x, portal.to.x + 12 - world.player.w / 2);

@@ -38,29 +38,32 @@ test('Raider pursues vertically and strafes while sentinel closes for a stationa
   assert.ok(startX - raider.x > 140); assert.ok(Math.abs(raider.y - startY) > 30);
   assert.equal(raider.intent, 'strafe'); assert.equal(raider.facing, -1);
   const ground = fixture('sentinel', 230), mecha = ground.enemies[0], start = mecha.x;
-  tick(ground, 100); assert.ok(mecha.x < start); assert.equal(mecha.facing, -1);
+  ground.player.invincible = 100;
+  for (let frame = 0; frame < 400 && !mecha.windup; frame++) tick(ground, 1);
+  assert.ok(mecha.x < start); assert.equal(mecha.facing, -1);
   assert.ok(mecha.windup > 0); const braceX = mecha.x;
-  tick(ground, 10); assert.equal(mecha.x, braceX);
+  tick(ground, 25); assert.ok(Math.abs(mecha.x - braceX) < 10); assert.equal(mecha.vx, 0);
 });
 
 test('each villain warns before its directed attack and refreshes warning from its moving anatomy', () => {
   for (const type of ['guard', 'drone', 'mage', 'sentinel', 'shade']) {
     const world = fixture(type, 380), foe = world.enemies[0];
     let warned = 0, warningStart, movedWarning = false, attacked = false;
-    for (let frame = 0; frame < 240; frame++) {
+    for (let frame = 0; frame < 480; frame++) {
       stepWorld(world, {}, STEP);
       if (foe.windup > 0) {
         warned++;
         assert.ok(foe.telegraph);
         const origin = weaponOrigin(foe, foe.weaponSlot);
-        assert.ok(Math.abs(foe.telegraph.x0 - origin.x) < 0.001 && Math.abs(foe.telegraph.y0 - origin.y) < 0.001);
+        if (type === 'sentinel') assert.equal(foe.telegraph.surfaceY, foe.y + foe.h);
+        else assert.ok(Math.abs(foe.telegraph.x0 - origin.x) < 0.001 && Math.abs(foe.telegraph.y0 - origin.y) < 0.001);
         warningStart ??= foe.x; movedWarning ||= Math.abs(foe.x - warningStart) > 3;
       }
       if (foe.attackTime > 0) { attacked = true; break; }
       world.events.length = 0;
     }
     assert.ok(attacked && warned >= 25, `${type} warned${warned}frames before attack`);
-    if (type === 'sentinel') assert.equal(movedWarning, false, 'The heavy attack must brace in place');
+    if (type === 'sentinel') assert.ok(Math.abs(foe.x - warningStart) < 12, 'Heavy braking settles within the warning');
     else if (type !== 'mage') assert.ok(movedWarning, `${type} must remain visibly active during charge`);
   }
 });
@@ -90,12 +93,13 @@ test('sword press near recovery is buffered, combos alternate, and movement cann
 test('melee knocks a live crawler away once, cancels its charge and cannot cut through a solid wall', () => {
   const world = fixture('guard', 160); tick(world, 2); const foe = world.enemies[0], start = foe.x;
   foe.cooldown = 0.1;
-  stepWorld(world, { slashPressed: true }, STEP); const hp = foe.hp;
+  stepWorld(world, { slashPressed: true }, STEP); tick(world, 8); const hp = foe.hp;
   assert.ok(hp < foe.maxHp && foe.stagger > 0 && foe.vx > 0); assert.equal(foe.windup, 0);
   tick(world, 8); assert.equal(foe.hp, hp); assert.ok(foe.x > start + 8);
   const blocked = fixture('guard', 160);
   blocked.staticSolids.push({ id: 'wall', x: 135, y: 1140, w: 8, h: 120 });
   stepWorld(blocked, { slashPressed: true }, STEP);
+  tick(blocked, 12);
   assert.equal(blocked.enemies[0].hp, blocked.enemies[0].maxHp);
 });
 
@@ -119,10 +123,10 @@ test('runes open only their required seals, persist across retry and gate option
   assert.equal(world.gates[0].open, true); assert.ok(!world.solids.includes(world.gates[0]));
   rewardPlayer(world, { type: 'treasure', itemId: 'tide-glass' }, 'rune:tide');
   assert.equal(p.shield, 20); assert.ok(!world.gates[1].open);
-  world.level.portals = [{ id: 'sealed-travel', x: p.x, y: p.y, w: 30, h: 60, requiresRelic: 'storm-seal', to: { x: 400, y: 1214 } }];
+  world.portals = [{ id: 'sealed-travel', x: p.x, y: p.y, w: 30, h: 60, requiresRelic: 'storm-seal', to: { x: 400, y: 1214 } }];
   assert.equal(interact(world), false);
   rewardPlayer(world, { type: 'treasure', itemId: 'storm-seal' }, 'rune:storm');
-  assert.equal(world.gates[1].open, true); assert.equal(interact(world), true);
+  assert.equal(world.gates[1].open, true); stepWorld(world, {}, STEP); assert.equal(p.x, 400 + 12 - p.w / 2);
   const retry = retryWorld(world); assert.ok(retry.gates.every(gate => gate.open));
   assert.equal(rewardPlayer(retry, { type: 'treasure', itemId: 'tide-glass' }, 'rune:tide'), false);
 });
@@ -130,7 +134,7 @@ test('runes open only their required seals, persist across retry and gate option
 test('Ember finisher burns a surviving foe and Storm dash kill restores a bounded amount of fuel', () => {
   const world = fixture('guard', 165), p = world.player, foe = world.enemies[0];
   world.collections.push('ember-heart', 'storm-seal'); p.combo = 1; p.comboWindow = 0.5;
-  stepWorld(world, { slashPressed: true }, STEP); assert.equal(p.combo, 2); assert.ok(foe.burn > 0);
+  stepWorld(world, { slashPressed: true }, STEP); tick(world, 16); assert.equal(p.combo, 2); assert.ok(foe.burn > 0);
   const before = foe.hp; tick(world, 15); assert.ok(foe.hp < before);
   const dash = fixture('guard', 185); dash.collections.push('storm-seal'); dash.player.fuel = 10; dash.enemies[0].hp = 30;
   stepWorld(dash, { move: 1, dashPressed: true }, STEP); assert.ok(dash.player.fuel >= 25 && dash.player.fuel < 26);
@@ -192,6 +196,7 @@ test('boss guard resists real ranged hits during warning and recovery rewards ac
       const shot = spawnProjectile(world, boss.x + 10, boss.y + 40, 0, 0, 'player'); shot.damage = 100;
     }
     const hp = boss.hp; stepWorld(world, { slashPressed: melee }, STEP);
+    if (melee) tick(world, 8);
     return { damage: hp - boss.hp, boss };
   };
   const warning = damage('charge', false), attack = damage('attack', false);

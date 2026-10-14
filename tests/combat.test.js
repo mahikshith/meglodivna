@@ -83,11 +83,14 @@ test('a blade swing hits each enemy once and a later swing can hit again', () =>
   const enemy = target(p.x + 40, p.y);
   world.enemies = [enemy];
   stepWorld(world, input({ slashPressed: true }), STEP);
+  assert.equal(enemy.hp, 100, 'anticipation is visible before contact');
+  tick(world, 8);
   assert.equal(enemy.hp, 73);
   tick(world, 25);
   assert.equal(enemy.hp, 73);
   tick(world, 12);
   stepWorld(world, input({ slashPressed: true }), STEP);
+  tick(world, 11);
   assert.equal(enemy.hp, 46);
   assert.equal(p.slashId, 2);
 });

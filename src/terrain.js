@@ -44,22 +44,21 @@ export function buildSolidTerrain(scene,solid,material='ruins'){
  if(platform){g.fillStyle(0x0b1420,.85);g.fillRect(x+3,y+h-5,w-6,5);g.fillStyle(p.stone,.8);g.fillTriangle(x+7,y+h,x+29,y+h,x+18,y+h+14);g.fillTriangle(x+w-29,y+h,x+w-7,y+h,x+w-18,y+h+14);}
  // Metal conduits have recessed plates and rivets, never bright stage-light beams.
  if(material==='metal'){for(let px=x+18;px<x+w-10;px+=92){g.fillStyle(0x151b26,.8);g.fillRect(px,y+capH+5,28,Math.min(9,Math.max(0,h-capH-9)));g.fillStyle(0xa7aa9c,.55);g.fillRect(px-7,y+5,3,3);}}
- if(scene.textures.exists('ln-platform')&&material!=='metal'){
-  const group=scene.add.container(0,0).setDepth(1);group.add(g);
+ if(scene.textures.exists('ln-platform')){
+  const group=scene.add.container(0,0).setDepth(1);
+  // Authored masonry covers the entire collision body, including conduit ledges.
+  if(!platform){
+   group.add(g);
+   group.add(scene.add.tileSprite(x,y,w,h,'ln-fx-stone').setOrigin(0).setAlpha(.72));
+  }else g.destroy();
+  const texture=material==='metal'?'ln-fx-platform':'ln-platform';
   if(platform){
-   const face=scene.add.image(x,y+2,'ln-platform').setOrigin(0).setDisplaySize(w,Math.min(92,w*.43));group.add(face);
-   const edge=scene.add.graphics();edge.lineStyle(2,solid.oneWay?0xd3bd86:0xbdc5ad,.9);edge.lineBetween(x,y,x+w,y);group.add(edge);
-   if(solid.oneWay){
-    const chains=scene.add.graphics();chains.lineStyle(2,0x7c8070,.65);
-    for(const px of [x+12,x+w-12])for(let py=y-80;py<y;py+=9)chains.strokeRect(px,py,3,6);
-    group.addAt(chains,0);
-   }else{
-    const support=scene.add.image(x+w*.25,y+h+7,'ln-root').setOrigin(.5,0).setScale(.55).setTint(0x7d9382).setAlpha(.65);group.addAt(support,0);
-   }
+   group.add(scene.add.image(x,y,texture).setOrigin(0).setDisplaySize(w,Math.min(100,w*.43)));
+   if(!solid.oneWay)group.addAt(scene.add.image(x+w*.25,y+h+7,'ln-root').setOrigin(.5,0).setScale(.55).setTint(0x7d9382).setAlpha(.65),0);
   }else if(solid.kind!=='ceiling'){
-   for(let px=x;px<x+w;px+=225){const length=Math.min(225,x+w-px);const face=scene.add.image(px,y+2,'ln-platform').setOrigin(0).setCrop(0,0,length,97).setAlpha(.9);group.add(face);}
-   const edge=scene.add.graphics();edge.lineStyle(2,0xbac2a8,.85);edge.lineBetween(x,y,x+w,y);group.add(edge);
+   for(let px=x;px<x+w;px+=225){const length=Math.min(225,x+w-px);group.add(scene.add.image(px,y,'ln-platform').setOrigin(0).setCrop(0,0,length,97).setAlpha(.92));}
   }
+  const edge=scene.add.graphics();edge.lineStyle(1,solid.oneWay?0xd3bd86:0xbdc5ad,.65);edge.lineBetween(x,y,x+w,y);group.add(edge);
   return group;
  }
  return g;

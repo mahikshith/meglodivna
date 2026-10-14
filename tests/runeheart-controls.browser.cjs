@@ -3,8 +3,11 @@ const { chromium } = require('playwright');
 const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
+const sourceFiles = ['index.html', 'src/style.css', 'src/ui.js', 'src/input.js', 'src/catalog.js'];
+const hash = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 
-const output = path.resolve('artifacts/runeheart/controls');
+const output = path.resolve('artifacts/lantern-motion/qa/controls');
 const baseURL = process.env.GAME_URL || 'http://127.0.0.1:5173';
 const source = fs.readFileSync('index.html', 'utf8').replace('<script type="module" src="/src/main.js"></script>', `
 <link rel="stylesheet" href="/src/style.css" />
@@ -29,18 +32,20 @@ const atlas=await fetch('/reference/atlas.json').then(response=>response.json())
 const portraitFrame=atlas.frames['ref-face-mage']?.frame, portraitCanvas=document.createElement('canvas');
 let portraitURL;
 if(portraitFrame){portraitCanvas.width=portraitFrame.w;portraitCanvas.height=portraitFrame.h;portraitCanvas.getContext('2d').drawImage(atlasImage,portraitFrame.x,portraitFrame.y,portraitFrame.w,portraitFrame.h,0,0,portraitFrame.w,portraitFrame.h);portraitURL=portraitCanvas.toDataURL();}
-let pauseCount=0,paletteCount=0;
+let pauseCount=0,paletteCount=0,settingsCount=0;
 const controls=new Controls(touch,()=>{pauseCount++;controls.clear();},()=>{},()=>{});
+touch.addEventListener('open-settings',()=>{settingsCount++;document.getElementById('settings-panel').showModal();});
+document.getElementById('settings-close').addEventListener('click',()=>document.getElementById('settings-panel').close());
 const ui=createCampaignUI(catalog,{onOpen(){paletteCount++;controls.clear();},onClose(){controls.clear();},onEquip(kind,id){world.player[kind]=id;ui.renderHUD(world);},iconUrl(key){return key.startsWith('portrait-')?portraitURL:undefined;}});
 ui.renderHUD(world);
-window.__TOUCH={controls,ui,world,get pauseCount(){return pauseCount},get paletteCount(){return paletteCount}};
+window.__TOUCH={controls,ui,world,get pauseCount(){return pauseCount},get paletteCount(){return paletteCount},get settingsCount(){return settingsCount}};
 function frame(){controls.read(false);requestAnimationFrame(frame)}requestAnimationFrame(frame);
 </script>`);
 
 async function run() {
   fs.mkdirSync(output, { recursive: true });
   const browser = await chromium.launch({ headless: true, executablePath: process.env.CHROMIUM_EXECUTABLE || undefined });
-  const report = { kind: 'isolated control/UI fixtures using real Chromium touch events', physicalDeviceTest: false, sizes: [], errors: [] };
+  const report = { kind: 'isolated control/UI fixtures using real Chromium touch events', physicalDeviceTest: false, sizes: [], errors: [], started: new Date().toISOString(), sourceHashes: Object.fromEntries(sourceFiles.map(file => [file, hash(file)])) };
   try {
     for (const viewport of [{ width: 844, height: 480 }, { width: 740, height: 360 }, { width: 640, height: 360 }, { width: 390, height: 844 }]) {
       const context = await browser.newContext({ viewport, isMobile: true, hasTouch: true, deviceScaleFactor: 1 });
@@ -54,7 +59,7 @@ async function run() {
       assert.equal(await page.locator('[data-rune="ember-heart"]').getAttribute('data-recovered'),'true');assert.equal(await page.locator('[data-rune="tide-glass"]').getAttribute('data-recovered'),'false');
       assert.equal(await page.locator('#rune-status').getAttribute('aria-label'),'Rune stones: 1 of 3 recovered');
       for(const id of ['ember-heart','tide-glass','storm-seal'])assert.equal(await page.locator(`[data-rune="${id}"]`).isVisible(),true,`${id} is visibly rendered`);
-      assert.ok((await page.locator('.vitals').boundingBox()).height<=50,'compact resource block avoids spawn hero');
+      assert.ok((await page.locator('.vitals').boundingBox()).height<=72,'resources and soul balance remain a compact edge block');
       const touch = (type, point) => cdp.send('Input.dispatchTouchEvent', { type, touchPoints: point ? [point] : [] });
       const read = () => page.evaluate(() => window.__TOUCH.controls.read());
       const bounds = await page.evaluate(() => {
@@ -65,7 +70,10 @@ async function run() {
         assert.ok(button.w >= 48 && button.h >= 48, `${button.id} target ≥48px`);
         assert.ok(button.y >= bounds.game.y && button.bottom <= bounds.game.bottom, `${button.id} overlays full-height canvas`);
         assert.ok(button.x >= 0 && button.right <= viewport.width && button.bottom <= viewport.height, `${button.id} within screen`);
-        assert.equal(button.text, '', `${button.id} icon-only face`);
+        if (['touch-pause','touch-settings','touch-gear'].includes(button.id)) {
+          assert.ok(button.y < 64, `${button.id} remains in the top utility cluster`);
+          assert.ok(button.text.length > 0 && button.text.length <= 8, `${button.id} has a short readable label`);
+        } else assert.equal(button.text, '', `${button.id} action face stays icon-only`);
       }
       for (let i = 0; i < bounds.buttons.length; i++) for (let j = i + 1; j < bounds.buttons.length; j++) {
         const a = bounds.buttons[i], b = bounds.buttons[j];
@@ -127,6 +135,19 @@ async function run() {
       assert.equal(await page.evaluate(()=>localStorage.getItem('runeheart-touch-opacity')),'75');assert.equal(await page.locator('#touch-jump').evaluate(button=>getComputedStyle(button).opacity),'0.75');
       await page.screenshot({ path: path.join(output, `${viewport.width}x${viewport.height}-gear.png`) });
       await page.locator('#catalogue-close').click();
+      await touch('touchStart', attack);
+      await touch('touchStart', center('touch-settings', 8));
+      assert.equal(await page.locator('#settings-panel').evaluate(dialog => dialog.open), true, 'top settings works with another finger holding attack');
+      assert.equal(await page.evaluate(() => window.__TOUCH.controls.pointers.size), 0);
+      await touch('touchCancel');
+      await page.locator('#settings-close').click();
+      await touch('touchStart', attack);
+      await touch('touchStart', center('touch-pause', 9));
+      assert.equal(await page.evaluate(() => window.__TOUCH.pauseCount), 1, 'top pause works with another finger holding attack');
+      assert.equal(await page.evaluate(() => window.__TOUCH.controls.pointers.size), 0);
+      await touch('touchCancel');
+      await page.evaluate(() => { const f=window.__TOUCH;f.world.npcs=[];f.world.level.portals=[{x:f.world.player.x,y:f.world.player.y}];f.ui.renderHUD(f.world); });
+      assert.equal(await page.locator('#touch').getAttribute('data-interact'), 'false', 'automatic portal never overrides power with an interact prompt');
       await page.evaluate(() => window.__TOUCH.ui.renderStory({npcId:'fixture-warden',portrait:'mira',index:0,lines:[{speaker:'MIRA',text:'The tide is rising. I can open the sanctuary, but the engine needs your last charge.'}],choices:[{id:'help',label:'Give her a charge and open the sanctuary'},{id:'refuse',label:'Keep the charge. Find another route.'}]}));
       assert.ok(parseFloat(bounds.font) >= 16, 'dialogue body ≥16px');
       assert.equal(await page.locator('#story-choices button').count(), 2);
@@ -148,10 +169,13 @@ async function run() {
         for(const box of await page.locator('#start,#difficulty,#world-select').evaluateAll(items=>items.map(item=>{const r=item.getBoundingClientRect();return{id:item.id,top:r.top,bottom:r.bottom};})))assert.ok(box.top>=0&&box.bottom<=viewport.height,`${box.id} visible without menu scrolling`);
       }
       await page.screenshot({path:path.join(output,`${viewport.width}x${viewport.height}-menu.png`)});
-      report.sizes.push({ viewport, bounds, checks: ['100/100/92px main targets', 'separated contextual power', 'full-height world behind controls', 'simultaneous move/jump/fire', 'immediate slash', 'gun/jet icon state feedback', 'independent release', 'floating neutral origin and cancel', 'power tap vs palette hold', 'gear shortcut', 'modal cleanup', '16px dialogue/52px choices'] });
+      report.sizes.push({ viewport, bounds, checks: ['100/100/92px main targets', '48px top utilities with 8px gaps', 'separated contextual power', 'full-height world behind controls', 'simultaneous move/jump/fire', 'immediate slash', 'gun/jet icon state feedback', 'independent release', 'floating neutral origin and cancel', 'power tap vs palette hold', 'gear shortcut', 'second-finger Settings/Pause during held attack', 'portal overlap keeps cast action', 'modal cleanup', '16px edge dialogue/52px choices'] });
       await context.close();
     }
     assert.deepEqual(report.errors, []);
+    report.finished = new Date().toISOString();
+    report.sourceUnchanged = sourceFiles.every(file => hash(file) === report.sourceHashes[file]);
+    assert.ok(report.sourceUnchanged, 'Sources changed during control checks; rerun the finished revision');
     report.passed=true; fs.writeFileSync(path.join(output, 'report.json'), JSON.stringify(report,null,2));
     console.log(JSON.stringify({passed:true,sizes:report.sizes.map(size=>size.viewport),runtimeErrors:report.errors.length,output},null,2));
   } finally { await browser.close(); }
