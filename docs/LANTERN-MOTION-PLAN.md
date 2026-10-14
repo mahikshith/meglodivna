@@ -35,5 +35,5 @@ Shared contracts are agreed before overlapping integration. Preserve stable exis
 - Plan and asset-production memory written before implementation.
 - Tasks 1-8 implemented. Approved art retained; full asset-consistency review also replaced wards, projectiles, lever and relay graphics.
 - Task 9: 171 unit tests, nine legal simulation routes and 17 isolated visual fixtures pass. Final browser reports bind source hashes; physical-device claims remain excluded.
-- Task 10: version 0.7.0 / Android code 8 prepared; signed CI delivery and README update follow uploaded-artifact verification.
+- Task 10: version 0.7.0 / Android code 8 built, linted, signed, uploaded and downloaded again successfully. CI 38624576624 verifies source a62634b and all 52 embedded files; README points to the exact verified release.
 - See LANTERN-MOTION-VALIDATION.md for critique, evidence categories and remaining limitations.

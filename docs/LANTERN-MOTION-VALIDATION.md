@@ -26,3 +26,7 @@ The revision addresses those causes while retaining the approved artwork and col
 ## Remaining human/device assessment
 
 This is a test prerelease. No physical Android performance, thermals, comfort or audio mix measurement is claimed. Portrait retains the existing landscape playfield presentation. Dedicated firearm, hurt and death strips remain documented pose reuse, and the new enemies still have relatively short authored cycles. Human playtesting must judge pacing, difficulty, animation naturalness and whether the overall experience merits a paid release.
+
+## Verified Android delivery
+
+[v0.7.0-lantern](https://github.com/mahikshith/meglodivna/releases/tag/v0.7.0-lantern), code 8, passed [CI build and publication](https://github.com/mahikshith/meglodivna/actions/runs/38624576624). Source `a62634b7109a3de0e1c63937d9a5c276191f211a`; APK 8,014,390 bytes, SHA-256 `9df425e4ba176b308fca66441f1d545d8ce958d198df9bb7931008ea456bee28`. All 52 embedded files matched production output. Persistent signer verified, and the published APK was downloaded and compared byte for byte in CI. The [signed payload report](https://github.com/mahikshith/meglodivna/releases/download/v0.7.0-lantern/android-report.json) contains full file hashes. Local delivery metadata is in `artifacts/lantern-motion/android/delivery.json`.

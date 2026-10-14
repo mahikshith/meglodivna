@@ -1,0 +1,16 @@
+{
+  "version": "0.7.0-lantern",
+  "versionCode": 8,
+  "sourceCommit": "a62634b7109a3de0e1c63937d9a5c276191f211a",
+  "ci": "https://github.com/mahikshith/meglodivna/actions/runs/38624576624",
+  "release": "https://github.com/mahikshith/meglodivna/releases/tag/v0.7.0-lantern",
+  "apk": "https://github.com/mahikshith/meglodivna/releases/download/v0.7.0-lantern/ASH-SIGNAL-Lantern-v0.7.0.apk",
+  "bytes": 8014390,
+  "sha256": "9df425e4ba176b308fca66441f1d545d8ce958d198df9bb7931008ea456bee28",
+  "verifiedEmbeddedFiles": 52,
+  "certificateSha256": "d5957205feb0467218e7a0483387e65a347516bbb6511c2e7b5007ff165cc437",
+  "uploadedRedownloadCompared": true,
+  "physicalDeviceTested": false,
+  "report": "https://github.com/mahikshith/meglodivna/releases/download/v0.7.0-lantern/android-report.json",
+  "evidence": "Successful CI build/signature/payload verification and prerelease redownload comparison; GitHub release asset digest equals CI-reported SHA256."
+}
