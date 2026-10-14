@@ -91,6 +91,10 @@ class Soulforge extends Phaser.Scene {
       const view=buildSolidTerrain(this,s,surface);this.staticViews.push({view,x:s.x,w:s.w,solidId:s.id});
     }
     for(const landmark of LEVEL.landmarks||[]){
+      if(landmark.type==='console'){
+        const view=this.add.image(landmark.x,landmark.y,'tech-console').setOrigin(.5,1).setDepth(-1).setAlpha(.82).setScale(1.45);
+        this.staticViews.push({view,x:landmark.x-90,w:180});continue;
+      }
       const decor={vault:'crystal',tower:'pillar',altar:'statue',arch:'arch',lantern:'torch',pipes:'pillar'}[landmark.type];
       const key=`ref-prop-${decor}`;if(!decor||!this.referenceArt.frames[key])continue;
       const view=this.add.image(landmark.x,landmark.y,this.referenceArt.frames[key]?.atlasKey||this.referenceArt.atlasKey,key).setOrigin(.5,1).setDepth(-2).setAlpha(.52).setScale(landmark.type==='tower'?3.5:1.8);

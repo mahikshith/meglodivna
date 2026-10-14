@@ -26,7 +26,7 @@ function createRealm(id,d) {
   if(kind==='refuge'){
    const s=ground('sanctuary',x,floor,950);path(s,x+130);relay(x+100,floor,label);
    const npc={id:`${id}-mira`,name:'MIRA · LANTERN KEEPER',skin:'npc-mira',portrait:'portrait-mira',x:x+330,y:floor-46,lines:[{speaker:'MIRA',text:'The engine is burning people into light. My brother is still inside.'},{speaker:'AETHER',text:'Then we cut its heart out. How do I get past the seals?'},{speaker:'MIRA',text:'Three stones. Ember in the keeper’s hall. Tide in the vault. Storm above the pipes. Take what you need.'}],choices:[{id:`${id}-ward`,label:'Take guardian plate',reward:{type:'armor',itemId:'bulwark'}},{id:`${id}-soul`,label:'Learn Soul Siphon',reward:{type:'spell',itemId:'siphon'}}]};
-   w.npcs.push(npc);path(s,x+340,{npcId:npc.id});cache(s,x+600,[{type:'shield',value:30},{type:'mana',value:30}]);pickup('spell',x+760,floor-28,'wolf');path(s,x+860);x+=950;
+   w.npcs.push(npc);path(s,x+340,{npcId:npc.id});w.landmarks.push({type:'console',x:x+485,y:floor,seed:index});cache(s,x+600,[{type:'shield',value:30},{type:'mana',value:30}]);pickup('spell',x+760,floor-28,'wolf');path(s,x+860);x+=950;
   }else if(['warden','hex','regent'].includes(kind)){
    const s=ground('arena',x,floor,1400),n=['warden','hex','regent'].indexOf(kind),bossId=`${id}-${kind}`;relay(x+75,floor,label);pickup('health',x+150,floor-28,null,55);pickup('mana',x+195,floor-28,null,70);
    w.bosses.push({id:bossId,name:label.toUpperCase(),type:kind,x:x+810,y:floor-(n===2?132:120),w:n===2?112:96,h:n===2?132:120,hp:[520,700,950][n],floorY:floor,triggerX:x+300,arenaStart:x+200,arenaEnd:x+1250,shield:35});path(s,x+320,{bossId});block('arena-flank',x+380,floor-115,180,24,true);block('arena-flank',x+1000,floor-130,180,24,true);
