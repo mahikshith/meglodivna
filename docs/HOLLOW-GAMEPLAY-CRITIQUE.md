@@ -29,3 +29,11 @@ Fixed 120 Hz simulation, swept collision, coyote time, buffered jump, variable j
 ## Remaining critique evidence
 
 Human first-time playtesting is still needed to assess confusion, engagement, frustration, encounter enjoyment and willingness to pay. Real Android tests are needed for thumb reach, latency, sustained frame pacing and thermal behavior. Automated completion and attractive screenshots cannot establish those outcomes.
+
+## Reassessment after the Lantern rebuild
+
+The art direction, menu continuity, attack identity, exhaust/impact feedback and opening lesson are substantially clearer in the new captures. Input testing also uncovered and fixed secondary-finger Pause/Gear activation. Original generated actors, companions, NPCs and scenery replace the most visible mismatches. Enemy death and portal lifecycle checks prevent the old art from reappearing during transitions.
+
+I would still hold a paid release. The optimized routes finish in roughly 76–90 simulated seconds and several guardians can die before showing their full pattern; this warrants human encounter-pacing tests, not an automatic health increase. A long 6,195px checkpoint interval remains because changing indexed checkpoints safely needs a separate migration/pacing decision. Four-pose creature sequences and reused hurt/death/fire states are visibly less expressive than a fully authored animation set. Repeated terrain modules and retained equipment/effect artwork also limit visual variety within this chapter.
+
+The next review should stay inside Hollow Sanctuary: observe new players through the first ten minutes, record failed jumps and unreadable attacks, test repeated deaths around the long recovery interval, and measure real Android controls/frame pacing. Improve those specific findings before approving another environment. The current deliverable is a more coherent test build, not proof that players will pay for it.

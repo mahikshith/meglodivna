@@ -26,7 +26,7 @@ Work through the staged checklist below. Use bounded specialist agents with expl
 
 ## Stage 1 Direction and baseline
 
-Owner: integration lead. Status: audited; implementation pending.
+Owner: integration lead. Status: complete; see the execution record below.
 
 1. Inspect current branch, game architecture, save format, input mappings, renderer, art manifests, tests, and Android workflow.
 2. Define the fantasy: Aether follows Mira's lantern into a sanctuary that turns souls into light, finds her brother, and breaks the engine's hold.

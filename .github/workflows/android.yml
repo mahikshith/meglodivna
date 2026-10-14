@@ -95,12 +95,13 @@ jobs:
           cp release-apk/app-debug.apk release-upload/ASH-SIGNAL-Lantern-v0.6.0.apk
           cp release-evidence/artifacts/android-report.json release-upload/android-report.json
           python - <<'PY'
-          import hashlib, json
+          import hashlib, json, os
           from pathlib import Path
           apk = Path('release-upload/ASH-SIGNAL-Lantern-v0.6.0.apk')
           report = json.loads(Path('release-upload/android-report.json').read_text())
           assert hashlib.sha256(apk.read_bytes()).hexdigest() == report['sha256']
           assert report['version'] == '0.6.0-lantern' and report['versionCode'] == 7
+          assert os.environ['RELEASE_TAG'] == 'v' + report['version'], 'Release tag and verified APK version differ'
           Path('release-upload/SHA256SUMS.txt').write_text(report['sha256'] + '  ' + apk.name + '\n')
           PY
           gh release create "$RELEASE_TAG" release-upload/* --verify-tag --prerelease --title "The Last Lantern v0.6.0 — Hollow Sanctuary test build" --notes-file docs/LANTERN-RELEASE.md
