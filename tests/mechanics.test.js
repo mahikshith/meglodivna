@@ -165,9 +165,9 @@ test('ordinary destructible crates award authored recovery contents exactly once
   state.props = [crate];
   stepWorld(state, { shoot: true }, STEP);
   assert.equal(crate.dead, true);
-  assert.equal(state.player.hp, 55);
+  assert.equal(state.player.hp, 40 + 15 * state.rules.recovery);
   assert.equal(state.player.fuel, 30);
-  assert.ok(state.player.mana >= 45 && state.player.mana < 46);
+  assert.ok(state.player.mana >= 20 + 25 * state.rules.recovery && state.player.mana < 21 + 25 * state.rules.recovery);
   assert.equal(state.player.shield, 12);
   assert.equal(rewardPlayer(state, { type: 'health', value: 15 }, 'prop:supply-crate:0'), false);
 });

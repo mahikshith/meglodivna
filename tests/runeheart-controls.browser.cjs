@@ -63,7 +63,7 @@ async function run() {
       });
       for (const button of bounds.buttons) {
         assert.ok(button.w >= 48 && button.h >= 48, `${button.id} target ≥48px`);
-        assert.ok(button.y >= bounds.game.bottom, `${button.id} outside canvas`);
+        assert.ok(button.y >= bounds.game.y && button.bottom <= bounds.game.bottom, `${button.id} overlays full-height canvas`);
         assert.ok(button.x >= 0 && button.right <= viewport.width && button.bottom <= viewport.height, `${button.id} within screen`);
         assert.equal(button.text, '', `${button.id} icon-only face`);
       }
@@ -148,7 +148,7 @@ async function run() {
         for(const box of await page.locator('#start,#difficulty,#world-select').evaluateAll(items=>items.map(item=>{const r=item.getBoundingClientRect();return{id:item.id,top:r.top,bottom:r.bottom};})))assert.ok(box.top>=0&&box.bottom<=viewport.height,`${box.id} visible without menu scrolling`);
       }
       await page.screenshot({path:path.join(output,`${viewport.width}x${viewport.height}-menu.png`)});
-      report.sizes.push({ viewport, bounds, checks: ['100/100/92px main targets', 'separated contextual power', 'all buttons outside canvas', 'simultaneous move/jump/fire', 'immediate slash', 'gun/jet icon state feedback', 'independent release', 'floating neutral origin and cancel', 'power tap vs palette hold', 'gear shortcut', 'modal cleanup', '16px dialogue/52px choices'] });
+      report.sizes.push({ viewport, bounds, checks: ['100/100/92px main targets', 'separated contextual power', 'full-height world behind controls', 'simultaneous move/jump/fire', 'immediate slash', 'gun/jet icon state feedback', 'independent release', 'floating neutral origin and cancel', 'power tap vs palette hold', 'gear shortcut', 'modal cleanup', '16px dialogue/52px choices'] });
       await context.close();
     }
     assert.deepEqual(report.errors, []);

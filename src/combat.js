@@ -304,8 +304,9 @@ export function interact(world) {
     if (boss) { boss.shield = 0; boss.weakened = 8; boss.emotion = 'weakened'; emit(world, 'weaken', boss.x, boss.y); }
     object.used = true; return true;
   }
+  const reunion=object.id==='soulforge-mira'&&world.progress.claimed.includes('npc:soulforge-orren');
   world.story = { npcId: object.id, speaker: object.name, portrait: object.portrait || object.id,
-    lines: Array.isArray(object.lines) && object.lines.length ? object.lines : [{ speaker: object.name, text: 'Keep your soul unbound.' }],
+    lines: reunion?[{speaker:'AETHER',text:'Orren is alive. He showed me how to break the Keeper.'},{speaker:'MIRA',text:'Then bring him home. I will keep this lantern burning until you return.'}]:Array.isArray(object.lines) && object.lines.length ? object.lines : [{ speaker: object.name, text: 'Keep your soul unbound.' }],
     choices: world.progress.claimed.includes(`npc:${object.id}`) ? [] : object.choices || [], index: 0 };
   emit(world, 'story', object.x, object.y, { npcId: object.id });
   return true;
@@ -439,7 +440,7 @@ function enemyFire(world, enemy, missile = false, spread = 0, kind = 'bullet') {
 function updateEnemy(world, enemy, dt, solids) {
   const p = world.player, tick = dt * (enemy.slow > 0 ? 0.3 : 1);
   const dx = p.x + p.w / 2 - enemy.x - enemy.w / 2, distance = Math.abs(dx), toward = Math.sign(dx) || enemy.facing || 1;
-  const alert = distance < 900 && Math.abs(p.y - enemy.y) < 420 && p.stealth <= 0;
+  const alert = distance < 600 && Math.abs(p.y - enemy.y) < 420 && p.stealth <= 0;
   enemy.flash = Math.max(0, (enemy.flash || 0) - dt); enemy.dashTime = Math.max(0, (enemy.dashTime || 0) - tick);
   enemy.stagger = Math.max(0, (enemy.stagger || 0) - dt); enemy.attackTime = Math.max(0, (enemy.attackTime || 0) - tick);
   enemy.jumpCooldown = Math.max(0, (enemy.jumpCooldown || 0) - tick);

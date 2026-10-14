@@ -2,11 +2,13 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(Math.max(a,b),v));
 // A stable combat view: no attack zoom-in. Keep the player and a nearby threat inside a safe frame.
 export function cameraTarget(player,level,width,height,threat=null){
  const px=player.x+player.w/2,py=player.y+player.h/2;
- let focusX=px+clamp(player.vx*.2,-90,90),focusY=py+clamp(player.vy*.10,-65,85),zoom=1;
+ // Leave room below an airborne courier so the landing route stays readable.
+ let focusX=px+clamp(player.vx*.2,-90,90),focusY=py+clamp(Math.abs(player.vy)*.17,0,90),zoom=1;
  if(threat&&!threat.dead&&Math.abs(threat.x-player.x)<800){
   const tx=threat.x+threat.w/2,ty=threat.y+threat.h/2;
   zoom=clamp(Math.min((width-150)/(Math.abs(tx-px)+threat.w),(height-110)/(Math.abs(ty-py)+Math.max(player.h,threat.h))),.72,1);
   focusX=(px+tx)/2;focusY=(py+ty)/2+20;
+  if(player.vy<0)focusY+=Math.min(60,-player.vy*.1);
  }
  const vw=width/zoom,vh=height/zoom;
  // A very high jet ascent can put a boss outside any readable shared view. Prioritize the

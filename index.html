@@ -16,6 +16,7 @@
         <button id="armory" aria-haspopup="dialog">ARMORY</button>
         <button id="sound" aria-pressed="false">SOUND ON</button>
         <button id="motion" aria-pressed="false">FX FULL</button>
+        <button id="settings" aria-haspopup="dialog">SETTINGS</button>
         <button id="fullscreen">FULLSCREEN</button>
         <button id="pause" disabled>PAUSE <kbd>ESC</kbd></button>
       </nav>
@@ -43,6 +44,7 @@
           <div class="title-rule"></div>
           <p id="menu-copy">Ancient souls power the machines of a dead empire.<br>Choose a fractured realm. Break its tyrant's claim.</p>
           <div class="menu-launch">
+          <button id="menu-settings" class="menu-settings" aria-haspopup="dialog">SETTINGS / AUDIO</button>
           <label class="difficulty-label" for="world-select">FRACTURED REALM</label>
           <select id="world-select" aria-label="World"><option value="soulforge">Soulforge</option></select>
           <label class="difficulty-label" for="difficulty">THREAT LEVEL</label>
@@ -89,6 +91,15 @@
         <p id="catalogue-note" class="catalogue-note">Discover caches and help survivors to unlock equipment.</p>
         <div class="control-options"><label for="control-opacity">Button opacity</label><input id="control-opacity" type="range" min="40" max="100" step="5" value="80" /><output id="control-opacity-value" for="control-opacity">80%</output></div>
         <div id="catalogue-grid" class="catalogue-grid" role="tabpanel" tabindex="0"></div>
+      </dialog>
+      <dialog id="settings-panel" class="settings-panel" aria-labelledby="settings-title">
+        <h2 id="settings-title">FIELD SETTINGS</h2>
+        <p>Set the soundtrack and combat effects separately. Changes save on this device.</p>
+        <label for="music-volume">Music <output id="music-volume-value" for="music-volume">70%</output></label>
+        <input id="music-volume" type="range" min="0" max="100" step="5" value="70" />
+        <label for="sfx-volume">Sound effects <output id="sfx-volume-value" for="sfx-volume">80%</output></label>
+        <input id="sfx-volume" type="range" min="0" max="100" step="5" value="80" />
+        <button id="settings-close" class="primary">RETURN TO GAME</button>
       </dialog>
       <dialog id="story-panel" class="story-panel" aria-labelledby="story-speaker" aria-describedby="story-text">
         <img id="story-portrait" alt="" width="96" height="96" /><div class="story-content"><div class="eyebrow">A VOICE IN THE FRONTIER</div><h2 id="story-speaker">MIRA</h2><p id="story-text"></p><div id="story-choices" class="story-choices"></div><button id="story-next" class="story-next">Continue →</button></div>

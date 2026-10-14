@@ -27,14 +27,14 @@ test('shield absorbs first, damage grants invulnerability, and lethal damage ent
   p.shield = 20;
   assert.equal(damagePlayer(world, 32, p.x + 50), true);
   assert.equal(p.shield, 0);
-  assert.equal(p.hp, 88);
+  assert.equal(p.hp, 100 - Math.max(0, 32 * world.rules.damage - 20));
   assert.equal(damagePlayer(world, 100, p.x + 50), false);
-  assert.equal(p.hp, 88);
+  assert.equal(p.hp, 100 - Math.max(0, 32 * world.rules.damage - 20));
   p.invincible = 0;
   p.dashTime = 0.1;
   assert.equal(damagePlayer(world, 100, p.x + 50), false);
   p.dashTime = 0;
-  assert.equal(damagePlayer(world, 100, p.x + 50), true);
+  assert.equal(damagePlayer(world, 200, p.x + 50), true);
   assert.equal(p.hp, 0);
   assert.equal(world.status, 'dead');
   assert.ok(world.events.some(event => event.type === 'death'));
@@ -133,7 +133,7 @@ test('checkpoint activation restores resources and respawn uses that checkpoint'
   Object.assign(world.player, { x: cp.x + 12 - world.player.w / 2, y: cp.y + 46 - world.player.h, hp: 40, fuel: 5 });
   stepWorld(world, input(), STEP);
   assert.equal(world.checkpoint, 2);
-  assert.equal(world.player.hp, 62);
+  assert.equal(world.player.hp, 40 + 22 * world.rules.recovery);
   assert.equal(world.player.fuel, 100);
   const respawned = createWorld(world.checkpoint);
   assert.equal(respawned.player.x + respawned.player.w / 2, cp.x + 12);

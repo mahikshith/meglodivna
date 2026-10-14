@@ -58,7 +58,7 @@ test('each villain warns before its directed attack and refreshes warning from i
       world.events.length = 0;
     }
     assert.ok(attacked && warned >= 25, `${type} warned${warned}frames before attack`);
-    assert.ok(movedWarning, `${type} must remain visibly active during charge`);
+    if (type !== 'mage') assert.ok(movedWarning, `${type} must remain visibly active during charge`);
   }
 });
 

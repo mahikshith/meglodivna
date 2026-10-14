@@ -1,5 +1,11 @@
 # Runeheart v0.5 validation
 
+## Local playable-slice update — 14 October 2026
+
+The published v0.5 evidence below applies to the older APK. The current `codex/runeheart-rebuild` working tree has an unpublished Soulforge readability, balance, story, and audio update described in [the playable-slice review](docs/PLAYABLE-SLICE-REVIEW.md). `node --test --test-isolation=none tests/*.test.js` passed 146/146; `node scripts/combat-route.mjs forge soulforge` reached victory with all three guardian seals and the Orren/Mira conversations. A 740 × 360 touch-emulated Chrome capture showed a full-height canvas, visible ground during a jump, reachable controls and launch button, an unclipped settings return button, and zero browser exceptions. The four screenshots and capture script are in `artifacts/runeheart/` and `scripts/capture-mobile.mjs`.
+
+The production `npm run build` was blocked locally by a missing `@rollup/rollup-win32-x64-msvc` optional binary after registry downloads failed. A direct esbuild bundle was used only for browser inspection. No new Android APK or physical phone test was produced for this update; the Latest APK link still identifies the previous verified delivery.
+
 This document describes the new rebuild, not the older v0.3/v0.4 evidence. Source work is on `codex/runeheart-rebuild`, merged to `main` for Android delivery. APK publication details are recorded in `artifacts/android-report.json` after release verification.
 
 ## Physics and legal campaigns

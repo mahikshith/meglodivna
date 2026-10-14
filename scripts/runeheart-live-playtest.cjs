@@ -26,7 +26,7 @@ async function run() {
       const settle=()=>page.waitForFunction(()=>window.__ASH.world.player.grounded&&window.__ASH.mode==='playing',null,{timeout:5000});
       const layout=async()=>{
         const value=await page.evaluate(()=>{const c=document.querySelector('#game canvas').getBoundingClientRect(),v=document.querySelector('.vitals').getBoundingClientRect();return{canvas:{x:c.x,y:c.y,w:c.width,h:c.height,bottom:c.bottom},vitals:{x:v.x,y:v.y,w:v.width,h:v.height},buttons:[...document.querySelectorAll('#touch button')].map(b=>{const r=b.getBoundingClientRect();return{id:b.id,x:r.x,y:r.y,w:r.width,h:r.height,bottom:r.bottom,right:r.right}})};});
-        assert.ok(value.vitals.h<=50,'resource panel stays compact');for(const button of value.buttons){assert.ok(button.y>=value.canvas.bottom-1,`${button.id} outside actual game canvas`);assert.ok(button.bottom<=viewport.height&&button.x>=0&&button.right<=viewport.width,`${button.id} on screen`);}
+         assert.ok(value.vitals.h<=50,'resource panel stays compact');assert.ok(value.canvas.h>=viewport.height-2,'world fills the touch viewport');for(const button of value.buttons){assert.ok(button.y>=value.canvas.y&&button.bottom<=value.canvas.bottom,`${button.id} overlays the game world`);assert.ok(button.bottom<=viewport.height&&button.x>=0&&button.right<=viewport.width,`${button.id} on screen`);}
         return value;
       };
       await page.selectOption('#difficulty','forge');await capture('menu');await page.locator('#start').click();await settle();await page.waitForTimeout(300);

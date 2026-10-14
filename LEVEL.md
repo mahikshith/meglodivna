@@ -28,7 +28,7 @@ Room metadata records the exit floor after elevation changes. Tools placing a ch
 
 ## Duration and difficulty evidence
 
-The clean legal driver uses recorded movement, combat, equipment and dialogue inputs, including actual deaths/retries. Current optimized Forge runs complete in approximately 100–106 simulated seconds; the four Runeheart tiers range from about 97 to 177 seconds. These measurements do **not** meet a guaranteed five-minute minimum and do not estimate a first-time human playthrough. Optional discovery and experimentation are unmeasured. The 15-minute Forge deadline is an upper pressure limit, not a claim about content duration.
+The clean legal driver uses recorded movement, combat, equipment and dialogue inputs, including actual deaths/retries. The previously recorded optimized Forge runs completed in approximately 100–106 simulated seconds; the four Runeheart tiers ranged from about 97 to 177 seconds. Those measurements predate the current balance changes and do **not** estimate a first-time human playthrough. Optional discovery and experimentation are unmeasured. The working tree's 26-minute Forge deadline is an upper pressure limit, not a claim about content duration.
 
 Ember, Forge, Inferno and Extinction change health/damage pressure, attack timing, resources and deadline. Extinction's recorded route needs retries. Automated victory proves reachability and survival under recorded controls, not subjective fairness or enjoyment.
 

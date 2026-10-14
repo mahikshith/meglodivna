@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { LEVEL, LEVELS, WORLD_LIST, getLevel, createEnemies } from '../src/level.js';
 import { CATALOG } from '../src/catalog.js';
-import { createWorld } from '../src/combat.js';
+import { createWorld, interact, stepWorld, STEP } from '../src/combat.js';
 
 test('five selectable worlds have independent authored layouts and stable metadata', () => {
   assert.deepEqual(Object.keys(LEVELS), ['soulforge','tide','pyre','neon','veil']);
@@ -65,4 +65,30 @@ test('unique world mechanics are present in actionable data rather than menu des
   const witch = LEVELS.veil.npcs.find(n => n.id === 'veil-ysra'), pact = witch.choices.find(c => c.id === 'veil-pact');
   assert.equal(pact.cost.hp, 25);
   assert.ok(LEVELS.veil.enemyPortals.some(p => p.id === pact.effect.enemyPortalId && p.requiresClaim === 'choice:veil-pact'));
+});
+
+test('the lantern refuge gives a summon before the first exposed crossing', () => {
+  const world = LEVELS.soulforge;
+  const wolf = world.pickups.find(pickup => pickup.type === 'spell' && pickup.itemId === 'wolf');
+  assert.ok(wolf && wolf.x < world.rooms[1].x);
+  assert.ok(world.npcs.some(npc => npc.x < wolf.x));
+  const orren = world.npcs.find(npc => npc.id === 'soulforge-orren');
+  assert.ok(orren && orren.x < world.bosses[0].x);
+  assert.deepEqual(orren.choices.map(choice => choice.reward.type), ['spell', 'shield']);
+});
+
+test('Mira can finish the opening conversation before distant foes attack', () => {
+  const world = createWorld(0, { worldId: 'soulforge', difficulty: 'forge' });
+  world.player.x = world.npcs[0].x;
+  for (let frame = 0; frame < 5 / STEP; frame++) stepWorld(world, {}, STEP);
+  assert.equal(world.player.hp, world.player.maxHp);
+  assert.equal(world.projectiles.filter(projectile => projectile.active && projectile.owner === 'enemy').length, 0);
+});
+
+test('Mira acknowledges Orren when the courier returns', () => {
+  const world = createWorld(0, { worldId: 'soulforge' });
+  world.progress.claimed.push('npc:soulforge-orren');
+  world.player.x = world.npcs[0].x;
+  assert.equal(interact(world), true);
+  assert.match(world.story.lines[0].text, /Orren is alive/);
 });

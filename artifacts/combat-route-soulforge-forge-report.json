@@ -7,36 +7,38 @@
     "w": 28,
     "h": 60
   },
-  "elapsed": 100.33,
-  "campaignTime": 100.33,
-  "timeLeft": 799.67,
-  "deaths": 0,
+  "elapsed": 91.72,
+  "campaignTime": 91.73,
+  "timeLeft": 1496.51,
+  "deaths": 1,
   "checkpoint": 6,
-  "x": 18683.5,
+  "x": 18684.1,
   "y": 620,
-  "hp": 75.7,
+  "hp": 115.1,
   "conversations": [
-    "soulforge-mira"
+    "soulforge-mira",
+    "soulforge-orren"
   ],
   "triggerProof": {
     "soulforge-warden": {
       "triggerX": 4920,
-      "activatedX": 4920.14,
-      "activatedTime": 19.12
+      "activatedX": 4920.08,
+      "activatedTime": 24.77
     },
     "soulforge-hex": {
       "triggerX": 12520,
       "activatedX": 12520.09,
-      "activatedTime": 53.8
+      "activatedTime": 56.79
     },
     "soulforge-regent": {
       "triggerX": 17670,
-      "activatedX": 17670.17,
-      "activatedTime": 84.08
+      "activatedX": 17670.15,
+      "activatedTime": 82.72
     }
   },
   "storyClaims": [
-    "npc:soulforge-mira"
+    "npc:soulforge-mira",
+    "npc:soulforge-orren"
   ],
   "bosses": [
     {
@@ -47,11 +49,9 @@
         "w": 96,
         "h": 120
       },
-      "fightSeconds": 8.37,
+      "fightSeconds": 5.04,
       "attacksSeen": [
-        0,
-        1,
-        2
+        1
       ],
       "formsSeen": [
         "ground"
@@ -66,9 +66,8 @@
         "w": 96,
         "h": 120
       },
-      "fightSeconds": 13.49,
+      "fightSeconds": 7.89,
       "attacksSeen": [
-        0,
         1,
         2
       ],
@@ -85,9 +84,8 @@
         "w": 112,
         "h": 86
       },
-      "fightSeconds": 14.02,
+      "fightSeconds": 7.29,
       "attacksSeen": [
-        0,
         1,
         2
       ],
@@ -97,7 +95,6 @@
         "flying"
       ],
       "flyingAttacksSeen": [
-        1,
         2
       ]
     }
@@ -138,6 +135,7 @@
     "charge",
     "checkpoint",
     "dash",
+    "death",
     "debris",
     "enemyshot",
     "enemywindup",
@@ -152,7 +150,6 @@
     "missilewarning",
     "parry",
     "pickup",
-    "portalarrival",
     "portalwarning",
     "shot",
     "slash",
@@ -196,533 +193,557 @@
       "time": 2.24
     },
     {
-      "event": "hurt",
-      "x": 1219.4,
+      "event": "landing",
+      "id": "soulforge-root-bank-5",
+      "x": 1248.3,
       "hp": 100,
-      "time": 3.57
+      "time": 3.75
     },
     {
       "event": "landing",
-      "id": "soulforge-root-bank-4",
-      "x": 1248.6,
-      "hp": 100,
-      "time": 4.06
-    },
-    {
-      "event": "landing",
-      "id": "soulforge-broken-root-6",
+      "id": "soulforge-broken-root-7",
       "x": 1560.6,
       "hp": 100,
-      "time": 6.38
+      "time": 6.07
     },
     {
       "event": "landing",
-      "id": "soulforge-hanging-root-8",
+      "id": "soulforge-hanging-root-9",
       "x": 1983.7,
       "hp": 100,
-      "time": 7.83
-    },
-    {
-      "event": "hurt",
-      "x": 2344.1,
-      "hp": 100,
-      "time": 9.34
+      "time": 7.53
     },
     {
       "event": "landing",
-      "id": "soulforge-orchard-bank-9",
-      "x": 2344.6,
+      "id": "soulforge-orchard-bank-10",
+      "x": 2345.8,
       "hp": 100,
-      "time": 9.93
+      "time": 9.39
     },
     {
       "event": "landing",
-      "id": "soulforge-orchard-bank-9",
-      "x": 2631.3,
+      "id": "soulforge-orchard-bank-10",
+      "x": 2631.6,
       "hp": 100,
-      "time": 10.88
+      "time": 10.34
     },
     {
       "event": "checkpoint",
-      "x": 2748.7,
+      "x": 2748.9,
       "hp": 135,
-      "time": 11.24
+      "time": 10.71
     },
     {
       "event": "landing",
-      "id": "soulforge-tower-foot-19",
+      "id": "soulforge-tower-foot-20",
       "x": 3012.6,
       "hp": 135,
-      "time": 12.32
-    },
-    {
-      "event": "landing",
-      "id": "soulforge-tower-step-20",
-      "x": 3229.5,
-      "hp": 135,
-      "time": 13.11
+      "time": 11.79
     },
     {
       "event": "landing",
       "id": "soulforge-tower-step-21",
-      "x": 3447.6,
+      "x": 3229.5,
       "hp": 135,
-      "time": 13.86
+      "time": 12.57
     },
     {
       "event": "landing",
       "id": "soulforge-tower-step-22",
-      "x": 3667.1,
+      "x": 3447.6,
+      "hp": 135,
+      "time": 13.32
+    },
+    {
+      "event": "hurt",
+      "x": 3558.5,
+      "hp": 135,
+      "time": 13.69
+    },
+    {
+      "event": "hurt",
+      "x": 3683.5,
       "hp": 135,
       "time": 14.61
     },
     {
+      "event": "hurt",
+      "x": 3688.2,
+      "hp": 135,
+      "time": 15.52
+    },
+    {
+      "event": "hurt",
+      "x": 3688.2,
+      "hp": 135,
+      "time": 16.42
+    },
+    {
+      "event": "death",
+      "checkpoint": 1,
+      "x": 3686.4,
+      "y": 1511.3,
+      "hp": 0,
+      "time": 17.35,
+      "target": "soulforge-tower-step-23"
+    },
+    {
       "event": "landing",
-      "id": "soulforge-tower-step-24",
+      "id": "soulforge-tower-foot-20",
+      "x": 2961.2,
+      "hp": 135,
+      "time": 17.86
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-step-21",
+      "x": 3229.1,
+      "hp": 135,
+      "time": 18.75
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-step-22",
+      "x": 3447.5,
+      "hp": 135,
+      "time": 19.5
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-step-23",
+      "x": 3667.1,
+      "hp": 135,
+      "time": 20.25
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-step-25",
       "x": 3887.9,
       "hp": 135,
-      "time": 15.37
+      "time": 21.01
     },
     {
       "event": "landing",
-      "id": "soulforge-tower-crown-25",
+      "id": "soulforge-tower-crown-26",
       "x": 4103,
       "hp": 135,
-      "time": 16.33
+      "time": 21.97
+    },
+    {
+      "event": "story",
+      "npcId": "soulforge-orren",
+      "choiceId": "soulforge-echo"
     },
     {
       "event": "landing",
-      "id": "soulforge-tower-crown-25",
+      "id": "soulforge-tower-crown-26",
+      "x": 4172.3,
+      "hp": 135,
+      "time": 22.25
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-crown-26",
       "x": 4492.3,
       "hp": 135,
-      "time": 17.6
+      "time": 23.25
     },
     {
       "event": "checkpoint",
       "x": 4625.6,
       "hp": 135,
-      "time": 18.02
+      "time": 23.67
     },
     {
       "event": "bossstart",
       "x": 4920.1,
       "hp": 135,
-      "time": 19.12
+      "time": 24.77
     },
     {
       "event": "hurt",
       "x": 5420.9,
-      "hp": 127.6,
-      "time": 21.8
-    },
-    {
-      "event": "hurt",
-      "x": 5435.6,
-      "hp": 112,
-      "time": 22.74
-    },
-    {
-      "event": "hurt",
-      "x": 5517.1,
-      "hp": 102.6,
-      "time": 27.28
+      "hp": 122.5,
+      "time": 27.44
     },
     {
       "event": "bossdefeated",
       "id": "soulforge-warden",
-      "time": 27.5,
-      "hp": 102.6
+      "time": 29.81,
+      "hp": 122.5
     },
     {
       "event": "gate",
-      "x": 5503.8,
-      "hp": 102.6,
-      "time": 27.5
+      "x": 5398.5,
+      "hp": 122.5,
+      "time": 29.81
     },
     {
       "event": "landing",
       "id": "soulforge-arena-29",
-      "x": 5503.8,
-      "hp": 102.6,
-      "time": 27.5
+      "x": 5398.5,
+      "hp": 122.5,
+      "time": 29.81
     },
     {
       "event": "landing",
       "id": "soulforge-arena-29",
-      "x": 5914.1,
-      "hp": 102.6,
-      "time": 28.93
+      "x": 5914.4,
+      "hp": 122.5,
+      "time": 31.62
     },
     {
       "event": "landing",
       "id": "soulforge-arena-29",
-      "x": 5914.1,
-      "hp": 102.6,
-      "time": 28.93
+      "x": 5914.4,
+      "hp": 122.5,
+      "time": 31.62
     },
     {
       "event": "checkpoint",
-      "x": 6029.4,
-      "hp": 124.6,
-      "time": 29.32
+      "x": 6029.5,
+      "hp": 135,
+      "time": 32.02
     },
     {
       "event": "landing",
       "id": "soulforge-sluice-entry-38",
       "x": 6298.6,
-      "hp": 124.6,
-      "time": 30.32
+      "hp": 135,
+      "time": 33.01
     },
     {
       "event": "landing",
       "id": "soulforge-aqueduct-span-39",
       "x": 6662.6,
-      "hp": 124.6,
-      "time": 31.75
+      "hp": 135,
+      "time": 34.44
     },
     {
       "event": "landing",
       "id": "soulforge-aqueduct-span-40",
       "x": 6994.8,
-      "hp": 124.6,
-      "time": 33.25
+      "hp": 135,
+      "time": 35.94
     },
     {
       "event": "landing",
       "id": "soulforge-aqueduct-span-42",
       "x": 7321.2,
-      "hp": 124.6,
-      "time": 34.53
+      "hp": 135,
+      "time": 37.22
     },
     {
       "event": "landing",
       "id": "soulforge-aqueduct-span-43",
       "x": 7654.8,
-      "hp": 124.6,
-      "time": 36.03
+      "hp": 135,
+      "time": 38.72
     },
     {
       "event": "landing",
       "id": "soulforge-cistern-bank-44",
       "x": 8122.7,
-      "hp": 124.6,
-      "time": 37.55
+      "hp": 135,
+      "time": 40.24
     },
     {
       "event": "landing",
       "id": "soulforge-vault-entry-49",
       "x": 8612.7,
       "hp": 135,
-      "time": 39.34
+      "time": 42.03
     },
     {
       "event": "landing",
       "id": "soulforge-vault-upper-50",
       "x": 8967.5,
       "hp": 135,
-      "time": 40.72
+      "time": 43.41
+    },
+    {
+      "event": "hurt",
+      "x": 9195.2,
+      "hp": 121.3,
+      "time": 44.17
     },
     {
       "event": "landing",
       "id": "soulforge-rune-reliquary-51",
-      "x": 9243.2,
-      "hp": 135,
-      "time": 41.62
+      "x": 9241.2,
+      "hp": 121.3,
+      "time": 44.61
     },
     {
       "event": "gate",
-      "x": 9329.3,
-      "hp": 135,
-      "time": 41.92
+      "x": 9328.2,
+      "hp": 121.3,
+      "time": 44.9
     },
     {
       "event": "landing",
       "id": "soulforge-rune-reliquary-51",
-      "x": 9344.3,
-      "hp": 135,
-      "time": 42.04
+      "x": 9344.4,
+      "hp": 121.3,
+      "time": 45.03
     },
     {
       "event": "landing",
       "id": "soulforge-vault-exit-54",
       "x": 9865.5,
-      "hp": 135,
-      "time": 44.23
+      "hp": 121.3,
+      "time": 47.22
     },
     {
       "event": "landing",
       "id": "soulforge-vault-exit-54",
       "x": 10151.5,
-      "hp": 135,
-      "time": 45.18
+      "hp": 121.3,
+      "time": 48.17
     },
     {
       "event": "landing",
       "id": "soulforge-crypt-lip-64",
       "x": 10532.6,
       "hp": 135,
-      "time": 46.63
+      "time": 49.62
     },
     {
       "event": "landing",
       "id": "soulforge-crypt-stair-65",
       "x": 10847.2,
       "hp": 135,
-      "time": 48.13
+      "time": 51.12
     },
     {
       "event": "landing",
       "id": "soulforge-crypt-floor-66",
       "x": 11159.1,
       "hp": 135,
-      "time": 49.32
+      "time": 52.32
     },
     {
       "event": "landing",
       "id": "soulforge-crypt-floor-66",
       "x": 12071.2,
       "hp": 135,
-      "time": 52.22
+      "time": 55.21
     },
     {
       "event": "checkpoint",
       "x": 12223.2,
       "hp": 135,
-      "time": 52.69
+      "time": 55.68
     },
     {
       "event": "bossstart",
       "x": 12520.1,
       "hp": 135,
-      "time": 53.8
-    },
-    {
-      "event": "hurt",
-      "x": 13089.1,
-      "hp": 135,
-      "time": 60.97
-    },
-    {
-      "event": "hurt",
-      "x": 12920.9,
-      "hp": 128.5,
-      "time": 62.82
+      "time": 56.79
     },
     {
       "event": "bossdefeated",
       "id": "soulforge-hex",
-      "time": 67.29,
-      "hp": 128.5
+      "time": 64.68,
+      "hp": 135
     },
     {
       "event": "gate",
-      "x": 12921.5,
-      "hp": 128.5,
-      "time": 67.29
+      "x": 13155.7,
+      "hp": 135,
+      "time": 64.68
     },
     {
       "event": "landing",
       "id": "soulforge-arena-74",
-      "x": 12921.5,
-      "hp": 128.5,
-      "time": 67.29
+      "x": 13155.7,
+      "hp": 135,
+      "time": 64.68
     },
     {
       "event": "landing",
       "id": "soulforge-arena-74",
-      "x": 13511.2,
-      "hp": 128.5,
-      "time": 69.19
+      "x": 13512.2,
+      "hp": 135,
+      "time": 65.85
     },
     {
       "event": "checkpoint",
-      "x": 13599.2,
+      "x": 13600.2,
       "hp": 135,
-      "time": 69.47
+      "time": 66.12
     },
     {
       "event": "landing",
       "id": "soulforge-tower-foot-82",
-      "x": 13862.6,
+      "x": 13862.8,
       "hp": 135,
-      "time": 70.55
+      "time": 67.21
     },
     {
       "event": "landing",
       "id": "soulforge-tower-step-83",
       "x": 14079.5,
       "hp": 135,
-      "time": 71.33
+      "time": 67.99
     },
     {
       "event": "landing",
       "id": "soulforge-tower-step-84",
       "x": 14297.6,
       "hp": 135,
-      "time": 72.08
+      "time": 68.74
     },
     {
       "event": "landing",
       "id": "soulforge-tower-step-85",
       "x": 14517.1,
       "hp": 135,
-      "time": 72.83
+      "time": 69.49
     },
     {
       "event": "landing",
       "id": "soulforge-tower-step-87",
       "x": 14737.9,
       "hp": 135,
-      "time": 73.59
+      "time": 70.25
     },
     {
       "event": "landing",
       "id": "soulforge-tower-crown-88",
       "x": 14953,
       "hp": 135,
-      "time": 74.56
+      "time": 71.22
     },
     {
       "event": "gate",
       "x": 15028.8,
       "hp": 135,
-      "time": 74.87
+      "time": 71.53
     },
     {
       "event": "landing",
       "id": "soulforge-tower-crown-88",
       "x": 15044,
       "hp": 135,
-      "time": 74.99
-    },
-    {
-      "event": "hurt",
-      "x": 15103.4,
-      "hp": 117.8,
-      "time": 75.21
+      "time": 71.65
     },
     {
       "event": "landing",
       "id": "soulforge-tower-crown-88",
       "x": 15343.4,
       "hp": 135,
-      "time": 76.23
+      "time": 72.62
+    },
+    {
+      "event": "hurt",
+      "x": 15562,
+      "hp": 135,
+      "time": 73.3
     },
     {
       "event": "landing",
       "id": "soulforge-engine-walk-94",
-      "x": 15631.8,
+      "x": 15611,
       "hp": 135,
-      "time": 77.2
+      "time": 73.77
     },
     {
       "event": "landing",
       "id": "soulforge-engine-walk-94",
-      "x": 15961.7,
+      "x": 15962.4,
       "hp": 135,
-      "time": 78.26
+      "time": 74.87
     },
     {
       "event": "landing",
       "id": "soulforge-engine-duct-96",
-      "x": 16401.9,
+      "x": 16401.4,
       "hp": 135,
-      "time": 79.76
+      "time": 76.36
     },
     {
       "event": "landing",
       "id": "soulforge-engine-switchyard-97",
-      "x": 16744.7,
+      "x": 16755.3,
       "hp": 135,
-      "time": 80.97
+      "time": 77.99
     },
     {
       "event": "gate",
-      "x": 16811.6,
+      "x": 16812.1,
       "hp": 135,
-      "time": 81.22
+      "time": 78.23
     },
     {
       "event": "landing",
       "id": "soulforge-engine-switchyard-97",
-      "x": 16811.6,
+      "x": 16812.1,
       "hp": 135,
-      "time": 81.22
+      "time": 78.23
     },
     {
       "event": "landing",
       "id": "soulforge-engine-switchyard-97",
-      "x": 17251.6,
+      "x": 17251.4,
       "hp": 135,
-      "time": 82.59
+      "time": 81.23
     },
     {
       "event": "checkpoint",
-      "x": 17374.3,
+      "x": 17374.1,
       "hp": 135,
-      "time": 82.98
+      "time": 81.61
     },
     {
       "event": "bossstart",
       "x": 17670.2,
       "hp": 135,
-      "time": 84.08
+      "time": 82.72
     },
     {
       "event": "hurt",
       "x": 18057.9,
-      "hp": 125.6,
-      "time": 87.24
+      "hp": 133.8,
+      "time": 85.95
     },
     {
       "event": "hurt",
-      "x": 18229.8,
-      "hp": 108.5,
-      "time": 91.16
-    },
-    {
-      "event": "hurt",
-      "x": 17972.7,
-      "hp": 99.1,
-      "time": 95.65
-    },
-    {
-      "event": "hurt",
-      "x": 18060.9,
-      "hp": 75.7,
-      "time": 98.08
+      "x": 18169.2,
+      "hp": 115.1,
+      "time": 88.91
     },
     {
       "event": "bossdefeated",
       "id": "soulforge-regent",
-      "time": 98.1,
-      "hp": 75.7
+      "time": 90.01,
+      "hp": 115.1
     },
     {
       "event": "gate",
-      "x": 18055.8,
-      "hp": 75.7,
-      "time": 98.1
+      "x": 18169.2,
+      "hp": 115.1,
+      "time": 90.01
     },
     {
       "event": "landing",
       "id": "soulforge-arena-105",
-      "x": 18055.8,
-      "hp": 75.7,
-      "time": 98.1
+      "x": 18169.2,
+      "hp": 115.1,
+      "time": 90.01
     },
     {
       "event": "landing",
       "id": "soulforge-arena-105",
-      "x": 18661.1,
-      "hp": 75.7,
-      "time": 100.26
+      "x": 18661.8,
+      "hp": 115.1,
+      "time": 91.65
     },
     {
       "event": "win",
-      "x": 18683.5,
-      "hp": 75.7,
-      "time": 100.33
+      "x": 18684.1,
+      "hp": 115.1,
+      "time": 91.73
     }
   ]
 }

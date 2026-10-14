@@ -47,7 +47,7 @@ class Soulforge extends Phaser.Scene {
       onStoryNext:()=>continueStory(),onStoryChoice:id=>continueStory(id),
     });
     ui.renderHUD(world);$('start').disabled=false;
-    const selection=$('world-select');if(selection){selection.replaceChildren(...WORLD_LIST.map(realm=>{const option=document.createElement('option');option.value=realm.id;option.textContent=realm.name;return option;}));selection.value=world.worldId||'soulforge';}
+    const selection=$('world-select');if(selection){selection.replaceChildren(...WORLD_LIST.map(realm=>{const option=document.createElement('option');option.value=realm.id;option.textContent=realm.id==='soulforge'?'Soulforge · Hollow Sanctuary':realm.name;return option;}));selection.value=world.worldId||'soulforge';}
     if(import.meta.env.DEV)window.__ASH={scene:this,controls,get world(){return world;},get mode(){return mode;},get LEVEL(){return LEVEL;},start,retry,pause,stepWorld,createWorld,retryWorld,equipItem,advanceStory,weaponOrigin,catalog,ui,WORLD_LIST,
       setWorld(value){world=value;LEVEL=value.level||DEFAULT_LEVEL;scene.previousPlayer={x:value.player.x,y:value.player.y};},render(){scene.update(0,0);}};
   }
@@ -146,7 +146,7 @@ class Soulforge extends Phaser.Scene {
     const zone=[...LEVEL.zones].reverse().find(z=>p.x>=z.x)||LEVEL.zones[0],biome=zone.biome||'snow';
     const room=LEVEL.rooms?.find(r=>p.x>=r.x&&p.x<r.x+r.w),theme=room?.kind==='crypt'?'crypt':room?.kind==='vault'?'moon':room?.kind==='spire'?'moon':world.worldId;
     if(this.parallaxTheme!==theme){this.parallax?.destroy();this.parallax=createRuneheartParallax(this,theme,this.viewportH);this.parallaxTheme=theme;}
-    const threat=world.activeBoss&&!world.activeBoss.dead?world.activeBoss:world.enemies.filter(e=>!e.dead&&Math.abs(e.y-p.y)<220).sort((a,b)=>Math.abs(a.x-p.x)-Math.abs(b.x-p.x))[0];
+    const threat=world.activeBoss&&!world.activeBoss.dead?world.activeBoss:null;
     const desired=cameraTarget({...p,x:px,y:py},LEVEL,960,this.viewportH,threat&&Math.abs(threat.x-p.x)<580?threat:null);
     const camera=followCamera({x:this.cameraX,y:this.cameraY,zoom:this.cameras.main.zoom},desired,dt);
     this.cameraX=camera.x;this.cameraY=camera.y;
@@ -383,7 +383,18 @@ function retry(){if(!scene||mode==='menu'||mode==='catalogue')return;world=retry
 window.ashBack=()=>{if($('catalogue').open){ui.close();return true;}if(['playing','story','paused'].includes(mode)){pause();return true;}return false;};
 $('start').addEventListener('click',start);$('pause').addEventListener('click',()=>pause());
 document.addEventListener('click',event=>{if(event.target.closest('#worlds')){showMenu('menu');if($('world-select'))$('world-select').value=world.worldId||'soulforge';}});
-$('sound').addEventListener('click',()=>{sound.setMuted(!sound.muted);$('sound').textContent=sound.muted?'SOUND OFF':'SOUND ON';$('sound').setAttribute('aria-pressed',String(sound.muted));sound.start().catch(()=>{});});
+ $('sound').addEventListener('click',()=>{sound.setMuted(!sound.muted);$('sound').textContent=sound.muted?'SOUND OFF':'SOUND ON';$('sound').setAttribute('aria-pressed',String(sound.muted));sound.start().catch(()=>{});});
+ const settingsPanel=$('settings-panel');let settingsFocus;
+ for(const [id,apply] of [['music-volume',value=>sound.setMusicVolume(value)],['sfx-volume',value=>sound.setSfxVolume(value)]]){
+   const slider=$(id),key=`runeheart-${id}`;
+   try{const saved=localStorage.getItem(key);if(saved!==null)slider.value=saved;}catch{}
+   const update=()=>{const value=Math.max(0,Math.min(100,Number(slider.value)||0));slider.value=String(value);$(id+'-value').textContent=`${value}%`;apply(value/100);try{localStorage.setItem(key,String(value));}catch{}};
+   slider.addEventListener('input',update);update();
+ }
+ const openSettings=()=>{if(mode==='playing'||mode==='story')pause();settingsFocus=document.activeElement;settingsPanel.showModal();$('settings-close').focus();};
+ $('settings').addEventListener('click',openSettings);$('menu-settings').addEventListener('click',openSettings);
+ $('settings-close').addEventListener('click',()=>settingsPanel.close());
+ settingsPanel.addEventListener('close',()=>settingsFocus?.focus?.({preventScroll:true}));
 $('motion').setAttribute('aria-pressed',String(reducedFX));$('motion').textContent=reducedFX?'FX REDUCED':'FX FULL';$('motion').addEventListener('click',()=>{reducedFX=!reducedFX;sound.setReducedFX(reducedFX);$('motion').textContent=reducedFX?'FX REDUCED':'FX FULL';$('motion').setAttribute('aria-pressed',String(reducedFX));});
 $('fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await $('stage').requestFullscreen();}catch{$('footer-status').textContent='FULLSCREEN IS MANAGED BY THIS DEVICE';}});
 new Phaser.Game({type:Phaser.AUTO,width:960,height:viewportHeight(),parent:'game',backgroundColor:'#171322',pixelArt:true,roundPixels:true,antialias:false,scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},scene:[Soulforge],audio:{noAudio:true},render:{powerPreference:'low-power'},fps:{target:60,smoothStep:true}});

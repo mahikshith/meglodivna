@@ -13,8 +13,8 @@ Runeheart rebuilds the game around three rune stones, guardian seals, vertical c
 - Continuous solid floors with thick landing caps, shaded foundations, irregular stone faces and distinct platform undersides. Full-height backgrounds remain present during jetpack ascent; skyline layers sit behind the playable ground.
 - A full-proportion animated swordfighter, true run/jump/sword frames, a quadruped wolf and animated NPCs. Selected CC0 Gothicvania artwork by Ansimuz joins the retained robots, dragon and items from the supplied references. Sources, licenses and limitations: [ASSETS.md](ASSETS.md).
 - Enemies patrol, chase, retreat, jump obstacles and telegraph directional attacks. Sword combos buffer repeated presses, hold their attack direction and stagger smaller enemies. Dash cuts through enemies, while heavy guardian attacks require evasion.
-- A camera that follows vertical travel, looks ahead and widens around nearby threats. No attack-triggered zoom-in that hides the route.
-- Large, spaced touch controls in a curved bottom layout, a floating joystick, visible held-mode indicators and adjustable opacity. Gameplay keeps a dedicated region above the action buttons.
+- A camera that follows vertical travel, looks ahead and widens around guardians. Rising and falling frame more of the landing route; ordinary enemies no longer pull the camera off course.
+- Large, spaced touch controls float over a full-height game view, with a floating joystick, visible held-mode indicators and adjustable opacity. The dark control band has been removed from the working tree; the APK linked above predates this change.
 
 ## Worlds and objectives
 
@@ -30,7 +30,7 @@ Find Ember Heart, Tide Glass and Storm Seal to open the final gate. Stones also 
 
 Five realms share room archetypes and systems but change their order, elevation and special mechanics. Optimized legal test routes take about **97–177 simulated seconds**, depending on realm/difficulty. A five-minute minimum and first-time human completion time are **not established**. See [LEVEL.md](LEVEL.md) for exact scope.
 
-Choose Ember, Forge, Inferno or Extinction. Difficulty changes damage, health, cadence, recovery, resources and deadline. The Forge deadline is fifteen minutes; dialogue and armory menus pause it.
+Choose Ember, Forge, Inferno or Extinction. Difficulty changes damage, health, cadence, recovery, resources and deadline. The working tree gives Forge a longer 26-minute reactor window in Runeheart; dialogue and armory menus pause it. The APK linked above retains the earlier balance.
 
 ## Controls
 
@@ -44,7 +44,7 @@ Touch any free gameplay area to place the analogue joystick under your finger. I
 | Power · 80px | Tap to interact nearby or cast; hold 450ms for the paused power/equipment palette |
 | Gear / Pause · 48px | Direct menu access; opacity preference in paused settings |
 
-Targets have at least eight CSS pixels between them. Buttons use icons and a curved arrangement in a reserved 164px landscape gutter. Independent fingers can steer, jump and attack together. Browser tests do not establish physical thumb comfort or device latency; see [control evidence](docs/RUNEHEART-CONTROLS.md).
+Targets have at least eight CSS pixels between them. Buttons use icons in a curved, translucent overlay on the full-height world. Independent fingers can steer, jump and attack together. Browser tests do not establish physical thumb comfort or device latency; see [control evidence](docs/RUNEHEART-CONTROLS.md).
 
 Keyboard: **A/D or arrows** move, **Space** jump, **Shift** dash, **J** cut, **K** fire, **L/E** jet, **Q** spell, **F** interact, **C/V/X** cycle gun/sword/spell, **Z** nova, **Escape** pause and **R** retry. Up aims upward; down+jump drops through a one-way platform. Gamepad face/shoulder inputs are documented in [INTERFACES.md](INTERFACES.md). Android Back closes an open palette before pausing.
 

@@ -1,8 +1,8 @@
 export const DIFFICULTIES = [
-  { id: 'ember', name: 'Ember', label: 'Easy', description: 'Forgiving wounds and generous recovery.', damage: 0.65, enemyHealth: 0.8, cadence: 1.25, missilePeriod: 22, recovery: 1.35, deadline: 660 },
-  { id: 'forge', name: 'Forge', label: 'Medium', description: 'The intended balance of steel and soul.', damage: 1, enemyHealth: 1, cadence: 1, missilePeriod: 17, recovery: 1, deadline: 510 },
-  { id: 'inferno', name: 'Inferno', label: 'Hard', description: 'Hardened foes, faster attacks, scarce recovery.', damage: 1.25, enemyHealth: 1.2, cadence: 0.85, missilePeriod: 13, recovery: 0.8, deadline: 450 },
-  { id: 'extinction', name: 'Extinction', label: 'Ultra hard', description: 'Merciless damage and relentless missile pressure.', damage: 1.55, enemyHealth: 1.4, cadence: 0.72, missilePeriod: 10, recovery: 0.6, deadline: 390 },
+  { id: 'ember', name: 'Ember', label: 'Easy', description: 'Forgiving wounds and generous recovery.', damage: 0.55, enemyHealth: 0.7, cadence: 1.5, missilePeriod: 34, recovery: 1.6, deadline: 1200 },
+  { id: 'forge', name: 'Forge', label: 'Medium', description: 'Room to learn each fight and explore.', damage: 0.8, enemyHealth: 0.9, cadence: 1.2, missilePeriod: 24, recovery: 1.2, deadline: 900 },
+  { id: 'inferno', name: 'Inferno', label: 'Hard', description: 'Hardened foes, faster attacks, scarce recovery.', damage: 1.2, enemyHealth: 1.15, cadence: 0.9, missilePeriod: 16, recovery: 0.85, deadline: 600 },
+  { id: 'extinction', name: 'Extinction', label: 'Ultra hard', description: 'Merciless damage and relentless missile pressure.', damage: 1.5, enemyHealth: 1.35, cadence: 0.75, missilePeriod: 12, recovery: 0.65, deadline: 450 },
 ];
 export const SWORDS = [
   { id: 'rustfang', name: 'Rustfang', description: 'Horizontal, vertical, then heavy finisher. Borrowed Spark: light parries grant five resonance, at most twice per swing; heavy attacks cannot be parried.', tint: 0xeab76f, damage: 27, cooldown: 0.28, width: 90, height: 135 },

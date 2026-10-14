@@ -16,6 +16,11 @@ test('combat camera contains both bodies on a short phone viewport',()=>{
 test('portal travel snaps to the destination instead of panning across unseen rooms',()=>{
  assert.deepEqual(followCamera({x:0,y:0,zoom:1},{x:5000,y:700,zoom:1},1/60),{x:5000,y:700,zoom:1});
 });
+test('rising keeps more of the landing route below the courier in frame',()=>{
+ const grounded=cameraTarget(p,level,960,467),rising=cameraTarget({...p,vy:-330},level,960,467);
+ assert.equal(rising.zoom,1);
+ assert.ok(rising.y>grounded.y,'upward motion looks down rather than cutting off the landing route');
+});
 test('a distant vertical boss never pulls the airborne hero out of view',()=>{
  const hero={...p,y:160,vy:-330},boss={x:3450,y:1210,w:100,h:130};const c=cameraTarget(hero,level,960,240,boss);
  const top=c.y+120-120/c.zoom;

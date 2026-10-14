@@ -1,22 +1,24 @@
 export class Sound {
-  constructor() { this.muted = false; this.reducedFX = false; this.ctx = null; this.nextBeat = 0; this.beat = 0; this.activeVoices = 0; }
+  constructor() { this.muted = false; this.reducedFX = false; this.ctx = null; this.nextBeat = 0; this.beat = 0; this.activeVoices = 0; this.musicVolume = .7; this.sfxVolume = .8; }
   async start() {
     if (!this.ctx) {
       const Context = window.AudioContext || window.webkitAudioContext;
       if (!Context) return;
-      this.ctx = new Context(); this.master = this.ctx.createGain(); this.master.gain.value = 0.28; this.master.connect(this.ctx.destination);
+      this.ctx = new Context(); this.master = this.ctx.createGain(); this.master.gain.value = this.muted ? 0 : 0.28; this.master.connect(this.ctx.destination);
+      this.musicGain = this.ctx.createGain(); this.musicGain.gain.value = this.musicVolume; this.musicGain.connect(this.master);
+      this.sfxGain = this.ctx.createGain(); this.sfxGain.gain.value = this.sfxVolume; this.sfxGain.connect(this.master);
       this.noise = this.ctx.createBuffer(1, this.ctx.sampleRate, this.ctx.sampleRate);
       const data = this.noise.getChannelData(0); for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
     }
     if (this.ctx.state === 'suspended') await this.ctx.resume();
   }
-  tone(frequency, endFrequency, length, volume, type = 'triangle', delay = 0) {
+  tone(frequency, endFrequency, length, volume, type = 'triangle', delay = 0, channel = 'sfx') {
     if (!this.ctx || this.muted || this.activeVoices >= 24) return;
     this.activeVoices++;
     const t = this.ctx.currentTime + delay, osc = this.ctx.createOscillator(), gain = this.ctx.createGain();
     osc.type = type; osc.frequency.setValueAtTime(frequency, t); osc.frequency.exponentialRampToValueAtTime(Math.max(10,endFrequency),t+length);
     gain.gain.setValueAtTime(volume,t); gain.gain.exponentialRampToValueAtTime(0.001,t+length);
-    osc.connect(gain); gain.connect(this.master); osc.start(t); osc.stop(t+length+.01);
+    osc.connect(gain); gain.connect(channel === 'music' ? this.musicGain : this.sfxGain); osc.start(t); osc.stop(t+length+.01);
     osc.onended = () => { osc.disconnect(); gain.disconnect(); this.activeVoices--; };
   }
   hiss(length, volume, frequency = 1400, type = 'highpass', delay = 0) {
@@ -24,7 +26,7 @@ export class Sound {
     this.activeVoices++;
     const t=this.ctx.currentTime+delay, src=this.ctx.createBufferSource(), filter=this.ctx.createBiquadFilter(), gain=this.ctx.createGain();
     src.buffer=this.noise; filter.type=type; filter.frequency.value=frequency; gain.gain.setValueAtTime(volume,t); gain.gain.exponentialRampToValueAtTime(.001,t+length);
-    src.connect(filter); filter.connect(gain); gain.connect(this.master); src.start(t); src.stop(t+length);
+    src.connect(filter); filter.connect(gain); gain.connect(this.sfxGain); src.start(t); src.stop(t+length);
     src.onended=()=>{src.disconnect();filter.disconnect();gain.disconnect();this.activeVoices--;};
   }
   play(event, detail) {
@@ -81,11 +83,13 @@ export class Sound {
     if (this.nextBeat < now) this.nextBeat=now;
     if (this.nextBeat > now+.1) return;
     const bass=[55,55,65.4,49][Math.floor(this.beat/8)%4],delay=this.nextBeat-now;
-    this.tone(bass,bass,.45,.045,'triangle',delay);
-    if (this.beat%2===0) this.tone(95,25,.16,intense?.09:.055,'sine',delay);
-    if (this.beat%4===2) this.tone(bass*4,bass*4,.6,.018,'triangle',delay);
+    this.tone(bass,bass,.45,.045,'triangle',delay,'music');
+    if (this.beat%2===0) this.tone(95,25,.16,intense?.09:.055,'sine',delay,'music');
+    if (this.beat%4===2) this.tone(bass*4,bass*4,.6,.018,'triangle',delay,'music');
     this.nextBeat+=intense?.27:.36;this.beat++;
   }
   setMuted(value) { this.muted=value; if(this.master)this.master.gain.value=value?0:.28; }
+  setMusicVolume(value) { this.musicVolume = Math.max(0, Math.min(1, Number(value) || 0)); if(this.musicGain)this.musicGain.gain.value=this.musicVolume; }
+  setSfxVolume(value) { this.sfxVolume = Math.max(0, Math.min(1, Number(value) || 0)); if(this.sfxGain)this.sfxGain.gain.value=this.sfxVolume; }
   setReducedFX(value) { this.reducedFX=!!value; }
 }
