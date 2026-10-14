@@ -1,6 +1,6 @@
 # The Last Lantern — Hollow Sanctuary
 
-**Latest APK:** [Download The Last Lantern v0.7.0 Android test build](https://github.com/mahikshith/meglodivna/releases/download/v0.7.0-lantern/ASH-SIGNAL-Lantern-v0.7.0.apk) — 14 October 2026, version `0.6.0-lantern`, code **7**, Android 7.0+.
+**Latest APK:** [Download The Last Lantern v0.7.0 Android test build](https://github.com/mahikshith/meglodivna/releases/download/v0.7.0-lantern/ASH-SIGNAL-Lantern-v0.7.0.apk) — 15 October 2026, version `0.7.0-lantern`, code **8**, Android 7.0+.
 
 [Prerelease and checksums](https://github.com/mahikshith/meglodivna/releases/tag/v0.7.0-lantern) · [Passed Android build and upload verification](https://github.com/mahikshith/meglodivna/actions/runs/38624576624) · [Signed payload report](https://github.com/mahikshith/meglodivna/releases/download/v0.7.0-lantern/android-report.json). The uploaded APK was downloaded again and matched byte for byte before this link was updated.
 
