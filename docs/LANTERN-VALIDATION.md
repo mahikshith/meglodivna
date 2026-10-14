@@ -41,7 +41,9 @@ Independent screenshot review found and corrected a legacy-art switch during ene
 
 Vite production build passes. Its approximately 1.7MB uncompressed engine/game JS chunk still produces Vite's large-chunk advisory. Local native Rollup download failed; local verification used the official Rollup WASM distribution without changing package dependencies or lockfile resolution. CI installs the normal locked dependencies.
 
-Signed Android version `0.6.0-lantern`, code 7 is prepared for CI validation. Package `com.meglodivna.ashsignal` and required certificate SHA-256 `d5957205feb0467218e7a0483387e65a347516bbb6511c2e7b5007ff165cc437` are unchanged. Publication is pending until build/lint, signature, version and byte-for-byte embedded payload checks pass. README retains the previous APK until a new upload is verified.
+Signed Android version `0.6.0-lantern`, code 7 passed [build, lint, signature, embedded-file and upload verification](https://github.com/mahikshith/meglodivna/actions/runs/38610685671). Package `com.meglodivna.ashsignal` and certificate SHA-256 `d5957205feb0467218e7a0483387e65a347516bbb6511c2e7b5007ff165cc437` are unchanged. The APK is **6,242,607 bytes**, SHA-256 `0ce4bbf977f12de65fa5683e12cde632911d94b5722d48a54139aa1cdc669d81`, from source commit `6a5c99dc8f0ab79ddebcb89b798dcc3170fea6b9`.
+
+The [GitHub prerelease](https://github.com/mahikshith/meglodivna/releases/tag/v0.6.0-lantern) contains the APK, signed-payload report and checksum. CI downloaded the uploaded APK and compared every byte successfully. README's Latest APK now links this exact artifact and validation run. The validated rebuild was fast-forwarded into `main`; ongoing work remains on `codex/runeheart-rebuild`.
 
 ## Limits
 

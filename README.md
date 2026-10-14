@@ -1,8 +1,8 @@
 # The Last Lantern — Hollow Sanctuary
 
-**Latest APK:** [Download Runeheart v0.5 Android test build](https://github.com/mahikshith/meglodivna/releases/download/v0.5.0-runeheart/ASH-SIGNAL-Runeheart-debug.apk) — version `0.5.0-runeheart`, code **5**, Android 7.0+. This older delivery does **not** include the Lantern rebuild below.
+**Latest APK:** [Download The Last Lantern v0.6.0 Android test build](https://github.com/mahikshith/meglodivna/releases/download/v0.6.0-lantern/ASH-SIGNAL-Lantern-v0.6.0.apk) — 14 October 2026, version `0.6.0-lantern`, code **7**, Android 7.0+.
 
-[Previous release and checksums](https://github.com/mahikshith/meglodivna/releases/tag/v0.5.0-runeheart) · [Previous Android validation](https://github.com/mahikshith/meglodivna/actions/runs/38470313614). The link will change only after the new APK is uploaded and verified.
+[Prerelease and checksums](https://github.com/mahikshith/meglodivna/releases/tag/v0.6.0-lantern) · [Passed Android build and upload verification](https://github.com/mahikshith/meglodivna/actions/runs/38610685671) · [Signed payload report](https://github.com/mahikshith/meglodivna/releases/download/v0.6.0-lantern/android-report.json). The uploaded APK was downloaded again and matched byte for byte before this link was updated.
 
 The current rebuild focuses on **one chapter**: a courier carries the last lantern through a failing sanctuary, meets Mira and Orren, recovers three lost runes, and unbinds its heart. Other realm data remains for save compatibility; the game presents Hollow Sanctuary.
 
