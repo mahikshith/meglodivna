@@ -14,8 +14,20 @@ export class Controls {
     this.pressTimes = new Map(); this.pressContexts = new Map(); this.paletteOpened = new Set(); this.element = element;
     this.actionButtons = new Map([...element.querySelectorAll('[data-action]')].map(button => [button.dataset.action, button]));
     this.feedback = element.querySelector('#touch-feedback');
-    element.querySelector('#touch-pause')?.addEventListener('click', () => { this.clear(); onPause(); });
-    element.querySelector('#touch-gear')?.addEventListener('click', () => { this.clear(); element.dispatchEvent(new Event('open-loadout')); });
+    for (const [selector, activate] of [['#touch-pause', onPause], ['#touch-gear', () => element.dispatchEvent(new Event('open-loadout'))]]) {
+      const button = element.querySelector(selector); if (!button) continue;
+      let touchActivation = -Infinity;
+      // Secondary fingers do not reliably synthesize clicks while another action is held.
+      button.addEventListener('pointerdown', event => {
+        if (!['touch', 'pen'].includes(event.pointerType)) return;
+        event.preventDefault(); touchActivation = performance.now(); this.clear(); activate();
+      });
+      button.addEventListener('click', event => {
+        const fromTouch = ['touch', 'pen'].includes(event.pointerType) || event.sourceCapabilities?.firesTouchEvents;
+        if (event.detail !== 0 && fromTouch && performance.now() - touchActivation < 800) { event.preventDefault(); return; }
+        this.clear(); activate();
+      });
+    }
     const captured = ['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','ShiftLeft','ShiftRight','KeyJ','KeyK','KeyL','KeyE','KeyQ','KeyF','KeyC','KeyV','KeyX','KeyZ'];
     window.addEventListener('keydown', e => {
       if (['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName) || e.target.isContentEditable || document.querySelector('dialog[open]')) return;

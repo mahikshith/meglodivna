@@ -3,71 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0a1016" />
-  <title>Runeheart — The Hollow Sanctuary</title>
+  <meta name="theme-color" content="#0b1b20" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1b20'/%3E%3Cpath d='M12 8V5h8v3M10 10h12v16H10zm-2 18h16M16 13v10' fill='none' stroke='%23e9c982' stroke-width='2'/%3E%3C/svg%3E" />
+  <title>The Last Lantern — Runeheart</title>
 </head>
 <body>
   <main id="app">
     <header class="topbar">
-      <a class="wordmark" href="./" aria-label="Runeheart home">RUNE<span>//</span>HEART</a>
-      <span class="build-label">RUNEHEART <i></i> THE HOLLOW SANCTUARY</span>
+      <a class="wordmark" href="./" aria-label="Runeheart home">RUNE<span>✧</span>HEART</a>
+      <span class="build-label">THE HOLLOW SANCTUARY</span>
       <nav aria-label="Game settings">
-        <button id="worlds">WORLDS</button>
-        <button id="armory" aria-haspopup="dialog">ARMORY</button>
-        <button id="sound" aria-pressed="false">SOUND ON</button>
-        <button id="motion" aria-pressed="false">FX FULL</button>
-        <button id="settings" aria-haspopup="dialog">SETTINGS</button>
-        <button id="fullscreen">FULLSCREEN</button>
-        <button id="pause" disabled>PAUSE <kbd>ESC</kbd></button>
+        <button id="worlds">Chapter</button>
+        <button id="armory" aria-haspopup="dialog">Equipment</button>
+        <button id="settings" aria-haspopup="dialog">Settings</button>
+        <button id="pause" disabled>Pause <kbd>Esc</kbd></button>
       </nav>
     </header>
     <section id="stage" class="stage" aria-label="Runeheart action platformer">
       <div id="game" role="img" aria-label="Pixel art game world"></div>
       <div id="hud" class="hud" hidden>
         <div class="vitals">
-          <div class="callsign">AETHER <span>TECHNO-MAGE</span></div>
+          <div class="callsign">AETHER <span>LANTERN BEARER</span></div>
           <div class="meter-row" aria-label="Health"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20 3 11C-1 4 8 1 12 7c4-6 13-3 9 4Z"/></svg><span class="sr-only">Health</span><div class="meter hp"><i id="health-bar"></i></div><b id="health-value">100</b></div>
           <div class="meter-row" aria-label="Jet fuel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-8Z"/></svg><span class="sr-only">Fuel</span><div class="meter fuel"><i id="fuel-bar"></i></div><b id="fuel-value">100</b></div>
           <div class="meter-row" aria-label="Magic energy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/></svg><span class="sr-only">Magic energy</span><div class="meter mana"><i id="mana-bar"></i></div><b id="mana-value">100</b></div>
           <div id="equipped" class="equipped">RUSTFANG / CARBINE / CINDER PLAGUE</div>
           <div id="buff" class="buff"></div>
         </div>
-        <div class="mission"><span id="zone-label">ICEBREAK OUTSKIRTS</span><p id="objective">FIND THE LAST SOUL</p><small id="timer">00:00</small><div class="threat-clock"><span>REACTOR</span><div id="rune-status" class="rune-status" role="group" aria-label="Rune stones: 0 of 3 recovered"><span data-rune="ember-heart" data-recovered="false" role="img" aria-label="Ember Heart: not recovered"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 7 9 10 6 16-3 6-14 3-13-4 0-4 4-7 7-12Zm0 10c-5 5-2 9 2 8 3-2 1-5-2-8Z"/></svg></span><span data-rune="tide-glass" data-recovered="false" role="img" aria-label="Tide Glass: not recovered"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C9 6 5 11 5 15a7 7 0 0 0 14 0c0-4-4-9-7-13Zm-3 14q0 3 4 3"/></svg></span><span data-rune="storm-seal" data-recovered="false" role="img" aria-label="Storm Seal: not recovered"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-8Z"/></svg></span></div><b id="countdown">05:00</b></div></div>
+        <div class="mission"><span id="zone-label">THE HOLLOW SANCTUARY</span><p id="objective">FIND MIRA</p><small id="timer">00:00</small><div class="threat-clock"><span>LANTERN</span><div id="rune-status" class="rune-status" role="group" aria-label="Rune stones: 0 of 3 recovered"><span data-rune="ember-heart" data-recovered="false" role="img" aria-label="Ember Heart: not recovered"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 7 9 10 6 16-3 6-14 3-13-4 0-4 4-7 7-12Zm0 10c-5 5-2 9 2 8 3-2 1-5-2-8Z"/></svg></span><span data-rune="tide-glass" data-recovered="false" role="img" aria-label="Tide Glass: not recovered"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C9 6 5 11 5 15a7 7 0 0 0 14 0c0-4-4-9-7-13Zm-3 14q0 3 4 3"/></svg></span><span data-rune="storm-seal" data-recovered="false" role="img" aria-label="Storm Seal: not recovered"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-8Z"/></svg></span></div><b id="countdown">05:00</b></div></div>
       </div>
-      <div id="boss-hud" class="boss-hud" hidden><div><b id="boss-name">THE WARDEN</b><span id="boss-subtitle">DEFENSE CORE / MK. IV</span></div><div class="meter"><i id="boss-bar"></i></div></div>
+      <div id="boss-hud" class="boss-hud" hidden><div><b id="boss-name">THE WARDEN</b><span id="boss-subtitle">KEEPER OF THE HOLLOW</span></div><div class="meter"><i id="boss-bar"></i></div></div>
       <div id="missile-warning" class="missile-warning" role="status" aria-label="Incoming heavy attack from the right" hidden><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M41 5 6 24l35 19Z"/><path d="M27 16v11m0 5v1"/></svg><span id="missile-count" class="sr-only"></span></div>
       <div id="dialogue" class="dialogue" role="status" hidden></div>
       <div id="menu" class="menu">
         <div class="menu-content">
-          <div class="eyebrow" id="menu-eyebrow">THE LAST UNBOUND SOUL</div>
-          <h1 id="menu-title">RUNE<span>//</span><br>HEART</h1>
+          <div class="eyebrow" id="menu-eyebrow">RUNEHEART · CHAPTER I</div>
+          <h1 id="menu-title">The Last<br><span>Lantern</span></h1>
           <div class="title-rule"></div>
-          <p id="menu-copy">Ancient souls power the machines of a dead empire.<br>Choose a fractured realm. Break its tyrant's claim.</p>
+          <p id="menu-copy">Mira’s brother is trapped inside the sanctuary.<br>Recover three lost runes. Break the engine’s hold.</p>
           <div class="menu-launch">
-          <button id="menu-settings" class="menu-settings" aria-haspopup="dialog">SETTINGS / AUDIO</button>
-          <label class="difficulty-label" for="world-select">FRACTURED REALM</label>
-          <select id="world-select" aria-label="World"><option value="soulforge">Soulforge</option></select>
-          <label class="difficulty-label" for="difficulty">THREAT LEVEL</label>
+          <div class="new-run-options">
+          <label class="difficulty-label" for="world-select">Your journey</label>
+          <select id="world-select" aria-label="Chapter"><option value="soulforge">The Hollow Sanctuary</option></select>
+          <label class="difficulty-label" for="difficulty">Challenge</label>
           <select id="difficulty" aria-label="Difficulty">
-            <option value="ember">EMBER · EASY</option><option value="forge" selected>FORGE · MEDIUM</option><option value="inferno">INFERNO · HARD</option><option value="extinction">EXTINCTION · ULTRA HARD</option>
+            <option value="ember">Ember · Gentle</option><option value="forge" selected>Forge · Balanced</option><option value="inferno">Inferno · Demanding</option><option value="extinction">Extinction · Relentless</option>
           </select>
-          <button id="start" class="primary">ENTER SOULFORGE <span>↗</span></button>
           </div>
-          <div class="menu-detail" id="menu-detail">SIX FRONTIERS <i>/</i> THREE TYRANTS <i>/</i> ONE UNBOUND SOUL</div>
-          <details id="controls"><summary>FIELD MANUAL <span>+</span></summary>
-            <div class="manual">
-              <p><kbd>A D</kbd> or <kbd>← →</kbd> move · <kbd>Space</kbd> jump / double jump</p>
-              <p><kbd>J</kbd> slash / deflect · <kbd>K</kbd> fire · <kbd>W ↑</kbd> aim up</p>
-              <p><kbd>Shift</kbd> dash · hold <kbd>L</kbd> or <kbd>E</kbd> jetpack</p>
-              <p><kbd>Q</kbd> sorcery · <kbd>F</kbd> interact · <kbd>C</kbd> gun · <kbd>V</kbd> sword · <kbd>X</kbd> spell · <kbd>Z</kbd> eclipse nova</p>
-              <p>Jump against a wall to climb. Hold jump for height. Fuel recharges on solid ground. <kbd>S + Space</kbd> drops through catwalks.</p>
-              <p>Gamepad: stick move/aim · A jump · X slash · RT fire · B dash · RB thrust · LT magic · Y interact · LB gun · D-pad left/right sword/spell · right stick click nova.</p>
-              <p>Touch anywhere clear, then drag to move and aim. The stick stays at your first touch and fades eight seconds after release. The three large buttons are Dash, Attack, and Jump. Attack cuts immediately; hold it to fire and its icon becomes a gun. Jump leaps immediately; hold it to thrust and its icon becomes a jetpack. The separate power rune casts your selected spell or interacts with someone nearby. Open the small gear button to choose equipment and companions while paused. Holding the rune also opens gear. Down + jump drops through catwalks.</p>
-              <p>Fire spreads. Shadow hides. Lightning staggers foes. Sorcery consumes soul energy; cannon and nova charges are finite. Explore caches and speak to survivors for gear.</p>
+          <button id="start" class="primary">Enter the sanctuary <span aria-hidden="true">→</span></button>
+          <div class="menu-actions"><button id="menu-settings" class="menu-settings" aria-haspopup="dialog">Settings</button><button id="menu-equipment" aria-haspopup="dialog">Equipment</button></div>
+          </div>
+          <div class="menu-detail" id="menu-detail">A light worth keeping.</div>
+          <details id="controls"><summary>Field guide <span aria-hidden="true">+</span></summary>
+            <div class="manual" role="dialog" aria-modal="true" aria-label="Field guide">
+              <header class="catalogue-header"><div><span class="eyebrow">A KEEPER'S COMPANION</span><h2>Field guide</h2></div><button id="manual-close" aria-label="Close field guide">Close ×</button></header>
+              <div class="manual-body" tabindex="0" aria-label="Field guide instructions">
+                <section><h3>Touch · two ways to act</h3><p>Drag an empty part of the screen to move and aim. The stick stays where your finger first lands.</p><dl class="guide-actions"><div><dt>Attack</dt><dd>Tap to slash. Hold to fire.</dd></div><div><dt>Jump</dt><dd>Tap to leap. Hold to thrust.</dd></div><div><dt>Dash</dt><dd>Tap to evade. Wait for its rune to recover.</dd></div><div><dt>Power rune</dt><dd>Tap to cast, or interact when someone or something is nearby. Hold to open equipment.</dd></div></dl><p>The small gear opens equipment while the world is paused. Hold down + Jump to drop through a thin platform.</p></section>
+                <section><h3>Movement &amp; survival</h3><p>Jump again in the air. Hold a jump for more height; jump against a wall to climb. Thrust uses fuel, which refills on solid ground.</p><p>Read an enemy's windup, evade the strike, then punish its recovery. Slash incoming projectiles to deflect them. Find caches and speak to survivors for equipment.</p><p>Sorcery consumes resonance. Cannon and nova charges are finite. Collect the three runes to open the sanctuary's heart.</p></section>
+                <section><h3>Keyboard</h3><p><kbd>A D</kbd> / <kbd>← →</kbd> move · <kbd>Space</kbd> jump<br><kbd>J</kbd> slash · <kbd>K</kbd> fire · <kbd>W ↑</kbd> aim up<br><kbd>Shift</kbd> dash · hold <kbd>L</kbd> / <kbd>E</kbd> thrust<br><kbd>Q</kbd> power · <kbd>F</kbd> interact<br><kbd>C</kbd> gun · <kbd>V</kbd> blade · <kbd>X</kbd> spell<br><kbd>Z</kbd> nova · <kbd>S + Space</kbd> drop through<br><kbd>Esc</kbd> pause</p></section>
+                <section><h3>Gamepad</h3><p>Stick move/aim · A jump · X slash · RT fire · B dash · RB thrust · LT power · Y interact · LB gun · D-pad left/right blade/spell · right stick click nova · Start pause.</p></section>
+              </div>
             </div>
           </details>
         </div>
-        <div id="menu-stamp" class="menu-stamp"><span>RESTRICTED ZONE</span><b>SECTOR<br>07</b><small>61° N / 18° E<br>−24°C · NO SIGNAL</small></div>
+        <div id="menu-stamp" class="menu-stamp" aria-hidden="true"><span>THE HOLLOW SANCTUARY</span><b>✧</b><small>Where the last light waits.</small></div>
       </div>
       <div id="progress" class="progress" hidden><i></i></div>
       <div id="touch" class="touch" hidden aria-label="Touch controls">
@@ -86,23 +85,31 @@
         </div>
       </div>
       <dialog id="catalogue" class="catalogue" aria-labelledby="armoury-title">
-        <header class="catalogue-header"><div><span class="eyebrow">RECOVERED FROM THE EMPIRE</span><h2 id="armoury-title">ARMORY &amp; RELICS</h2></div><button id="catalogue-close" aria-label="Close armory">CLOSE ×</button></header>
+        <header class="catalogue-header"><div><span class="eyebrow">THE KEEPER'S BELONGINGS</span><h2 id="armoury-title">Equipment &amp; relics</h2></div><button id="catalogue-close" aria-label="Close equipment">Close ×</button></header>
         <div id="catalogue-tabs" class="catalogue-tabs" role="tablist" aria-label="Equipment categories"></div>
         <p id="catalogue-note" class="catalogue-note">Discover caches and help survivors to unlock equipment.</p>
         <div class="control-options"><label for="control-opacity">Button opacity</label><input id="control-opacity" type="range" min="40" max="100" step="5" value="80" /><output id="control-opacity-value" for="control-opacity">80%</output></div>
         <div id="catalogue-grid" class="catalogue-grid" role="tabpanel" tabindex="0"></div>
       </dialog>
       <dialog id="settings-panel" class="settings-panel" aria-labelledby="settings-title">
-        <h2 id="settings-title">FIELD SETTINGS</h2>
-        <p>Set the soundtrack and combat effects separately. Changes save on this device.</p>
+        <span class="eyebrow">MAKE YOURSELF AT HOME</span>
+        <h2 id="settings-title">Settings</h2>
+        <p class="settings-note">Your preferences are kept on this device.</p>
+        <div class="settings-grid"><div class="setting">
         <label for="music-volume">Music <output id="music-volume-value" for="music-volume">70%</output></label>
         <input id="music-volume" type="range" min="0" max="100" step="5" value="70" />
+        </div><div class="setting">
         <label for="sfx-volume">Sound effects <output id="sfx-volume-value" for="sfx-volume">80%</output></label>
         <input id="sfx-volume" type="range" min="0" max="100" step="5" value="80" />
-        <button id="settings-close" class="primary">RETURN TO GAME</button>
+        </div><div class="setting setting-controls">
+        <label for="settings-control-opacity">Button visibility <output id="settings-control-opacity-value" for="settings-control-opacity">80%</output></label>
+        <input id="settings-control-opacity" type="range" min="40" max="100" step="5" value="80" />
+        </div><div class="setting setting-effects"><span class="setting-label">Visual effects</span><button id="motion" aria-pressed="false">FX FULL</button></div></div>
+        <div class="settings-utilities"><button id="sound" aria-pressed="false">SOUND ON</button><button id="fullscreen">Fullscreen</button></div>
+        <button id="settings-close" class="primary">Back to the sanctuary <span aria-hidden="true">→</span></button>
       </dialog>
       <dialog id="story-panel" class="story-panel" aria-labelledby="story-speaker" aria-describedby="story-text">
-        <img id="story-portrait" alt="" width="96" height="96" /><div class="story-content"><div class="eyebrow">A VOICE IN THE FRONTIER</div><h2 id="story-speaker">MIRA</h2><p id="story-text"></p><div id="story-choices" class="story-choices"></div><button id="story-next" class="story-next">Continue →</button></div>
+        <img id="story-portrait" alt="" width="96" height="96" /><div class="story-content"><div class="eyebrow">A VOICE IN THE HOLLOW</div><h2 id="story-speaker">MIRA</h2><p id="story-text"></p><div id="story-choices" class="story-choices"></div><button id="story-next" class="story-next">Continue →</button></div>
       </dialog>
     </section>
     <footer class="footer"><span><kbd>A D</kbd> MOVE <kbd>SPACE</kbd> JUMP <kbd>J</kbd> CUT <kbd>K</kbd> FIRE <kbd>SHIFT</kbd> DASH <kbd>L</kbd> THRUST</span><span id="footer-status">RUNEHEART · TOUCH / KEYBOARD / GAMEPAD</span></footer>

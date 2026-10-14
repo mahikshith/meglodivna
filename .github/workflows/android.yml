@@ -1,7 +1,8 @@
-name: Runeheart Android APK
+name: Lantern Android APK
 on:
   push:
-    branches: [main, Revamp]
+    branches: [main, Revamp, codex/runeheart-rebuild]
+    tags: ['v*-lantern']
   pull_request:
   workflow_dispatch:
 permissions:
@@ -69,3 +70,40 @@ jobs:
           path: |
             artifacts/*report.json
             android/app/build/reports/lint-results-debug.html
+  prerelease:
+    if: startsWith(github.ref, 'refs/tags/v') && endsWith(github.ref, '-lantern')
+    needs: apk
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: ASH-SIGNAL-Runeheart-debug-APK
+          path: release-apk
+      - uses: actions/download-artifact@v4
+        with:
+          name: Runeheart-test-evidence
+          path: release-evidence
+      - name: Publish and verify exact test APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          mkdir -p release-upload downloaded
+          cp release-apk/app-debug.apk release-upload/ASH-SIGNAL-Lantern-v0.6.0.apk
+          cp release-evidence/artifacts/android-report.json release-upload/android-report.json
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          apk = Path('release-upload/ASH-SIGNAL-Lantern-v0.6.0.apk')
+          report = json.loads(Path('release-upload/android-report.json').read_text())
+          assert hashlib.sha256(apk.read_bytes()).hexdigest() == report['sha256']
+          assert report['version'] == '0.6.0-lantern' and report['versionCode'] == 7
+          Path('release-upload/SHA256SUMS.txt').write_text(report['sha256'] + '  ' + apk.name + '\n')
+          PY
+          gh release create "$RELEASE_TAG" release-upload/* --verify-tag --prerelease --title "The Last Lantern v0.6.0 — Hollow Sanctuary test build" --notes-file docs/LANTERN-RELEASE.md
+          gh release download "$RELEASE_TAG" --dir downloaded --pattern ASH-SIGNAL-Lantern-v0.6.0.apk
+          cmp release-upload/ASH-SIGNAL-Lantern-v0.6.0.apk downloaded/ASH-SIGNAL-Lantern-v0.6.0.apk
+          echo "Uploaded APK downloaded again and matched byte for byte." >> "$GITHUB_STEP_SUMMARY"

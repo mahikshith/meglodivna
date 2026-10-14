@@ -1,8 +1,8 @@
 {
   "worldId": "soulforge",
   "status": "won",
-  "time": 100.33333333335925,
-  "hp": 75.72,
+  "time": 86.55833333334829,
+  "hp": 132.536,
   "bosses": [
     {
       "id": "soulforge-warden",
@@ -17,12 +17,13 @@
       "dead": true
     }
   ],
-  "retries": 0,
+  "retries": 1,
   "captures": [
     "room-0-The-Last-Lantern",
     "story-soulforge-mira",
     "room-1-Roots-of-Iron",
     "room-2-The-Bell-Stair",
+    "story-soulforge-orren",
     "room-3-Keeper-of-Embers",
     "boss-soulforge-warden",
     "room-4-The-Drowned-Choir",

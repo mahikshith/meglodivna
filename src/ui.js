@@ -3,20 +3,22 @@ const time = seconds => `${Math.floor(Math.max(0, seconds) / 60).toString().padS
 
 export function createCampaignUI(catalog, callbacks = {}) {
   const categories = { sword: catalog.SWORDS, gun: catalog.GUNS, armor: catalog.ARMORS, spell: catalog.SPELLS, relic: catalog.RELICS };
-  const labels = { sword: 'BLADES', gun: 'FIREPOWER', armor: 'ARMOR', spell: 'SORCERY', relic: 'RELICS' };
+  const labels = { sword: 'BLADES', gun: 'FIREARMS', armor: 'VESTMENTS', spell: 'SORCERY', relic: 'RELICS' };
   let category = 'sword', currentWorld = null, storySignature = '', previousFocus = null;
   const modal = el('catalogue'), storyPanel = el('story-panel');
   const runeStatus = el('rune-status'), runeIcons = [...(runeStatus?.querySelectorAll('[data-rune]') || [])];
-  const opacity = el('control-opacity');
-  if (opacity) {
+  const opacitySliders = [el('control-opacity'), el('settings-control-opacity')].filter(Boolean);
+  if (opacitySliders.length) {
     const applyOpacity = value => {
       const amount = Math.max(40, Math.min(100, Number(value) || 80));
-      opacity.value = String(amount); el('control-opacity-value').textContent = `${amount}%`;
+      for (const slider of opacitySliders) {
+        slider.value = String(amount); el(`${slider.id}-value`).textContent = `${amount}%`;
+        slider.setAttribute('aria-valuetext', `${amount} percent`);
+      }
       el('touch').style.setProperty('--touch-opacity', String(amount / 100));
-      opacity.setAttribute('aria-valuetext', `${amount} percent`);
     };
     try { applyOpacity(localStorage.getItem('runeheart-touch-opacity') || 80); } catch { applyOpacity(80); }
-    opacity.addEventListener('input', () => { applyOpacity(opacity.value); try { localStorage.setItem('runeheart-touch-opacity', opacity.value); } catch {} });
+    for (const slider of opacitySliders) slider.addEventListener('input', () => { applyOpacity(slider.value); try { localStorage.setItem('runeheart-touch-opacity', slider.value); } catch {} });
   }
   const name = (kind, id) => categories[kind]?.find(item => item.id === id)?.name || id || '—';
   const tint = value => typeof value === 'number' ? `#${value.toString(16).padStart(6, '0')}` : value;
@@ -46,8 +48,8 @@ export function createCampaignUI(catalog, callbacks = {}) {
         : category === 'gun' || category === 'sword' ? `${item.damage}${item.pellets ? ` × ${item.pellets}` : ''} damage · ${item.cooldown}s recovery${item.pierce ? ` · pierces ${item.pierce}` : ''}${item.cost ? category === 'gun' && item.id === 'cannon' ? ' · 1 cannon charge' : ` · ${item.cost} resonance` : ''}` : '';
       card.append(image, title, kind, description); if (traits.textContent) card.append(traits); card.append(action); el('catalogue-grid').append(card);
     }
-    for (const tab of el('catalogue-tabs').children) { const selected = tab.dataset.category === category; tab.setAttribute('aria-selected', String(selected)); tab.tabIndex = selected ? 0 : -1; }
-    el('catalogue-note').textContent = category === 'relic' ? 'Recovered relics remember the people this empire consumed.' : 'Equipment changes defense, resources and attack behavior. Discover caches and help survivors to unlock it.';
+    for (const tab of el('catalogue-tabs').children) { const selected = tab.dataset.category === category; tab.setAttribute('aria-selected', String(selected)); tab.tabIndex = selected ? 0 : -1; if (selected) el('catalogue-grid').setAttribute('aria-labelledby', tab.id); }
+    el('catalogue-note').textContent = category === 'relic' ? 'Each recovered relic carries a memory of the sanctuary.' : 'Choose what you carry. Find caches and help survivors to discover new equipment.';
   };
   for (const key of Object.keys(categories)) {
     const tab = document.createElement('button'); tab.textContent = labels[key]; tab.dataset.category = key; tab.setAttribute('role', 'tab'); tab.setAttribute('aria-controls', 'catalogue-grid');
@@ -67,6 +69,20 @@ export function createCampaignUI(catalog, callbacks = {}) {
     previousFocus = document.activeElement; callbacks.onOpen?.(); modal.showModal(); el('catalogue-close').focus();
   };
   el('armory').addEventListener('click', () => open()); el('catalogue-close').addEventListener('click', close);
+  el('menu-equipment')?.addEventListener('click', () => open());
+  const guide = el('controls'), guideClose = el('manual-close');
+  const closeGuide = () => { guide.open = false; guide.querySelector('summary').focus({ preventScroll: true }); };
+  guideClose?.addEventListener('click', closeGuide);
+  guide?.addEventListener('toggle', () => { if (guide.open) guideClose?.focus({ preventScroll: true }); });
+  guide?.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && guide.open) { event.preventDefault(); event.stopPropagation(); closeGuide(); }
+    if (event.key === 'Tab' && guide.open) {
+      const body = guide.querySelector('.manual-body');
+      if (event.shiftKey && document.activeElement === guideClose) { event.preventDefault(); body.focus(); }
+      else if (!event.shiftKey && document.activeElement === body) { event.preventDefault(); guideClose?.focus(); }
+    }
+  });
+  el('start')?.addEventListener('click', () => { if (guide) guide.open = false; });
   el('touch')?.addEventListener('open-loadout', () => { category = 'spell'; open(); });
   modal.addEventListener('close', () => { callbacks.onClose?.(); previousFocus?.focus?.({ preventScroll: true }); });
   storyPanel.addEventListener('cancel', event => event.preventDefault());
@@ -86,12 +102,13 @@ export function createCampaignUI(catalog, callbacks = {}) {
       const button = document.createElement('button'); button.textContent = choice.label; button.addEventListener('click', () => callbacks.onStoryChoice?.(choice.id)); el('story-choices').append(button);
     }
     el('story-next').hidden = final && !!story.choices?.length;
-    el('story-next').textContent = final ? 'Return to the frontier →' : 'Continue →';
+    el('story-next').textContent = final ? 'Return to the sanctuary →' : 'Continue →';
     if (!storyPanel.open) { close(); storyPanel.showModal(); }
     (el('story-choices').firstElementChild || el('story-next')).focus();
   };
   const renderHUD = world => {
     currentWorld = world;
+    el('touch').dataset.taught = String((world.time || 0) > 15);
     const player = world.player;
     const collections = world.collections || world.progress?.collections || [];
     let recoveredRunes = 0;

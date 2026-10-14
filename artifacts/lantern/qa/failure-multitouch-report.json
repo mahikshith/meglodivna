@@ -1,0 +1,153 @@
+{
+  "kind": "Integrated Chromium input smoke plus separately labelled isolated effect fixtures",
+  "physicalDevice": false,
+  "campaignCompletion": false,
+  "started": "2026-10-14T17:39:53.112Z",
+  "sourceHashes": {
+    "src/main.js": "99d82bbc60f159de9b6f0072c81c442912685e8d2525e3512d32ea0de015ac1a",
+    "src/combat.js": "f3e8dd65ca1825b5c41658f12654c5c5b7e45492018ee467f776ba5b2baba412",
+    "src/physics.js": "ac5d02f4c4c199f4b9caa0772d29c3e33f1cd542b8e8610b77878a80ebe3ce02",
+    "src/input.js": "9f928e166f46f8f823a9e1e494389a977e869312362023df428d8235a8aa2b9c",
+    "src/ui.js": "077f91245eaef68eac35bfecb15e2f94671d796f4242b4252fc964e5d3bbaba7",
+    "src/style.css": "fab8ee32895b88568bceaf4792bba1ee4974235259dd66df5b8ec5668ca9966f",
+    "src/lantern-fx.js": "de197643b202295e20da6941fad05d70964a76052a307eed0d102e0857f1e841",
+    "src/lantern-art.js": "8242772f04fe439ae94df1378e6e69131f4f757f19244d5949c92b7e5db7c06f",
+    "src/rune-worlds.js": "265b9f95435477df78877be24ea41343cc1a5ebf4cec235d382c504f4dc2f8b3",
+    "index.html": "9d42f3f88c03e21ed0ef72cb716fc395dfbe0674821fa29ffdc1830aba9fc0b6"
+  },
+  "realInput": [
+    {
+      "viewport": {
+        "width": 740,
+        "height": 360
+      },
+      "kind": "Actual keyboard/CDP touch inputs; no injected progress, health or coordinates",
+      "checks": [
+        "keyboard movement, variable/air jump, jet smoke, three slash modes, fire and dash",
+        "real Mira conversation/reward, every equipment tab, legal spell equip, modal freeze",
+        "simultaneous movement/jump/thrust/fire, independent action release, visible held modes"
+      ],
+      "controlBounds": [
+        {
+          "id": "touch-pause",
+          "x": 24,
+          "y": 298,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "touch-gear",
+          "x": 88,
+          "y": 298,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "touch-power",
+          "x": 294,
+          "y": 232,
+          "w": 80,
+          "h": 80
+        },
+        {
+          "id": "touch-dash",
+          "x": 400,
+          "y": 260,
+          "w": 92,
+          "h": 92
+        },
+        {
+          "id": "touch-attack",
+          "x": 508,
+          "y": 204,
+          "w": 100,
+          "h": 100
+        },
+        {
+          "id": "touch-jump",
+          "x": 622,
+          "y": 252,
+          "w": 100,
+          "h": 100
+        }
+      ],
+      "passed": false,
+      "failure": "page.waitForFunction: Timeout 6000ms exceeded."
+    }
+  ],
+  "fixtures": [],
+  "captures": [
+    {
+      "name": "01-real-home",
+      "kind": "real input",
+      "mode": "menu",
+      "time": 0,
+      "player": {
+        "x": 98,
+        "y": 1200,
+        "state": "fall",
+        "grounded": false,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-air-2",
+      "texture": "lantern-art",
+      "particles": 0,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "02-real-740x360",
+      "kind": "real input",
+      "mode": "playing",
+      "time": 3.241666666666658,
+      "player": {
+        "x": 536.1250000000005,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 5,
+        "slashMode": "horizontal",
+        "spell": "siphon",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-idle-2",
+      "texture": "lantern-art",
+      "particles": 15,
+      "capacity": 240,
+      "ghosts": 4
+    }
+  ],
+  "runtimeErrors": [
+    {
+      "label": "740x360",
+      "error": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://127.0.0.1:5173/favicon.ico",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "label": "740x360",
+      "error": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "location": {
+        "url": "http://127.0.0.1:5173/favicon.ico",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "failedResources": [],
+  "passed": false,
+  "failure": "page.waitForFunction: Timeout 6000ms exceeded.\n    at realInput (C:\\Users\\30025722\\Music\\meglodivina\\scripts\\lantern-playtest.cjs:195:52)\n    at async run (C:\\Users\\30025722\\Music\\meglodivina\\scripts\\lantern-playtest.cjs:321:88)",
+  "finished": "2026-10-14T17:40:09.813Z",
+  "sourceUnchanged": true
+}

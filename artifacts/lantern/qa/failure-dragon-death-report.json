@@ -1,0 +1,982 @@
+{
+  "kind": "Integrated Chromium input smoke plus separately labelled isolated effect fixtures",
+  "physicalDevice": false,
+  "campaignCompletion": false,
+  "started": "2026-10-14T17:43:30.284Z",
+  "sourceHashes": {
+    "index.html": "1c6ba697f28a3a359722b7a743cf3dddc20ff06223ac9ea88a635d176576f150",
+    "src/art.js": "525873ea6b871cb3f1d61992836ee9f2b1caccd6c88326ece6bbf46d8a6aa660",
+    "src/audio.js": "f416d7ede9a277f685134a8a42087fddfe0d2e514d1d4283f2278c70170177ce",
+    "src/camera.js": "e552f384b05058f1932bac77af9e1636d113adf57259e38aa8ae802f81256e79",
+    "src/catalog.js": "fa68872465e399d75cda444cbbceea8f53399a592442e96b00a1f2238d4e3448",
+    "src/combat.js": "f3e8dd65ca1825b5c41658f12654c5c5b7e45492018ee467f776ba5b2baba412",
+    "src/input.js": "d9c97ec88590d02e12a2240af5323030c683aa3cd03faa200c4165d253bc5895",
+    "src/lantern-art.js": "8242772f04fe439ae94df1378e6e69131f4f757f19244d5949c92b7e5db7c06f",
+    "src/lantern-fx.js": "de197643b202295e20da6941fad05d70964a76052a307eed0d102e0857f1e841",
+    "src/legacy-level.js": "21614250e936233c0bfea0ce0626a528f618651ac9dc679ab7e27691e0e0f1fa",
+    "src/level.js": "ebed4be76751f4ebd5b07bb6e88d857476d93113fe4ae5e558a2440894dd2ca1",
+    "src/main.js": "2204cbca0d595c8e96a84c17c2009a1634fa1971d7831758896ff91b1b1df9fb",
+    "src/physics.js": "ac5d02f4c4c199f4b9caa0772d29c3e33f1cd542b8e8610b77878a80ebe3ce02",
+    "src/progress.js": "46e6275664a91a871830489e8726cba3b8e622226b736520dd0d5aa315b67a63",
+    "src/reference-art.js": "1ee6f6283cce08057c812ee0632609f8d1b720359dc160bfbc775f9e7866738e",
+    "src/rune-worlds.js": "265b9f95435477df78877be24ea41343cc1a5ebf4cec235d382c504f4dc2f8b3",
+    "src/runeheart-art.js": "4219d8df922a319368b3da6efd5822ceaf02e3d28fd39f6aa51a3d855a0649a1",
+    "src/style.css": "fab8ee32895b88568bceaf4792bba1ee4974235259dd66df5b8ec5668ca9966f",
+    "src/terrain.js": "b9352c51b46ea6c509f11dc313a3992f0d0a71a262f62b31a430dc1fd5e4e981",
+    "src/ui.js": "077f91245eaef68eac35bfecb15e2f94671d796f4242b4252fc964e5d3bbaba7",
+    "src/worlds.js": "f3e899199f1fe72be50fa777d268ddde5133aa8c32bab81a56bc975d29af9daa",
+    "public/lantern/manifest.json": "254dcc91785a493f25bc1d6001c5414e8be8bd0a329a45890c7a72cb4b764bb7",
+    "public/lantern/atlas.json": "d0ee315ea51b66689513ecba32b47f5c6c6380e157895d407901364a3c7086e1",
+    "public/lantern/atlas.png": "2e99d80a62c416e6f92196e12dcfca683683da848183e997ad2cc0cf0f933c7d"
+  },
+  "realInput": [
+    {
+      "viewport": {
+        "width": 740,
+        "height": 360
+      },
+      "kind": "Actual keyboard/CDP touch inputs; no injected progress, health or coordinates",
+      "checks": [
+        "keyboard movement, variable/air jump, jet smoke, three slash modes, fire and dash",
+        "real Mira conversation/reward, every equipment tab, legal spell equip, modal freeze",
+        "simultaneous movement/jump/thrust/fire, independent action release, visible held modes",
+        "held-input pause cleanup, no new/moving paused FX, settings close/reopen/Escape return context",
+        "second-finger Pause and Gear interrupt held fire without duplicate activation",
+        "save and learned/equipped reward reload, audio and FX preference persistence, bounded FX pools"
+      ],
+      "controlBounds": [
+        {
+          "id": "touch-pause",
+          "x": 24,
+          "y": 298,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "touch-gear",
+          "x": 88,
+          "y": 298,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "touch-power",
+          "x": 294,
+          "y": 232,
+          "w": 80,
+          "h": 80
+        },
+        {
+          "id": "touch-dash",
+          "x": 400,
+          "y": 260,
+          "w": 92,
+          "h": 92
+        },
+        {
+          "id": "touch-attack",
+          "x": 508,
+          "y": 204,
+          "w": 100,
+          "h": 100
+        },
+        {
+          "id": "touch-jump",
+          "x": 622,
+          "y": 252,
+          "w": 100,
+          "h": 100
+        }
+      ],
+      "observedMotion": {
+        "frames": {
+          "menu": {
+            "samples": 34,
+            "atlasFrames": [
+              "lantern-hero-air-2"
+            ]
+          },
+          "idle": {
+            "samples": 35,
+            "atlasFrames": [
+              "lantern-hero-idle-0",
+              "lantern-hero-idle-2",
+              "lantern-hero-idle-3",
+              "lantern-hero-idle-1"
+            ]
+          },
+          "run": {
+            "samples": 25,
+            "atlasFrames": [
+              "lantern-hero-run-0",
+              "lantern-hero-run-1",
+              "lantern-hero-run-2",
+              "lantern-hero-run-3"
+            ]
+          },
+          "jump": {
+            "samples": 42,
+            "atlasFrames": [
+              "lantern-hero-air-0"
+            ]
+          },
+          "jet": {
+            "samples": 15,
+            "atlasFrames": [
+              "lantern-hero-air-1",
+              "lantern-hero-air-2"
+            ]
+          },
+          "fall": {
+            "samples": 33,
+            "atlasFrames": [
+              "lantern-hero-air-2",
+              "lantern-hero-idle-2",
+              "lantern-hero-idle-3"
+            ]
+          },
+          "slash-horizontal": {
+            "samples": 24,
+            "atlasFrames": [
+              "lantern-hero-slash-0",
+              "lantern-hero-slash-1",
+              "lantern-hero-slash-2",
+              "lantern-hero-slash-3"
+            ]
+          },
+          "slash-vertical": {
+            "samples": 24,
+            "atlasFrames": [
+              "lantern-hero-overhead-0",
+              "lantern-hero-overhead-1",
+              "lantern-hero-overhead-2",
+              "lantern-hero-overhead-3"
+            ]
+          },
+          "slash-finisher": {
+            "samples": 15,
+            "atlasFrames": [
+              "lantern-hero-slash-0",
+              "lantern-hero-slash-1",
+              "lantern-hero-slash-2"
+            ]
+          },
+          "slash-dash": {
+            "samples": 10,
+            "atlasFrames": [
+              "lantern-hero-dash-1",
+              "lantern-hero-dash-2",
+              "lantern-hero-dash-3"
+            ]
+          },
+          "story": {
+            "samples": 25,
+            "atlasFrames": [
+              "lantern-hero-run-0"
+            ]
+          },
+          "catalogue": {
+            "samples": 60,
+            "atlasFrames": [
+              "lantern-hero-run-1",
+              "lantern-hero-slash-2"
+            ]
+          },
+          "paused": {
+            "samples": 52,
+            "atlasFrames": [
+              "lantern-hero-overhead-3",
+              "lantern-hero-slash-2"
+            ]
+          }
+        },
+        "maxParticles": 26,
+        "maxGhosts": 4,
+        "samples": 394
+      },
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "kind": "Actual keyboard/CDP touch inputs; no injected progress, health or coordinates",
+      "checks": [
+        "keyboard movement, variable/air jump, jet smoke, three slash modes, fire and dash",
+        "real Mira conversation/reward, every equipment tab, legal spell equip, modal freeze",
+        "simultaneous movement/jump/thrust/fire, independent action release, visible held modes",
+        "held-input pause cleanup, no new/moving paused FX, settings close/reopen/Escape return context",
+        "second-finger Pause and Gear interrupt held fire without duplicate activation",
+        "save and learned/equipped reward reload, audio and FX preference persistence, bounded FX pools"
+      ],
+      "controlBounds": [
+        {
+          "id": "touch-pause",
+          "x": 24,
+          "y": 328,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "touch-gear",
+          "x": 88,
+          "y": 328,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "touch-power",
+          "x": 388,
+          "y": 262,
+          "w": 80,
+          "h": 80
+        },
+        {
+          "id": "touch-dash",
+          "x": 498,
+          "y": 290,
+          "w": 92,
+          "h": 92
+        },
+        {
+          "id": "touch-attack",
+          "x": 606,
+          "y": 234,
+          "w": 100,
+          "h": 100
+        },
+        {
+          "id": "touch-jump",
+          "x": 720,
+          "y": 282,
+          "w": 100,
+          "h": 100
+        }
+      ],
+      "observedMotion": {
+        "frames": {
+          "menu": {
+            "samples": 13,
+            "atlasFrames": [
+              "lantern-hero-air-2"
+            ]
+          },
+          "idle": {
+            "samples": 34,
+            "atlasFrames": [
+              "lantern-hero-idle-0",
+              "lantern-hero-idle-2",
+              "lantern-hero-idle-3",
+              "lantern-hero-idle-1"
+            ]
+          },
+          "run": {
+            "samples": 26,
+            "atlasFrames": [
+              "lantern-hero-run-0",
+              "lantern-hero-run-1",
+              "lantern-hero-run-2",
+              "lantern-hero-run-3"
+            ]
+          },
+          "jump": {
+            "samples": 40,
+            "atlasFrames": [
+              "lantern-hero-air-0"
+            ]
+          },
+          "jet": {
+            "samples": 15,
+            "atlasFrames": [
+              "lantern-hero-air-1",
+              "lantern-hero-air-2"
+            ]
+          },
+          "fall": {
+            "samples": 34,
+            "atlasFrames": [
+              "lantern-hero-air-2",
+              "lantern-hero-idle-2",
+              "lantern-hero-idle-3"
+            ]
+          },
+          "slash-horizontal": {
+            "samples": 24,
+            "atlasFrames": [
+              "lantern-hero-slash-0",
+              "lantern-hero-slash-1",
+              "lantern-hero-slash-2",
+              "lantern-hero-slash-3"
+            ]
+          },
+          "slash-vertical": {
+            "samples": 25,
+            "atlasFrames": [
+              "lantern-hero-overhead-0",
+              "lantern-hero-overhead-1",
+              "lantern-hero-overhead-2",
+              "lantern-hero-overhead-3"
+            ]
+          },
+          "slash-finisher": {
+            "samples": 14,
+            "atlasFrames": [
+              "lantern-hero-slash-0",
+              "lantern-hero-slash-1",
+              "lantern-hero-slash-2",
+              "lantern-hero-slash-3"
+            ]
+          },
+          "slash-dash": {
+            "samples": 10,
+            "atlasFrames": [
+              "lantern-hero-dash-1",
+              "lantern-hero-dash-2",
+              "lantern-hero-dash-3"
+            ]
+          },
+          "story": {
+            "samples": 24,
+            "atlasFrames": [
+              "lantern-hero-run-3"
+            ]
+          },
+          "catalogue": {
+            "samples": 65,
+            "atlasFrames": [
+              "lantern-hero-run-0",
+              "lantern-hero-slash-2"
+            ]
+          },
+          "paused": {
+            "samples": 45,
+            "atlasFrames": [
+              "lantern-hero-overhead-3",
+              "lantern-hero-slash-3"
+            ]
+          }
+        },
+        "maxParticles": 27,
+        "maxGhosts": 4,
+        "samples": 369
+      },
+      "passed": true
+    }
+  ],
+  "fixtures": [
+    {
+      "kind": "horizontal",
+      "steps": 11,
+      "sampledFrames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-slash-0",
+        "lantern-hero-slash-1"
+      ],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakParticles": 0,
+      "particleKinds": [],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "enemies": [],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "vertical",
+      "steps": 11,
+      "sampledFrames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-overhead-0",
+        "lantern-hero-overhead-1"
+      ],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakParticles": 0,
+      "particleKinds": [],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "vertical"
+      },
+      "enemies": [],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "finisher",
+      "steps": 11,
+      "sampledFrames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-slash-0",
+        "lantern-hero-slash-1"
+      ],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakParticles": 0,
+      "particleKinds": [],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "finisher"
+      },
+      "enemies": [],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "jet",
+      "steps": 60,
+      "sampledFrames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-air-0",
+        "lantern-hero-air-1",
+        "lantern-hero-air-2"
+      ],
+      "events": [
+        "land",
+        "jump",
+        "jet"
+      ],
+      "peakParticles": 23,
+      "particleKinds": [
+        "dust",
+        "smoke",
+        "ember"
+      ],
+      "ghosts": 0,
+      "player": {
+        "state": "jet",
+        "slashMode": "horizontal"
+      },
+      "enemies": [],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "enemy-warning",
+      "steps": 65,
+      "sampledFrames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-idle-1",
+        "lantern-hero-idle-2",
+        "lantern-hero-idle-3"
+      ],
+      "events": [
+        "land",
+        "enemywindup"
+      ],
+      "peakParticles": 0,
+      "particleKinds": [],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "enemies": [
+        {
+          "type": "guard",
+          "attack": "bite",
+          "windup": 0.1533333333333334,
+          "attackTime": 0
+        }
+      ],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "slam",
+      "steps": 90,
+      "sampledFrames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-idle-1",
+        "lantern-hero-idle-2",
+        "lantern-hero-idle-3"
+      ],
+      "events": [
+        "land",
+        "enemywindup",
+        "slam",
+        "enemyattack"
+      ],
+      "peakParticles": 47,
+      "particleKinds": [
+        "dust",
+        "spark",
+        "shock"
+      ],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "enemies": [
+        {
+          "type": "sentinel",
+          "attack": "slam",
+          "windup": 0,
+          "attackTime": 0.15833333333333335
+        }
+      ],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "companions",
+      "steps": 106,
+      "sampledFrames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-idle-1",
+        "lantern-hero-idle-2",
+        "lantern-hero-idle-3"
+      ],
+      "events": [
+        "land",
+        "spell",
+        "summon",
+        "summonarrival"
+      ],
+      "peakParticles": 57,
+      "particleKinds": [
+        "spirit"
+      ],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "enemies": [],
+      "allies": [
+        {
+          "type": "wolf",
+          "phase": "attack"
+        },
+        {
+          "type": "dragon",
+          "phase": "attack"
+        }
+      ],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "portal",
+      "steps": 13,
+      "sampledFrames": [
+        "lantern-hero-idle-0"
+      ],
+      "events": [
+        "land",
+        "portal",
+        "portalarrival"
+      ],
+      "peakParticles": 52,
+      "particleKinds": [
+        "spirit",
+        "dust"
+      ],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "enemies": [],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "transformation",
+      "steps": 151,
+      "sampledFrames": [
+        "lantern-hero-idle-0",
+        "lantern-hero-idle-1",
+        "lantern-hero-idle-2",
+        "lantern-hero-idle-3"
+      ],
+      "events": [
+        "land",
+        "taunt",
+        "transform"
+      ],
+      "peakParticles": 46,
+      "particleKinds": [
+        "ember"
+      ],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "enemies": [],
+      "allies": [],
+      "bossForm": "flying"
+    }
+  ],
+  "captures": [
+    {
+      "name": "01-real-home",
+      "kind": "real input",
+      "mode": "menu",
+      "time": 0,
+      "player": {
+        "x": 98,
+        "y": 1200,
+        "state": "fall",
+        "grounded": false,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-air-2",
+      "texture": "lantern-art",
+      "particles": 0,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "02-real-740x360",
+      "kind": "real input",
+      "mode": "playing",
+      "time": 3.2333333333333245,
+      "player": {
+        "x": 542.2638888888893,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 5,
+        "slashMode": "horizontal",
+        "spell": "siphon",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-idle-2",
+      "texture": "lantern-art",
+      "particles": 15,
+      "capacity": 240,
+      "ghosts": 4
+    },
+    {
+      "name": "03-real-settings",
+      "kind": "real input",
+      "mode": "paused",
+      "time": 3.4583333333333237,
+      "player": {
+        "x": 542.2638888888893,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 6,
+        "slashMode": "vertical",
+        "spell": "siphon",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-overhead-3",
+      "texture": "lantern-art",
+      "particles": 7,
+      "capacity": 240,
+      "ghosts": 4
+    },
+    {
+      "name": "04-real-844x390",
+      "kind": "real input",
+      "mode": "playing",
+      "time": 3.1749999999999914,
+      "player": {
+        "x": 556.916666666667,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 5,
+        "slashMode": "horizontal",
+        "spell": "siphon",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-idle-1",
+      "texture": "lantern-art",
+      "particles": 16,
+      "capacity": 240,
+      "ghosts": 4
+    },
+    {
+      "name": "fixture-horizontal",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.09166666666666666,
+      "player": {
+        "x": 350,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 1,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-slash-1",
+      "texture": "lantern-art",
+      "particles": 0,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-vertical",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.09166666666666666,
+      "player": {
+        "x": 350,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 1,
+        "slashMode": "vertical",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-overhead-1",
+      "texture": "lantern-art",
+      "particles": 0,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-finisher",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.09166666666666666,
+      "player": {
+        "x": 350,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 1,
+        "slashMode": "finisher",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-slash-1",
+      "texture": "lantern-art",
+      "particles": 0,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-jet",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.5000000000000007,
+      "player": {
+        "x": 350,
+        "y": 1007.0416666666683,
+        "state": "jet",
+        "grounded": false,
+        "hp": 100,
+        "fuel": 75.83333333333306,
+        "slashId": 0,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": true,
+        "dash": 0
+      },
+      "frame": "lantern-hero-air-1",
+      "texture": "lantern-art",
+      "particles": 22,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-enemy-warning",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.5416666666666672,
+      "player": {
+        "x": 350,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-idle-0",
+      "texture": "lantern-art",
+      "particles": 0,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-slam",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.7499999999999998,
+      "player": {
+        "x": 350,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-idle-1",
+      "texture": "lantern-art",
+      "particles": 47,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-companions",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.8833333333333326,
+      "player": {
+        "x": 350,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-idle-3",
+      "texture": "lantern-art",
+      "particles": 40,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-portal",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.10833333333333332,
+      "player": {
+        "x": 483,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-idle-0",
+      "texture": "lantern-art",
+      "particles": 52,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-transformation",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 1.2583333333333313,
+      "player": {
+        "x": 17970,
+        "y": 620,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "lantern-hero-idle-2",
+      "texture": "lantern-art",
+      "particles": 30,
+      "capacity": 240,
+      "ghosts": 0
+    }
+  ],
+  "runtimeErrors": [],
+  "failedResources": [],
+  "rendererLifecycle": {
+    "kind": "Isolated renderer lifecycle calls; no gameplay completion claim",
+    "deaths": [
+      {
+        "type": "guard",
+        "texture": "lantern-art",
+        "frame": "ln-stalker-3",
+        "visible": true
+      },
+      {
+        "type": "mage",
+        "texture": "lantern-art",
+        "frame": "ln-caster-3",
+        "visible": true
+      },
+      {
+        "type": "sentinel",
+        "texture": "lantern-art",
+        "frame": "ln-guardian-3",
+        "visible": true
+      },
+      {
+        "type": "drone",
+        "texture": "lantern-art",
+        "frame": "ln-portal-0",
+        "visible": true
+      }
+    ],
+    "portal": {
+      "formed": "ln-portal-0",
+      "closing": "ln-portal-3",
+      "reopened": "ln-portal-0",
+      "reborn": 10.3,
+      "retired": true,
+      "reusedFrame": "ln-portal-0",
+      "freshSprite": true,
+      "cleaned": true
+    }
+  },
+  "passed": false,
+  "failure": "AssertionError [ERR_ASSERTION]: drone death selects an actor frame\n    at fixtures (C:\\Users\\30025722\\Music\\meglodivina\\scripts\\lantern-playtest.cjs:346:14)\n    at async run (C:\\Users\\30025722\\Music\\meglodivina\\scripts\\lantern-playtest.cjs:358:5)",
+  "finished": "2026-10-14T17:44:01.113Z",
+  "sourceUnchanged": true
+}

@@ -230,7 +230,11 @@ test('mage, shade, and sentinel attacks have distinct live powers', () => {
     stepWorld(state, {}, STEP);
     if (type === 'mage') assert.equal(state.projectiles.filter(projectile => projectile.active && projectile.kind === 'fire').length, 3);
     if (type === 'shade') { assert.ok(target.dashTime > 0); const x = target.x; stepWorld(state, {}, STEP); assert.ok(target.x < x); }
-    if (type === 'sentinel') assert.ok(Math.hypot(target.beam.x1 - target.beam.x0, target.beam.y1 - target.beam.y0) > 650 && target.beamTime > 0);
+    if (type === 'sentinel') {
+      assert.equal(target.attackKind, 'slam'); assert.equal(target.attackBox.w, 300);
+      assert.equal(target.attackBox.h, 25); assert.ok(target.recovery > 0.6);
+      assert.ok(!target.beam && state.events.some(event => event.type === 'slam'));
+    }
   }
 });
 

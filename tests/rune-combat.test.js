@@ -32,13 +32,15 @@ test('ground villains chase across hundreds of pixels rather than old55px patrol
   }
 });
 
-test('Raider pursues vertically and strafes while Mecha retreats at close range', () => {
+test('Raider pursues vertically and strafes while sentinel closes for a stationary brace', () => {
   const flight = fixture('drone'), raider = flight.enemies[0], startX = raider.x, startY = raider.y;
   tick(flight, 180);
   assert.ok(startX - raider.x > 140); assert.ok(Math.abs(raider.y - startY) > 30);
   assert.equal(raider.intent, 'strafe'); assert.equal(raider.facing, -1);
   const ground = fixture('sentinel', 230), mecha = ground.enemies[0], start = mecha.x;
-  tick(ground, 100); assert.ok(mecha.x > start + 35); assert.equal(mecha.facing, -1);
+  tick(ground, 100); assert.ok(mecha.x < start); assert.equal(mecha.facing, -1);
+  assert.ok(mecha.windup > 0); const braceX = mecha.x;
+  tick(ground, 10); assert.equal(mecha.x, braceX);
 });
 
 test('each villain warns before its directed attack and refreshes warning from its moving anatomy', () => {
@@ -58,7 +60,8 @@ test('each villain warns before its directed attack and refreshes warning from i
       world.events.length = 0;
     }
     assert.ok(attacked && warned >= 25, `${type} warned${warned}frames before attack`);
-    if (type !== 'mage') assert.ok(movedWarning, `${type} must remain visibly active during charge`);
+    if (type === 'sentinel') assert.equal(movedWarning, false, 'The heavy attack must brace in place');
+    else if (type !== 'mage') assert.ok(movedWarning, `${type} must remain visibly active during charge`);
   }
 });
 
@@ -176,7 +179,7 @@ test('vertical boss powers and pressure shots use the current room floor instead
     if (power === 'undertow') { assert.equal(boss.powerPulse.y + boss.powerPulse.h, 1260); assert.ok(boss.powerPulse.y > 610); }
     else assert.equal(boss.mirrorExit.y + 44, 1260);
   }
-  const world = fixture(); world.pressureTimer = 0; stepWorld(world, {}, STEP);
+  const world = fixture(); world.level.pressureDisabled = false; world.pressureTimer = 0; stepWorld(world, {}, STEP);
   assert.ok(world.missileWarning.y > 1180);
 });
 

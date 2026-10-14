@@ -1,4 +1,8 @@
-# Runeheart v0.5 validation
+# Validation
+
+The current rebuild is documented in [The Last Lantern v0.6 validation](docs/LANTERN-VALIDATION.md). The evidence below is retained as historical Runeheart v0.5 context and does not describe the current renderer or new APK.
+
+## Historical Runeheart v0.5 validation
 
 ## Local playable-slice update — 14 October 2026
 

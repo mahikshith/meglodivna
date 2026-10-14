@@ -54,7 +54,7 @@ async function main(){
   await prod.mouse.move(power.x+power.width/2,power.y+power.height/2);await prod.mouse.down();await prod.waitForTimeout(550);await prod.mouse.up();
   assert.ok(await prod.locator('#catalogue').isVisible());await prod.evaluate(()=>window.ashBack());assert.ok(!(await prod.locator('#catalogue').isVisible()));
   await prod.waitForFunction(()=>document.querySelector('#stage').dataset.mode==='playing'&&!document.querySelector('#touch').hidden);
-  await prod.evaluate(()=>window.ashBack());await prod.getByRole('button',{name:'RESUME CAMPAIGN'}).waitFor({state:'visible'});assert.deepEqual(errors,[]);
+  await prod.evaluate(()=>window.ashBack());await prod.locator('#start').waitFor({state:'visible'});await prod.waitForFunction(()=>document.querySelector('#stage').dataset.mode==='paused');assert.deepEqual(errors,[]);
   report.productionChecks=['development API absent','Power hold palette','Back closes palette before pausing'];
   fs.writeFileSync(`artifacts/replay-${worldId}-report.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
   await browser.close();

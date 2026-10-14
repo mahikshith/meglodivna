@@ -44,7 +44,7 @@ export function createPlayer(x, y) {
     grounded: false, wall: 0, onOneWay: false, fuel: 100,
     dashTime: 0, dashCooldown: 0, jumps: 1, state: 'fall',
     coyote: 0, jumpBuffer: 0, wallLock: 0, dropThrough: 0,
-    jumpCutPending: false, jetActive: false,
+    jumpCutPending: false, jetActive: false, lastJumpKind: 'ground',
   };
 }
 
@@ -134,8 +134,10 @@ export function stepPlayer(player, input, solids, dt) {
   if (player.jumpBuffer > 0 && player.dashTime === 0) {
     if (player.grounded || player.coyote > 0) {
       player.vy = -PHYSICS.jumpSpeed;
+      player.lastJumpKind = 'ground';
       events.push('jump');
     } else if (player.wall) {
+      player.lastJumpKind = 'wall';
       player.vy = -PHYSICS.wallJumpSpeed;
       player.vx = -player.wall * PHYSICS.wallJumpPush;
       player.facing = -player.wall;
@@ -143,6 +145,7 @@ export function stepPlayer(player, input, solids, dt) {
       player.jumps = 1;
       events.push('walljump');
     } else if (player.jumps > 0) {
+      player.lastJumpKind = 'air';
       player.vy = -PHYSICS.airJumpSpeed;
       player.jumps--;
       events.push('jump');
@@ -200,6 +203,7 @@ export function stepPlayer(player, input, solids, dt) {
     if (!wasGrounded) events.push('land');
     if (player.jumpBuffer > 0 && player.dashTime === 0) {
       player.vy = -PHYSICS.jumpSpeed;
+      player.lastJumpKind = 'ground';
       player.grounded = false;
       player.coyote = 0;
       player.jumpBuffer = 0;

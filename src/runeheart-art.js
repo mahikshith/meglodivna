@@ -22,7 +22,7 @@ export function createRuneheartArt(scene, legacy = null) {
 }
 
 export const RUNEHEART_THEMES = {
-  soulforge: { backdrop: 'forest', color: 0x243941, tint: 0xaddbdc, farAlpha: .7, decor: 'tree' },
+  soulforge: { backdrop: 'lantern', color: 0x091c27, tint: 0x829a9d, farAlpha: .66 },
   tide: { backdrop: 'town', color: 0x111f2c, tint: 0xb3e8e6, farAlpha: .78, decor: 'house-b', foreground: 'town-mid' },
   pyre: { backdrop: 'crypt', color: 0x271b22, tint: 0xc69b91, farAlpha: .68, decor: 'castle' },
   neon: { backdrop: 'night-city', color: 0x141d31, tint: 0xc8d8ff, farAlpha: .8, decor: 'street-lamp', skyline: true },

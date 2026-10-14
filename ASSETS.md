@@ -1,4 +1,59 @@
-# v0.5 — Runeheart crisp pixel assets
+# Current rebuild — Lantern artwork for Hollow Sanctuary
+
+Hollow Sanctuary now uses original artwork generated for this project with the built-in `image_gen` tool: the courier, three enemy identities, wolf, flame dragon, portal, Mira, Orren, pickups, chest, sanctuary panorama and modular scenery. These generated images are separate from the licensed Gothicvania graphics and the older user-supplied reference boards. No franchise artwork was downloaded for this rebuild. The historical sources and their license notices remain documented below without changing their terms.
+
+## Preserved source images and exact prompts
+
+All original generated PNGs are retained unchanged in [reference/lantern-source](reference/lantern-source/). The exact submitted prompt text is in [prompts.json](reference/lantern-source/prompts.json), identified by the keys below. Actual image dimensions are recorded here because the generator did not always honor the requested sheet dimensions or cell boundaries.
+
+| Source file | Prompt key | Actual dimensions | SHA-256 |
+| --- | --- | --- | --- |
+| `courier-raw.png` | `courier` | 1024×1536 | `73428537e5c8495d0881d1b9c60aaacbe744c5416925aebbdfe12079bc5fafca` |
+| `creatures-raw.png` | `creatures` | 1254×1254 | `fbf25e4471783485de06de28839db43cfc5decc1fe5290305c44b82cc834c1af` |
+| `people-items-raw.png` | `peopleItems` | 1254×1254 | `7c8d1b4fe4e9a70f7102e412c3f6476570170b1dde5cc1584e75ef2ee3100a57` |
+| `environment-raw.png` | `environment` | 1254×1254 | `fbc9f792c4cf36819d44d58f939a44be86fb53db5606332b7a885f41f27d68c3` |
+| `sanctuary-raw.png` | `sanctuary` | 1536×1024 | `1fe267e52365250afc350a183cf4f9941eadda91538881e423d7db8a38b49883` |
+
+## Extraction and registration
+
+Run `python scripts/build-lantern-assets.py` and `python scripts/build-lantern-environment.py` with Python, Pillow, NumPy and SciPy. These are offline build dependencies. Runtime artifacts are in [public/lantern](public/lantern/); the art loader is [src/lantern-art.js](src/lantern-art.js).
+
+Sprite extraction labels connected alpha silhouettes across the whole source image instead of cutting a nominal grid. This preserves the courier's sword and the guardian's raised axe where they cross nominal cell boundaries. Disconnected sprite details are assigned to the nearest complete silhouette. Alpha below 32 is discarded to remove the source's faint extraction halo; surviving pixels become opaque. This is intentional alpha cleanup, not a claim that the unprocessed generated source already had binary pixel edges. Nearest-neighbor resizing introduces no interpolation blur.
+
+The courier and creature families use a shared 0.32 source scale. Mira and Orren use a shared 0.185 scale. Inspected anatomical pivots normalize each family to fixed canvases; swords, cloaks, wings and crouching poses do not change the body's render scale. The courier canvas is 128×112 with anchor (64,96) and fixed render body 20×60. The NPC canvas is 96×104 with anchor (48,88) and fixed render body 18×60. Creature canvases are 192×144 with anchor (96,112), and per-family body metadata. These render registrations do not replace the simulation's collision dimensions.
+
+Items use tight crops with two pixels of transparent padding, center anchors and preserved aspect ratios. The chest is 70×51; collectible frames range from 22×44 to 40×39. The two 68×68 portraits intentionally crop the NPC art at the shoulders. Environment extraction keeps the four large alpha components, scales them by 0.35 and emits separate platform, arch, lantern and root PNGs. The panorama is reduced by nearest neighbor to 768×512. Source rectangles and provenance are stored in the sprite manifest and `environment.json`.
+
+## Frame inventory and animation limits
+
+The Lantern atlas contains **66 frame keys and 63 animation/state aliases** in one 2048×1024 PNG. These are not 63 independently authored animation cycles.
+
+| Family | Extracted frames | Runtime names |
+| --- | ---: | --- |
+| Courier | 24: idle, run, air, horizontal slash, overhead slash, dash; four poses each | `lantern-hero-{group}-{0..3}`, `aether-*`, `hero-*` |
+| Stalker, caster, guardian | 12: idle, anticipation, attack, recovery for each identity | `ln-{stalker,caster,guardian}-{0..3}` and state aliases |
+| Wolf | 4 running poses | `ln-wolf-{0..3}`, `wolf-run/idle/attack` |
+| Dragon | 3 flight poses and 1 breath pose | `ln-dragon-{0..3}`, `dragon-fly/fire/idle` |
+| Portal | 4: dormant, forming, open, closing | `ln-portal-{0..3}`, `portal-dormant/form/open/close` |
+| Mira and Orren | 8 subtle idle poses | `ln-npc-{mira,orren}-{0..3}`, `npc-mira/orren-idle`, compatibility `npc-villager/mage-idle` |
+| Pickups and chest | 8 | `ln-item-{health,mana,fuel,shield,boost,rapid,chest,rune}` |
+| Portraits | 2 | `ln-face-mira`, `ln-face-orren` |
+
+Idle changes are subtle. Firearm poses reuse courier idle; hurt/death reuse the landing crouch. Air/low slashes adapt overhead/horizontal poses. Creature walk, hurt and death aliases hold or reuse supplied action poses; the sheet does not contain complete walk or death cycles. Wolf idle and attack reuse running poses. Dragon breath touches the original source border, leaving a cut flame tip; runtime flame effects extend that emitter. Portal stages exist in the atlas, but their presence alone is not proof that every runtime transition uses all four stages.
+
+Dust, exhaust smoke, sparks, flame trails, shock rings and dash afterimages are procedural presentation effects in [src/lantern-fx.js](src/lantern-fx.js), not additional generated sprite animations. The presentation pool caps at 240 particles and six dash ghosts. Existing rendering also retains its older bounded effects pool. Neither presentation system defines damage or collision.
+
+## Integration, retained assets and evidence
+
+`createLanternArt` merges Lantern frames and aliases over the Runeheart/reference manifests. Each frame's `atlasKey` remains authoritative. The current Hollow renderer selects the new living actors, NPCs, portraits, collectible icons, chest, portals and sanctuary scenery. Retained Runeheart and reference assets still provide equipment/weapon overlays, several projectile/effect textures, barrels/levers, compatibility fallbacks and the other saved realm presentations. Original generated texture infrastructure also remains loaded. This is a staged replacement, not a claim that every old texture was removed. Historical Gothicvania graphics retain their CC0 notices; the supplied reference-board pixels are not relicensed under those notices.
+
+Build assertions check nonempty sprites, preservation of retained alpha pixels, clear frame edges, atlas capacity, valid animation references and consistent hero/NPC body metadata. Inspected extraction proofs are `artifacts/lantern/courier-contact.png`, `creatures-contact.png`, `people-contact.png`, `items-contact.png`, and the corresponding courier/creature/people motion GIFs. Contact sheets establish registration and silhouette quality; they do not prove gameplay.
+
+Independent review inspected current landscape captures `artifacts/lantern/ui/740x360-play.png`, `640x360-play.png`, `1280x720-play.png`, `740x360-home.png`, `740x360-settings.png` and `artifacts/lantern/qa/failure-740x360.png`. These are browser captures, not Android-device evidence. The UI report and separate input/effect QA report must be read for their actual pass/fail state; an attractive screenshot does not override a failed input check.
+
+At this revision, `public/lantern` occupies **1,406,455 compressed bytes**. Its six PNG source images require **10,448,380 bytes (9.96 MiB)** for one uncompressed RGBA copy, including the 8 MiB atlas. This is an incremental Lantern subtotal, not total runtime/process memory and not device performance evidence. The historical budget below predates this additional packet and must not be read as the current combined total.
+
+# Historical v0.5 — Runeheart crisp pixel assets
 
 Runeheart uses genuine animation and environment graphics by **Luis Zuno / Ansimuz**, selected from his [Gothicvania Patreon collection](https://opengameart.org/content/gothicvania-patreons-collection), [Gothicvania Town](https://opengameart.org/content/gothicvania-town) and [Bridge expansion](https://opengameart.org/content/gothicvania-bridge-expansion-pack-1). The author's pages label the graphics CC0; the downloaded packages also contain public-domain/commercial-use notices. The Bridge notice explicitly allows modification and redistribution. Graphics alone are imported. Source music has separate terms and is excluded, as is demo game code.
 

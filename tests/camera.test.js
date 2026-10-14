@@ -3,6 +3,12 @@ import assert from 'node:assert/strict';
 import {cameraTarget,followCamera} from '../src/camera.js';
 const level={width:20000,height:1440};
 const p={x:3000,y:1100,w:28,h:60,vx:320,vy:0};
+
+test('ground travel leaves most short-screen height for scenery and upcoming ledges',()=>{
+ const hero={...p,grounded:true},height=467,c=cameraTarget(hero,level,960,height);
+ const feet=(hero.y+hero.h-c.y)/height;
+ assert.ok(feet>.65&&feet<.78,'ground feet sit above the controls without filling the lower half with masonry');
+});
 test('camera follows a full jet ascent without zooming into the hero',()=>{
  const ground=cameraTarget(p,level,960,300),sky=cameraTarget({...p,y:200,vy:-330},level,960,300);
  assert.ok(ground.y-sky.y>800);assert.equal(ground.zoom,1);assert.equal(sky.zoom,1);

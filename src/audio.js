@@ -41,8 +41,14 @@ export class Sound {
       case 'rail':this.tone(1400,170,.16,.13,'triangle');this.hiss(.09,.17,3800);this.tone(75,22,.13,.14,'sine');break;
       case 'rocket':this.hiss(.25,.19,400,'bandpass');this.tone(95,220,.2,.13,'sawtooth');break;
       case 'enemyshot':this.tone(110,40,.1,.08,'sawtooth');break;
+      case 'enemywindup':this.tone(data.kind==='slam'?65:180,data.kind==='slam'?130:320,.18,.055,'triangle');break;
+      case 'slam':this.tone(90,24,.25,.18,'sine');this.hiss(.24,.15,330,'lowpass');this.hiss(.08,.07,2400,'highpass',.035);break;
+      case 'dragonbreath':this.hiss(.14,.06,650,'bandpass');break;
+      case 'transform':this.tone(55,440,.65,.13,'sawtooth');this.hiss(.5,.1,500,'bandpass');break;
+      case 'portalarrival':case 'summonarrival':this.tone(260,1040,.22,.08,'sine');this.tone(390,780,.3,.05,'triangle',.04);break;
+      case 'jet':this.hiss(.22,.09,450,'bandpass');this.tone(75,160,.18,.055,'sawtooth');break;
       case 'slash':{
-        const heavy=data.style==='finisher'||data.attackStyle==='finisher'||data.combo===2;
+        const heavy=data.mode==='finisher'||data.style==='finisher'||data.attackStyle==='finisher'||data.combo===2;
         this.hiss(heavy ? .22 : .14,heavy ? .21 : .16,heavy?550:1400,'bandpass');this.tone(heavy?260:740,heavy?35:120,heavy ? .19 : .11,heavy ? .15 : .09,'triangle');break;
       }
       case 'shield':this.tone(180,720,.26,.1,'sine');this.tone(530,1060,.32,.08,'triangle',.04);this.hiss(.12,.04,3200);break;

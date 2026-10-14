@@ -12,8 +12,8 @@
           "x": 0,
           "y": 0,
           "w": 844,
-          "h": 316,
-          "bottom": 316,
+          "h": 480,
+          "bottom": 480,
           "right": 844
         },
         "buttons": [
@@ -83,7 +83,7 @@
       "checks": [
         "100/100/92px main targets",
         "separated contextual power",
-        "all buttons outside canvas",
+        "full-height world behind controls",
         "simultaneous move/jump/fire",
         "immediate slash",
         "gun/jet icon state feedback",
@@ -105,8 +105,8 @@
           "x": 0,
           "y": 0,
           "w": 740,
-          "h": 196,
-          "bottom": 196,
+          "h": 360,
+          "bottom": 360,
           "right": 740
         },
         "buttons": [
@@ -176,7 +176,7 @@
       "checks": [
         "100/100/92px main targets",
         "separated contextual power",
-        "all buttons outside canvas",
+        "full-height world behind controls",
         "simultaneous move/jump/fire",
         "immediate slash",
         "gun/jet icon state feedback",
@@ -198,8 +198,8 @@
           "x": 0,
           "y": 0,
           "w": 640,
-          "h": 196,
-          "bottom": 196,
+          "h": 360,
+          "bottom": 360,
           "right": 640
         },
         "buttons": [
@@ -269,7 +269,7 @@
       "checks": [
         "100/100/92px main targets",
         "separated contextual power",
-        "all buttons outside canvas",
+        "full-height world behind controls",
         "simultaneous move/jump/fire",
         "immediate slash",
         "gun/jet icon state feedback",
@@ -291,8 +291,8 @@
           "x": 0,
           "y": 0,
           "w": 390,
-          "h": 558,
-          "bottom": 558,
+          "h": 844,
+          "bottom": 844,
           "right": 390
         },
         "buttons": [
@@ -362,7 +362,7 @@
       "checks": [
         "100/100/92px main targets",
         "separated contextual power",
-        "all buttons outside canvas",
+        "full-height world behind controls",
         "simultaneous move/jump/fire",
         "immediate slash",
         "gun/jet icon state feedback",

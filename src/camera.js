@@ -3,7 +3,7 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(Math.max(a,b),v));
 export function cameraTarget(player,level,width,height,threat=null){
  const px=player.x+player.w/2,py=player.y+player.h/2;
  // Leave room below an airborne courier so the landing route stays readable.
- let focusX=px+clamp(player.vx*.2,-90,90),focusY=py+clamp(Math.abs(player.vy)*.17,0,90),zoom=1;
+ let focusX=px+clamp(player.vx*.2,-90,90),focusY=py+clamp(Math.abs(player.vy)*.17,0,90)-(player.grounded?height*.1:0),zoom=1;
  if(threat&&!threat.dead&&Math.abs(threat.x-player.x)<800){
   const tx=threat.x+threat.w/2,ty=threat.y+threat.h/2;
   zoom=clamp(Math.min((width-150)/(Math.abs(tx-px)+threat.w),(height-110)/(Math.abs(ty-py)+Math.max(player.h,threat.h))),.72,1);

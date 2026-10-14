@@ -13,7 +13,7 @@ function fixture() {
     }
     addEventListener(type, listener) { (this.listeners[type] ||= []).push(listener); }
     setPointerCapture() {}
-    emit(type, pointerId) { for (const listener of this.listeners[type] || []) listener({ pointerId, pointerType: 'touch', preventDefault() {} }); }
+    emit(type, pointerId, extra = {}) { for (const listener of this.listeners[type] || []) listener({ pointerId, pointerType: 'touch', preventDefault() {}, ...extra }); }
   }
   const actions = Object.fromEntries(['attack', 'jump', 'dash', 'power'].map(action => [action, new Element(action)]));
   const gear = new Element(), pause = new Element(), feedback = new Element(), surface = new Element();
@@ -76,6 +76,23 @@ test('explicit gear shortcut clears both fingers and cannot cast on their later 
     assert.equal(f.actions.jump.dataset.phase, 'idle'); assert.equal(f.actions.power.dataset.phase, 'idle');
     f.setModal(null); f.actions.jump.emit('pointerup', 1); f.actions.power.emit('pointerup', 2);
     const input = f.controls.read(); assert.equal(input.spellPressed, false); assert.equal(input.jumpHeld, false); assert.equal(input.jet, false);
+  } finally { f.restore(); }
+});
+
+test('secondary touch opens pause or gear once while keyboard activation remains available', () => {
+  const f = fixture();
+  try {
+    f.actions.attack.emit('pointerdown', 1); f.elapsed(1, 180);
+    assert.equal(f.controls.read().shoot, true);
+    f.pause.emit('pointerdown', 2); assert.equal(f.pauses, 1); assert.equal(f.controls.read().shoot, false);
+    f.pause.emit('click', 2, { detail: 1 }); assert.equal(f.pauses, 1, 'Compatibility touch click cannot resume immediately');
+    f.pause.emit('click', undefined, { detail: 0, pointerType: '' }); assert.equal(f.pauses, 2, 'Keyboard click still works');
+    f.actions.jump.emit('pointerdown', 3); f.actions.power.emit('pointerdown', 4);
+    f.gear.emit('pointerdown', 5); assert.equal(f.palettes, 1); assert.equal(f.controls.pointers.size, 0);
+    f.gear.emit('click', 5, { detail: 1 }); assert.equal(f.palettes, 1);
+    f.setModal(null); f.actions.power.emit('pointerup', 4);
+    assert.equal(f.controls.read().spellPressed, false);
+    f.gear.emit('click', undefined, { detail: 0, pointerType: '' }); assert.equal(f.palettes, 2);
   } finally { f.restore(); }
 });
 

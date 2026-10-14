@@ -1,0 +1,46 @@
+{
+  "source": "reference/lantern-source/environment-raw.png",
+  "sha256": "fbc9f792c4cf36819d44d58f939a44be86fb53db5606332b7a885f41f27d68c3",
+  "props": {
+    "platform": {
+      "width": 225,
+      "height": 97,
+      "sourceRect": [
+        41,
+        281,
+        684,
+        558
+      ]
+    },
+    "arch": {
+      "width": 176,
+      "height": 208,
+      "sourceRect": [
+        683,
+        19,
+        1187,
+        612
+      ]
+    },
+    "lantern": {
+      "width": 90,
+      "height": 203,
+      "sourceRect": [
+        173,
+        634,
+        429,
+        1213
+      ]
+    },
+    "root": {
+      "width": 224,
+      "height": 201,
+      "sourceRect": [
+        590,
+        661,
+        1229,
+        1235
+      ]
+    }
+  }
+}

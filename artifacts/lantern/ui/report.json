@@ -1,0 +1,36 @@
+{
+  "kind": "browser UI integration",
+  "physicalDeviceTest": false,
+  "sizes": [
+    {
+      "viewport": {
+        "width": 740,
+        "height": 360
+      },
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 640,
+        "height": 360
+      },
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "runtimeErrors": []
+}

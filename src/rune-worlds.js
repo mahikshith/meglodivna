@@ -71,6 +71,22 @@ function createRealm(id,d) {
   w.npcs.push(npc);w.enemyPortals.push({id:portalId,x:b.arenaStart+60,y:b.floorY-46,type:'shade',period:18,lifetime:8,requiresClaim:'choice:veil-pact'});
   const i=w.route.findIndex(m=>m.bossId===b.id);w.route.splice(i,0,{id:w.route[i].id,x:npc.x+12,y:b.floorY,verb:'run',npcId:npc.id});w.bosses.forEach(b=>b.power='mirror');
  }
+ if(id==='soulforge'){
+  w.combatStyle='sanctuary';w.pressureDisabled=true;for(const boss of w.bosses)boss.combatStyle='sanctuary';
+  // Additions use explicit IDs after generation so existing saved claims never renumber.
+  w.solids.push({id:'soulforge-hollow-practice-ledge',x:800,y:1210,w:150,h:22,oneWay:true,kind:'platform',biome:d.biome,material:d.surface});
+  const span=w.solids.find(s=>s.id==='soulforge-aqueduct-span-42');span.x-=30;span.w+=30;
+  const bank=w.solids.find(s=>s.id==='soulforge-cistern-bank-44'),drone=w.enemies.find(e=>e.id==='soulforge-drone-8');
+  Object.assign(drone,{x:bank.x+140,y:bank.y-drone.h,minX:bank.x+12,maxX:bank.x+bank.w-drone.w-12,leashX:bank.x,leashW:bank.w});
+  w.pickups.push(
+   {id:'soulforge-hollow-practice-mana',type:'mana',x:875,y:1182,value:20},
+   {id:'soulforge-hollow-root-shield',type:'shield',x:1270,y:1232,value:30},
+   {id:'soulforge-hollow-choir-boost',type:'boost',x:6320,y:832,value:8},
+   {id:'soulforge-hollow-crypt-rapid',type:'rapid',x:11200,y:1052,value:8},
+   {id:'soulforge-hollow-storm-fuel',type:'fuel',x:14330,y:852,value:60});
+  const guidance={refuge:'Find Mira. Hold jump to reach the low shelf; release to land sooner.',roots:'Watch the stalker wind up. Evade its lunge, then strike.',stair:'Climb the bell walkways and find Orren.',warden:'Let the Keeper commit. Strike during recovery to claim Ember.',aqueduct:'Cross the broken choir. The amber booster strengthens thrust.',vault:'Take Tideglass from the upper reliquary. Side vaults are optional.',crypt:'Break the cinder vessels and follow the descending passage.',hex:'Break the coven and awaken the dragon pact.',spire:'Climb above the engine to recover the Storm stone.',conduit:'Turn the pressure valve. Cross the steam while it rests.',regent:'Carry the three stones into the heart. Unbind the captive souls.'};
+  w.zones.forEach((zone,index)=>zone.subtitle=guidance[w.rooms[index].kind]);
+ }
  w.width=x;w.boss=w.bosses.at(-1);w.exit={x:x-60,y:floor-70,w:50,h:70};path(w.solids.find(s=>s.kind==='ground'&&s.x+s.w===x),x-35);w.gates.push({id:`${id}-three-stone-seal`,requiresRelics:['ember-heart','tide-glass','storm-seal'],x:x-100,y:0,w:24,h:floor});return w;
 }
 export function buildRuneWorlds(){return Object.fromEntries(Object.entries(REALMS).map(([id,def])=>[id,createRealm(id,def)]));}
