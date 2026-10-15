@@ -6,6 +6,12 @@ export function preloadLanternArt(scene) {
   const motion = `${import.meta.env.BASE_URL}lantern-motion/`, fx = `${import.meta.env.BASE_URL}lantern-fx/`;
   scene.load.atlas('lantern-motion', `${motion}atlas.png`, `${motion}atlas.json`);
   scene.load.json('lantern-motion-manifest', `${motion}manifest.json`);
+  const characters = `${import.meta.env.BASE_URL}character-revision/`;
+  scene.load.multiatlas('character-revision', `${characters}atlas.json`, characters);
+  scene.load.json('character-revision-manifest', `${characters}manifest.json`);
+  const boss = `${import.meta.env.BASE_URL}ironfang/`;
+  scene.load.multiatlas('ironfang', `${boss}atlas.json`, boss);
+  scene.load.json('ironfang-manifest', `${boss}manifest.json`);
   scene.load.atlas('lantern-fx', `${fx}atlas.png`, `${fx}atlas.json`);
   for (const name of ['water','stone','platform','emitter','emitter-cap','lever','ward','bolt','orb']) scene.load.image(`ln-fx-${name}`, `${fx}${name}.png`);
   scene.load.image('rh-bg-lantern', `${base}sanctuary.png`);
@@ -21,5 +27,11 @@ export function createLanternArt(scene, retained) {
   const motion = scene.cache.json.get('lantern-motion-manifest');
   if (!motion) throw new Error('Lantern motion artwork was not preloaded');
   for (const key of Object.keys(motion.frames)) if (!scene.textures.get('lantern-motion').has(key)) throw new Error(`Missing motion frame: ${key}`);
-  return { ...retained, frames: { ...retained.frames, ...manifest.frames, ...motion.frames }, animations: { ...retained.animations, ...manifest.animations, ...motion.animations } };
+  const boss = scene.cache.json.get('ironfang-manifest');
+  if (!boss) throw new Error('Ironfang artwork was not preloaded');
+  for (const key of Object.keys(boss.frames)) if (!scene.textures.get('ironfang').has(key)) throw new Error(`Missing Ironfang frame: ${key}`);
+  const characters = scene.cache.json.get('character-revision-manifest');
+  if (!characters) throw new Error('Character artwork was not preloaded');
+  for (const key of Object.keys(characters.frames)) if (!scene.textures.get('character-revision').has(key)) throw new Error(`Missing character frame: ${key}`);
+  return { ...retained, frames: { ...retained.frames, ...manifest.frames, ...motion.frames, ...boss.frames, ...characters.frames }, animations: { ...retained.animations, ...manifest.animations, ...motion.animations, ...boss.animations, ...characters.animations } };
 }

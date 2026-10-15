@@ -20,12 +20,13 @@ parts.sort(key=lambda item: (item[1][0].start > 620, item[1][1].start))
 manifest = {'source': source.relative_to(root).as_posix(), 'sha256': hashlib.sha256(source.read_bytes()).hexdigest(), 'props': {}}
 for name, (index, box) in zip(['platform', 'arch', 'lantern', 'root'], parts):
     pixels = rgba[box].copy()
-    pixels[:, :, 3] = np.where(labels[box] == index, 255, 0)
+    pixels[:, :, 3] = np.where(labels[box] == index, pixels[:, :, 3], 0)
     im = Image.fromarray(pixels)
-    im = im.resize((round(im.width * .35), round(im.height * .35)), Image.Resampling.NEAREST)
     im.save(dest / f'{name}.png')
     manifest['props'][name] = {'width': im.width, 'height': im.height, 'sourceRect': [box[1].start, box[0].start, box[1].stop, box[0].stop]}
-background = Image.open(root / 'reference/lantern-source/sanctuary-raw.png')
-background.resize((768, 512), Image.Resampling.NEAREST).save(dest / 'sanctuary.png')
+background_source=root/'reference/character-revision/sanctuary-illustrated.png'
+background = Image.open(background_source)
+background.save(dest / 'sanctuary.png')
+manifest['background']={'source':background_source.relative_to(root).as_posix(),'sha256':hashlib.sha256(background_source.read_bytes()).hexdigest(),'size':list(background.size)}
 (dest / 'environment.json').write_text(json.dumps(manifest, indent=2) + '\n')
-print('Extracted four transparent environment layers and 768x512 panorama.')
+print('Extracted four full-resolution environment layers and illustrated panorama.')

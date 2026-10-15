@@ -6,13 +6,15 @@
 
 The current rebuild focuses on **one chapter**: a courier carries the last lantern through a failing sanctuary, meets Mira and Orren, recovers three lost runes, and unbinds its heart. Other realm data remains for save compatibility; the game presents Hollow Sanctuary.
 
-![The Last Lantern home screen](artifacts/lantern-motion/qa/production/01-home.png)
+![The Last Lantern illustrated home screen](artifacts/character-revision/qa/production/01-home.png)
 
 ## The rebuild
 
 - Original generated courier, creatures, companions, NPCs, portal and environmental art, extracted into transparent sprites with registered feet/body anchors. Source images, exact prompts and reproducible extraction scripts are included.
 - Stalkers commit to close lunges; casters lob falling cinders; stone guardians brace and slam. The Regent changes from ground attacks into a fire-breathing wyrm. Warnings, damage bounds and recovery differ by attack.
-- 79 new motion frames with articulated enemy strides and axe lift/contact/recovery. Sword poses and measured sockets share damage timing; fine flame/smoke, grounded fractures and coherent wards/projectiles replace mismatched effects.
+- Detailed illustrated rendering: 168 character frames, 47 Ironfang actor/effect frames, a painted sanctuary panorama and high-resolution scenery. Smooth sampling preserves source detail while world dimensions and the physics step remain stable.
+- Sword crescents, directional booster exhaust, mouth-registered dragon fire, surface bullet impacts and visible hurt feedback share animation geometry. Stone guardians have no circular shield/body aura. Awakened villains keep simulating offscreen.
+- Wolf, raven, dragon and Courier Echo each have distinct locomotion, terrain awareness, target selection and attacks. Ground companions handle reachable ledges and unsupported gaps; flying companions route around solid obstacles.
 - Automatic paired portals, dormant destinations, an optional Bellbeast encounter, collectible persistent souls, Soul Engine upgrades, visible Lantern Plate armor and a raven summon.
 - Authored masonry and hanging platforms, water aligned to its real boundary, and readable energy emitters near the lever.
 - Safe opening jump practice, a more forgiving aqueduct landing, contextual objectives, and useful shield/boost/rapid/fuel rewards. Optional treasure and return portals are tested.
@@ -39,7 +41,7 @@ Settings preserve music, effects, reduced motion/effects and touch opacity. Andr
 
 [Detailed plan and rewritten brief](docs/LANTERN-MOTION-PLAN.md) · [Existing-game critique](docs/LANTERN-MOTION-VALIDATION.md) · [Level audit](docs/HOLLOW-LEVEL-AUDIT.md) · [Current validation](docs/LANTERN-MOTION-VALIDATION.md) · [Asset provenance and limitations](ASSETS.md) ? [Persistent art-production memory](docs/ASSET-PRODUCTION-MEMORY.md).
 
-171 unit tests and nine legal simulation campaigns pass, including the optional giant/reward/return route. Final browser input, UI, Soul Engine, 17 isolated visual fixtures and production smoke pass. Legal simulations establish chapter completion and reward/portal behavior. Browser input tests establish menu and multitouch behavior. Isolated visual fixtures inspect specific attacks and effects separately. **Physical Android comfort, sustained frame pacing, thermals, audio mix and first-time human pacing remain unverified.** This is a test build, not a commercially validated release. Some animation states reuse poses; the asset report identifies them.
+The illustrated revision passes 189 unit tests and nine legal simulation campaigns, including the optional giant/reward/return route. Final browser input, UI, Soul Engine, 52 isolated character/boss fixtures, four control-layout fixtures and production smoke pass. [Current validation](artifacts/character-revision/validation.json) and [revision scope](docs/ILLUSTRATED-RELEASE.md) distinguish these checks. Legal simulations establish chapter completion and reward/portal behavior. Browser input tests establish menu and multitouch behavior. Isolated visual fixtures inspect specific attacks and effects separately. **Physical Android comfort, sustained frame pacing, thermals, audio mix and first-time human pacing remain unverified.** This is a test build, not a commercially validated release. Some animation states reuse poses; the asset report identifies them.
 
 ## Run and validate
 
@@ -60,8 +62,10 @@ Browser checks require Playwright and Chromium, a dev server on port 5173, and p
 node tests/hollow-ui.browser.cjs
 node tests/runeheart-controls.browser.cjs
 node tests/soul-engine.browser.cjs
-node scripts/motion-playtest.cjs
-node scripts/motion-visual.cjs
+node scripts/illustrated-playtest.cjs
+node scripts/illustrated-visual.cjs
+node scripts/ironfang-visual.cjs
+node scripts/illustrated-production.cjs
 node scripts/replay.cjs soulforge
 ```
 

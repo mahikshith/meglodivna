@@ -7,14 +7,14 @@
     "w": 28,
     "h": 60
   },
-  "elapsed": 92.5,
-  "campaignTime": 92.5,
-  "timeLeft": 1495.74,
+  "elapsed": 93.55,
+  "campaignTime": 93.55,
+  "timeLeft": 1494.69,
   "deaths": 0,
   "checkpoint": 6,
-  "x": 18683.7,
+  "x": 18684,
   "y": 400,
-  "hp": 118.2,
+  "hp": 105.7,
   "conversations": [
     "pyre-mira"
   ],
@@ -31,8 +31,8 @@
     },
     "pyre-regent": {
       "triggerX": 17670,
-      "activatedX": 17670.15,
-      "activatedTime": 78.72
+      "activatedX": 17670.28,
+      "activatedTime": 78.61
     }
   },
   "storyClaims": [
@@ -83,8 +83,9 @@
         "w": 112,
         "h": 86
       },
-      "fightSeconds": 12.83,
+      "fightSeconds": 13,
       "attacksSeen": [
+        0,
         1,
         2
       ],
@@ -94,7 +95,7 @@
         "flying"
       ],
       "flyingAttacksSeen": [
-        1
+        0
       ]
     }
   ],
@@ -147,6 +148,7 @@
     "gate",
     "hit",
     "hurt",
+    "impact",
     "jet",
     "jump",
     "land",
@@ -565,180 +567,180 @@
       "time": 62.97
     },
     {
-      "event": "hurt",
-      "x": 14181.1,
-      "hp": 132,
-      "time": 64.25
-    },
-    {
       "event": "landing",
       "id": "pyre-aqueduct-span-85",
-      "x": 14187,
-      "hp": 132,
-      "time": 64.8
+      "x": 14184.8,
+      "hp": 135,
+      "time": 64.47
     },
     {
       "event": "landing",
       "id": "pyre-aqueduct-span-87",
-      "x": 14511.3,
-      "hp": 132,
-      "time": 66.08
+      "x": 14511.2,
+      "hp": 135,
+      "time": 65.75
     },
     {
       "event": "landing",
       "id": "pyre-aqueduct-span-88",
       "x": 14844.8,
-      "hp": 132,
-      "time": 67.58
+      "hp": 135,
+      "time": 67.25
     },
     {
       "event": "landing",
       "id": "pyre-cistern-bank-89",
       "x": 15312.7,
-      "hp": 132,
-      "time": 69.1
+      "hp": 135,
+      "time": 68.77
     },
     {
       "event": "checkpoint",
       "x": 15499.4,
       "hp": 135,
-      "time": 69.68
+      "time": 69.35
     },
     {
       "event": "landing",
       "id": "pyre-tower-foot-94",
       "x": 15762.7,
       "hp": 135,
-      "time": 70.77
+      "time": 70.43
     },
     {
       "event": "landing",
       "id": "pyre-tower-step-95",
       "x": 15979.5,
       "hp": 135,
-      "time": 71.55
+      "time": 71.22
     },
     {
       "event": "landing",
       "id": "pyre-tower-step-96",
       "x": 16197.6,
       "hp": 135,
-      "time": 72.3
+      "time": 71.97
     },
     {
       "event": "landing",
       "id": "pyre-tower-step-97",
       "x": 16417.6,
       "hp": 135,
-      "time": 73.81
+      "time": 73.65
     },
     {
       "event": "landing",
       "id": "pyre-tower-step-99",
       "x": 16637.1,
       "hp": 135,
-      "time": 74.56
+      "time": 74.4
     },
     {
       "event": "landing",
       "id": "pyre-tower-crown-100",
       "x": 16853.1,
       "hp": 135,
-      "time": 75.53
+      "time": 75.38
     },
     {
       "event": "gate",
       "x": 16928.8,
       "hp": 135,
-      "time": 75.84
+      "time": 75.68
     },
     {
       "event": "landing",
       "id": "pyre-tower-crown-100",
       "x": 16944.1,
       "hp": 135,
-      "time": 75.97
+      "time": 75.81
     },
     {
       "event": "landing",
       "id": "pyre-tower-crown-100",
       "x": 17243.4,
       "hp": 135,
-      "time": 76.93
+      "time": 76.78
     },
     {
       "event": "hurt",
-      "x": 17291.4,
-      "hp": 121.3,
-      "time": 77.08
+      "x": 17320.7,
+      "hp": 128.2,
+      "time": 77.02
     },
     {
       "event": "checkpoint",
-      "x": 17374.1,
+      "x": 17406.2,
       "hp": 135,
-      "time": 77.61
+      "time": 77.59
     },
     {
       "event": "bossstart",
-      "x": 17670.2,
+      "x": 17670.3,
       "hp": 135,
-      "time": 78.72
+      "time": 78.61
     },
     {
       "event": "hurt",
       "x": 18057.9,
       "hp": 127.5,
-      "time": 81.49
+      "time": 81.43
     },
     {
       "event": "hurt",
-      "x": 18073.9,
+      "x": 18078.4,
       "hp": 124.4,
-      "time": 82.41
+      "time": 82.35
     },
     {
       "event": "hurt",
-      "x": 18166.7,
+      "x": 18171.9,
       "hp": 121.3,
-      "time": 83.32
+      "time": 83.26
     },
     {
       "event": "hurt",
-      "x": 18231.1,
+      "x": 18231.4,
       "hp": 118.2,
-      "time": 84.23
+      "time": 84.17
+    },
+    {
+      "event": "hurt",
+      "x": 18086.7,
+      "hp": 105.7,
+      "time": 89.63
     },
     {
       "event": "bossdefeated",
       "id": "pyre-regent",
-      "time": 91.54,
-      "hp": 118.2
+      "time": 91.61,
+      "hp": 105.7
     },
     {
       "event": "gate",
-      "x": 18397,
-      "hp": 118.2,
-      "time": 91.54
+      "x": 18082.3,
+      "hp": 105.7,
+      "time": 91.61
     },
     {
       "event": "landing",
       "id": "pyre-arena-106",
-      "x": 18397,
-      "hp": 118.2,
-      "time": 91.54
+      "x": 18082.3,
+      "hp": 105.7,
+      "time": 91.61
     },
     {
       "event": "landing",
       "id": "pyre-arena-106",
-      "x": 18661.3,
-      "hp": 118.2,
-      "time": 92.43
+      "x": 18661.7,
+      "hp": 105.7,
+      "time": 93.48
     },
     {
       "event": "win",
-      "x": 18683.7,
-      "hp": 118.2,
-      "time": 92.5
+      "x": 18684,
+      "hp": 105.7,
+      "time": 93.55
     }
   ]
 }

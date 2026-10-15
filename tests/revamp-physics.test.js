@@ -48,9 +48,10 @@ test('revamped attacks start on their first simulation tick with body-based muzz
   tick(world, 100, { shoot: true }); assert.equal(p.slashId, 1, 'Holding fire must not repeat a tap slash');
   p.facing = -1; p.aimAngle = Math.PI;
   const left = weaponOrigin(p, 'gun'), hand = weaponOrigin(p, 'hand');
-  assert.ok(left.x < hand.x); assert.ok(Math.abs(left.y - hand.y) < 0.001);
-  assert.equal(hand.x, p.x + p.w / 2 - 16); assert.equal(hand.y, p.y + p.h - 41);
-  assert.equal(left.x, p.x + p.w / 2 - 29);
+  const revised = JSON.parse(readFileSync(new URL('../public/character-revision/manifest.json', import.meta.url), 'utf8')).frames['cr-couriergun-0'];
+  const point = slot => ({ x: p.x + p.w / 2 - (revised.sockets[slot].x - revised.body.x - revised.body.w / 2) * p.h / revised.body.h,
+    y: p.y + (revised.sockets[slot].y - revised.body.y) * p.h / revised.body.h });
+  assert.ok(left.x < hand.x); assert.deepEqual(hand, point('hand')); assert.deepEqual(left, point('gun'));
 });
 
 test('authored mirror exits translate to the larger body without embedding at ground level', () => {
@@ -116,7 +117,7 @@ test('shared physical origins match all published actor-family anatomy in both d
   assert.ok(fire?.hand && fire?.muzzle, 'Aether fire anatomy must be published');
   assert.ok(wyrm, 'Wyrm mouth and launcher anatomy must be published');
   assert.ok(crawler && raider && mecha, 'Every new creature family must publish its weapon origin');
-  const p = createWorld().player, boss = { x: 500, y: 479, w: 112, h: 86, visualFamily: 'wyrm' };
+  const p = createWorld(0, { worldId: 'tide' }).player, boss = { x: 500, y: 479, w: 112, h: 86, visualFamily: 'wyrm' };
   const actors = [
     { x: 500, y: 569, w: 60, h: 41, visualFamily: 'riftcrawler' },
     { x: 500, y: 385, w: 34, h: 45, visualFamily: 'hexwing' },

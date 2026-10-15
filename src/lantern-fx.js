@@ -1,3 +1,4 @@
+import { boosterPose, isIronfang, ironfangSocket } from './ironfang.js';
 // Presentation-only particles. Gameplay collision and damage stay in combat.js.
 export class LanternEffects {
   constructor(scene) {
@@ -5,7 +6,7 @@ export class LanternEffects {
     this.graphics = scene.add.graphics().setDepth(11);
     this.particles = Array.from({ length: 240 }, () => ({ life: 0 }));
     this.ghosts = [];
-    this.views = []; this.viewIndex = 0; this.fractures = [];
+    this.views = []; this.viewIndex = 0; this.fractures = []; this.impacts = []; this.dashDust = [];
     this.clock = 0;
     this.nextJet = this.nextStep = this.nextGhost = this.nextFlame = 0;
     this.seed = 173;
@@ -17,6 +18,7 @@ export class LanternEffects {
     this.graphics.clear();
     for (const view of this.views) view.setVisible(false);
     this.fractures.length = 0;
+    this.impacts.length = 0; this.dashDust.length = 0;
   }
   particle(kind, x, y, vx, vy, life, size, tint) {
     const p = this.particles.find(item => item.life <= 0);
@@ -35,6 +37,10 @@ export class LanternEffects {
     const { x, y } = e;
     if (!Number.isFinite(x) || !Number.isFinite(y)) return;
     const n = reduced ? .4 : 1;
+    if(['impact','hurt'].includes(e.type)) {
+      if(this.impacts.length<32)this.impacts.push({x,y,age:0,hurt:e.type==='hurt'});
+      this.sparks(x,y,Math.ceil(8*n),e.type==='hurt'?0xff775e:0xffbe78);return;
+    }
     if (e.type === 'land') this.dust(x, y, Math.ceil(12 * n), Math.max(.5, Math.min(1.6, (e.impactSpeed || 400) / 500)));
     else if (e.type === 'jump' || e.type === 'walljump') {
       if (e.kind === 'air') this.sparks(x, y, Math.ceil(12 * n), 0xb6e6d3);
@@ -61,8 +67,9 @@ export class LanternEffects {
   }
   image(frame,x,y,width,height,rotation=0,alpha=1,originY=.5) {
     let view=this.views[this.viewIndex++];
-    if(!view){view=this.scene.add.image(0,0,'lantern-fx',frame).setDepth(11);this.views.push(view);}
-    view.setTexture('lantern-fx',frame).setPosition(x,y).setOrigin(.5,originY).setDisplaySize(width,height).setRotation(rotation).setAlpha(alpha).setVisible(true);
+    const atlas=frame.startsWith('if-')?'ironfang':'lantern-fx';
+    if(!view){view=this.scene.add.image(0,0,atlas,frame).setDepth(11);this.views.push(view);}
+    view.setTexture(atlas,frame).setPosition(x,y).setOrigin(.5,originY).setDisplaySize(width,height).setRotation(rotation).setFlipX(false).setTint(0xffffff).setAlpha(alpha).setVisible(true);
     return view;
   }
   plume(x,y,facing,t,size=1,vertical=false) {
@@ -75,22 +82,16 @@ export class LanternEffects {
     if (dt > 0 && p.hp > 0 && world.status === 'playing') {
       if (p.jetActive && t >= this.nextJet) {
         this.nextJet = t + (reduced ? .08 : .035);
-        const x = hero.x + p.w / 2 - p.facing * 12, y = hero.y + p.h * .67;
-        this.particle('smoke', x + (this.random() - .5) * 8, y + 30, -p.vx * .08 + (this.random() - .5) * 26, 42 + this.random() * 40, .65, 5 + this.random() * 4, 0x879594);
-        this.particle('ember', x, y + 10, (this.random() - .5) * 35, 110 + this.random() * 90, .3, 2, 0xffc274);
+        const {x,y,dx,dy}=boosterPose(hero),scatter=(this.random()-.5)*24;
+        this.particle('smoke',x+dx*30,y+dy*30,dx*65+scatter,dy*65,.65,5+this.random()*4,0x879594);
+        this.particle('ember',x+dx*10,y+dy*10,dx*150+scatter,dy*150,.3,2,0xffc274);
       }
       if (p.grounded && Math.abs(p.vx) > 70 && t >= this.nextStep) {
         this.nextStep = t + .16; this.dust(hero.x + p.w / 2, hero.y + p.h, reduced ? 1 : 3, .35);
       }
-      if (p.dashTime > 0 && t >= this.nextGhost && !reduced) {
+      if (p.dashTime > 0 && p.grounded && t >= this.nextGhost) {
         this.nextGhost = t + .035;
-        let ghost = this.ghosts.find(item => item.life <= 0);
-        if (!ghost && this.ghosts.length < 6) { ghost = { view: this.scene.add.image(0, 0, 'lantern-art').setDepth(7), life: 0 }; this.ghosts.push(ghost); }
-        if (ghost) {
-          const s = this.scene.playerSprite;
-          ghost.life = .18;
-          ghost.view.setTexture(s.texture.key, s.frame.name).setPosition(s.x, s.y).setOrigin(s.originX, s.originY).setScale(s.scaleX, s.scaleY).setFlipX(s.flipX).setTint(0xa2dacb).setVisible(true);
-        }
+        if(this.dashDust.length<16)this.dashDust.push({x:hero.x+p.w/2-p.facing*12,y:hero.y+p.h,age:0,facing:p.facing});
       }
       if (t >= this.nextFlame) {
         this.nextFlame = t + (reduced ? .12 : .05);
@@ -130,11 +131,32 @@ export class LanternEffects {
     for(const shot of world.projectiles){
       if(!shot.active||!['fire','dragonfire'].includes(shot.kind))continue;
       const angle=Math.atan2(shot.vy,shot.vx),size=shot.kind==='dragonfire'?1.3:1;
-      this.image(`flame-${Math.floor(t*16)%4}`,shot.x,shot.y,35*size,55*size,angle+Math.PI/2,.95,12/128);
+      this.image(`if-breath-${Math.floor(t*16)%3}`,shot.x,shot.y,52*size,30*size,angle,.95).setOrigin(.8,.5);
     }
     for(const boss of world.bosses){if(boss.phase!=='transform'||boss.dead)continue;
       for(let i=0;i<3;i++)this.plume(boss.x+boss.w*(i+1)/4,boss.y+boss.h,boss.facing,t+i*.2,1.5,true).setRotation(Math.PI);
     }
-    if (p.hp > 0 && p.jetActive) this.plume(hero.x + p.w / 2 - p.facing * 12, hero.y + p.h * .67, 1, t, p.boost > 0 ? 1.4 : 1, true);
+    for(const impact of this.impacts){
+      impact.age+=dt;const frame=Math.min(3,Math.floor(impact.age/.06));
+      this.image(`if-impact-${frame}`,impact.x,impact.y,impact.hurt?48:36,impact.hurt?48:36,0,Math.max(0,1-impact.age/.28));
+    }
+    this.impacts=this.impacts.filter(i=>i.age<.28);
+    for(const dust of this.dashDust){dust.age+=dt;
+      this.image(`if-dust-${Math.min(3,Math.floor(dust.age/.08))}`,dust.x-dust.facing*dust.age*40,dust.y,62,38,0,Math.max(0,1-dust.age/.32),.88).setFlipX(dust.facing>0);
+    }
+    this.dashDust=this.dashDust.filter(d=>d.age<.32);
+    for(const boss of world.bosses){
+      if(!isIronfang(boss)||boss.dead)continue;
+      if(boss.phase==='charge'&&['breath','cinder','cannon'].includes(boss.attackKind)){
+        const q=ironfangSocket(boss,boss.form==='flying'?'mouth':'gun'),size=8+Math.min(1,boss.phaseTime/.7)*16;
+        this.image('if-impact-0',q.x,q.y,size,size,0,.65);
+      }
+      if(boss.phase==='attack'&&['breath','cannon'].includes(boss.attackKind)){
+        const breath=boss.attackKind==='breath',q=ironfangSocket(boss,breath?'mouth':'gun');
+        if(breath)this.image(`if-breath-${Math.floor(t*15)%3}`,q.x,q.y,86,40,boss.aimAngle||0,1).setOrigin(.07,.5);
+        else if(boss.phaseTime%.12<.065)this.image('if-impact-0',q.x,q.y,30,30,boss.aimAngle||0);
+      }
+    }
+    if (p.hp > 0 && p.jetActive){const q=boosterPose(hero);this.plume(q.x,q.y,1,t,p.boost>0?1.4:1,true).setRotation(q.rotation);}
   }
 }

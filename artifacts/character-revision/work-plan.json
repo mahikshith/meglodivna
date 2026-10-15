@@ -1,0 +1,47 @@
+﻿{
+    "branch":  "codex/runeheart-rebuild",
+    "scope":  "Current Hollow Sanctuary chapter; preserve world art, save identity and signing certificate",
+    "steps":  [
+                  {
+                      "task":  "Ironfang bull/dragon art, registered effects and hit detection",
+                      "status":  "implemented and verified; see validation.json"
+                  },
+                  {
+                      "task":  "Persistent offscreen simulation after activation",
+                      "status":  "implemented and verified; see validation.json"
+                  },
+                  {
+                      "task":  "Courier and Lantern Plate articulated poses, hurt/death and sockets",
+                      "status":  "implemented and verified; see validation.json"
+                  },
+                  {
+                      "task":  "Stalker, caster, guardian, wispknight and Bellbeast detailed motion",
+                      "status":  "implemented and verified; see validation.json"
+                  },
+                  {
+                      "task":  "Wolf, sanctuary dragon, raven, clone and NPC animation/rendering",
+                      "status":  "implemented and verified; see validation.json"
+                  },
+                  {
+                      "task":  "Distinct companion locomotion, obstacle awareness, target selection and attacks",
+                      "status":  "implemented and verified; see validation.json"
+                  },
+                  {
+                      "task":  "Consistent attack/contact geometry, hurt feedback and animation review for all chapter characters",
+                      "status":  "implemented and verified; see validation.json"
+                  },
+                  {
+                      "task":  "Themed title, menu, equipment/store, difficulty, typography and transparent touch controls",
+                      "status":  "implemented and verified; see validation.json"
+                  },
+                  {
+                      "task":  "Simulation, legal campaign, browser rendering/input and production checks",
+                      "status":  "implemented and verified; see validation.json"
+                  },
+                  {
+                      "task":  "Verified Android test delivery and latest APK update",
+                      "status":  "pending signed Android CI delivery"
+                  }
+              ],
+    "evidenceBoundary":  "Isolated fixtures and desktop Chromium tests do not establish physical-device comfort or performance."
+}

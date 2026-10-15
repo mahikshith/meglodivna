@@ -1,0 +1,67 @@
+/* Illustrated sanctuary: warm metal, teal cloth, clear glass controls. */
+canvas, .catalogue-item img { image-rendering: auto; }
+:root { --brass: #d0ae70; --stone: #11272a; --edge: #b49b6759; }
+.wordmark { font-family: var(--display); font-size: 19px; letter-spacing: 2px; }
+.wordmark span { display:inline-block; width:22px; height:28px; font-size:0; vertical-align:middle; background:url('/sanctuary-ui/lantern.png') center/contain no-repeat; }
+.menu { background-image:linear-gradient(90deg,#07191eee 0%,#07191ed9 32%,#0b212854 68%,#0b212817),url('/lantern/sanctuary.png'); }
+.menu::after { border-color:#b99a5659; border-radius:24px 3px; box-shadow:inset 0 0 0 4px #081b2022; }
+.menu h1 { font-weight:600; letter-spacing:-1px; text-shadow:0 2px 1px #101d20,0 4px 22px #0009; }
+.menu h1 span { color:#f0d39c; }
+.title-rule { width:126px; background:linear-gradient(90deg,#edcf91,#aa874833,transparent); }
+.title-rule::after { left:0; right:auto; background:#dfbc7b; box-shadow:8px 0 0 -1px #967842; }
+.menu-launch { position:relative; }
+.difficulty-label { color:#c9b78c; font-family:var(--display); font-size:15px; letter-spacing:.7px; }
+.new-run-options select { appearance:none; padding:10px 38px 10px 14px; border:1px solid #c5aa695c; border-left:3px solid #d5b27699; border-radius:8px 2px; color:#f3e4c6; background:linear-gradient(135deg,transparent 50%,#c6aa6c 50%) calc(100% - 17px) 23px/5px 5px no-repeat,linear-gradient(225deg,transparent 50%,#c6aa6c 50%) calc(100% - 12px) 23px/5px 5px no-repeat,#0b2229b3; box-shadow:inset 0 0 0 3px #d7bd7910; font-family:var(--display); font-size:18px; }
+.new-run-options option { background:#10272b; color:#f4e5cb; }
+.primary { color:#f3ddb0; border:1px solid #e3bd75a3; background:linear-gradient(90deg,#77603b55,#1b333367); border-radius:12px 2px; box-shadow:inset 0 0 0 3px #ddb66e12,0 5px 20px #0002; font-family:var(--display); font-size:19px; letter-spacing:.3px; }
+.primary:hover:not(:disabled),.primary:active { color:#fff2cf; background:#9d7d3c55; }
+.menu-actions button,.menu summary { font-family:var(--display); color:#e1ceb0; }
+dialog,.manual { background:linear-gradient(130deg,#183638f8,#0b2027fa 70%); border:1px solid #bd9d60a6; border-radius:18px 3px; box-shadow:inset 0 0 0 5px #07171b66,inset 0 0 0 6px #c5a26519,0 18px 70px #0009; }
+.catalogue-header { padding-bottom:10px; border-bottom:1px solid #d8b57936; }
+.catalogue-header h2,.settings-panel h2 { color:#f0d9af; font-weight:600; }
+.catalogue-header .eyebrow { color:#bda87b; }
+.catalogue-tabs { gap:5px; border-bottom:1px solid #b49b6759; }
+.catalogue-tabs button { font-family:var(--display); font-size:16px; letter-spacing:.2px; border-radius:8px 8px 0 0; }
+.catalogue-tabs button[aria-selected=true] { background:linear-gradient(0deg,#be984d24,transparent); border-bottom-color:#e4c17b; color:#f1d59c; }
+.catalogue-item { border-color:#a38d5e48; background:linear-gradient(140deg,#203d3a55,#091d2340); border-radius:10px 2px; box-shadow:inset 0 0 0 3px #ceb67a06; }
+.catalogue-item img { filter:drop-shadow(0 3px 5px #0008); object-fit:contain; }
+.catalogue-item h3 { color:#ead6ad!important; font-family:var(--display); font-weight:600; }
+.catalogue-item button,.catalogue-header button,.setting-effects button { border:1px solid #b29b635c; border-radius:7px 2px; background:#c4a76808; font-family:var(--display); }
+.catalogue-item button[data-equipped=true] { color:#a6c9b7; border-color:#86b7a66b; }
+.catalogue-item.locked { filter:saturate(.5); }
+.soul-balance { padding-left:30px; background:url('/sanctuary-ui/rune.png') left center/27px no-repeat; }
+.vitals,.mission { background:linear-gradient(90deg,#0a2027bb,#0a202740); border-color:#bca06c; }
+.boss-hud { border-color:#cfad6f87; background:#102329b8; border-radius:8px 2px; }
+.boss-hud b,.callsign,.mission>span { font-family:var(--display); letter-spacing:.8px; }
+.meter { border-radius:3px; background:#07191e99; box-shadow:0 0 0 1px #d8c28d18; }
+.meter i { background:linear-gradient(90deg,#a5783e,#e2bd7f); }
+.fuel i { background:linear-gradient(90deg,#538884,#b2ddd0); }
+.mana i { background:linear-gradient(90deg,#817caa,#d1c4e1); }
+.boss-hud .meter i { background:linear-gradient(90deg,#8c473a,#efac7e); }
+/* Keep the existing thumb zones and multi-touch semantics. Only the skin changes. */
+.touch, .stage[data-touch=true] .touch { background:none; }
+.touch button,.touch #touch-jump,.touch #touch-power,.touch .touch-utilities button { background:transparent!important; border:1px solid #d6c29480; box-shadow:inset 0 0 0 4px #e9d4a20b,0 1px 5px #0004; color:#ead7b1; }
+.touch button::before { content:''; position:absolute; inset:18%; background:var(--control-art) center/contain no-repeat; pointer-events:none; filter:drop-shadow(0 1px 2px #071b20cc); }
+.touch button svg { visibility:hidden; }
+.touch button.active { border-color:#ffe0a4; box-shadow:inset 0 0 0 4px #efce9222,0 0 13px #d6b27633; }
+.touch button[data-ready=false]::before { filter:grayscale(.8) brightness(.65); }
+.touch #touch-attack { --control-art:url('/sanctuary-ui/sword.png'); }
+.touch #touch-attack[data-phase=hold] { --control-art:url('/sanctuary-ui/rifle.png'); }
+.touch #touch-jump { --control-art:url('/sanctuary-ui/boots.png'); }
+.touch #touch-jump[data-phase=hold] { --control-art:url('/sanctuary-ui/jet.png'); }
+.touch #touch-dash { --control-art:url('/sanctuary-ui/boots.png'); border-radius:40% 50% 40% 50%; }
+.touch #touch-dash::before { transform:rotate(-25deg); inset:22%; }
+.touch #touch-power { --control-art:url('/sanctuary-ui/rune.png'); }
+.touch[data-interact=true] #touch-power { --control-art:url('/sanctuary-ui/lantern.png'); }
+.touch #touch-pause { --control-art:url('/sanctuary-ui/lantern.png'); }
+.touch #touch-settings { --control-art:url('/sanctuary-ui/bell.png'); }
+.touch #touch-gear { --control-art:url('/sanctuary-ui/satchel.png'); }
+.touch .touch-utilities button { border-radius:14px 3px; }
+.touch .touch-utilities button::before { inset:3px 10px 17px; }
+.touch .touch-utilities button span { font-family:var(--display); font-size:12px; }
+.power-name,.power-cost { color:#efd9ad; font-family:var(--display); }
+.joystick { background:radial-gradient(circle,transparent 64%,#d9b87920 65%,transparent 70%); border-color:#d0b87a77; }
+.joystick-thumb { background:#d1b77e14; border-color:#e2c79388; box-shadow:inset 0 0 0 4px #e1c58c0b; }
+.joystick-thumb svg { stroke:#e8d9b8aa; }
+@media(max-height:450px) { .new-run-options select { font-size:17px; } .menu .primary { font-size:18px; } .catalogue-header { padding-bottom:4px; } .catalogue-tabs button { font-size:15px; } }
+@media(prefers-reduced-motion:reduce) { .primary { transition:none; } }

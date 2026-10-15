@@ -194,7 +194,9 @@ export function stepPlayer(player, input, solids, dt) {
     }
   }
 
+  const motionX = player.x;
   moveBody(player, solids, dt);
+  player.motionDistance = (player.motionDistance || 0) + Math.abs(player.x - motionX);
   if (player.dashTime > 0 && player.wall && player.vx === 0) player.dashTime = 0;
   if (player.grounded) {
     player.jumps = 1;

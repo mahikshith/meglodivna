@@ -39,7 +39,7 @@ test('upper world boundary stops upward velocity and continuing jetpack consumes
   assert.ok(world.player.fuel < fuel);
 });
 
-test('an active offscreen boss neither advances attacks nor deals hidden beam or projectile damage', () => {
+test('an active offscreen boss advances combat while its attacks stay inside its arena', () => {
   const world = createWorld(); world.enemies = []; world.pickups = [];
   const boss = world.bosses[0];
   const beam = { x: 0, y: 570, w: LEVEL.width, h: 20 };
@@ -49,8 +49,8 @@ test('an active offscreen boss neither advances attacks nor deals hidden beam or
   missile.sourceId = boss.id;
   for (let frame = 0; frame < 120; frame++) { stepWorld(world, {}, STEP); world.events.length = 0; }
   assert.equal(world.player.hp, 100);
-  assert.equal(boss.timer, 0.4);
-  assert.equal(boss.phase, 'attack');
+  assert.notEqual(boss.timer, 0.4);
+  assert.notEqual(boss.phase, 'attack');
   assert.equal(boss.beam, null);
   assert.equal(world.activeBoss, null);
   assert.equal(missile.active, false);

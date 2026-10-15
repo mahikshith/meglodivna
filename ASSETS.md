@@ -172,7 +172,7 @@ The new packet alone occupies **465,343 compressed bytes**. Its 2048×2048 RGBA 
 
 `artifacts/runeheart/asset-budget.json` records every compiled file hash and confirms nonempty frames, binary alpha, atlas bounds, source existence, clear hero edges, opaque composed backgrounds and unchanged hero sockets. Native hero/creature/environment contact sheets and `hero-authored-animation.gif` were visually inspected. A second deterministic build matched the compiled hashes. Root's refreshed suite contains twenty integrated render fixtures: the skyline is visible behind the ground, the forest is subdued, and solid floor foundations retain readable landing rims. These fixtures are separate from legal route proofs and do not establish Android comfort or device performance.
 
-The combined current runtime source-image budget is:
+The historical Runeheart runtime source-image budget (superseded by the illustrated revision below) was:
 
 | Loaded source images | Count | RGBA bytes | MiB per copy |
 | --- | ---: | ---: | ---: |
@@ -187,3 +187,17 @@ The combined current runtime source-image budget is:
 This **50.42 MiB is one uncompressed RGBA copy**, not measured process RAM. A scenario retaining both decoded CPU images/canvases and GPU copies is approximately **100.83 MiB**, before render buffers, graphics geometry, cached icon canvases/data URLs, transient painter canvases, browser overhead and driver allocations. Actual retention depends on the browser/device.
 
 Distribution attribution is in `public/licenses/NOTICES.txt` and `Gothicvania-CC0-NOTICE.txt`. They distinguish licensed Gothicvania graphics, user-supplied reference-board pixels and original procedural work; the reference atlas is not claimed under the Gothicvania CC0 license.
+
+## v0.8 illustrated sanctuary
+
+The user approved the detailed source-sheet finish instead of forced pixelation. The current chapter uses 168 illustrated character frames with 108 animation bindings, 47 Ironfang actor/effect frames, and eight illustrated interface objects. Generated sources and exact prompts are retained in `reference/character-revision/` and `reference/ironfang-source/`; the two user-supplied boss reference boards remain in `artifacts/reference/`. Original generated work is distinct from the retained third-party and user-supplied packets described above.
+
+Reproduce assets with `scripts/build-character-assets.py`, `scripts/build-ironfang-assets.py`, `scripts/build-sanctuary-interface.py` and `scripts/build-lantern-environment.py`. `scripts/atlas_pack.py` trims empty margins into pages no larger than 2048px while retaining original canvas dimensions and anchors. Character canvases are 768 by 624 with feet at (384,492); Ironfang actor canvases are 640 by 576 with anchor (320,448). Per-family scaling preserves anatomy and alpha. Generated geometry modules share measured mouth, rifle, axe and hand sockets with simulation. Full source detail, smooth sampling and fractional rendering replace the older nearest-neighbor presentation for the current chapter.
+
+The new sanctuary panorama preserves the approved teal woodland, ruined masonry and amber lantern composition. Prop display sizes remain independent of texture pixel dimensions. Transparent illustrated controls and offline Alegreya typography use the same material language. Guardian shield, body and hand circles are intentionally omitted at the user's request.
+
+Frame counts include reused animation bindings, not 168 independent animations. Rifles have three authored aiming elevations and four horizontal running-fire poses per armor family. Other intermediate aim angles select the closest source pose. Wraith reuses the courier family with a tint; Bulwark uses the heavy armor family. The sanctuary companion dragon reuses its hurt/idle family when fading on death. These are finite frame animations, not continuous skeletal animation.
+
+The final browser inventory in `artifacts/character-revision/qa/visual/report.json` counts **389 unique loaded source images and approximately 155.19 MiB for one RGBA copy**, including retained compatibility assets. Aliases and subframes are deduplicated. This is a calculated texture budget, not measured process or physical-device RAM; decoded images, GPU copies, buffers and browser overhead may increase actual memory. Physical Android performance remains unmeasured.
+
+Contact sheets and gameplay-scale GIFs are in `artifacts/character-revision/` and `artifacts/ironfang/`. Their isolated render fixtures are separate from legal campaign simulations, actual Chromium input checks and production smoke evidence. See `docs/ILLUSTRATED-RELEASE.md` and `artifacts/character-revision/validation.json` for current scope and results.

@@ -4,13 +4,14 @@ const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
-const sourceFiles = ['index.html', 'src/style.css', 'src/ui.js', 'src/input.js', 'src/catalog.js'];
+const sourceFiles = ['index.html', 'src/style.css', 'src/sanctuary-theme.css', 'src/ui.js', 'src/input.js', 'src/catalog.js'];
 const hash = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 
-const output = path.resolve('artifacts/lantern-motion/qa/controls');
+const output = path.resolve('artifacts/character-revision/qa/controls');
 const baseURL = process.env.GAME_URL || 'http://127.0.0.1:5173';
 const source = fs.readFileSync('index.html', 'utf8').replace('<script type="module" src="/src/main.js"></script>', `
 <link rel="stylesheet" href="/src/style.css" />
+<link rel="stylesheet" href="/src/sanctuary-theme.css" />
 <script type="module">
 import {Controls} from '/src/input.js';
 import {createCampaignUI} from '/src/ui.js';
@@ -97,13 +98,13 @@ async function run() {
       let input = await read(); assert.equal(input.jumpPressed, true); assert.equal(input.move, 1); assert.equal(input.jumpHeld, true);
       await page.waitForTimeout(375); input = await read(); assert.equal(input.jet, true);
       assert.equal(await page.locator('#touch-jump').getAttribute('data-phase'), 'hold');
-      assert.equal(await page.locator('#touch-jump .action-held').isVisible(), true, 'jet icon visibly replaces jump');
+      assert.ok(await page.locator('#touch-jump').evaluate(e=>getComputedStyle(e,'::before').backgroundImage.includes('/jet.png')), 'illustrated jet visibly replaces boots');
       await page.screenshot({ path: path.join(output, `${viewport.width}x${viewport.height}-jet.png`) });
       await touch('touchEnd', jump); input = await read(); assert.equal(input.jet, false); assert.equal(input.move, 1, 'releasing jump preserves movement');
       const attack = center('touch-attack', 3); await touch('touchStart', attack);
       input = await read(); assert.equal(input.slashPressed, true, 'slash on pointerdown'); assert.equal(input.shoot, false); assert.equal(input.move, 1);
       await page.waitForTimeout(145); input = await read(); assert.equal(input.shoot, true); assert.equal(input.slashPressed, false);
-      assert.equal(await page.locator('#touch-attack .action-held').isVisible(), true, 'gun icon visibly replaces sword');
+      assert.ok(await page.locator('#touch-attack').evaluate(e=>getComputedStyle(e,'::before').backgroundImage.includes('/rifle.png')), 'illustrated rifle visibly replaces sword');
       await page.screenshot({ path: path.join(output, `${viewport.width}x${viewport.height}-fire.png`) });
       await touch('touchEnd', attack); input = await read(); assert.equal(input.shoot, false); assert.equal(input.slashPressed, false); assert.equal(input.move, 1);
       const dash = center('touch-dash', 4); await touch('touchStart', dash); assert.equal((await read()).dashPressed, true); await touch('touchEnd', dash);

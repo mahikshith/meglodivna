@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { LEVEL } from '../src/legacy-level.js';
 import { createPlayer, stepPlayer } from '../src/physics.js';
-import { createWorld as makeWorld, STEP, stepWorld, rewardPlayer, equipItem, castSpell, interact, advanceStory, retryWorld, spawnProjectile } from '../src/combat.js';
+import { createWorld as makeWorld, STEP, stepWorld, rewardPlayer, equipItem, castSpell, interact, advanceStory, retryWorld, spawnProjectile, weaponOrigin } from '../src/combat.js';
 const createWorld = () => makeWorld(0, { level: LEVEL });
 
 function world() {
@@ -57,7 +57,7 @@ test('scattergun creates five finite pellets and rail rounds pierce exactly thre
   assert.equal(scatter.projectiles.filter(projectile => projectile.active).length, 5);
   assert.ok(scatter.projectiles.filter(projectile => projectile.active).every(projectile => projectile.life < 0.65));
   const rail = world(); rewardPlayer(rail, { type: 'weapon', itemId: 'rail' });
-  rail.enemies = [160, 220, 280, 340].map((x, index) => enemy(`rail-${index}`, x));
+  rail.enemies = [160, 220, 280, 340].map((x, index) => enemy(`rail-${index}`, x, weaponOrigin(rail.player, 'gun').y - 10));
   stepWorld(rail, { shoot: true }, STEP); tick(rail, 30);
   assert.deepEqual(rail.enemies.map(target => target.hp), [172, 172, 172, 200]);
 });

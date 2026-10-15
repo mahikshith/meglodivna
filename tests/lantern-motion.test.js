@@ -62,7 +62,7 @@ test('ground impacts clip to real support and arena, and cannot fabricate cracks
 
 test('axe and Bellbeast contact sockets match authored body scales and mirrored facing', () => {
   const floor = { id: 'floor', x: 0, y: 600, w: 2000, h: 30 };
-  for (const [type, h, w, ratio] of [['sentinel', 71, 52, 35.84 / 70], ['warden', 120, 96, 35.84 / 70], ['bellbeast', 166, 190, 46.36 / 100]]) {
+  for (const [type, h, w, ratio] of [['sentinel', 71, 52, 171 / 220], ['warden', 120, 96, 171 / 220], ['bellbeast', 166, 190, 91 / 210]]) {
     const actor = { type, x: 500, y: 600 - h, w, h, facing: 1 }, center = actor.x + actor.w / 2;
     const right = groundImpact(actor, [floor], 285);
     actor.facing = -1; const left = groundImpact(actor, [floor], 285);

@@ -1,0 +1,979 @@
+{
+  "kind": "Integrated Chromium input smoke plus separately labelled isolated effect fixtures",
+  "physicalDevice": false,
+  "campaignCompletion": false,
+  "started": "2026-10-15T11:23:48.867Z",
+  "sourceHashes": {
+    "index.html": "46f7828af43b841f2af3bd89ea8af37a62057bc08655fabab5797be0ef131943",
+    "src/art.js": "525873ea6b871cb3f1d61992836ee9f2b1caccd6c88326ece6bbf46d8a6aa660",
+    "src/audio.js": "173fc305073d5289329c6df71069a5a64bd0801f2ced09d7e0a1ce69d5ed82e6",
+    "src/blade-motion.js": "7220d4517e5e6ecffa413c29f3b7bb122ccf35d7ec5303fb141bbc758cf82a5c",
+    "src/camera.js": "332f75f253599e3633ba3dfb27242b323eaaf5b8482204d91cbbda3f6922a3d0",
+    "src/catalog.js": "fe81db6d81de38aeaf93ab78cb0d912ae18899de135be61dd0ecce4c643d0430",
+    "src/character-geometry.js": "86a561f8290df1c879aff320bbbd800c9e1d36770053db6928460b492543e9e3",
+    "src/character-motion.js": "299005ff7429e324332d3b36cfd352e737a5590d96d67533f49c40594965b15b",
+    "src/combat.js": "0c3d66d617ac9bc6a1d6347358caf4bb0ae1e47d5a766488dadddcbb5b971553",
+    "src/companions.js": "4586a4d35cf1356f857dee4dfc6eb887193f3ff8c63cde30f3daf7c92a253fc2",
+    "src/enemy-motion.js": "edd5881630507ba1a145abcf89d9126b9896a34cc9417f26685f568279363dcc",
+    "src/input.js": "08e0bc3fe3e5c47c68aa356b8adea72b54f61c68f4c201efe160558f4e14549e",
+    "src/ironfang-geometry.js": "97c799cc2eb3c2560e956358d4e3df4b426647b5ecf429725ff050633c90ad6e",
+    "src/ironfang.js": "00c8a44bf2322fda4174cccd2f2270302c2ee9493197222e109d14d7c7360627",
+    "src/lantern-art.js": "7026f99f27c41d545450cb1c509cad77125a1ac1097b79a0287affab07ae401d",
+    "src/lantern-fx.js": "9ffd9ea2ce237506c6e82aa75dca4225b448532af727a9c8bc084af577b47d41",
+    "src/legacy-level.js": "21614250e936233c0bfea0ce0626a528f618651ac9dc679ab7e27691e0e0f1fa",
+    "src/level.js": "ebed4be76751f4ebd5b07bb6e88d857476d93113fe4ae5e558a2440894dd2ca1",
+    "src/main.js": "64ca941ff4d83d55bde21082b3c8846e3ae395bf1766e2c46eae489a048207b9",
+    "src/physics.js": "53008d39ef281d97a6517c8887c653dbc81760322a04c4a44dd99a1d436e07e0",
+    "src/progress.js": "0d78ffec998955e61e179c4f2c4762e3e674c481e265f424d8e56f8cf3e575f1",
+    "src/reference-art.js": "1ee6f6283cce08057c812ee0632609f8d1b720359dc160bfbc775f9e7866738e",
+    "src/rune-worlds.js": "c742940736c73d23264f23a45dac2d773a143746c14bddf2582787ed3208379f",
+    "src/runeheart-art.js": "c7614f53442cb46fa5a7b3a0c7fbe3bd80d631a55e374900a52e92e95ab9e4e4",
+    "src/sanctuary-theme.css": "c4ec1a3a0f193561dd65e5c83fba19741d404defda6e2f36e9bc32a46420585b",
+    "src/style.css": "146041fad432fccd6140c63cca629e2123de44aa038bb8dd5a9507ed8269e417",
+    "src/terrain.js": "4fe19bcb3953ccde107a28833879f36cca41f283a0cda9ab67fdaf0211a85fc3",
+    "src/ui.js": "6fc65a98541a68643f765cf61e4564addeb9a7479a1479a5b43fb86a50a146d8",
+    "src/worlds.js": "f3e899199f1fe72be50fa777d268ddde5133aa8c32bab81a56bc975d29af9daa",
+    "public/lantern/manifest.json": "254dcc91785a493f25bc1d6001c5414e8be8bd0a329a45890c7a72cb4b764bb7",
+    "public/lantern/atlas.json": "d0ee315ea51b66689513ecba32b47f5c6c6380e157895d407901364a3c7086e1",
+    "public/lantern/atlas.png": "2e99d80a62c416e6f92196e12dcfca683683da848183e997ad2cc0cf0f933c7d"
+  },
+  "realInput": [
+    {
+      "viewport": {
+        "width": 740,
+        "height": 360
+      },
+      "kind": "Actual keyboard/CDP touch inputs; no injected progress, health or coordinates",
+      "checks": [
+        "keyboard movement, variable/air jump, jet smoke, three slash modes, fire and dash",
+        "real Mira conversation/reward, every equipment tab, legal spell equip, modal freeze",
+        "simultaneous movement/jump/thrust/fire, independent action release, visible held modes",
+        "held-input pause cleanup, no new/moving paused FX, settings close/reopen/Escape return context",
+        "second-finger Pause and Gear interrupt held fire without duplicate activation",
+        "save and learned/equipped reward reload, audio and FX preference persistence, bounded FX pools"
+      ],
+      "controlBounds": [
+        {
+          "id": "touch-pause",
+          "x": 290,
+          "y": 10,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "touch-settings",
+          "x": 346,
+          "y": 10,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "touch-gear",
+          "x": 402,
+          "y": 10,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "touch-power",
+          "x": 294,
+          "y": 232,
+          "w": 80,
+          "h": 80
+        },
+        {
+          "id": "touch-dash",
+          "x": 400,
+          "y": 260,
+          "w": 92,
+          "h": 92
+        },
+        {
+          "id": "touch-attack",
+          "x": 508,
+          "y": 204,
+          "w": 100,
+          "h": 100
+        },
+        {
+          "id": "touch-jump",
+          "x": 622,
+          "y": 252,
+          "w": 100,
+          "h": 100
+        }
+      ],
+      "observedMotion": {
+        "frames": {
+          "menu": {
+            "samples": 33,
+            "atlasFrames": [
+              "cr-courier-10"
+            ]
+          },
+          "idle": {
+            "samples": 35,
+            "atlasFrames": [
+              "cr-courier-0",
+              "cr-courier-1"
+            ]
+          },
+          "run": {
+            "samples": 29,
+            "atlasFrames": [
+              "cr-courier-4",
+              "cr-courier-5",
+              "cr-courier-7",
+              "cr-courier-6"
+            ]
+          },
+          "jump": {
+            "samples": 39,
+            "atlasFrames": [
+              "cr-courier-8"
+            ]
+          },
+          "jet": {
+            "samples": 16,
+            "atlasFrames": [
+              "cr-courier-8",
+              "cr-courier-9"
+            ]
+          },
+          "fall": {
+            "samples": 29,
+            "atlasFrames": [
+              "cr-courier-10",
+              "cr-couriergun-0"
+            ]
+          },
+          "slash-horizontal": {
+            "samples": 32,
+            "atlasFrames": [
+              "cr-courier-12",
+              "cr-courier-13",
+              "cr-courier-14",
+              "cr-courier-15"
+            ]
+          },
+          "slash-vertical": {
+            "samples": 36,
+            "atlasFrames": [
+              "cr-courier-16",
+              "cr-courier-17",
+              "cr-courier-18",
+              "cr-courier-19"
+            ]
+          },
+          "slash-finisher": {
+            "samples": 15,
+            "atlasFrames": [
+              "cr-courier-12",
+              "cr-courier-13"
+            ]
+          },
+          "slash-dash": {
+            "samples": 9,
+            "atlasFrames": [
+              "cr-courier-21"
+            ]
+          },
+          "story": {
+            "samples": 32,
+            "atlasFrames": [
+              "cr-courier-7"
+            ]
+          },
+          "catalogue": {
+            "samples": 83,
+            "atlasFrames": [
+              "cr-courier-5",
+              "cr-courier-12"
+            ]
+          },
+          "paused": {
+            "samples": 62,
+            "atlasFrames": [
+              "cr-courier-18",
+              "cr-courier-13"
+            ]
+          }
+        },
+        "maxParticles": 26,
+        "maxGhosts": 0,
+        "samples": 450
+      },
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "kind": "Actual keyboard/CDP touch inputs; no injected progress, health or coordinates",
+      "checks": [
+        "keyboard movement, variable/air jump, jet smoke, three slash modes, fire and dash",
+        "real Mira conversation/reward, every equipment tab, legal spell equip, modal freeze",
+        "simultaneous movement/jump/thrust/fire, independent action release, visible held modes",
+        "held-input pause cleanup, no new/moving paused FX, settings close/reopen/Escape return context",
+        "second-finger Pause and Gear interrupt held fire without duplicate activation",
+        "save and learned/equipped reward reload, audio and FX preference persistence, bounded FX pools"
+      ],
+      "controlBounds": [
+        {
+          "id": "touch-pause",
+          "x": 342,
+          "y": 10,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "touch-settings",
+          "x": 398,
+          "y": 10,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "touch-gear",
+          "x": 454,
+          "y": 10,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "id": "touch-power",
+          "x": 388,
+          "y": 262,
+          "w": 80,
+          "h": 80
+        },
+        {
+          "id": "touch-dash",
+          "x": 498,
+          "y": 290,
+          "w": 92,
+          "h": 92
+        },
+        {
+          "id": "touch-attack",
+          "x": 606,
+          "y": 234,
+          "w": 100,
+          "h": 100
+        },
+        {
+          "id": "touch-jump",
+          "x": 720,
+          "y": 282,
+          "w": 100,
+          "h": 100
+        }
+      ],
+      "observedMotion": {
+        "frames": {
+          "menu": {
+            "samples": 15,
+            "atlasFrames": [
+              "cr-courier-10"
+            ]
+          },
+          "idle": {
+            "samples": 33,
+            "atlasFrames": [
+              "cr-courier-0",
+              "cr-courier-1"
+            ]
+          },
+          "run": {
+            "samples": 28,
+            "atlasFrames": [
+              "cr-courier-4",
+              "cr-courier-5",
+              "cr-courier-7",
+              "cr-courier-6"
+            ]
+          },
+          "jump": {
+            "samples": 41,
+            "atlasFrames": [
+              "cr-courier-8"
+            ]
+          },
+          "jet": {
+            "samples": 16,
+            "atlasFrames": [
+              "cr-courier-8",
+              "cr-courier-9"
+            ]
+          },
+          "fall": {
+            "samples": 31,
+            "atlasFrames": [
+              "cr-courier-10",
+              "cr-couriergun-0"
+            ]
+          },
+          "slash-horizontal": {
+            "samples": 31,
+            "atlasFrames": [
+              "cr-courier-12",
+              "cr-courier-13",
+              "cr-courier-14",
+              "cr-courier-15"
+            ]
+          },
+          "slash-vertical": {
+            "samples": 36,
+            "atlasFrames": [
+              "cr-courier-16",
+              "cr-courier-17",
+              "cr-courier-18",
+              "cr-courier-19"
+            ]
+          },
+          "slash-finisher": {
+            "samples": 14,
+            "atlasFrames": [
+              "cr-courier-12",
+              "cr-courier-13"
+            ]
+          },
+          "slash-dash": {
+            "samples": 10,
+            "atlasFrames": [
+              "cr-courier-21"
+            ]
+          },
+          "story": {
+            "samples": 31,
+            "atlasFrames": [
+              "cr-courier-7"
+            ]
+          },
+          "catalogue": {
+            "samples": 73,
+            "atlasFrames": [
+              "cr-courier-5",
+              "cr-courier-13"
+            ]
+          },
+          "paused": {
+            "samples": 52,
+            "atlasFrames": [
+              "cr-courier-18",
+              "cr-courier-13"
+            ]
+          }
+        },
+        "maxParticles": 27,
+        "maxGhosts": 0,
+        "samples": 411
+      },
+      "passed": true
+    }
+  ],
+  "fixtures": [
+    {
+      "kind": "horizontal",
+      "steps": 11,
+      "sampledFrames": [
+        "cr-courier-0",
+        "cr-courier-12",
+        "cr-courier-13"
+      ],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakParticles": 0,
+      "particleKinds": [],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "enemies": [],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "vertical",
+      "steps": 11,
+      "sampledFrames": [
+        "cr-courier-0",
+        "cr-courier-16"
+      ],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakParticles": 0,
+      "particleKinds": [],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "vertical"
+      },
+      "enemies": [],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "finisher",
+      "steps": 11,
+      "sampledFrames": [
+        "cr-courier-0",
+        "cr-courier-12"
+      ],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakParticles": 0,
+      "particleKinds": [],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "finisher"
+      },
+      "enemies": [],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "jet",
+      "steps": 60,
+      "sampledFrames": [
+        "cr-courier-0",
+        "cr-courier-8",
+        "cr-courier-9"
+      ],
+      "events": [
+        "land",
+        "jump",
+        "jet"
+      ],
+      "peakParticles": 23,
+      "particleKinds": [
+        "dust",
+        "smoke",
+        "ember"
+      ],
+      "ghosts": 0,
+      "player": {
+        "state": "jet",
+        "slashMode": "horizontal"
+      },
+      "enemies": [],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "enemy-warning",
+      "steps": 65,
+      "sampledFrames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "events": [
+        "land",
+        "enemywindup"
+      ],
+      "peakParticles": 0,
+      "particleKinds": [],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "enemies": [
+        {
+          "type": "guard",
+          "attack": "bite",
+          "windup": 0.1533333333333334,
+          "attackTime": 0
+        }
+      ],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "slam",
+      "steps": 186,
+      "sampledFrames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "events": [
+        "land",
+        "enemywindup",
+        "slam",
+        "enemyattack"
+      ],
+      "peakParticles": 46,
+      "particleKinds": [
+        "dust",
+        "spark"
+      ],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "enemies": [
+        {
+          "type": "sentinel",
+          "attack": "slam",
+          "windup": 0,
+          "attackTime": 0.14333333333333334
+        }
+      ],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "companions",
+      "steps": 106,
+      "sampledFrames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "events": [
+        "land",
+        "spell",
+        "summon",
+        "summonarrival"
+      ],
+      "peakParticles": 55,
+      "particleKinds": [
+        "spirit"
+      ],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "enemies": [],
+      "allies": [
+        {
+          "type": "wolf",
+          "phase": "attack"
+        },
+        {
+          "type": "dragon",
+          "phase": "attack"
+        }
+      ],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "portal",
+      "steps": 13,
+      "sampledFrames": [
+        "cr-courier-0",
+        "cr-courier-10"
+      ],
+      "events": [
+        "land",
+        "portal",
+        "portalarrival"
+      ],
+      "peakParticles": 52,
+      "particleKinds": [
+        "spirit",
+        "dust"
+      ],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "enemies": [],
+      "allies": [],
+      "bossForm": "ground"
+    },
+    {
+      "kind": "transformation",
+      "steps": 151,
+      "sampledFrames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "events": [
+        "land",
+        "taunt",
+        "transform"
+      ],
+      "peakParticles": 49,
+      "particleKinds": [
+        "ember"
+      ],
+      "ghosts": 0,
+      "player": {
+        "state": "idle",
+        "slashMode": "horizontal"
+      },
+      "enemies": [],
+      "allies": [],
+      "bossForm": "flying"
+    }
+  ],
+  "captures": [
+    {
+      "name": "01-real-home",
+      "kind": "real input",
+      "mode": "menu",
+      "time": 0,
+      "player": {
+        "x": 98,
+        "y": 1200,
+        "state": "fall",
+        "grounded": false,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "cr-courier-10",
+      "texture": "character-revision",
+      "particles": 0,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "02-real-740x360",
+      "kind": "real input",
+      "mode": "playing",
+      "time": 3.5416666666666567,
+      "player": {
+        "x": 582.7708333333329,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 5,
+        "slashMode": "horizontal",
+        "spell": "siphon",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "cr-courier-0",
+      "texture": "character-revision",
+      "particles": 11,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "03-real-settings",
+      "kind": "real input",
+      "mode": "paused",
+      "time": 3.791666666666656,
+      "player": {
+        "x": 582.7708333333329,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 6,
+        "slashMode": "vertical",
+        "spell": "siphon",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "cr-courier-18",
+      "texture": "character-revision",
+      "particles": 22,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "04-real-844x390",
+      "kind": "real input",
+      "mode": "playing",
+      "time": 3.4583333333333237,
+      "player": {
+        "x": 572.2708333333334,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 5,
+        "slashMode": "horizontal",
+        "spell": "siphon",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "cr-courier-1",
+      "texture": "character-revision",
+      "particles": 12,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-horizontal",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.09166666666666666,
+      "player": {
+        "x": 350,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 1,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "cr-courier-13",
+      "texture": "character-revision",
+      "particles": 0,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-vertical",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.09166666666666666,
+      "player": {
+        "x": 350,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 1,
+        "slashMode": "vertical",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "cr-courier-16",
+      "texture": "character-revision",
+      "particles": 0,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-finisher",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.09166666666666666,
+      "player": {
+        "x": 350,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 1,
+        "slashMode": "finisher",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "cr-courier-12",
+      "texture": "character-revision",
+      "particles": 0,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-jet",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.5000000000000007,
+      "player": {
+        "x": 350,
+        "y": 1007.0416666666683,
+        "state": "jet",
+        "grounded": false,
+        "hp": 100,
+        "fuel": 75.83333333333306,
+        "slashId": 0,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": true,
+        "dash": 0
+      },
+      "frame": "cr-courier-8",
+      "texture": "character-revision",
+      "particles": 22,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-enemy-warning",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.5416666666666672,
+      "player": {
+        "x": 350,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "cr-courier-0",
+      "texture": "character-revision",
+      "particles": 0,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-slam",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 1.549999999999997,
+      "player": {
+        "x": 350,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "cr-courier-0",
+      "texture": "character-revision",
+      "particles": 46,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-companions",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.8833333333333326,
+      "player": {
+        "x": 350,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "cr-courier-1",
+      "texture": "character-revision",
+      "particles": 40,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-portal",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 0.10833333333333332,
+      "player": {
+        "x": 483,
+        "y": 1200,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "cr-courier-0",
+      "texture": "character-revision",
+      "particles": 52,
+      "capacity": 240,
+      "ghosts": 0
+    },
+    {
+      "name": "fixture-transformation",
+      "kind": "ISOLATED STATE/FX FIXTURE — not legal gameplay",
+      "mode": "playing",
+      "time": 1.2583333333333313,
+      "player": {
+        "x": 17970,
+        "y": 620,
+        "state": "idle",
+        "grounded": true,
+        "hp": 100,
+        "fuel": 100,
+        "slashId": 0,
+        "slashMode": "horizontal",
+        "spell": "cinder",
+        "jet": false,
+        "dash": 0
+      },
+      "frame": "cr-courier-0",
+      "texture": "character-revision",
+      "particles": 30,
+      "capacity": 240,
+      "ghosts": 0
+    }
+  ],
+  "runtimeErrors": [],
+  "failedResources": [],
+  "rendererLifecycle": {
+    "kind": "Isolated renderer lifecycle calls; no gameplay completion claim",
+    "deaths": [
+      {
+        "type": "guard",
+        "texture": "character-revision",
+        "frame": "cr-stalker-10",
+        "visible": true
+      },
+      {
+        "type": "mage",
+        "texture": "character-revision",
+        "frame": "cr-caster-10",
+        "visible": true
+      },
+      {
+        "type": "sentinel",
+        "texture": "character-revision",
+        "frame": "cr-guardian-14",
+        "visible": true
+      },
+      {
+        "type": "drone",
+        "texture": "character-revision",
+        "frame": "cr-dragon-0",
+        "visible": true
+      }
+    ],
+    "portal": {
+      "formed": "ln-portal-0",
+      "closing": "ln-portal-3",
+      "reopened": "ln-portal-0",
+      "reborn": 10.3,
+      "retired": true,
+      "reusedFrame": "ln-portal-0",
+      "freshSprite": true,
+      "cleaned": true
+    }
+  },
+  "sourceUnchanged": true,
+  "passed": true,
+  "finished": "2026-10-15T11:24:29.195Z"
+}

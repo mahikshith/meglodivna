@@ -1,0 +1,116 @@
+﻿{
+    "version":  "0.8.0-lantern",
+    "versionCode":  9,
+    "branch":  "codex/runeheart-rebuild",
+    "simulationTests":  {
+                            "report":  "artifacts/character-revision/unit-tests.log",
+                            "failed":  0,
+                            "passed":  189
+                        },
+    "legalCampaigns":  [
+                           {
+                               "name":  "ember",
+                               "world":  "soulforge",
+                               "difficulty":  "ember",
+                               "status":  "won",
+                               "deaths":  0,
+                               "report":  "artifacts/character-revision/ember.log"
+                           },
+                           {
+                               "name":  "forge",
+                               "world":  "soulforge",
+                               "difficulty":  "forge",
+                               "status":  "won",
+                               "deaths":  0,
+                               "report":  "artifacts/character-revision/forge.log"
+                           },
+                           {
+                               "name":  "inferno",
+                               "world":  "soulforge",
+                               "difficulty":  "inferno",
+                               "status":  "won",
+                               "deaths":  0,
+                               "report":  "artifacts/character-revision/inferno.log"
+                           },
+                           {
+                               "name":  "extinction",
+                               "world":  "soulforge",
+                               "difficulty":  "extinction",
+                               "status":  "won",
+                               "deaths":  1,
+                               "report":  "artifacts/character-revision/extinction.log"
+                           },
+                           {
+                               "name":  "bellbeast",
+                               "world":  "soulforge",
+                               "difficulty":  "forge",
+                               "status":  "won",
+                               "deaths":  0,
+                               "report":  "artifacts/character-revision/bellbeast.log"
+                           },
+                           {
+                               "name":  "tide",
+                               "world":  "tide",
+                               "difficulty":  "forge",
+                               "status":  "won",
+                               "deaths":  0,
+                               "report":  "artifacts/character-revision/tide.log"
+                           },
+                           {
+                               "name":  "pyre",
+                               "world":  "pyre",
+                               "difficulty":  "forge",
+                               "status":  "won",
+                               "deaths":  0,
+                               "report":  "artifacts/character-revision/pyre.log"
+                           },
+                           {
+                               "name":  "neon",
+                               "world":  "neon",
+                               "difficulty":  "forge",
+                               "status":  "won",
+                               "deaths":  0,
+                               "report":  "artifacts/character-revision/neon.log"
+                           },
+                           {
+                               "name":  "veil",
+                               "world":  "veil",
+                               "difficulty":  "forge",
+                               "status":  "won",
+                               "deaths":  0,
+                               "report":  "artifacts/character-revision/veil.log"
+                           }
+                       ],
+    "isolatedVisualFixtures":  {
+                                   "reports":  [
+                                                   "artifacts/character-revision/qa/visual/report.json",
+                                                   "artifacts/ironfang/qa/report.json"
+                                               ],
+                                   "guardianAuraRemoved":  true,
+                                   "count":  52,
+                                   "passed":  true
+                               },
+    "controls":  {
+                     "viewports":  4,
+                     "report":  "artifacts/character-revision/qa/controls/report.json"
+                 },
+    "browserInputs":  {
+                          "report":  "artifacts/character-revision/qa/integrated/report.json",
+                          "passed":  true
+                      },
+    "production":  {
+                       "report":  "artifacts/character-revision/qa/production/report.json",
+                       "passed":  true
+                   },
+    "textureBudget":  {
+                          "measuredDeviceRAM":  false,
+                          "rgbaBytes":  162724228
+                      },
+    "android":  "Pending CI signature, payload, lint, upload and download verification",
+    "physicalDeviceTest":  false,
+    "limitations":  [
+                        "Finite authored poses; three rifle aim elevations",
+                        "Companion dragon death reuses a fading pose",
+                        "No physical Android comfort, frame pacing, memory or thermal measurements"
+                    ]
+}

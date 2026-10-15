@@ -1,0 +1,82 @@
+{
+  "sword": {
+    "sourceRect": [
+      25,
+      20,
+      440,
+      496
+    ],
+    "source": "reference/character-revision/interface-raw.png",
+    "sha256": "0422767896c1c350f6abd3258ddd05e0fbc3e398c96157174c1683326c615fe7"
+  },
+  "boots": {
+    "sourceRect": [
+      455,
+      78,
+      747,
+      484
+    ],
+    "source": "reference/character-revision/interface-raw.png",
+    "sha256": "0422767896c1c350f6abd3258ddd05e0fbc3e398c96157174c1683326c615fe7"
+  },
+  "jet": {
+    "sourceRect": [
+      781,
+      72,
+      1050,
+      492
+    ],
+    "source": "reference/character-revision/interface-raw.png",
+    "sha256": "0422767896c1c350f6abd3258ddd05e0fbc3e398c96157174c1683326c615fe7"
+  },
+  "rifle": {
+    "sourceRect": [
+      1072,
+      197,
+      1525,
+      393
+    ],
+    "source": "reference/character-revision/interface-raw.png",
+    "sha256": "0422767896c1c350f6abd3258ddd05e0fbc3e398c96157174c1683326c615fe7"
+  },
+  "rune": {
+    "sourceRect": [
+      37,
+      574,
+      315,
+      959
+    ],
+    "source": "reference/character-revision/interface-raw.png",
+    "sha256": "0422767896c1c350f6abd3258ddd05e0fbc3e398c96157174c1683326c615fe7"
+  },
+  "lantern": {
+    "sourceRect": [
+      443,
+      512,
+      637,
+      995
+    ],
+    "source": "reference/character-revision/interface-raw.png",
+    "sha256": "0422767896c1c350f6abd3258ddd05e0fbc3e398c96157174c1683326c615fe7"
+  },
+  "satchel": {
+    "sourceRect": [
+      698,
+      592,
+      1155,
+      960
+    ],
+    "source": "reference/character-revision/interface-raw.png",
+    "sha256": "0422767896c1c350f6abd3258ddd05e0fbc3e398c96157174c1683326c615fe7"
+  },
+  "bell": {
+    "sourceRect": [
+      1187,
+      535,
+      1509,
+      950
+    ],
+    "source": "reference/character-revision/interface-raw.png",
+    "sha256": "0422767896c1c350f6abd3258ddd05e0fbc3e398c96157174c1683326c615fe7"
+  }
+}

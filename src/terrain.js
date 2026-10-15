@@ -54,9 +54,10 @@ export function buildSolidTerrain(scene,solid,material='ruins'){
   const texture=material==='metal'?'ln-fx-platform':'ln-platform';
   if(platform){
    group.add(scene.add.image(x,y,texture).setOrigin(0).setDisplaySize(w,Math.min(100,w*.43)));
-   if(!solid.oneWay)group.addAt(scene.add.image(x+w*.25,y+h+7,'ln-root').setOrigin(.5,0).setScale(.55).setTint(0x7d9382).setAlpha(.65),0);
+   if(!solid.oneWay)group.addAt(scene.add.image(x+w*.25,y+h+7,'ln-root').setOrigin(.5,0).setDisplaySize(123.2,110.55).setTint(0x7d9382).setAlpha(.65),0);
   }else if(solid.kind!=='ceiling'){
-   for(let px=x;px<x+w;px+=225){const length=Math.min(225,x+w-px);group.add(scene.add.image(px,y,'ln-platform').setOrigin(0).setCrop(0,0,length,97).setAlpha(.92));}
+   const source=scene.textures.get('ln-platform').getSourceImage();
+   for(let px=x;px<x+w;px+=225){const length=Math.min(225,x+w-px);group.add(scene.add.image(px,y,'ln-platform').setOrigin(0).setDisplaySize(225,97).setCrop(0,0,length/225*source.width,source.height).setAlpha(.92));}
   }
   const edge=scene.add.graphics();edge.lineStyle(1,solid.oneWay?0xd3bd86:0xbdc5ad,.65);edge.lineBetween(x,y,x+w,y);group.add(edge);
   return group;

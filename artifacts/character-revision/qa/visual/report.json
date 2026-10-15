@@ -1,0 +1,3193 @@
+{
+  "kind": "Isolated state and rendering fixtures",
+  "physicalDevice": false,
+  "legalCampaign": false,
+  "sourceHashes": {
+    "src/art.js": "525873ea6b871cb3f1d61992836ee9f2b1caccd6c88326ece6bbf46d8a6aa660",
+    "src/audio.js": "173fc305073d5289329c6df71069a5a64bd0801f2ced09d7e0a1ce69d5ed82e6",
+    "src/blade-motion.js": "7220d4517e5e6ecffa413c29f3b7bb122ccf35d7ec5303fb141bbc758cf82a5c",
+    "src/camera.js": "332f75f253599e3633ba3dfb27242b323eaaf5b8482204d91cbbda3f6922a3d0",
+    "src/catalog.js": "fe81db6d81de38aeaf93ab78cb0d912ae18899de135be61dd0ecce4c643d0430",
+    "src/character-geometry.js": "86a561f8290df1c879aff320bbbd800c9e1d36770053db6928460b492543e9e3",
+    "src/character-motion.js": "299005ff7429e324332d3b36cfd352e737a5590d96d67533f49c40594965b15b",
+    "src/combat.js": "0c3d66d617ac9bc6a1d6347358caf4bb0ae1e47d5a766488dadddcbb5b971553",
+    "src/companions.js": "4586a4d35cf1356f857dee4dfc6eb887193f3ff8c63cde30f3daf7c92a253fc2",
+    "src/enemy-motion.js": "edd5881630507ba1a145abcf89d9126b9896a34cc9417f26685f568279363dcc",
+    "src/input.js": "08e0bc3fe3e5c47c68aa356b8adea72b54f61c68f4c201efe160558f4e14549e",
+    "src/ironfang-geometry.js": "97c799cc2eb3c2560e956358d4e3df4b426647b5ecf429725ff050633c90ad6e",
+    "src/ironfang.js": "00c8a44bf2322fda4174cccd2f2270302c2ee9493197222e109d14d7c7360627",
+    "src/lantern-art.js": "7026f99f27c41d545450cb1c509cad77125a1ac1097b79a0287affab07ae401d",
+    "src/lantern-fx.js": "9ffd9ea2ce237506c6e82aa75dca4225b448532af727a9c8bc084af577b47d41",
+    "src/legacy-level.js": "21614250e936233c0bfea0ce0626a528f618651ac9dc679ab7e27691e0e0f1fa",
+    "src/level.js": "ebed4be76751f4ebd5b07bb6e88d857476d93113fe4ae5e558a2440894dd2ca1",
+    "src/main.js": "64ca941ff4d83d55bde21082b3c8846e3ae395bf1766e2c46eae489a048207b9",
+    "src/physics.js": "53008d39ef281d97a6517c8887c653dbc81760322a04c4a44dd99a1d436e07e0",
+    "src/progress.js": "0d78ffec998955e61e179c4f2c4762e3e674c481e265f424d8e56f8cf3e575f1",
+    "src/reference-art.js": "1ee6f6283cce08057c812ee0632609f8d1b720359dc160bfbc775f9e7866738e",
+    "src/rune-worlds.js": "c742940736c73d23264f23a45dac2d773a143746c14bddf2582787ed3208379f",
+    "src/runeheart-art.js": "c7614f53442cb46fa5a7b3a0c7fbe3bd80d631a55e374900a52e92e95ab9e4e4",
+    "src/sanctuary-theme.css": "c4ec1a3a0f193561dd65e5c83fba19741d404defda6e2f36e9bc32a46420585b",
+    "src/style.css": "146041fad432fccd6140c63cca629e2123de44aa038bb8dd5a9507ed8269e417",
+    "src/terrain.js": "4fe19bcb3953ccde107a28833879f36cca41f283a0cda9ab67fdaf0211a85fc3",
+    "src/ui.js": "6fc65a98541a68643f765cf61e4564addeb9a7479a1479a5b43fb86a50a146d8",
+    "src/worlds.js": "f3e899199f1fe72be50fa777d268ddde5133aa8c32bab81a56bc975d29af9daa",
+    "index.html": "46f7828af43b841f2af3bd89ea8af37a62057bc08655fabab5797be0ef131943",
+    "public/character-revision/atlas-1.png": "d18de51bbb1201417648906184237b96d1e0b5581db81decf4b94096d4176040",
+    "public/character-revision/atlas-2.png": "b8555ae8e0f975c99cfb00e73157fec97f00a1ef153c8d89c66083e1b2669378",
+    "public/character-revision/atlas.json": "5ce64176d78064e6fec185c6dc55862e5cf805cd2a99a73389c6aba5070f5842",
+    "public/character-revision/atlas.png": "7f2eedc448d95263c4d43b47990320cd45ab3736588eaea3adbd51c0bce42568",
+    "public/character-revision/manifest.json": "e61a6a7c92573edab78cfc92b7852acf55c3936e7bf2e8b3c215e4c4adf2f73e",
+    "public/ironfang/atlas-1.png": "3f90788bb397a6e36c923e00c9f639f9dc84b8586b6a4d9c9247b47075096aa0",
+    "public/ironfang/atlas.json": "4eb862281005930949b0995f61af965603150d32ead78e8054514f9a6686b084",
+    "public/ironfang/atlas.png": "aa7b6512ef3858ea0ac36f07f1de804ba736af2170943b3fc5953f315352b2ef",
+    "public/ironfang/manifest.json": "c3357b4f9ace7f15c57fc70bd9c3063b98879b9f54bcb18729eec2300899431d",
+    "public/sanctuary-ui/bell.png": "b08ff078889ad999ed7b04caeaca5dca2f8e69b8d179c7f3c5e9e3a30c465c56",
+    "public/sanctuary-ui/boots.png": "e996f3fca9d1aa3a31163a8eca5afba5bef528dbeab3e8cded1346c510c2449d",
+    "public/sanctuary-ui/jet.png": "7ba8d553648bc2e2b252b790efdeab7df31854358d66e73576deeac07b1fac71",
+    "public/sanctuary-ui/lantern.png": "9971aae6c842c4a60ada8a100a92e3f3e4612927d2f77097e5e2313b86b07356",
+    "public/sanctuary-ui/manifest.json": "94932d02bc9341ad5812c2ad9a912950b49819c1db0f7e37cc13a64ca4eb8aab",
+    "public/sanctuary-ui/rifle.png": "5ccec92c6570bad3d2e590968fb1676ddd8a90fd55413f1d51bd8128783d69df",
+    "public/sanctuary-ui/rune.png": "e66db490e981dd6034b66802d5744b6cadca27dbcd90d80182da766e048ff943",
+    "public/sanctuary-ui/satchel.png": "c508b0355d3b92a7a41df24f62263bd43f640b77bb57d24fd5ecb38a632a2bba",
+    "public/sanctuary-ui/sword.png": "8b00cc79da18bdbae878e0da7d4f1487c138b1a2acc62bb1e50c400fa89d97d7",
+    "public/lantern/arch.png": "d76939ab295e6ccfe90c318e508220885c5b0d5d801c5ba4d5e23e8ffc56f719",
+    "public/lantern/atlas.json": "d0ee315ea51b66689513ecba32b47f5c6c6380e157895d407901364a3c7086e1",
+    "public/lantern/atlas.png": "2e99d80a62c416e6f92196e12dcfca683683da848183e997ad2cc0cf0f933c7d",
+    "public/lantern/environment.json": "44a2d2f5cefe045d770052ac42e1b49b6ab0c2bdfb318fcfaf00012ea51e9427",
+    "public/lantern/lantern.png": "b3006f530c042320cb7fac525fc835750fbff5b1669743bec3a3bac2e4c73f79",
+    "public/lantern/manifest.json": "254dcc91785a493f25bc1d6001c5414e8be8bd0a329a45890c7a72cb4b764bb7",
+    "public/lantern/platform.png": "120ce883b1989f2c5acaaf035e8067aa0739037786591bd854d65982f2e65f38",
+    "public/lantern/root.png": "64e5774dfb164ab9b8837926db91a893283b4be5da05d8c3793ec0349dbe0a32",
+    "public/lantern/sanctuary.png": "72c2ffe5bb6ade9e8f1738378b4e1500eaaed8618bad4cd0fa43b0eaca31a9b5"
+  },
+  "fixtures": [
+    {
+      "kind": "horizontal",
+      "steps": 14,
+      "playerFrame": "cr-courier-13",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-12",
+        "cr-courier-13"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakViews": 0,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": true,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0",
+        "blade-trail"
+      ]
+    },
+    {
+      "kind": "vertical",
+      "steps": 14,
+      "playerFrame": "cr-courier-17",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-16",
+        "cr-courier-17"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakViews": 0,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": true,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0",
+        "blade-trail"
+      ]
+    },
+    {
+      "kind": "plate-horizontal",
+      "steps": 14,
+      "playerFrame": "cr-plate-13",
+      "frames": [
+        "cr-courier-0",
+        "cr-plate-12",
+        "cr-plate-13"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakViews": 0,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": true,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0",
+        "blade-trail"
+      ]
+    },
+    {
+      "kind": "plate-vertical",
+      "steps": 14,
+      "playerFrame": "cr-plate-17",
+      "frames": [
+        "cr-courier-0",
+        "cr-plate-16",
+        "cr-plate-17"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "slash"
+      ],
+      "peakViews": 0,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": true,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0",
+        "blade-trail"
+      ]
+    },
+    {
+      "kind": "jet",
+      "steps": 50,
+      "playerFrame": "cr-courier-9",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-8",
+        "cr-courier-9"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "jump",
+        "jet"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "dash",
+      "steps": 8,
+      "playerFrame": "cr-courier-21",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-21"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "dash"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": true,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0",
+        "blade-trail"
+      ]
+    },
+    {
+      "kind": "stalker",
+      "steps": 71,
+      "playerFrame": "cr-courier-0",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "enemyFrames": [
+        "cr-stalker-0",
+        "cr-stalker-1",
+        "cr-stalker-2",
+        "cr-stalker-3"
+      ],
+      "phases": [
+        "walk"
+      ],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "caster",
+      "steps": 71,
+      "playerFrame": "cr-courier-0",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "enemyFrames": [
+        "cr-caster-8",
+        "cr-caster-0",
+        "cr-caster-1",
+        "cr-caster-2"
+      ],
+      "phases": [
+        "idle",
+        "walk"
+      ],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "guardian",
+      "steps": 71,
+      "playerFrame": "cr-courier-0",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "enemyFrames": [
+        "cr-guardian-12",
+        "cr-guardian-0",
+        "cr-guardian-1"
+      ],
+      "phases": [
+        "idle",
+        "walk"
+      ],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "guardian-brace",
+      "steps": 71,
+      "playerFrame": "cr-courier-0",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "enemyFrames": [
+        "cr-guardian-12",
+        "cr-guardian-0",
+        "cr-guardian-1"
+      ],
+      "phases": [
+        "idle",
+        "walk"
+      ],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "slam",
+      "steps": 117,
+      "playerFrame": "cr-courier-1",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "enemyFrames": [
+        "cr-guardian-12",
+        "cr-guardian-0",
+        "cr-guardian-4",
+        "cr-guardian-5",
+        "cr-guardian-6",
+        "cr-guardian-7",
+        "cr-guardian-8",
+        "cr-guardian-9"
+      ],
+      "phases": [
+        "idle",
+        "walk",
+        "lift",
+        "downswing",
+        "contact"
+      ],
+      "events": [
+        "land",
+        "enemywindup",
+        "slam",
+        "enemyattack"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 1,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "wispknight",
+      "steps": 71,
+      "playerFrame": "cr-courier-0",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "enemyFrames": [
+        "cr-wispknight-0",
+        "cr-wispknight-1",
+        "cr-wispknight-2",
+        "cr-wispknight-3"
+      ],
+      "phases": [
+        "walk"
+      ],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "bellbeast",
+      "steps": 155,
+      "playerFrame": "cr-courier-0",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "enemyFrames": [
+        "cr-bellbeast-8",
+        "cr-bellbeast-0",
+        "cr-bellbeast-4",
+        "cr-bellbeast-5",
+        "cr-bellbeast-6"
+      ],
+      "phases": [
+        "idle",
+        "walk",
+        "lift",
+        "downswing",
+        "contact"
+      ],
+      "events": [
+        "land",
+        "enemywindup",
+        "slam",
+        "enemyattack"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 1,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "raven",
+      "steps": 111,
+      "playerFrame": "cr-courier-1",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "spell",
+        "summon",
+        "summonarrival"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [
+        {
+          "type": "raven",
+          "frame": "cr-raven-2"
+        }
+      ],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "wolf",
+      "steps": 111,
+      "playerFrame": "cr-courier-1",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "spell",
+        "summon",
+        "summonarrival"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [
+        {
+          "type": "wolf",
+          "frame": "cr-wolf-0"
+        }
+      ],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "dragon",
+      "steps": 111,
+      "playerFrame": "cr-courier-1",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "spell",
+        "summon",
+        "summonarrival"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [
+        {
+          "type": "dragon",
+          "frame": "cr-dragon-1"
+        }
+      ],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "clone",
+      "steps": 111,
+      "playerFrame": "cr-courier-1",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-1"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "spell",
+        "summon",
+        "summonarrival"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [
+        {
+          "type": "clone",
+          "frame": "cr-courier-0"
+        }
+      ],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "rifle-horizontal",
+      "steps": 2,
+      "playerFrame": "cr-couriergun-0",
+      "frames": [
+        "cr-courier-0",
+        "cr-couriergun-0"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "shot"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "rifle-up",
+      "steps": 2,
+      "playerFrame": "cr-couriergun-3",
+      "frames": [
+        "cr-courier-0",
+        "cr-couriergun-3"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "shot"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "rifle-diagonal",
+      "steps": 2,
+      "playerFrame": "cr-couriergun-2",
+      "frames": [
+        "cr-courier-0",
+        "cr-couriergun-2"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "shot"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "rifle-run",
+      "steps": 46,
+      "playerFrame": "cr-couriergunrun-0",
+      "frames": [
+        "cr-courier-0",
+        "cr-couriergunrun-0",
+        "cr-couriergunrun-1",
+        "cr-couriergunrun-2",
+        "cr-couriergunrun-3"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land",
+        "shot"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "mira",
+      "steps": 2,
+      "playerFrame": "cr-courier-0",
+      "frames": [
+        "cr-courier-0"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "orren",
+      "steps": 2,
+      "playerFrame": "cr-courier-0",
+      "frames": [
+        "cr-courier-0"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "water",
+      "steps": 2,
+      "playerFrame": "cr-courier-10",
+      "frames": [
+        "cr-courier-0",
+        "cr-courier-10"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "water:0",
+        "relay:3"
+      ]
+    },
+    {
+      "kind": "conduit",
+      "steps": 2,
+      "playerFrame": "cr-courier-0",
+      "frames": [
+        "cr-courier-0"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "emitter:soulforge-steam-jet-100",
+        "cap:soulforge-steam-jet-100",
+        "gate:soulforge-pressure-door-99:300",
+        "gate:soulforge-pressure-door-99:450",
+        "gate:soulforge-pressure-door-99:600",
+        "relay:6"
+      ]
+    },
+    {
+      "kind": "portals",
+      "steps": 2,
+      "playerFrame": "cr-courier-0",
+      "frames": [
+        "cr-courier-0"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [
+        {
+          "id": "travel:fixture-open",
+          "frame": "ln-portal-2"
+        },
+        {
+          "id": "travel:fixture-closed",
+          "frame": "ln-portal-0"
+        }
+      ],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0"
+      ]
+    },
+    {
+      "kind": "souls",
+      "steps": 2,
+      "playerFrame": "cr-plate-0",
+      "frames": [
+        "cr-courier-0",
+        "cr-plate-0"
+      ],
+      "enemyFrames": [],
+      "phases": [],
+      "events": [
+        "land"
+      ],
+      "peakViews": 11,
+      "guardianCircles": [],
+      "guardianShieldVisible": false,
+      "bladeVisible": false,
+      "cracks": 0,
+      "portals": [],
+      "allies": [],
+      "visibleMaterials": [
+        "relay:0",
+        "soul:fixture-soul"
+      ]
+    }
+  ],
+  "errors": [],
+  "textureBudget": {
+    "kind": "Calculated one-copy RGBA size; not measured process or device RAM",
+    "rgbaBytes": 162724228,
+    "textures": [
+      {
+        "key": "__NORMAL",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "__DEFAULT",
+        "width": 32,
+        "height": 32,
+        "rgbaBytes": 4096
+      },
+      {
+        "key": "__MISSING",
+        "width": 32,
+        "height": 32,
+        "rgbaBytes": 4096
+      },
+      {
+        "key": "__WHITE",
+        "width": 4,
+        "height": 4,
+        "rgbaBytes": 64
+      },
+      {
+        "key": "runeheart-art",
+        "width": 2048,
+        "height": 2048,
+        "rgbaBytes": 16777216
+      },
+      {
+        "key": "rh-bg-citadel",
+        "width": 960,
+        "height": 432,
+        "rgbaBytes": 1658880
+      },
+      {
+        "key": "rh-bg-crypt",
+        "width": 960,
+        "height": 304,
+        "rgbaBytes": 1167360
+      },
+      {
+        "key": "rh-bg-town-mid",
+        "width": 384,
+        "height": 288,
+        "rgbaBytes": 442368
+      },
+      {
+        "key": "rh-bg-town",
+        "width": 384,
+        "height": 288,
+        "rgbaBytes": 442368
+      },
+      {
+        "key": "rh-bg-moon-clouds",
+        "width": 256,
+        "height": 176,
+        "rgbaBytes": 180224
+      },
+      {
+        "key": "lantern-art",
+        "width": 2048,
+        "height": 1024,
+        "rgbaBytes": 8388608
+      },
+      {
+        "key": "rh-bg-moon-town",
+        "width": 256,
+        "height": 176,
+        "rgbaBytes": 180224
+      },
+      {
+        "key": "rh-bg-night-city",
+        "width": 512,
+        "height": 336,
+        "rgbaBytes": 688128
+      },
+      {
+        "key": "rh-bg-forest",
+        "width": 768,
+        "height": 432,
+        "rgbaBytes": 1327104
+      },
+      {
+        "key": "lantern-motion",
+        "width": 2048,
+        "height": 1024,
+        "rgbaBytes": 8388608
+      },
+      {
+        "key": "lantern-fx",
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      {
+        "key": "ln-fx-water",
+        "width": 306,
+        "height": 306,
+        "rgbaBytes": 374544
+      },
+      {
+        "key": "ln-fx-stone",
+        "width": 303,
+        "height": 306,
+        "rgbaBytes": 370872
+      },
+      {
+        "key": "ln-fx-platform",
+        "width": 306,
+        "height": 126,
+        "rgbaBytes": 154224
+      },
+      {
+        "key": "ln-fx-emitter",
+        "width": 124,
+        "height": 85,
+        "rgbaBytes": 42160
+      },
+      {
+        "key": "ln-fx-emitter-cap",
+        "width": 84,
+        "height": 57,
+        "rgbaBytes": 19152
+      },
+      {
+        "key": "ln-fx-lever",
+        "width": 74,
+        "height": 76,
+        "rgbaBytes": 22496
+      },
+      {
+        "key": "ln-fx-ward",
+        "width": 121,
+        "height": 176,
+        "rgbaBytes": 85184
+      },
+      {
+        "key": "ln-fx-bolt",
+        "width": 100,
+        "height": 26,
+        "rgbaBytes": 10400
+      },
+      {
+        "key": "ln-fx-orb",
+        "width": 100,
+        "height": 56,
+        "rgbaBytes": 22400
+      },
+      {
+        "key": "ln-platform",
+        "width": 643,
+        "height": 277,
+        "rgbaBytes": 712444
+      },
+      {
+        "key": "reference-art",
+        "width": 2048,
+        "height": 2048,
+        "rgbaBytes": 16777216
+      },
+      {
+        "key": "rh-bg-lantern",
+        "width": 1536,
+        "height": 1024,
+        "rgbaBytes": 6291456
+      },
+      {
+        "key": "ln-arch",
+        "width": 504,
+        "height": 593,
+        "rgbaBytes": 1195488
+      },
+      {
+        "key": "ln-lantern",
+        "width": 256,
+        "height": 579,
+        "rgbaBytes": 592896
+      },
+      {
+        "key": "ln-root",
+        "width": 639,
+        "height": 574,
+        "rgbaBytes": 1467144
+      },
+      {
+        "key": "ironfang",
+        "width": 2048,
+        "height": 1895,
+        "rgbaBytes": 15523840
+      },
+      {
+        "key": "ironfang",
+        "width": 2048,
+        "height": 623,
+        "rgbaBytes": 5103616
+      },
+      {
+        "key": "character-revision",
+        "width": 2048,
+        "height": 1962,
+        "rgbaBytes": 16072704
+      },
+      {
+        "key": "character-revision",
+        "width": 2048,
+        "height": 1983,
+        "rgbaBytes": 16244736
+      },
+      {
+        "key": "character-revision",
+        "width": 2048,
+        "height": 272,
+        "rgbaBytes": 2228224
+      },
+      {
+        "key": "player-idle-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-idle-1",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-idle-2",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-idle-3",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-1",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-2",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-3",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-4",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-5",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-6",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-7",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-jump-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-fall-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-slash-0",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-1",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-2",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-3",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "guard-0",
+        "width": 48,
+        "height": 56,
+        "rgbaBytes": 10752
+      },
+      {
+        "key": "guard-1",
+        "width": 48,
+        "height": 56,
+        "rgbaBytes": 10752
+      },
+      {
+        "key": "guard-2",
+        "width": 48,
+        "height": 56,
+        "rgbaBytes": 10752
+      },
+      {
+        "key": "guard-3",
+        "width": 48,
+        "height": 56,
+        "rgbaBytes": 10752
+      },
+      {
+        "key": "drone-0",
+        "width": 56,
+        "height": 40,
+        "rgbaBytes": 8960
+      },
+      {
+        "key": "drone-1",
+        "width": 56,
+        "height": 40,
+        "rgbaBytes": 8960
+      },
+      {
+        "key": "drone-2",
+        "width": 56,
+        "height": 40,
+        "rgbaBytes": 8960
+      },
+      {
+        "key": "drone-3",
+        "width": 56,
+        "height": 40,
+        "rgbaBytes": 8960
+      },
+      {
+        "key": "turret-0",
+        "width": 56,
+        "height": 56,
+        "rgbaBytes": 12544
+      },
+      {
+        "key": "boss-0",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-1",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-2",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-3",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "tile-steel",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "tile-wall",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "tile-snow",
+        "width": 64,
+        "height": 32,
+        "rgbaBytes": 8192
+      },
+      {
+        "key": "antenna",
+        "width": 80,
+        "height": 144,
+        "rgbaBytes": 46080
+      },
+      {
+        "key": "pipe",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "lamp",
+        "width": 32,
+        "height": 64,
+        "rgbaBytes": 8192
+      },
+      {
+        "key": "crate",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "mage-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "shade-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "shade-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "shade-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "shade-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "sentinel-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "sentinel-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "sentinel-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "sentinel-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "boss-warden-0",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-1",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-2",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-3",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-hex-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "portrait-mira",
+        "width": 96,
+        "height": 96,
+        "rgbaBytes": 36864
+      },
+      {
+        "key": "npc-mira",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "portrait-orren",
+        "width": 96,
+        "height": 96,
+        "rgbaBytes": 36864
+      },
+      {
+        "key": "npc-orren",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "portrait-vesper",
+        "width": 96,
+        "height": 96,
+        "rgbaBytes": 36864
+      },
+      {
+        "key": "npc-vesper",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "portrait-ysra",
+        "width": 96,
+        "height": 96,
+        "rgbaBytes": 36864
+      },
+      {
+        "key": "pickup-health",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-fuel",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-rapid",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-shield",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-boost",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-mana",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-weapon",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-sword",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-armor",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-spell",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-treasure",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-cannon",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-nova",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "icon-rustfang",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-katana",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-saber",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-carbine",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-scatter",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-rail",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-cannon",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-rocket",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-courier",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-bulwark",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-wraith",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-cinder",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-siphon",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-thunder",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-veil",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-stasis",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-eclipse",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-clone",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-wolf",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-dragon",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-ember-heart",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-tide-glass",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-storm-seal",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-eclipse-fragment",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-regent-key",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-soul-core",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "barrel",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "cache",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "lever",
+        "width": 48,
+        "height": 64,
+        "rgbaBytes": 12288
+      },
+      {
+        "key": "gate",
+        "width": 96,
+        "height": 192,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "player-slash-overhead-0",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-overhead-1",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-overhead-2",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-overhead-3",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-horizontal-0",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-horizontal-1",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-horizontal-2",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-horizontal-3",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-finisher-0",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-finisher-1",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-finisher-2",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-finisher-3",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-lunge-0",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-lunge-1",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-lunge-2",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-lunge-3",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-shoot-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-shoot-1",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-shoot-2",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-shoot-3",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-hurt-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-hurt-1",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "boss-warden-run-0",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-run-1",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-run-2",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-run-3",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-attack-0",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-attack-1",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-attack-2",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-attack-3",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-hurt-0",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-hurt-1",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-hurt-2",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-hurt-3",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-hex-run-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-run-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-run-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-run-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-attack-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-attack-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-attack-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-attack-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-hurt-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-hurt-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-hurt-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-hurt-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-run-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-run-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-run-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-run-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-attack-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-attack-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-attack-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-attack-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-hurt-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-hurt-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-hurt-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-hurt-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "wizard-idle-0",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-idle-1",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-idle-2",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-idle-3",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-cast-0",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-cast-1",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-cast-2",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-cast-3",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-hurt-0",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-hurt-1",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-hurt-2",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-hurt-3",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-idle-0",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-idle-1",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-idle-2",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-idle-3",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-cast-0",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-cast-1",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-cast-2",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-cast-3",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-hurt-0",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-hurt-1",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-hurt-2",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-hurt-3",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "mage-idle-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-idle-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-idle-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-idle-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-cast-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-cast-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-cast-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-cast-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-hurt-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-hurt-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-hurt-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-hurt-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-mira-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-mira-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-mira-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-mira-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-orren-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-orren-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-orren-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-orren-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-vesper-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-vesper-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-vesper-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-vesper-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "projectile-bullet",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-carbine",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-scatter",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-rail",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-rocket",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-pressure",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-fire",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-hex",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-needle",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-arc",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-dragonfire",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-ally",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "weapon-carbine",
+        "width": 80,
+        "height": 40,
+        "rgbaBytes": 12800
+      },
+      {
+        "key": "weapon-scatter",
+        "width": 80,
+        "height": 40,
+        "rgbaBytes": 12800
+      },
+      {
+        "key": "weapon-rail",
+        "width": 80,
+        "height": 40,
+        "rgbaBytes": 12800
+      },
+      {
+        "key": "weapon-cannon",
+        "width": 80,
+        "height": 40,
+        "rgbaBytes": 12800
+      },
+      {
+        "key": "weapon-launcher",
+        "width": 80,
+        "height": 40,
+        "rgbaBytes": 12800
+      },
+      {
+        "key": "weapon-rocket",
+        "width": 80,
+        "height": 40,
+        "rgbaBytes": 12800
+      },
+      {
+        "key": "shield-0",
+        "width": 96,
+        "height": 112,
+        "rgbaBytes": 43008
+      },
+      {
+        "key": "shield-1",
+        "width": 96,
+        "height": 112,
+        "rgbaBytes": 43008
+      },
+      {
+        "key": "shield-2",
+        "width": 96,
+        "height": 112,
+        "rgbaBytes": 43008
+      },
+      {
+        "key": "shield-3",
+        "width": 96,
+        "height": 112,
+        "rgbaBytes": 43008
+      },
+      {
+        "key": "summon-circle-0",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-circle-1",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-circle-2",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-circle-3",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-portal-0",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-portal-1",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-portal-2",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-portal-3",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "allied-clone-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "wolf-0",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "dragon-0",
+        "width": 160,
+        "height": 112,
+        "rgbaBytes": 71680
+      },
+      {
+        "key": "spike-trap-0",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "allied-clone-1",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "wolf-1",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "dragon-1",
+        "width": 160,
+        "height": 112,
+        "rgbaBytes": 71680
+      },
+      {
+        "key": "spike-trap-1",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "allied-clone-2",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "wolf-2",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "dragon-2",
+        "width": 160,
+        "height": 112,
+        "rgbaBytes": 71680
+      },
+      {
+        "key": "spike-trap-2",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "allied-clone-3",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "wolf-3",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "dragon-3",
+        "width": 160,
+        "height": 112,
+        "rgbaBytes": 71680
+      },
+      {
+        "key": "spike-trap-3",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "pickup-health-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-health-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-health-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-health-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-fuel-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-fuel-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-fuel-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-fuel-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-rapid-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-rapid-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-rapid-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-rapid-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-shield-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-shield-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-shield-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-shield-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-boost-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-boost-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-boost-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-boost-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-mana-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-mana-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-mana-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-mana-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-weapon-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-weapon-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-weapon-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-weapon-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-sword-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-sword-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-sword-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-sword-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-armor-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-armor-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-armor-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-armor-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-spell-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-spell-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-spell-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-spell-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-treasure-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-treasure-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-treasure-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-treasure-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-cannon-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-cannon-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-cannon-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-cannon-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-nova-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-nova-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-nova-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-nova-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "sea-wave-0",
+        "width": 256,
+        "height": 96,
+        "rgbaBytes": 98304
+      },
+      {
+        "key": "sea-wave-1",
+        "width": 256,
+        "height": 96,
+        "rgbaBytes": 98304
+      },
+      {
+        "key": "sea-wave-2",
+        "width": 256,
+        "height": 96,
+        "rgbaBytes": 98304
+      },
+      {
+        "key": "sea-wave-3",
+        "width": 256,
+        "height": 96,
+        "rgbaBytes": 98304
+      },
+      {
+        "key": "fire-column-0",
+        "width": 96,
+        "height": 128,
+        "rgbaBytes": 49152
+      },
+      {
+        "key": "fire-column-1",
+        "width": 96,
+        "height": 128,
+        "rgbaBytes": 49152
+      },
+      {
+        "key": "fire-column-2",
+        "width": 96,
+        "height": 128,
+        "rgbaBytes": 49152
+      },
+      {
+        "key": "fire-column-3",
+        "width": 96,
+        "height": 128,
+        "rgbaBytes": 49152
+      },
+      {
+        "key": "dungeon-arch",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "tech-console",
+        "width": 96,
+        "height": 80,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-tree",
+        "width": 128,
+        "height": 192,
+        "rgbaBytes": 98304
+      },
+      {
+        "key": "tech-cables",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "sea-rock",
+        "width": 128,
+        "height": 96,
+        "rgbaBytes": 49152
+      },
+      {
+        "key": "tile-tide",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "tile-pyre",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "tile-neon",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "tile-veil",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "4b352a32-e037-4ae5-970b-0ccc24018685",
+        "width": 950,
+        "height": 180,
+        "rgbaBytes": 684000
+      },
+      {
+        "key": "269e5b83-c238-44d9-b9bd-159ac37bef06",
+        "width": 390,
+        "height": 180,
+        "rgbaBytes": 280800
+      },
+      {
+        "key": "28068cdb-df3a-4078-8125-fda7c4f8377c",
+        "width": 540,
+        "height": 180,
+        "rgbaBytes": 388800
+      },
+      {
+        "key": "7ad11ea1-b659-4c10-bb68-bd5444133c40",
+        "width": 340,
+        "height": 180,
+        "rgbaBytes": 244800
+      },
+      {
+        "key": "9b2277c8-15f4-4b75-8425-5f0f7adfc811",
+        "width": 590,
+        "height": 580,
+        "rgbaBytes": 1368800
+      },
+      {
+        "key": "8dc02c77-fe42-4ffc-ae71-f88dc8528e89",
+        "width": 1400,
+        "height": 580,
+        "rgbaBytes": 3248000
+      },
+      {
+        "key": "63e19e54-5031-43af-b812-a6910a8a7bb9",
+        "width": 400,
+        "height": 580,
+        "rgbaBytes": 928000
+      },
+      {
+        "key": "06e183f8-485f-4c2f-8836-1fdbd18a1835",
+        "width": 430,
+        "height": 580,
+        "rgbaBytes": 997600
+      },
+      {
+        "key": "04160a95-ec89-42c3-aa0f-1bcf4ecc7534",
+        "width": 400,
+        "height": 580,
+        "rgbaBytes": 928000
+      },
+      {
+        "key": "75d1a733-957f-4f1e-a3b8-a5b3f38fdce0",
+        "width": 530,
+        "height": 580,
+        "rgbaBytes": 1229600
+      },
+      {
+        "key": "823607b1-91aa-489e-a44f-c98cedd7292b",
+        "width": 320,
+        "height": 580,
+        "rgbaBytes": 742400
+      },
+      {
+        "key": "13b2cca0-12ba-4133-9b42-c3ef6499b43f",
+        "width": 1150,
+        "height": 360,
+        "rgbaBytes": 1656000
+      },
+      {
+        "key": "6de89f30-6765-495e-8866-ee60315af8e3",
+        "width": 650,
+        "height": 40,
+        "rgbaBytes": 104000
+      },
+      {
+        "key": "3ea3f4b0-bd92-423e-bd81-5a32622ef9da",
+        "width": 1400,
+        "height": 360,
+        "rgbaBytes": 2016000
+      },
+      {
+        "key": "e97a2128-5258-40dd-9299-5730c488a2bc",
+        "width": 340,
+        "height": 360,
+        "rgbaBytes": 489600
+      },
+      {
+        "key": "5b4046bb-4ac3-4dae-a81f-bb720ed8feb2",
+        "width": 590,
+        "height": 760,
+        "rgbaBytes": 1793600
+      },
+      {
+        "key": "7e0f3b18-b89a-4407-9b85-2e3c48faf14b",
+        "width": 660,
+        "height": 760,
+        "rgbaBytes": 2006400
+      },
+      {
+        "key": "c991d035-bd2a-4f5b-92dc-02a3e5c2a977",
+        "width": 700,
+        "height": 760,
+        "rgbaBytes": 2128000
+      },
+      {
+        "key": "1a19e565-f8fa-4f7b-a3b5-cd0de74b94e0",
+        "width": 1400,
+        "height": 760,
+        "rgbaBytes": 4256000
+      },
+      {
+        "key": "f35fd6c7-7af3-4077-a674-02308a398878",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      }
+    ]
+  },
+  "sourceUnchanged": true,
+  "passed": true
+}

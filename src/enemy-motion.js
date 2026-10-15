@@ -1,3 +1,6 @@
+import { characterSocket } from './character-motion.js';
+import { isIronfang, ironfangPoint } from './ironfang.js';
+import { IRONFANG_GEOMETRY } from './ironfang-geometry.js';
 // Simulation-owned locomotion. Rendering consumes distance/cycle and attack phase;
 // wall-clock time never drives feet or committed weapon contact.
 export const ENEMY_MOTION = {
@@ -34,6 +37,8 @@ export function groundImpact(actor, solids, radius, height = 28) {
   // Keep these simulation constants independent of browser atlas loading. The
   // ground plane is authoritative; the authored tips sit 3–4 pixels above it.
   const offset = actor.type === 'bellbeast' ? 46.36 / 100 * actor.h : 35.84 / 70 * actor.h;
+  const contact = isIronfang(actor) ? ironfangPoint(actor, IRONFANG_GEOMETRY['if-bull-6'].sockets.contact, 'if-bull-6')
+    : characterSocket(actor, 'contact', actor.type === 'bellbeast' ? 'cr-bellbeast-6' : 'cr-guardian-9');
   return { bounds: { x: left, y: surface.y - height, w: Math.max(0, right - left), h: height },
-    surfaceId: surface.id, surfaceY: surface.y, radius, weaponSocket: { x: center + (actor.facing || 1) * offset, y: surface.y } };
+    surfaceId: surface.id, surfaceY: surface.y, radius, weaponSocket: { x: contact?.x ?? center + (actor.facing || 1) * offset, y: surface.y } };
 }

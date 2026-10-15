@@ -1,0 +1,932 @@
+{
+  "kind": "Isolated rendering and combat fixtures",
+  "physicalDevice": false,
+  "legalCampaign": false,
+  "sourceHashes": {
+    "src/art.js": "525873ea6b871cb3f1d61992836ee9f2b1caccd6c88326ece6bbf46d8a6aa660",
+    "src/audio.js": "173fc305073d5289329c6df71069a5a64bd0801f2ced09d7e0a1ce69d5ed82e6",
+    "src/blade-motion.js": "7220d4517e5e6ecffa413c29f3b7bb122ccf35d7ec5303fb141bbc758cf82a5c",
+    "src/camera.js": "332f75f253599e3633ba3dfb27242b323eaaf5b8482204d91cbbda3f6922a3d0",
+    "src/catalog.js": "fe81db6d81de38aeaf93ab78cb0d912ae18899de135be61dd0ecce4c643d0430",
+    "src/character-geometry.js": "86a561f8290df1c879aff320bbbd800c9e1d36770053db6928460b492543e9e3",
+    "src/character-motion.js": "299005ff7429e324332d3b36cfd352e737a5590d96d67533f49c40594965b15b",
+    "src/combat.js": "0c3d66d617ac9bc6a1d6347358caf4bb0ae1e47d5a766488dadddcbb5b971553",
+    "src/companions.js": "4586a4d35cf1356f857dee4dfc6eb887193f3ff8c63cde30f3daf7c92a253fc2",
+    "src/enemy-motion.js": "edd5881630507ba1a145abcf89d9126b9896a34cc9417f26685f568279363dcc",
+    "src/input.js": "08e0bc3fe3e5c47c68aa356b8adea72b54f61c68f4c201efe160558f4e14549e",
+    "src/ironfang-geometry.js": "97c799cc2eb3c2560e956358d4e3df4b426647b5ecf429725ff050633c90ad6e",
+    "src/ironfang.js": "00c8a44bf2322fda4174cccd2f2270302c2ee9493197222e109d14d7c7360627",
+    "src/lantern-art.js": "7026f99f27c41d545450cb1c509cad77125a1ac1097b79a0287affab07ae401d",
+    "src/lantern-fx.js": "9ffd9ea2ce237506c6e82aa75dca4225b448532af727a9c8bc084af577b47d41",
+    "src/legacy-level.js": "21614250e936233c0bfea0ce0626a528f618651ac9dc679ab7e27691e0e0f1fa",
+    "src/level.js": "ebed4be76751f4ebd5b07bb6e88d857476d93113fe4ae5e558a2440894dd2ca1",
+    "src/main.js": "64ca941ff4d83d55bde21082b3c8846e3ae395bf1766e2c46eae489a048207b9",
+    "src/physics.js": "53008d39ef281d97a6517c8887c653dbc81760322a04c4a44dd99a1d436e07e0",
+    "src/progress.js": "0d78ffec998955e61e179c4f2c4762e3e674c481e265f424d8e56f8cf3e575f1",
+    "src/reference-art.js": "1ee6f6283cce08057c812ee0632609f8d1b720359dc160bfbc775f9e7866738e",
+    "src/rune-worlds.js": "c742940736c73d23264f23a45dac2d773a143746c14bddf2582787ed3208379f",
+    "src/runeheart-art.js": "c7614f53442cb46fa5a7b3a0c7fbe3bd80d631a55e374900a52e92e95ab9e4e4",
+    "src/terrain.js": "4fe19bcb3953ccde107a28833879f36cca41f283a0cda9ab67fdaf0211a85fc3",
+    "src/ui.js": "6fc65a98541a68643f765cf61e4564addeb9a7479a1479a5b43fb86a50a146d8",
+    "src/worlds.js": "f3e899199f1fe72be50fa777d268ddde5133aa8c32bab81a56bc975d29af9daa",
+    "public/ironfang/atlas.png": "aa7b6512ef3858ea0ac36f07f1de804ba736af2170943b3fc5953f315352b2ef",
+    "public/ironfang/manifest.json": "c3357b4f9ace7f15c57fc70bd9c3063b98879b9f54bcb18729eec2300899431d"
+  },
+  "fixtures": [
+    {
+      "kind": "bull-walk",
+      "bossFrame": "if-bull-1",
+      "expectedFrame": "if-bull-1",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 665.0112103174604,
+        "y": 1124.2285714285715
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "axe-lift",
+      "bossFrame": "if-bull-5",
+      "expectedFrame": "if-bull-5",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 674.4397817460318,
+        "y": 1124.2285714285715
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "axe-contact",
+      "bossFrame": "if-bull-6",
+      "expectedFrame": "if-bull-6",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 666.8969246031746,
+        "y": 1160.057142857143
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "cannon",
+      "bossFrame": "if-bull-10",
+      "expectedFrame": "if-bull-10",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 664.3826388888889,
+        "y": 1124.2285714285715
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "if-impact-0",
+          "x": 664.3826388888889,
+          "y": 1124.2285714285715,
+          "rotation": -3.141592653589793
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "morph-0",
+      "bossFrame": "if-bull-12",
+      "expectedFrame": "if-bull-12",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 665.0112103174604,
+        "y": 1124.857142857143
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "flame-1",
+          "x": 697.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        },
+        {
+          "frame": "flame-0",
+          "x": 725.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        },
+        {
+          "frame": "flame-3",
+          "x": 753.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "morph-1",
+      "bossFrame": "if-morph-0",
+      "expectedFrame": "if-morph-0",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 725.9826388888889,
+        "y": 1194
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "flame-1",
+          "x": 697.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        },
+        {
+          "frame": "flame-0",
+          "x": 725.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        },
+        {
+          "frame": "flame-3",
+          "x": 753.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "morph-2",
+      "bossFrame": "if-morph-1",
+      "expectedFrame": "if-morph-1",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 725.9826388888889,
+        "y": 1194
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "flame-1",
+          "x": 697.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        },
+        {
+          "frame": "flame-0",
+          "x": 725.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        },
+        {
+          "frame": "flame-3",
+          "x": 753.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "morph-3",
+      "bossFrame": "if-morph-2",
+      "expectedFrame": "if-morph-2",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 725.9826388888889,
+        "y": 1194
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "flame-1",
+          "x": 697.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        },
+        {
+          "frame": "flame-0",
+          "x": 725.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        },
+        {
+          "frame": "flame-3",
+          "x": 753.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "morph-4",
+      "bossFrame": "if-dragon-1",
+      "expectedFrame": "if-dragon-1",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 641.7057158119658,
+        "y": 1117.8461538461538
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "flame-1",
+          "x": 697.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        },
+        {
+          "frame": "flame-0",
+          "x": 725.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        },
+        {
+          "frame": "flame-3",
+          "x": 753.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "morph-5",
+      "bossFrame": "if-dragon-0",
+      "expectedFrame": "if-dragon-0",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 635.6134081196582,
+        "y": 1117.8461538461538
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "flame-1",
+          "x": 697.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        },
+        {
+          "frame": "flame-0",
+          "x": 725.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        },
+        {
+          "frame": "flame-3",
+          "x": 753.9826388888889,
+          "y": 1260,
+          "rotation": -3.141592653589793
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "dragon-up",
+      "bossFrame": "if-dragon-0",
+      "expectedFrame": "if-dragon-0",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 653.8749465811966,
+        "y": 1165.1384615384616
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "dragon-down",
+      "bossFrame": "if-dragon-2",
+      "expectedFrame": "if-dragon-2",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 658.5057158119658,
+        "y": 1165.1384615384616
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "breath-right",
+      "bossFrame": "if-dragon-6",
+      "expectedFrame": "if-dragon-6",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 594.8,
+        "y": 1162.4923076923078
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "if-breath-2",
+          "x": 642.26101174093,
+          "y": 1169.6653380510406,
+          "rotation": 0.15000000000000036
+        },
+        {
+          "frame": "if-breath-2",
+          "x": 689.72202348186,
+          "y": 1176.8383684097732,
+          "rotation": 0.15000000000000036
+        },
+        {
+          "frame": "if-breath-2",
+          "x": 737.1830352227901,
+          "y": 1184.011398768506,
+          "rotation": 0.15000000000000036
+        },
+        {
+          "frame": "if-breath-2",
+          "x": 594.8,
+          "y": 1162.4923076923078,
+          "rotation": 0.15000000000000036
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "breath-left",
+      "bossFrame": "if-dragon-6",
+      "expectedFrame": "if-dragon-6",
+      "heroFrame": "cr-courier-0",
+      "socket": {
+        "x": 707.2,
+        "y": 1162.4923076923078
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "if-breath-2",
+          "x": 659.73898825907,
+          "y": 1169.6653380510406,
+          "rotation": 2.9915926535897928
+        },
+        {
+          "frame": "if-breath-2",
+          "x": 612.27797651814,
+          "y": 1176.8383684097732,
+          "rotation": 2.9915926535897928
+        },
+        {
+          "frame": "if-breath-2",
+          "x": 564.8169647772099,
+          "y": 1184.011398768506,
+          "rotation": 2.9915926535897928
+        },
+        {
+          "frame": "if-breath-2",
+          "x": 707.2,
+          "y": 1162.4923076923078,
+          "rotation": 2.9915926535897928
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "boss-hit",
+      "bossFrame": "if-bull-13",
+      "expectedFrame": "if-bull-13",
+      "heroFrame": "cr-courier-1",
+      "socket": {
+        "x": 662.4101190476191,
+        "y": 1150
+      },
+      "bossHp": 835,
+      "heroHp": 100,
+      "bossTint": 16765850,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "if-impact-0",
+          "x": 672.4050595238097,
+          "y": 1193,
+          "rotation": 0
+        }
+      ],
+      "impacts": 1,
+      "dashDust": 0
+    },
+    {
+      "kind": "hero-hit",
+      "bossFrame": "if-bull-12",
+      "expectedFrame": "if-bull-12",
+      "heroFrame": "cr-courier-2",
+      "socket": {
+        "x": 665.0112103174604,
+        "y": 1124.857142857143
+      },
+      "bossHp": 855,
+      "heroHp": 88,
+      "bossTint": 16777215,
+      "heroTint": 16742763,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": -0.8041761414663255,
+        "dy": 0.5943910610838058,
+        "rotation": 0.9342881110069459
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "if-impact-0",
+          "x": 384,
+          "y": 1230,
+          "rotation": 0
+        }
+      ],
+      "impacts": 1,
+      "dashDust": 0
+    },
+    {
+      "kind": "slash-right",
+      "bossFrame": "if-bull-0",
+      "expectedFrame": "if-bull-0",
+      "heroFrame": "cr-courier-13",
+      "socket": {
+        "x": 664.4627976190477,
+        "y": 1124.2285714285715
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": {
+        "width": 67.65646573355392,
+        "height": 67.65646573355392,
+        "alpha": 1
+      },
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "slash-left",
+      "bossFrame": "if-bull-0",
+      "expectedFrame": "if-bull-0",
+      "heroFrame": "cr-courier-13",
+      "socket": {
+        "x": 664.4627976190477,
+        "y": 1124.2285714285715
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": {
+        "width": 67.65646573355392,
+        "height": 67.65646573355392,
+        "alpha": 1
+      },
+      "booster": {
+        "x": 393,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "plate-slash",
+      "bossFrame": "if-bull-0",
+      "expectedFrame": "if-bull-0",
+      "heroFrame": "cr-plate-13",
+      "socket": {
+        "x": 664.4627976190477,
+        "y": 1124.2285714285715
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": {
+        "width": 66,
+        "height": 66,
+        "alpha": 1
+      },
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "overhead",
+      "bossFrame": "if-bull-0",
+      "expectedFrame": "if-bull-0",
+      "heroFrame": "cr-courier-17",
+      "socket": {
+        "x": 664.4627976190477,
+        "y": 1124.2285714285715
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": {
+        "width": 66,
+        "height": 66,
+        "alpha": 1
+      },
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "plate-overhead",
+      "bossFrame": "if-bull-0",
+      "expectedFrame": "if-bull-0",
+      "heroFrame": "cr-plate-17",
+      "socket": {
+        "x": 664.4627976190477,
+        "y": 1124.2285714285715
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": {
+        "width": 66,
+        "height": 66,
+        "alpha": 1
+      },
+      "booster": {
+        "x": 375,
+        "y": 1239,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "jet-up",
+      "bossFrame": "if-bull-12",
+      "expectedFrame": "if-bull-12",
+      "heroFrame": "cr-courier-8",
+      "socket": {
+        "x": 665.0112103174604,
+        "y": 1124.857142857143
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1139,
+        "dx": 0,
+        "dy": 1,
+        "rotation": 0
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "flame-3",
+          "x": 375,
+          "y": 1139,
+          "rotation": 0
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "jet-right",
+      "bossFrame": "if-bull-12",
+      "expectedFrame": "if-bull-12",
+      "heroFrame": "cr-courier-8",
+      "socket": {
+        "x": 665.0112103174604,
+        "y": 1124.857142857143
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1139,
+        "dx": -0.4362735065193694,
+        "dy": 0.8998141071961995,
+        "rotation": 0.4514530915525543
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "flame-3",
+          "x": 375,
+          "y": 1139,
+          "rotation": 0.45145309155255475
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "jet-left",
+      "bossFrame": "if-bull-12",
+      "expectedFrame": "if-bull-12",
+      "heroFrame": "cr-courier-8",
+      "socket": {
+        "x": 665.0112103174604,
+        "y": 1124.857142857143
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": null,
+      "booster": {
+        "x": 375,
+        "y": 1139,
+        "dx": 0.4362735065193694,
+        "dy": 0.8998141071961995,
+        "rotation": -0.4514530915525543
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "flame-0",
+          "x": 375,
+          "y": 1139,
+          "rotation": -0.45145309155255475
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 0
+    },
+    {
+      "kind": "dash",
+      "bossFrame": "if-bull-0",
+      "expectedFrame": "if-bull-0",
+      "heroFrame": "cr-courier-21",
+      "socket": {
+        "x": 665.6607142857143,
+        "y": 1124.2285714285715
+      },
+      "bossHp": 855,
+      "heroHp": 100,
+      "bossTint": 16777215,
+      "heroTint": 16777215,
+      "trail": {
+        "width": 66,
+        "height": 66,
+        "alpha": 1
+      },
+      "booster": {
+        "x": 411.1666666666668,
+        "y": 1239,
+        "dx": -1,
+        "dy": 0,
+        "rotation": -4.71238898038469
+      },
+      "warningLines": 0,
+      "activeEffects": [
+        {
+          "frame": "if-dust-0",
+          "x": 374.83333333333337,
+          "y": 1260,
+          "rotation": 0
+        },
+        {
+          "frame": "if-dust-0",
+          "x": 402.3333333333334,
+          "y": 1260,
+          "rotation": 0
+        }
+      ],
+      "impacts": 0,
+      "dashDust": 2
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

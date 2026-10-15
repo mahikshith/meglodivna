@@ -3,8 +3,8 @@
   "sha256": "fbc9f792c4cf36819d44d58f939a44be86fb53db5606332b7a885f41f27d68c3",
   "props": {
     "platform": {
-      "width": 225,
-      "height": 97,
+      "width": 643,
+      "height": 277,
       "sourceRect": [
         41,
         281,
@@ -13,8 +13,8 @@
       ]
     },
     "arch": {
-      "width": 176,
-      "height": 208,
+      "width": 504,
+      "height": 593,
       "sourceRect": [
         683,
         19,
@@ -23,8 +23,8 @@
       ]
     },
     "lantern": {
-      "width": 90,
-      "height": 203,
+      "width": 256,
+      "height": 579,
       "sourceRect": [
         173,
         634,
@@ -33,8 +33,8 @@
       ]
     },
     "root": {
-      "width": 224,
-      "height": 201,
+      "width": 639,
+      "height": 574,
       "sourceRect": [
         590,
         661,
@@ -42,5 +42,13 @@
         1235
       ]
     }
+  },
+  "background": {
+    "source": "reference/character-revision/sanctuary-illustrated.png",
+    "sha256": "bd895903374bd45ca71f0553bcce229c3131d4df92d67ce3a0cc1dcd40faf5be",
+    "size": [
+      1536,
+      1024
+    ]
   }
 }

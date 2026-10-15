@@ -7,14 +7,14 @@
     "w": 28,
     "h": 60
   },
-  "elapsed": 98.5,
-  "campaignTime": 98.5,
-  "timeLeft": 1489.74,
+  "elapsed": 98.16,
+  "campaignTime": 98.16,
+  "timeLeft": 1490.08,
   "deaths": 0,
   "checkpoint": 6,
-  "x": 18683.7,
+  "x": 18682.6,
   "y": 400,
-  "hp": 112.5,
+  "hp": 107.5,
   "conversations": [
     "veil-mira",
     "veil-ysra"
@@ -33,7 +33,7 @@
     "veil-regent": {
       "triggerX": 17670,
       "activatedX": 17670.17,
-      "activatedTime": 84.38
+      "activatedTime": 84.19
     }
   },
   "storyClaims": [
@@ -67,7 +67,7 @@
         "w": 96,
         "h": 120
       },
-      "fightSeconds": 10.28,
+      "fightSeconds": 10.49,
       "attacksSeen": [
         0,
         1,
@@ -86,10 +86,10 @@
         "w": 112,
         "h": 86
       },
-      "fightSeconds": 13.1,
+      "fightSeconds": 11.69,
       "attacksSeen": [
-        1,
-        2
+        0,
+        1
       ],
       "formsSeen": [
         "ground",
@@ -97,7 +97,7 @@
         "flying"
       ],
       "flyingAttacksSeen": [
-        1
+        0
       ]
     }
   ],
@@ -146,6 +146,7 @@
     "gate",
     "hit",
     "hurt",
+    "impact",
     "jet",
     "jump",
     "land",
@@ -155,6 +156,7 @@
     "portalarrival",
     "portalwarning",
     "shot",
+    "slam",
     "slash",
     "soulcollect",
     "souldrop",
@@ -526,212 +528,212 @@
     },
     {
       "event": "hurt",
-      "x": 12915.6,
+      "x": 12966.4,
       "hp": 115.1,
-      "time": 64.46
+      "time": 64.94
     },
     {
       "event": "hurt",
-      "x": 12831.3,
+      "x": 12864.2,
       "hp": 102.6,
-      "time": 65.32
+      "time": 65.8
     },
     {
       "event": "bossdefeated",
       "id": "veil-hex",
-      "time": 65.77,
+      "time": 65.98,
       "hp": 102.6
     },
     {
       "event": "gate",
-      "x": 12772.6,
+      "x": 12878.4,
       "hp": 102.6,
-      "time": 65.77
+      "time": 65.98
     },
     {
       "event": "landing",
       "id": "veil-arena-77",
-      "x": 12772.6,
+      "x": 12878.4,
       "hp": 102.6,
-      "time": 65.77
+      "time": 65.98
     },
     {
       "event": "landing",
       "id": "veil-arena-77",
-      "x": 13512.5,
+      "x": 13511.7,
       "hp": 102.6,
-      "time": 68.32
+      "time": 68.04
     },
     {
       "event": "checkpoint",
-      "x": 13600.5,
+      "x": 13599.7,
       "hp": 129,
-      "time": 68.59
+      "time": 68.32
     },
     {
       "event": "landing",
       "id": "veil-tower-foot-85",
-      "x": 13862.8,
+      "x": 13862.7,
       "hp": 129,
-      "time": 69.68
+      "time": 69.4
     },
     {
       "event": "landing",
       "id": "veil-tower-step-86",
       "x": 14079.5,
       "hp": 129,
-      "time": 70.46
+      "time": 70.18
     },
     {
       "event": "landing",
       "id": "veil-tower-step-87",
       "x": 14297.6,
       "hp": 129,
-      "time": 71.21
+      "time": 70.93
     },
     {
       "event": "landing",
       "id": "veil-tower-step-88",
       "x": 14517.6,
       "hp": 129,
-      "time": 73.26
+      "time": 73.08
     },
     {
       "event": "landing",
       "id": "veil-tower-step-90",
       "x": 14737.1,
       "hp": 129,
-      "time": 74.01
+      "time": 73.83
     },
     {
       "event": "landing",
       "id": "veil-tower-crown-91",
       "x": 14953.1,
       "hp": 129,
-      "time": 74.98
+      "time": 74.81
     },
     {
       "event": "landing",
       "id": "veil-tower-crown-91",
-      "x": 15341.9,
+      "x": 15342.3,
       "hp": 135,
-      "time": 76.26
+      "time": 76.08
     },
     {
       "event": "hurt",
-      "x": 15615.5,
-      "hp": 125,
-      "time": 77.13
+      "x": 15610.1,
+      "hp": 121.3,
+      "time": 76.92
     },
     {
       "event": "landing",
       "id": "veil-engine-walk-95",
-      "x": 15626.5,
-      "hp": 125,
-      "time": 77.49
+      "x": 15625.5,
+      "hp": 121.3,
+      "time": 77.3
     },
     {
       "event": "landing",
       "id": "veil-engine-walk-95",
-      "x": 15961.8,
-      "hp": 125,
-      "time": 78.56
+      "x": 15961.2,
+      "hp": 121.3,
+      "time": 78.37
     },
     {
       "event": "landing",
       "id": "veil-engine-duct-97",
-      "x": 16401.9,
-      "hp": 125,
-      "time": 80.06
+      "x": 16401.8,
+      "hp": 121.3,
+      "time": 79.87
     },
     {
       "event": "landing",
       "id": "veil-engine-switchyard-98",
       "x": 16744.7,
-      "hp": 125,
-      "time": 81.27
+      "hp": 121.3,
+      "time": 81.08
     },
     {
       "event": "gate",
       "x": 16811.6,
-      "hp": 125,
-      "time": 81.52
+      "hp": 121.3,
+      "time": 81.33
     },
     {
       "event": "landing",
       "id": "veil-engine-switchyard-98",
       "x": 16811.6,
-      "hp": 125,
-      "time": 81.52
+      "hp": 121.3,
+      "time": 81.33
     },
     {
       "event": "landing",
       "id": "veil-engine-switchyard-98",
       "x": 17251.6,
       "hp": 135,
-      "time": 82.89
+      "time": 82.7
     },
     {
       "event": "checkpoint",
       "x": 17374.3,
       "hp": 135,
-      "time": 83.28
+      "time": 83.08
     },
     {
       "event": "bossstart",
       "x": 17670.2,
       "hp": 135,
-      "time": 84.38
+      "time": 84.19
     },
     {
       "event": "hurt",
       "x": 18057.9,
       "hp": 127.5,
-      "time": 87.16
+      "time": 87.02
     },
     {
       "event": "hurt",
-      "x": 18322.1,
+      "x": 18042.9,
       "hp": 120,
-      "time": 94.78
+      "time": 88
     },
     {
       "event": "hurt",
-      "x": 18268.5,
-      "hp": 112.5,
-      "time": 95.88
+      "x": 18025,
+      "hp": 107.5,
+      "time": 93.58
     },
     {
       "event": "bossdefeated",
       "id": "veil-regent",
-      "time": 97.48,
-      "hp": 112.5
+      "time": 95.88,
+      "hp": 107.5
     },
     {
       "event": "gate",
-      "x": 18392.7,
-      "hp": 112.5,
-      "time": 97.48
+      "x": 17988.5,
+      "hp": 107.5,
+      "time": 95.88
     },
     {
       "event": "landing",
       "id": "veil-arena-106",
-      "x": 18392.7,
-      "hp": 112.5,
-      "time": 97.48
+      "x": 17988.5,
+      "hp": 107.5,
+      "time": 95.88
     },
     {
       "event": "landing",
       "id": "veil-arena-106",
-      "x": 18661.2,
-      "hp": 112.5,
-      "time": 98.43
+      "x": 18662.5,
+      "hp": 107.5,
+      "time": 98.09
     },
     {
       "event": "win",
-      "x": 18683.7,
-      "hp": 112.5,
-      "time": 98.5
+      "x": 18682.6,
+      "hp": 107.5,
+      "time": 98.16
     }
   ]
 }

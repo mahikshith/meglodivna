@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import './style.css';
+import './sanctuary-theme.css';
 import { LEVEL as DEFAULT_LEVEL, WORLD_LIST } from './level.js';
 import { createArtTextures, WORLD_ART } from './art.js';
 import { preloadReferenceArt, createReferenceArt } from './reference-art.js';
@@ -15,6 +16,8 @@ import { preloadRuneheartArt, createRuneheartArt, createRuneheartParallax } from
 import { preloadLanternArt, createLanternArt } from './lantern-art.js';
 import { bladeMotion } from './blade-motion.js';
 import { LanternEffects } from './lantern-fx.js';
+import { companionFrame, firingFrame, casterFrame } from './character-motion.js';
+import { isIronfang, ironfangFrame } from './ironfang.js';
 
 const $=id=>document.getElementById(id), sound=new Sound();
 let scene,ui,mode='menu',returnMode='menu',retries=0,previousZone='';
@@ -59,6 +62,10 @@ class Soulforge extends Phaser.Scene {
       setWorld(value){world=value;LEVEL=value.level||DEFAULT_LEVEL;scene.previousPlayer={x:value.player.x,y:value.player.y};},render(){scene.update(0,0);}};
   }
   iconUrl(key){
+    if(key.startsWith('icon-')){
+      const id=key.slice(5),category=['gun','sword','spell'].find(c=>catalog.CATALOG[c]?.some(i=>i.id===id));
+      if(category)return `${import.meta.env.BASE_URL}sanctuary-ui/${{gun:'rifle',sword:'sword',spell:'rune'}[category]}.png`;
+    }
     const portraits={'icon-lanternplate':'lm-icon-lanternplate','icon-armor':'lm-icon-lanternplate','icon-artifact':'lm-icon-bellheart','icon-raven':'lm-icon-raven','portrait-mira':'ln-face-mira','portrait-orren':'ln-face-orren','portrait-vesper':'ref-face-scientist','portrait-ysra':'ref-face-healer'},reference=portraits[key]||key;
     if(this.referenceArt.frames[reference]){
       if(!this.iconCache.has(reference)){const frame=this.textures.get(this.referenceArt.frames[reference].atlasKey||this.referenceArt.atlasKey).get(reference),canvas=document.createElement('canvas');canvas.width=frame.cutWidth;canvas.height=frame.cutHeight;canvas.getContext('2d').drawImage(frame.source.image,frame.cutX,frame.cutY,frame.cutWidth,frame.cutHeight,0,0,frame.cutWidth,frame.cutHeight);this.iconCache.set(reference,canvas.toDataURL());}
@@ -70,10 +77,12 @@ class Soulforge extends Phaser.Scene {
   }
   referenceKey(animation,time=this.visualTime,rate=9){const frames=this.referenceArt.animations[animation];return Array.isArray(frames)&&frames.length?frames[Math.floor(time*rate)%frames.length]:null;}
   motionKey(identity,actor,fallback='idle'){
+    if(identity==='caster')return casterFrame(actor);
+    if(identity==='dragon')return `cr-dragon-${actor.attackPhase==='contact'?5:actor.attackPhase==='lift'?4:Math.floor((actor.animationTime||this.visualTime)*7)%4}`;
     const motion=actor.motion||{},phase=actor.attackPhase||motion.phase;
     const rush=actor.attackKind==='charge'&&['contact','downswing'].includes(phase)&&Math.abs(actor.vx||0)>8;
     if(identity==='wispknight'&&phase==='contact'&&(actor.attackProgress||0)<.5)return this.referenceArt.animations['wispknight-attack']?.[1];
-    const action=rush?'walk':['lift','downswing','contact','recovery'].includes(phase)?phase:Math.abs(actor.vx||0)>8?'walk':fallback;
+    const action=actor.flash>0&&!['lift','downswing','contact'].includes(phase)?'hurt':rush?'walk':['lift','downswing','contact','recovery'].includes(phase)?phase:Math.abs(actor.vx||0)>8?'walk':fallback;
     const names=[`${identity}-${action}`,`${identity}-${action==='lift'?'windup':['downswing','contact'].includes(action)?'attack':fallback}`,`${identity}-idle`];
     const frames=names.map(n=>this.referenceArt.animations[n]).find(f=>f?.length);
     if(!frames)return null;
@@ -89,10 +98,9 @@ class Soulforge extends Phaser.Scene {
     const body=meta.body,scale=player.h/body.h,facing=player.slashFacing||player.facing;
     const point=v=>({x:player.x+player.w/2+facing*(v.x-body.x-body.w/2)*scale,y:player.y+player.h+(v.y-body.y-body.h)*scale});
     const a=point(hand),b=point(tip),length=Math.hypot(b.x-a.x,b.y-a.y),angle=Math.atan2(b.y-a.y,b.x-a.x);
-    let view=this.referenceEffects.get('blade-trail');if(!view){view=this.add.image(0,0,'lantern-fx','slash-0').setDepth(11);this.referenceEffects.set('blade-trail',view);}
-    const frame=Math.min(2,Math.floor(blade.progress*4));
-    view.setTexture('lantern-fx',`${horizontal?'slash':'overhead'}-${frame}`).setPosition(b.x,b.y).setOrigin(horizontal?.18:.26,horizontal?.5:.2).setDisplaySize(Math.max(24,length*1.65),Math.max(24,length*1.65)).setRotation(horizontal?angle+Math.PI:angle-2.3).setFlipX(false).setAlpha(.88).setVisible(true);
-    this.dynamic.lineStyle(1,0xffefd1,.65);this.dynamic.lineBetween(a.x,a.y,b.x,b.y);
+    let view=this.referenceEffects.get('blade-trail');if(!view){view=this.add.image(0,0,'ironfang','if-cut-0').setDepth(11);this.referenceEffects.set('blade-trail',view);}
+    const frame=blade.active?Math.min(2,blade.poseIndex):3,size=Math.max(66,Math.min(92,length*2));
+    view.setTexture('ironfang',`if-cut-${frame}`).setPosition(a.x,a.y).setOrigin(.16,.5).setDisplaySize(size,size).setRotation(angle).setFlipX(false).setAlpha(blade.active?1:.32).setVisible(true);
   }
   setReference(sprite,key,entity){
     const meta=this.referenceArt.frames[key];if(!meta)return false;
@@ -100,7 +108,7 @@ class Soulforge extends Phaser.Scene {
     const x=entity.x+entity.w/2-facing*(body.x+body.w/2-meta.anchor.x)*scale,y=entity.y+entity.h-(body.y+body.h-meta.anchor.y)*scale;
     // Phaser mirrors noncentral origins too; mirror the anchor to keep anatomy on the body.
     const originX=(facing<0?meta.width-meta.anchor.x:meta.anchor.x)/meta.width;
-    sprite.setTexture(meta.atlasKey||this.referenceArt.atlasKey,key).setOrigin(originX,meta.anchor.y/meta.height).setScale(scale).setPosition(Math.round(x),Math.round(y)).setFlipX(facing<0);return true;
+    sprite.setTexture(meta.atlasKey||this.referenceArt.atlasKey,key).setOrigin(originX,meta.anchor.y/meta.height).setScale(scale).setPosition(x,y).setFlipX(facing<0);return true;
   }
   referenceEffect(id,key,x,y,w,h,rotation=0,facing=1){
     if(!this.referenceArt.frames[key])return;let sprite=this.referenceEffects.get(id);if(!sprite){sprite=this.add.image(0,0,this.referenceArt.frames[key].atlasKey||this.referenceArt.atlasKey,key).setDepth(13);this.referenceEffects.set(id,sprite);}
@@ -108,7 +116,7 @@ class Soulforge extends Phaser.Scene {
   }
   referenceDeath(sprite,entity){
     const lanternFamily=['bellbeast','wispknight'].includes(entity.type)?entity.type:entity.form==='flying'||entity.type==='drone'?'dragon':['mage','hex'].includes(entity.type)?'caster':entity.type==='sentinel'||world.bosses.includes(entity)?'guardian':'stalker';
-    const family=world.worldId==='soulforge'?lanternFamily:{riftcrawler:'crawler',hexwing:'raider',crimsonmecha:'mecha',wyrm:'wyrm'}[entity.visualFamily];
+    const family=isIronfang(entity)?entity.form==='flying'?'irondragon':'ironbull':world.worldId==='soulforge'?lanternFamily:{riftcrawler:'crawler',hexwing:'raider',crimsonmecha:'mecha',wyrm:'wyrm'}[entity.visualFamily];
     // The dragon sheet has no authored death strip; hold a matching pose while fading.
     const frames=this.referenceArt.animations[`${family}-death`]||(['dragon','bellbeast','wispknight'].includes(family)?this.referenceArt.animations[`${family}-idle`]?.slice(-1):null);if(!sprite||!frames?.length)return;
     if(!this.deathViews.has(entity.id))this.deathViews.set(entity.id,this.visualTime);const elapsed=this.visualTime-this.deathViews.get(entity.id);if(elapsed>=.6)return;
@@ -128,7 +136,8 @@ class Soulforge extends Phaser.Scene {
     for(const landmark of LEVEL.landmarks||[]){
       if(this.renderedWorldId==='soulforge'&&landmark.type!=='water'){
         const name=['console','lantern'].includes(landmark.type)?'lantern':landmark.type==='pipes'?'root':'arch';
-        const view=this.add.image(landmark.x,landmark.y,`ln-${name}`).setOrigin(.5,1).setDepth(-2).setScale(name==='lantern'?.7:1.45).setAlpha(name==='lantern'?1:.58);
+        const size={lantern:[63,142.1],root:[324.8,291.45],arch:[255.2,301.6]}[name];
+        const view=this.add.image(landmark.x,landmark.y,`ln-${name}`).setOrigin(.5,1).setDepth(-2).setDisplaySize(...size).setAlpha(name==='lantern'?1:.58);
         this.staticViews.push({view,x:landmark.x-180,w:360});continue;
       }
       if(landmark.type==='console'){
@@ -160,13 +169,14 @@ class Soulforge extends Phaser.Scene {
     const big=['explode','destroy','death','nova','cannon'].includes(type),magic=['spell','thunder','cinder','eclipse','nova','cannon'].includes(type);
     if(big||magic||['pickup','checkpoint','shieldbreak'].includes(type))this.burst(e.x??world.player.x+world.player.w/2,e.y??world.player.y+20,type,reducedFX?4:big?18:magic?14:6,e.tint);
     if(big){this.shake=Math.min(1,this.shake+.4);this.impact=.28;}
-    if(e.type==='hurt'){this.shake=Math.min(1,this.shake+.2);this.flash=.15;this.heroHurtUntil=this.visualTime+.18;}
+    if(e.type==='hurt'){this.shake=Math.min(1,this.shake+.2);this.flash=.24;this.heroHurtUntil=this.visualTime+.28;}
     if(magic){this.rings.push({x:e.x??world.player.x+world.player.w/2,y:e.y??world.player.y+20,life:.7,tint:e.tint||C.violet,spell:e.spell||e.type});if(this.rings.length>8)this.rings.shift();this.impact=.45;this.shake=.6;}
     if(['bossstart','bossdead'].includes(e.type)){this.cinematic={x:e.x,time:1.2};this.impact=.55;}
     if(['souldrop','soulcollect','soulupgrade','pickup','checkpoint','debris','bossdead','storyreward','gate','spell','cannon','equip','win'].includes(e.type))saveProgress(world.progress);
   }
   update(_,milliseconds){
     const dt=Math.min(milliseconds/1000,.05),visualDt=mode==='playing'?dt:0;this.visualTime+=visualDt;
+    this.dialogueVisualTime=(this.dialogueVisualTime||0)+(mode==='story'?dt:0);
     if(mode==='playing'){
       if(world.hitstop>0)world.hitstop=Math.max(0,world.hitstop-dt);
       else{
@@ -210,11 +220,12 @@ class Soulforge extends Phaser.Scene {
     const candidate=p.dashTime>0?`player-lunge-${Math.floor(t*20)%4}`:slashing?`player-slash-${pose}-${slashFrame}`:p.shootCooldown>0&&this.textures.exists('player-shoot-0')?'player-shoot-0':p.state==='run'?`player-run-${Math.floor(t*13)%8}`:p.grounded?`player-idle-${Math.floor(t*3)%4}`:p.vy<0?'player-jump-0':'player-fall-0';
     const frame=this.textures.exists(candidate)?candidate:slashing?`player-slash-${slashFrame}`:'player-idle-0';
     let heroAnimation=p.hp<=0?'aether-death':this.heroHurtUntil>t?'aether-hurt':p.dashTime>0?'aether-dash':slashing?(p.slashMode==='vertical'?'hero-slash-air':p.slashMode==='finisher'?'hero-slash-low':'aether-slash'):p.jetActive?'aether-jet':p.shootCooldown>0?'aether-fire':p.state==='run'?'aether-run':p.grounded?'aether-idle':p.vy>=0?'aether-fall':p.jumps===0?'aether-doublejump':'aether-jump';
-    if(p.armor==='lanternplate')heroAnimation=heroAnimation.replace('aether-','lanternplate-').replace('hero-slash-air','lanternplate-overhead').replace('hero-slash-low','lanternplate-slash').replace('lanternplate-doublejump','lanternplate-jump');
-    const heroFrames=this.referenceArt.animations[heroAnimation],heroKey=p.hp<=0?heroFrames?.at(-1):slashing&&heroFrames?.length?heroFrames[Math.min(heroFrames.length-1,Math.min(heroFrames.length-1,blade.poseIndex))]:!p.grounded&&!p.jetActive&&heroFrames?.length?heroFrames[Math.min(heroFrames.length-1,Math.floor(Math.max(0,Math.min(1,(p.vy+670)/1570))*heroFrames.length))]:this.referenceKey(heroAnimation,t,p.state==='run'?12:8);
+    if(['lanternplate','bulwark'].includes(p.armor))heroAnimation=heroAnimation.replace('aether-','lanternplate-').replace('hero-slash-air','lanternplate-overhead').replace('hero-slash-low','lanternplate-slash').replace('lanternplate-doublejump','lanternplate-jump');
+    const heroFrames=this.referenceArt.animations[heroAnimation],heroKey=p.hp<=0?heroFrames?.at(-1):heroAnimation.endsWith('-fire')?firingFrame(p):slashing&&heroFrames?.length?heroFrames[Math.min(heroFrames.length-1,blade.poseIndex)]:!p.grounded&&!p.jetActive&&heroFrames?.length?heroFrames[Math.min(heroFrames.length-1,Math.floor(Math.max(0,Math.min(1,(p.vy+670)/1570))*heroFrames.length))]:this.referenceKey(heroAnimation,p.state==='run'?(p.motionDistance||0)/88:t,p.state==='run'?4:8);
     if(!this.setReference(this.playerSprite,heroKey||this.referenceKey('aether-idle'),{...p,x:px,y:py,facing:slashing?(p.slashFacing||p.facing):p.facing}))this.playerSprite.setTexture(frame).setOrigin(.5,slashing||p.dashTime>0?152/160:68/72).setScale(1).setPosition(Math.round(px+p.w/2),Math.round(py+p.h)).setFlipX(p.facing<0);
     const armor=catalog.ARMORS.find(a=>a.id===p.armor),opacity=!heroActive?1:p.stealth>0?.3:p.invincible>0&&Math.floor(t*16)%2===0?.72:1;
     this.playerSprite.setAlpha(opacity).setTint(p.impaired>0?0x89899e:['courier','lanternplate'].includes(p.armor)?0xffffff:armor?.tint||0xffffff);
+    if(this.heroHurtUntil>t)this.playerSprite.setAlpha(1).setTint(0xff796b);
     if(p.grounded&&this.landedAt!==undefined&&t-this.landedAt<.12&&!slashing){const compression=Math.sin((t-this.landedAt)/.12*Math.PI)*.07;this.playerSprite.setScale(this.playerSprite.scaleX*(1+compression),this.playerSprite.scaleY*(1-compression));}
     const near=e=>e.x+(e.w||100)>this.cameraX-160&&e.x<this.cameraX+1120;
     for(const sprite of this.enemySprites.values())sprite.setVisible(false);
@@ -241,10 +252,15 @@ class Soulforge extends Phaser.Scene {
       if(world.worldId==='soulforge'){
         const identity=b.form==='flying'?'dragon':b.type==='hex'?'caster':b.type==='bellbeast'?'bellbeast':'guardian';
         const pose=identity==='dragon'?(b.phase==='attack'?'fire':'fly'):b.phase==='charge'?'windup':b.phase==='attack'?'attack':b.recovering?'recovery':'idle';
-        this.setReference(sprite,this.motionKey(identity,b,pose),b);
-        if(b.phase==='transform'){sprite.setAlpha(.6+Math.sin(t*20)*.2);}
+        if(isIronfang(b)){
+          const key=ironfangFrame(b),height=b.phase==='transform'&&key.startsWith('if-dragon')?86:b.h;
+          this.setReference(sprite,key,{...b,h:height,y:b.y+b.h-height});
+        }else this.setReference(sprite,this.motionKey(identity,b,pose),b);
+        if(b.phase==='transform'&&!isIronfang(b)){sprite.setAlpha(.6+Math.sin(t*20)*.2);}
         else sprite.setAlpha(1);
       }
+      if(b.flash>.18)sprite.setTintFill(0xffd39a);
+      else if(b.flash>0)sprite.setTint(0xff7058);
     }
     const focusedPickup=world.pickups.filter(item=>!item.taken&&Math.abs(item.y-p.y-p.h/2)<110).sort((a,b)=>Math.abs(a.x-p.x)-Math.abs(b.x-p.x))[0];
     for(const item of world.pickups){
@@ -271,7 +287,9 @@ class Soulforge extends Phaser.Scene {
       const raw=npc.skin||npc.id,caster=['wizard','witch'].includes(raw),skin=caster?raw:raw.startsWith('npc-')?raw:`npc-${raw}`,pose=`${skin}-${caster?'idle-':''}${Math.floor(t*3)%4}`,key=this.textures.exists(pose)?pose:this.textures.exists(skin)?skin:'npc-mira';
       if(!sprite){sprite=this.add.sprite(npc.x+14,npc.y+46,key).setOrigin(.5,76/80).setDepth(7);this.npcSprites.set(npc.id,sprite);}
       sprite.setTexture(key).setOrigin(.5,caster?92/96:76/80).setVisible(true).setFlipX(p.x<npc.x);
-      const friendly=caster?raw==='witch'?'healer':'mage':raw.includes('orren')?'mage':raw.includes('vesper')?'scientist':'villager';this.setReference(sprite,this.referenceKey(`npc-${friendly}-idle`,t,7)||`ref-npc-${friendly}`,{...npc,w:28,h:64,y:npc.y+46-64,facing:p.x<npc.x?-1:1});
+      const friendly=caster?raw==='witch'?'healer':'mage':raw.includes('orren')?'mage':raw.includes('vesper')?'scientist':'villager';
+      const talking=world.story?.npcId===npc.id,animation=talking?`npc-${raw.includes('orren')?'orren':'mira'}-talk`:`npc-${friendly}-idle`;
+      this.setReference(sprite,this.referenceKey(animation,talking?this.dialogueVisualTime||0:t,talking?3:2)||`ref-npc-${friendly}`,{...npc,w:28,h:64,y:npc.y+46-64,facing:p.x<npc.x?-1:1});
     }
     const g=this.dynamic;g.clear();this.drawHazards(g,t,near);
     for(const map of [this.weaponSprites,this.shieldSprites,this.allySprites,this.portalSprites])for(const sprite of map.values())sprite.setVisible(false);
@@ -283,14 +301,15 @@ class Soulforge extends Phaser.Scene {
     for(const enemy of [...world.enemies,...world.bosses]){
       if(enemy.dead||!near(enemy))continue;
       if(enemy.windup>0){g.fillStyle(C.red,.25);g.fillRect(enemy.x,enemy.y-10,enemy.w,3);g.fillStyle(C.red);g.fillRect(enemy.x,enemy.y-10,enemy.w*Math.min(1,enemy.windup/.48),3);}
-      if(enemy.shield>0)this.drawShield(enemy.id,enemy.x+enemy.w/2,enemy.y+enemy.h/2,enemy.w+32,enemy.h+26,t,C.violet);
+      const guardian=world.worldId==='soulforge'&&['sentinel','warden'].includes(enemy.type);
+      if(enemy.shield>0&&!guardian)this.drawShield(enemy.id,enemy.x+enemy.w/2,enemy.y+enemy.h/2,enemy.w+32,enemy.h+26,t,C.violet);
       if(enemy.beam)this.drawBeam(g,enemy.beam,t,false);
       else if((enemy.phase==='charge'||enemy.windup>0)&&enemy.telegraph)this.drawAttackWarning(g,enemy,t);
 
       const magic=['mage','hex','shade','sentinel'].includes(enemy.type)||['riftcrawler','wyrm','crimsonmecha','hexwing'].includes(enemy.visualFamily),slot=enemy.weaponSlot||(enemy.type==='hex'?'hand':enemy.attack===2&&enemy.active?'core':enemy.type==='turret'||enemy.power==='missile'||enemy.attack===1&&enemy.active?'rocket':'gun');
       if(world.worldId!=='soulforge'&&(!magic||slot==='rocket'))this.drawWeapon(enemy,slot,slot==='rocket'?'launcher':'carbine',enemy.aimAngle??enemy.telegraph?.angle,t);
-      else if(enemy.windup>0||enemy.phase==='charge'){const hand=weaponOrigin(enemy,slot);g.lineStyle(2,enemy.type==='sentinel'?C.cyan:C.violet,.8);g.strokeCircle(hand.x,hand.y,9+Math.sin(t*24)*3);g.fillStyle(C.light,.8);g.fillCircle(hand.x,hand.y,3);}
-      if(enemy.active){const core=weaponOrigin(enemy,'core');g.lineStyle(2,enemy.weakened>0?C.cyan:enemy.enraged?C.red:C.violet,.55);g.strokeCircle(core.x,core.y,7+Math.sin(t*6)*2);}
+      else if(!guardian&&!isIronfang(enemy)&&(enemy.windup>0||enemy.phase==='charge')){const hand=weaponOrigin(enemy,slot);g.lineStyle(2,enemy.type==='sentinel'?C.cyan:C.violet,.8);g.strokeCircle(hand.x,hand.y,9+Math.sin(t*24)*3);g.fillStyle(C.light,.8);g.fillCircle(hand.x,hand.y,3);}
+      if(enemy.active&&!guardian&&!isIronfang(enemy)){const core=weaponOrigin(enemy,'core');g.lineStyle(2,enemy.weakened>0?C.cyan:enemy.enraged?C.red:C.violet,.55);g.strokeCircle(core.x,core.y,7+Math.sin(t*6)*2);}
       if(enemy.portalExit?.time>0){this.drawPortal(`blink-source:${enemy.id}`,enemy.portalSource.x+enemy.w/2,enemy.portalSource.y+enemy.h/2,t,.7,false);this.drawPortal(`blink-exit:${enemy.id}`,enemy.portalExit.x+enemy.w/2,enemy.portalExit.y+enemy.h/2,t,1,false);}
       if(enemy.mirrorExit?.time>0)this.drawPortal(`mirror:${enemy.id}`,enemy.mirrorExit.x+15,enemy.mirrorExit.y+44,t,1,true);
       if(enemy.powerPulse?.time>0){const pulse=enemy.powerPulse;g.fillStyle(C.cyan,pulse.phase==='warning'?.06:.16);g.fillRect(pulse.x,pulse.y,pulse.w,pulse.h);g.lineStyle(2,C.cyan,pulse.phase==='warning'?.35:.7);for(let i=0;i<9;i++){const x=pulse.x+(i*71+t*Math.abs(pulse.vx||90))%pulse.w,y=pulse.y+pulse.h/2+Math.sin(t*4+i)*12,dir=Math.sign(pulse.vx||1);g.lineBetween(x,y,x-dir*13,y-5);g.lineBetween(x,y,x-dir*13,y+5);}}
@@ -298,7 +317,7 @@ class Soulforge extends Phaser.Scene {
     this.projectileSprites.forEach(sprite=>sprite.setVisible(false));
     for(let index=0;index<world.projectiles.length;index++){
       const shot=world.projectiles[index];if(!shot.active||!near(shot))continue;const tint=shot.tint||(shot.owner==='player'?C.copper:C.red),kind=shot.missile?'rocket':shot.kind==='dragonfire'?'fire':shot.kind==='ally'?'rail':['rail','scatter','fire','hex'].includes(shot.kind)?shot.kind:'carbine',key=`projectile-${kind}`,angle=Math.atan2(shot.vy,shot.vx);
-      g.lineStyle(shot.missile?5:kind==='rail'?3:1,tint,.3);g.lineBetween(shot.x-shot.vx*.04,shot.y-shot.vy*.04,shot.x,shot.y);
+      if(!['fire','dragonfire'].includes(shot.kind)){g.lineStyle(shot.missile?5:kind==='rail'?3:1,tint,.3);g.lineBetween(shot.x-shot.vx*.04,shot.y-shot.vy*.04,shot.x,shot.y);}
       if(this.textures.exists(key)){let sprite=this.projectileSprites[index];if(!sprite){sprite=this.add.image(0,0,key).setDepth(13);this.projectileSprites[index]=sprite;}sprite.setTexture(key).setVisible(true).setPosition(shot.x,shot.y).setRotation(angle).setDisplaySize(shot.missile?34:kind==='rail'?38:kind==='scatter'?14:22,shot.missile?17:kind==='fire'||kind==='hex'?14:8).setTint(shot.heavy?0xff9582:0xffffff);}
       const referenceShot=shot.missile?null:shot.owner==='player'?kind==='rail'?'ref-fx-bolt':kind==='fire'?'ref-fx-fire':kind==='scatter'?'ref-fx-star':'ref-fx-shot':kind==='fire'?'ref-fx-fire':'ref-fx-enemy-bolt';if(referenceShot&&this.referenceArt.frames[referenceShot])this.projectileSprites[index]?.setTexture(this.referenceArt.frames[referenceShot].atlasKey||this.referenceArt.atlasKey,referenceShot).setDisplaySize(kind==='rail'?40:kind==='fire'?32:kind==='scatter'?14:24,kind==='rail'?12:kind==='scatter'?14:20);
       else{g.lineStyle(shot.missile?7:3,tint);g.lineBetween(shot.x-Math.cos(angle)*12,shot.y-Math.sin(angle)*12,shot.x,shot.y);}
@@ -310,9 +329,9 @@ class Soulforge extends Phaser.Scene {
       if(shot.missile){const tailX=shot.x-Math.cos(angle)*16,tailY=shot.y-Math.sin(angle)*16;g.fillStyle(0xffa572,.8);g.fillEllipse(tailX,tailY,8+Math.sin(t*50)*3,7);if(dt>0&&Math.random()<.18)this.burst(tailX,tailY,'shot',1,0xdca684);}
     }
     if(world.missileWarning){g.lineStyle(1,C.red,.25+Math.sin(t*15)*.15);g.lineBetween(this.cameraX,world.missileWarning.y,this.cameraX+960,world.missileWarning.y);g.fillStyle(C.red,.7);g.fillTriangle(this.cameraX+924,world.missileWarning.y,this.cameraX+947,world.missileWarning.y-10,this.cameraX+947,world.missileWarning.y+10);}
-    if(slashing&&blade.active)this.drawBladeTrail(heroKey,blade,{...p,x:px,y:py});
+    if(slashing&&(blade.active||blade.poseIndex===3))this.drawBladeTrail(heroKey,blade,{...p,x:px,y:py});
     const beam=p.beam||p.laserBeam;if(heroActive&&p.laserTime>0&&beam)this.drawBeam(g,beam,t,false);
-    if(heroActive&&!slashing&&p.dashTime<=0&&p.shootCooldown>0)this.drawWeapon({...p,x:px,y:py},'gun',p.gun==='rocket'?'launcher':p.gun,p.aimAngle??(p.aimUp?-Math.PI/2:p.facing<0?Math.PI:0),t,'hero');
+    if(heroActive&&!p.characterRevision&&!slashing&&p.dashTime<=0&&p.shootCooldown>0)this.drawWeapon({...p,x:px,y:py},'gun',p.gun==='rocket'?'launcher':p.gun,p.aimAngle??(p.aimUp?-Math.PI/2:p.facing<0?Math.PI:0),t,'hero');
     if(heroActive&&p.shield>0)this.drawShield('hero',px+p.w/2,py+p.h/2,60,78,t,C.cyan);
     if(heroActive&&(p.rapid>0||p.boost>0)){g.lineStyle(2,p.boost>0?C.violet:C.cyan,.3);for(let i=0;i<4;i++){const a=t*4+i*Math.PI/2;g.strokeCircle(px+p.w/2+Math.cos(a)*24,py+p.h*.4+Math.sin(a)*34,3);}}
     if(heroActive&&p.stealth>0){g.fillStyle(C.violet,.07);g.fillEllipse(px+p.w/2,py+p.h/2,60,80);}
@@ -344,6 +363,7 @@ class Soulforge extends Phaser.Scene {
   }
   drawAttackWarning(g,enemy,t){
     const hint=enemy.telegraph,kind=hint.kind;
+    if(isIronfang(enemy))return; // Authored anticipation and emitter embers in LanternEffects.
     if(!kind||kind==='shot'){this.drawBeam(g,hint,t,true);return;}
     const feet=enemy.y+enemy.h,cx=enemy.x+enemy.w/2,dir=enemy.attackFacing||enemy.facing||1;
     const ink=0xffc27a,alpha=.55+Math.sin(t*10)*.15;
@@ -357,10 +377,7 @@ class Soulforge extends Phaser.Scene {
       g.lineStyle(2,ink,alpha);g.lineBetween(start,feet-3,start+dir*reach,feet-3);
       for(let i=1;i<=3;i++){const x=start+dir*(reach-i*22);g.lineBetween(x,feet-12,x+dir*8,feet-5);g.lineBetween(x,feet+2,x+dir*8,feet-5);}
     }else if(kind==='breath'){
-      const x=hint.x0,y=hint.y0,angle=hint.angle||0,reach=Math.hypot((hint.x1??x+420)-x,(hint.y1??y)-y);
-      g.lineStyle(2,ink,alpha);
-      for(const spread of [-.22,.22])g.lineBetween(x,y,x+Math.cos(angle+spread)*reach,y+Math.sin(angle+spread)*reach);
-      g.strokeCircle(x,y,12);
+      const x=hint.x0,y=hint.y0;g.fillStyle(ink,alpha);g.fillCircle(x,y,4);
     }else{
       const x=hint.x0,y=hint.y0;g.lineStyle(2,kind==='summon'?0x94ddcd:ink,alpha);g.strokeCircle(x,y,13+Math.sin(t*5)*2);
       for(let i=0;i<4;i++){const a=t*2+i*Math.PI/2;g.fillStyle(ink,.8);g.fillRect(x+Math.cos(a)*19-2,y+Math.sin(a)*19-2,4,4);}
@@ -423,11 +440,11 @@ class Soulforge extends Phaser.Scene {
       const preferred=`${ally.type==='clone'?'allied-clone':ally.type}-${Math.floor(t*8)%4}`,base=`${ally.type==='clone'?'allied-clone':ally.type}-0`,key=this.textures.exists(preferred)?preferred:this.textures.exists(base)?base:'shade-0';
       let sprite=this.allySprites.get(ally.id);if(!sprite){sprite=this.add.sprite(0,0,key).setDepth(8);this.allySprites.set(ally.id,sprite);}
       const dragon=ally.type==='dragon';sprite.setTexture(key).setVisible(true).setOrigin(.5,dragon?.5:ally.type==='wolf'?60/64:ally.type==='clone'?68/72:76/80).setPosition(ally.x+(ally.w||48)/2,dragon?ally.y+(ally.h||56)/2:feet).setFlipX(ally.facing<0).setAlpha(Math.min(1,ally.life||1)).setTint(0xffffff);
-      if(ally.type==='wispknight'||ally.owner==='enemy')this.setReference(sprite,this.motionKey('wispknight',ally,ally.attackTime>0?'attack':'walk'),{...ally,w:ally.w||30,h:ally.h||44});
-      if(ally.type==='raven')this.setReference(sprite,ally.attackPhase==='contact'?this.motionKey('raven',ally,'attack'):this.referenceKey('raven-fly',t,12),ally);
-      if(ally.type==='wolf')this.setReference(sprite,this.referenceKey('wolf-run',t,12),{...ally,w:ally.w||48,h:ally.h||32});
-      if(ally.type==='dragon')this.setReference(sprite,this.referenceKey(ally.attackTime>0?'dragon-fire':'dragon-fly',t,8),{...ally,w:ally.w||80,h:ally.h||56});
-      if(ally.type==='clone')this.setReference(sprite,this.referenceKey('aether-fire',t,10),{...ally,w:ally.w||24,h:ally.h||46});
+      if(world.enemySummons.includes(ally)){
+        const family=ally.type==='wispknight'?'wispknight':ally.type==='mage'?'caster':ally.type==='drone'?'dragon':'stalker';
+        this.setReference(sprite,this.motionKey(family,ally,ally.attackTime>0?'attack':'walk'),ally);
+      }
+      if(['raven','wolf','dragon','clone'].includes(ally.type))this.setReference(sprite,companionFrame(ally),ally);
     }
     for(const portal of world.enemyPortals||[]){if(near(portal)&&portal.phase==='warning')this.drawPortal(`enemy:${portal.id}`,portal.x+15,portal.y+44,t,1,true);}
   }
@@ -540,4 +557,4 @@ document.addEventListener('click',event=>{if(event.target.closest('#worlds'))sho
  settingsPanel.addEventListener('close',()=>{controls.clear();settingsFocus?.focus?.({preventScroll:true});});
 const paintMotion=()=>{$('motion').setAttribute('aria-pressed',String(reducedFX));$('motion').textContent=reducedFX?'Effects reduced':'Effects full';};paintMotion();$('motion').addEventListener('click',()=>{reducedFX=!reducedFX;sound.setReducedFX(reducedFX);paintMotion();try{localStorage.setItem('runeheart-reduced-fx',String(reducedFX));}catch{}});
 $('fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await $('stage').requestFullscreen();}catch{$('footer-status').textContent='FULLSCREEN IS MANAGED BY THIS DEVICE';}});
-new Phaser.Game({type:Phaser.AUTO,width:960,height:viewportHeight(),parent:'game',backgroundColor:'#171322',pixelArt:true,roundPixels:true,antialias:false,scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},scene:[Soulforge],audio:{noAudio:true},render:{powerPreference:'low-power'},fps:{target:60,smoothStep:true}});
+new Phaser.Game({type:Phaser.AUTO,width:960,height:viewportHeight(),parent:'game',backgroundColor:'#171322',pixelArt:false,roundPixels:false,antialias:true,scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},scene:[Soulforge],audio:{noAudio:true},render:{powerPreference:'low-power'},fps:{target:60,smoothStep:true}});

@@ -1,0 +1,268 @@
+{
+  "kind": "Production Vite preview Chromium smoke with real UI inputs",
+  "physicalDevice": false,
+  "campaignCompletion": false,
+  "viewport": {
+    "width": 740,
+    "height": 360
+  },
+  "started": "2026-10-15T11:23:59.452Z",
+  "distHashes": {
+    "dist/index.html": "4c3b173a47f034df478f41d336f3fa848cad905954bd8eefad9665c5819dd438",
+    "dist/assets/index-BO0wcdkv.js": "4400672c85563559961643ce553b1f450a4bd40b6c38e7c7b850eed2bb13ed77",
+    "dist/assets/index-BY-eqWXb.css": "82a199fdd0ced1624f07556811b65429775d61eab09250ddd9e8696b79d033d8"
+  },
+  "sourceHashes": {
+    "src/main.js": "64ca941ff4d83d55bde21082b3c8846e3ae395bf1766e2c46eae489a048207b9",
+    "src/ui.js": "6fc65a98541a68643f765cf61e4564addeb9a7479a1479a5b43fb86a50a146d8",
+    "src/style.css": "146041fad432fccd6140c63cca629e2123de44aa038bb8dd5a9507ed8269e417",
+    "src/lantern-art.js": "7026f99f27c41d545450cb1c509cad77125a1ac1097b79a0287affab07ae401d",
+    "src/lantern-fx.js": "9ffd9ea2ce237506c6e82aa75dca4225b448532af727a9c8bc084af577b47d41"
+  },
+  "checks": [
+    "Production omits window.__ASH debug hook; served index SHA-256 matches current dist",
+    "30 Lantern/motion/FX PNGs decoded; all 3 bundled fonts loaded",
+    "Home settings, start, keyboard movement/jump inputs, pause, paused settings, all six equipment tabs, close-to-pause and resume"
+  ],
+  "screenshots": [
+    "01-home.png",
+    "02-home-settings.png",
+    "03-play.png",
+    "04-pause.png",
+    "05-paused-settings.png",
+    "06-equipment-engine.png",
+    "06-equipment-armor.png",
+    "06-equipment-spell.png",
+    "07-resumed.png"
+  ],
+  "runtimeErrors": [],
+  "failedResources": [],
+  "servedBundles": [
+    "dist/assets/index-BO0wcdkv.js",
+    "dist/assets/index-BY-eqWXb.css"
+  ],
+  "images": [
+    {
+      "url": "/lantern/arch.png",
+      "width": 504,
+      "height": 593,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/atlas.png",
+      "width": 2048,
+      "height": 1024,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/lantern.png",
+      "width": 256,
+      "height": 579,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/platform.png",
+      "width": 643,
+      "height": 277,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/root.png",
+      "width": 639,
+      "height": 574,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/sanctuary.png",
+      "width": 1536,
+      "height": 1024,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-motion/atlas.png",
+      "width": 2048,
+      "height": 1024,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/atlas.png",
+      "width": 512,
+      "height": 512,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/bolt.png",
+      "width": 100,
+      "height": 26,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/emitter-cap.png",
+      "width": 84,
+      "height": 57,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/emitter.png",
+      "width": 124,
+      "height": 85,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/lever.png",
+      "width": 74,
+      "height": 76,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/orb.png",
+      "width": 100,
+      "height": 56,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/platform.png",
+      "width": 306,
+      "height": 126,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/stone.png",
+      "width": 303,
+      "height": 306,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/ward.png",
+      "width": 121,
+      "height": 176,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/water.png",
+      "width": 306,
+      "height": 306,
+      "decoded": true
+    },
+    {
+      "url": "/character-revision/atlas-1.png",
+      "width": 2048,
+      "height": 1983,
+      "decoded": true
+    },
+    {
+      "url": "/character-revision/atlas-2.png",
+      "width": 2048,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/character-revision/atlas.png",
+      "width": 2048,
+      "height": 1962,
+      "decoded": true
+    },
+    {
+      "url": "/ironfang/atlas-1.png",
+      "width": 2048,
+      "height": 623,
+      "decoded": true
+    },
+    {
+      "url": "/ironfang/atlas.png",
+      "width": 2048,
+      "height": 1895,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/bell.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/boots.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/jet.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/lantern.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/rifle.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/rune.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/satchel.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/sword.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    }
+  ],
+  "fonts": [
+    {
+      "url": "/fonts/Alegreya-Variable.ttf",
+      "status": "loaded"
+    },
+    {
+      "url": "/fonts/AlegreyaSans-Bold.ttf",
+      "status": "loaded"
+    },
+    {
+      "url": "/fonts/AlegreyaSans-Regular.ttf",
+      "status": "loaded"
+    }
+  ],
+  "equipmentTabs": [
+    {
+      "category": "engine",
+      "count": 4
+    },
+    {
+      "category": "sword",
+      "count": 3
+    },
+    {
+      "category": "gun",
+      "count": 5
+    },
+    {
+      "category": "armor",
+      "count": 4
+    },
+    {
+      "category": "spell",
+      "count": 10
+    },
+    {
+      "category": "relic",
+      "count": 6
+    }
+  ],
+  "status": "pass",
+  "finished": "2026-10-15T11:24:09.198Z"
+}
