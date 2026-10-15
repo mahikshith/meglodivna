@@ -40,7 +40,7 @@
                   },
                   {
                       "task":  "Verified Android test delivery and latest APK update",
-                      "status":  "pending signed Android CI delivery"
+                      "status":  "delivered v0.8.0-lantern code 9; signed payload and upload-download comparison passed; Latest APK updated"
                   }
               ],
     "evidenceBoundary":  "Isolated fixtures and desktop Chromium tests do not establish physical-device comfort or performance."

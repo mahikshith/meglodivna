@@ -1,8 +1,8 @@
 # The Last Lantern — Hollow Sanctuary
 
-**Latest APK:** [Download The Last Lantern v0.7.0 Android test build](https://github.com/mahikshith/meglodivna/releases/download/v0.7.0-lantern/ASH-SIGNAL-Lantern-v0.7.0.apk) — 15 October 2026, version `0.7.0-lantern`, code **8**, Android 7.0+.
+**Latest APK:** [Download The Last Lantern v0.8.0 Illustrated Sanctuary Android test build](https://github.com/mahikshith/meglodivna/releases/download/v0.8.0-lantern/ASH-SIGNAL-Lantern-v0.8.0.apk) — 15 October 2026, version `0.8.0-lantern`, code **9**, Android 7.0+.
 
-[Prerelease and checksums](https://github.com/mahikshith/meglodivna/releases/tag/v0.7.0-lantern) · [Passed Android build and upload verification](https://github.com/mahikshith/meglodivna/actions/runs/38624576624) · [Signed payload report](https://github.com/mahikshith/meglodivna/releases/download/v0.7.0-lantern/android-report.json). The uploaded APK was downloaded again and matched byte for byte before this link was updated.
+[Prerelease and checksums](https://github.com/mahikshith/meglodivna/releases/tag/v0.8.0-lantern) · [Passed Android build and upload verification](https://github.com/mahikshith/meglodivna/actions/runs/38731229088) · [Signed payload report](https://github.com/mahikshith/meglodivna/releases/download/v0.8.0-lantern/android-report.json). CI downloaded the uploaded APK again and matched it byte for byte before this link was updated.
 
 The current rebuild focuses on **one chapter**: a courier carries the last lantern through a failing sanctuary, meets Mira and Orren, recovers three lost runes, and unbinds its heart. Other realm data remains for save compatibility; the game presents Hollow Sanctuary.
 

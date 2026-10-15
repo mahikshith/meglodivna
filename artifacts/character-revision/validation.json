@@ -106,7 +106,19 @@
                           "measuredDeviceRAM":  false,
                           "rgbaBytes":  162724228
                       },
-    "android":  "Pending CI signature, payload, lint, upload and download verification",
+    "android":  {
+                    "status":  "passed",
+                    "sourceCommit":  "d4a3e8632baf10b01db9895ed5357025101b8690",
+                    "ci":  "https://github.com/mahikshith/meglodivna/actions/runs/38731229088",
+                    "apk":  "https://github.com/mahikshith/meglodivna/releases/download/v0.8.0-lantern/ASH-SIGNAL-Lantern-v0.8.0.apk",
+                    "sha256":  "fbfc030a8a57ea9949883cded4243dfa5eccdc54084467a5c0fd3564fb4ce42b",
+                    "bytes":  29462144,
+                    "signature":  "v2, one signer, persistent certificate",
+                    "buildAndLint":  "passed",
+                    "embeddedPayload":  "exact dist; no stale files",
+                    "uploadDownloadComparison":  "byte-identical in CI",
+                    "report":  "artifacts/character-revision/android-report.json"
+                },
     "physicalDeviceTest":  false,
     "limitations":  [
                         "Finite authored poses; three rifle aim elevations",
