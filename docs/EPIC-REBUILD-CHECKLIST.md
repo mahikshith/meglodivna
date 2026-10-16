@@ -59,7 +59,7 @@ This checklist preserves every part of the user's feedback. Each asset passes ar
 - [x] Refill limited charges and relevant resources when changing test equipment.
 - [x] Exercise all 22 equipment choices and six Soul Engine upgrade ranks through actual browser UI.
 - [x] Give isolated test saves sufficient souls and restore nine special charges on fresh/restarted test campaigns.
-- [ ] Confirm test-mode labels and retained application/signing identity in the APK.
+- [x] Confirm test-mode labels and retained application/signing identity in the APK.
 
 ## 7 Story and progression
 
@@ -89,9 +89,11 @@ This checklist preserves every part of the user's feedback. Each asset passes ar
 - [x] Pass the final unit suite, production build and targeted browser tests.
 - [x] Retain phone-scale screenshots and exact source/art hashes.
 - [x] Distinguish isolated fixtures, legal campaigns and physical-device evidence in release notes.
-- [ ] Build and verify a signed Android test APK with the persistent certificate and app ID.
-- [ ] Upload the exact APK and verify the downloaded bytes.
-- [ ] Update README Latest APK/version/validation links only after that verification.
-- [ ] Merge the validated rebuild into main under the user's standing authorization.
+- [x] Build and verify a signed Android test APK with the persistent certificate and app ID.
+- [x] Upload the exact APK and verify the downloaded bytes.
+- [x] Update README Latest APK/version/validation links only after that verification.
+- [x] Merge the validated rebuild into main under the user's standing authorization.
 
 Physical Android comfort, sustained performance and human enjoyment remain device/playtest questions. Full skeletal or continuous anatomical animation must not be claimed for finite generated pose strips.
+
+Verified delivery: [v0.9.0-lantern APK](https://github.com/mahikshith/meglodivna/releases/download/v0.9.0-lantern/ASH-SIGNAL-Lantern-v0.9.0.apk), version code 10. [All nine CI campaigns, Android build/lint/signature and upload verification passed](https://github.com/mahikshith/meglodivna/actions/runs/38960622853). The locally downloaded public APK matched SHA-256 `1b29287aeb9533cc86194bb48e5abe38c162ed90c998f4e7f03788843345d5dc`; all 77 embedded files matched the signed payload report. The compiled test-armory label and separate save key were also checked.
