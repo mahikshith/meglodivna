@@ -49,7 +49,8 @@ export function buildSolidTerrain(scene,solid,material='ruins'){
   // Authored masonry covers the entire collision body, including conduit ledges.
   if(!platform){
    group.add(g);
-   group.add(scene.add.tileSprite(x,y,w,h,'ln-fx-stone').setOrigin(0).setAlpha(.72));
+   const stoneSource=scene.textures.get('ln-fx-stone').getSourceImage();
+   group.add(scene.add.tileSprite(x,y,w,h,'ln-fx-stone').setOrigin(0).setTileScale(303/stoneSource.width,306/stoneSource.height).setAlpha(.72));
   }else g.destroy();
   const texture=material==='metal'?'ln-fx-platform':'ln-platform';
   if(platform){

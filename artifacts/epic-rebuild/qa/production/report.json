@@ -1,0 +1,429 @@
+{
+  "kind": "Production Vite preview Chromium smoke with real UI inputs",
+  "physicalDevice": false,
+  "campaignCompletion": false,
+  "viewport": {
+    "width": 740,
+    "height": 360
+  },
+  "started": "2026-10-16T19:52:18.951Z",
+  "distHashes": {
+    "dist/index.html": "d49c2a6d8e093b711b8b408ca58e8e1a7af063847bd104bb423707f2538e2325",
+    "dist/assets/index-CmgTtwD5.css": "2e156873ee3ef112423b007b2e614388830f8c26bbb79e00005bb7e27a0a8c58",
+    "dist/assets/index-D2ZDTVgF.js": "7dcbd5e9638411759e3ab254589c61845e7b78da256cb15ae8585edb4decd8ad"
+  },
+  "sourceHashes": {
+    "src/art.js": "525873ea6b871cb3f1d61992836ee9f2b1caccd6c88326ece6bbf46d8a6aa660",
+    "src/audio.js": "b63f2167946498e5b681f5c715ffc556ab612d70f94eab79b183fb4769e380c0",
+    "src/blade-motion.js": "70d2e5a8869657f8b85ca82f2c70e330c1d7a76d8991fc9fae7beadfa1d05527",
+    "src/camera.js": "332f75f253599e3633ba3dfb27242b323eaaf5b8482204d91cbbda3f6922a3d0",
+    "src/catalog.js": "d851cb49e16fe17d2c1ac70012f370e1b33bd1d8e059e1eb48e7804554d2cce1",
+    "src/character-geometry.js": "3d6b7e2dd4f2b609ba710bc6f2c426882d40737fde2ff9cfeb33168c50382b76",
+    "src/character-motion.js": "475b207c11ded54893424617f18485ee2c79ecad0ef8409586d7249f437b0389",
+    "src/combat.js": "bd061cddae79e01d121d99c48c2f4eae91077820f51270c683ccec5028969734",
+    "src/companions.js": "35167a53550ed4aee67ca61829a8d06acec61b816f7d198a85c74cecba4068fc",
+    "src/crossing-courses.js": "c51974fface7e1fe09a519e588517534857d5f080b586c22623d68bb7ac4542b",
+    "src/crossings.js": "ebf35132a93bc6106140ff0ab89736604dfb853aa6bbf4d8cf9a5b587546b1ff",
+    "src/enemy-motion.js": "edd5881630507ba1a145abcf89d9126b9896a34cc9417f26685f568279363dcc",
+    "src/input.js": "a44ac4451bd6ec304b3bbaea5547f612fbbc002629e40376851b5c2c2f6538d8",
+    "src/ironfang-geometry.js": "b0fef0ac0907d8afe7f3384bdcfff3bd2f633ca4538405908c1bd274f5319dc2",
+    "src/ironfang.js": "3ade8eb413b4fc775c4d32eede37108ba120507657842a798aa174045e2d0eaa",
+    "src/lantern-art.js": "b556f2b3e7d59edf5d57f8c1e7bb7c7d0de7c8a33d03373e5ecd938ac757c86c",
+    "src/lantern-fx.js": "2c4179840ad14ca74d0001311268f131200bdada3613e80833a56811298a004a",
+    "src/legacy-level.js": "21614250e936233c0bfea0ce0626a528f618651ac9dc679ab7e27691e0e0f1fa",
+    "src/level.js": "41dbe349fbe7859f701253cb9f23d0b9562b2b2fe2b8b381773e38523eab6d83",
+    "src/main.js": "ac432f55312876b8837c7d3bf655daa33a40e407f98bc1ea1fe7218e975ed36f",
+    "src/physics.js": "ab87b5534f22293f85bed634997fae3f2431fee147d32cdc239985ccb7e8a9ba",
+    "src/progress.js": "0e1b044a05bd046423859eb008256cf99ec8f22b9a9565871d6e8b4affb2d663",
+    "src/reference-art.js": "1ee6f6283cce08057c812ee0632609f8d1b720359dc160bfbc775f9e7866738e",
+    "src/rune-worlds.js": "c742940736c73d23264f23a45dac2d773a143746c14bddf2582787ed3208379f",
+    "src/runeheart-art.js": "c7614f53442cb46fa5a7b3a0c7fbe3bd80d631a55e374900a52e92e95ab9e4e4",
+    "src/sanctuary-theme.css": "9af6426f4742a44f298f91b95da4ba58c492a27598e4f0617e1b8850c39d8039",
+    "src/story.js": "f41890b768779f747a3d4a05fcfd53f1833cec3a6183e2c267ad4c5f0de25241",
+    "src/style.css": "eda8adeb1368be56cf7a47b1146f2d759981da77812ac26565ecdf7028bc9104",
+    "src/terrain.js": "cb5c08f110849e9152ad42142d0b3c5b79022f0948bf2f78d501a95519413a54",
+    "src/ui.js": "4833e0402542e37d50afef67a9ebc3258620aab58e189f6accd4c44eb4cbe4a1",
+    "src/worlds.js": "f3e899199f1fe72be50fa777d268ddde5133aa8c32bab81a56bc975d29af9daa"
+  },
+  "checks": [
+    "Production omits window.__ASH debug hook; served index SHA-256 matches current dist",
+    "36 Lantern/motion/FX PNGs decoded; all 3 bundled fonts loaded",
+    "All three story panels, contained keyboard focus and complete eighteen-second intro reach play",
+    "Home settings, start, keyboard movement/jump inputs, pause, paused settings, all six equipment tabs, close-to-pause and resume",
+    "Reload at the opening lantern restarts the story; pause freezes progress and Begin journey skips to play"
+  ],
+  "screenshots": [
+    "01-home.png",
+    "02-home-settings.png",
+    "03-intro-0.png",
+    "03-intro-1.png",
+    "03-intro-2.png",
+    "03-play.png",
+    "04-pause.png",
+    "05-paused-settings.png",
+    "06-equipment-engine.png",
+    "06-equipment-armor.png",
+    "06-equipment-spell.png",
+    "07-resumed.png",
+    "08-controls-640x360.png",
+    "08-controls-960x540.png",
+    "09-replayed-intro.png"
+  ],
+  "runtimeErrors": [],
+  "failedResources": [],
+  "servedBundles": [
+    "dist/assets/index-CmgTtwD5.css",
+    "dist/assets/index-D2ZDTVgF.js"
+  ],
+  "images": [
+    {
+      "url": "/lantern/arch.png",
+      "width": 503,
+      "height": 591,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/atlas.png",
+      "width": 2048,
+      "height": 1024,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/lantern.png",
+      "width": 234,
+      "height": 621,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/platform.png",
+      "width": 780,
+      "height": 404,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/root.png",
+      "width": 695,
+      "height": 636,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/sanctuary.png",
+      "width": 1536,
+      "height": 1024,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-motion/atlas.png",
+      "width": 2048,
+      "height": 1024,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/atlas.png",
+      "width": 512,
+      "height": 512,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/bolt.png",
+      "width": 100,
+      "height": 26,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/emitter-cap.png",
+      "width": 84,
+      "height": 57,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/emitter.png",
+      "width": 124,
+      "height": 85,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/lever.png",
+      "width": 74,
+      "height": 76,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/orb.png",
+      "width": 100,
+      "height": 56,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/platform.png",
+      "width": 306,
+      "height": 126,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/stone.png",
+      "width": 1254,
+      "height": 1254,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/ward.png",
+      "width": 121,
+      "height": 176,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/water.png",
+      "width": 306,
+      "height": 306,
+      "decoded": true
+    },
+    {
+      "url": "/character-revision/atlas-1.png",
+      "width": 2048,
+      "height": 1995,
+      "decoded": true
+    },
+    {
+      "url": "/character-revision/atlas-2.png",
+      "width": 2048,
+      "height": 409,
+      "decoded": true
+    },
+    {
+      "url": "/character-revision/atlas.png",
+      "width": 2048,
+      "height": 1962,
+      "decoded": true
+    },
+    {
+      "url": "/ironfang/atlas-1.png",
+      "width": 2048,
+      "height": 1176,
+      "decoded": true
+    },
+    {
+      "url": "/ironfang/atlas.png",
+      "width": 2048,
+      "height": 1855,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/bell.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/boots.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/jet.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/lantern.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/rifle.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/rune.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/satchel.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/sword.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/journey/ember.png",
+      "width": 1254,
+      "height": 418,
+      "decoded": true
+    },
+    {
+      "url": "/journey/intro-0.png",
+      "width": 1254,
+      "height": 418,
+      "decoded": true
+    },
+    {
+      "url": "/journey/intro-1.png",
+      "width": 1254,
+      "height": 418,
+      "decoded": true
+    },
+    {
+      "url": "/journey/intro-2.png",
+      "width": 1254,
+      "height": 418,
+      "decoded": true
+    },
+    {
+      "url": "/journey/tide.png",
+      "width": 1254,
+      "height": 418,
+      "decoded": true
+    },
+    {
+      "url": "/journey/wind.png",
+      "width": 1254,
+      "height": 418,
+      "decoded": true
+    }
+  ],
+  "fonts": [
+    {
+      "url": "/fonts/Alegreya-Variable.ttf",
+      "status": "loaded"
+    },
+    {
+      "url": "/fonts/AlegreyaSans-Bold.ttf",
+      "status": "loaded"
+    },
+    {
+      "url": "/fonts/AlegreyaSans-Regular.ttf",
+      "status": "loaded"
+    }
+  ],
+  "introWallSeconds": 19.498,
+  "equipmentTabs": [
+    {
+      "category": "engine",
+      "count": 4
+    },
+    {
+      "category": "sword",
+      "count": 3
+    },
+    {
+      "category": "gun",
+      "count": 5
+    },
+    {
+      "category": "armor",
+      "count": 4
+    },
+    {
+      "category": "spell",
+      "count": 10
+    },
+    {
+      "category": "relic",
+      "count": 6
+    }
+  ],
+  "controlLayouts": [
+    {
+      "viewport": {
+        "width": 640,
+        "height": 360
+      },
+      "bounds": {
+        "touch-jump": {
+          "x": 522,
+          "y": 252,
+          "width": 100,
+          "height": 100
+        },
+        "touch-attack": {
+          "x": 408,
+          "y": 204,
+          "width": 100,
+          "height": 100
+        },
+        "touch-boost": {
+          "x": 300,
+          "y": 260,
+          "width": 92,
+          "height": 92
+        },
+        "touch-power": {
+          "x": 194,
+          "y": 232,
+          "width": 80,
+          "height": 80
+        },
+        "touch-pause": {
+          "x": 240,
+          "y": 10,
+          "width": 48,
+          "height": 48
+        },
+        "touch-gear": {
+          "x": 352,
+          "y": 10,
+          "width": 48,
+          "height": 48
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 960,
+        "height": 540
+      },
+      "bounds": {
+        "touch-jump": {
+          "x": 836,
+          "y": 432,
+          "width": 100,
+          "height": 100
+        },
+        "touch-attack": {
+          "x": 722,
+          "y": 384,
+          "width": 100,
+          "height": 100
+        },
+        "touch-boost": {
+          "x": 614,
+          "y": 440,
+          "width": 92,
+          "height": 92
+        },
+        "touch-power": {
+          "x": 504,
+          "y": 412,
+          "width": 80,
+          "height": 80
+        },
+        "touch-pause": {
+          "x": 400,
+          "y": 10,
+          "width": 48,
+          "height": 48
+        },
+        "touch-gear": {
+          "x": 512,
+          "y": 10,
+          "width": 48,
+          "height": 48
+        }
+      }
+    }
+  ],
+  "status": "pass",
+  "finished": "2026-10-16T19:53:13.248Z"
+}

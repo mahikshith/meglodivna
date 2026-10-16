@@ -47,3 +47,12 @@ The user explicitly selected the detailed source-sheet style during the v0.8 rev
 - Detailed source sheets still contain finite authored poses. Do not claim skeletal animation, unlimited directional firing poses or device performance without corresponding implementation/evidence.
 - Stone guardians must not have circular shield, hand or body auras. Preserve axe anticipation, grounded contact and accepted-hit feedback without adding those halos back.
 - Environment display dimensions are world units, independent of texture resolution. Crop tiled platform images in source coordinates while retaining their original 225-by-97 world size.
+
+## October playtest rebuild
+
+- The v0.9 sources in `reference/epic-revision/` preserve this illustrated direction. Keep the new full-body Minotaur and dragon poses, airborne/crouching rifle poses, painted effects, scenery and story panels when changing mechanics.
+- Rendering and projectile collision share `villainFrame`, measured anatomical hurtboxes and mirrored weapon sockets. Exclude carried weapons from damage anatomy; include visible heads and legs outside the old logical body boxes.
+- Boost replaces the separate player sword dash. It is fuel-powered propulsion, including in the air. Shooting must retain its directional pose during thrust, and aim must remain independent of movement.
+- All circular enemy shield/core/hand halos and melee ground-warning lines are intentionally removed. Explain attacks through anatomical anticipation, registered impact art and debris. The circular touch buttons are controls, not enemy effects.
+- Generated strips have finite authored poses. The current Minotaur-to-dragon transition stages those poses rather than performing continuous anatomical deformation. Preserve that distinction in reviews and release claims.
+- The test armory remains separate from earned saves until the user requests normal progression again. Do not silently remove testing access to equipment, special charges or Soul Engine tiers.

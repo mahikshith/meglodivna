@@ -21,10 +21,10 @@ const oldIds = {
 
 test('Hollow additions preserve every pre-rebuild ID and checkpoint index', () => {
   for (const [group, hash] of Object.entries(oldIds)) {
-    const ids = level[group].filter(object => !object.id.includes('-hollow-') && !object.id.includes('-bellbeast') && !object.id.endsWith('-destination')).map(object => object.id);
+    const ids = level[group].filter(object => !object.id.includes('-hollow-') && !object.id.includes('-bellbeast') && !object.id.includes('-crossing-') && !object.id.endsWith('-destination')).map(object => object.id);
     assert.equal(createHash('sha256').update(JSON.stringify(ids)).digest('hex'), hash, group);
   }
-  assert.deepEqual(level.checkpoints.map(cp => [cp.x, cp.y]), [
+  assert.deepEqual(level.checkpoints.slice(0, 7).map(cp => [cp.x, cp.y]), [
     [100, 1214], [2820, 1214], [4695, 814], [6100, 814], [12295, 1034], [13670, 1034], [17445, 634],
   ]);
 });

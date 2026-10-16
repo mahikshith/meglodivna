@@ -1,3 +1,4 @@
+import { PHYSICS } from './physics.js';
 const el = id => document.getElementById(id);
 const time = seconds => `${Math.floor(Math.max(0, seconds) / 60).toString().padStart(2, '0')}:${Math.floor(Math.max(0, seconds) % 60).toString().padStart(2, '0')}`;
 
@@ -96,7 +97,7 @@ export function createCampaignUI(catalog, callbacks = {}) {
       card.append(action); el('catalogue-grid').append(card);
     }
     for (const tab of el('catalogue-tabs').children) { const selected = tab.dataset.category === category; tab.setAttribute('aria-selected', String(selected)); tab.tabIndex = selected ? 0 : -1; if (selected) el('catalogue-grid').setAttribute('aria-labelledby', tab.id); }
-    el('catalogue-note').textContent = category === 'engine' ? 'Gather souls from fallen guardians. Forge gifts that remain with you.' : category === 'relic' ? 'Each recovered relic carries a memory of the sanctuary.' : 'Choose what you carry. Find caches and help survivors to discover new equipment.';
+    el('catalogue-note').textContent = progress.testMode ? 'TEST ARMORY - Every weapon, armor and power is available. Your earned journey is saved separately.' : category === 'engine' ? 'Gather souls from fallen guardians. Forge gifts that remain with you.' : category === 'relic' ? 'Each recovered relic carries a memory of the sanctuary.' : 'Choose what you carry. Find caches and help survivors to discover new equipment.';
   };
   for (const key of Object.keys(categories)) {
     const tab = document.createElement('button'); tab.textContent = labels[key]; tab.dataset.category = key; tab.setAttribute('role', 'tab'); tab.setAttribute('aria-controls', 'catalogue-grid');
@@ -175,7 +176,7 @@ export function createCampaignUI(catalog, callbacks = {}) {
       button.dataset.ready = String(ready); button.dataset.cooling = String(cooling); button.setAttribute('aria-disabled', String(!ready));
     };
     state('power', player.spellCooldown <= 0 && (selectedSpell?.charge ? player.charges?.[selectedSpell.charge] > 0 : player.mana >= (selectedSpell?.cost || 0)), player.spellCooldown > 0);
-    state('dash', player.dashCooldown <= 0, player.dashCooldown > 0);
+    state('boost', player.dashCooldown <= 0 && player.fuel >= PHYSICS.boostFuel && player.impaired <= 0, player.dashCooldown > 0);
     const near = target => !target.dead && Math.abs(target.x - player.x) < 110 && Math.abs(target.y - player.y) < 100;
     const nearby = (world.npcs || []).some(near) || (world.props || []).some(prop => ['lever','valve','conduit'].includes(prop.type) && !prop.used && near(prop));
     el('touch').dataset.interact = String(nearby);

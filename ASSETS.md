@@ -1,3 +1,24 @@
+# October 2026 illustrated combat and journey revision
+
+The final v0.9 browser fixture inventory records **475 unique texture sources and 224.89 MiB for one uncompressed RGBA copy**, including retained compatibility art and runtime text textures. Source images and aliases are deduplicated in `artifacts/epic-rebuild/qa/visual/report.json`. This is calculated texture storage, not measured process or device RAM; CPU/GPU copies, buffers and browser overhead can increase memory use. No physical-device memory headroom or frame-rate claim is made.
+
+This section supersedes historical packet counts below. Production sources, exact built-in `image_gen` prompts, rejected-source notes and reproduction instructions are in [reference/epic-revision/README.md](reference/epic-revision/README.md). Existing approved Lantern palette and illustrated materials are preserved.
+
+| Current output | Frames / items | Animation bindings | Atlas pages |
+| --- | ---: | ---: | ---: |
+| `public/ironfang` | 67 frame keys | 20 | 2 |
+| `public/character-revision` | 180 frame keys | 112 | 3 |
+| Revised sanctuary scenery | 4 props + 1 masonry texture | — | Individual images |
+| `public/journey` | 3 intro panels + 3 realm panoramas | — | Individual images |
+
+The Ironfang packet includes 39 actor geometry entries and rebuilt impact, muzzle flash, booster and cannon projectile art. Twelve new character keys add four airborne rifle directions and two crouched poses for each of courier and Lanternplate. Frame counts include aliases and staged transformation poses; they do not claim 247 distinct animations. Runtime registration uses original logical canvases, shared family scaling, smooth sampling and source-measured muzzle/contact points. Atlas pages remain at most 2048 pixels.
+
+All 72 secondary-villain frames (stalker, caster, guardian, Wispknight, Bellbeast and dragon) publish anatomical `hurtboxes` alongside their unchanged movement `body`. Live head, torso, leg and tail regions are source-measured and tightened to solid alpha; external weapons, claw blades, cape margins and wing membranes are excluded. Death poses use an alpha-tightened body fallback. The generated `CHARACTER_ANIMATIONS` export matches the manifest's 112 animation bindings for shared render/simulation pose selection.
+
+The final masonry is a newly generated 1254-by-1254 texture with matching opposite edges and a retained 303-by-306 world tile; its 24-pixel edge blend and source hash are recorded in `public/lantern-fx/manifest.json`. Six journey images are inspected 1254-by-418 crops. `artifacts/epic-revision/integrity.json` records exact SHA-256 hashes and offline validation. Reproduce that check with `python scripts/validate-epic-assets.py`; atlas/runtime registration checks are `node --test tests/illustrated-assets.test.js`.
+
+The dragon flight cycle moves torso, neck, legs, tail and wings through four authored poses; it is not skeletal animation. The transformation remains staged rebuilt bull/dragon poses rather than a continuous anatomical morph. Existing illustrated secondary-enemy designs are retained. Source/contact/tiled previews and gameplay fixtures are distinct from legal campaigns and physical-device testing. The final integrated texture budget belongs to the delivery report; these asset checks make no device memory, performance or comfort claim. Touch-control circles in phone fixtures are interface affordances, not enemy shield effects.
+
 ## Sanctuary effects and material consistency pass
 
 `public/lantern-fx` contains 16 shared-canvas flame/smoke/cut frames plus 9 textures: water, masonry, bronze-root platform, energy emitter/cap, lever, ward, bolt and spirit orb. All are original built-in image generations with approved sanctuary reference art. Exact prompts and unmodified sources are retained in `reference/lantern-fx-source`; reproduce with `python scripts/build-lantern-fx.py` (Pillow). Soft FX retain fractional alpha and use Lanczos reduction to preserve fine wisps. Row-shared crops prevent flame socket jitter. Effects use bounded reused views and pause with simulation.

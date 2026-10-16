@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { LEVEL } from '../src/legacy-level.js';
+import { damageBounds } from '../src/ironfang.js';
 import { createWorld as makeWorld, damagePlayer, hazardState, segmentHit, spawnProjectile, STEP, stepWorld } from '../src/combat.js';
 const createWorld = checkpoint => makeWorld(checkpoint, { level: LEVEL });
 
@@ -201,7 +202,8 @@ test('boss death opens exit and clears hostile projectiles', () => {
   // Isolate the kill transition after its enrage warning has already completed.
   Object.assign(world.boss, { active: true, hp: 8, shield: 0, timer: 100, enraged: true });
   const hostile = spawnProjectile(world, world.player.x - 400, 300, 0, 0, 'enemy');
-  spawnProjectile(world, world.boss.x - 3, world.boss.y + 30, 920, 0, 'player');
+  const torso = damageBounds(world.boss)[1] || damageBounds(world.boss)[0];
+  spawnProjectile(world, torso.x + torso.w / 2, torso.y + torso.h / 2, 920, 0, 'player');
   stepWorld(world, input(), STEP);
   assert.equal(world.boss.hp, 0);
   assert.equal(world.boss.dead, true);

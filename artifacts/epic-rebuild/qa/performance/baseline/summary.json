@@ -1,0 +1,158 @@
+{
+  "kind": "Bounded Node legal-input simulation CPU profile; no renderer or physical device",
+  "label": "baseline",
+  "frames": 28800,
+  "status": "playing",
+  "deaths": 0,
+  "target": "soulforge-crossing-wind-course-94",
+  "x": 61721.21001969658,
+  "solids": 479,
+  "enemies": 65,
+  "awake": 5,
+  "simulatedSeconds": 240,
+  "elapsedMs": 77190.3122,
+  "step": {
+    "meanMs": 2.58536977430556,
+    "p50Ms": 2.4909999999999854,
+    "p95Ms": 5.108600000000024,
+    "p99Ms": 7.096799999999348,
+    "maxMs": 83.5661
+  },
+  "hashes": {
+    "src/combat.js": "e79094048d851a68849e0cac55f5fd2d3e640363995bec236322fba25fe3bf52",
+    "src/physics.js": "ab87b5534f22293f85bed634997fae3f2431fee147d32cdc239985ccb7e8a9ba",
+    "src/character-motion.js": "475b207c11ded54893424617f18485ee2c79ecad0ef8409586d7249f437b0389",
+    "src/ironfang.js": "3ade8eb413b4fc775c4d32eede37108ba120507657842a798aa174045e2d0eaa",
+    "src/epic-levels.js": null,
+    "scripts/combat-route.mjs": "3294122fd7107212a06e5c2391e18f16f95d6105b60fda615cb0e85c93ecb237"
+  },
+  "topSelfSamples": [
+    {
+      "function": "(anonymous)",
+      "file": "combat.js",
+      "line": 1099,
+      "sampleMs": 10879.15,
+      "percent": 14.08
+    },
+    {
+      "function": "stepWorld",
+      "file": "combat.js",
+      "line": 1124,
+      "sampleMs": 9484.44,
+      "percent": 12.27
+    },
+    {
+      "function": "villainDamageBounds",
+      "file": "character-motion.js",
+      "line": 55,
+      "sampleMs": 8872.88,
+      "percent": 11.48
+    },
+    {
+      "function": "updateProjectiles",
+      "file": "combat.js",
+      "line": 1063,
+      "sampleMs": 7975.91,
+      "percent": 10.32
+    },
+    {
+      "function": "segmentEntry",
+      "file": "combat.js",
+      "line": 240,
+      "sampleMs": 6839.42,
+      "percent": 8.85
+    },
+    {
+      "function": "damageBounds",
+      "file": "ironfang.js",
+      "line": 54,
+      "sampleMs": 4437.46,
+      "percent": 5.74
+    },
+    {
+      "function": "(anonymous)",
+      "file": "character-motion.js",
+      "line": 48,
+      "sampleMs": 4317.92,
+      "percent": 5.59
+    },
+    {
+      "function": "villainFrame",
+      "file": "character-motion.js",
+      "line": 34,
+      "sampleMs": 4197.43,
+      "percent": 5.43
+    },
+    {
+      "function": "(anonymous)",
+      "file": "combat.js",
+      "line": 1095,
+      "sampleMs": 2817.86,
+      "percent": 3.65
+    },
+    {
+      "function": "profiledStep",
+      "file": "legal-driver",
+      "line": 247,
+      "sampleMs": 2670.1,
+      "percent": 3.45
+    },
+    {
+      "function": "(garbage collector)",
+      "file": "",
+      "line": 0,
+      "sampleMs": 2335.3,
+      "percent": 3.02
+    },
+    {
+      "function": "characterPoint",
+      "file": "character-motion.js",
+      "line": 66,
+      "sampleMs": 1707.3,
+      "percent": 2.21
+    },
+    {
+      "function": "(anonymous)",
+      "file": "legal-driver",
+      "line": 1,
+      "sampleMs": 1685.39,
+      "percent": 2.18
+    },
+    {
+      "function": "updateEnemy",
+      "file": "combat.js",
+      "line": 615,
+      "sampleMs": 1230.27,
+      "percent": 1.59
+    },
+    {
+      "function": "updateEnvironment",
+      "file": "combat.js",
+      "line": 971,
+      "sampleMs": 977.26,
+      "percent": 1.26
+    },
+    {
+      "function": "moveBody",
+      "file": "physics.js",
+      "line": 52,
+      "sampleMs": 932.84,
+      "percent": 1.21
+    },
+    {
+      "function": "externalMove",
+      "file": "combat.js",
+      "line": 965,
+      "sampleMs": 725.18,
+      "percent": 0.94
+    },
+    {
+      "function": "evaluate",
+      "file": "",
+      "line": 0,
+      "sampleMs": 557.41,
+      "percent": 0.72
+    }
+  ],
+  "measurementConditions": "Node inspector sampling at1ms alongside concurrent campaign validation. Timing includes profiling overhead and CPU scheduling; no browser renderer or physical-device inference."
+}

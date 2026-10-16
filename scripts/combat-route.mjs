@@ -2,6 +2,10 @@ import assert from 'node:assert/strict';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { getLevel } from '../src/level.js';
 import { advanceStory, createWorld, equipItem, hazardState, retryWorld, weaponOrigin, STEP, stepWorld } from '../src/combat.js';
+import { resumeRouteIndex } from './route-navigation.mjs';
+import { archiveDriver, gameplaySources, sourceHash } from './campaign-source.mjs';
+
+const provenance = { gameplaySourceHash: sourceHash(gameplaySources()), driverSources: archiveDriver(), startedAt: new Date().toISOString() };
 
 const difficulty = process.argv[2] || 'forge';
 assert.ok(['ember', 'forge', 'inferno', 'extinction'].includes(difficulty), 'Pass a supported difficulty ID.');
@@ -9,12 +13,13 @@ const worldId = process.argv[3] || 'soulforge';
 const optional = process.argv.includes('--bellbeast');
 const LEVEL = getLevel(worldId);
 assert.equal(LEVEL.id, worldId, 'Pass a supported world ID.');
-const route = LEVEL.route;
+const route = LEVEL.campaignRoute || LEVEL.route;
 const choices = Object.fromEntries(LEVEL.npcs.map(npc => [npc.id, (npc.choices.find(choice => choice.reward?.itemId === 'bulwark'
   || choice.reward?.itemId === 'siphon' || choice.reward?.type === 'cannon') || npc.choices[0]).id]));
 let world = createWorld(0, { difficulty, worldId });
 let targetIndex = 0, sinceJump = 0, launched = false, deaths = 0, totalFrames = 0;
 const history = [], trace = [], eventsSeen = new Set(), conversations = new Set(), bossTimes = {}, triggerProof = {};
+const guardianAttacks = {};
 let lastControls = '';
 let optionalStage = 'approach', optionalDone = false, optionalStarted = false;
 const optionalProof = { method: 'Fresh campaign followed by ordinary jump, walk, combat, automatic portal contact and soul collection; no state overrides.', phases: new Set(), attacks: new Set(), soulsBefore: 0, entries: 0 };
@@ -23,7 +28,7 @@ function equip(category, id) {
   if (world.player[category] !== id && equipItem(world, category, id)) recordAction({ equip: { category, id } });
 }
 
-while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
+while (totalFrames < 120 * 1800 && deaths < 24 && world.status !== 'won') {
   const p = world.player;
   if (world.status === 'dead') {
     history.push({ event: 'death', checkpoint: world.checkpoint, x: +p.x.toFixed(1), y: +p.y.toFixed(1), hp: p.hp,
@@ -31,8 +36,7 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
     recordAction({ retry: world.checkpoint });
     deaths++; world = retryWorld(world);
     if (optionalStarted && !optionalDone) { optionalStage = 'approach'; optionalStarted = false; }
-    targetIndex = route.findIndex(marker => marker.x >= world.player.x + world.player.w / 2);
-    if (targetIndex < 0) targetIndex = route.length - 1;
+    targetIndex = resumeRouteIndex(LEVEL, route, world.player);
     sinceJump = 0; launched = false; continue;
   }
   if (world.story) {
@@ -87,17 +91,26 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
     continue;
   }
   const activeBoss = world.activeBoss && !world.activeBoss.dead ? world.activeBoss : world.bosses.find(b => b.active && !b.dead);
-  const marker = route[targetIndex] || route.at(-1);
-  const target = LEVEL.solids.find(solid => solid.id === marker.id);
+  let marker = route[targetIndex] || route.at(-1);
+  if (marker.crossingId) {
+    const crossing = LEVEL.crossings.find(entry => entry.id === marker.crossingId);
+    if (world.gates.find(gate => gate.id === crossing.completionGate)?.open) {
+      targetIndex += crossing.route.length + 1;
+      continue;
+    }
+  }
+  const target = marker.dynamic ? world.movingPlatforms.find(solid => solid.id === marker.id) : LEVEL.solids.find(solid => solid.id === marker.id);
+  if (marker.dynamic) marker = { ...marker, x: target.x + marker.offsetX, y: target.y };
   const center = p.x + p.w / 2, feet = p.y + p.h;
   const support = p.grounded && world.solids.find(solid => Math.abs(feet - solid.y) < 0.01
     && p.x < solid.x + solid.w && p.x + p.w > solid.x);
   const markerBoss = marker.bossId && world.bosses.find(b => b.id === marker.bossId);
+  const markerEnemy = marker.enemyId && world.enemies.find(enemy => enemy.id === marker.enemyId);
   const reached = p.grounded && Math.abs(feet - marker.y) < 0.01 && Math.abs(center - marker.x) < (marker.pickupId?12:55);
   const lever = marker.leverId && world.props.find(prop => prop.id === marker.leverId);
   const leverGate = lever && world.gates.find(gate => gate.id === lever.gateId);
   const needsStory = marker.npcId && !conversations.has(marker.npcId);
-  if ((reached || markerBoss?.dead) && (!markerBoss || markerBoss.dead) && !needsStory && (!leverGate || leverGate.open)
+  if (!marker.portalId && (reached || markerBoss?.dead || markerEnemy?.dead) && (!markerBoss || markerBoss.dead) && (!markerEnemy || markerEnemy.dead) && !needsStory && (!leverGate || leverGate.open)
     && targetIndex < route.length - 1) {
     history.push({ event: 'landing', id: marker.id, x: +p.x.toFixed(1), hp: +p.hp.toFixed(1), time: +world.time.toFixed(2) });
     targetIndex++; continue;
@@ -108,7 +121,7 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   const defender = bossFight && world.enemySummons.filter(e => !e.dead && e.phase === 'attack'
     && Math.abs(e.x + e.w / 2 - center) < 240 && Math.abs(e.y + e.h - feet) < 150)
     .sort((a,b) => Math.abs(a.x-center)-Math.abs(b.x-center))[0];
-  const destination = defender ? defender.x + defender.w / 2 : bossFight ? activeBoss.x - 52 : marker.x;
+  const destination = markerEnemy && !markerEnemy.dead ? markerEnemy.x - 85 : defender ? defender.x + defender.w / 2 : bossFight ? activeBoss.x - 52 : marker.x;
   const distance = destination - center;
   let move = Math.max(-1, Math.min(1, distance / 50));
   let jumpPressed = false, dashPressed = false, jet = false;
@@ -123,7 +136,8 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
     if (jumpPressed && p.impaired > 0) { jumpPressed = false; move = 0; }
   }
   if (p.grounded && p.wall && !bossFight) jumpPressed = true;
-  if (launched && !p.grounded && sinceJump > 20 && p.vy >= -80 && p.jumps > 0 && distance > 150) jumpPressed = true;
+  if (launched && !p.grounded && sinceJump > 20 && p.vy >= -80 && p.jumps > 0
+    && (distance > 150 || feet > target.y + 10)) jumpPressed = true;
   const traversalJump = jumpPressed;
   if (!bossFight && p.grounded && p.impaired <= 0) {
     const floorHazard = LEVEL.hazards.find(h => (['emp', 'fire'].includes(h.type) || h.type === 'spikes' && h.period)
@@ -179,6 +193,11 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   const ultimatePressed = bossFight && nova > 0 && p.hp < p.maxHp * 0.6;
   const drop=!!support?.oneWay && feet<target.y-5 && center>=target.x && center<=target.x+target.w;
   if(drop&&!bossFight)jumpPressed=true;
+  // A high maintenance recovery needs fuel as well as the ordinary double jump.
+  // Rest on its safe floor until enough fuel has recharged instead of hopping forever.
+  if (!bossFight && support && support.y - target.y > 200 && p.fuel < 65) {
+    move = 0; jumpPressed = false; jet = false;
+  }
   const wasGrounded = p.grounded;
   const controls = { move, jumpPressed, jumpHeld: true, dashPressed, jet, down: drop && !bossFight,
     slashPressed: p.slashCooldown <= STEP, shoot: true, aimUp: !bossFight && !!overhead,
@@ -190,11 +209,20 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   } else if (ledgeThreat) {
     const hand = weaponOrigin(p, 'hand'), ax = ledgeThreat.x + ledgeThreat.w / 2 - hand.x, ay = ledgeThreat.y + ledgeThreat.h / 2 - hand.y, length = Math.hypot(ax, ay) || 1;
     controls.aimX = ax / length; controls.aimY = ay / length; controls.aimUp = false;
+  } else if (markerEnemy && !markerEnemy.dead) {
+    const hand = weaponOrigin(p, 'hand'), ax = markerEnemy.x + markerEnemy.w / 2 - hand.x, ay = markerEnemy.y + markerEnemy.h / 2 - hand.y, length = Math.hypot(ax, ay) || 1;
+    controls.aimX = ax / length; controls.aimY = ay / length;
   }
   const encoded = JSON.stringify(controls);
   if (encoded === lastControls && trace.at(-1)?.input) trace.at(-1).frames++;
   else { trace.push({ frames: 1, input: controls }); lastControls = encoded; }
   stepWorld(world, controls, STEP);
+  if (marker.portalId && world.events.some(event => event.type === 'portal' && event.portalId === marker.portalId)) {
+    const crossing = LEVEL.crossings.find(entry => entry.entryId === marker.portalId);
+    const guardian = crossing && world.enemies.find(enemy => enemy.id === crossing.guardianId);
+    history.push({ event: 'crossingportal', id: marker.portalId, time: +world.time.toFixed(2), guardianHealthOnEntry: guardian?.hp, guardianMaxHealth: guardian?.maxHp });
+    targetIndex++; sinceJump = 0; launched = false;
+  }
   for (const b of world.bosses) {
     if (!b.active && !b.dead) assert.equal(b.hp, b.maxHp, `${b.id} must remain unharmed before its trigger.`);
     if (b.active && !triggerProof[b.id]) {
@@ -207,6 +235,9 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   }
   for (const event of world.events) {
     eventsSeen.add(event.type);
+    if (event.type === 'enemyattack' && event.enemyId?.endsWith('-oath-guardian')) {
+      guardianAttacks[event.enemyId] ||= new Set(); guardianAttacks[event.enemyId].add(event.kind || event.attack);
+    }
     if (['hurt', 'emp', 'bossstart', 'win', 'gate', 'checkpoint'].includes(event.type)) history.push({ event: event.type,
       x: +p.x.toFixed(1), hp: +p.hp.toFixed(1), time: +world.time.toFixed(2) });
   }
@@ -214,10 +245,14 @@ while (totalFrames < 120 * 900 && deaths < 24 && world.status !== 'won') {
   if (wasGrounded && world.events.some(e => e.type === 'jump')) launched = traversalJump;
   if (world.events.some(e => e.type === 'land')) launched = false;
   world.events.length = 0; totalFrames++;
+  if (process.argv.includes('--progress') && totalFrames % (120 * 120) === 0) {
+    console.error(JSON.stringify({ world: worldId, difficulty, elapsed: totalFrames * STEP,
+      target: route[targetIndex]?.id, x: Math.round(p.x), y: Math.round(p.y), deaths }));
+  }
   assert.ok(Number.isFinite(p.x) && Number.isFinite(p.y), 'Simulation must remain finite.');
 }
 
-const report = { worldId, worldName: LEVEL.name, difficulty, status: world.status, optional: optional ? { ...optionalProof, phases: [...optionalProof.phases], attacks: [...optionalProof.attacks], complete: optionalDone } : undefined, playerBody: { w: world.player.w, h: world.player.h }, elapsed: +(totalFrames * STEP).toFixed(2), campaignTime: +world.time.toFixed(2),
+const report = { ...provenance, worldId, worldName: LEVEL.name, difficulty, status: world.status, optional: optional ? { ...optionalProof, phases: [...optionalProof.phases], attacks: [...optionalProof.attacks], complete: optionalDone } : undefined, playerBody: { w: world.player.w, h: world.player.h }, elapsed: +(totalFrames * STEP).toFixed(2), campaignTime: +world.time.toFixed(2),
   timeLeft: +world.timeLeft.toFixed(2), deaths, checkpoint: world.checkpoint, x: +world.player.x.toFixed(1), y: +world.player.y.toFixed(1),
   hp: +world.player.hp.toFixed(1), conversations: [...conversations], triggerProof,
   storyClaims: world.progress.claimed.filter(id => id.startsWith('npc:')),
@@ -227,6 +262,15 @@ const report = { worldId, worldName: LEVEL.name, difficulty, status: world.statu
     formsSeen: [...(bossTimes[b.id]?.forms || [])],
     flyingAttacksSeen: [...(bossTimes[b.id]?.flyingAttacks || [])].sort() })),
   gates: world.gates.map(g => ({ id: g.id, open: !!g.open })),
+  crossings: (LEVEL.crossings || []).map(crossing => {
+    const entered = history.find(event => event.id === crossing.entryId && event.event === 'crossingportal');
+    const returned = history.find(event => event.id === crossing.returnId && event.event === 'crossingportal');
+    return { id: crossing.id, completed: world.gates.find(gate => gate.id === crossing.completionGate)?.open || false,
+      guardianDefeated: world.progress.defeatedBosses.includes(crossing.guardianId),
+      guardianHealthOnEntry: entered?.guardianHealthOnEntry, guardianMaxHealth: entered?.guardianMaxHealth,
+      guardianAttacksSeen: [...(guardianAttacks[crossing.guardianId] || [])],
+      seconds: entered && returned ? +(returned.time - entered.time).toFixed(2) : null };
+  }),
   method: 'Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.',
   target: route[targetIndex]?.id, events: [...eventsSeen].sort(), history };
 mkdirSync(new URL('../artifacts/', import.meta.url), { recursive: true });
@@ -259,4 +303,5 @@ assert.equal(conversations.size, LEVEL.npcs.length, 'Every authored story conver
 assert.equal(Object.keys(triggerProof).length, 3, 'All bosses must activate through their proper trigger.');
 assert.ok(LEVEL.npcs.every(npc => world.progress.claimed.filter(id => id === `npc:${npc.id}`).length === 1), 'Each story reward is claimed exactly once.');
 assert.ok(world.gates.every(g => g.open), 'Boss and lever gates must be opened through gameplay.');
+assert.ok(report.crossings.every(crossing => crossing.completed && crossing.guardianDefeated && crossing.seconds > 0), 'Each crossing must be entered, solved and returned, with its guardian defeated.');
 assert.ok(world.collections.includes('ember-heart') && world.collections.includes('tide-glass') && world.collections.includes('storm-seal'), 'All three required stones are recovered through contact.');

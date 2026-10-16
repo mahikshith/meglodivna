@@ -35,5 +35,18 @@
       "overhead-2",
       "overhead-3"
     ]
+  },
+  "stone": {
+    "source": "reference/epic-revision/stone-raw.png",
+    "sourceSha256": "86545f9a8fb993172cc2b5b6fca02d6512935808d6dae33544be91396bb8e8fe",
+    "size": [
+      1254,
+      1254
+    ],
+    "worldTileSize": [
+      303,
+      306
+    ],
+    "edgeBlendPixels": 24
   }
 }

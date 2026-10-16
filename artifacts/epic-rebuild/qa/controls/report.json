@@ -1,0 +1,345 @@
+{
+  "kind": "Real keyboard and Chromium multitouch inputs on the running game",
+  "physicalDevice": false,
+  "injectedSimulation": false,
+  "campaignCompletion": false,
+  "started": "2026-10-16T19:54:43.168Z",
+  "checks": [
+    {
+      "name": "Real start, intro pause and skip reach playable scene with Boost control",
+      "evidence": {
+        "mode": "playing",
+        "time": 0.041666666666666664,
+        "x": 98,
+        "y": 1200,
+        "vx": 0,
+        "vy": 0,
+        "fuel": 100,
+        "grounded": true,
+        "crouching": false,
+        "jet": false,
+        "boost": false,
+        "facing": 1,
+        "shooting": false,
+        "slashId": 0,
+        "pointers": 0,
+        "move": 0,
+        "inputJet": false,
+        "inputShoot": false,
+        "sprite": "cr-courier-0",
+        "savedCampaign": null,
+        "savedTest": null
+      }
+    },
+    {
+      "name": "Airborne touch boost spends exactly18 fuel and creates no sword attack",
+      "evidence": {
+        "before": {
+          "mode": "playing",
+          "time": 0.05833333333333333,
+          "x": 98,
+          "y": 1196.2083333333335,
+          "vx": 0,
+          "vy": -220,
+          "fuel": 100,
+          "grounded": false,
+          "crouching": false,
+          "jet": false,
+          "boost": false,
+          "facing": 1,
+          "shooting": false,
+          "slashId": 0,
+          "pointers": 0,
+          "move": 0,
+          "inputJet": false,
+          "inputShoot": false,
+          "sprite": "cr-courier-8",
+          "savedCampaign": null,
+          "savedTest": null
+        },
+        "boosted": {
+          "mode": "playing",
+          "time": 0.10833333333333332,
+          "x": 108.33333333333334,
+          "y": 1190.1250000000005,
+          "vx": 620,
+          "vy": 0,
+          "fuel": 82,
+          "grounded": false,
+          "crouching": false,
+          "jet": true,
+          "boost": true,
+          "facing": 1,
+          "shooting": false,
+          "slashId": 0,
+          "pointers": 1,
+          "move": 0,
+          "inputJet": false,
+          "inputShoot": false,
+          "sprite": "cr-courier-8",
+          "savedCampaign": null,
+          "savedTest": null
+        }
+      }
+    },
+    {
+      "name": "Walking right while the attack finger aims left preserves travel and turns the gun",
+      "evidence": {
+        "mode": "playing",
+        "time": 1.2916666666666645,
+        "x": 374.09659436196904,
+        "y": 1200,
+        "vx": 300.7121330505637,
+        "vy": 0,
+        "fuel": 100,
+        "grounded": true,
+        "crouching": false,
+        "jet": false,
+        "boost": false,
+        "facing": -1,
+        "aim": 3.141592653589793,
+        "shooting": true,
+        "slashId": 1,
+        "pointers": 1,
+        "move": 0.9397254157830115,
+        "inputJet": false,
+        "inputShoot": true,
+        "sprite": "cr-couriergunrun-0",
+        "savedCampaign": null,
+        "savedTest": null
+      }
+    },
+    {
+      "name": "Three actual fingers sustain movement, downward shooting and booster ascent together",
+      "evidence": {
+        "mode": "playing",
+        "time": 2.1083333333333285,
+        "x": 613.1526576316784,
+        "y": 1180.8750000000036,
+        "vx": 470,
+        "vy": -80.00000000000004,
+        "fuel": 76.99999999999994,
+        "grounded": false,
+        "crouching": false,
+        "jet": true,
+        "boost": false,
+        "facing": 1,
+        "aim": 1.5707963267948966,
+        "shooting": true,
+        "slashId": 2,
+        "pointers": 2,
+        "move": 0.9397254157830115,
+        "inputJet": true,
+        "inputShoot": true,
+        "sprite": "cr-couriergunair-2",
+        "savedCampaign": null,
+        "savedTest": null
+      }
+    },
+    {
+      "name": "Down plus forward and shooting holds a planted crouch without drift",
+      "evidence": {
+        "crouched": {
+          "mode": "playing",
+          "time": 2.9083333333333257,
+          "x": 711.7534175751238,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "fuel": 77.54166666666639,
+          "grounded": true,
+          "crouching": true,
+          "jet": false,
+          "boost": false,
+          "facing": 1,
+          "aim": 0,
+          "shooting": true,
+          "slashId": 2,
+          "pointers": 0,
+          "move": 1,
+          "inputJet": false,
+          "inputShoot": true,
+          "sprite": "cr-courierguncrouch-1",
+          "savedCampaign": null,
+          "savedTest": null
+        },
+        "stillCrouched": {
+          "mode": "playing",
+          "time": 3.024999999999992,
+          "x": 711.7534175751238,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "fuel": 83.95833333333299,
+          "grounded": true,
+          "crouching": true,
+          "jet": false,
+          "boost": false,
+          "facing": 1,
+          "aim": 0,
+          "shooting": true,
+          "slashId": 2,
+          "pointers": 0,
+          "move": 1,
+          "inputJet": false,
+          "inputShoot": true,
+          "sprite": "cr-courierguncrouch-1",
+          "savedCampaign": null,
+          "savedTest": null
+        }
+      }
+    },
+    {
+      "name": "Test save starts charged and all six engine upgrade ranks purchase through real buttons without granting relics or opening gates",
+      "evidence": {
+        "testStart": {
+          "charges": {
+            "cannon": 9,
+            "nova": 9
+          },
+          "souls": 9999
+        },
+        "upgrades": [
+          {
+            "id": "armor",
+            "rank": 1
+          },
+          {
+            "id": "armor",
+            "rank": 2
+          },
+          {
+            "id": "armor",
+            "rank": 3
+          },
+          {
+            "id": "artifact",
+            "rank": 1
+          },
+          {
+            "id": "artifact",
+            "rank": 2
+          },
+          {
+            "id": "artifact",
+            "rank": 3
+          }
+        ],
+        "engine": {
+          "souls": 9714,
+          "upgrades": {
+            "armor": 3,
+            "artifact": 3
+          },
+          "collections": [],
+          "gates": []
+        }
+      }
+    },
+    {
+      "name": "Opening gear clears held fingers and freezes simulation; every gear item equips without touching campaign save",
+      "evidence": {
+        "equipped": {
+          "sword": [
+            "Rustfang",
+            "Storm Katana",
+            "Soul Saber"
+          ],
+          "gun": [
+            "Ash Carbine",
+            "Grave Scattergun",
+            "Storm Rail",
+            "Cinder Launcher",
+            "Oblivion Cannon"
+          ],
+          "armor": [
+            "Lantern Plate",
+            "Courier Rig",
+            "Bulwark Plate",
+            "Wraith Weave"
+          ],
+          "spell": [
+            "Bell Raven",
+            "Cinder Plague",
+            "Soul Siphon",
+            "Skybreaker",
+            "Shadow Veil",
+            "Stillgrave",
+            "Eclipse Nova",
+            "Courier Echo",
+            "Ash Wolf",
+            "Cinder Wyrm"
+          ]
+        },
+        "originalCampaign": null,
+        "menu": {
+          "mode": "catalogue",
+          "time": 3.658333333333323,
+          "x": 711.7534175751238,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "fuel": 100,
+          "grounded": true,
+          "crouching": false,
+          "jet": false,
+          "boost": false,
+          "facing": 1,
+          "aim": 0,
+          "shooting": true,
+          "slashId": 3,
+          "pointers": 0,
+          "move": 0,
+          "inputJet": false,
+          "inputShoot": false,
+          "sprite": "cr-courier-15",
+          "savedCampaign": null,
+          "savedTest": null
+        }
+      }
+    },
+    {
+      "name": "Keyboard pause closes active gameplay cleanly",
+      "evidence": {
+        "mode": "paused",
+        "time": 3.708333333333323,
+        "x": 711.7534175751238,
+        "y": 1200,
+        "vx": 0,
+        "vy": 0,
+        "fuel": 100,
+        "grounded": true,
+        "crouching": false,
+        "jet": false,
+        "boost": false,
+        "facing": 1,
+        "aim": 0,
+        "shooting": false,
+        "slashId": 3,
+        "pointers": 0,
+        "move": 0,
+        "inputJet": false,
+        "inputShoot": false,
+        "sprite": "cr-couriergun-0",
+        "savedCampaign": null,
+        "savedTest": "{\"version\":1,\"layoutVersion\":2,\"unlocked\":{\"sword\":[\"rustfang\",\"katana\",\"saber\"],\"gun\":[\"carbine\",\"scatter\",\"rail\",\"rocket\",\"cannon\"],\"armor\":[\"courier\",\"lanternplate\",\"bulwark\",\"wraith\"],\"spell\":[\"cinder\",\"raven\",\"siphon\",\"thunder\",\"veil\",\"stasis\",\"eclipse\",\"clone\",\"wolf\",\"dragon\"]},\"equipped\":{\"sword\":\"saber\",\"gun\":\"cannon\",\"armor\":\"wraith\",\"spell\":\"dragon\"},\"collections\":[],\"claimed\":[],\"defeatedBosses\":[],\"openedGates\":[],\"destroyedProps\":[],\"charges\":{\"cannon\":9,\"nova\":9},\"checkpoint\":0,\"worldId\":\"soulforge\",\"worlds\":{},\"completedWorlds\":[],\"souls\":9714,\"soulClaims\":[],\"pendingSouls\":[],\"upgrades\":{\"armor\":3,\"artifact\":3},\"testMode\":true}"
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "sourceHashes": {
+    "src/input.js": "a44ac4451bd6ec304b3bbaea5547f612fbbc002629e40376851b5c2c2f6538d8",
+    "src/physics.js": "ab87b5534f22293f85bed634997fae3f2431fee147d32cdc239985ccb7e8a9ba",
+    "src/combat.js": "bd061cddae79e01d121d99c48c2f4eae91077820f51270c683ccec5028969734",
+    "src/main.js": "ac432f55312876b8837c7d3bf655daa33a40e407f98bc1ea1fe7218e975ed36f",
+    "src/ui.js": "4833e0402542e37d50afef67a9ebc3258620aab58e189f6accd4c44eb4cbe4a1",
+    "index.html": "462e6070ec5d7d77e0f6fd66580400889368502118912c582193417f161ef052",
+    "src/character-motion.js": "475b207c11ded54893424617f18485ee2c79ecad0ef8409586d7249f437b0389",
+    "src/character-geometry.js": "3d6b7e2dd4f2b609ba710bc6f2c426882d40737fde2ff9cfeb33168c50382b76",
+    "public/character-revision/manifest.json": "eec7655e73b91dfdbb0ec16962164db7e58531a424a8607545a7185efaddc91d",
+    "public/character-revision/atlas.json": "599801e181f1e57b5192a38adffc614639c141f36a52eaa92d66bb64c8bdb645"
+  },
+  "ok": true,
+  "finished": "2026-10-16T19:55:04.177Z"
+}

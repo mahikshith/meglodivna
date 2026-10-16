@@ -79,10 +79,12 @@ test('limited cannon pierces foes and destructible cover while preserving essent
   assert.deepEqual(state.enemies.map(target => target.hp), [100, 100]);
 });
 
-test('cinder burns distant living enemies for its exact duration without flooding hit feedback', () => {
+test('a locally ignited foe keeps burning after leaving the encounter without flooding distant feedback', () => {
   const state = world(); const target = enemy('distant', 5000); state.enemies = [target];
+  state.player.x = 4800; target.awake = true;
   assert.equal(castSpell(state, 'cinder'), true);
   assert.equal(state.player.mana, 55);
+  state.player.x = 100;
   state.events.length = 0;
   for (let frame = 0; frame < 600; frame++) stepWorld(state, {}, STEP);
   assert.ok(Math.abs(target.hp - 170) < 0.001);

@@ -15,7 +15,7 @@ function fixture() {
     setPointerCapture() {}
     emit(type, pointerId, extra = {}) { for (const listener of this.listeners[type] || []) listener({ pointerId, pointerType: 'touch', preventDefault() {}, ...extra }); }
   }
-  const actions = Object.fromEntries(['attack', 'jump', 'dash', 'power'].map(action => [action, new Element(action)]));
+  const actions = Object.fromEntries(['attack', 'jump', 'boost', 'power'].map(action => [action, new Element(action)]));
   const gear = new Element(), pause = new Element(), feedback = new Element(), surface = new Element();
   surface.querySelector = selector => ({ '#touch-gear': gear, '#touch-pause': pause, '#touch-feedback': feedback })[selector] || null;
   surface.querySelectorAll = () => Object.values(actions);
@@ -44,6 +44,24 @@ test('held fire and thrust communicate their mode and reset on independent relea
     f.actions.attack.emit('pointerup', 1); assert.equal(f.actions.attack.dataset.phase, 'idle'); assert.equal(f.controls.read().shoot, false); assert.equal(f.controls.read().jet, true);
     assert.equal(f.feedback.textContent, 'JET THRUST');
     f.actions.jump.emit('pointerup', 2); assert.equal(f.actions.jump.dataset.phase, 'idle'); assert.equal(f.feedback.textContent, '');
+  } finally { f.restore(); }
+});
+
+test('boost replaces dash and attack finger aims independently of the movement stick', () => {
+  const f = fixture();
+  try {
+    f.controls.stick = { x: 1, y: 0 };
+    f.actions.attack.emit('pointerdown', 1, { clientX: 300, clientY: 200 }); f.elapsed(1, 150);
+    f.actions.attack.emit('pointermove', 1, { clientX: 300, clientY: 250 });
+    f.actions.boost.emit('pointerdown', 2);
+    let input = f.controls.read();
+    assert.equal(input.move, 1); assert.equal(input.aimX, 0); assert.equal(input.aimY, 1);
+    assert.equal(input.independentAim, true); assert.equal(input.shoot, true);
+    assert.equal(input.boostPressed, true); assert.equal(input.dashPressed, undefined);
+    f.elapsed(2, 180); input = f.controls.read(); assert.equal(input.jet, true); assert.equal(input.boostPressed, false);
+    f.actions.attack.emit('pointerup', 1); assert.equal(f.controls.read().jet, true);
+    assert.equal(f.controls.read().independentAim, false);
+    f.actions.boost.emit('pointerup', 2); assert.equal(f.controls.read().jet, false);
   } finally { f.restore(); }
 });
 

@@ -58,7 +58,7 @@ export class Sound {
       }
       case 'spike':case 'trap':this.hiss(.12,.11,650,'bandpass');this.tone(330,100,.11,.1,'square');break;
       case 'jump':case 'walljump':this.tone(120,360,.12,.08);break;
-      case 'dash':this.hiss(.15,.12,1300);break;
+      case 'boost':case 'dash':this.hiss(.15,.12,1300);break;
       case 'land':this.hiss(.05,.06,400);break;
       case 'hit':case 'parry':this.tone(780,160,.06,.16,'square');this.hiss(.09,.1);break;
       case 'explode':case 'death':this.hiss(.5,.25,100);this.tone(100,20,.4,.3,'sawtooth');break;

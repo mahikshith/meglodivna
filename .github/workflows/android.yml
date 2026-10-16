@@ -8,7 +8,43 @@ on:
 permissions:
   contents: read
 jobs:
+  campaign:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {id: soulforge-ember, report: combat-route-soulforge-ember-report.json, args: 'ember soulforge'}
+          - {id: soulforge-forge, report: combat-route-soulforge-forge-report.json, args: 'forge soulforge'}
+          - {id: soulforge-inferno, report: combat-route-soulforge-inferno-report.json, args: 'inferno soulforge'}
+          - {id: soulforge-extinction, report: combat-route-soulforge-extinction-report.json, args: 'extinction soulforge'}
+          - {id: bellbeast-forge, report: bellbeast-route-forge-report.json, args: 'forge soulforge --bellbeast'}
+          - {id: tide-forge, report: combat-route-tide-forge-report.json, args: 'forge tide'}
+          - {id: pyre-forge, report: combat-route-pyre-forge-report.json, args: 'forge pyre'}
+          - {id: neon-forge, report: combat-route-neon-forge-report.json, args: 'forge neon'}
+          - {id: veil-forge, report: combat-route-veil-forge-report.json, args: 'forge veil'}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Complete campaign through legal inputs
+        run: |
+          rm -f "artifacts/${{ matrix.report }}"
+          node scripts/combat-route.mjs ${{ matrix.args }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: campaign-${{ matrix.id }}
+          path: |
+            artifacts/${{ matrix.report }}
+            artifacts/epic-rebuild/drivers/*.mjs
+          if-no-files-found: error
   apk:
+    needs: campaign
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -37,17 +73,6 @@ jobs:
           echo "ASH_SIGNAL_DEBUG_KEYSTORE=$ASH_SIGNAL_DEBUG_KEYSTORE" >> "$GITHUB_ENV"
       - name: Dependencies and simulation tests
         run: npm ci && npm test
-      - name: Full campaign validation
-        run: |
-          node scripts/combat-route.mjs ember
-          node scripts/combat-route.mjs forge
-          node scripts/combat-route.mjs inferno
-          node scripts/combat-route.mjs extinction
-          node scripts/combat-route.mjs forge soulforge --bellbeast
-          node scripts/combat-route.mjs forge tide
-          node scripts/combat-route.mjs forge pyre
-          node scripts/combat-route.mjs forge neon
-          node scripts/combat-route.mjs forge veil
       - name: Build offline game
         run: npm run build && node scripts/sync-android.mjs
       - name: Build and lint debug APK
@@ -93,19 +118,20 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
           mkdir -p release-upload downloaded
-          cp release-apk/app-debug.apk release-upload/ASH-SIGNAL-Lantern-v0.8.0.apk
+          cp release-apk/app-debug.apk release-upload/ASH-SIGNAL-Lantern-v0.9.0.apk
           cp release-evidence/artifacts/android-report.json release-upload/android-report.json
+          cp artifacts/epic-rebuild/validation.json release-upload/validation.json
           python - <<'PY'
           import hashlib, json, os
           from pathlib import Path
-          apk = Path('release-upload/ASH-SIGNAL-Lantern-v0.8.0.apk')
+          apk = Path('release-upload/ASH-SIGNAL-Lantern-v0.9.0.apk')
           report = json.loads(Path('release-upload/android-report.json').read_text())
           assert hashlib.sha256(apk.read_bytes()).hexdigest() == report['sha256']
-          assert report['version'] == '0.8.0-lantern' and report['versionCode'] == 9
+          assert report['version'] == '0.9.0-lantern' and report['versionCode'] == 10
           assert os.environ['RELEASE_TAG'] == 'v' + report['version'], 'Release tag and verified APK version differ'
           Path('release-upload/SHA256SUMS.txt').write_text(report['sha256'] + '  ' + apk.name + '\n')
           PY
-          gh release create "$RELEASE_TAG" release-upload/* --verify-tag --prerelease --title "The Last Lantern v0.8.0 — Illustrated Sanctuary test build" --notes-file docs/ILLUSTRATED-RELEASE.md
-          gh release download "$RELEASE_TAG" --dir downloaded --pattern ASH-SIGNAL-Lantern-v0.8.0.apk
-          cmp release-upload/ASH-SIGNAL-Lantern-v0.8.0.apk downloaded/ASH-SIGNAL-Lantern-v0.8.0.apk
+          gh release create "$RELEASE_TAG" release-upload/* --verify-tag --prerelease --title "The Last Lantern v0.9.0 — Oath Crossings test build" --notes-file docs/OATH-CROSSINGS-RELEASE.md
+          gh release download "$RELEASE_TAG" --dir downloaded --pattern ASH-SIGNAL-Lantern-v0.9.0.apk
+          cmp release-upload/ASH-SIGNAL-Lantern-v0.9.0.apk downloaded/ASH-SIGNAL-Lantern-v0.9.0.apk
           echo "Uploaded APK downloaded again and matched byte for byte." >> "$GITHUB_STEP_SUMMARY"

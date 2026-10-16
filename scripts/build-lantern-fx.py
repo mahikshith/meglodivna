@@ -57,3 +57,5 @@ for i in range(4):
     motion.append(frame.convert('RGB'))
 motion[0].save(ROOT/'artifacts/lantern-motion/effects.gif',save_all=True,append_images=motion[1:],duration=100,loop=0)
 print('Built 16 shared-canvas effects and nine material/prop textures')
+from epic_assets import masonry
+masonry()

@@ -173,7 +173,11 @@ export function updateCompanion(world, a, dt, api) {
     const angle = Math.atan2(aim.y - muzzle.y, aim.x - muzzle.x); a.aimAngle = angle;
     if (!visible(origin, muzzle)) return;
     const shot = api.spawnProjectile(world, muzzle.x, muzzle.y, Math.cos(angle) * (a.type === 'dragon' ? 540 : 700), Math.sin(angle) * (a.type === 'dragon' ? 540 : 700), 'player');
-    if (shot) { shot.kind = a.type === 'dragon' ? 'dragonfire' : 'ally'; shot.damage = a.type === 'dragon' ? 6 : 12; shot.tint = a.type === 'dragon' ? 0xffbc67 : 0xbee9dc; shot.life = a.type === 'dragon' ? .9 : 1.3; }
+    if (shot) {
+      shot.kind = a.type === 'dragon' ? 'dragonfire' : 'ally'; shot.damage = a.type === 'dragon' ? 6 : 12;
+      shot.tint = a.type === 'dragon' ? 0xffbc67 : 0xbee9dc; shot.life = a.type === 'dragon' ? .9 : 1.3;
+      if (a.type === 'clone') { shot.sweepX = origin.x; shot.sweepY = origin.y; }
+    }
     api.emit(world, 'summonattack', muzzle.x, muzzle.y, { kind: a.type, facing: a.facing, angle });
   }
 }

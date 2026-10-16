@@ -3,1734 +3,1872 @@
     "if-bull-0": {
       "key": "if-bull-0",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 434.0,
-          "y": 188.8
+          "x": 508.2,
+          "y": 222.4
+        },
+        "rocket": {
+          "x": 508.2,
+          "y": 222.4
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        60,
-        62,
-        269,
-        295
+        41,
+        49,
+        286,
+        308
       ],
       "sourcePivot": [
-        166,
-        295
+        163,
+        307
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-1": {
       "key": "if-bull-1",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 436.4,
-          "y": 188.8
+          "x": 510.5,
+          "y": 232.75
+        },
+        "rocket": {
+          "x": 510.5,
+          "y": 232.75
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        375,
-        63,
-        585,
-        293
+        382,
+        58,
+        612,
+        308
       ],
       "sourcePivot": [
-        483,
-        295
+        490,
+        307
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-2": {
       "key": "if-bull-2",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 435.2,
-          "y": 185.2
+          "x": 516.25,
+          "y": 232.75
+        },
+        "rocket": {
+          "x": 516.25,
+          "y": 232.75
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        687,
-        63,
-        899,
-        298
+        668,
+        53,
+        921,
+        308
       ],
       "sourcePivot": [
-        794,
-        298
+        799,
+        307
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-3": {
       "key": "if-bull-3",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 423.2,
-          "y": 185.2
+          "x": 531.2,
+          "y": 222.4
+        },
+        "rocket": {
+          "x": 531.2,
+          "y": 222.4
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        1001,
-        63,
-        1202,
-        298
+        971,
+        44,
+        1239,
+        284
       ],
       "sourcePivot": [
-        1104,
-        298
+        1105,
+        307
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-4": {
       "key": "if-bull-4",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 443.6,
-          "y": 194.8
+          "x": 526.6,
+          "y": 248.85
+        },
+        "rocket": {
+          "x": 526.6,
+          "y": 248.85
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        36,
-        336,
-        287,
-        610
+        28,
+        362,
+        303,
+        621
       ],
       "sourcePivot": [
-        167,
-        610
+        168,
+        622
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-5": {
       "key": "if-bull-5",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 418.4,
-          "y": 188.8
+          "x": 472.55,
+          "y": 224.7
+        },
+        "rocket": {
+          "x": 472.55,
+          "y": 224.7
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        357,
-        326,
+        343,
+        308,
         607,
-        612
+        621
       ],
       "sourcePivot": [
-        484,
-        612
+        489,
+        622
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-6": {
       "key": "if-bull-6",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 432.8,
-          "y": 257.2
+          "x": 531.2,
+          "y": 307.5
+        },
+        "rocket": {
+          "x": 531.2,
+          "y": 307.5
         },
         "contact": {
-          "x": 497.6,
-          "y": 448.0
+          "x": 550.75,
+          "y": 491.5
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        657,
-        408,
-        937,
-        622
+        638,
+        400,
+        961,
+        644
       ],
       "sourcePivot": [
-        782,
-        610
+        791,
+        622
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-7": {
       "key": "if-bull-7",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 408.8,
-          "y": 187.6
+          "x": 519.7,
+          "y": 321.3
+        },
+        "rocket": {
+          "x": 519.7,
+          "y": 321.3
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        996,
-        376,
-        1232,
-        611
+        959,
+        404,
+        1251,
+        643
       ],
       "sourcePivot": [
-        1103,
-        611
+        1104,
+        622
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-8": {
       "key": "if-bull-8",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 440.0,
-          "y": 190.0
+          "x": 512.8,
+          "y": 233.9
+        },
+        "rocket": {
+          "x": 512.8,
+          "y": 233.9
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        58,
-        679,
-        274,
-        909
+        57,
+        669,
+        288,
+        916
       ],
       "sourcePivot": [
-        165,
-        912
+        166,
+        915
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-9": {
       "key": "if-bull-9",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 424.4,
-          "y": 188.8
+          "x": 504.75,
+          "y": 217.8
+        },
+        "rocket": {
+          "x": 504.75,
+          "y": 217.8
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        372,
-        679,
-        595,
+        375,
+        666,
+        607,
         916
       ],
       "sourcePivot": [
-        484,
-        912
+        489,
+        915
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-10": {
       "key": "if-bull-10",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 437.6,
-          "y": 188.8
+          "x": 489.8,
+          "y": 220.1
+        },
+        "rocket": {
+          "x": 489.8,
+          "y": 220.1
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        674,
-        679,
-        893,
-        912
+        655,
+        666,
+        906,
+        916
       ],
       "sourcePivot": [
         791,
-        912
+        915
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-11": {
       "key": "if-bull-11",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 425.6,
-          "y": 190.0
+          "x": 493.25,
+          "y": 220.1
+        },
+        "rocket": {
+          "x": 493.25,
+          "y": 220.1
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        994,
-        679,
-        1201,
-        915
+        988,
+        666,
+        1224,
+        919
       ],
       "sourcePivot": [
-        1105,
-        912
+        1103,
+        915
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-12": {
       "key": "if-bull-12",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 436.4,
-          "y": 190.0
+          "x": 502.45,
+          "y": 215.5
+        },
+        "rocket": {
+          "x": 502.45,
+          "y": 215.5
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        58,
-        964,
-        268,
-        1197
+        50,
+        949,
+        278,
+        1213
       ],
       "sourcePivot": [
         164,
-        1198
+        1210
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-13": {
       "key": "if-bull-13",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 441.2,
-          "y": 238.0
+          "x": 329.95,
+          "y": 221.25
+        },
+        "rocket": {
+          "x": 329.95,
+          "y": 221.25
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        366,
-        975,
-        585,
-        1198
+        347,
+        955,
+        613,
+        1216
       ],
       "sourcePivot": [
-        479,
-        1198
+        482,
+        1210
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-14": {
       "key": "if-bull-14",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 447.2,
-          "y": 283.6
+          "x": 511.65,
+          "y": 316.7
+        },
+        "rocket": {
+          "x": 511.65,
+          "y": 316.7
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        666,
-        1026,
+        637,
+        1009,
         912,
-        1202
+        1217
       ],
       "sourcePivot": [
-        789,
-        1202
+        790,
+        1210
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-bull-15": {
       "key": "if-bull-15",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
       "sockets": {
         "gun": {
-          "x": 467.6,
-          "y": 331.6
+          "x": 555.35,
+          "y": 393.75
+        },
+        "rocket": {
+          "x": 555.35,
+          "y": 393.75
         },
         "contact": {
-          "x": 422.0,
-          "y": 448.0
+          "x": 499.0,
+          "y": 480.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 218.0,
-          "y": 223.6,
-          "w": 200.4,
-          "h": 217.2
-        },
-        {
-          "x": 366.8,
-          "y": 220.0,
-          "w": 78.0,
-          "h": 90.0
-        }
-      ],
-      "source": "reference/ironfang-source/bull-final.png",
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        950,
-        1068,
-        1240,
-        1201
+        910,
+        1065,
+        1250,
+        1208
       ],
       "sourcePivot": [
-        1091,
-        1201
+        1090,
+        1210
       ],
-      "scale": 1.2,
-      "sourceSha256": "3a1ad83c0caec2f1ac8302831980a8aff738933f5fea52b8e799a1f0b982698b",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-dragon-0": {
       "key": "if-dragon-0",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 292.0,
-        "w": 134.4,
-        "h": 156.0
+        "x": 316.0,
+        "y": 330.0,
+        "w": 136.0,
+        "h": 150.0
       },
       "sockets": {
-        "mouth": {
-          "x": 450.8,
-          "y": 337.6
-        },
         "gun": {
-          "x": 426.8,
-          "y": 280.0
+          "x": 445.38,
+          "y": 288.42
+        },
+        "rocket": {
+          "x": 445.38,
+          "y": 288.42
+        },
+        "mouth": {
+          "x": 538.38,
+          "y": 328.72
         }
       },
-      "hurtboxes": [
-        {
-          "x": 228.8,
-          "y": 302.8,
-          "w": 139.2,
-          "h": 115.19999999999999
-        },
-        {
-          "x": 365.6,
-          "y": 301.6,
-          "w": 88.8,
-          "h": 61.199999999999996
-        },
-        {
-          "x": 144.8,
-          "y": 364.0,
-          "w": 96.0,
-          "h": 37.199999999999996
-        }
-      ],
-      "source": "reference/ironfang-source/dragon-raw.png",
+      "source": "reference/epic-revision/dragon-flight-raw.png",
+      "sourceSha256": "7ce769e105424a28b5d8cacf0ac6ac1bd6393f048e5ceaa95029ab5603c0a383",
       "sourceRect": [
-        16,
-        58,
-        322,
-        399
+        137,
+        18,
+        723,
+        521
       ],
       "sourcePivot": [
-        207,
-        397
+        470,
+        475
       ],
-      "scale": 1.2,
-      "sourceSha256": "a8eb6c0b6e6b85a32be66eaa598258c9fd66062463eb66810b1fee5d224a4acf",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 0.62,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 309.6,
+          "y": 334.3,
+          "w": 145.7,
+          "h": 130.2
+        },
+        {
+          "x": 460.88,
+          "y": 288.42,
+          "w": 83.7,
+          "h": 62.0
+        },
+        {
+          "x": 219.7,
+          "y": 405.6,
+          "w": 93.0,
+          "h": 40.3
+        }
+      ]
     },
     "if-dragon-1": {
       "key": "if-dragon-1",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 292.0,
-        "w": 134.4,
-        "h": 156.0
+        "x": 316.0,
+        "y": 330.0,
+        "w": 136.0,
+        "h": 150.0
       },
       "sockets": {
-        "mouth": {
-          "x": 443.6,
-          "y": 337.6
-        },
         "gun": {
-          "x": 419.6,
-          "y": 280.0
+          "x": 472.04,
+          "y": 376.46
+        },
+        "rocket": {
+          "x": 472.04,
+          "y": 376.46
+        },
+        "mouth": {
+          "x": 570.62,
+          "y": 444.66
         }
       },
-      "hurtboxes": [
-        {
-          "x": 228.8,
-          "y": 302.8,
-          "w": 139.2,
-          "h": 115.19999999999999
-        },
-        {
-          "x": 358.4,
-          "y": 301.6,
-          "w": 88.8,
-          "h": 61.199999999999996
-        },
-        {
-          "x": 144.8,
-          "y": 364.0,
-          "w": 96.0,
-          "h": 37.199999999999996
-        }
-      ],
-      "source": "reference/ironfang-source/dragon-raw.png",
+      "source": "reference/epic-revision/dragon-flight-raw.png",
+      "sourceSha256": "7ce769e105424a28b5d8cacf0ac6ac1bd6393f048e5ceaa95029ab5603c0a383",
       "sourceRect": [
-        324,
-        178,
-        622,
-        401
+        801,
+        177,
+        1485,
+        580
       ],
       "sourcePivot": [
-        513,
-        397
+        1180,
+        505
       ],
-      "scale": 1.2,
-      "sourceSha256": "a8eb6c0b6e6b85a32be66eaa598258c9fd66062463eb66810b1fee5d224a4acf",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 0.62,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 309.6,
+          "y": 334.3,
+          "w": 145.7,
+          "h": 130.2
+        },
+        {
+          "x": 493.12,
+          "y": 404.36,
+          "w": 83.7,
+          "h": 62.0
+        },
+        {
+          "x": 219.7,
+          "y": 405.6,
+          "w": 93.0,
+          "h": 40.3
+        }
+      ]
     },
     "if-dragon-2": {
       "key": "if-dragon-2",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 292.0,
-        "w": 134.4,
-        "h": 156.0
+        "x": 316.0,
+        "y": 330.0,
+        "w": 136.0,
+        "h": 150.0
       },
       "sockets": {
-        "mouth": {
-          "x": 442.4,
-          "y": 337.6
-        },
         "gun": {
-          "x": 418.4,
-          "y": 280.0
+          "x": 426.16,
+          "y": 347.32
+        },
+        "rocket": {
+          "x": 426.16,
+          "y": 347.32
+        },
+        "mouth": {
+          "x": 522.26,
+          "y": 294.0
         }
       },
-      "hurtboxes": [
-        {
-          "x": 228.8,
-          "y": 302.8,
-          "w": 139.2,
-          "h": 115.19999999999999
-        },
-        {
-          "x": 357.2,
-          "y": 301.6,
-          "w": 88.8,
-          "h": 61.199999999999996
-        },
-        {
-          "x": 144.8,
-          "y": 364.0,
-          "w": 96.0,
-          "h": 37.199999999999996
-        }
-      ],
-      "source": "reference/ironfang-source/dragon-raw.png",
+      "source": "reference/epic-revision/dragon-flight-raw.png",
+      "sourceSha256": "7ce769e105424a28b5d8cacf0ac6ac1bd6393f048e5ceaa95029ab5603c0a383",
       "sourceRect": [
-        630,
-        240,
-        928,
-        474
+        33,
+        582,
+        757,
+        996
       ],
       "sourcePivot": [
-        820,
-        397
+        527,
+        907
       ],
-      "scale": 1.2,
-      "sourceSha256": "a8eb6c0b6e6b85a32be66eaa598258c9fd66062463eb66810b1fee5d224a4acf",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 0.62,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 309.6,
+          "y": 334.3,
+          "w": 145.7,
+          "h": 130.2
+        },
+        {
+          "x": 444.76,
+          "y": 253.7,
+          "w": 83.7,
+          "h": 62.0
+        },
+        {
+          "x": 219.7,
+          "y": 405.6,
+          "w": 93.0,
+          "h": 40.3
+        }
+      ]
     },
     "if-dragon-3": {
       "key": "if-dragon-3",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 292.0,
-        "w": 134.4,
-        "h": 156.0
+        "x": 316.0,
+        "y": 330.0,
+        "w": 136.0,
+        "h": 150.0
       },
       "sockets": {
-        "mouth": {
-          "x": 447.2,
-          "y": 337.6
-        },
         "gun": {
-          "x": 423.2,
-          "y": 280.0
+          "x": 496.84,
+          "y": 354.76
+        },
+        "rocket": {
+          "x": 496.84,
+          "y": 354.76
+        },
+        "mouth": {
+          "x": 555.74,
+          "y": 409.94
         }
       },
-      "hurtboxes": [
-        {
-          "x": 228.8,
-          "y": 302.8,
-          "w": 139.2,
-          "h": 115.19999999999999
-        },
-        {
-          "x": 362.0,
-          "y": 301.6,
-          "w": 88.8,
-          "h": 61.199999999999996
-        },
-        {
-          "x": 144.8,
-          "y": 364.0,
-          "w": 96.0,
-          "h": 37.199999999999996
-        }
-      ],
-      "source": "reference/ironfang-source/dragon-raw.png",
+      "source": "reference/epic-revision/dragon-flight-raw.png",
+      "sourceSha256": "7ce769e105424a28b5d8cacf0ac6ac1bd6393f048e5ceaa95029ab5603c0a383",
       "sourceRect": [
-        943,
-        131,
-        1243,
-        400
+        969,
+        582,
+        1491,
+        1005
       ],
       "sourcePivot": [
-        1130,
-        397
+        1208,
+        930
       ],
-      "scale": 1.2,
-      "sourceSha256": "a8eb6c0b6e6b85a32be66eaa598258c9fd66062463eb66810b1fee5d224a4acf",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 0.62,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 309.6,
+          "y": 334.3,
+          "w": 145.7,
+          "h": 130.2
+        },
+        {
+          "x": 478.24,
+          "y": 369.64,
+          "w": 83.7,
+          "h": 62.0
+        },
+        {
+          "x": 219.7,
+          "y": 405.6,
+          "w": 93.0,
+          "h": 40.3
+        }
+      ]
     },
     "if-dragon-4": {
       "key": "if-dragon-4",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 292.0,
-        "w": 134.4,
-        "h": 156.0
+        "x": 316.0,
+        "y": 330,
+        "w": 136,
+        "h": 150
       },
       "sockets": {
-        "mouth": {
-          "x": 443.6,
-          "y": 330.4
-        },
         "gun": {
-          "x": 419.6,
-          "y": 272.8
+          "x": 466,
+          "y": 310
+        },
+        "rocket": {
+          "x": 466,
+          "y": 310
+        },
+        "mouth": {
+          "x": 505,
+          "y": 358
         }
       },
-      "hurtboxes": [
-        {
-          "x": 228.8,
-          "y": 302.8,
-          "w": 139.2,
-          "h": 115.19999999999999
-        },
-        {
-          "x": 358.4,
-          "y": 294.4,
-          "w": 88.8,
-          "h": 61.199999999999996
-        },
-        {
-          "x": 144.8,
-          "y": 364.0,
-          "w": 96.0,
-          "h": 37.199999999999996
-        }
-      ],
-      "source": "reference/ironfang-source/dragon-raw.png",
+      "source": "reference/epic-revision/dragon-raw.png",
+      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
       "sourceRect": [
-        14,
-        511,
-        313,
-        801
+        15,
+        476,
+        369,
+        764
       ],
       "sourcePivot": [
-        204,
-        802
+        244,
+        767
       ],
-      "scale": 1.2,
-      "sourceSha256": "a8eb6c0b6e6b85a32be66eaa598258c9fd66062463eb66810b1fee5d224a4acf",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 301,
+          "y": 354,
+          "w": 133,
+          "h": 111
+        },
+        {
+          "x": 422,
+          "y": 326,
+          "w": 87,
+          "h": 63
+        },
+        {
+          "x": 218,
+          "y": 415,
+          "w": 85,
+          "h": 43
+        }
+      ]
     },
     "if-dragon-5": {
       "key": "if-dragon-5",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 292.0,
-        "w": 134.4,
-        "h": 156.0
+        "x": 316.0,
+        "y": 330,
+        "w": 136,
+        "h": 150
       },
       "sockets": {
-        "mouth": {
-          "x": 441.2,
-          "y": 336.4
-        },
         "gun": {
-          "x": 417.2,
-          "y": 278.8
+          "x": 469,
+          "y": 311
+        },
+        "rocket": {
+          "x": 469,
+          "y": 311
+        },
+        "mouth": {
+          "x": 504,
+          "y": 360
         }
       },
-      "hurtboxes": [
-        {
-          "x": 228.8,
-          "y": 302.8,
-          "w": 139.2,
-          "h": 115.19999999999999
-        },
-        {
-          "x": 356.0,
-          "y": 300.4,
-          "w": 88.8,
-          "h": 61.199999999999996
-        },
-        {
-          "x": 144.8,
-          "y": 364.0,
-          "w": 96.0,
-          "h": 37.199999999999996
-        }
-      ],
-      "source": "reference/ironfang-source/dragon-raw.png",
+      "source": "reference/epic-revision/dragon-raw.png",
+      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
       "sourceRect": [
-        327,
-        526,
-        622,
-        803
+        371,
+        480,
+        726,
+        764
       ],
       "sourcePivot": [
-        515,
-        802
+        603,
+        767
       ],
-      "scale": 1.2,
-      "sourceSha256": "a8eb6c0b6e6b85a32be66eaa598258c9fd66062463eb66810b1fee5d224a4acf",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 301,
+          "y": 354,
+          "w": 133,
+          "h": 111
+        },
+        {
+          "x": 421,
+          "y": 328,
+          "w": 87,
+          "h": 63
+        },
+        {
+          "x": 218,
+          "y": 415,
+          "w": 85,
+          "h": 43
+        }
+      ]
     },
     "if-dragon-6": {
       "key": "if-dragon-6",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 292.0,
-        "w": 134.4,
-        "h": 156.0
+        "x": 316.0,
+        "y": 330,
+        "w": 136,
+        "h": 150
       },
       "sockets": {
-        "mouth": {
-          "x": 444.8,
-          "y": 332.8
-        },
         "gun": {
-          "x": 420.8,
-          "y": 275.2
+          "x": 463,
+          "y": 305
+        },
+        "rocket": {
+          "x": 463,
+          "y": 305
+        },
+        "mouth": {
+          "x": 523,
+          "y": 328
         }
       },
-      "hurtboxes": [
-        {
-          "x": 228.8,
-          "y": 302.8,
-          "w": 139.2,
-          "h": 115.19999999999999
-        },
-        {
-          "x": 359.6,
-          "y": 296.8,
-          "w": 88.8,
-          "h": 61.199999999999996
-        },
-        {
-          "x": 144.8,
-          "y": 364.0,
-          "w": 96.0,
-          "h": 37.199999999999996
-        }
-      ],
-      "source": "reference/ironfang-source/dragon-raw.png",
+      "source": "reference/epic-revision/dragon-raw.png",
+      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
       "sourceRect": [
-        630,
-        568,
-        931,
-        805
+        733,
+        505,
+        1106,
+        776
       ],
       "sourcePivot": [
-        821,
-        802
+        964,
+        767
       ],
-      "scale": 1.2,
-      "sourceSha256": "a8eb6c0b6e6b85a32be66eaa598258c9fd66062463eb66810b1fee5d224a4acf",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 301,
+          "y": 354,
+          "w": 133,
+          "h": 111
+        },
+        {
+          "x": 440,
+          "y": 296,
+          "w": 87,
+          "h": 63
+        },
+        {
+          "x": 218,
+          "y": 415,
+          "w": 85,
+          "h": 43
+        }
+      ]
     },
     "if-dragon-7": {
       "key": "if-dragon-7",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 292.0,
-        "w": 134.4,
-        "h": 156.0
+        "x": 316.0,
+        "y": 330,
+        "w": 136,
+        "h": 150
       },
       "sockets": {
-        "mouth": {
-          "x": 447.2,
-          "y": 330.4
-        },
         "gun": {
-          "x": 423.2,
-          "y": 272.8
+          "x": 472,
+          "y": 313
+        },
+        "rocket": {
+          "x": 472,
+          "y": 313
+        },
+        "mouth": {
+          "x": 500,
+          "y": 366
         }
       },
-      "hurtboxes": [
-        {
-          "x": 228.8,
-          "y": 302.8,
-          "w": 139.2,
-          "h": 115.19999999999999
-        },
-        {
-          "x": 362.0,
-          "y": 294.4,
-          "w": 88.8,
-          "h": 61.199999999999996
-        },
-        {
-          "x": 144.8,
-          "y": 364.0,
-          "w": 96.0,
-          "h": 37.199999999999996
-        }
-      ],
-      "source": "reference/ironfang-source/dragon-raw.png",
+      "source": "reference/epic-revision/dragon-raw.png",
+      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
       "sourceRect": [
-        944,
-        525,
-        1243,
-        803
+        1094,
+        475,
+        1438,
+        768
       ],
       "sourcePivot": [
-        1130,
-        802
+        1321,
+        767
       ],
-      "scale": 1.2,
-      "sourceSha256": "a8eb6c0b6e6b85a32be66eaa598258c9fd66062463eb66810b1fee5d224a4acf",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 301,
+          "y": 354,
+          "w": 133,
+          "h": 111
+        },
+        {
+          "x": 417,
+          "y": 334,
+          "w": 87,
+          "h": 63
+        },
+        {
+          "x": 218,
+          "y": 415,
+          "w": 85,
+          "h": 43
+        }
+      ]
     },
     "if-dragon-8": {
       "key": "if-dragon-8",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 292.0,
-        "w": 134.4,
-        "h": 156.0
+        "x": 316.0,
+        "y": 330,
+        "w": 136,
+        "h": 150
       },
       "sockets": {
-        "mouth": {
-          "x": 453.2,
-          "y": 346.0
-        },
         "gun": {
-          "x": 429.2,
-          "y": 288.4
+          "x": 460,
+          "y": 314
+        },
+        "rocket": {
+          "x": 460,
+          "y": 314
+        },
+        "mouth": {
+          "x": 502,
+          "y": 365
         }
       },
-      "hurtboxes": [
-        {
-          "x": 228.8,
-          "y": 302.8,
-          "w": 139.2,
-          "h": 115.19999999999999
-        },
-        {
-          "x": 368.0,
-          "y": 310.0,
-          "w": 88.8,
-          "h": 61.199999999999996
-        },
-        {
-          "x": 144.8,
-          "y": 364.0,
-          "w": 96.0,
-          "h": 37.199999999999996
-        }
-      ],
-      "source": "reference/ironfang-source/dragon-raw.png",
+      "source": "reference/epic-revision/dragon-raw.png",
+      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
       "sourceRect": [
-        17,
-        920,
-        321,
-        1167
+        18,
+        798,
+        364,
+        1050
       ],
       "sourcePivot": [
-        203,
-        1167
+        244,
+        1051
       ],
-      "scale": 1.2,
-      "sourceSha256": "a8eb6c0b6e6b85a32be66eaa598258c9fd66062463eb66810b1fee5d224a4acf",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 301,
+          "y": 354,
+          "w": 133,
+          "h": 111
+        },
+        {
+          "x": 419,
+          "y": 333,
+          "w": 87,
+          "h": 63
+        },
+        {
+          "x": 218,
+          "y": 415,
+          "w": 85,
+          "h": 43
+        }
+      ]
     },
     "if-dragon-9": {
       "key": "if-dragon-9",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 292.0,
-        "w": 134.4,
-        "h": 156.0
+        "x": 316.0,
+        "y": 330,
+        "w": 136,
+        "h": 150
       },
       "sockets": {
-        "mouth": {
-          "x": 440.0,
-          "y": 264.4
-        },
         "gun": {
-          "x": 416.0,
-          "y": 206.8
+          "x": 396,
+          "y": 253
+        },
+        "rocket": {
+          "x": 396,
+          "y": 253
+        },
+        "mouth": {
+          "x": 461,
+          "y": 256
         }
       },
-      "hurtboxes": [
-        {
-          "x": 228.8,
-          "y": 302.8,
-          "w": 139.2,
-          "h": 115.19999999999999
-        },
-        {
-          "x": 354.8,
-          "y": 228.4,
-          "w": 88.8,
-          "h": 61.199999999999996
-        },
-        {
-          "x": 144.8,
-          "y": 364.0,
-          "w": 96.0,
-          "h": 37.199999999999996
-        }
-      ],
-      "source": "reference/ironfang-source/dragon-raw.png",
+      "source": "reference/epic-revision/dragon-raw.png",
+      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
       "sourceRect": [
-        331,
-        897,
-        626,
-        1149
+        392,
+        783,
+        688,
+        1043
       ],
       "sourcePivot": [
-        515,
-        1167
+        602,
+        1051
       ],
-      "scale": 1.2,
-      "sourceSha256": "a8eb6c0b6e6b85a32be66eaa598258c9fd66062463eb66810b1fee5d224a4acf",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 301,
+          "y": 354,
+          "w": 133,
+          "h": 111
+        },
+        {
+          "x": 378,
+          "y": 224,
+          "w": 87,
+          "h": 63
+        },
+        {
+          "x": 218,
+          "y": 415,
+          "w": 85,
+          "h": 43
+        }
+      ]
     },
     "if-dragon-10": {
       "key": "if-dragon-10",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 292.0,
-        "w": 134.4,
-        "h": 156.0
+        "x": 316.0,
+        "y": 330,
+        "w": 136,
+        "h": 150
       },
       "sockets": {
-        "mouth": {
-          "x": 438.8,
-          "y": 386.8
-        },
         "gun": {
-          "x": 414.8,
-          "y": 329.2
+          "x": 422,
+          "y": 333
+        },
+        "rocket": {
+          "x": 422,
+          "y": 333
+        },
+        "mouth": {
+          "x": 470,
+          "y": 392
         }
       },
-      "hurtboxes": [
-        {
-          "x": 228.8,
-          "y": 302.8,
-          "w": 139.2,
-          "h": 115.19999999999999
-        },
-        {
-          "x": 353.6,
-          "y": 350.8,
-          "w": 88.8,
-          "h": 61.199999999999996
-        },
-        {
-          "x": 144.8,
-          "y": 364.0,
-          "w": 96.0,
-          "h": 37.199999999999996
-        }
-      ],
-      "source": "reference/ironfang-source/dragon-raw.png",
+      "source": "reference/epic-revision/dragon-raw.png",
+      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
       "sourceRect": [
-        642,
-        1005,
-        928,
-        1208
+        726,
+        843,
+        1052,
+        1070
       ],
       "sourcePivot": [
-        821,
-        1167
+        961,
+        1051
       ],
-      "scale": 1.2,
-      "sourceSha256": "a8eb6c0b6e6b85a32be66eaa598258c9fd66062463eb66810b1fee5d224a4acf",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 301,
+          "y": 354,
+          "w": 133,
+          "h": 111
+        },
+        {
+          "x": 387,
+          "y": 360,
+          "w": 87,
+          "h": 63
+        },
+        {
+          "x": 218,
+          "y": 415,
+          "w": 85,
+          "h": 43
+        }
+      ]
     },
     "if-dragon-11": {
       "key": "if-dragon-11",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 292.0,
-        "w": 134.4,
-        "h": 156.0
+        "x": 316.0,
+        "y": 330,
+        "w": 136,
+        "h": 150
       },
       "sockets": {
-        "mouth": {
-          "x": 458.0,
-          "y": 409.6
-        },
         "gun": {
-          "x": 434.0,
-          "y": 352.0
+          "x": 442,
+          "y": 399
+        },
+        "rocket": {
+          "x": 442,
+          "y": 399
+        },
+        "mouth": {
+          "x": 511,
+          "y": 460
         }
       },
-      "hurtboxes": [
-        {
-          "x": 228.8,
-          "y": 302.8,
-          "w": 139.2,
-          "h": 115.19999999999999
-        },
-        {
-          "x": 372.8,
-          "y": 373.6,
-          "w": 88.8,
-          "h": 61.199999999999996
-        },
-        {
-          "x": 144.8,
-          "y": 364.0,
-          "w": 96.0,
-          "h": 37.199999999999996
-        }
-      ],
-      "source": "reference/ironfang-source/dragon-raw.png",
+      "source": "reference/epic-revision/dragon-raw.png",
+      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
       "sourceRect": [
-        933,
-        1067,
-        1242,
-        1186
+        1050,
+        925,
+        1437,
+        1063
       ],
       "sourcePivot": [
-        1120,
-        1186
+        1308,
+        1051
       ],
-      "scale": 1.2,
-      "sourceSha256": "a8eb6c0b6e6b85a32be66eaa598258c9fd66062463eb66810b1fee5d224a4acf",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 301,
+          "y": 354,
+          "w": 133,
+          "h": 111
+        },
+        {
+          "x": 428,
+          "y": 428,
+          "w": 87,
+          "h": 63
+        },
+        {
+          "x": 218,
+          "y": 415,
+          "w": 85,
+          "h": 43
+        }
+      ]
     },
     "if-morph-0": {
       "key": "if-morph-0",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
-      "sockets": {},
-      "hurtboxes": [
-        {
-          "x": 224.0,
-          "y": 220.0,
-          "w": 204.0,
-          "h": 222.0
+      "sockets": {
+        "gun": {
+          "x": 329.95,
+          "y": 221.25
+        },
+        "rocket": {
+          "x": 329.95,
+          "y": 221.25
+        },
+        "contact": {
+          "x": 499.0,
+          "y": 480.0
         }
-      ],
-      "source": "reference/ironfang-source/transform-raw.png",
+      },
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        18,
-        709,
-        290,
-        895
+        347,
+        955,
+        613,
+        1216
       ],
       "sourcePivot": [
-        168,
-        895
+        482,
+        1210
       ],
-      "scale": 1.2,
-      "sourceSha256": "76194c2d7a99aebb90f9bd365028ac74cc3684bfcb266e5ed00bd04553df3bf4",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-morph-1": {
       "key": "if-morph-1",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
-      "sockets": {},
-      "hurtboxes": [
-        {
-          "x": 224.0,
-          "y": 220.0,
-          "w": 204.0,
-          "h": 222.0
+      "sockets": {
+        "gun": {
+          "x": 526.6,
+          "y": 248.85
+        },
+        "rocket": {
+          "x": 526.6,
+          "y": 248.85
+        },
+        "contact": {
+          "x": 499.0,
+          "y": 480.0
         }
-      ],
-      "source": "reference/ironfang-source/transform-raw.png",
+      },
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        321,
-        677,
-        625,
-        895
+        28,
+        362,
+        303,
+        621
       ],
       "sourcePivot": [
-        478,
-        895
+        168,
+        622
       ],
-      "scale": 1.2,
-      "sourceSha256": "76194c2d7a99aebb90f9bd365028ac74cc3684bfcb266e5ed00bd04553df3bf4",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-morph-2": {
       "key": "if-morph-2",
       "atlasKey": "ironfang",
-      "width": 640,
-      "height": 576,
+      "width": 768,
+      "height": 640,
       "anchor": {
-        "x": 320,
-        "y": 448
+        "x": 384,
+        "y": 480
       },
       "body": {
-        "x": 252.8,
-        "y": 196.0,
-        "w": 134.4,
-        "h": 252.0
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
       },
-      "sockets": {},
-      "hurtboxes": [
-        {
-          "x": 224.0,
-          "y": 220.0,
-          "w": 204.0,
-          "h": 222.0
+      "sockets": {
+        "gun": {
+          "x": 472.55,
+          "y": 224.7
+        },
+        "rocket": {
+          "x": 472.55,
+          "y": 224.7
+        },
+        "contact": {
+          "x": 499.0,
+          "y": 480.0
         }
-      ],
-      "source": "reference/ironfang-source/transform-raw.png",
+      },
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
       "sourceRect": [
-        637,
-        665,
-        945,
-        897
+        343,
+        308,
+        607,
+        621
       ],
       "sourcePivot": [
-        790,
-        897
+        489,
+        622
       ],
-      "scale": 1.2,
-      "sourceSha256": "76194c2d7a99aebb90f9bd365028ac74cc3684bfcb266e5ed00bd04553df3bf4",
-      "durationMs": 110,
-      "normalization": "Complete connected silhouette; illustrated source detail; measured anatomy, sockets and body bounds"
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
     },
     "if-cut-0": {
       "key": "if-cut-0",
@@ -1807,74 +1945,98 @@
     "if-impact-0": {
       "key": "if-impact-0",
       "atlasKey": "ironfang",
-      "width": 320,
-      "height": 320,
+      "width": 400,
+      "height": 400,
       "anchor": {
-        "x": 160,
-        "y": 160
+        "x": 200,
+        "y": 340
       },
-      "source": "reference/ironfang-source/fx-raw.png",
+      "source": "reference/epic-revision/fx-raw.png",
       "sourceRect": [
         0,
-        373,
-        308,
-        657
+        0,
+        247,
+        359
       ],
-      "sourceSha256": "74c1bf0a2ddad4920a3b9a63cd82577298350d9f1767a790ccb4b03aad891480"
+      "sourcePivot": [
+        129,
+        339
+      ],
+      "scale": 0.72,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
     },
     "if-impact-1": {
       "key": "if-impact-1",
       "atlasKey": "ironfang",
-      "width": 320,
-      "height": 320,
+      "width": 400,
+      "height": 400,
       "anchor": {
-        "x": 160,
-        "y": 160
+        "x": 200,
+        "y": 340
       },
-      "source": "reference/ironfang-source/fx-raw.png",
+      "source": "reference/epic-revision/fx-raw.png",
       "sourceRect": [
-        308,
-        373,
-        617,
-        657
+        250,
+        0,
+        602,
+        361
       ],
-      "sourceSha256": "74c1bf0a2ddad4920a3b9a63cd82577298350d9f1767a790ccb4b03aad891480"
+      "sourcePivot": [
+        414,
+        339
+      ],
+      "scale": 0.72,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
     },
     "if-impact-2": {
       "key": "if-impact-2",
       "atlasKey": "ironfang",
-      "width": 320,
-      "height": 320,
+      "width": 400,
+      "height": 400,
       "anchor": {
-        "x": 160,
-        "y": 160
+        "x": 200,
+        "y": 340
       },
-      "source": "reference/ironfang-source/fx-raw.png",
+      "source": "reference/epic-revision/fx-raw.png",
       "sourceRect": [
-        617,
-        373,
-        940,
-        657
+        599,
+        0,
+        946,
+        363
       ],
-      "sourceSha256": "74c1bf0a2ddad4920a3b9a63cd82577298350d9f1767a790ccb4b03aad891480"
+      "sourcePivot": [
+        771,
+        339
+      ],
+      "scale": 0.72,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
     },
     "if-impact-3": {
       "key": "if-impact-3",
       "atlasKey": "ironfang",
-      "width": 320,
-      "height": 320,
+      "width": 400,
+      "height": 400,
       "anchor": {
-        "x": 160,
-        "y": 160
+        "x": 200,
+        "y": 340
       },
-      "source": "reference/ironfang-source/fx-raw.png",
+      "source": "reference/epic-revision/fx-raw.png",
       "sourceRect": [
-        940,
-        373,
+        944,
+        115,
         1254,
-        657
+        363
       ],
-      "sourceSha256": "74c1bf0a2ddad4920a3b9a63cd82577298350d9f1767a790ccb4b03aad891480"
+      "sourcePivot": [
+        1093,
+        339
+      ],
+      "scale": 0.72,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
     },
     "if-dust-0": {
       "key": "if-dust-0",
@@ -2019,6 +2181,782 @@
         1254
       ],
       "sourceSha256": "74c1bf0a2ddad4920a3b9a63cd82577298350d9f1767a790ccb4b03aad891480"
+    },
+    "if-bull-charge-0": {
+      "key": "if-bull-charge-0",
+      "atlasKey": "ironfang",
+      "width": 768,
+      "height": 640,
+      "anchor": {
+        "x": 384,
+        "y": 480
+      },
+      "body": {
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
+      },
+      "sockets": {
+        "gun": {
+          "x": 508.2,
+          "y": 222.4
+        },
+        "rocket": {
+          "x": 508.2,
+          "y": 222.4
+        },
+        "contact": {
+          "x": 499.0,
+          "y": 480.0
+        }
+      },
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "sourceRect": [
+        41,
+        49,
+        286,
+        308
+      ],
+      "sourcePivot": [
+        163,
+        307
+      ],
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
+    },
+    "if-bull-charge-1": {
+      "key": "if-bull-charge-1",
+      "atlasKey": "ironfang",
+      "width": 768,
+      "height": 640,
+      "anchor": {
+        "x": 384,
+        "y": 480
+      },
+      "body": {
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
+      },
+      "sockets": {
+        "gun": {
+          "x": 510.5,
+          "y": 232.75
+        },
+        "rocket": {
+          "x": 510.5,
+          "y": 232.75
+        },
+        "contact": {
+          "x": 499.0,
+          "y": 480.0
+        }
+      },
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "sourceRect": [
+        382,
+        58,
+        612,
+        308
+      ],
+      "sourcePivot": [
+        490,
+        307
+      ],
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
+    },
+    "if-bull-charge-2": {
+      "key": "if-bull-charge-2",
+      "atlasKey": "ironfang",
+      "width": 768,
+      "height": 640,
+      "anchor": {
+        "x": 384,
+        "y": 480
+      },
+      "body": {
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
+      },
+      "sockets": {
+        "gun": {
+          "x": 516.25,
+          "y": 232.75
+        },
+        "rocket": {
+          "x": 516.25,
+          "y": 232.75
+        },
+        "contact": {
+          "x": 499.0,
+          "y": 480.0
+        }
+      },
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "sourceRect": [
+        668,
+        53,
+        921,
+        308
+      ],
+      "sourcePivot": [
+        799,
+        307
+      ],
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
+    },
+    "if-bull-charge-3": {
+      "key": "if-bull-charge-3",
+      "atlasKey": "ironfang",
+      "width": 768,
+      "height": 640,
+      "anchor": {
+        "x": 384,
+        "y": 480
+      },
+      "body": {
+        "x": 319.6,
+        "y": 227.00000000000003,
+        "w": 128.79999999999998,
+        "h": 252.99999999999997
+      },
+      "sockets": {
+        "gun": {
+          "x": 531.2,
+          "y": 222.4
+        },
+        "rocket": {
+          "x": 531.2,
+          "y": 222.4
+        },
+        "contact": {
+          "x": 499.0,
+          "y": 480.0
+        }
+      },
+      "source": "reference/epic-revision/bull-raw.png",
+      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "sourceRect": [
+        971,
+        44,
+        1239,
+        284
+      ],
+      "sourcePivot": [
+        1105,
+        307
+      ],
+      "scale": 1.15,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 286.25,
+          "y": 250.0,
+          "w": 172.5,
+          "h": 220.79999999999998
+        },
+        {
+          "x": 424.25,
+          "y": 260.35,
+          "w": 88.55,
+          "h": 92.0
+        }
+      ]
+    },
+    "if-dragon-cannon-0": {
+      "key": "if-dragon-cannon-0",
+      "atlasKey": "ironfang",
+      "width": 768,
+      "height": 640,
+      "anchor": {
+        "x": 384,
+        "y": 480
+      },
+      "body": {
+        "x": 316.0,
+        "y": 330,
+        "w": 136,
+        "h": 150
+      },
+      "sockets": {
+        "gun": {
+          "x": 466,
+          "y": 310
+        },
+        "rocket": {
+          "x": 466,
+          "y": 310
+        },
+        "mouth": {
+          "x": 505,
+          "y": 358
+        }
+      },
+      "source": "reference/epic-revision/dragon-raw.png",
+      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "sourceRect": [
+        15,
+        476,
+        369,
+        764
+      ],
+      "sourcePivot": [
+        244,
+        767
+      ],
+      "scale": 1,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 301,
+          "y": 354,
+          "w": 133,
+          "h": 111
+        },
+        {
+          "x": 422,
+          "y": 326,
+          "w": 87,
+          "h": 63
+        },
+        {
+          "x": 218,
+          "y": 415,
+          "w": 85,
+          "h": 43
+        }
+      ]
+    },
+    "if-dragon-cannon-1": {
+      "key": "if-dragon-cannon-1",
+      "atlasKey": "ironfang",
+      "width": 768,
+      "height": 640,
+      "anchor": {
+        "x": 384,
+        "y": 480
+      },
+      "body": {
+        "x": 316.0,
+        "y": 330,
+        "w": 136,
+        "h": 150
+      },
+      "sockets": {
+        "gun": {
+          "x": 469,
+          "y": 311
+        },
+        "rocket": {
+          "x": 469,
+          "y": 311
+        },
+        "mouth": {
+          "x": 504,
+          "y": 360
+        }
+      },
+      "source": "reference/epic-revision/dragon-raw.png",
+      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "sourceRect": [
+        371,
+        480,
+        726,
+        764
+      ],
+      "sourcePivot": [
+        603,
+        767
+      ],
+      "scale": 1,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 301,
+          "y": 354,
+          "w": 133,
+          "h": 111
+        },
+        {
+          "x": 421,
+          "y": 328,
+          "w": 87,
+          "h": 63
+        },
+        {
+          "x": 218,
+          "y": 415,
+          "w": 85,
+          "h": 43
+        }
+      ]
+    },
+    "if-dragon-cannon-2": {
+      "key": "if-dragon-cannon-2",
+      "atlasKey": "ironfang",
+      "width": 768,
+      "height": 640,
+      "anchor": {
+        "x": 384,
+        "y": 480
+      },
+      "body": {
+        "x": 316.0,
+        "y": 330,
+        "w": 136,
+        "h": 150
+      },
+      "sockets": {
+        "gun": {
+          "x": 463,
+          "y": 305
+        },
+        "rocket": {
+          "x": 463,
+          "y": 305
+        },
+        "mouth": {
+          "x": 523,
+          "y": 328
+        }
+      },
+      "source": "reference/epic-revision/dragon-raw.png",
+      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "sourceRect": [
+        733,
+        505,
+        1106,
+        776
+      ],
+      "sourcePivot": [
+        964,
+        767
+      ],
+      "scale": 1,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 301,
+          "y": 354,
+          "w": 133,
+          "h": 111
+        },
+        {
+          "x": 440,
+          "y": 296,
+          "w": 87,
+          "h": 63
+        },
+        {
+          "x": 218,
+          "y": 415,
+          "w": 85,
+          "h": 43
+        }
+      ]
+    },
+    "if-dragon-cannon-3": {
+      "key": "if-dragon-cannon-3",
+      "atlasKey": "ironfang",
+      "width": 768,
+      "height": 640,
+      "anchor": {
+        "x": 384,
+        "y": 480
+      },
+      "body": {
+        "x": 316.0,
+        "y": 330,
+        "w": 136,
+        "h": 150
+      },
+      "sockets": {
+        "gun": {
+          "x": 472,
+          "y": 313
+        },
+        "rocket": {
+          "x": 472,
+          "y": 313
+        },
+        "mouth": {
+          "x": 500,
+          "y": 366
+        }
+      },
+      "source": "reference/epic-revision/dragon-raw.png",
+      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "sourceRect": [
+        1094,
+        475,
+        1438,
+        768
+      ],
+      "sourcePivot": [
+        1321,
+        767
+      ],
+      "scale": 1,
+      "normalization": "Connected authored silhouette; shared family scale; measured anatomy and muzzle sockets; Lanczos sampling",
+      "hurtboxes": [
+        {
+          "x": 301,
+          "y": 354,
+          "w": 133,
+          "h": 111
+        },
+        {
+          "x": 417,
+          "y": 334,
+          "w": 87,
+          "h": 63
+        },
+        {
+          "x": 218,
+          "y": 415,
+          "w": 85,
+          "h": 43
+        }
+      ]
+    },
+    "if-muzzle-0": {
+      "key": "if-muzzle-0",
+      "atlasKey": "ironfang",
+      "width": 400,
+      "height": 400,
+      "anchor": {
+        "x": 30,
+        "y": 200
+      },
+      "source": "reference/epic-revision/fx-raw.png",
+      "sourceRect": [
+        0,
+        374,
+        244,
+        628
+      ],
+      "sourcePivot": [
+        22,
+        506
+      ],
+      "scale": 0.82,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
+    },
+    "if-muzzle-1": {
+      "key": "if-muzzle-1",
+      "atlasKey": "ironfang",
+      "width": 400,
+      "height": 400,
+      "anchor": {
+        "x": 30,
+        "y": 200
+      },
+      "source": "reference/epic-revision/fx-raw.png",
+      "sourceRect": [
+        250,
+        370,
+        645,
+        642
+      ],
+      "sourcePivot": [
+        260,
+        506
+      ],
+      "scale": 0.82,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
+    },
+    "if-muzzle-2": {
+      "key": "if-muzzle-2",
+      "atlasKey": "ironfang",
+      "width": 400,
+      "height": 400,
+      "anchor": {
+        "x": 30,
+        "y": 200
+      },
+      "source": "reference/epic-revision/fx-raw.png",
+      "sourceRect": [
+        650,
+        391,
+        942,
+        638
+      ],
+      "sourcePivot": [
+        659,
+        506
+      ],
+      "scale": 0.82,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
+    },
+    "if-muzzle-3": {
+      "key": "if-muzzle-3",
+      "atlasKey": "ironfang",
+      "width": 400,
+      "height": 400,
+      "anchor": {
+        "x": 30,
+        "y": 200
+      },
+      "source": "reference/epic-revision/fx-raw.png",
+      "sourceRect": [
+        952,
+        381,
+        1254,
+        629
+      ],
+      "sourcePivot": [
+        958,
+        506
+      ],
+      "scale": 0.82,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
+    },
+    "if-boost-0": {
+      "key": "if-boost-0",
+      "atlasKey": "ironfang",
+      "width": 400,
+      "height": 400,
+      "anchor": {
+        "x": 200,
+        "y": 35
+      },
+      "source": "reference/epic-revision/fx-raw.png",
+      "sourceRect": [
+        48,
+        642,
+        212,
+        950
+      ],
+      "sourcePivot": [
+        126,
+        654
+      ],
+      "scale": 0.9,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
+    },
+    "if-boost-1": {
+      "key": "if-boost-1",
+      "atlasKey": "ironfang",
+      "width": 400,
+      "height": 400,
+      "anchor": {
+        "x": 200,
+        "y": 35
+      },
+      "source": "reference/epic-revision/fx-raw.png",
+      "sourceRect": [
+        261,
+        642,
+        597,
+        997
+      ],
+      "sourcePivot": [
+        418,
+        654
+      ],
+      "scale": 0.9,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
+    },
+    "if-boost-2": {
+      "key": "if-boost-2",
+      "atlasKey": "ironfang",
+      "width": 400,
+      "height": 400,
+      "anchor": {
+        "x": 200,
+        "y": 35
+      },
+      "source": "reference/epic-revision/fx-raw.png",
+      "sourceRect": [
+        652,
+        642,
+        937,
+        976
+      ],
+      "sourcePivot": [
+        750,
+        654
+      ],
+      "scale": 0.9,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
+    },
+    "if-boost-3": {
+      "key": "if-boost-3",
+      "atlasKey": "ironfang",
+      "width": 400,
+      "height": 400,
+      "anchor": {
+        "x": 200,
+        "y": 35
+      },
+      "source": "reference/epic-revision/fx-raw.png",
+      "sourceRect": [
+        999,
+        641,
+        1172,
+        924
+      ],
+      "sourcePivot": [
+        1084,
+        654
+      ],
+      "scale": 0.9,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
+    },
+    "if-round": {
+      "key": "if-round",
+      "atlasKey": "ironfang",
+      "width": 400,
+      "height": 400,
+      "anchor": {
+        "x": 200,
+        "y": 200
+      },
+      "source": "reference/epic-revision/fx-raw.png",
+      "sourceRect": [
+        0,
+        1033,
+        289,
+        1169
+      ],
+      "sourcePivot": [
+        194,
+        1096
+      ],
+      "scale": 0.78,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
+    },
+    "if-shell": {
+      "key": "if-shell",
+      "atlasKey": "ironfang",
+      "width": 400,
+      "height": 400,
+      "anchor": {
+        "x": 200,
+        "y": 200
+      },
+      "source": "reference/epic-revision/fx-raw.png",
+      "sourceRect": [
+        307,
+        1042,
+        628,
+        1174
+      ],
+      "sourcePivot": [
+        487,
+        1100
+      ],
+      "scale": 0.78,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
+    },
+    "if-chips": {
+      "key": "if-chips",
+      "atlasKey": "ironfang",
+      "width": 400,
+      "height": 400,
+      "anchor": {
+        "x": 200,
+        "y": 200
+      },
+      "source": "reference/epic-revision/fx-raw.png",
+      "sourceRect": [
+        631,
+        979,
+        946,
+        1210
+      ],
+      "sourcePivot": [
+        786,
+        1194
+      ],
+      "scale": 0.78,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
+    },
+    "if-arc": {
+      "key": "if-arc",
+      "atlasKey": "ironfang",
+      "width": 400,
+      "height": 400,
+      "anchor": {
+        "x": 200,
+        "y": 200
+      },
+      "source": "reference/epic-revision/fx-raw.png",
+      "sourceRect": [
+        949,
+        944,
+        1254,
+        1228
+      ],
+      "sourcePivot": [
+        1100,
+        1084
+      ],
+      "scale": 0.78,
+      "sourceSha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08",
+      "normalization": "Inspected soft-alpha effect crop with edge fade and fixed emitter"
     }
   },
   "animations": {
@@ -2103,6 +3041,30 @@
       "if-breath-1",
       "if-breath-2",
       "if-breath-3"
+    ],
+    "ironbull-charge": [
+      "if-bull-charge-0",
+      "if-bull-charge-1",
+      "if-bull-charge-2",
+      "if-bull-charge-3"
+    ],
+    "irondragon-cannon": [
+      "if-dragon-cannon-0",
+      "if-dragon-cannon-1",
+      "if-dragon-cannon-2",
+      "if-dragon-cannon-3"
+    ],
+    "ironfang-muzzle": [
+      "if-muzzle-0",
+      "if-muzzle-1",
+      "if-muzzle-2",
+      "if-muzzle-3"
+    ],
+    "ironfang-boost": [
+      "if-boost-0",
+      "if-boost-1",
+      "if-boost-2",
+      "if-boost-3"
     ]
   }
 }

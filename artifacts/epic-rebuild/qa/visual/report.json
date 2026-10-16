@@ -1,0 +1,4296 @@
+{
+  "kind": "Isolated illustrated combat and environment fixtures",
+  "physicalDevice": false,
+  "legalCampaign": false,
+  "hashes": {
+    "src/art.js": "525873ea6b871cb3f1d61992836ee9f2b1caccd6c88326ece6bbf46d8a6aa660",
+    "src/audio.js": "b63f2167946498e5b681f5c715ffc556ab612d70f94eab79b183fb4769e380c0",
+    "src/blade-motion.js": "70d2e5a8869657f8b85ca82f2c70e330c1d7a76d8991fc9fae7beadfa1d05527",
+    "src/camera.js": "332f75f253599e3633ba3dfb27242b323eaaf5b8482204d91cbbda3f6922a3d0",
+    "src/catalog.js": "d851cb49e16fe17d2c1ac70012f370e1b33bd1d8e059e1eb48e7804554d2cce1",
+    "src/character-geometry.js": "3d6b7e2dd4f2b609ba710bc6f2c426882d40737fde2ff9cfeb33168c50382b76",
+    "src/character-motion.js": "475b207c11ded54893424617f18485ee2c79ecad0ef8409586d7249f437b0389",
+    "src/combat.js": "bd061cddae79e01d121d99c48c2f4eae91077820f51270c683ccec5028969734",
+    "src/companions.js": "35167a53550ed4aee67ca61829a8d06acec61b816f7d198a85c74cecba4068fc",
+    "src/crossing-courses.js": "c51974fface7e1fe09a519e588517534857d5f080b586c22623d68bb7ac4542b",
+    "src/crossings.js": "ebf35132a93bc6106140ff0ab89736604dfb853aa6bbf4d8cf9a5b587546b1ff",
+    "src/enemy-motion.js": "edd5881630507ba1a145abcf89d9126b9896a34cc9417f26685f568279363dcc",
+    "src/input.js": "a44ac4451bd6ec304b3bbaea5547f612fbbc002629e40376851b5c2c2f6538d8",
+    "src/ironfang-geometry.js": "b0fef0ac0907d8afe7f3384bdcfff3bd2f633ca4538405908c1bd274f5319dc2",
+    "src/ironfang.js": "3ade8eb413b4fc775c4d32eede37108ba120507657842a798aa174045e2d0eaa",
+    "src/lantern-art.js": "b556f2b3e7d59edf5d57f8c1e7bb7c7d0de7c8a33d03373e5ecd938ac757c86c",
+    "src/lantern-fx.js": "2c4179840ad14ca74d0001311268f131200bdada3613e80833a56811298a004a",
+    "src/legacy-level.js": "21614250e936233c0bfea0ce0626a528f618651ac9dc679ab7e27691e0e0f1fa",
+    "src/level.js": "41dbe349fbe7859f701253cb9f23d0b9562b2b2fe2b8b381773e38523eab6d83",
+    "src/main.js": "ac432f55312876b8837c7d3bf655daa33a40e407f98bc1ea1fe7218e975ed36f",
+    "src/physics.js": "ab87b5534f22293f85bed634997fae3f2431fee147d32cdc239985ccb7e8a9ba",
+    "src/progress.js": "0e1b044a05bd046423859eb008256cf99ec8f22b9a9565871d6e8b4affb2d663",
+    "src/reference-art.js": "1ee6f6283cce08057c812ee0632609f8d1b720359dc160bfbc775f9e7866738e",
+    "src/rune-worlds.js": "c742940736c73d23264f23a45dac2d773a143746c14bddf2582787ed3208379f",
+    "src/runeheart-art.js": "c7614f53442cb46fa5a7b3a0c7fbe3bd80d631a55e374900a52e92e95ab9e4e4",
+    "src/sanctuary-theme.css": "9af6426f4742a44f298f91b95da4ba58c492a27598e4f0617e1b8850c39d8039",
+    "src/story.js": "f41890b768779f747a3d4a05fcfd53f1833cec3a6183e2c267ad4c5f0de25241",
+    "src/style.css": "eda8adeb1368be56cf7a47b1146f2d759981da77812ac26565ecdf7028bc9104",
+    "src/terrain.js": "cb5c08f110849e9152ad42142d0b3c5b79022f0948bf2f78d501a95519413a54",
+    "src/ui.js": "4833e0402542e37d50afef67a9ebc3258620aab58e189f6accd4c44eb4cbe4a1",
+    "src/worlds.js": "f3e899199f1fe72be50fa777d268ddde5133aa8c32bab81a56bc975d29af9daa",
+    "index.html": "462e6070ec5d7d77e0f6fd66580400889368502118912c582193417f161ef052",
+    "public/ironfang/atlas-1.png": "59be02f933a075ccb939903ff22cb4341825882e919db196cc5a835b37b42238",
+    "public/ironfang/atlas.json": "83cf8e6fb3bb15ae9b1e2238ebae78f1db55ce580902514062453f7eef74dc92",
+    "public/ironfang/atlas.png": "f2b0a0d1a5673e1b53bcd8e823d57afaf1f3bd58421d4329d8c686ad2a89934e",
+    "public/ironfang/manifest.json": "96dd9c5af1683f168018e82acf8fee829f7b117b05aaf5e64350a328817d3db4",
+    "public/character-revision/atlas-1.png": "68bd5c566a2e515166871653c76f8d7d1f7c1c9aaf2a37d12e3bfe94c9a8deca",
+    "public/character-revision/atlas-2.png": "874fa4b489db15ff088b1ddc13ed8d590931dbe1b8c7146fe6c9117a2a23a85c",
+    "public/character-revision/atlas.json": "599801e181f1e57b5192a38adffc614639c141f36a52eaa92d66bb64c8bdb645",
+    "public/character-revision/atlas.png": "7f2eedc448d95263c4d43b47990320cd45ab3736588eaea3adbd51c0bce42568",
+    "public/character-revision/manifest.json": "eec7655e73b91dfdbb0ec16962164db7e58531a424a8607545a7185efaddc91d",
+    "public/journey/ember.png": "277b09ce8d5f60015902342a285e278937e61229ac9114019e642afab12d1621",
+    "public/journey/intro-0.png": "b10cfbde90943b5f7ff14d4c98bf3441637a7efd40c2f20f54a0e87b18f355fb",
+    "public/journey/intro-1.png": "e65c3284e4ba2e538770f99403bad0ec40adac93119426b375ec626aa04a00fa",
+    "public/journey/intro-2.png": "a2f8a3b26fa684566c4cc6e8a0696b79531ed84228230166cbf1351d74f56ced",
+    "public/journey/manifest.json": "4a8719a8d37ff4f1ffa96c020fba48c6a6cda50712a56118bd2957e0bcfcb8e2",
+    "public/journey/tide.png": "46128b49fcd907f421aabdc46d2f18fbf8dfe6783e8edb38d2c5c7e8e1033d83",
+    "public/journey/wind.png": "107f8904a305a3b77b778feaae54a9251b3935138109bde256b5d3a8c22d23a6",
+    "public/lantern/arch.png": "381b2a78285ba58ceca4162bdfb8dd44c4b8356dd523a9ce07bd2398c647a6a6",
+    "public/lantern/atlas.json": "d0ee315ea51b66689513ecba32b47f5c6c6380e157895d407901364a3c7086e1",
+    "public/lantern/atlas.png": "2e99d80a62c416e6f92196e12dcfca683683da848183e997ad2cc0cf0f933c7d",
+    "public/lantern/environment.json": "93735ea12312a9223bc294890d0ba0c3fe7ad585e146f80f9c703ef0c45cab60",
+    "public/lantern/lantern.png": "d71441690df99787d753c4717aeae3561cf0edef428473a169e8c69480e89c2e",
+    "public/lantern/manifest.json": "254dcc91785a493f25bc1d6001c5414e8be8bd0a329a45890c7a72cb4b764bb7",
+    "public/lantern/platform.png": "ff33bfafb821789d98b4d52bd110e0b2190af335b88bcf37758acd85c9375de6",
+    "public/lantern/root.png": "678d3e815f632139c3acd2483e32f84289932c9107b3b6d5bae54a9789e20fcf",
+    "public/lantern/sanctuary.png": "72c2ffe5bb6ade9e8f1738378b4e1500eaaed8618bad4cd0fa43b0eaca31a9b5",
+    "public/lantern-fx/atlas.json": "d928285b35b8ad9696d3265d39e028227dcaebf7b30f0c0060f7e3b8d71faa24",
+    "public/lantern-fx/atlas.png": "29f05805e7aaaff24eb20067b35c0f9e221f8edd52440eb18344a881ae023dfe",
+    "public/lantern-fx/bolt.png": "ef1dfe262f90bdfc5c6c7ce8d8d79fbbbe8aefecb000aab1dd65399d9adc4e16",
+    "public/lantern-fx/emitter-cap.png": "f4848d0bfc2762eeef6e64e96aa26b215735235dc476c3879cd2a87940de4d2c",
+    "public/lantern-fx/emitter.png": "777542c8e814ec47b404ab5108c88ffe571308d403d78eea3ef7cc2748e4510a",
+    "public/lantern-fx/lever.png": "a30c85c5051b13f6c15b26b26015724a12c8329ab20f8bef5004af3e7f71bb3c",
+    "public/lantern-fx/manifest.json": "7989069d127dbab272a7e501536f165de3ad492ee6f8448e24f5efa419314d46",
+    "public/lantern-fx/orb.png": "9f5f14e4ac52dacd9819e5815a00a10e101e37bad22ebd09ac75bc92a2ee519f",
+    "public/lantern-fx/platform.png": "ab6b6be05c7eb1fb551d334e0c84b4af1e50b5192049e9414b8618c111e1bc11",
+    "public/lantern-fx/stone.png": "ac358699181adedc8e514d275ed76b228ebd8f838b2ff559ef62eb91dca485c9",
+    "public/lantern-fx/ward.png": "932dc6a7b1303251e170555df952c4ac384598819d67cda301112fa68daf9703",
+    "public/lantern-fx/water.png": "77a761e329db3a0751d8dfb8fc7d8ca4e7178675c76b3d93269eaad235531bc4"
+  },
+  "fixtures": [
+    {
+      "kind": "bull-walk-0",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-0",
+      "expectedFrame": "if-bull-0",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 661.2,
+        "y": 1125.6
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bull-walk-1",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-1",
+      "expectedFrame": "if-bull-1",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 660,
+        "y": 1131
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bull-walk-2",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-2",
+      "expectedFrame": "if-bull-2",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 657,
+        "y": 1131
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bull-walk-3",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-3",
+      "expectedFrame": "if-bull-3",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 649.1999999999999,
+        "y": 1125.6
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bull-charge-0",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-charge-0",
+      "expectedFrame": "if-bull-charge-0",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 661.2,
+        "y": 1092.6
+      },
+      "effects": [
+        {
+          "frame": "if-arc",
+          "x": 688,
+          "y": 1154.4,
+          "rotation": 0,
+          "originX": 0.5,
+          "originY": 0.5
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bull-charge-1",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-charge-1",
+      "expectedFrame": "if-bull-charge-1",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 660,
+        "y": 1098
+      },
+      "effects": [
+        {
+          "frame": "if-arc",
+          "x": 688,
+          "y": 1154.4,
+          "rotation": 0,
+          "originX": 0.5,
+          "originY": 0.5
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bull-charge-2",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-charge-2",
+      "expectedFrame": "if-bull-charge-2",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 657,
+        "y": 1098
+      },
+      "effects": [
+        {
+          "frame": "if-arc",
+          "x": 688,
+          "y": 1154.4,
+          "rotation": 0,
+          "originX": 0.5,
+          "originY": 0.5
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bull-charge-3",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-charge-3",
+      "expectedFrame": "if-bull-charge-3",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 649.1999999999999,
+        "y": 1092.6
+      },
+      "effects": [
+        {
+          "frame": "if-arc",
+          "x": 688,
+          "y": 1154.4,
+          "rotation": 0,
+          "originX": 0.5,
+          "originY": 0.5
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bull-cannon-left",
+      "heroFrame": "cr-courier-1",
+      "bossFrame": "if-bull-10",
+      "expectedFrame": "if-bull-10",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": {
+        "frame": "if-round",
+        "texture": "ironfang",
+        "x": 576.6764960932658,
+        "y": 1150.778561604435
+      },
+      "muzzle": {
+        "x": 670.8,
+        "y": 1124.4
+      },
+      "effects": [
+        {
+          "frame": "if-muzzle-0",
+          "x": 670.8,
+          "y": 1124.4,
+          "rotation": 2.8683477114335343,
+          "originX": 0.075,
+          "originY": 0.5
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bull-cannon-right",
+      "heroFrame": "cr-courier-1",
+      "bossFrame": "if-bull-10",
+      "expectedFrame": "if-bull-10",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": {
+        "frame": "if-round",
+        "texture": "ironfang",
+        "x": 621.9013584525691,
+        "y": 1160.8462079626763
+      },
+      "muzzle": {
+        "x": 531.2,
+        "y": 1124.4
+      },
+      "effects": [
+        {
+          "frame": "if-muzzle-0",
+          "x": 531.2,
+          "y": 1124.4,
+          "rotation": 0.38207993993633593,
+          "originX": 0.075,
+          "originY": 0.5
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "dragon-flight-0",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-dragon-0",
+      "expectedFrame": "if-dragon-0",
+      "bossRotation": -0.120000000000001,
+      "expectedRotation": -0.12,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 677.9127796550903,
+        "y": 1111.1635099138657
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "dragon-flight-1",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-dragon-1",
+      "expectedFrame": "if-dragon-1",
+      "bossRotation": -0.120000000000001,
+      "expectedRotation": -0.12,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 668.7802587671924,
+        "y": 1163.10659243542
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "dragon-flight-2",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-dragon-2",
+      "expectedFrame": "if-dragon-2",
+      "bossRotation": -0.120000000000001,
+      "expectedRotation": -0.12,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 692.8956027562695,
+        "y": 1143.3708309964138
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "dragon-flight-3",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-dragon-3",
+      "expectedFrame": "if-dragon-3",
+      "bossRotation": -0.120000000000001,
+      "expectedRotation": -0.12,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 653.1744642352477,
+        "y": 1152.4568772319221
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "dragon-cannon-left",
+      "heroFrame": "cr-courier-1",
+      "bossFrame": "if-dragon-cannon-2",
+      "expectedFrame": "if-dragon-cannon-2",
+      "bossRotation": 0.08546184342853991,
+      "expectedRotation": 0.08546184342853955,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": {
+        "frame": "if-round",
+        "texture": "ironfang",
+        "x": 587.5075436674816,
+        "y": 1143.132943715337
+      },
+      "muzzle": {
+        "x": 689.4362086740911,
+        "y": 1106.6417057919398
+      },
+      "effects": [
+        {
+          "frame": "if-muzzle-0",
+          "x": 689.4362086740911,
+          "y": 1106.6417057919398,
+          "rotation": 2.845338733410033,
+          "originX": 0.075,
+          "originY": 0.5
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "dragon-cannon-right",
+      "heroFrame": "cr-courier-1",
+      "bossFrame": "if-dragon-cannon-2",
+      "expectedFrame": "if-dragon-cannon-2",
+      "bossRotation": -0.08546184342853991,
+      "expectedRotation": -0.08546184342853955,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": {
+        "frame": "if-round",
+        "texture": "ironfang",
+        "x": 610.9030909027558,
+        "y": 1153.2013751927225
+      },
+      "muzzle": {
+        "x": 512.5637913259089,
+        "y": 1106.6417057919398
+      },
+      "effects": [
+        {
+          "frame": "if-muzzle-0",
+          "x": 512.5637913259089,
+          "y": 1106.6417057919398,
+          "rotation": 0.40672386601382726,
+          "originX": 0.075,
+          "originY": 0.5
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "slam",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-6",
+      "expectedFrame": "if-bull-6",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 649.1999999999999,
+        "y": 1170
+      },
+      "effects": [
+        {
+          "frame": "if-dust-0",
+          "x": 609.3333333333334,
+          "y": 1260,
+          "rotation": 0,
+          "originX": 0.5,
+          "originY": 0.88
+        },
+        {
+          "frame": "if-dust-0",
+          "x": 730.6666666666666,
+          "y": 1260,
+          "rotation": 0,
+          "originX": 0.5,
+          "originY": 0.88
+        },
+        {
+          "frame": "if-impact-1",
+          "x": 670,
+          "y": 1252,
+          "rotation": 0,
+          "originX": 0.5,
+          "originY": 0.8
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "boost-air",
+      "heroFrame": "cr-courier-8",
+      "bossFrame": "if-bull-12",
+      "expectedFrame": "if-bull-12",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [
+        {
+          "frame": "if-boost-3",
+          "x": 385,
+          "y": 1159,
+          "rotation": 1.5707963267948966,
+          "originX": 0.5,
+          "originY": 0.0875
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "hero-air-down",
+      "heroFrame": "cr-couriergunair-2",
+      "bossFrame": "if-bull-12",
+      "expectedFrame": "if-bull-12",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [
+        {
+          "frame": "if-boost-3",
+          "x": 385,
+          "y": 1139,
+          "rotation": 0.9272952180016123,
+          "originX": 0.5,
+          "originY": 0.0875
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "hero-crouch",
+      "heroFrame": "cr-courierguncrouch-1",
+      "bossFrame": "if-bull-12",
+      "expectedFrame": "if-bull-12",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "guardian",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-guardian-6",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "stalker",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-stalker-4",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "caster",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-caster-4",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bellbeast",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-bellbeast-4",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "knight",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-wispknight-4",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "drone",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-dragon-4",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "realm-wind",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-crossing-wind"
+    },
+    {
+      "kind": "realm-water",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-crossing-tide"
+    },
+    {
+      "kind": "realm-fire",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-crossing-ember"
+    },
+    {
+      "kind": "transform-0",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-12",
+      "expectedFrame": "if-bull-12",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [
+        {
+          "frame": "flame-1",
+          "x": 698,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        },
+        {
+          "frame": "flame-0",
+          "x": 726,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        },
+        {
+          "frame": "flame-3",
+          "x": 754,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "transform-1",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-morph-0",
+      "expectedFrame": "if-morph-0",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 754.2,
+        "y": 1125
+      },
+      "effects": [
+        {
+          "frame": "flame-1",
+          "x": 698,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        },
+        {
+          "frame": "flame-0",
+          "x": 726,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        },
+        {
+          "frame": "flame-3",
+          "x": 754,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "transform-2",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-morph-1",
+      "expectedFrame": "if-morph-1",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 651.6,
+        "y": 1139.4
+      },
+      "effects": [
+        {
+          "frame": "flame-1",
+          "x": 698,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        },
+        {
+          "frame": "flame-0",
+          "x": 726,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        },
+        {
+          "frame": "flame-3",
+          "x": 754,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "transform-3",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-morph-2",
+      "expectedFrame": "if-morph-2",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 679.8,
+        "y": 1126.8
+      },
+      "effects": [
+        {
+          "frame": "flame-1",
+          "x": 698,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        },
+        {
+          "frame": "flame-0",
+          "x": 726,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        },
+        {
+          "frame": "flame-3",
+          "x": 754,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "transform-4",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-dragon-1",
+      "expectedFrame": "if-dragon-1",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 648.5248,
+        "y": 1168.8848
+      },
+      "effects": [
+        {
+          "frame": "flame-1",
+          "x": 698,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        },
+        {
+          "frame": "flame-0",
+          "x": 726,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        },
+        {
+          "frame": "flame-3",
+          "x": 754,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "transform-5",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-dragon-0",
+      "expectedFrame": "if-dragon-0",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 671.9856,
+        "y": 1091.4096
+      },
+      "effects": [
+        {
+          "frame": "flame-1",
+          "x": 698,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        },
+        {
+          "frame": "flame-0",
+          "x": 726,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        },
+        {
+          "frame": "flame-3",
+          "x": 754,
+          "y": 1260,
+          "rotation": -3.141592653589793,
+          "originX": 0.5,
+          "originY": 0.09375
+        }
+      ],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "guardian-hurt",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-guardian-13",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "guardian-death",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-guardian-15",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "stalker-hurt",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-stalker-9",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "stalker-death",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-stalker-11",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "caster-hurt",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-caster-9",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "caster-death",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-caster-11",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bellbeast-hurt",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-bellbeast-9",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bellbeast-death",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-bellbeast-11",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "knight-hurt",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-wispknight-9",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "knight-death",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-wispknight-11",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "drone-hurt",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-dragon-0",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "drone-death",
+      "heroFrame": "cr-courier-0",
+      "expectedFrame": "if-bull-12",
+      "expectedRotation": 0,
+      "enemyFrames": [
+        {
+          "key": "cr-dragon-0",
+          "atlas": "character-revision"
+        }
+      ],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "bull-death",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-15",
+      "expectedFrame": "if-bull-12",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 664.2,
+        "y": 1122
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "dragon-death",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-dragon-11",
+      "expectedFrame": "if-dragon-0",
+      "bossRotation": -0.120000000000001,
+      "expectedRotation": -0.12,
+      "enemyFrames": [],
+      "allyFrames": [],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 677.9127796550903,
+        "y": 1111.1635099138657
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "summon-wolf",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-2",
+      "expectedFrame": "if-bull-2",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [
+        {
+          "key": "cr-wolf-1",
+          "atlas": "character-revision"
+        }
+      ],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 589.5659722222238,
+        "y": 1131
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "summon-raven",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-2",
+      "expectedFrame": "if-bull-2",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [
+        {
+          "key": "cr-raven-2",
+          "atlas": "character-revision"
+        }
+      ],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 589.5659722222238,
+        "y": 1131
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "summon-dragon",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-2",
+      "expectedFrame": "if-bull-2",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [
+        {
+          "key": "cr-dragon-1",
+          "atlas": "character-revision"
+        }
+      ],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 589.5659722222238,
+        "y": 1131
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    },
+    {
+      "kind": "summon-clone",
+      "heroFrame": "cr-courier-0",
+      "bossFrame": "if-bull-2",
+      "expectedFrame": "if-bull-2",
+      "bossRotation": 0,
+      "expectedRotation": 0,
+      "enemyFrames": [],
+      "allyFrames": [
+        {
+          "key": "cr-courier-5",
+          "atlas": "character-revision"
+        }
+      ],
+      "halos": [],
+      "warningLines": 0,
+      "round": null,
+      "muzzle": {
+        "x": 589.5659722222238,
+        "y": 1131
+      },
+      "effects": [],
+      "parallax": "rh-bg-lantern"
+    }
+  ],
+  "errors": [],
+  "textureBudget": {
+    "kind": "Calculated one-copy RGBA size; not measured process or device RAM",
+    "rgbaBytes": 235817988,
+    "textures": [
+      {
+        "key": "__NORMAL",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "__DEFAULT",
+        "width": 32,
+        "height": 32,
+        "rgbaBytes": 4096
+      },
+      {
+        "key": "__MISSING",
+        "width": 32,
+        "height": 32,
+        "rgbaBytes": 4096
+      },
+      {
+        "key": "__WHITE",
+        "width": 4,
+        "height": 4,
+        "rgbaBytes": 64
+      },
+      {
+        "key": "runeheart-art",
+        "width": 2048,
+        "height": 2048,
+        "rgbaBytes": 16777216
+      },
+      {
+        "key": "rh-bg-citadel",
+        "width": 960,
+        "height": 432,
+        "rgbaBytes": 1658880
+      },
+      {
+        "key": "rh-bg-crypt",
+        "width": 960,
+        "height": 304,
+        "rgbaBytes": 1167360
+      },
+      {
+        "key": "rh-bg-town",
+        "width": 384,
+        "height": 288,
+        "rgbaBytes": 442368
+      },
+      {
+        "key": "rh-bg-town-mid",
+        "width": 384,
+        "height": 288,
+        "rgbaBytes": 442368
+      },
+      {
+        "key": "rh-bg-moon-clouds",
+        "width": 256,
+        "height": 176,
+        "rgbaBytes": 180224
+      },
+      {
+        "key": "rh-bg-moon-town",
+        "width": 256,
+        "height": 176,
+        "rgbaBytes": 180224
+      },
+      {
+        "key": "rh-bg-forest",
+        "width": 768,
+        "height": 432,
+        "rgbaBytes": 1327104
+      },
+      {
+        "key": "rh-bg-night-city",
+        "width": 512,
+        "height": 336,
+        "rgbaBytes": 688128
+      },
+      {
+        "key": "lantern-art",
+        "width": 2048,
+        "height": 1024,
+        "rgbaBytes": 8388608
+      },
+      {
+        "key": "lantern-motion",
+        "width": 2048,
+        "height": 1024,
+        "rgbaBytes": 8388608
+      },
+      {
+        "key": "lantern-fx",
+        "width": 512,
+        "height": 512,
+        "rgbaBytes": 1048576
+      },
+      {
+        "key": "ln-fx-water",
+        "width": 306,
+        "height": 306,
+        "rgbaBytes": 374544
+      },
+      {
+        "key": "ln-fx-platform",
+        "width": 306,
+        "height": 126,
+        "rgbaBytes": 154224
+      },
+      {
+        "key": "ln-fx-emitter",
+        "width": 124,
+        "height": 85,
+        "rgbaBytes": 42160
+      },
+      {
+        "key": "ln-fx-emitter-cap",
+        "width": 84,
+        "height": 57,
+        "rgbaBytes": 19152
+      },
+      {
+        "key": "ln-fx-lever",
+        "width": 74,
+        "height": 76,
+        "rgbaBytes": 22496
+      },
+      {
+        "key": "ln-fx-ward",
+        "width": 121,
+        "height": 176,
+        "rgbaBytes": 85184
+      },
+      {
+        "key": "ln-fx-bolt",
+        "width": 100,
+        "height": 26,
+        "rgbaBytes": 10400
+      },
+      {
+        "key": "ln-fx-orb",
+        "width": 100,
+        "height": 56,
+        "rgbaBytes": 22400
+      },
+      {
+        "key": "reference-art",
+        "width": 2048,
+        "height": 2048,
+        "rgbaBytes": 16777216
+      },
+      {
+        "key": "rh-bg-lantern",
+        "width": 1536,
+        "height": 1024,
+        "rgbaBytes": 6291456
+      },
+      {
+        "key": "ln-fx-stone",
+        "width": 1254,
+        "height": 1254,
+        "rgbaBytes": 6290064
+      },
+      {
+        "key": "ln-platform",
+        "width": 780,
+        "height": 404,
+        "rgbaBytes": 1260480
+      },
+      {
+        "key": "ln-arch",
+        "width": 503,
+        "height": 591,
+        "rgbaBytes": 1189092
+      },
+      {
+        "key": "ln-lantern",
+        "width": 234,
+        "height": 621,
+        "rgbaBytes": 581256
+      },
+      {
+        "key": "ln-root",
+        "width": 695,
+        "height": 636,
+        "rgbaBytes": 1768080
+      },
+      {
+        "key": "rh-bg-crossing-wind",
+        "width": 1254,
+        "height": 418,
+        "rgbaBytes": 2096688
+      },
+      {
+        "key": "rh-bg-crossing-tide",
+        "width": 1254,
+        "height": 418,
+        "rgbaBytes": 2096688
+      },
+      {
+        "key": "rh-bg-crossing-ember",
+        "width": 1254,
+        "height": 418,
+        "rgbaBytes": 2096688
+      },
+      {
+        "key": "ironfang",
+        "width": 2048,
+        "height": 1855,
+        "rgbaBytes": 15196160
+      },
+      {
+        "key": "ironfang",
+        "width": 2048,
+        "height": 1176,
+        "rgbaBytes": 9633792
+      },
+      {
+        "key": "character-revision",
+        "width": 2048,
+        "height": 1962,
+        "rgbaBytes": 16072704
+      },
+      {
+        "key": "character-revision",
+        "width": 2048,
+        "height": 1995,
+        "rgbaBytes": 16343040
+      },
+      {
+        "key": "character-revision",
+        "width": 2048,
+        "height": 409,
+        "rgbaBytes": 3350528
+      },
+      {
+        "key": "player-idle-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-idle-1",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-idle-2",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-idle-3",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-1",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-2",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-3",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-4",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-5",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-6",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-run-7",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-jump-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-fall-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-slash-0",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-1",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-2",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-3",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "guard-0",
+        "width": 48,
+        "height": 56,
+        "rgbaBytes": 10752
+      },
+      {
+        "key": "guard-1",
+        "width": 48,
+        "height": 56,
+        "rgbaBytes": 10752
+      },
+      {
+        "key": "guard-2",
+        "width": 48,
+        "height": 56,
+        "rgbaBytes": 10752
+      },
+      {
+        "key": "guard-3",
+        "width": 48,
+        "height": 56,
+        "rgbaBytes": 10752
+      },
+      {
+        "key": "drone-0",
+        "width": 56,
+        "height": 40,
+        "rgbaBytes": 8960
+      },
+      {
+        "key": "drone-1",
+        "width": 56,
+        "height": 40,
+        "rgbaBytes": 8960
+      },
+      {
+        "key": "drone-2",
+        "width": 56,
+        "height": 40,
+        "rgbaBytes": 8960
+      },
+      {
+        "key": "drone-3",
+        "width": 56,
+        "height": 40,
+        "rgbaBytes": 8960
+      },
+      {
+        "key": "turret-0",
+        "width": 56,
+        "height": 56,
+        "rgbaBytes": 12544
+      },
+      {
+        "key": "boss-0",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-1",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-2",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-3",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "tile-steel",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "tile-wall",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "tile-snow",
+        "width": 64,
+        "height": 32,
+        "rgbaBytes": 8192
+      },
+      {
+        "key": "antenna",
+        "width": 80,
+        "height": 144,
+        "rgbaBytes": 46080
+      },
+      {
+        "key": "pipe",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "lamp",
+        "width": 32,
+        "height": 64,
+        "rgbaBytes": 8192
+      },
+      {
+        "key": "crate",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "mage-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "shade-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "shade-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "shade-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "shade-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "sentinel-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "sentinel-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "sentinel-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "sentinel-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "boss-warden-0",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-1",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-2",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-3",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-hex-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "portrait-mira",
+        "width": 96,
+        "height": 96,
+        "rgbaBytes": 36864
+      },
+      {
+        "key": "npc-mira",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "portrait-orren",
+        "width": 96,
+        "height": 96,
+        "rgbaBytes": 36864
+      },
+      {
+        "key": "npc-orren",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "portrait-vesper",
+        "width": 96,
+        "height": 96,
+        "rgbaBytes": 36864
+      },
+      {
+        "key": "npc-vesper",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "portrait-ysra",
+        "width": 96,
+        "height": 96,
+        "rgbaBytes": 36864
+      },
+      {
+        "key": "pickup-health",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-fuel",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-rapid",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-shield",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-boost",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-mana",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-weapon",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-sword",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-armor",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-spell",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-treasure",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-cannon",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "pickup-nova",
+        "width": 40,
+        "height": 48,
+        "rgbaBytes": 7680
+      },
+      {
+        "key": "icon-rustfang",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-katana",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-saber",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-carbine",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-scatter",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-rail",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-cannon",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-rocket",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-courier",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-bulwark",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-wraith",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-cinder",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-siphon",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-thunder",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-veil",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-stasis",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-eclipse",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-clone",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-wolf",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-dragon",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-ember-heart",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-tide-glass",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-storm-seal",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-eclipse-fragment",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-regent-key",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "icon-soul-core",
+        "width": 48,
+        "height": 48,
+        "rgbaBytes": 9216
+      },
+      {
+        "key": "barrel",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "cache",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "lever",
+        "width": 48,
+        "height": 64,
+        "rgbaBytes": 12288
+      },
+      {
+        "key": "gate",
+        "width": 96,
+        "height": 192,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "player-slash-overhead-0",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-overhead-1",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-overhead-2",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-overhead-3",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-horizontal-0",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-horizontal-1",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-horizontal-2",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-horizontal-3",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-finisher-0",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-finisher-1",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-finisher-2",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-slash-finisher-3",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-lunge-0",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-lunge-1",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-lunge-2",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-lunge-3",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "player-shoot-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-shoot-1",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-shoot-2",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-shoot-3",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-hurt-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "player-hurt-1",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "boss-warden-run-0",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-run-1",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-run-2",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-run-3",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-attack-0",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-attack-1",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-attack-2",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-attack-3",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-hurt-0",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-hurt-1",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-hurt-2",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-warden-hurt-3",
+        "width": 128,
+        "height": 144,
+        "rgbaBytes": 73728
+      },
+      {
+        "key": "boss-hex-run-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-run-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-run-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-run-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-attack-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-attack-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-attack-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-attack-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-hurt-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-hurt-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-hurt-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-hex-hurt-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-run-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-run-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-run-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-run-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-attack-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-attack-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-attack-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-attack-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-hurt-0",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-hurt-1",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-hurt-2",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "boss-regent-hurt-3",
+        "width": 160,
+        "height": 192,
+        "rgbaBytes": 122880
+      },
+      {
+        "key": "wizard-idle-0",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-idle-1",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-idle-2",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-idle-3",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-cast-0",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-cast-1",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-cast-2",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-cast-3",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-hurt-0",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-hurt-1",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-hurt-2",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-hurt-3",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-idle-0",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-idle-1",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-idle-2",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-idle-3",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-cast-0",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-cast-1",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-cast-2",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-cast-3",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-hurt-0",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-hurt-1",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-hurt-2",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "witch-hurt-3",
+        "width": 80,
+        "height": 96,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "mage-idle-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-idle-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-idle-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-idle-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-cast-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-cast-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-cast-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-cast-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-hurt-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-hurt-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-hurt-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "mage-hurt-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-mira-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-mira-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-mira-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-mira-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-orren-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-orren-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-orren-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-orren-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-vesper-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-vesper-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-vesper-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "npc-vesper-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "projectile-bullet",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-carbine",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-scatter",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-rail",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-rocket",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-pressure",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-fire",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-hex",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-needle",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-arc",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-dragonfire",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "projectile-ally",
+        "width": 48,
+        "height": 24,
+        "rgbaBytes": 4608
+      },
+      {
+        "key": "weapon-carbine",
+        "width": 80,
+        "height": 40,
+        "rgbaBytes": 12800
+      },
+      {
+        "key": "weapon-scatter",
+        "width": 80,
+        "height": 40,
+        "rgbaBytes": 12800
+      },
+      {
+        "key": "weapon-rail",
+        "width": 80,
+        "height": 40,
+        "rgbaBytes": 12800
+      },
+      {
+        "key": "weapon-cannon",
+        "width": 80,
+        "height": 40,
+        "rgbaBytes": 12800
+      },
+      {
+        "key": "weapon-launcher",
+        "width": 80,
+        "height": 40,
+        "rgbaBytes": 12800
+      },
+      {
+        "key": "weapon-rocket",
+        "width": 80,
+        "height": 40,
+        "rgbaBytes": 12800
+      },
+      {
+        "key": "shield-0",
+        "width": 96,
+        "height": 112,
+        "rgbaBytes": 43008
+      },
+      {
+        "key": "shield-1",
+        "width": 96,
+        "height": 112,
+        "rgbaBytes": 43008
+      },
+      {
+        "key": "shield-2",
+        "width": 96,
+        "height": 112,
+        "rgbaBytes": 43008
+      },
+      {
+        "key": "shield-3",
+        "width": 96,
+        "height": 112,
+        "rgbaBytes": 43008
+      },
+      {
+        "key": "summon-circle-0",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-circle-1",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-circle-2",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-circle-3",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-portal-0",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-portal-1",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-portal-2",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "summon-portal-3",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "allied-clone-0",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "wolf-0",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "dragon-0",
+        "width": 160,
+        "height": 112,
+        "rgbaBytes": 71680
+      },
+      {
+        "key": "spike-trap-0",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "allied-clone-1",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "wolf-1",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "dragon-1",
+        "width": 160,
+        "height": 112,
+        "rgbaBytes": 71680
+      },
+      {
+        "key": "spike-trap-1",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "allied-clone-2",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "wolf-2",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "dragon-2",
+        "width": 160,
+        "height": 112,
+        "rgbaBytes": 71680
+      },
+      {
+        "key": "spike-trap-2",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "allied-clone-3",
+        "width": 64,
+        "height": 72,
+        "rgbaBytes": 18432
+      },
+      {
+        "key": "wolf-3",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "dragon-3",
+        "width": 160,
+        "height": 112,
+        "rgbaBytes": 71680
+      },
+      {
+        "key": "spike-trap-3",
+        "width": 96,
+        "height": 64,
+        "rgbaBytes": 24576
+      },
+      {
+        "key": "pickup-health-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-health-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-health-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-health-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-fuel-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-fuel-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-fuel-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-fuel-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-rapid-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-rapid-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-rapid-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-rapid-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-shield-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-shield-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-shield-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-shield-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-boost-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-boost-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-boost-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-boost-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-mana-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-mana-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-mana-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-mana-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-weapon-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-weapon-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-weapon-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-weapon-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-sword-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-sword-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-sword-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-sword-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-armor-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-armor-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-armor-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-armor-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-spell-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-spell-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-spell-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-spell-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-treasure-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-treasure-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-treasure-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-treasure-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-cannon-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-cannon-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-cannon-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-cannon-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-nova-0",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-nova-1",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-nova-2",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "pickup-nova-3",
+        "width": 64,
+        "height": 80,
+        "rgbaBytes": 20480
+      },
+      {
+        "key": "sea-wave-0",
+        "width": 256,
+        "height": 96,
+        "rgbaBytes": 98304
+      },
+      {
+        "key": "sea-wave-1",
+        "width": 256,
+        "height": 96,
+        "rgbaBytes": 98304
+      },
+      {
+        "key": "sea-wave-2",
+        "width": 256,
+        "height": 96,
+        "rgbaBytes": 98304
+      },
+      {
+        "key": "sea-wave-3",
+        "width": 256,
+        "height": 96,
+        "rgbaBytes": 98304
+      },
+      {
+        "key": "fire-column-0",
+        "width": 96,
+        "height": 128,
+        "rgbaBytes": 49152
+      },
+      {
+        "key": "fire-column-1",
+        "width": 96,
+        "height": 128,
+        "rgbaBytes": 49152
+      },
+      {
+        "key": "fire-column-2",
+        "width": 96,
+        "height": 128,
+        "rgbaBytes": 49152
+      },
+      {
+        "key": "fire-column-3",
+        "width": 96,
+        "height": 128,
+        "rgbaBytes": 49152
+      },
+      {
+        "key": "dungeon-arch",
+        "width": 128,
+        "height": 160,
+        "rgbaBytes": 81920
+      },
+      {
+        "key": "tech-console",
+        "width": 96,
+        "height": 80,
+        "rgbaBytes": 30720
+      },
+      {
+        "key": "wizard-tree",
+        "width": 128,
+        "height": 192,
+        "rgbaBytes": 98304
+      },
+      {
+        "key": "tech-cables",
+        "width": 128,
+        "height": 128,
+        "rgbaBytes": 65536
+      },
+      {
+        "key": "sea-rock",
+        "width": 128,
+        "height": 96,
+        "rgbaBytes": 49152
+      },
+      {
+        "key": "tile-tide",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "tile-pyre",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "tile-neon",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "tile-veil",
+        "width": 64,
+        "height": 64,
+        "rgbaBytes": 16384
+      },
+      {
+        "key": "b6205701-2724-414c-b500-ea56bf078dc2",
+        "width": 950,
+        "height": 180,
+        "rgbaBytes": 684000
+      },
+      {
+        "key": "b3a0518e-a0fa-4ddf-a38d-314a8ce189f2",
+        "width": 390,
+        "height": 180,
+        "rgbaBytes": 280800
+      },
+      {
+        "key": "b7f8e729-5686-459d-9a77-07d00b9d2e7f",
+        "width": 540,
+        "height": 180,
+        "rgbaBytes": 388800
+      },
+      {
+        "key": "62703894-a4e1-4936-bfe4-855f5781e684",
+        "width": 340,
+        "height": 180,
+        "rgbaBytes": 244800
+      },
+      {
+        "key": "3f2f627b-abd1-4727-b164-870b86f0f8dc",
+        "width": 590,
+        "height": 580,
+        "rgbaBytes": 1368800
+      },
+      {
+        "key": "abdafb1e-e9bd-4330-888f-1621dec05fcb",
+        "width": 1400,
+        "height": 580,
+        "rgbaBytes": 3248000
+      },
+      {
+        "key": "9287d0fb-9bf0-4a99-915e-c5806105ed75",
+        "width": 400,
+        "height": 580,
+        "rgbaBytes": 928000
+      },
+      {
+        "key": "9419faa5-a98c-4dd5-86b8-d66709287d2a",
+        "width": 430,
+        "height": 580,
+        "rgbaBytes": 997600
+      },
+      {
+        "key": "8d4a0649-1cb9-4191-bb46-6ffdc6f4f476",
+        "width": 400,
+        "height": 580,
+        "rgbaBytes": 928000
+      },
+      {
+        "key": "8db26f63-97d8-4395-acf1-cb580a683949",
+        "width": 530,
+        "height": 580,
+        "rgbaBytes": 1229600
+      },
+      {
+        "key": "f6b82c59-bcbf-4c50-aa7b-b428f59292d5",
+        "width": 320,
+        "height": 580,
+        "rgbaBytes": 742400
+      },
+      {
+        "key": "e5065481-beb4-457d-baa1-1b82572f373a",
+        "width": 1150,
+        "height": 360,
+        "rgbaBytes": 1656000
+      },
+      {
+        "key": "0a72a4c7-e797-4680-99c7-3e3bd4dae377",
+        "width": 650,
+        "height": 40,
+        "rgbaBytes": 104000
+      },
+      {
+        "key": "15c78c06-9bcd-46e2-9874-ff42a74fa014",
+        "width": 1400,
+        "height": 360,
+        "rgbaBytes": 2016000
+      },
+      {
+        "key": "240cbc97-3fb6-4be7-9df4-a484422f6f83",
+        "width": 340,
+        "height": 360,
+        "rgbaBytes": 489600
+      },
+      {
+        "key": "48466eee-cc45-4594-ac75-f3a289865e31",
+        "width": 590,
+        "height": 760,
+        "rgbaBytes": 1793600
+      },
+      {
+        "key": "0380aeea-d2aa-4e06-ba97-c00ac31384fb",
+        "width": 660,
+        "height": 760,
+        "rgbaBytes": 2006400
+      },
+      {
+        "key": "c515f99f-7d09-4d6a-a17a-892700cf059f",
+        "width": 700,
+        "height": 760,
+        "rgbaBytes": 2128000
+      },
+      {
+        "key": "8b40adde-6182-4ee4-a0f3-c1cf3250e225",
+        "width": 1400,
+        "height": 760,
+        "rgbaBytes": 4256000
+      },
+      {
+        "key": "24aa7560-8333-4d4a-83a7-46e65ceeb612",
+        "width": 420,
+        "height": 280,
+        "rgbaBytes": 470400
+      },
+      {
+        "key": "ecd51452-e0c3-4e79-b61a-15292eaf1d63",
+        "width": 410,
+        "height": 280,
+        "rgbaBytes": 459200
+      },
+      {
+        "key": "5b07ee62-0d55-490a-a781-c8f23c1fedb3",
+        "width": 250,
+        "height": 280,
+        "rgbaBytes": 280000
+      },
+      {
+        "key": "2e78e3d4-d2c0-4ab8-b8b2-7797fb4bfbb6",
+        "width": 410,
+        "height": 280,
+        "rgbaBytes": 459200
+      },
+      {
+        "key": "947e4ebc-72b2-458f-b8f1-6d209ca3ed7f",
+        "width": 250,
+        "height": 280,
+        "rgbaBytes": 280000
+      },
+      {
+        "key": "5a6abec3-7276-4948-ba91-b50e5a6a611f",
+        "width": 410,
+        "height": 280,
+        "rgbaBytes": 459200
+      },
+      {
+        "key": "9e53045a-4bc4-43f8-9be9-fbe13311fb4b",
+        "width": 250,
+        "height": 280,
+        "rgbaBytes": 280000
+      },
+      {
+        "key": "96b0eddb-b501-4e6f-bf8f-5798154bc6bd",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "9c763b7c-84bc-403c-abfb-a3f0bf0ea541",
+        "width": 330,
+        "height": 680,
+        "rgbaBytes": 897600
+      },
+      {
+        "key": "a0c2d139-c98b-4178-8fa9-0c26c51bccf6",
+        "width": 330,
+        "height": 580,
+        "rgbaBytes": 765600
+      },
+      {
+        "key": "80ce4c5d-1b6d-4ab4-b19e-9d87b24bcc76",
+        "width": 330,
+        "height": 380,
+        "rgbaBytes": 501600
+      },
+      {
+        "key": "896453d2-923e-4bc6-a83e-6e184e4a8093",
+        "width": 330,
+        "height": 760,
+        "rgbaBytes": 1003200
+      },
+      {
+        "key": "c84b0277-8be6-49fc-8935-c1309a72453c",
+        "width": 330,
+        "height": 360,
+        "rgbaBytes": 475200
+      },
+      {
+        "key": "8db104f5-9acc-4e24-8582-32ba5418692a",
+        "width": 330,
+        "height": 520,
+        "rgbaBytes": 686400
+      },
+      {
+        "key": "6fb649a3-831e-4c9b-91fd-d3dc77f0079f",
+        "width": 330,
+        "height": 720,
+        "rgbaBytes": 950400
+      },
+      {
+        "key": "200fdb91-d60d-4c85-8542-3fd129465f02",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "f180a68f-1934-4412-a770-4fea304c7d87",
+        "width": 330,
+        "height": 830,
+        "rgbaBytes": 1095600
+      },
+      {
+        "key": "e6d7999f-e109-41d2-89f3-8ff92016d08c",
+        "width": 330,
+        "height": 460,
+        "rgbaBytes": 607200
+      },
+      {
+        "key": "83a33ff7-d84f-42bb-b18c-9c115999afb7",
+        "width": 330,
+        "height": 460,
+        "rgbaBytes": 607200
+      },
+      {
+        "key": "aeb1a403-8035-43f8-893d-a19c275e4655",
+        "width": 330,
+        "height": 730,
+        "rgbaBytes": 963600
+      },
+      {
+        "key": "328a634f-21da-4a5c-9c82-e884c9374c53",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "aed4f2f6-481a-4bc7-b072-101fba4e3957",
+        "width": 970,
+        "height": 280,
+        "rgbaBytes": 1086400
+      },
+      {
+        "key": "8a56d98a-0bf2-400c-964c-8cff84cbe135",
+        "width": 420,
+        "height": 280,
+        "rgbaBytes": 470400
+      },
+      {
+        "key": "1e9a1dda-a142-4875-bfa6-3a361faf404c",
+        "width": 410,
+        "height": 280,
+        "rgbaBytes": 459200
+      },
+      {
+        "key": "8d91e61d-b8df-41cc-91ce-ef7639ec8cd8",
+        "width": 250,
+        "height": 280,
+        "rgbaBytes": 280000
+      },
+      {
+        "key": "f6d9f174-66df-4d62-b14c-d59d89c0223b",
+        "width": 410,
+        "height": 280,
+        "rgbaBytes": 459200
+      },
+      {
+        "key": "192d24a9-50c2-4b56-ae12-2c548092cd6b",
+        "width": 250,
+        "height": 280,
+        "rgbaBytes": 280000
+      },
+      {
+        "key": "c0f1cecb-26df-4636-bf31-5ce92592b9bd",
+        "width": 410,
+        "height": 280,
+        "rgbaBytes": 459200
+      },
+      {
+        "key": "64f765f3-0769-4234-ba7c-499b5bdfb983",
+        "width": 250,
+        "height": 280,
+        "rgbaBytes": 280000
+      },
+      {
+        "key": "08d67f50-4885-4e9b-bf6d-a5e5fb570e77",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "034d50e5-5910-4b2d-bbc9-bb0e7e0fba55",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "88316f99-4ef9-4cd2-adfd-32903c9c508d",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "007be4ce-57a5-4d2e-b8b4-ba9a67059d1d",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "4f235f68-30a8-44a6-94d0-a4351f08bd64",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "6cf5d80f-512c-448b-a440-a1db1bcdc7a8",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "df2a69be-cf2e-425d-a109-4c42f30016c7",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "1f7012ea-078b-4053-8174-7a4a5a28bcd2",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "48083a07-1bc4-4eef-8527-0e853afa5a7e",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "eda309d3-796b-43aa-8374-31472f299fdb",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "19c7e663-59e0-437d-902c-82ba7e0868ec",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "09420e2b-f95e-4567-b3d9-fe30a766dc49",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "8ccd0cae-9e8a-4fa8-8e19-5d3ea39bdf51",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "c4323f81-05dc-4e32-be1b-92dc2e0bc661",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "c86d3049-a2bf-47b7-bf7a-73aa0b43319e",
+        "width": 970,
+        "height": 280,
+        "rgbaBytes": 1086400
+      },
+      {
+        "key": "6744d164-e766-4200-877a-a932a3840e66",
+        "width": 420,
+        "height": 280,
+        "rgbaBytes": 470400
+      },
+      {
+        "key": "80528bea-7d63-4370-a3b9-fac264a57a0f",
+        "width": 410,
+        "height": 280,
+        "rgbaBytes": 459200
+      },
+      {
+        "key": "279f8997-ee45-4a8a-8104-840390b507e5",
+        "width": 250,
+        "height": 280,
+        "rgbaBytes": 280000
+      },
+      {
+        "key": "21e069e9-57c7-4ca0-b1ce-f13c3985f790",
+        "width": 410,
+        "height": 280,
+        "rgbaBytes": 459200
+      },
+      {
+        "key": "d48c53d2-d442-422f-a6ee-f959ea8e0413",
+        "width": 250,
+        "height": 280,
+        "rgbaBytes": 280000
+      },
+      {
+        "key": "0325b4ab-e992-4834-9b6f-c3c791507ff9",
+        "width": 410,
+        "height": 280,
+        "rgbaBytes": 459200
+      },
+      {
+        "key": "13fa73d7-9f5b-40d4-8e4b-915dda423979",
+        "width": 250,
+        "height": 280,
+        "rgbaBytes": 280000
+      },
+      {
+        "key": "8b9359b9-7528-4b64-9a2c-69212196096c",
+        "width": 41600,
+        "height": 140,
+        "rgbaBytes": 23296000
+      },
+      {
+        "key": "60376c9c-ba4f-4b4a-9bff-b927efa96071",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "15c86a80-3bb9-4f3c-8106-3e93a9fc80d5",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "683707f2-cc26-4aaa-9870-ac763820fee9",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "7ed181bb-56f4-4f2d-8c25-0738b0b4a87f",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "857b80ad-3af3-4b65-9402-2198818aa100",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "c4e9ba2a-6035-4dcf-8e68-422f4a05b99f",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "b32f7ba2-189d-47b3-b5af-1ce592bcbca6",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "30906c87-81fc-4aa0-ab41-bd696719cb59",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "3a370314-f890-4c35-9ea3-8e0f16c1034c",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "1a82643b-b86b-4ff0-858e-5745841679bb",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "f73eba10-d3c5-4a7a-b0da-24274cc10498",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "24be09be-dc50-42c1-9273-f41d78e4e2c6",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "6e0ca410-04e8-41ec-8662-082daa4e610b",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "7026335d-4a7c-4246-8cb4-1bd317742124",
+        "width": 330,
+        "height": 280,
+        "rgbaBytes": 369600
+      },
+      {
+        "key": "3692ebf6-2802-4f9d-b840-7f9ec04e0434",
+        "width": 970,
+        "height": 280,
+        "rgbaBytes": 1086400
+      },
+      {
+        "key": "7fc21a9d-4fbb-40c7-8ec0-1843e4bb726b",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "7ebcad24-b47b-4235-b249-b80246de6902",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "b2ee6025-ac0a-486e-98fc-701e2029d444",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "7f57f5b2-1259-4ba3-92d5-731c590c5ff5",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "db2355ac-4ac7-4052-a6e7-66b5c39b154b",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "0943b5dd-5a03-4222-baab-5a7a014523e5",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "d3bf006a-ed4d-4d01-8c41-ae2b3812b4ce",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "161ec9c6-3c85-48f7-ade7-c0b8ecb5e4ef",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "88772700-9b84-43d9-983c-77bf27148dc1",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "c8445115-d7e0-44e6-af9e-0a01f16cd7f8",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "a14f0f5d-9cfd-4143-98cd-fed403e2dfb6",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "788e6751-bed6-44e0-99c8-23d4a375b56b",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "31e1a354-87bc-42a5-bd30-96a9f19aef25",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "c8122e16-708a-442b-8fb7-76d561f77880",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "bdd89c7a-d3b6-48d4-b297-40bd7187ac63",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "84ba19a0-8415-4e53-a587-0723352ca0e9",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      },
+      {
+        "key": "96d9d00d-793a-4489-ba4b-bbc1fd8e5e0e",
+        "width": 1,
+        "height": 1,
+        "rgbaBytes": 4
+      }
+    ]
+  },
+  "passed": true
+}

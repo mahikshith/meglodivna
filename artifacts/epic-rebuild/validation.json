@@ -1,0 +1,92 @@
+{
+  "version": "0.9.0",
+  "generatedAt": "2026-10-16T20:08:30.806Z",
+  "sourceAndEvidenceHashesVerified": true,
+  "lineEndingOnlyDifferences": [],
+  "unitTests": {
+    "command": "npm test",
+    "passed": 231,
+    "failed": 0
+  },
+  "legalCampaigns": 9,
+  "campaignSeconds": [
+    {
+      "world": "soulforge",
+      "difficulty": "ember",
+      "seconds": 652.37
+    },
+    {
+      "world": "soulforge",
+      "difficulty": "forge",
+      "seconds": 655.51
+    },
+    {
+      "world": "soulforge",
+      "difficulty": "inferno",
+      "seconds": 678.27
+    },
+    {
+      "world": "soulforge",
+      "difficulty": "extinction",
+      "seconds": 702.96
+    },
+    {
+      "world": "soulforge",
+      "difficulty": "forge",
+      "seconds": 669.3
+    },
+    {
+      "world": "tide",
+      "difficulty": "forge",
+      "seconds": 668.35
+    },
+    {
+      "world": "pyre",
+      "difficulty": "forge",
+      "seconds": 658.59
+    },
+    {
+      "world": "neon",
+      "difficulty": "forge",
+      "seconds": 665.58
+    },
+    {
+      "world": "veil",
+      "difficulty": "forge",
+      "seconds": 664.16
+    }
+  ],
+  "isolatedVisualFixtures": 53,
+  "realInputScenarios": 8,
+  "productionSmoke": "pass",
+  "textureBudget": {
+    "rgbaBytes": 235817988,
+    "sourceImages": 475,
+    "deviceMemoryMeasured": false
+  },
+  "evidence": {
+    "art": {
+      "path": "artifacts/epic-revision/integrity.json",
+      "sha256": "7b70bae6fd1757fa5b1a96eda9200403a441469918f5877dca30aafaf216e2e3"
+    },
+    "campaign": {
+      "path": "artifacts/epic-rebuild/campaign-summary.json",
+      "sha256": "f56a4b4ccf87b1ff70eb94725e7df6b9ecce3817a3451da5557cc27c07014eac"
+    },
+    "visual": {
+      "path": "artifacts/epic-rebuild/qa/visual/report.json",
+      "sha256": "e766143c8c4ff81ee0329f77f2d77bcb0100f04cc9c8f7fb14f17f462079ca07"
+    },
+    "controls": {
+      "path": "artifacts/epic-rebuild/qa/controls/report.json",
+      "sha256": "843ff82c7b68c314affaa472ed985cec1ae2e0d8d1947560226d7557f8ef6351"
+    },
+    "production": {
+      "path": "artifacts/epic-rebuild/qa/production/report.json",
+      "sha256": "2a00d55aa5b08fb556058df59af7dd510ff7362dff12d5712128dcf51a5d3ba7"
+    }
+  },
+  "physicalDeviceTested": false,
+  "humanPacingMeasured": false,
+  "limits": "Finite frame animation and staged transformation. Legal simulation time is not a minimum human speedrun or device performance measurement. Signed APK verification is recorded separately in the release android-report.json."
+}

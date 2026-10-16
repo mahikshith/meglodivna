@@ -1,0 +1,179 @@
+{
+  "kind": "offline asset integrity",
+  "families": {
+    "ironfang": {
+      "frames": 67,
+      "animations": 20,
+      "pages": 2,
+      "hurtboxFrames": 39,
+      "epicSourceFrames": 55
+    },
+    "character-revision": {
+      "frames": 180,
+      "animations": 112,
+      "pages": 3,
+      "hurtboxFrames": 72,
+      "epicSourceFrames": 12
+    }
+  },
+  "files": {
+    "public/ironfang/manifest.json": {
+      "bytes": 69543,
+      "sha256": "96dd9c5af1683f168018e82acf8fee829f7b117b05aaf5e64350a328817d3db4"
+    },
+    "public/ironfang/atlas.json": {
+      "bytes": 14430,
+      "sha256": "83cf8e6fb3bb15ae9b1e2238ebae78f1db55ce580902514062453f7eef74dc92"
+    },
+    "public/ironfang/atlas.png": {
+      "bytes": 3946804,
+      "sha256": "f2b0a0d1a5673e1b53bcd8e823d57afaf1f3bd58421d4329d8c686ad2a89934e"
+    },
+    "public/ironfang/atlas-1.png": {
+      "bytes": 2807890,
+      "sha256": "59be02f933a075ccb939903ff22cb4341825882e919db196cc5a835b37b42238"
+    },
+    "public/character-revision/manifest.json": {
+      "bytes": 133156,
+      "sha256": "eec7655e73b91dfdbb0ec16962164db7e58531a424a8607545a7185efaddc91d"
+    },
+    "public/character-revision/atlas.json": {
+      "bytes": 38978,
+      "sha256": "599801e181f1e57b5192a38adffc614639c141f36a52eaa92d66bb64c8bdb645"
+    },
+    "public/character-revision/atlas.png": {
+      "bytes": 5413634,
+      "sha256": "7f2eedc448d95263c4d43b47990320cd45ab3736588eaea3adbd51c0bce42568"
+    },
+    "public/character-revision/atlas-1.png": {
+      "bytes": 5647583,
+      "sha256": "68bd5c566a2e515166871653c76f8d7d1f7c1c9aaf2a37d12e3bfe94c9a8deca"
+    },
+    "public/character-revision/atlas-2.png": {
+      "bytes": 1106335,
+      "sha256": "874fa4b489db15ff088b1ddc13ed8d590931dbe1b8c7146fe6c9117a2a23a85c"
+    },
+    "public/journey/intro-0.png": {
+      "bytes": 1056938,
+      "sha256": "b10cfbde90943b5f7ff14d4c98bf3441637a7efd40c2f20f54a0e87b18f355fb"
+    },
+    "public/journey/intro-1.png": {
+      "bytes": 1037764,
+      "sha256": "e65c3284e4ba2e538770f99403bad0ec40adac93119426b375ec626aa04a00fa"
+    },
+    "public/journey/intro-2.png": {
+      "bytes": 1121062,
+      "sha256": "a2f8a3b26fa684566c4cc6e8a0696b79531ed84228230166cbf1351d74f56ced"
+    },
+    "public/journey/wind.png": {
+      "bytes": 1179393,
+      "sha256": "107f8904a305a3b77b778feaae54a9251b3935138109bde256b5d3a8c22d23a6"
+    },
+    "public/journey/tide.png": {
+      "bytes": 1133371,
+      "sha256": "46128b49fcd907f421aabdc46d2f18fbf8dfe6783e8edb38d2c5c7e8e1033d83"
+    },
+    "public/journey/ember.png": {
+      "bytes": 1064574,
+      "sha256": "277b09ce8d5f60015902342a285e278937e61229ac9114019e642afab12d1621"
+    },
+    "public/lantern/platform.png": {
+      "bytes": 492443,
+      "sha256": "ff33bfafb821789d98b4d52bd110e0b2190af335b88bcf37758acd85c9375de6"
+    },
+    "public/lantern/arch.png": {
+      "bytes": 476073,
+      "sha256": "381b2a78285ba58ceca4162bdfb8dd44c4b8356dd523a9ce07bd2398c647a6a6"
+    },
+    "public/lantern/lantern.png": {
+      "bytes": 191744,
+      "sha256": "d71441690df99787d753c4717aeae3561cf0edef428473a169e8c69480e89c2e"
+    },
+    "public/lantern/root.png": {
+      "bytes": 651897,
+      "sha256": "678d3e815f632139c3acd2483e32f84289932c9107b3b6d5bae54a9789e20fcf"
+    },
+    "public/lantern-fx/stone.png": {
+      "bytes": 3533861,
+      "sha256": "ac358699181adedc8e514d275ed76b228ebd8f838b2ff559ef62eb91dca485c9"
+    },
+    "reference/epic-revision/bull-raw.png": {
+      "bytes": 2330127,
+      "sha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242"
+    },
+    "reference/epic-revision/dragon-flight-raw.png": {
+      "bytes": 2159479,
+      "sha256": "7ce769e105424a28b5d8cacf0ac6ac1bd6393f048e5ceaa95029ab5603c0a383"
+    },
+    "reference/epic-revision/dragon-raw.png": {
+      "bytes": 1806723,
+      "sha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6"
+    },
+    "reference/epic-revision/environment-raw.png": {
+      "bytes": 1942998,
+      "sha256": "fb47890dcb78fadb27a6933986c8e27c64496af165da6b0eee6c4b9662166c3d"
+    },
+    "reference/epic-revision/fx-raw.png": {
+      "bytes": 1966023,
+      "sha256": "9fcc7ad4093ed00b299aa7a8261f0a49565b4a0d525153061e1e276450374b08"
+    },
+    "reference/epic-revision/hero-fire-raw.png": {
+      "bytes": 1333597,
+      "sha256": "6c4ed20ced696137bbbddcbc89a0638436a388aacb68c2460d9e4da4f51505df"
+    },
+    "reference/epic-revision/hero-rifle-final.png": {
+      "bytes": 1361968,
+      "sha256": "ee23d325473648aa8c45bdfb0efac03c594e58feda8cb78e2179ec92f32a4365"
+    },
+    "reference/epic-revision/intro-raw.png": {
+      "bytes": 3412609,
+      "sha256": "d096dce15466cffe5c7c0e92dd5082d304f5a08ca22fa4bdc170a36f4060cedf"
+    },
+    "reference/epic-revision/realms-raw.png": {
+      "bytes": 3645993,
+      "sha256": "636fa690d0a1fb9d9305edec55b826effb272640fc6239296b5a2029a83a12e6"
+    },
+    "reference/epic-revision/stone-raw.png": {
+      "bytes": 3994302,
+      "sha256": "86545f9a8fb993172cc2b5b6fca02d6512935808d6dae33544be91396bb8e8fe"
+    },
+    "reference/epic-revision/complete-prompts.json": {
+      "bytes": 13743,
+      "sha256": "0a6d06293d2712e7b513f665cdf611ad05ab44584a644d2a338d29e159fc280c"
+    },
+    "reference/epic-revision/prompts.json": {
+      "bytes": 5146,
+      "sha256": "3f9f5b25a906add5956692e4d64f57c59a3164b8af96967049f23f3676809476"
+    },
+    "reference/epic-revision/stone-prompt.json": {
+      "bytes": 1010,
+      "sha256": "9bb9033c1edc9d69033098f5929b3063ee94cfcc783bfeaeda6f61eec3ffc54c"
+    },
+    "src/character-geometry.js": {
+      "bytes": 42716,
+      "sha256": "3d6b7e2dd4f2b609ba710bc6f2c426882d40737fde2ff9cfeb33168c50382b76"
+    },
+    "src/ironfang-geometry.js": {
+      "bytes": 13699,
+      "sha256": "b0fef0ac0907d8afe7f3384bdcfff3bd2f633ca4538405908c1bd274f5319dc2"
+    },
+    "public/journey/manifest.json": {
+      "bytes": 1444,
+      "sha256": "4a8719a8d37ff4f1ffa96c020fba48c6a6cda50712a56118bd2957e0bcfcb8e2"
+    },
+    "public/lantern/environment.json": {
+      "bytes": 1258,
+      "sha256": "93735ea12312a9223bc294890d0ba0c3fe7ad585e146f80f9c703ef0c45cab60"
+    },
+    "public/lantern-fx/manifest.json": {
+      "bytes": 940,
+      "sha256": "7989069d127dbab272a7e501536f165de3ad492ee6f8448e24f5efa419314d46"
+    }
+  },
+  "checks": [
+    "all atlas keys, animation aliases and texture bounds",
+    "source hashes and socket/hurtbox bounds",
+    "six inspected panorama crop sizes",
+    "masonry opposite edges match exactly"
+  ]
+}

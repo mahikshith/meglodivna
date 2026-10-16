@@ -1,4 +1,20 @@
 {
+  "gameplaySourceHash": "5b8bcefce876e8d9aa2915c94fcdd14ff4bffa7633f721191c829f3b484f0a0c",
+  "driverSources": {
+    "scripts/combat-route.mjs": {
+      "sha256": "06e5af588a388924e202f1bbb7153f3dcff4407c33f175eb9ac4d92134058f74",
+      "archive": "artifacts/epic-rebuild/drivers/06e5af588a388924e202f1bbb7153f3dcff4407c33f175eb9ac4d92134058f74.mjs"
+    },
+    "scripts/route-navigation.mjs": {
+      "sha256": "824d09b0af7a22b9abc975c5de94829f7db683d34c6c9703a464a35205c34f1c",
+      "archive": "artifacts/epic-rebuild/drivers/824d09b0af7a22b9abc975c5de94829f7db683d34c6c9703a464a35205c34f1c.mjs"
+    },
+    "scripts/campaign-source.mjs": {
+      "sha256": "446c9a959a7a525249c000eca01d6007cdf7b43ea0cdf822d3048d45545bacb9",
+      "archive": "artifacts/epic-rebuild/drivers/446c9a959a7a525249c000eca01d6007cdf7b43ea0cdf822d3048d45545bacb9.mjs"
+    }
+  },
+  "startedAt": "2026-10-16T20:01:33.709Z",
   "worldId": "veil",
   "worldName": "GLASS NECROPOLIS · The False Moon",
   "difficulty": "forge",
@@ -7,14 +23,14 @@
     "w": 28,
     "h": 60
   },
-  "elapsed": 98.16,
-  "campaignTime": 98.16,
-  "timeLeft": 1490.08,
+  "elapsed": 664.16,
+  "campaignTime": 664.16,
+  "timeLeft": 2512.31,
   "deaths": 0,
-  "checkpoint": 6,
-  "x": 18682.6,
+  "checkpoint": 48,
+  "x": 18683.5,
   "y": 400,
-  "hp": 107.5,
+  "hp": 105.4,
   "conversations": [
     "veil-mira",
     "veil-ysra"
@@ -28,12 +44,12 @@
     "veil-hex": {
       "triggerX": 12520,
       "activatedX": 12520.25,
-      "activatedTime": 55.49
+      "activatedTime": 55.96
     },
     "veil-regent": {
       "triggerX": 17670,
-      "activatedX": 17670.17,
-      "activatedTime": 84.19
+      "activatedX": 17670.24,
+      "activatedTime": 649.75
     }
   },
   "storyClaims": [
@@ -49,8 +65,9 @@
         "w": 96,
         "h": 120
       },
-      "fightSeconds": 8.19,
+      "fightSeconds": 8.89,
       "attacksSeen": [
+        0,
         1,
         2
       ],
@@ -67,7 +84,7 @@
         "w": 96,
         "h": 120
       },
-      "fightSeconds": 10.49,
+      "fightSeconds": 11.44,
       "attacksSeen": [
         0,
         1,
@@ -86,10 +103,11 @@
         "w": 112,
         "h": 86
       },
-      "fightSeconds": 11.69,
+      "fightSeconds": 12.06,
       "attacksSeen": [
         0,
-        1
+        1,
+        2
       ],
       "formsSeen": [
         "ground",
@@ -125,6 +143,101 @@
     {
       "id": "veil-three-stone-seal",
       "open": true
+    },
+    {
+      "id": "veil-crossing-wind-heart-seal",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-wind-shutter-0",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-wind-shutter-1",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-wind-shutter-2",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-wind-guardian-seal",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-water-heart-seal",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-water-shutter-0",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-water-shutter-1",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-water-shutter-2",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-water-guardian-seal",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-fire-heart-seal",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-fire-shutter-0",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-fire-shutter-1",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-fire-shutter-2",
+      "open": true
+    },
+    {
+      "id": "veil-crossing-fire-guardian-seal",
+      "open": true
+    }
+  ],
+  "crossings": [
+    {
+      "id": "veil-crossing-wind",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 180.32
+    },
+    {
+      "id": "veil-crossing-water",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 182.22
+    },
+    {
+      "id": "veil-crossing-fire",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 198.67
     }
   ],
   "method": "Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.",
@@ -153,6 +266,7 @@
     "missilewarning",
     "parry",
     "pickup",
+    "portal",
     "portalarrival",
     "portalwarning",
     "shot",
@@ -301,206 +415,206 @@
       "time": 22.3
     },
     {
+      "event": "hurt",
+      "x": 5671.3,
+      "hp": 135,
+      "time": 26.75
+    },
+    {
       "event": "bossdefeated",
       "id": "veil-warden",
-      "time": 26.27,
+      "time": 26.97,
       "hp": 135
     },
     {
       "event": "gate",
-      "x": 5670.3,
+      "x": 5658.7,
       "hp": 135,
-      "time": 26.27
+      "time": 26.97
     },
     {
       "event": "landing",
       "id": "veil-arena-30",
-      "x": 5670.3,
+      "x": 5658.7,
       "hp": 135,
-      "time": 26.27
-    },
-    {
-      "event": "landing",
-      "id": "veil-arena-30",
-      "x": 6134.3,
-      "hp": 135,
-      "time": 27.92
+      "time": 26.97
     },
     {
       "event": "landing",
       "id": "veil-arena-30",
       "x": 6134.3,
       "hp": 135,
-      "time": 27.92
+      "time": 28.62
+    },
+    {
+      "event": "landing",
+      "id": "veil-arena-30",
+      "x": 6134.3,
+      "hp": 135,
+      "time": 28.62
     },
     {
       "event": "checkpoint",
-      "x": 6220.2,
+      "x": 6220.1,
       "hp": 135,
-      "time": 28.22
+      "time": 28.92
     },
     {
       "event": "landing",
       "id": "veil-tower-foot-39",
       "x": 6482.8,
       "hp": 135,
-      "time": 29.31
+      "time": 30
     },
     {
       "event": "landing",
       "id": "veil-tower-step-40",
       "x": 6699.5,
       "hp": 135,
-      "time": 30.09
+      "time": 30.78
     },
     {
       "event": "landing",
       "id": "veil-tower-step-41",
       "x": 6917.6,
       "hp": 135,
-      "time": 30.84
+      "time": 31.53
     },
     {
       "event": "landing",
       "id": "veil-tower-step-42",
       "x": 7137.6,
       "hp": 135,
-      "time": 33.02
+      "time": 33.71
     },
     {
       "event": "landing",
       "id": "veil-tower-step-44",
       "x": 7357.1,
       "hp": 135,
-      "time": 33.77
+      "time": 34.46
     },
     {
       "event": "landing",
       "id": "veil-tower-crown-45",
       "x": 7573.1,
       "hp": 135,
-      "time": 34.74
+      "time": 35.43
     },
     {
       "event": "gate",
       "x": 7648.8,
       "hp": 135,
-      "time": 35.05
+      "time": 35.74
     },
     {
       "event": "landing",
       "id": "veil-tower-crown-45",
       "x": 7664.1,
       "hp": 135,
-      "time": 35.17
+      "time": 35.87
     },
     {
       "event": "landing",
       "id": "veil-tower-crown-45",
       "x": 7963.4,
       "hp": 135,
-      "time": 36.14
+      "time": 36.83
     },
     {
       "event": "checkpoint",
       "x": 8099.4,
       "hp": 135,
-      "time": 36.57
+      "time": 37.26
     },
     {
       "event": "landing",
       "id": "veil-sluice-entry-51",
       "x": 8368.6,
       "hp": 135,
-      "time": 37.56
+      "time": 38.25
     },
     {
       "event": "landing",
       "id": "veil-aqueduct-span-52",
       "x": 8732.6,
       "hp": 135,
-      "time": 38.99
+      "time": 39.68
     },
     {
       "event": "hurt",
-      "x": 9061.6,
+      "x": 9060.3,
       "hp": 135,
-      "time": 40.29
+      "time": 40.94
     },
     {
       "event": "landing",
       "id": "veil-aqueduct-span-53",
-      "x": 9067.2,
+      "x": 9066.8,
       "hp": 135,
-      "time": 40.82
+      "time": 41.52
     },
     {
       "event": "landing",
       "id": "veil-aqueduct-span-55",
       "x": 9391.3,
       "hp": 135,
-      "time": 42.11
+      "time": 42.8
     },
     {
       "event": "landing",
       "id": "veil-aqueduct-span-56",
       "x": 9724.8,
       "hp": 135,
-      "time": 43.61
+      "time": 44.3
     },
     {
       "event": "landing",
       "id": "veil-cistern-bank-57",
       "x": 10192.7,
       "hp": 135,
-      "time": 45.12
+      "time": 45.82
     },
     {
       "event": "landing",
       "id": "veil-root-bank-62",
       "x": 10698.4,
       "hp": 135,
-      "time": 46.79
+      "time": 47.48
     },
     {
       "event": "landing",
       "id": "veil-broken-root-64",
       "x": 11010.6,
       "hp": 135,
-      "time": 49.11
+      "time": 49.8
     },
     {
       "event": "landing",
       "id": "veil-hanging-root-66",
       "x": 11433.7,
       "hp": 135,
-      "time": 50.57
-    },
-    {
-      "event": "hurt",
-      "x": 11794.1,
-      "hp": 135,
-      "time": 52.07
+      "time": 51.26
     },
     {
       "event": "landing",
       "id": "veil-orchard-bank-67",
-      "x": 11797,
+      "x": 11795.8,
       "hp": 135,
-      "time": 52.66
+      "time": 53.12
     },
     {
       "event": "landing",
       "id": "veil-orchard-bank-67",
-      "x": 12081.8,
+      "x": 12081.6,
       "hp": 135,
-      "time": 53.61
+      "time": 54.07
     },
     {
       "event": "checkpoint",
-      "x": 12223.2,
+      "x": 12225.6,
       "hp": 135,
-      "time": 54.05
+      "time": 54.52
     },
     {
       "event": "story",
@@ -512,228 +626,3294 @@
       "id": "veil-arena-77",
       "x": 12319.8,
       "hp": 110,
-      "time": 54.62
+      "time": 55.09
     },
     {
       "event": "bossstart",
       "x": 12520.2,
       "hp": 135,
-      "time": 55.49
+      "time": 55.96
     },
     {
       "event": "hurt",
       "x": 13111.8,
-      "hp": 122.6,
-      "time": 62.88
+      "hp": 128.8,
+      "time": 63.35
     },
     {
       "event": "hurt",
-      "x": 12966.4,
-      "hp": 115.1,
-      "time": 64.94
-    },
-    {
-      "event": "hurt",
-      "x": 12864.2,
-      "hp": 102.6,
-      "time": 65.8
+      "x": 12946.4,
+      "hp": 121.4,
+      "time": 65.41
     },
     {
       "event": "bossdefeated",
       "id": "veil-hex",
-      "time": 65.98,
-      "hp": 102.6
+      "time": 67.4,
+      "hp": 121.4
     },
     {
       "event": "gate",
-      "x": 12878.4,
-      "hp": 102.6,
-      "time": 65.98
+      "x": 12875.9,
+      "hp": 121.4,
+      "time": 67.4
     },
     {
       "event": "landing",
       "id": "veil-arena-77",
-      "x": 12878.4,
-      "hp": 102.6,
-      "time": 65.98
+      "x": 12875.9,
+      "hp": 121.4,
+      "time": 67.4
     },
     {
       "event": "landing",
       "id": "veil-arena-77",
-      "x": 13511.7,
-      "hp": 102.6,
-      "time": 68.04
+      "x": 13511.5,
+      "hp": 121.4,
+      "time": 69.44
     },
     {
       "event": "checkpoint",
-      "x": 13599.7,
-      "hp": 129,
-      "time": 68.32
+      "x": 13599.5,
+      "hp": 135,
+      "time": 69.72
     },
     {
       "event": "landing",
       "id": "veil-tower-foot-85",
       "x": 13862.7,
-      "hp": 129,
-      "time": 69.4
+      "hp": 135,
+      "time": 70.8
     },
     {
       "event": "landing",
       "id": "veil-tower-step-86",
       "x": 14079.5,
-      "hp": 129,
-      "time": 70.18
+      "hp": 135,
+      "time": 71.58
     },
     {
       "event": "landing",
       "id": "veil-tower-step-87",
       "x": 14297.6,
-      "hp": 129,
-      "time": 70.93
+      "hp": 135,
+      "time": 72.33
     },
     {
       "event": "landing",
       "id": "veil-tower-step-88",
       "x": 14517.6,
-      "hp": 129,
-      "time": 73.08
+      "hp": 135,
+      "time": 74.49
     },
     {
       "event": "landing",
       "id": "veil-tower-step-90",
       "x": 14737.1,
-      "hp": 129,
-      "time": 73.83
+      "hp": 135,
+      "time": 75.24
     },
     {
       "event": "landing",
       "id": "veil-tower-crown-91",
       "x": 14953.1,
-      "hp": 129,
-      "time": 74.81
+      "hp": 135,
+      "time": 76.22
     },
     {
       "event": "landing",
       "id": "veil-tower-crown-91",
       "x": 15342.3,
       "hp": 135,
-      "time": 76.08
-    },
-    {
-      "event": "hurt",
-      "x": 15610.1,
-      "hp": 121.3,
-      "time": 76.92
+      "time": 77.48
     },
     {
       "event": "landing",
       "id": "veil-engine-walk-95",
-      "x": 15625.5,
-      "hp": 121.3,
-      "time": 77.3
+      "x": 15631.5,
+      "hp": 135,
+      "time": 78.46
     },
     {
       "event": "landing",
       "id": "veil-engine-walk-95",
-      "x": 15961.2,
-      "hp": 121.3,
-      "time": 78.37
+      "x": 15961.6,
+      "hp": 135,
+      "time": 79.52
     },
     {
       "event": "landing",
       "id": "veil-engine-duct-97",
-      "x": 16401.8,
-      "hp": 121.3,
-      "time": 79.87
+      "x": 16401.9,
+      "hp": 135,
+      "time": 81.02
     },
     {
       "event": "landing",
       "id": "veil-engine-switchyard-98",
       "x": 16744.7,
-      "hp": 121.3,
-      "time": 81.08
+      "hp": 135,
+      "time": 82.23
     },
     {
       "event": "gate",
       "x": 16811.6,
-      "hp": 121.3,
-      "time": 81.33
+      "hp": 135,
+      "time": 82.48
     },
     {
       "event": "landing",
       "id": "veil-engine-switchyard-98",
       "x": 16811.6,
-      "hp": 121.3,
-      "time": 81.33
+      "hp": 135,
+      "time": 82.48
     },
     {
       "event": "landing",
       "id": "veil-engine-switchyard-98",
-      "x": 17251.6,
+      "x": 17253.6,
       "hp": 135,
-      "time": 82.7
+      "time": 85.03
     },
     {
       "event": "checkpoint",
-      "x": 17374.3,
+      "x": 17373.3,
       "hp": 135,
-      "time": 83.08
+      "time": 85.46
+    },
+    {
+      "event": "crossingportal",
+      "id": "veil-crossing-wind-entry",
+      "time": 85.9,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-landing",
+      "x": 19613.2,
+      "hp": 135,
+      "time": 86.13
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-court-0",
+      "x": 20188.3,
+      "hp": 135,
+      "time": 88.02
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-step-0",
+      "x": 20467,
+      "hp": 135,
+      "time": 88.91
+    },
+    {
+      "event": "gate",
+      "x": 20716.1,
+      "hp": 135,
+      "time": 89.67
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-bell-0",
+      "x": 20733.5,
+      "hp": 135,
+      "time": 89.73
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-bridge-0",
+      "x": 21065.1,
+      "hp": 135,
+      "time": 91.18
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-bridge-0",
+      "x": 21132.8,
+      "hp": 135,
+      "time": 91.44
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-court-1",
+      "x": 21538.1,
+      "hp": 135,
+      "time": 92.79
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-step-1",
+      "x": 21817,
+      "hp": 135,
+      "time": 93.68
+    },
+    {
+      "event": "gate",
+      "x": 22061.8,
+      "hp": 135,
+      "time": 94.44
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-bell-1",
+      "x": 22080.3,
+      "hp": 135,
+      "time": 94.5
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-bridge-1",
+      "x": 22415.1,
+      "hp": 135,
+      "time": 95.95
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-bridge-1",
+      "x": 22482.8,
+      "hp": 135,
+      "time": 96.22
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-court-2",
+      "x": 22888.1,
+      "hp": 135,
+      "time": 97.57
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-step-2",
+      "x": 23167,
+      "hp": 135,
+      "time": 98.46
+    },
+    {
+      "event": "gate",
+      "x": 23416.1,
+      "hp": 135,
+      "time": 99.22
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-bell-2",
+      "x": 23433.6,
+      "hp": 135,
+      "time": 99.28
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-bridge-2",
+      "x": 23765.1,
+      "hp": 135,
+      "time": 100.73
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-bridge-2",
+      "x": 23832.8,
+      "hp": 135,
+      "time": 100.99
+    },
+    {
+      "event": "checkpoint",
+      "x": 24062.1,
+      "hp": 135,
+      "time": 101.71
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-0",
+      "x": 24111,
+      "hp": 135,
+      "time": 101.9
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-1",
+      "x": 24529.1,
+      "hp": 135,
+      "time": 103.4
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-2",
+      "x": 24926.5,
+      "hp": 135,
+      "time": 104.79
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-3",
+      "x": 25315,
+      "hp": 135,
+      "time": 106.19
+    },
+    {
+      "event": "hurt",
+      "x": 25597.4,
+      "hp": 125,
+      "time": 107.1
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-4",
+      "x": 25678.5,
+      "hp": 125,
+      "time": 107.63
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-5",
+      "x": 26126.8,
+      "hp": 125,
+      "time": 109.13
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-6",
+      "x": 26515.1,
+      "hp": 125,
+      "time": 110.53
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-7",
+      "x": 26931.2,
+      "hp": 125,
+      "time": 112.13
+    },
+    {
+      "event": "checkpoint",
+      "x": 27325.4,
+      "hp": 135,
+      "time": 113.59
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-8",
+      "x": 27328.6,
+      "hp": 135,
+      "time": 113.72
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-9",
+      "x": 27724.9,
+      "hp": 135,
+      "time": 115.39
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-10",
+      "x": 28131.3,
+      "hp": 135,
+      "time": 116.98
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-11",
+      "x": 28531.8,
+      "hp": 135,
+      "time": 118.55
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-12",
+      "x": 28923.4,
+      "hp": 135,
+      "time": 120.13
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-13",
+      "x": 29330.5,
+      "hp": 135,
+      "time": 121.65
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-14",
+      "x": 29726.5,
+      "hp": 135,
+      "time": 123.04
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-15",
+      "x": 30115,
+      "hp": 135,
+      "time": 124.44
+    },
+    {
+      "event": "checkpoint",
+      "x": 30471.1,
+      "hp": 135,
+      "time": 125.6
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-16",
+      "x": 30517.6,
+      "hp": 135,
+      "time": 125.83
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-17",
+      "x": 30929.2,
+      "hp": 135,
+      "time": 127.32
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-18",
+      "x": 31314.5,
+      "hp": 135,
+      "time": 128.71
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-19",
+      "x": 31725.3,
+      "hp": 135,
+      "time": 130.13
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-20",
+      "x": 32131.8,
+      "hp": 135,
+      "time": 131.72
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-21",
+      "x": 32523.4,
+      "hp": 135,
+      "time": 133.29
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-22",
+      "x": 32931.3,
+      "hp": 135,
+      "time": 134.88
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-23",
+      "x": 33331.8,
+      "hp": 135,
+      "time": 136.45
+    },
+    {
+      "event": "checkpoint",
+      "x": 33725.5,
+      "hp": 135,
+      "time": 137.92
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-24",
+      "x": 33728.6,
+      "hp": 135,
+      "time": 138.04
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-25",
+      "x": 34132.7,
+      "hp": 135,
+      "time": 139.72
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-26",
+      "x": 34531.2,
+      "hp": 135,
+      "time": 141.23
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-27",
+      "x": 34912,
+      "hp": 135,
+      "time": 142.66
+    },
+    {
+      "event": "hurt",
+      "x": 35198.4,
+      "hp": 125,
+      "time": 143.58
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-28",
+      "x": 35285.8,
+      "hp": 125,
+      "time": 144.12
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-29",
+      "x": 35728.4,
+      "hp": 125,
+      "time": 145.63
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-30",
+      "x": 36111.8,
+      "hp": 125,
+      "time": 147.05
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-31",
+      "x": 36527,
+      "hp": 125,
+      "time": 148.5
+    },
+    {
+      "event": "checkpoint",
+      "x": 36899.4,
+      "hp": 135,
+      "time": 149.71
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-32",
+      "x": 36922.3,
+      "hp": 135,
+      "time": 149.9
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-33",
+      "x": 37321.4,
+      "hp": 135,
+      "time": 151.55
+    },
+    {
+      "event": "hurt",
+      "x": 37596.9,
+      "hp": 121.3,
+      "time": 152.45
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-34",
+      "x": 37712.6,
+      "hp": 121.3,
+      "time": 153.11
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-35",
+      "x": 38131.7,
+      "hp": 121.3,
+      "time": 154.68
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-36",
+      "x": 38519,
+      "hp": 121.3,
+      "time": 156.23
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-37",
+      "x": 38931,
+      "hp": 121.3,
+      "time": 157.79
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-38",
+      "x": 39331.8,
+      "hp": 121.3,
+      "time": 159.34
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-39",
+      "x": 39717.6,
+      "hp": 121.3,
+      "time": 160.86
+    },
+    {
+      "event": "checkpoint",
+      "x": 40087.8,
+      "hp": 135,
+      "time": 162.08
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-40",
+      "x": 40119.1,
+      "hp": 135,
+      "time": 162.27
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-41",
+      "x": 40530.4,
+      "hp": 135,
+      "time": 163.79
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-42",
+      "x": 40912,
+      "hp": 135,
+      "time": 165.22
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-43",
+      "x": 41327,
+      "hp": 135,
+      "time": 166.67
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-44",
+      "x": 41728.6,
+      "hp": 135,
+      "time": 168.1
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-45",
+      "x": 42111.9,
+      "hp": 135,
+      "time": 169.53
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-46",
+      "x": 42530.9,
+      "hp": 135,
+      "time": 171.11
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-47",
+      "x": 42931.8,
+      "hp": 135,
+      "time": 172.66
+    },
+    {
+      "event": "checkpoint",
+      "x": 43324.5,
+      "hp": 135,
+      "time": 174.1
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-48",
+      "x": 43328.1,
+      "hp": 135,
+      "time": 174.23
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-49",
+      "x": 43732.8,
+      "hp": 135,
+      "time": 175.88
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-50",
+      "x": 44131.8,
+      "hp": 135,
+      "time": 177.43
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-51",
+      "x": 44519,
+      "hp": 135,
+      "time": 178.98
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-52",
+      "x": 44930.5,
+      "hp": 135,
+      "time": 180.52
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-53",
+      "x": 45326.5,
+      "hp": 135,
+      "time": 181.91
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-54",
+      "x": 45715.2,
+      "hp": 135,
+      "time": 183.31
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-55",
+      "x": 46124.8,
+      "hp": 135,
+      "time": 184.72
+    },
+    {
+      "event": "checkpoint",
+      "x": 46469.7,
+      "hp": 135,
+      "time": 185.82
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-56",
+      "x": 46519.2,
+      "hp": 135,
+      "time": 186.07
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-57",
+      "x": 46920.3,
+      "hp": 135,
+      "time": 187.57
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-58",
+      "x": 47324.6,
+      "hp": 135,
+      "time": 188.97
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-59",
+      "x": 47731.9,
+      "hp": 135,
+      "time": 190.57
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-60",
+      "x": 48123.8,
+      "hp": 135,
+      "time": 192.16
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-61",
+      "x": 48531.3,
+      "hp": 135,
+      "time": 193.75
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-62",
+      "x": 48931.8,
+      "hp": 135,
+      "time": 195.33
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-63",
+      "x": 49323.8,
+      "hp": 135,
+      "time": 196.92
+    },
+    {
+      "event": "checkpoint",
+      "x": 49724.5,
+      "hp": 135,
+      "time": 198.4
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-64",
+      "x": 49728.1,
+      "hp": 135,
+      "time": 198.52
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-65",
+      "x": 50132.6,
+      "hp": 135,
+      "time": 200.16
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-66",
+      "x": 50514.8,
+      "hp": 135,
+      "time": 201.55
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-67",
+      "x": 50924.7,
+      "hp": 135,
+      "time": 202.96
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-68",
+      "x": 51326.7,
+      "hp": 135,
+      "time": 204.36
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-69",
+      "x": 51715.2,
+      "hp": 135,
+      "time": 205.76
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-70",
+      "x": 52124.8,
+      "hp": 135,
+      "time": 207.17
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-71",
+      "x": 52526.8,
+      "hp": 135,
+      "time": 208.57
+    },
+    {
+      "event": "checkpoint",
+      "x": 52926.5,
+      "hp": 135,
+      "time": 210.07
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-72",
+      "x": 52928.9,
+      "hp": 135,
+      "time": 210.18
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-73",
+      "x": 53332.8,
+      "hp": 135,
+      "time": 211.87
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-74",
+      "x": 53731.8,
+      "hp": 135,
+      "time": 213.46
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-75",
+      "x": 54123.8,
+      "hp": 135,
+      "time": 215.04
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-76",
+      "x": 54531.3,
+      "hp": 135,
+      "time": 216.63
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-77",
+      "x": 54931.8,
+      "hp": 135,
+      "time": 218.22
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-78",
+      "x": 55320.7,
+      "hp": 135,
+      "time": 219.73
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-79",
+      "x": 55726.5,
+      "hp": 135,
+      "time": 221.16
+    },
+    {
+      "event": "checkpoint",
+      "x": 56090.9,
+      "hp": 135,
+      "time": 222.33
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-80",
+      "x": 56121.2,
+      "hp": 135,
+      "time": 222.54
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-81",
+      "x": 56520.7,
+      "hp": 135,
+      "time": 224.05
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-82",
+      "x": 56926.5,
+      "hp": 135,
+      "time": 225.47
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-83",
+      "x": 57327.7,
+      "hp": 135,
+      "time": 226.89
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-84",
+      "x": 57715.8,
+      "hp": 135,
+      "time": 228.31
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-85",
+      "x": 58131.3,
+      "hp": 135,
+      "time": 229.9
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-86",
+      "x": 58531.6,
+      "hp": 135,
+      "time": 231.46
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-87",
+      "x": 58922.7,
+      "hp": 135,
+      "time": 233.02
+    },
+    {
+      "event": "checkpoint",
+      "x": 59323.7,
+      "hp": 135,
+      "time": 234.48
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-88",
+      "x": 59327.6,
+      "hp": 135,
+      "time": 234.6
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-89",
+      "x": 59732.7,
+      "hp": 135,
+      "time": 236.27
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-90",
+      "x": 60122.7,
+      "hp": 135,
+      "time": 237.82
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-91",
+      "x": 60530.5,
+      "hp": 135,
+      "time": 239.35
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-92",
+      "x": 60927.8,
+      "hp": 135,
+      "time": 240.76
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-93",
+      "x": 61315.9,
+      "hp": 135,
+      "time": 242.17
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-94",
+      "x": 61726.5,
+      "hp": 135,
+      "time": 243.61
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-95",
+      "x": 62127.7,
+      "hp": 135,
+      "time": 245.02
+    },
+    {
+      "event": "checkpoint",
+      "x": 62491.2,
+      "hp": 135,
+      "time": 246.2
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-96",
+      "x": 62521.3,
+      "hp": 135,
+      "time": 246.41
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-97",
+      "x": 62929.9,
+      "hp": 135,
+      "time": 247.92
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-98",
+      "x": 63331.8,
+      "hp": 135,
+      "time": 249.49
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-99",
+      "x": 63722.7,
+      "hp": 135,
+      "time": 251.05
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-100",
+      "x": 64131,
+      "hp": 135,
+      "time": 252.62
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-101",
+      "x": 64531.6,
+      "hp": 135,
+      "time": 254.17
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-102",
+      "x": 64922.7,
+      "hp": 135,
+      "time": 255.73
+    },
+    {
+      "event": "checkpoint",
+      "x": 65323.7,
+      "hp": 135,
+      "time": 257.2
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-course-103",
+      "x": 65327.6,
+      "hp": 135,
+      "time": 257.32
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-oath-court",
+      "x": 65371,
+      "hp": 135,
+      "time": 263.09
+    },
+    {
+      "event": "gate",
+      "x": 65371.2,
+      "hp": 135,
+      "time": 263.1
+    },
+    {
+      "event": "gate",
+      "x": 66206,
+      "hp": 135,
+      "time": 265.77
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-wind-oath-court",
+      "x": 66206,
+      "hp": 135,
+      "time": 265.77
+    },
+    {
+      "event": "crossingportal",
+      "id": "veil-crossing-wind-return",
+      "time": 266.22
+    },
+    {
+      "event": "checkpoint",
+      "x": 17388.1,
+      "hp": 135,
+      "time": 266.22
+    },
+    {
+      "event": "crossingportal",
+      "id": "veil-crossing-water-entry",
+      "time": 267.22,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-landing",
+      "x": 67213.2,
+      "hp": 135,
+      "time": 267.46
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-court-0",
+      "x": 67788.3,
+      "hp": 135,
+      "time": 269.34
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-step-0",
+      "x": 68048,
+      "hp": 135,
+      "time": 270.23
+    },
+    {
+      "event": "gate",
+      "x": 68343.6,
+      "hp": 135,
+      "time": 271.25
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-bell-0",
+      "x": 68343.6,
+      "hp": 135,
+      "time": 271.25
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-bridge-0",
+      "x": 68664.4,
+      "hp": 135,
+      "time": 272.68
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-bridge-0",
+      "x": 68732.6,
+      "hp": 135,
+      "time": 272.95
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-court-1",
+      "x": 69138.7,
+      "hp": 135,
+      "time": 274.31
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-step-1",
+      "x": 69398.1,
+      "hp": 135,
+      "time": 275.2
+    },
+    {
+      "event": "gate",
+      "x": 69693.6,
+      "hp": 135,
+      "time": 276.22
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-bell-1",
+      "x": 69693.6,
+      "hp": 135,
+      "time": 276.22
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-bridge-1",
+      "x": 70014.4,
+      "hp": 135,
+      "time": 277.65
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-bridge-1",
+      "x": 70082.6,
+      "hp": 135,
+      "time": 277.92
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-court-2",
+      "x": 70488.7,
+      "hp": 135,
+      "time": 279.27
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-step-2",
+      "x": 70748.1,
+      "hp": 135,
+      "time": 280.17
+    },
+    {
+      "event": "gate",
+      "x": 71043.6,
+      "hp": 135,
+      "time": 281.18
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-bell-2",
+      "x": 71043.6,
+      "hp": 135,
+      "time": 281.18
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-bridge-2",
+      "x": 71364.4,
+      "hp": 135,
+      "time": 282.62
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-bridge-2",
+      "x": 71432.6,
+      "hp": 135,
+      "time": 282.88
+    },
+    {
+      "event": "checkpoint",
+      "x": 71662,
+      "hp": 135,
+      "time": 283.6
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-0",
+      "x": 71711.9,
+      "hp": 135,
+      "time": 283.8
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-1",
+      "x": 72089.9,
+      "hp": 135,
+      "time": 285.39
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-2",
+      "x": 72528.5,
+      "hp": 135,
+      "time": 287.06
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-3",
+      "x": 72896.6,
+      "hp": 135,
+      "time": 288.51
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-4",
+      "x": 73322.7,
+      "hp": 135,
+      "time": 290.11
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-5",
+      "x": 73688,
+      "hp": 135,
+      "time": 291.62
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-6",
+      "x": 74128.3,
+      "hp": 135,
+      "time": 293.28
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-7",
+      "x": 74496.6,
+      "hp": 135,
+      "time": 294.73
+    },
+    {
+      "event": "checkpoint",
+      "x": 74920.8,
+      "hp": 135,
+      "time": 296.18
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-8",
+      "x": 74926.7,
+      "hp": 135,
+      "time": 296.32
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-9",
+      "x": 75289.2,
+      "hp": 135,
+      "time": 297.8
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-10",
+      "x": 75730,
+      "hp": 135,
+      "time": 299.52
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-11",
+      "x": 76094.9,
+      "hp": 135,
+      "time": 300.91
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-12",
+      "x": 76523.5,
+      "hp": 135,
+      "time": 302.53
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-13",
+      "x": 76887.9,
+      "hp": 135,
+      "time": 304.04
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-14",
+      "x": 77328.8,
+      "hp": 135,
+      "time": 305.72
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-15",
+      "x": 77696.8,
+      "hp": 135,
+      "time": 307.17
+    },
+    {
+      "event": "checkpoint",
+      "x": 78120.2,
+      "hp": 135,
+      "time": 308.62
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-16",
+      "x": 78126.7,
+      "hp": 135,
+      "time": 308.76
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-17",
+      "x": 78489.4,
+      "hp": 135,
+      "time": 310.26
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-18",
+      "x": 78930.2,
+      "hp": 135,
+      "time": 311.99
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-19",
+      "x": 79296.6,
+      "hp": 135,
+      "time": 313.44
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-20",
+      "x": 79722.7,
+      "hp": 135,
+      "time": 315.04
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-21",
+      "x": 80086.4,
+      "hp": 135,
+      "time": 316.48
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-22",
+      "x": 80530.1,
+      "hp": 135,
+      "time": 318.22
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-23",
+      "x": 80896.5,
+      "hp": 135,
+      "time": 319.66
+    },
+    {
+      "event": "checkpoint",
+      "x": 81321.8,
+      "hp": 135,
+      "time": 321.12
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-24",
+      "x": 81327.2,
+      "hp": 135,
+      "time": 321.26
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-25",
+      "x": 81689.8,
+      "hp": 135,
+      "time": 322.82
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-26",
+      "x": 82129.2,
+      "hp": 135,
+      "time": 324.51
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-27",
+      "x": 82524.9,
+      "hp": 135,
+      "time": 325.92
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-28",
+      "x": 82925.2,
+      "hp": 135,
+      "time": 327.55
+    },
+    {
+      "event": "hurt",
+      "x": 83151.5,
+      "hp": 121.3,
+      "time": 328.37
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-29",
+      "x": 83289.8,
+      "hp": 121.3,
+      "time": 328.88
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-30",
+      "x": 83732.1,
+      "hp": 121.3,
+      "time": 330.62
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-31",
+      "x": 84127.1,
+      "hp": 121.3,
+      "time": 332.03
+    },
+    {
+      "event": "checkpoint",
+      "x": 84525,
+      "hp": 135,
+      "time": 333.52
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-32",
+      "x": 84528.4,
+      "hp": 135,
+      "time": 333.65
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-33",
+      "x": 84876.5,
+      "hp": 135,
+      "time": 335.18
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-34",
+      "x": 85323.1,
+      "hp": 135,
+      "time": 336.87
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-35",
+      "x": 85628.2,
+      "hp": 135,
+      "time": 337.82
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-36",
+      "x": 86119,
+      "hp": 135,
+      "time": 339.47
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-37",
+      "x": 86521.5,
+      "hp": 135,
+      "time": 340.95
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-38",
+      "x": 86931.3,
+      "hp": 135,
+      "time": 342.66
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-39",
+      "x": 87231,
+      "hp": 135,
+      "time": 343.61
+    },
+    {
+      "event": "checkpoint",
+      "x": 87719.6,
+      "hp": 135,
+      "time": 345.13
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-40",
+      "x": 87726,
+      "hp": 135,
+      "time": 345.26
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-41",
+      "x": 88116,
+      "hp": 135,
+      "time": 346.79
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-42",
+      "x": 88530.1,
+      "hp": 135,
+      "time": 348.49
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-43",
+      "x": 88935.8,
+      "hp": 135,
+      "time": 349.91
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-44",
+      "x": 89324.8,
+      "hp": 135,
+      "time": 351.52
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-45",
+      "x": 89724.2,
+      "hp": 135,
+      "time": 353
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-46",
+      "x": 90131.6,
+      "hp": 135,
+      "time": 354.71
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-47",
+      "x": 90523.7,
+      "hp": 135,
+      "time": 356.12
+    },
+    {
+      "event": "checkpoint",
+      "x": 90927.6,
+      "hp": 135,
+      "time": 357.62
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-48",
+      "x": 90929.5,
+      "hp": 135,
+      "time": 357.75
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-49",
+      "x": 91328.8,
+      "hp": 135,
+      "time": 359.28
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-50",
+      "x": 91731.5,
+      "hp": 135,
+      "time": 360.98
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-51",
+      "x": 92054.1,
+      "hp": 135,
+      "time": 362.4
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-52",
+      "x": 92518.5,
+      "hp": 135,
+      "time": 364.02
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-53",
+      "x": 92884.8,
+      "hp": 135,
+      "time": 365.47
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-54",
+      "x": 93329.5,
+      "hp": 135,
+      "time": 367.2
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-55",
+      "x": 93696.6,
+      "hp": 135,
+      "time": 368.65
+    },
+    {
+      "event": "checkpoint",
+      "x": 94121.8,
+      "hp": 135,
+      "time": 370.12
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-56",
+      "x": 94127.2,
+      "hp": 135,
+      "time": 370.25
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-57",
+      "x": 94488.8,
+      "hp": 135,
+      "time": 371.82
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-58",
+      "x": 94928.4,
+      "hp": 135,
+      "time": 373.5
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-59",
+      "x": 95294.9,
+      "hp": 135,
+      "time": 374.88
+    },
+    {
+      "event": "hurt",
+      "x": 95429.5,
+      "hp": 127.5,
+      "time": 375.32
+    },
+    {
+      "event": "hurt",
+      "x": 95618.7,
+      "hp": 117.5,
+      "time": 376.23
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-60",
+      "x": 95703.4,
+      "hp": 117.5,
+      "time": 376.57
+    },
+    {
+      "event": "hurt",
+      "x": 95859.6,
+      "hp": 114.4,
+      "time": 377.15
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-61",
+      "x": 96079.1,
+      "hp": 114.4,
+      "time": 377.98
+    },
+    {
+      "event": "hurt",
+      "x": 96092,
+      "hp": 111.3,
+      "time": 378.06
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-62",
+      "x": 96529,
+      "hp": 111.3,
+      "time": 379.71
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-63",
+      "x": 96894.6,
+      "hp": 111.3,
+      "time": 381.08
+    },
+    {
+      "event": "checkpoint",
+      "x": 97325.1,
+      "hp": 135,
+      "time": 382.62
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-64",
+      "x": 97328.4,
+      "hp": 135,
+      "time": 382.74
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-65",
+      "x": 97688.8,
+      "hp": 135,
+      "time": 384.31
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-66",
+      "x": 98128.5,
+      "hp": 135,
+      "time": 386
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-67",
+      "x": 98496.3,
+      "hp": 135,
+      "time": 387.43
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-68",
+      "x": 98922.2,
+      "hp": 135,
+      "time": 389.05
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-69",
+      "x": 99286.6,
+      "hp": 135,
+      "time": 390.57
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-70",
+      "x": 99728,
+      "hp": 135,
+      "time": 392.24
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-71",
+      "x": 100096.3,
+      "hp": 135,
+      "time": 393.67
+    },
+    {
+      "event": "checkpoint",
+      "x": 100520.8,
+      "hp": 135,
+      "time": 395.12
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-72",
+      "x": 100527,
+      "hp": 135,
+      "time": 395.27
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-73",
+      "x": 100888.7,
+      "hp": 135,
+      "time": 396.81
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-74",
+      "x": 101329.4,
+      "hp": 135,
+      "time": 398.53
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-75",
+      "x": 101695.2,
+      "hp": 135,
+      "time": 399.92
+    },
+    {
+      "event": "hurt",
+      "x": 101826.7,
+      "hp": 127.5,
+      "time": 400.36
+    },
+    {
+      "event": "hurt",
+      "x": 102016.2,
+      "hp": 117.5,
+      "time": 401.27
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-76",
+      "x": 102102.1,
+      "hp": 117.5,
+      "time": 401.61
+    },
+    {
+      "event": "hurt",
+      "x": 102258.7,
+      "hp": 114.4,
+      "time": 402.18
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-77",
+      "x": 102472.1,
+      "hp": 114.4,
+      "time": 402.94
+    },
+    {
+      "event": "hurt",
+      "x": 102508.9,
+      "hp": 111.3,
+      "time": 403.09
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-78",
+      "x": 102929.8,
+      "hp": 111.3,
+      "time": 404.72
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-79",
+      "x": 103309.2,
+      "hp": 111.3,
+      "time": 406.13
+    },
+    {
+      "event": "checkpoint",
+      "x": 103721.5,
+      "hp": 135,
+      "time": 407.62
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-80",
+      "x": 103726.8,
+      "hp": 135,
+      "time": 407.75
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-81",
+      "x": 104036.2,
+      "hp": 135,
+      "time": 408.82
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-82",
+      "x": 104530.4,
+      "hp": 135,
+      "time": 410.58
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-83",
+      "x": 104908.5,
+      "hp": 135,
+      "time": 412
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-84",
+      "x": 105322.8,
+      "hp": 135,
+      "time": 413.62
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-85",
+      "x": 105708.3,
+      "hp": 135,
+      "time": 415.1
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-86",
+      "x": 106129,
+      "hp": 135,
+      "time": 416.8
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-87",
+      "x": 106528.7,
+      "hp": 135,
+      "time": 418.22
+    },
+    {
+      "event": "checkpoint",
+      "x": 106924.8,
+      "hp": 135,
+      "time": 419.71
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-88",
+      "x": 106928.3,
+      "hp": 135,
+      "time": 419.83
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-89",
+      "x": 107327.6,
+      "hp": 135,
+      "time": 421.37
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-90",
+      "x": 107732.4,
+      "hp": 135,
+      "time": 423.07
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-91",
+      "x": 108111,
+      "hp": 135,
+      "time": 424.49
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-92",
+      "x": 108522.8,
+      "hp": 135,
+      "time": 426.11
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-93",
+      "x": 108804.4,
+      "hp": 135,
+      "time": 427.12
+    },
+    {
+      "event": "hurt",
+      "x": 109251.3,
+      "hp": 121.3,
+      "time": 428.59
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-94",
+      "x": 109332.3,
+      "hp": 121.3,
+      "time": 429.19
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-95",
+      "x": 109631.7,
+      "hp": 121.3,
+      "time": 430.14
+    },
+    {
+      "event": "checkpoint",
+      "x": 110118.4,
+      "hp": 135,
+      "time": 431.67
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-96",
+      "x": 110125.5,
+      "hp": 135,
+      "time": 431.79
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-97",
+      "x": 110518.5,
+      "hp": 135,
+      "time": 433.32
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-98",
+      "x": 110930,
+      "hp": 135,
+      "time": 435.02
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-99",
+      "x": 111328.9,
+      "hp": 135,
+      "time": 436.44
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-100",
+      "x": 111725.2,
+      "hp": 135,
+      "time": 438.07
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-causeway-raft-101",
+      "x": 112072.2,
+      "hp": 135,
+      "time": 439.54
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-102",
+      "x": 112523.8,
+      "hp": 135,
+      "time": 441.23
+    },
+    {
+      "event": "checkpoint",
+      "x": 112918.4,
+      "hp": 135,
+      "time": 442.56
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-course-103",
+      "x": 112926.1,
+      "hp": 135,
+      "time": 442.7
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-oath-court",
+      "x": 112971,
+      "hp": 135,
+      "time": 446.32
+    },
+    {
+      "event": "gate",
+      "x": 112971.2,
+      "hp": 135,
+      "time": 446.32
+    },
+    {
+      "event": "gate",
+      "x": 113806,
+      "hp": 135,
+      "time": 448.99
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-water-oath-court",
+      "x": 113806,
+      "hp": 135,
+      "time": 448.99
+    },
+    {
+      "event": "crossingportal",
+      "id": "veil-crossing-water-return",
+      "time": 449.44
+    },
+    {
+      "event": "checkpoint",
+      "x": 17468.1,
+      "hp": 135,
+      "time": 449.45
+    },
+    {
+      "event": "crossingportal",
+      "id": "veil-crossing-fire-entry",
+      "time": 450.45,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-landing",
+      "x": 114813.2,
+      "hp": 135,
+      "time": 450.68
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-court-0",
+      "x": 115388.3,
+      "hp": 135,
+      "time": 452.57
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-step-0",
+      "x": 115632.1,
+      "hp": 135,
+      "time": 453.36
+    },
+    {
+      "event": "gate",
+      "x": 115920,
+      "hp": 135,
+      "time": 454.27
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-bell-0",
+      "x": 115920,
+      "hp": 135,
+      "time": 454.27
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-bridge-0",
+      "x": 116265.1,
+      "hp": 135,
+      "time": 455.8
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-bridge-0",
+      "x": 116332.8,
+      "hp": 135,
+      "time": 456.07
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-court-1",
+      "x": 116738.1,
+      "hp": 135,
+      "time": 457.42
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-step-1",
+      "x": 116982,
+      "hp": 135,
+      "time": 458.21
+    },
+    {
+      "event": "gate",
+      "x": 117269.1,
+      "hp": 135,
+      "time": 459.63
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-bell-1",
+      "x": 117269.1,
+      "hp": 135,
+      "time": 459.63
+    },
+    {
+      "event": "hurt",
+      "x": 117613.6,
+      "hp": 123.8,
+      "time": 461.02
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-bridge-1",
+      "x": 117617.8,
+      "hp": 123.8,
+      "time": 461.51
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-bridge-1",
+      "x": 117683.3,
+      "hp": 123.8,
+      "time": 461.77
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-court-2",
+      "x": 118088.2,
+      "hp": 123.8,
+      "time": 463.12
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-step-2",
+      "x": 118332,
+      "hp": 123.8,
+      "time": 463.92
+    },
+    {
+      "event": "gate",
+      "x": 118619.9,
+      "hp": 123.8,
+      "time": 464.82
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-bell-2",
+      "x": 118619.9,
+      "hp": 123.8,
+      "time": 464.82
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-bridge-2",
+      "x": 118965.1,
+      "hp": 123.8,
+      "time": 466.36
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-bridge-2",
+      "x": 119032.8,
+      "hp": 123.8,
+      "time": 466.62
+    },
+    {
+      "event": "checkpoint",
+      "x": 119262.1,
+      "hp": 135,
+      "time": 467.34
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-0",
+      "x": 119311,
+      "hp": 135,
+      "time": 467.53
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-1",
+      "x": 119726,
+      "hp": 135,
+      "time": 469.05
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-2",
+      "x": 120121.9,
+      "hp": 135,
+      "time": 470.46
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-3",
+      "x": 120527.7,
+      "hp": 135,
+      "time": 472.02
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-4",
+      "x": 120927.8,
+      "hp": 135,
+      "time": 473.59
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-5",
+      "x": 121322,
+      "hp": 135,
+      "time": 475
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-6",
+      "x": 121721.7,
+      "hp": 135,
+      "time": 476.41
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-7",
+      "x": 122127.7,
+      "hp": 135,
+      "time": 477.97
+    },
+    {
+      "event": "hurt",
+      "x": 122418.5,
+      "hp": 121.3,
+      "time": 478.93
+    },
+    {
+      "event": "checkpoint",
+      "x": 122496.6,
+      "hp": 135,
+      "time": 479.49
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-8",
+      "x": 122516.2,
+      "hp": 135,
+      "time": 479.62
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-9",
+      "x": 122926,
+      "hp": 135,
+      "time": 481.12
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-10",
+      "x": 123321.9,
+      "hp": 135,
+      "time": 482.53
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-11",
+      "x": 123727.7,
+      "hp": 135,
+      "time": 484.1
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-12",
+      "x": 124127.8,
+      "hp": 135,
+      "time": 485.67
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-13",
+      "x": 124522,
+      "hp": 135,
+      "time": 487.07
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-14",
+      "x": 124921.7,
+      "hp": 135,
+      "time": 488.48
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-15",
+      "x": 125327.7,
+      "hp": 135,
+      "time": 490.05
+    },
+    {
+      "event": "checkpoint",
+      "x": 125723.7,
+      "hp": 135,
+      "time": 491.49
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-16",
+      "x": 125727.8,
+      "hp": 135,
+      "time": 491.62
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-17",
+      "x": 126126,
+      "hp": 135,
+      "time": 493.12
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-18",
+      "x": 126521.9,
+      "hp": 135,
+      "time": 494.52
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-19",
+      "x": 126927.7,
+      "hp": 135,
+      "time": 496.09
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-20",
+      "x": 127327.8,
+      "hp": 135,
+      "time": 497.66
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-21",
+      "x": 127722,
+      "hp": 135,
+      "time": 499.07
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-22",
+      "x": 128121.7,
+      "hp": 135,
+      "time": 500.47
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-23",
+      "x": 128527.7,
+      "hp": 135,
+      "time": 502.04
+    },
+    {
+      "event": "checkpoint",
+      "x": 128923.7,
+      "hp": 135,
+      "time": 503.48
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-24",
+      "x": 128927.8,
+      "hp": 135,
+      "time": 503.61
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-25",
+      "x": 129326,
+      "hp": 135,
+      "time": 505.11
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-26",
+      "x": 129749.5,
+      "hp": 135,
+      "time": 507.53
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-27",
+      "x": 130127.8,
+      "hp": 135,
+      "time": 509.09
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-28",
+      "x": 130527.8,
+      "hp": 135,
+      "time": 510.66
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-29",
+      "x": 130922,
+      "hp": 135,
+      "time": 512.07
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-30",
+      "x": 131321.7,
+      "hp": 135,
+      "time": 513.47
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-31",
+      "x": 131727.7,
+      "hp": 135,
+      "time": 515.04
+    },
+    {
+      "event": "checkpoint",
+      "x": 132123.7,
+      "hp": 135,
+      "time": 516.48
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-32",
+      "x": 132127.8,
+      "hp": 135,
+      "time": 516.61
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-33",
+      "x": 132526,
+      "hp": 135,
+      "time": 518.11
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-34",
+      "x": 132921.9,
+      "hp": 135,
+      "time": 519.52
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-35",
+      "x": 133327.7,
+      "hp": 135,
+      "time": 521.08
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-36",
+      "x": 133727.8,
+      "hp": 135,
+      "time": 522.65
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-37",
+      "x": 134122,
+      "hp": 135,
+      "time": 524.06
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-38",
+      "x": 134531.1,
+      "hp": 135,
+      "time": 527.67
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-39",
+      "x": 134927.7,
+      "hp": 135,
+      "time": 529.23
+    },
+    {
+      "event": "checkpoint",
+      "x": 135323.7,
+      "hp": 135,
+      "time": 530.67
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-40",
+      "x": 135327.8,
+      "hp": 135,
+      "time": 530.8
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-41",
+      "x": 135726,
+      "hp": 135,
+      "time": 532.3
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-42",
+      "x": 136121.9,
+      "hp": 135,
+      "time": 533.71
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-43",
+      "x": 136527.7,
+      "hp": 135,
+      "time": 535.27
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-44",
+      "x": 136927.8,
+      "hp": 135,
+      "time": 536.84
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-45",
+      "x": 137322,
+      "hp": 135,
+      "time": 538.25
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-46",
+      "x": 137721.7,
+      "hp": 135,
+      "time": 539.66
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-47",
+      "x": 138127.7,
+      "hp": 135,
+      "time": 541.22
+    },
+    {
+      "event": "checkpoint",
+      "x": 138523.7,
+      "hp": 135,
+      "time": 542.67
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-48",
+      "x": 138527.8,
+      "hp": 135,
+      "time": 542.79
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-49",
+      "x": 138926,
+      "hp": 135,
+      "time": 544.29
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-50",
+      "x": 139321.9,
+      "hp": 135,
+      "time": 545.7
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-51",
+      "x": 139727.7,
+      "hp": 135,
+      "time": 547.27
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-52",
+      "x": 140127.8,
+      "hp": 135,
+      "time": 548.83
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-53",
+      "x": 140519.7,
+      "hp": 135,
+      "time": 550.21
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-54",
+      "x": 140919.7,
+      "hp": 135,
+      "time": 551.59
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-55",
+      "x": 141328.3,
+      "hp": 135,
+      "time": 553.19
+    },
+    {
+      "event": "hurt",
+      "x": 141672,
+      "hp": 121.3,
+      "time": 554.32
+    },
+    {
+      "event": "checkpoint",
+      "x": 141729.4,
+      "hp": 135,
+      "time": 554.87
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-56",
+      "x": 141730.3,
+      "hp": 135,
+      "time": 555
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-57",
+      "x": 142124.9,
+      "hp": 135,
+      "time": 556.47
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-58",
+      "x": 142519.6,
+      "hp": 135,
+      "time": 557.84
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-59",
+      "x": 142928.3,
+      "hp": 135,
+      "time": 559.44
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-60",
+      "x": 143328.1,
+      "hp": 135,
+      "time": 561.02
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-61",
+      "x": 143719.7,
+      "hp": 135,
+      "time": 562.4
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-62",
+      "x": 144131,
+      "hp": 135,
+      "time": 566.89
+    },
+    {
+      "event": "hurt",
+      "x": 144137.5,
+      "hp": 123.8,
+      "time": 566.96
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-63",
+      "x": 144530,
+      "hp": 123.8,
+      "time": 568.61
+    },
+    {
+      "event": "checkpoint",
+      "x": 144924.6,
+      "hp": 135,
+      "time": 570.07
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-64",
+      "x": 144928.2,
+      "hp": 135,
+      "time": 570.19
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-65",
+      "x": 145324.8,
+      "hp": 135,
+      "time": 571.66
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-66",
+      "x": 145731,
+      "hp": 135,
+      "time": 576.14
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-67",
+      "x": 146119.2,
+      "hp": 135,
+      "time": 577.26
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-68",
+      "x": 146528.3,
+      "hp": 135,
+      "time": 578.86
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-69",
+      "x": 146919.1,
+      "hp": 135,
+      "time": 580.22
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-70",
+      "x": 147319.7,
+      "hp": 135,
+      "time": 581.61
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-71",
+      "x": 147728.3,
+      "hp": 135,
+      "time": 583.21
+    },
+    {
+      "event": "checkpoint",
+      "x": 148124.5,
+      "hp": 135,
+      "time": 584.67
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-72",
+      "x": 148128.1,
+      "hp": 135,
+      "time": 584.79
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-73",
+      "x": 148524.8,
+      "hp": 135,
+      "time": 586.26
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-74",
+      "x": 148919.6,
+      "hp": 135,
+      "time": 587.63
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-75",
+      "x": 149328.3,
+      "hp": 135,
+      "time": 589.23
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-76",
+      "x": 149728.1,
+      "hp": 135,
+      "time": 590.82
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-77",
+      "x": 150119.7,
+      "hp": 135,
+      "time": 592.19
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-78",
+      "x": 150519.7,
+      "hp": 135,
+      "time": 593.57
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-79",
+      "x": 150928.3,
+      "hp": 135,
+      "time": 595.17
+    },
+    {
+      "event": "checkpoint",
+      "x": 151324.5,
+      "hp": 135,
+      "time": 596.63
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-80",
+      "x": 151328.1,
+      "hp": 135,
+      "time": 596.76
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-81",
+      "x": 151724.8,
+      "hp": 135,
+      "time": 598.22
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-82",
+      "x": 152131,
+      "hp": 135,
+      "time": 602.71
+    },
+    {
+      "event": "hurt",
+      "x": 152139.1,
+      "hp": 123.8,
+      "time": 602.78
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-83",
+      "x": 152530,
+      "hp": 123.8,
+      "time": 604.42
+    },
+    {
+      "event": "hurt",
+      "x": 152924.2,
+      "hp": 116.3,
+      "time": 605.87
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-84",
+      "x": 152932.4,
+      "hp": 118.4,
+      "time": 606.34
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-85",
+      "x": 153319.5,
+      "hp": 118.4,
+      "time": 607.71
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-86",
+      "x": 153719.7,
+      "hp": 118.4,
+      "time": 609.09
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-87",
+      "x": 154128.3,
+      "hp": 118.4,
+      "time": 610.69
+    },
+    {
+      "event": "checkpoint",
+      "x": 154524.5,
+      "hp": 135,
+      "time": 612.15
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-88",
+      "x": 154528.1,
+      "hp": 135,
+      "time": 612.27
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-89",
+      "x": 154924.8,
+      "hp": 135,
+      "time": 613.74
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-90",
+      "x": 155319.6,
+      "hp": 135,
+      "time": 615.12
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-91",
+      "x": 155728.3,
+      "hp": 135,
+      "time": 616.72
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-92",
+      "x": 156128.1,
+      "hp": 135,
+      "time": 618.3
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-93",
+      "x": 156519.7,
+      "hp": 135,
+      "time": 619.67
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-94",
+      "x": 156919.7,
+      "hp": 135,
+      "time": 621.06
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-95",
+      "x": 157328.3,
+      "hp": 135,
+      "time": 622.66
+    },
+    {
+      "event": "checkpoint",
+      "x": 157724.5,
+      "hp": 135,
+      "time": 624.12
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-96",
+      "x": 157728.1,
+      "hp": 135,
+      "time": 624.24
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-97",
+      "x": 158124.8,
+      "hp": 135,
+      "time": 625.71
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-98",
+      "x": 158531,
+      "hp": 135,
+      "time": 630.19
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-99",
+      "x": 158919.2,
+      "hp": 135,
+      "time": 631.31
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-100",
+      "x": 159328.3,
+      "hp": 135,
+      "time": 632.91
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-101",
+      "x": 159719.1,
+      "hp": 135,
+      "time": 634.27
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-102",
+      "x": 160131,
+      "hp": 135,
+      "time": 638.85
+    },
+    {
+      "event": "hurt",
+      "x": 160137.5,
+      "hp": 123.8,
+      "time": 638.92
+    },
+    {
+      "event": "checkpoint",
+      "x": 160529.7,
+      "hp": 135,
+      "time": 640.53
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-course-103",
+      "x": 160530.4,
+      "hp": 135,
+      "time": 640.66
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-oath-court",
+      "x": 160571,
+      "hp": 135,
+      "time": 645.99
+    },
+    {
+      "event": "gate",
+      "x": 160571.2,
+      "hp": 135,
+      "time": 646
+    },
+    {
+      "event": "gate",
+      "x": 161406,
+      "hp": 135,
+      "time": 648.67
+    },
+    {
+      "event": "landing",
+      "id": "veil-crossing-fire-oath-court",
+      "x": 161406,
+      "hp": 135,
+      "time": 648.67
+    },
+    {
+      "event": "crossingportal",
+      "id": "veil-crossing-fire-return",
+      "time": 649.12
     },
     {
       "event": "bossstart",
       "x": 17670.2,
       "hp": 135,
-      "time": 84.19
+      "time": 649.75
     },
     {
       "event": "hurt",
       "x": 18057.9,
       "hp": 127.5,
-      "time": 87.02
+      "time": 652.52
     },
     {
       "event": "hurt",
-      "x": 18042.9,
+      "x": 18014.1,
       "hp": 120,
-      "time": 88
+      "time": 653.57
     },
     {
       "event": "hurt",
-      "x": 18025,
-      "hp": 107.5,
-      "time": 93.58
+      "x": 18148.3,
+      "hp": 109.9,
+      "time": 657.52
+    },
+    {
+      "event": "hurt",
+      "x": 18017.3,
+      "hp": 103.3,
+      "time": 660.36
     },
     {
       "event": "bossdefeated",
       "id": "veil-regent",
-      "time": 95.88,
-      "hp": 107.5
+      "time": 661.81,
+      "hp": 105.4
     },
     {
       "event": "gate",
-      "x": 17988.5,
-      "hp": 107.5,
-      "time": 95.88
+      "x": 17937.9,
+      "hp": 105.4,
+      "time": 661.81
     },
     {
       "event": "landing",
       "id": "veil-arena-106",
-      "x": 17988.5,
-      "hp": 107.5,
-      "time": 95.88
+      "x": 17937.9,
+      "hp": 105.4,
+      "time": 661.81
     },
     {
       "event": "landing",
       "id": "veil-arena-106",
-      "x": 18662.5,
-      "hp": 107.5,
-      "time": 98.09
+      "x": 18661,
+      "hp": 105.4,
+      "time": 664.08
     },
     {
       "event": "win",
-      "x": 18682.6,
-      "hp": 107.5,
-      "time": 98.16
+      "x": 18683.5,
+      "hp": 105.4,
+      "time": 664.16
     }
   ]
 }

@@ -1,6 +1,8 @@
 import { IRONFANG_GEOMETRY } from './ironfang-geometry.js';
+import { villainDamageBounds } from './character-motion.js';
 
 export const isIronfang = actor => actor.type === 'regent' && actor.combatStyle === 'sanctuary';
+export const ironfangRotation = actor => actor.form==='flying'&&actor.phase!=='transform'?(actor.flightPitch||0)*(actor.facing||1):0;
 
 // One pose selection contract for rendering, muzzle sockets and damage geometry.
 export function ironfangFrame(actor) {
@@ -11,6 +13,10 @@ export function ironfangFrame(actor) {
   }
   if (actor.form === 'flying') {
     if (actor.flash > 0 && actor.phase === 'idle') return 'if-dragon-9';
+    if(actor.attackKind==='cannon'&&['charge','attack'].includes(actor.phase)){
+      const key=`if-dragon-cannon-${actor.phase==='charge'?0:1+Math.floor(phase*18)%3}`;
+      if(IRONFANG_GEOMETRY[key])return key;
+    }
     if (actor.attackKind === 'breath' || actor.attackKind === 'cinder') {
       if (actor.phase === 'charge') return phase < .35 ? 'if-dragon-4' : 'if-dragon-5';
       if (actor.phase === 'attack') return 'if-dragon-6';
@@ -19,6 +25,10 @@ export function ironfangFrame(actor) {
     return `if-dragon-${Math.floor(time * 8) % 4}`;
   }
   if (actor.flash > 0 && actor.phase === 'idle') return 'if-bull-13';
+  if(actor.attackKind==='charge'&&actor.phase==='attack'){
+    const key=`if-bull-charge-${Math.floor((actor.motion?.cycle||phase*3)*4)%4}`;
+    if(IRONFANG_GEOMETRY[key])return key;
+  }
   if (actor.attackKind === 'cannon' && ['charge', 'attack'].includes(actor.phase))
     return `if-bull-${actor.phase === 'charge' ? 8 : 9 + Math.floor(phase * 14) % 2}`;
   if (['slam', 'cleave'].includes(actor.attackKind)) {
@@ -31,8 +41,8 @@ export function ironfangFrame(actor) {
 
 export function ironfangPoint(actor, point, key = ironfangFrame(actor)) {
   const { body } = IRONFANG_GEOMETRY[key], scale = actor.h / body.h, facing = actor.facing || 1;
-  return { x: actor.x + actor.w / 2 + facing * (point.x - body.x - body.w / 2) * scale,
-    y: actor.y + actor.h + (point.y - body.y - body.h) * scale };
+  const x=facing*(point.x-body.x-body.w/2)*scale,y=(point.y-body.y-body.h)*scale,angle=ironfangRotation(actor);
+  return { x:actor.x+actor.w/2+x*Math.cos(angle)-y*Math.sin(angle),y:actor.y+actor.h+x*Math.sin(angle)+y*Math.cos(angle) };
 }
 
 export function ironfangSocket(actor, slot) {
@@ -42,11 +52,12 @@ export function ironfangSocket(actor, slot) {
 }
 
 export function damageBounds(actor) {
-  if (!isIronfang(actor)) return [actor];
+  if (!isIronfang(actor)) return villainDamageBounds(actor);
   const key = ironfangFrame(actor), meta = IRONFANG_GEOMETRY[key], scale = actor.h / meta.body.h;
   return meta.hurtboxes.map(box => {
-    const p = ironfangPoint(actor, box, key), w = box.w * scale;
-    return { x: p.x - (actor.facing < 0 ? w : 0), y: p.y, w, h: box.h * scale };
+    const corners=[box,{x:box.x+box.w,y:box.y},{x:box.x,y:box.y+box.h},{x:box.x+box.w,y:box.y+box.h}].map(p=>ironfangPoint(actor,p,key));
+    const x=Math.min(...corners.map(p=>p.x)),y=Math.min(...corners.map(p=>p.y));
+    return {x,y,w:Math.max(...corners.map(p=>p.x))-x,h:Math.max(...corners.map(p=>p.y))-y};
   });
 }
 

@@ -24,7 +24,7 @@ export const ARMORS = [
 ];
 export const SPELLS = [
   { id: 'raven', name: 'Bell Raven', description: 'An ivory spirit dives through wards, briefly exposing its target to your next attacks.', tint: 0xa8eadc, cost: 40, cooldown: 10, duration: 9 },
-  { id: 'cinder', name: 'Cinder Plague', description: 'Ignite every living soldier for five seconds.', tint: 0xff825f, cost: 45, cooldown: 5, duration: 5 },
+  { id: 'cinder', name: 'Cinder Plague', description: 'Ignite nearby enemies in this realm for five seconds.', tint: 0xff825f, cost: 45, cooldown: 5, duration: 5 },
   { id: 'siphon', name: 'Soul Siphon', description: 'Rip nearby souls and steal life from subsequent attacks.', tint: 0xbc8dff, cost: 25, cooldown: 4, duration: 6 },
   { id: 'thunder', name: 'Skybreaker', description: 'Lightning staggers nearby foes. Break the Ward: ordinary sentinel shields fall for three seconds; boss conduit shields remain protected.', tint: 0x82e8ff, cost: 35, cooldown: 4, radius: 680 },
   { id: 'veil', name: 'Shadow Veil', description: 'Hide from enemy targeting for six seconds; attacking reveals you.', tint: 0xa78eff, cost: 25, cooldown: 7, duration: 6 },

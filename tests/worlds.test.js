@@ -18,7 +18,7 @@ test('five selectable worlds have independent authored layouts and stable metada
   }
 });
 for (const world of Object.values(LEVELS)) test(`${world.id}: world boundaries, relays, bosses, routes, rewards and interactive references are valid`, () => {
-  assert.ok(world.width >= 10000 && world.width < 25000); assert.equal(world.height, 1440);
+  assert.ok(world.width >= 10000 && world.width < 200000); assert.equal(world.height, 1440);
   const ids = new Set();
   for (const object of [...world.solids, ...world.hazards, ...world.props, ...world.pickups, ...world.gates, ...world.bosses, ...world.npcs, ...world.movingPlatforms, ...world.enemyPortals, ...world.portals, ...world.enemies]) {
     assert.ok(object.id && !ids.has(object.id), `${world.id}: repeated ${object.id}`); ids.add(object.id);

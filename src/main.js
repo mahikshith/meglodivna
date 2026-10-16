@@ -16,15 +16,19 @@ import { preloadRuneheartArt, createRuneheartArt, createRuneheartParallax } from
 import { preloadLanternArt, createLanternArt } from './lantern-art.js';
 import { bladeMotion } from './blade-motion.js';
 import { LanternEffects } from './lantern-fx.js';
-import { companionFrame, firingFrame, casterFrame } from './character-motion.js';
-import { isIronfang, ironfangFrame } from './ironfang.js';
+import { companionFrame, firingFrame, villainFrame } from './character-motion.js';
+import { isIronfang, ironfangFrame, ironfangRotation } from './ironfang.js';
+import { introBeatAt, journeyStage, CROSSINGS } from './story.js';
 
 const $=id=>document.getElementById(id), sound=new Sound();
 let scene,ui,mode='menu',returnMode='menu',retries=0,previousZone='';
+let introTime=0,introPaused=false,introIndex=-1;
 let reducedFX=matchMedia('(prefers-reduced-motion: reduce)').matches;
 try{const saved=localStorage.getItem('runeheart-reduced-fx');if(saved!==null)reducedFX=saved==='true';sound.setMuted(localStorage.getItem('runeheart-muted')==='true');}catch{}
 sound.setReducedFX(reducedFX);
-const initialProgress=switchWorldProgress(loadProgress(),'soulforge');
+const testArmory = true;
+const readProgress = () => loadProgress(undefined, { testMode: testArmory });
+const initialProgress=switchWorldProgress(readProgress(),'soulforge');
 let world=createWorld(initialProgress.checkpoint||0,{worldId:'soulforge',difficulty:'forge',progress:initialProgress});
 let LEVEL=world.level||DEFAULT_LEVEL;
 const C={light:0xe7f5ff,copper:0xf4b04f,cyan:0x45caff,red:0xf36377,violet:0xbd75ff};
@@ -77,17 +81,7 @@ class Soulforge extends Phaser.Scene {
   }
   referenceKey(animation,time=this.visualTime,rate=9){const frames=this.referenceArt.animations[animation];return Array.isArray(frames)&&frames.length?frames[Math.floor(time*rate)%frames.length]:null;}
   motionKey(identity,actor,fallback='idle'){
-    if(identity==='caster')return casterFrame(actor);
-    if(identity==='dragon')return `cr-dragon-${actor.attackPhase==='contact'?5:actor.attackPhase==='lift'?4:Math.floor((actor.animationTime||this.visualTime)*7)%4}`;
-    const motion=actor.motion||{},phase=actor.attackPhase||motion.phase;
-    const rush=actor.attackKind==='charge'&&['contact','downswing'].includes(phase)&&Math.abs(actor.vx||0)>8;
-    if(identity==='wispknight'&&phase==='contact'&&(actor.attackProgress||0)<.5)return this.referenceArt.animations['wispknight-attack']?.[1];
-    const action=actor.flash>0&&!['lift','downswing','contact'].includes(phase)?'hurt':rush?'walk':['lift','downswing','contact','recovery'].includes(phase)?phase:Math.abs(actor.vx||0)>8?'walk':fallback;
-    const names=[`${identity}-${action}`,`${identity}-${action==='lift'?'windup':['downswing','contact'].includes(action)?'attack':fallback}`,`${identity}-idle`];
-    const frames=names.map(n=>this.referenceArt.animations[n]).find(f=>f?.length);
-    if(!frames)return null;
-    const progress=action==='walk'?(motion.cycle||0):['lift','downswing','contact','recovery'].includes(action)?actor.attackProgress||0:(this.visualTime*7%frames.length)/frames.length;
-    return frames[Math.min(frames.length-1,Math.floor(Math.max(0,progress)*frames.length))];
+    return villainFrame(actor,identity,fallback);
   }
   drawBladeTrail(key,blade,player){
     const meta=this.referenceArt.frames[key];if(!meta)return;
@@ -131,7 +125,7 @@ class Soulforge extends Phaser.Scene {
     const theme=WORLD_ART[this.renderedWorldId]||{},rim={soulforge:0xe5d4bd,tide:0xa4e8de,pyre:0xffbb74,neon:0x9ae6ff,veil:0xe4b6fa}[this.renderedWorldId]||0xe5d4bd;
     for(const s of LEVEL.solids){
       const chamber=LEVEL.rooms?.find(r=>s.x>=r.x&&s.x<r.x+r.w),surface=chamber?.kind==='conduit'?'metal':chamber?.kind==='crypt'?'ruins':LEVEL.theme?.foreground||'ruins';
-      const view=buildSolidTerrain(this,s,surface);this.staticViews.push({view,x:s.x,w:s.w,solidId:s.id});
+      const view=buildSolidTerrain(this,s,s.material||surface);this.staticViews.push({view,x:s.x,w:s.w,solidId:s.id});
     }
     for(const landmark of LEVEL.landmarks||[]){
       if(this.renderedWorldId==='soulforge'&&landmark.type!=='water'){
@@ -149,7 +143,7 @@ class Soulforge extends Phaser.Scene {
       const view=this.add.image(landmark.x,landmark.y,this.referenceArt.frames[key]?.atlasKey||this.referenceArt.atlasKey,key).setOrigin(.5,1).setDepth(-2).setAlpha(.52).setScale(landmark.type==='tower'?3.5:1.8);
       this.staticViews.push({view,x:landmark.x-180,w:360});
     }
-    LEVEL.guides?.forEach(h=>{const view=this.add.text(h.x,h.y,h.text,{fontFamily:'Alegreya Sans,Arial',fontSize:'10px',color:'#e2d7c4',backgroundColor:'#161422',padding:{x:8,y:5}}).setOrigin(.5).setAlpha(.7).setDepth(3);this.staticViews.push({view,x:h.x-200,w:400});});
+    LEVEL.guides?.forEach(h=>{const view=this.add.text(h.x,h.y,h.text,{fontFamily:'Alegreya Sans,Arial',fontSize:'15px',color:'#eee5d2',backgroundColor:'#102326',wordWrap:{width:310},padding:{x:10,y:7}}).setOrigin(.5).setAlpha(.94).setDepth(3);this.staticViews.push({view,x:h.x-200,w:400});});
     const e=LEVEL.exit,exit=this.add.image(e.x+e.w/2,e.y+e.h,'lantern-art','ln-portal-0').setDepth(3);this.setReference(exit,'ln-portal-0',{x:e.x-15,y:e.y-40,w:80,h:110,facing:1});this.exitPortal=exit;this.staticViews.push({view:exit,x:e.x,w:100});
     const exitTitle=this.add.text(e.x+e.w/2,e.y-40,'HEART GATE',{fontFamily:'Alegreya Sans,Arial',fontSize:'10px',color:'#e7d4ee'}).setOrigin(.5);this.staticViews.push({view:exitTitle,x:e.x-100,w:200});
   }
@@ -176,6 +170,7 @@ class Soulforge extends Phaser.Scene {
   }
   update(_,milliseconds){
     const dt=Math.min(milliseconds/1000,.05),visualDt=mode==='playing'?dt:0;this.visualTime+=visualDt;
+    if(mode==='intro')updateIntro(dt);
     this.dialogueVisualTime=(this.dialogueVisualTime||0)+(mode==='story'?dt:0);
     if(mode==='playing'){
       if(world.hitstop>0)world.hitstop=Math.max(0,world.hitstop-dt);
@@ -199,8 +194,8 @@ class Soulforge extends Phaser.Scene {
     const p=world.player,t=this.visualTime,alpha=mode==='playing'?Math.min(1,this.accumulator/STEP):1;
     const px=Phaser.Math.Linear(this.previousPlayer.x,p.x,alpha),py=Phaser.Math.Linear(this.previousPlayer.y,p.y,alpha);
     const zone=[...LEVEL.zones].reverse().find(z=>p.x>=z.x)||LEVEL.zones[0],biome=zone.biome||'snow';
-    const room=LEVEL.rooms?.find(r=>p.x>=r.x&&p.x<r.x+r.w),theme=world.worldId==='soulforge'?'soulforge':room?.kind==='crypt'?'crypt':room?.kind==='vault'?'moon':room?.kind==='spire'?'moon':world.worldId;
-    if(this.parallaxTheme!==theme){this.parallax?.destroy();this.parallax=createRuneheartParallax(this,theme,this.viewportH);this.parallaxTheme=theme;}
+    const room=LEVEL.rooms?.find(r=>p.x>=r.x&&p.x<r.x+r.w),crossing=CROSSINGS.find(c=>room?.kind===`crossing-${c.id}`),theme=crossing?room.kind:world.worldId==='soulforge'?'soulforge':room?.kind==='crypt'?'crypt':room?.kind==='vault'?'moon':room?.kind==='spire'?'moon':world.worldId;
+    if(this.parallaxTheme!==theme){this.parallax?.destroy();this.parallax=createRuneheartParallax(this,crossing?{backdrop:`crossing-${{wind:'wind',water:'tide',fire:'ember'}[crossing.id]}`,color:crossing.sky,farAlpha:.95}:theme,this.viewportH);this.parallaxTheme=theme;}
     const threat=world.activeBoss&&!world.activeBoss.dead?world.activeBoss:null;
     const desired=cameraTarget({...p,x:px,y:py},LEVEL,960,this.viewportH,threat&&Math.abs(threat.x-p.x)<580?threat:null);
     const camera=followCamera({x:this.cameraX,y:this.cameraY,zoom:this.cameras.main.zoom},desired,dt);
@@ -217,9 +212,9 @@ class Soulforge extends Phaser.Scene {
     for(const item of this.staticViews)item.view.setVisible(!missing.has(item.solidId)&&item.x+item.w>this.cameraX-200&&item.x<this.cameraX+1160);
     const blade=bladeMotion(p,catalog.SWORDS.find(s=>s.id===p.sword)||catalog.SWORDS[0]);
     const heroActive=p.hp>0&&world.status==='playing',slashing=heroActive&&p.slashTime>0,slashFrame=blade.poseIndex,pose=p.slashMode==='vertical'?'overhead':p.slashMode==='finisher'?'finisher':'horizontal';
-    const candidate=p.dashTime>0?`player-lunge-${Math.floor(t*20)%4}`:slashing?`player-slash-${pose}-${slashFrame}`:p.shootCooldown>0&&this.textures.exists('player-shoot-0')?'player-shoot-0':p.state==='run'?`player-run-${Math.floor(t*13)%8}`:p.grounded?`player-idle-${Math.floor(t*3)%4}`:p.vy<0?'player-jump-0':'player-fall-0';
+    const candidate=slashing?`player-slash-${pose}-${slashFrame}`:p.shootCooldown>0&&this.textures.exists('player-shoot-0')?'player-shoot-0':p.state==='run'?`player-run-${Math.floor(t*13)%8}`:p.grounded?`player-idle-${Math.floor(t*3)%4}`:p.vy<0?'player-jump-0':'player-fall-0';
     const frame=this.textures.exists(candidate)?candidate:slashing?`player-slash-${slashFrame}`:'player-idle-0';
-    let heroAnimation=p.hp<=0?'aether-death':this.heroHurtUntil>t?'aether-hurt':p.dashTime>0?'aether-dash':slashing?(p.slashMode==='vertical'?'hero-slash-air':p.slashMode==='finisher'?'hero-slash-low':'aether-slash'):p.jetActive?'aether-jet':p.shootCooldown>0?'aether-fire':p.state==='run'?'aether-run':p.grounded?'aether-idle':p.vy>=0?'aether-fall':p.jumps===0?'aether-doublejump':'aether-jump';
+    let heroAnimation=p.hp<=0?'aether-death':this.heroHurtUntil>t?'aether-hurt':slashing?(p.slashMode==='vertical'?'hero-slash-air':p.slashMode==='finisher'?'hero-slash-low':'aether-slash'):p.shooting||p.shootCooldown>0||p.crouching?'aether-fire':p.jetActive||p.boostActive?'aether-jet':p.state==='run'?'aether-run':p.grounded?'aether-idle':p.vy>=0?'aether-fall':p.jumps===0?'aether-doublejump':'aether-jump';
     if(['lanternplate','bulwark'].includes(p.armor))heroAnimation=heroAnimation.replace('aether-','lanternplate-').replace('hero-slash-air','lanternplate-overhead').replace('hero-slash-low','lanternplate-slash').replace('lanternplate-doublejump','lanternplate-jump');
     const heroFrames=this.referenceArt.animations[heroAnimation],heroKey=p.hp<=0?heroFrames?.at(-1):heroAnimation.endsWith('-fire')?firingFrame(p):slashing&&heroFrames?.length?heroFrames[Math.min(heroFrames.length-1,blade.poseIndex)]:!p.grounded&&!p.jetActive&&heroFrames?.length?heroFrames[Math.min(heroFrames.length-1,Math.floor(Math.max(0,Math.min(1,(p.vy+670)/1570))*heroFrames.length))]:this.referenceKey(heroAnimation,p.state==='run'?(p.motionDistance||0)/88:t,p.state==='run'?4:8);
     if(!this.setReference(this.playerSprite,heroKey||this.referenceKey('aether-idle'),{...p,x:px,y:py,facing:slashing?(p.slashFacing||p.facing):p.facing}))this.playerSprite.setTexture(frame).setOrigin(.5,slashing||p.dashTime>0?152/160:68/72).setScale(1).setPosition(Math.round(px+p.w/2),Math.round(py+p.h)).setFlipX(p.facing<0);
@@ -254,7 +249,7 @@ class Soulforge extends Phaser.Scene {
         const pose=identity==='dragon'?(b.phase==='attack'?'fire':'fly'):b.phase==='charge'?'windup':b.phase==='attack'?'attack':b.recovering?'recovery':'idle';
         if(isIronfang(b)){
           const key=ironfangFrame(b),height=b.phase==='transform'&&key.startsWith('if-dragon')?86:b.h;
-          this.setReference(sprite,key,{...b,h:height,y:b.y+b.h-height});
+          this.setReference(sprite,key,{...b,h:height,y:b.y+b.h-height});sprite.setRotation(ironfangRotation(b));
         }else this.setReference(sprite,this.motionKey(identity,b,pose),b);
         if(b.phase==='transform'&&!isIronfang(b)){sprite.setAlpha(.6+Math.sin(t*20)*.2);}
         else sprite.setAlpha(1);
@@ -302,14 +297,11 @@ class Soulforge extends Phaser.Scene {
       if(enemy.dead||!near(enemy))continue;
       if(enemy.windup>0){g.fillStyle(C.red,.25);g.fillRect(enemy.x,enemy.y-10,enemy.w,3);g.fillStyle(C.red);g.fillRect(enemy.x,enemy.y-10,enemy.w*Math.min(1,enemy.windup/.48),3);}
       const guardian=world.worldId==='soulforge'&&['sentinel','warden'].includes(enemy.type);
-      if(enemy.shield>0&&!guardian)this.drawShield(enemy.id,enemy.x+enemy.w/2,enemy.y+enemy.h/2,enemy.w+32,enemy.h+26,t,C.violet);
       if(enemy.beam)this.drawBeam(g,enemy.beam,t,false);
       else if((enemy.phase==='charge'||enemy.windup>0)&&enemy.telegraph)this.drawAttackWarning(g,enemy,t);
 
       const magic=['mage','hex','shade','sentinel'].includes(enemy.type)||['riftcrawler','wyrm','crimsonmecha','hexwing'].includes(enemy.visualFamily),slot=enemy.weaponSlot||(enemy.type==='hex'?'hand':enemy.attack===2&&enemy.active?'core':enemy.type==='turret'||enemy.power==='missile'||enemy.attack===1&&enemy.active?'rocket':'gun');
       if(world.worldId!=='soulforge'&&(!magic||slot==='rocket'))this.drawWeapon(enemy,slot,slot==='rocket'?'launcher':'carbine',enemy.aimAngle??enemy.telegraph?.angle,t);
-      else if(!guardian&&!isIronfang(enemy)&&(enemy.windup>0||enemy.phase==='charge')){const hand=weaponOrigin(enemy,slot);g.lineStyle(2,enemy.type==='sentinel'?C.cyan:C.violet,.8);g.strokeCircle(hand.x,hand.y,9+Math.sin(t*24)*3);g.fillStyle(C.light,.8);g.fillCircle(hand.x,hand.y,3);}
-      if(enemy.active&&!guardian&&!isIronfang(enemy)){const core=weaponOrigin(enemy,'core');g.lineStyle(2,enemy.weakened>0?C.cyan:enemy.enraged?C.red:C.violet,.55);g.strokeCircle(core.x,core.y,7+Math.sin(t*6)*2);}
       if(enemy.portalExit?.time>0){this.drawPortal(`blink-source:${enemy.id}`,enemy.portalSource.x+enemy.w/2,enemy.portalSource.y+enemy.h/2,t,.7,false);this.drawPortal(`blink-exit:${enemy.id}`,enemy.portalExit.x+enemy.w/2,enemy.portalExit.y+enemy.h/2,t,1,false);}
       if(enemy.mirrorExit?.time>0)this.drawPortal(`mirror:${enemy.id}`,enemy.mirrorExit.x+15,enemy.mirrorExit.y+44,t,1,true);
       if(enemy.powerPulse?.time>0){const pulse=enemy.powerPulse;g.fillStyle(C.cyan,pulse.phase==='warning'?.06:.16);g.fillRect(pulse.x,pulse.y,pulse.w,pulse.h);g.lineStyle(2,C.cyan,pulse.phase==='warning'?.35:.7);for(let i=0;i<9;i++){const x=pulse.x+(i*71+t*Math.abs(pulse.vx||90))%pulse.w,y=pulse.y+pulse.h/2+Math.sin(t*4+i)*12,dir=Math.sign(pulse.vx||1);g.lineBetween(x,y,x-dir*13,y-5);g.lineBetween(x,y,x-dir*13,y+5);}}
@@ -324,7 +316,11 @@ class Soulforge extends Phaser.Scene {
       if(!shot.missile&&this.projectileSprites[index]){
         const view=this.projectileSprites[index];
         if(['fire','dragonfire'].includes(shot.kind))view.setVisible(false);
-        else view.setTexture(shot.owner==='player'?'ln-fx-bolt':'ln-fx-orb').setOrigin(.88,.5).setDisplaySize(shot.owner==='player'?30:34,shot.owner==='player'?9:20).setTint(0xffffff);
+        else {
+          const round=shot.kind==='cannonround'||shot.owner==='player'||!['hex','cinder'].includes(shot.kind);
+          view.setTexture(round?'ln-fx-bolt':'ln-fx-orb').setOrigin(.88,.5).setDisplaySize(round?shot.kind==='cannonround'?34:26:24,round?shot.kind==='cannonround'?6:5:14).setTint(shot.kind==='cannonround'?0xffca88:0xffffff);
+          if(shot.kind==='cannonround')view.setTexture('ironfang','if-round').setOrigin(.5).setDisplaySize(48,48).setTint(0xffffff);
+        }
       }
       if(shot.missile){const tailX=shot.x-Math.cos(angle)*16,tailY=shot.y-Math.sin(angle)*16;g.fillStyle(0xffa572,.8);g.fillEllipse(tailX,tailY,8+Math.sin(t*50)*3,7);if(dt>0&&Math.random()<.18)this.burst(tailX,tailY,'shot',1,0xdca684);}
     }
@@ -363,25 +359,11 @@ class Soulforge extends Phaser.Scene {
   }
   drawAttackWarning(g,enemy,t){
     const hint=enemy.telegraph,kind=hint.kind;
-    if(isIronfang(enemy))return; // Authored anticipation and emitter embers in LanternEffects.
-    if(!kind||kind==='shot'){this.drawBeam(g,hint,t,true);return;}
-    const feet=enemy.y+enemy.h,cx=enemy.x+enemy.w/2,dir=enemy.attackFacing||enemy.facing||1;
-    const ink=0xffc27a,alpha=.55+Math.sin(t*10)*.15;
-    if(kind==='slam'||kind==='cleave'){
-      const box=hint.bounds;if(!box)return;
-      g.fillStyle(ink,.10);g.fillRect(box.x,box.y,box.w,box.h);
-      g.lineStyle(2,ink,alpha);g.lineBetween(box.x,box.y+box.h-2,box.x+box.w,box.y+box.h-2);
-      for(let x=box.x+8;x<box.x+box.w;x+=24){g.lineBetween(x,box.y+box.h-6,x+5,box.y+box.h-12);g.lineBetween(x+5,box.y+box.h-12,x+10,box.y+box.h-6);}
-    }else if(['bite','lunge','charge'].includes(kind)){
-      const reach=kind==='charge'?235:125,start=cx+(kind==='charge'?dir*enemy.w/2:0);
-      g.lineStyle(2,ink,alpha);g.lineBetween(start,feet-3,start+dir*reach,feet-3);
-      for(let i=1;i<=3;i++){const x=start+dir*(reach-i*22);g.lineBetween(x,feet-12,x+dir*8,feet-5);g.lineBetween(x,feet+2,x+dir*8,feet-5);}
-    }else if(kind==='breath'){
-      const x=hint.x0,y=hint.y0;g.fillStyle(ink,alpha);g.fillCircle(x,y,4);
-    }else{
-      const x=hint.x0,y=hint.y0;g.lineStyle(2,kind==='summon'?0x94ddcd:ink,alpha);g.strokeCircle(x,y,13+Math.sin(t*5)*2);
-      for(let i=0;i<4;i++){const a=t*2+i*Math.PI/2;g.fillStyle(ink,.8);g.fillRect(x+Math.cos(a)*19-2,y+Math.sin(a)*19-2,4,4);}
-    }
+    if(isIronfang(enemy))return;
+    // Authored anticipation carries melee warnings; emissive art stays on the hand.
+    if(['slam','cleave','bite','lunge','charge'].includes(kind))return;
+    const q=weaponOrigin(enemy,kind==='breath'?'mouth':'hand');
+    this.referenceEffect(`anticipation:${enemy.id}`,'if-impact-0',q.x,q.y,18,18,0,enemy.facing);
   }
   materialView(id,key,x,y,w,h,depth=2){
     let view=this.referenceEffects.get(id);
@@ -399,7 +381,7 @@ class Soulforge extends Phaser.Scene {
       g.lineStyle(1,0xa3c7b5,.48);g.beginPath();for(let j=0;j<=64;j++){const x=water.x+j*water.w/64,wave=Math.sin(x*.016-t*2.4)*4+Math.sin(x*.033+t*1.2)*2;j?g.lineTo(x,water.y+wave+6):g.moveTo(x,water.y+wave+6);}g.strokePath();
     }
     for(const s of world.staticSolids||[]){if(!near(s)||!s.crack||s.missing)continue;g.lineStyle(2,0xd6b988,.8);for(let i=0;i<4;i++)g.lineBetween(s.x+s.w*i/4,s.y,s.x+s.w*(i+.7)/4,s.y+s.h);}
-    for(const portal of world.portals||LEVEL.portals||[]){if(near(portal))this.drawPortal(`travel:${portal.id}`,portal.x+portal.w/2,portal.y+portal.h/2,t,1,false,portal.dormant);}
+    for(const portal of world.portals||LEVEL.portals||[]){if(near(portal)){const completed=world.gates.some(g=>g.id===portal.disabledWhenGateOpen&&g.open);this.drawPortal(`travel:${portal.id}`,portal.x+portal.w/2,portal.y+portal.h/2,t,completed?.3:1,false,portal.dormant||completed);}}
     for(const soul of world.souls||[]){if(soul.taken||!near(soul))continue;
       const key=this.referenceArt.frames['lm-icon-bellheart']?'lm-icon-bellheart':'ln-item-rune';
       this.referenceEffect(`soul:${soul.id}`,key,soul.x,soul.y+Math.sin(t*3)*3,24,30);
@@ -500,8 +482,8 @@ class Soulforge extends Phaser.Scene {
 function updateHUD(){
   const p=world.player,zone=[...LEVEL.zones].reverse().find(z=>p.x>=z.x)||LEVEL.zones[0],boss=(world.activeBoss&&!world.activeBoss.dead?world.activeBoss:null)||world.enemies.find(e=>e.major&&!e.dead&&Math.abs(e.x-p.x)<750&&Math.abs(e.y+e.h-p.y-p.h)<240);
   $('health-bar').style.width=`${p.hp/p.maxHp*100}%`;$('fuel-bar').style.width=`${p.fuel}%`;$('health-value').textContent=Math.ceil(p.hp);$('fuel-value').textContent=Math.ceil(p.fuel);
-  $('buff').textContent=p.stealth>0?`SHADOW VEIL / ${p.stealth.toFixed(1)}s`:p.boost>0?`THRUSTER SURGE / ${p.boost.toFixed(1)}s`:p.impaired>0?'EMP / THRUST OFFLINE':p.rapid>0?`OVERDRIVE / ${Math.ceil(p.rapid)}s`:p.shield>0?`SOUL SHIELD / ${Math.ceil(p.shield)}`:p.dashCooldown>0?'DASH RECHARGING':`${catalog.DIFFICULTIES.find(d=>d.id===world.difficulty)?.name||'Forge'} / DASH READY`;
-  $('zone-label').textContent=zone.label;$('timer').textContent=clock(world.time);const missingRune=['ember-heart','tide-glass','storm-seal'].find(id=>!world.collections.includes(id));$('objective').textContent=boss&&!boss.dead?`READ THE WINDUP · STRIKE THE RECOVERY`:missingRune?`FIND ${itemName('relic',missingRune).toUpperCase()}`:world.bossDefeated?'ENTER THE HEART PORTAL':'THREE STONES · REACH THE HEART';
+  $('buff').textContent=p.stealth>0?`SHADOW VEIL / ${p.stealth.toFixed(1)}s`:p.boost>0?`THRUSTER SURGE / ${p.boost.toFixed(1)}s`:p.impaired>0?'EMP / THRUST OFFLINE':p.rapid>0?`OVERDRIVE / ${Math.ceil(p.rapid)}s`:p.shield>0?`SOUL SHIELD / ${Math.ceil(p.shield)}`:p.dashCooldown>0?'BOOST RECHARGING':`${catalog.DIFFICULTIES.find(d=>d.id===world.difficulty)?.name||'Forge'} / BOOST READY`;
+  $('zone-label').textContent=zone.label; $('journey-rank').textContent=journeyStage(world.collections).title.toUpperCase();$('timer').textContent=clock(world.time);const missingRune=['ember-heart','tide-glass','storm-seal'].find(id=>!world.collections.includes(id));$('objective').textContent=boss&&!boss.dead?`READ THE WINDUP · STRIKE THE RECOVERY`:missingRune?`FIND ${itemName('relic',missingRune).toUpperCase()}`:world.bossDefeated?'ENTER THE HEART PORTAL':'THREE STONES · REACH THE HEART';
   if(world.worldId==='soulforge'&&(!boss||boss.dead)){
     const room=LEVEL.rooms.find(r=>p.x>=r.x&&p.x<r.x+r.w);
     $('objective').textContent=room?.kind==='refuge'&&!world.progress.claimed.includes('npc:soulforge-mira')?'SPEAK TO MIRA AT THE LANTERN':world.bossDefeated?'ENTER THE HEART PORTAL':room?.kind==='refuge'?'FOLLOW THE ROOTS TO THE NEXT LANTERN':zone.subtitle;
@@ -511,7 +493,10 @@ function updateHUD(){
   let text=world.dialogueTime>0?world.dialogue:'';
   if(boss?.tauntTime>0)text=`${boss.name} // ${boss.taunt}`;
   if(!text&&mode==='playing'){const npc=world.npcs.find(n=>Math.abs(n.x-p.x)<140&&Math.abs(n.y-p.y)<110),lever=world.props.find(n=>['lever','valve','conduit'].includes(n.type)&&Math.abs(n.x-p.x)<120),prompt=matchMedia('(pointer: coarse)').matches?'◉':'F / INTERACT';if(npc)text=`${prompt} · ${npc.name}`;else if(lever)text=`${prompt} · ${lever.type==='valve'?'VENT THE FURNACE':lever.type==='conduit'?'SEVER THE SHIELD':'RELEASE SOUL GATE'}`;}
-  $('dialogue').hidden=mode!=='playing'||!text;$('dialogue').textContent=text;$('progress').firstElementChild.style.width=`${Math.min(100,p.x/LEVEL.exit.x*100)}%`;
+  const crossings=LEVEL.crossings||[],currentCrossing=crossings.find(c=>p.x>=c.x&&p.x<c.x+c.w);
+  const mainPosition=currentCrossing?(world.portals.find(portal=>portal.id===currentCrossing.entryId)?.x||LEVEL.exit.x):p.x;
+  const oathProgress=crossings.reduce((value,c)=>value+(world.gates.some(g=>g.id===c.completionGate&&g.open)?10:c===currentCrossing?Math.min(9,(p.x-c.x)/c.w*10):0),0);
+  $('dialogue').hidden=mode!=='playing'||!text;$('dialogue').textContent=text;$('progress').firstElementChild.style.width=`${world.status==='won'?100:Math.min(95,Math.min(1,mainPosition/LEVEL.exit.x)*65+oathProgress)}%`;
   ui?.renderHUD(world);if(world.missileWarning&&scene){const area=$('game').clientHeight/$('stage').clientHeight;$('missile-warning').style.top=`${Math.max(8,Math.min(area*90,(world.missileWarning.y-scene.cameras.main.worldView.y)/scene.cameras.main.worldView.height*area*100))}%`;}if(mode==='story')ui.renderStory(world.story);
   if(mode==='playing'&&zone.label!==previousZone){previousZone=zone.label;say(world,`${zone.label} // ${zone.subtitle}`,3);}
 }
@@ -519,10 +504,29 @@ function continueStory(choice){
   advanceStory(world,choice);saveProgress(world.progress);ui.renderStory(world.story);controls.clear();
   if(!world.story)beginPlay();
 }
+function updateIntro(dt){
+  if(!introPaused&&!document.hidden)introTime+=dt;
+  const beat=introBeatAt(introTime);
+  if(!beat){finishIntro();return;}
+  if(beat.index!==introIndex){
+    introIndex=beat.index;
+    $('intro-art').src=`${import.meta.env.BASE_URL}journey/intro-${beat.index}.png`;
+    $('intro-title').textContent=beat.title;$('intro-text').textContent=beat.text;
+    $('intro-speaker').textContent=beat.speaker;
+  }
+  $('intro-progress').value=introTime;
+}
+function startIntro(){
+  introTime=0;introIndex=-1;introPaused=false;mode='intro';controls.clear();
+  $('stage').dataset.mode=mode;$('menu').hidden=true;$('hud').hidden=true;$('touch').hidden=true;
+  $('intro').hidden=false;$('intro-art').style.animation=reducedFX?'none':'';$('intro-art').style.animationPlayState='running';$('intro-pause').textContent='Pause story';updateIntro(0);$('intro-skip').focus();
+}
+function finishIntro(){ $('intro').hidden=true;beginPlay(); }
+function toggleIntro(){introPaused=!introPaused;$('intro-art').style.animationPlayState=introPaused?'paused':'running';$('intro-pause').textContent=introPaused?'Continue story':'Pause story';}
 function showMenu(next){
   mode=next;controls.clear();saveProgress(world.progress);$('stage').dataset.mode=mode;$('menu').hidden=false;$('hud').hidden=true;$('progress').hidden=true;$('touch').hidden=true;$('pause').disabled=true;$('menu-stamp').hidden=true;
   ui?.renderStory(null);const map={paused:['A MOMENT BY THE LANTERN','Rest a<br><span>moment.</span>','Your journey waits here. Tend your equipment, then carry the light onward.','Resume journey'],dead:['THE LIGHT STILL REMAINS',world.timeLeft<=0?'The bell<br><span>fell silent.</span>':'Rise<br><span>again.</span>','Return to your last lantern. Your discoveries and recovered relics remain.','Return to the lantern'],won:['THE SANCTUARY BREATHES AGAIN','A dawn<br><span>unbound.</span>',`${clock(world.time)} · ${world.kills} foes overcome · ${retries} retries<br>${world.progress.claimed.includes('npc:soulforge-orren')?'Mira’s brother can return home.':'The captive souls are free.'} The engine has fallen silent.`, 'Journey again']};
-  const info=mode==='menu'?['RUNEHEART · CHAPTER I','The Last<br><span>Lantern</span>','Mira’s brother is trapped inside the sanctuary.<br>Recover three lost runes. Break the engine’s hold.','Enter the sanctuary']:map[mode];if(info){$('menu-eyebrow').textContent=info[0];$('menu-title').innerHTML=info[1];$('menu-copy').innerHTML=info[2];$('start').innerHTML=`${info[3]} <span aria-hidden="true">→</span>`;$('menu-detail').textContent=mode==='dead'?`LAST LANTERN · ${LEVEL.checkpoints[world.checkpoint]?.label}`:mode==='menu'?'A light worth keeping.':'THE HOLLOW SANCTUARY';}
+  const info=mode==='menu'?['RUNEHEART · CHAPTER I','The Last<br><span>Lantern</span>','Mira’s brother is trapped inside the sanctuary.<br>Recover three lost runes. Break the engine’s hold.','Enter the sanctuary']:map[mode];if(info){$('menu-eyebrow').textContent=info[0];$('menu-title').innerHTML=info[1];$('menu-copy').innerHTML=info[2];$('start').innerHTML=`${info[3]} <span aria-hidden="true">→</span>`;$('menu-detail').textContent=mode==='dead'?`LAST LANTERN · ${LEVEL.checkpoints[world.checkpoint]?.label}`:mode==='menu'?'TEST ARMORY - All equipment unlocked':'THE HOLLOW SANCTUARY';}
   $('start').focus({preventScroll:true});
 }
 function beginPlay(){
@@ -531,16 +535,21 @@ function beginPlay(){
 function start(){
   if(!scene)return;if(mode==='dead'){retry();return;}
   if(mode==='menu'||mode==='won'){
-    const selected=$('world-select')?.value||world.worldId||'soulforge';let progress=switchWorldProgress(loadProgress(),selected);
+    const selected=$('world-select')?.value||world.worldId||'soulforge';let progress=switchWorldProgress(readProgress(),selected);
     if(progress.completedWorlds.includes(selected))progress=restartWorldProgress(progress,selected);
     world=createWorld(progress.checkpoint||0,{worldId:selected,difficulty:$('difficulty').value,progress});LEVEL=world.level||DEFAULT_LEVEL;retries=0;previousZone='';scene.cameraX=Math.max(0,world.player.x-250);scene.cameraY=LEVEL.height-scene.viewportH;
+    if(world.checkpoint===0){startIntro();return;}
   }
   beginPlay();
 }
-function pause(force=false){if(mode==='playing'||mode==='story')showMenu('paused');else if(mode==='paused'&&!force)beginPlay();}
+function pause(force=false){if(mode==='intro'){toggleIntro();return;}if(mode==='playing'||mode==='story')showMenu('paused');else if(mode==='paused'&&!force)beginPlay();}
 function retry(){if(!scene||mode==='menu'||mode==='catalogue')return;world=retryWorld(world);LEVEL=world.level||DEFAULT_LEVEL;retries++;previousZone='';scene.cameraX=Math.max(0,world.player.x-250);scene.cameraY=LEVEL.height-scene.viewportH;scene.particles.forEach(p=>p.life=0);scene.rings.length=0;beginPlay();}
-window.ashBack=()=>{if($('settings-panel').open){$('settings-panel').close();return true;}if($('controls').open){$('controls').open=false;$('controls').querySelector('summary').focus();return true;}if($('catalogue').open){ui.close();return true;}if(['playing','story','paused'].includes(mode)){pause();return true;}return false;};
+window.ashBack=()=>{if(mode==='intro'){toggleIntro();return true;}if($('settings-panel').open){$('settings-panel').close();return true;}if($('controls').open){$('controls').open=false;$('controls').querySelector('summary').focus();return true;}if($('catalogue').open){ui.close();return true;}if(['playing','story','paused'].includes(mode)){pause();return true;}return false;};
 $('start').addEventListener('click',start);$('pause').addEventListener('click',()=>pause());
+$('intro-skip').addEventListener('click',finishIntro);$('intro-pause').addEventListener('click',toggleIntro);
+$('intro').addEventListener('keydown',event=>{
+  if(event.key==='Tab'){event.preventDefault();($(document.activeElement?.id==='intro-skip'?'intro-pause':'intro-skip')).focus();}
+});
 document.addEventListener('click',event=>{if(event.target.closest('#worlds'))showMenu(['playing','story','paused'].includes(mode)?'paused':'menu');});
  const paintSound=()=>{$('sound').textContent=sound.muted?'Sound muted':'Sound on';$('sound').setAttribute('aria-pressed',String(sound.muted));};paintSound();
  $('sound').addEventListener('click',()=>{sound.setMuted(!sound.muted);paintSound();try{localStorage.setItem('runeheart-muted',String(sound.muted));}catch{}sound.start().catch(()=>{});});

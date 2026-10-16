@@ -14,6 +14,7 @@ const safeIds = value => Array.isArray(value)
 export function validateProgress(raw) {
   const progress = defaultProgress();
   if (!raw || typeof raw !== 'object' || raw.version !== 1) return progress;
+  if (raw.testMode === true) progress.testMode = true;
   progress.souls = Number.isSafeInteger(raw.souls) ? Math.max(0, Math.min(999999, raw.souls)) : 0;
   progress.soulClaims = safeIds(raw.soulClaims);
   for (const key of ['armor', 'artifact']) progress.upgrades[key] = Number.isInteger(raw.upgrades?.[key]) ? Math.max(0, Math.min(3, raw.upgrades[key])) : 0;
@@ -21,7 +22,7 @@ export function validateProgress(raw) {
   progress.pendingSouls = (Array.isArray(raw.pendingSouls) ? raw.pendingSouls : []).filter(drop => {
     if (!drop || !safeIds([drop.id]).length || dropIds.has(drop.id) || progress.soulClaims.includes(drop.id)
       || !WORLD_IDS.includes(drop.worldId) || ![drop.x, drop.y].every(Number.isFinite)
-      || drop.x < 0 || drop.x > 100000 || drop.y < 0 || drop.y > 10000 || !Number.isInteger(drop.value) || drop.value <= 0 || drop.value > 1000) return false;
+      || drop.x < 0 || drop.x > 200000 || drop.y < 0 || drop.y > 10000 || !Number.isInteger(drop.value) || drop.value <= 0 || drop.value > 1000) return false;
     dropIds.add(drop.id); return true;
   }).slice(0, 2048).map(({ id, worldId, x, y, value }) => ({ id, worldId, x, y, value }));
   for (const [category, starter] of Object.entries(STARTERS)) {
@@ -61,7 +62,7 @@ export function newCampaignProgress(raw) {
   const progress = validateProgress(raw);
   for (const key of ['claimed', 'defeatedBosses', 'openedGates', 'destroyedProps']) progress[key] = [];
   progress.checkpoint = 0;
-  progress.charges = { cannon: 0, nova: 0 };
+  progress.charges = progress.testMode ? { cannon: 9, nova: 9 } : { cannon: 0, nova: 0 };
   progress.worlds = {};
   progress.completedWorlds = [];
   return progress;
@@ -73,19 +74,32 @@ export function restartWorldProgress(raw, id) {
   for (const key of ENCOUNTER_KEYS) progress[key] = [];
   delete progress.worlds[id];
   progress.completedWorlds = progress.completedWorlds.filter(completed => completed !== id);
-  progress.charges = { cannon: 0, nova: 0 };
+  progress.charges = progress.testMode ? { cannon: 9, nova: 9 } : { cannon: 0, nova: 0 };
   return progress;
 }
-export function loadProgress(storage) {
+export function testArmoryProgress(raw) {
+  const progress = validateProgress(raw);
+  progress.testMode = true;
+  progress.souls = Math.max(progress.souls, 9999);
+  for (const category of Object.keys(STARTERS)) progress.unlocked[category] = CATALOG[category].map(item => item.id);
+  progress.charges = { cannon: 9, nova: 9 };
+  return progress;
+}
+export function loadProgress(storage, { testMode = false } = {}) {
   try {
-    const raw = JSON.parse((storage ?? globalThis.localStorage)?.getItem('ash-signal-soulforge') || 'null');
+    const target = storage ?? globalThis.localStorage;
+    if (testMode) {
+      const saved = target?.getItem('ash-signal-soulforge-test-armory');
+      return testArmoryProgress(saved ? JSON.parse(saved) : loadProgress(target));
+    }
+    const raw = JSON.parse(target?.getItem('ash-signal-soulforge') || 'null');
     // Old relays name different rooms. Keep the armory, restart encounters at the new sanctuary.
     if (raw && typeof raw === 'object' && raw.version === 1 && (raw.layoutVersion !== 2 || !Object.hasOwn(raw, 'worldId'))) return newCampaignProgress(raw);
     return validateProgress(raw);
   }
-  catch { return defaultProgress(); }
+  catch { return testMode ? testArmoryProgress() : defaultProgress(); }
 }
 export function saveProgress(progress, storage) {
-  try { const target = storage ?? globalThis.localStorage; target?.setItem('ash-signal-soulforge', JSON.stringify(validateProgress(progress))); return !!target; }
+  try { const target = storage ?? globalThis.localStorage; target?.setItem(progress.testMode ? 'ash-signal-soulforge-test-armory' : 'ash-signal-soulforge', JSON.stringify(validateProgress(progress))); return !!target; }
   catch { return false; }
 }

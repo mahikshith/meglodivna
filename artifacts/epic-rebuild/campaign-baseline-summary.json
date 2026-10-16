@@ -1,0 +1,343 @@
+{
+  "generatedAt": "2026-10-16T19:28:18.072Z",
+  "evidence": "Legal fixed-step simulation campaigns; not physical-device tests or human pacing measurements.",
+  "simulationSourceHash": "248569f84caecab1439e64b048b1d6a7c79bc3a89c2e4cbff8328f35b7e2d12c",
+  "snapshotAt": "2026-10-16T19:27:23.032Z",
+  "sourceUnchangedSinceSnapshot": true,
+  "sources": {
+    "scripts/combat-route.mjs": {
+      "sha256": "51330a58978eab2ef43ca26bc3e2a6fb7c785a3e2dd1a8a52b21d7703d668abc",
+      "modifiedAt": "2026-10-16T18:59:30.316Z"
+    },
+    "src/blade-motion.js": {
+      "sha256": "70d2e5a8869657f8b85ca82f2c70e330c1d7a76d8991fc9fae7beadfa1d05527",
+      "modifiedAt": "2026-10-16T18:51:31.898Z"
+    },
+    "src/camera.js": {
+      "sha256": "332f75f253599e3633ba3dfb27242b323eaaf5b8482204d91cbbda3f6922a3d0",
+      "modifiedAt": "2026-10-14T18:03:04.381Z"
+    },
+    "src/catalog.js": {
+      "sha256": "fe81db6d81de38aeaf93ab78cb0d912ae18899de135be61dd0ecce4c643d0430",
+      "modifiedAt": "2026-10-14T19:36:53.560Z"
+    },
+    "src/character-geometry.js": {
+      "sha256": "9ab93b39093a0bf4d6822e07cf1e7ea67a850cf094a77caeea89dc80e99b728e",
+      "modifiedAt": "2026-10-16T19:02:52.816Z"
+    },
+    "src/character-motion.js": {
+      "sha256": "41fcd2fd568bd44da8b649b3cbe2456401d44d6ff8a23983cd9e0164ea254200",
+      "modifiedAt": "2026-10-16T18:51:32.091Z"
+    },
+    "src/combat.js": {
+      "sha256": "d249d2805f8711724258296bedca0142e0faa1deb352a49f1c52f7e99e36dff0",
+      "modifiedAt": "2026-10-16T18:55:13.385Z"
+    },
+    "src/companions.js": {
+      "sha256": "35167a53550ed4aee67ca61829a8d06acec61b816f7d198a85c74cecba4068fc",
+      "modifiedAt": "2026-10-16T18:51:28.150Z"
+    },
+    "src/crossing-courses.js": {
+      "sha256": "09f5ca775df014cd5021972710b4440b7266ef53ddf1a159d1e848e784101b7e",
+      "modifiedAt": "2026-10-16T18:57:53.468Z"
+    },
+    "src/crossings.js": {
+      "sha256": "e7fd1603e54b2e241f8ef7da7414975f81861a3e06b4b13fc17547144ff7a27a",
+      "modifiedAt": "2026-10-16T18:55:42.124Z"
+    },
+    "src/enemy-motion.js": {
+      "sha256": "edd5881630507ba1a145abcf89d9126b9896a34cc9417f26685f568279363dcc",
+      "modifiedAt": "2026-10-15T12:49:04.934Z"
+    },
+    "src/input.js": {
+      "sha256": "a44ac4451bd6ec304b3bbaea5547f612fbbc002629e40376851b5c2c2f6538d8",
+      "modifiedAt": "2026-10-16T18:47:37.632Z"
+    },
+    "src/ironfang-geometry.js": {
+      "sha256": "b0fef0ac0907d8afe7f3384bdcfff3bd2f633ca4538405908c1bd274f5319dc2",
+      "modifiedAt": "2026-10-16T19:04:44.962Z"
+    },
+    "src/ironfang.js": {
+      "sha256": "c50278481a734f66e13c3c9e1b51e96adf87f4c625ffe8c4ee1b9ea87ddf0ee2",
+      "modifiedAt": "2026-10-16T18:51:32.297Z"
+    },
+    "src/legacy-level.js": {
+      "sha256": "21614250e936233c0bfea0ce0626a528f618651ac9dc679ab7e27691e0e0f1fa",
+      "modifiedAt": "2026-10-14T12:27:11.680Z"
+    },
+    "src/level.js": {
+      "sha256": "41dbe349fbe7859f701253cb9f23d0b9562b2b2fe2b8b381773e38523eab6d83",
+      "modifiedAt": "2026-10-16T18:49:08.968Z"
+    },
+    "src/physics.js": {
+      "sha256": "a2f74f70101c059a648b3082dd5a9431724012a4f122c4aa56df5807dd9fe5e9",
+      "modifiedAt": "2026-10-16T18:50:36.724Z"
+    },
+    "src/progress.js": {
+      "sha256": "e6c851bc045ba0b1eb9a3f71d326cebbc9642eb32ad0806b2595dd924bb07181",
+      "modifiedAt": "2026-10-16T18:47:54.322Z"
+    },
+    "src/rune-worlds.js": {
+      "sha256": "c742940736c73d23264f23a45dac2d773a143746c14bddf2582787ed3208379f",
+      "modifiedAt": "2026-10-14T19:36:53.569Z"
+    },
+    "src/story.js": {
+      "sha256": "f41890b768779f747a3d4a05fcfd53f1833cec3a6183e2c267ad4c5f0de25241",
+      "modifiedAt": "2026-10-16T18:49:08.041Z"
+    },
+    "src/worlds.js": {
+      "sha256": "f3e899199f1fe72be50fa777d268ddde5133aa8c32bab81a56bc975d29af9daa",
+      "modifiedAt": "2026-10-14T12:27:11.703Z"
+    }
+  },
+  "unitTests": {
+    "command": "npm test",
+    "passed": 206,
+    "failed": 0
+  },
+  "campaignMethod": "Fresh starter progress, ordinary movement/combat/armory/story input, automatic portal contact, legitimate checkpoint retries. No injected health, damage, position or clock.",
+  "metrics": {
+    "runSpeed": 320,
+    "fixedStep": 0.008333333333333333,
+    "singleJumpApex": 124.69
+  },
+  "levels": [
+    {
+      "id": "soulforge",
+      "checkpoints": 25,
+      "originalCheckpointIndicesPreserved": true,
+      "requiredTrials": 3,
+      "movingRouteLandings": 19
+    },
+    {
+      "id": "tide",
+      "checkpoints": 25,
+      "originalCheckpointIndicesPreserved": true,
+      "requiredTrials": 3,
+      "movingRouteLandings": 19
+    },
+    {
+      "id": "pyre",
+      "checkpoints": 25,
+      "originalCheckpointIndicesPreserved": true,
+      "requiredTrials": 3,
+      "movingRouteLandings": 19
+    },
+    {
+      "id": "neon",
+      "checkpoints": 25,
+      "originalCheckpointIndicesPreserved": true,
+      "requiredTrials": 3,
+      "movingRouteLandings": 19
+    },
+    {
+      "id": "veil",
+      "checkpoints": 25,
+      "originalCheckpointIndicesPreserved": true,
+      "requiredTrials": 3,
+      "movingRouteLandings": 19
+    }
+  ],
+  "campaigns": [
+    {
+      "world": "soulforge",
+      "difficulty": "ember",
+      "optionalBellbeast": false,
+      "status": "won",
+      "seconds": 337.78,
+      "deaths": 0,
+      "gatesOpened": 21,
+      "crossingSeconds": {
+        "wind": 81.51,
+        "water": 83.69,
+        "fire": 86.32
+      },
+      "allCrossingGuardiansDefeated": true,
+      "finalDragonAttacks": [
+        2
+      ],
+      "report": "artifacts/combat-route-soulforge-ember-report.json",
+      "reportModifiedAt": "2026-10-16T19:25:17.668Z",
+      "reportSha256": "d21bd989460e00c8951c062692a7ec0145b2bc3324244dffa0a740ae57b520d8"
+    },
+    {
+      "world": "soulforge",
+      "difficulty": "forge",
+      "optionalBellbeast": false,
+      "status": "won",
+      "seconds": 346.15,
+      "deaths": 0,
+      "gatesOpened": 21,
+      "crossingSeconds": {
+        "wind": 82.39,
+        "water": 84.22,
+        "fire": 85.44
+      },
+      "allCrossingGuardiansDefeated": true,
+      "finalDragonAttacks": [
+        0,
+        1
+      ],
+      "report": "artifacts/combat-route-soulforge-forge-report.json",
+      "reportModifiedAt": "2026-10-16T19:27:24.882Z",
+      "reportSha256": "0c2c0e2f3d0e9d355c19840d47337fc33e6288d48390635ff0f5b8eef991229f"
+    },
+    {
+      "world": "soulforge",
+      "difficulty": "inferno",
+      "optionalBellbeast": false,
+      "status": "won",
+      "seconds": 360.12,
+      "deaths": 0,
+      "gatesOpened": 21,
+      "crossingSeconds": {
+        "wind": 84.41,
+        "water": 85.79,
+        "fire": 88.6
+      },
+      "allCrossingGuardiansDefeated": true,
+      "finalDragonAttacks": [
+        1,
+        2
+      ],
+      "report": "artifacts/combat-route-soulforge-inferno-report.json",
+      "reportModifiedAt": "2026-10-16T19:25:33.711Z",
+      "reportSha256": "6a2d0c00320b9b4fe1f3059bc5ed4fb048e7475921c6d7b85be47dba5368b4c9"
+    },
+    {
+      "world": "soulforge",
+      "difficulty": "extinction",
+      "optionalBellbeast": false,
+      "status": "won",
+      "seconds": 370.2,
+      "deaths": 0,
+      "gatesOpened": 21,
+      "crossingSeconds": {
+        "wind": 85.19,
+        "water": 87.37,
+        "fire": 90.7
+      },
+      "allCrossingGuardiansDefeated": true,
+      "finalDragonAttacks": [
+        1,
+        2
+      ],
+      "report": "artifacts/combat-route-soulforge-extinction-report.json",
+      "reportModifiedAt": "2026-10-16T19:25:50.394Z",
+      "reportSha256": "73a02791d33c372134547bfa3e994c7f09ae1644230bc15af9e0ad0e1faf0890"
+    },
+    {
+      "world": "soulforge",
+      "difficulty": "forge",
+      "optionalBellbeast": true,
+      "status": "won",
+      "seconds": 353.06,
+      "deaths": 0,
+      "gatesOpened": 21,
+      "crossingSeconds": {
+        "wind": 82.57,
+        "water": 84.22,
+        "fire": 86.66
+      },
+      "allCrossingGuardiansDefeated": true,
+      "finalDragonAttacks": [
+        0,
+        1
+      ],
+      "report": "artifacts/bellbeast-route-forge-report.json",
+      "reportModifiedAt": "2026-10-16T19:27:20.228Z",
+      "reportSha256": "95a5ae3fbb038e5f537a308e506ae7aaee9a6ff48ae69d1e8cf2efd28804bbbd"
+    },
+    {
+      "world": "tide",
+      "difficulty": "forge",
+      "optionalBellbeast": false,
+      "status": "won",
+      "seconds": 359.77,
+      "deaths": 0,
+      "gatesOpened": 21,
+      "crossingSeconds": {
+        "wind": 83.05,
+        "water": 86.49,
+        "fire": 88.42
+      },
+      "allCrossingGuardiansDefeated": true,
+      "finalDragonAttacks": [
+        1
+      ],
+      "report": "artifacts/combat-route-tide-forge-report.json",
+      "reportModifiedAt": "2026-10-16T19:27:25.431Z",
+      "reportSha256": "34082ab1db8c52f5d0134e8ba6ca45528ed910ae04b0ef541fa6e652ba4b07f5"
+    },
+    {
+      "world": "pyre",
+      "difficulty": "forge",
+      "optionalBellbeast": false,
+      "status": "won",
+      "seconds": 352,
+      "deaths": 0,
+      "gatesOpened": 22,
+      "crossingSeconds": {
+        "wind": 83.26,
+        "water": 84.92,
+        "fire": 88.76
+      },
+      "allCrossingGuardiansDefeated": true,
+      "finalDragonAttacks": [
+        1
+      ],
+      "report": "artifacts/combat-route-pyre-forge-report.json",
+      "reportModifiedAt": "2026-10-16T19:27:22.679Z",
+      "reportSha256": "9117de55e425cf54e7b208523c5dbcc2a7e973fa662d60db0055bbf87cf32407"
+    },
+    {
+      "world": "neon",
+      "difficulty": "forge",
+      "optionalBellbeast": false,
+      "status": "won",
+      "seconds": 354.23,
+      "deaths": 0,
+      "gatesOpened": 21,
+      "crossingSeconds": {
+        "wind": 82.56,
+        "water": 87.16,
+        "fire": 84.78
+      },
+      "allCrossingGuardiansDefeated": true,
+      "finalDragonAttacks": [
+        1,
+        2
+      ],
+      "report": "artifacts/combat-route-neon-forge-report.json",
+      "reportModifiedAt": "2026-10-16T19:27:19.623Z",
+      "reportSha256": "e15c329bf5479427a723964ce52650967529da10836a8b8c12fb6fc6db406bb6"
+    },
+    {
+      "world": "veil",
+      "difficulty": "forge",
+      "optionalBellbeast": false,
+      "status": "won",
+      "seconds": 361.78,
+      "deaths": 1,
+      "gatesOpened": 21,
+      "crossingSeconds": {
+        "wind": 83.19,
+        "water": 87.22,
+        "fire": 88.24
+      },
+      "allCrossingGuardiansDefeated": true,
+      "finalDragonAttacks": [
+        0
+      ],
+      "report": "artifacts/combat-route-veil-forge-report.json",
+      "reportModifiedAt": "2026-10-16T19:27:17.223Z",
+      "reportSha256": "09ed0c6d667cd45dcd3c50e19d4e1385671e5f2c27001ab65313a420e403bd57"
+    }
+  ],
+  "limits": [
+    "Ten-minute first-human playthrough target remains unverified.",
+    "Optimal human speedrun duration has not been measured.",
+    "No Android comfort or performance claim follows from this simulation.",
+    "Repeated obstacle rhythm and landmark readability still require human observation."
+  ]
+}

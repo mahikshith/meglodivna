@@ -50,18 +50,18 @@ test('light parries are bounded while heavy boss rockets cannot be erased by a s
   assert.equal(p.parryTime, 0);
 });
 
-test('horizontal/vertical/finisher combos alternate and a dash cuts a small foe exactly once', () => {
+test('horizontal/vertical/finisher combos alternate and boost never performs a sword cut', () => {
   const world = isolated(); tick(world, 10);
   const modes = [];
   for (let index = 0; index < 3; index++) { stepWorld(world, { slashPressed: true }, STEP); modes.push(world.player.slashMode); tick(world, 35); }
   assert.deepEqual(modes, ['horizontal', 'vertical', 'finisher']);
   const target = foe('dash-small', world.player.x + 80, 30); world.enemies = [target];
-  stepWorld(world, { dashPressed: true, move: 1 }, STEP);
-  assert.equal(world.player.slashMode, 'dash');
-  assert.equal(target.dead, true);
-  assert.equal(world.kills, 1);
+  stepWorld(world, { boostPressed: true, move: 1 }, STEP);
+  assert.equal(world.player.boostActive, true);
+  assert.equal(target.hp, 30);
+  assert.equal(world.kills, 0);
   tick(world, 10, { move: 1 });
-  assert.equal(world.kills, 1);
+  assert.equal(world.kills, 0);
 });
 
 test('allied clone/wolf/dragon announce, arrive, attack real foes, expire, and stay bounded', () => {

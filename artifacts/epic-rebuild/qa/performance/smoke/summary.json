@@ -1,0 +1,160 @@
+{
+  "kind": "Bounded Node legal-input simulation CPU profile; no renderer or physical device",
+  "label": "smoke",
+  "frames": 120,
+  "status": "playing",
+  "deaths": 0,
+  "target": "soulforge-sanctuary-1",
+  "x": 395.8541666666672,
+  "solids": 488,
+  "enemies": 65,
+  "awake": 1,
+  "simulatedSeconds": 1,
+  "elapsedMs": 277.89930000000004,
+  "step": {
+    "meanMs": 1.4743433333333313,
+    "p50Ms": 1.2737000000000194,
+    "p95Ms": 2.6626999999999725,
+    "p99Ms": 3.6865999999999985,
+    "maxMs": 15.748999999999995
+  },
+  "hashes": {
+    "src/combat.js": "bd061cddae79e01d121d99c48c2f4eae91077820f51270c683ccec5028969734",
+    "src/physics.js": "ab87b5534f22293f85bed634997fae3f2431fee147d32cdc239985ccb7e8a9ba",
+    "src/character-motion.js": "475b207c11ded54893424617f18485ee2c79ecad0ef8409586d7249f437b0389",
+    "src/ironfang.js": "3ade8eb413b4fc775c4d32eede37108ba120507657842a798aa174045e2d0eaa",
+    "src/level.js": "41dbe349fbe7859f701253cb9f23d0b9562b2b2fe2b8b381773e38523eab6d83",
+    "src/crossings.js": "ebf35132a93bc6106140ff0ab89736604dfb853aa6bbf4d8cf9a5b587546b1ff",
+    "src/crossing-courses.js": "c51974fface7e1fe09a519e588517534857d5f080b586c22623d68bb7ac4542b",
+    "scripts/combat-route.mjs": "06e5af588a388924e202f1bbb7153f3dcff4407c33f175eb9ac4d92134058f74"
+  },
+  "topSelfSamples": [
+    {
+      "function": "post",
+      "file": "node:inspector",
+      "line": 115,
+      "sampleMs": 32.842,
+      "percent": 10.390604731803311
+    },
+    {
+      "function": "(garbage collector)",
+      "file": "",
+      "line": 0,
+      "sampleMs": 26.686,
+      "percent": 8.442959560103013
+    },
+    {
+      "function": "segmentEntry",
+      "file": "combat.js",
+      "line": 241,
+      "sampleMs": 22.746,
+      "percent": 7.196416029157729
+    },
+    {
+      "function": "read",
+      "file": "",
+      "line": 0,
+      "sampleMs": 19.007,
+      "percent": 6.013465201187064
+    },
+    {
+      "function": "compileSourceTextModule",
+      "file": "utils",
+      "line": 316,
+      "sampleMs": 17.709,
+      "percent": 5.602801875510165
+    },
+    {
+      "function": "villainDamageBounds",
+      "file": "character-motion.js",
+      "line": 55,
+      "sampleMs": 17.421,
+      "percent": 5.511683972740561
+    },
+    {
+      "function": "stepWorld",
+      "file": "combat.js",
+      "line": 1125,
+      "sampleMs": 15.83,
+      "percent": 5.008320836259863
+    },
+    {
+      "function": "(anonymous)",
+      "file": "combat.js",
+      "line": 1100,
+      "sampleMs": 15.758,
+      "percent": 4.9855413605674626
+    },
+    {
+      "function": "(anonymous)",
+      "file": "character-motion.js",
+      "line": 48,
+      "sampleMs": 12.188,
+      "percent": 3.856059024152572
+    },
+    {
+      "function": "updateProjectiles",
+      "file": "combat.js",
+      "line": 1064,
+      "sampleMs": 11.996,
+      "percent": 3.795313755639502
+    },
+    {
+      "function": "(anonymous)",
+      "file": "legal-driver",
+      "line": 1,
+      "sampleMs": 10.675,
+      "percent": 3.377373653005309
+    },
+    {
+      "function": "open",
+      "file": "",
+      "line": 0,
+      "sampleMs": 9.801,
+      "percent": 3.1008561286281062
+    },
+    {
+      "function": "(anonymous)",
+      "file": "combat.js",
+      "line": 1096,
+      "sampleMs": 9.533,
+      "percent": 3.01606585799528
+    },
+    {
+      "function": "villainFrame",
+      "file": "character-motion.js",
+      "line": 34,
+      "sampleMs": 6.159,
+      "percent": 1.9485943165208148
+    },
+    {
+      "function": "(anonymous)",
+      "file": "character-motion.js",
+      "line": 60,
+      "sampleMs": 6.151,
+      "percent": 1.9460632636661035
+    },
+    {
+      "function": "addCrossings",
+      "file": "crossings.js",
+      "line": 5,
+      "sampleMs": 4.492,
+      "percent": 1.4211861779203603
+    },
+    {
+      "function": "moveBody",
+      "file": "physics.js",
+      "line": 52,
+      "sampleMs": 4.042,
+      "percent": 1.2788144548428533
+    },
+    {
+      "function": "writeBuffer",
+      "file": "",
+      "line": 0,
+      "sampleMs": 3.372,
+      "percent": 1.066838778260787
+    }
+  ],
+  "measurementConditions": "Node inspector sampling at1ms. Timing includes profiling overhead and CPU scheduling; no browser renderer or physical-device inference."
+}

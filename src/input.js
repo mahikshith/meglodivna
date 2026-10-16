@@ -10,6 +10,7 @@ export class Controls {
   constructor(element, onPause, onRetry, onConfirm) {
     this.keys = new Set(); this.edges = new Set(); this.touch = new Set(); this.pointers = new Map(); this.padLast = {};
     this.stick = { x: 0, y: 0 }; this.stickPointer = null; this.stickElement = element.querySelector('#joystick');
+    this.aim = null; this.aimOrigins = new Map();
     this.stickOrigin = null; this.stickHideTimer = null;
     this.pressTimes = new Map(); this.pressContexts = new Map(); this.paletteOpened = new Set(); this.element = element;
     this.actionButtons = new Map([...element.querySelectorAll('[data-action]')].map(button => [button.dataset.action, button]));
@@ -70,14 +71,23 @@ export class Controls {
         if (document.querySelector('dialog[open]')) return;
         e.preventDefault(); button.setPointerCapture(e.pointerId); const action = button.dataset.action;
         this.pointers.set(e.pointerId, action);
+        if (action === 'attack') this.aimOrigins.set(e.pointerId, { x: e.clientX, y: e.clientY });
         this.pressTimes.set(e.pointerId, performance.now());
         if (action === 'power') this.pressContexts.set(e.pointerId, this.element.dataset.interact === 'true' ? 'interact' : 'spell');
         if (!this.touch.has(action) && action !== 'power') this.edges.add(action === 'attack' ? 'slash' : action);
         this.touch.add(action); button.classList.add('active'); this.paintAction(action, 0);
       });
+      button.addEventListener('pointermove', e => {
+        const origin = this.aimOrigins.get(e.pointerId);
+        if (!origin || !Number.isFinite(e.clientX) || !Number.isFinite(origin.x)) return;
+        const dx = e.clientX - origin.x, dy = e.clientY - origin.y, length = Math.hypot(dx, dy);
+        if (length > 12) this.aim = { x: dx / length, y: dy / length };
+      });
       for (const event of ['pointerup','pointercancel','lostpointercapture']) button.addEventListener(event, e => {
         const action = this.pointers.get(e.pointerId), duration = performance.now() - (this.pressTimes.get(e.pointerId) ?? 0), opened = this.paletteOpened.has(e.pointerId), context = this.pressContexts.get(e.pointerId);
         this.pointers.delete(e.pointerId); this.pressTimes.delete(e.pointerId); this.pressContexts.delete(e.pointerId); this.paletteOpened.delete(e.pointerId);
+        this.aimOrigins.delete(e.pointerId);
+        if (![...this.pointers.values()].includes('attack')) this.aim = null;
         if (event === 'pointerup' && !document.querySelector('dialog[open]') && ![...this.pointers.values()].includes(action)) {
           if (action === 'power' && duration < 450 && !opened) this.edges.add(context);
         }
@@ -89,15 +99,16 @@ export class Controls {
   }
   paintAction(action, elapsed) {
     const button = this.actionButtons.get(action); if (!button) return;
-    const threshold = { attack: 120, jump: 350, power: 450 }[action];
+    const threshold = { attack: 120, jump: 350, boost: 160, power: 450 }[action];
     button.dataset.phase = elapsed === undefined ? 'idle' : threshold && elapsed >= threshold ? 'hold' : 'press';
     button.style.setProperty?.('--hold-progress', elapsed === undefined || !threshold ? '0deg' : `${Math.min(1, elapsed / threshold) * 360}deg`);
     if (this.feedback) {
       const held = [...this.actionButtons].find(([, item]) => item.dataset.phase === 'hold');
-      this.feedback.textContent = held ? { attack: 'FIRING', jump: 'JET THRUST', power: 'OPENING GEAR' }[held[0]] : '';
+      this.feedback.textContent = held ? { attack: 'FIRING · DRAG TO AIM', jump: 'JET THRUST', boost: 'JET THRUST', power: 'OPENING GEAR' }[held[0]] : '';
     }
   }
   clear() {
+    this.aim = null; this.aimOrigins.clear();
     this.keys.clear(); this.edges.clear(); this.touch.clear(); this.pointers.clear(); this.pressTimes.clear(); this.pressContexts.clear(); this.paletteOpened.clear(); this.stickPointer = null; this.stickOrigin = null; this.stick = { x: 0, y: 0 };
     clearTimeout(this.stickHideTimer); this.stickHideTimer = null; if (this.stickElement) this.stickElement.hidden = true;
     const thumb = this.stickElement?.querySelector('.joystick-thumb'); if (thumb) thumb.style.transform = '';
@@ -138,13 +149,16 @@ export class Controls {
     }
     const axis = !modal && Math.abs(pad?.axes[0] || 0) > 0.2 ? pad.axes[0] : 0;
     const stickX = modal ? 0 : this.stick.x, stickY = modal ? 0 : this.stick.y;
+    const rightX = !modal ? pad?.axes[2] || 0 : 0, rightY = !modal ? pad?.axes[3] || 0 : 0;
+    const aim = !modal && this.aim || (Math.hypot(rightX, rightY) > .25 ? { x: rightX, y: rightY } : null);
     const input = { move: held('KeyA','ArrowLeft','left') ? -1 : held('KeyD','ArrowRight','right') ? 1 : stickX || axis,
       jumpPressed: edge('Space','jump') || padEdge(0), jumpHeld: held('Space','jump') || button(0),
-      dashPressed: edge('ShiftLeft','ShiftRight','dash') || padEdge(1), jet: held('KeyL','KeyE','jet') || heldFor('jump',350) || button(5),
+      boostPressed: edge('ShiftLeft','ShiftRight','boost') || padEdge(1), jet: held('KeyL','KeyE','jet') || heldFor('boost',160) || heldFor('jump',350) || button(5) || button(1) && !padEdge(1),
       slashPressed: edge('KeyJ','slash') || padEdge(2), shoot: held('KeyK','shoot') || heldFor('attack',120) || button(7),
-      aimUp: held('KeyW','ArrowUp','aimUp') || stickY < -0.55 || !modal && (pad?.axes[1] || 0) < -0.55,
+      aimUp: !aim && (held('KeyW','ArrowUp','aimUp') || stickY < -0.55 || !modal && (pad?.axes[1] || 0) < -0.55),
       down: held('KeyS','ArrowDown','down') || stickY > 0.55 || !modal && (pad?.axes[1] || 0) > 0.55,
-      aimX: stickX || axis, aimY: stickY || (!modal ? pad?.axes[1] || 0 : 0),
+      aimX: aim?.x ?? (stickX || axis), aimY: aim?.y ?? (stickY || (!modal ? pad?.axes[1] || 0 : 0)),
+      independentAim: !!aim,
       spellPressed: edge('KeyQ','spell') || padEdge(6), interactPressed: edge('KeyF','interact') || padEdge(3),
       cycleGunPressed: edge('KeyC','cycleGun') || padEdge(4), cycleSwordPressed: edge('KeyV','cycleSword') || padEdge(14),
       cycleSpellPressed: edge('KeyX','cycleSpell') || padEdge(15), ultimatePressed: edge('KeyZ','ultimate') || padEdge(11) };

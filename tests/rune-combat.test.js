@@ -103,13 +103,13 @@ test('melee knocks a live crawler away once, cancels its charge and cannot cut t
   assert.equal(blocked.enemies[0].hp, blocked.enemies[0].maxHp);
 });
 
-test('dash sword kills in its swept path, but neither light bullets nor heavy beams are parried by dash', () => {
+test('booster propulsion neither cuts foes nor parries light bullets or heavy beams', () => {
   const world = fixture('guard', 185); world.enemies[0].hp = 30;
   tick(world, 2);
   const p = world.player, light = spawnProjectile(world, p.x + 75, p.y + 25, 0, 0, 'enemy');
   const heavy = spawnProjectile(world, p.x + 80, p.y + 25, 0, 0, 'enemy', true); heavy.heavy = true; heavy.reflectable = false;
-  stepWorld(world, { dashPressed: true, move: 1 }, STEP); tick(world, 20, { move: 1 });
-  assert.equal(world.enemies[0].dead, true); assert.equal(world.kills, 1);
+  stepWorld(world, { boostPressed: true, move: 1 }, STEP); tick(world, 20, { move: 1 });
+  assert.equal(world.enemies[0].hp, 30); assert.equal(world.kills, 0);
   assert.equal(light.owner, 'enemy'); assert.equal(heavy.owner, 'enemy'); assert.equal(p.parryTime, 0);
 });
 
@@ -131,26 +131,28 @@ test('runes open only their required seals, persist across retry and gate option
   assert.equal(rewardPlayer(retry, { type: 'treasure', itemId: 'tide-glass' }, 'rune:tide'), false);
 });
 
-test('Ember finisher burns a surviving foe and Storm dash kill restores a bounded amount of fuel', () => {
+test('Ember finisher burns a surviving foe and Storm relic cannot create a fuel-free boost kill', () => {
   const world = fixture('guard', 165), p = world.player, foe = world.enemies[0];
   world.collections.push('ember-heart', 'storm-seal'); p.combo = 1; p.comboWindow = 0.5;
   stepWorld(world, { slashPressed: true }, STEP); tick(world, 16); assert.equal(p.combo, 2); assert.ok(foe.burn > 0);
   const before = foe.hp; tick(world, 15); assert.ok(foe.hp < before);
   const dash = fixture('guard', 185); dash.collections.push('storm-seal'); dash.player.fuel = 10; dash.enemies[0].hp = 30;
-  stepWorld(dash, { move: 1, dashPressed: true }, STEP); assert.ok(dash.player.fuel >= 25 && dash.player.fuel < 26);
+  stepWorld(dash, { move: 1, boostPressed: true }, STEP);
+  assert.equal(dash.player.dashTime, 0); assert.equal(dash.enemies[0].hp, 30);
+  assert.ok(dash.player.fuel >= 10 && dash.player.fuel < 11);
 });
 
 test('30/60/120Hz caller frames yield the same120Hz movement, combat input edges and bounded thrust', () => {
   const worlds = [30, 60, 120].map(rate => {
     const world = fixture();
     for (let frame = 0; frame < rate * 2; frame++) stepWorld(world, { move: 1, jumpPressed: frame === 0, jumpHeld: true,
-      dashPressed: frame === rate / 2, slashPressed: frame === rate, jet: frame >= rate }, 1 / rate);
+      boostPressed: frame === rate / 2, slashPressed: frame === rate, jet: frame >= rate }, 1 / rate);
     return world;
   });
   for (const world of worlds.slice(1)) for (const key of ['x', 'y', 'vx', 'vy', 'fuel', 'slashId']) {
     assert.ok(Math.abs(world.player[key] - worlds[0].player[key]) < 0.001, `${key} caller rate diverged`);
   }
-  assert.equal(worlds[0].player.slashId, 2, 'One dash and one tap, never one attack per substep');
+  assert.equal(worlds[0].player.slashId, 1, 'One blade tap; booster creates no sword attack');
   const a = createPlayer(100, 1260 - PHYSICS.playerHeight), b = createPlayer(100, 1260 - PHYSICS.playerHeight);
   stepPlayer(a, {}, [floor], STEP); stepPlayer(b, {}, [floor], STEP);
   stepPlayer(a, { move: 1, jumpPressed: true, jumpHeld: true, jet: true }, [floor], 1 / 30);

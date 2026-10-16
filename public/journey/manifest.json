@@ -1,0 +1,62 @@
+{
+  "intro-0": {
+    "source": "reference/epic-revision/intro-raw.png",
+    "sourceRect": [
+      0,
+      0,
+      1254,
+      418
+    ],
+    "sourceSha256": "d096dce15466cffe5c7c0e92dd5082d304f5a08ca22fa4bdc170a36f4060cedf"
+  },
+  "intro-1": {
+    "source": "reference/epic-revision/intro-raw.png",
+    "sourceRect": [
+      0,
+      418,
+      1254,
+      836
+    ],
+    "sourceSha256": "d096dce15466cffe5c7c0e92dd5082d304f5a08ca22fa4bdc170a36f4060cedf"
+  },
+  "intro-2": {
+    "source": "reference/epic-revision/intro-raw.png",
+    "sourceRect": [
+      0,
+      836,
+      1254,
+      1254
+    ],
+    "sourceSha256": "d096dce15466cffe5c7c0e92dd5082d304f5a08ca22fa4bdc170a36f4060cedf"
+  },
+  "wind": {
+    "source": "reference/epic-revision/realms-raw.png",
+    "sourceRect": [
+      0,
+      0,
+      1254,
+      418
+    ],
+    "sourceSha256": "636fa690d0a1fb9d9305edec55b826effb272640fc6239296b5a2029a83a12e6"
+  },
+  "tide": {
+    "source": "reference/epic-revision/realms-raw.png",
+    "sourceRect": [
+      0,
+      418,
+      1254,
+      836
+    ],
+    "sourceSha256": "636fa690d0a1fb9d9305edec55b826effb272640fc6239296b5a2029a83a12e6"
+  },
+  "ember": {
+    "source": "reference/epic-revision/realms-raw.png",
+    "sourceRect": [
+      0,
+      836,
+      1254,
+      1254
+    ],
+    "sourceSha256": "636fa690d0a1fb9d9305edec55b826effb272640fc6239296b5a2029a83a12e6"
+  }
+}

@@ -20,6 +20,7 @@ export const PHYSICS = Object.freeze({
   dashSpeed: 620,
   dashDuration: 0.16,
   dashCooldown: 0.65,
+  boostFuel: 18,
   jetAcceleration: 2600,
   jetRiseSpeed: 330,
   fuelDrain: 50,
@@ -101,7 +102,7 @@ export function stepPlayer(player, input, solids, dt) {
   if (!Number.isFinite(dt) || dt <= 0) throw new RangeError('Physics step must be positive and finite.');
   // A slow display must not stretch dash, thrust or jump timing into one large integration.
   if (dt > PHYSICS.fixedStep + 1e-9) {
-    const events = [], held = { ...input, jumpPressed: false, dashPressed: false };
+    const events = [], held = { ...input, jumpPressed: false, dashPressed: false, boostPressed: false };
     for (let remaining = dt, first = true; remaining > 1e-9; first = false) {
       const tick = Math.min(PHYSICS.fixedStep, remaining);
       events.push(...stepPlayer(player, first ? input : held, solids, tick)); remaining -= tick;
@@ -111,11 +112,14 @@ export function stepPlayer(player, input, solids, dt) {
   const events = [];
   const wasGrounded = player.grounded;
   const wasJetActive = player.jetActive;
-  const move = Math.max(-1, Math.min(1, input.move || 0));
+  player.crouching = !!input.down && player.grounded && !input.jumpPressed && !input.boostPressed;
+  const move = player.crouching ? 0 : Math.max(-1, Math.min(1, input.move || 0));
+  if (player.crouching) player.vx = 0;
   player.coyote = player.grounded ? PHYSICS.coyoteTime : Math.max(0, player.coyote - dt);
   player.jumpBuffer = input.jumpPressed ? PHYSICS.jumpBufferTime : Math.max(0, player.jumpBuffer - dt);
   player.dashCooldown = Math.max(0, player.dashCooldown - dt);
   player.dashTime = Math.max(0, player.dashTime - dt);
+  if (player.impaired > 0) player.dashTime = 0;
   player.wallLock = Math.max(0, player.wallLock - dt);
   player.dropThrough = Math.max(0, player.dropThrough - dt);
   if (player.grounded) {
@@ -157,17 +161,20 @@ export function stepPlayer(player, input, solids, dt) {
       player.jumpCutPending = true;
     }
   }
-  if (input.dashPressed && player.dashCooldown === 0 && player.dashTime === 0) {
+  if ((input.boostPressed || input.dashPressed) && !(player.impaired > 0) && player.fuel >= PHYSICS.boostFuel && player.dashCooldown === 0 && player.dashTime === 0) {
     player.dashTime = PHYSICS.dashDuration;
     player.dashCooldown = PHYSICS.dashCooldown;
+    player.fuel -= PHYSICS.boostFuel;
+    player.boostFacing = Math.sign(input.move || player.facing);
     player.jumpCutPending = false;
-    events.push('dash');
+    events.push(input.boostPressed ? 'boost' : 'dash');
   }
 
   player.jetActive = false;
   if (player.dashTime > 0) {
-    player.vx = player.facing * PHYSICS.dashSpeed;
+    player.vx = (player.boostFacing || player.facing) * PHYSICS.dashSpeed;
     player.vy = 0;
+    player.jetActive = true;
   } else {
     if (player.wallLock === 0) {
       const acceleration = player.grounded ? PHYSICS.groundAcceleration : PHYSICS.airAcceleration;
@@ -178,7 +185,7 @@ export function stepPlayer(player, input, solids, dt) {
       player.jumpCutPending = false;
     }
     player.vy = Math.min(PHYSICS.fallSpeed, player.vy + PHYSICS.gravity * dt);
-    player.jetActive = !!input.jet && !player.grounded && player.fuel > 0;
+    player.jetActive = !!input.jet && !(player.impaired > 0) && !player.grounded && player.fuel > 0;
     if (player.jetActive) {
       const boost = player.boost > 0 ? 1.4 : 1;
       const drain = PHYSICS.fuelDrain * (player.fuelRate || 1) * (boost > 1 ? 0.6 : 1);
@@ -214,7 +221,8 @@ export function stepPlayer(player, input, solids, dt) {
     }
   }
   if (player.vy >= 0) player.jumpCutPending = false;
-  player.state = player.dashTime > 0 ? 'dash' : player.jetActive ? 'jet'
+  player.boostActive = player.dashTime > 0;
+  player.state = player.dashTime > 0 ? 'dash' : player.jetActive ? 'jet' : player.crouching && player.grounded ? 'crouch'
     : player.grounded ? (Math.abs(player.vx) > 8 ? 'run' : 'idle')
       : player.wall && player.vy > 0 ? 'wall' : player.vy < 0 ? 'jump' : 'fall';
   return events;

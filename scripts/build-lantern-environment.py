@@ -30,3 +30,5 @@ background.save(dest / 'sanctuary.png')
 manifest['background']={'source':background_source.relative_to(root).as_posix(),'sha256':hashlib.sha256(background_source.read_bytes()).hexdigest(),'size':list(background.size)}
 (dest / 'environment.json').write_text(json.dumps(manifest, indent=2) + '\n')
 print('Extracted four full-resolution environment layers and illustrated panorama.')
+from epic_assets import environment
+environment()

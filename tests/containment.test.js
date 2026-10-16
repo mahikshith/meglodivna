@@ -8,6 +8,11 @@ test('closed authored forcefields cannot be crossed with legal wall jumps, dash,
     const world = createWorld();
     world.enemies = []; world.pickups = [];
     const gate = world.gates.find(candidate => candidate.id === authored.id);
+    // Isolate this barrier: the new trial foyer deliberately contains travel portals
+    // and three adjacent seals, neither of which belongs in a wall-jump fixture.
+    const gates = new Set(world.gates);
+    world.portals = []; world.gates = [gate];
+    world.solids = world.solids.filter(solid => !gates.has(solid) || solid === gate);
     Object.assign(world.player, { x: gate.x - 70, y: gate.y + gate.h - world.player.h });
     assert.equal(gate.y, 0);
     assert.equal(gate.h, authored.h);

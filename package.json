@@ -1,6 +1,6 @@
 {
   "name": "ash-signal",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,13 +8,14 @@
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test tests/*.test.js",
-    "test:browser": "node tests/runeheart-controls.browser.cjs && node scripts/runeheart-live-playtest.cjs",
+    "test:browser": "node scripts/epic-controls.cjs",
     "test:game": "node scripts/combat-route.mjs",
     "test:replay": "node scripts/replay.cjs",
-    "test:art": "node scripts/runeheart-actions.cjs",
+    "test:art": "node scripts/epic-visual.cjs",
     "android:sync": "npm run build && node scripts/sync-android.mjs",
     "test:deep": "node scripts/deep-harness.mjs 30",
-    "test:visual": "node scripts/runeheart-visual.cjs"
+    "test:visual": "node scripts/epic-visual.cjs",
+    "test:production": "node scripts/epic-production.cjs"
   },
   "dependencies": {
     "phaser": "3.90.0"
