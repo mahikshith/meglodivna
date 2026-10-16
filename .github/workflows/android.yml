@@ -75,8 +75,8 @@ jobs:
         run: npm ci && npm test
       - name: Build offline game
         run: npm run build && node scripts/sync-android.mjs
-      - name: Verify correction evidence against tagged sources and bundle
-        run: node scripts/verify-correction-evidence.mjs
+      - name: Verify correction evidence against tagged sources
+        run: node scripts/verify-correction-evidence.mjs --ci
       - name: Build and lint debug APK
         working-directory: android
         run: chmod +x gradlew && ./gradlew assembleDebug lintDebug --no-daemon

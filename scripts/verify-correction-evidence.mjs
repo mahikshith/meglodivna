@@ -2,6 +2,11 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 
+process.on('uncaughtException', error => {
+  console.error(`::error title=Correction evidence verification::${error.message}`);
+  process.exitCode = 1;
+});
+
 const digest = path => createHash('sha256').update(readFileSync(path)).digest('hex');
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const paths = {
@@ -36,7 +41,10 @@ verify(reports.campaign.sources);
 verify(reports.visual.hashes);
 verify(reports.controls.sourceHashes);
 verify(reports.production.sourceHashes);
-verify(reports.production.distHashes);
+// Vite/minifier bytes can differ between Windows and Linux. The local
+// production smoke checks the exact served bundle; CI builds its own bundle
+// from the verified tagged sources before compiling Android.
+if (!process.argv.includes('--ci')) verify(reports.production.distHashes);
 assert.equal(reports.campaign.sourceUnchangedSinceSnapshot, true);
 assert.equal(reports.campaign.campaigns.length, 9);
 assert.equal(reports.campaign.unitTests.failed, 0);
