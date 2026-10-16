@@ -1,0 +1,492 @@
+{
+  "kind": "Production Vite preview Chromium smoke with real UI inputs",
+  "physicalDevice": false,
+  "campaignCompletion": false,
+  "viewport": {
+    "width": 740,
+    "height": 360
+  },
+  "started": "2026-10-16T21:48:27.323Z",
+  "distHashes": {
+    "dist/index.html": "cfd3c1374e616a8a55a7a8f05371b459d069aafda4ad19d125a54e8e326dc12f",
+    "dist/assets/index-Bwt6ape6.css": "678a1bf429f69376294c1a40674e1940223cfada99495ac6b180b606aa6ebeb2",
+    "dist/assets/index-CxM1ff7d.js": "06e1fe277dee56cd911de7b6bc08089a7b80dc7f084df41da66d5518d6dce33d"
+  },
+  "sourceHashes": {
+    "src/art.js": "525873ea6b871cb3f1d61992836ee9f2b1caccd6c88326ece6bbf46d8a6aa660",
+    "src/audio.js": "b63f2167946498e5b681f5c715ffc556ab612d70f94eab79b183fb4769e380c0",
+    "src/blade-motion.js": "70d2e5a8869657f8b85ca82f2c70e330c1d7a76d8991fc9fae7beadfa1d05527",
+    "src/camera.js": "332f75f253599e3633ba3dfb27242b323eaaf5b8482204d91cbbda3f6922a3d0",
+    "src/catalog.js": "d851cb49e16fe17d2c1ac70012f370e1b33bd1d8e059e1eb48e7804554d2cce1",
+    "src/character-geometry.js": "7d8a2689cc22ca7b2196b555ade746c8465c3bbb4fdc26536d998240e87afeff",
+    "src/character-motion.js": "475b207c11ded54893424617f18485ee2c79ecad0ef8409586d7249f437b0389",
+    "src/combat.js": "86ed8abf88212e0ae40480faf877deaab78986b806307e0e37afabf2d9e79246",
+    "src/companions.js": "be3f25dab44a32334186e1a788566bb297b89eb9cf6409195455b1d2dffcf2c5",
+    "src/crossing-courses.js": "ac381e8ab8b9ec6bc9c292683b7e22d7b97375464cc0ee9b06a214a4f4b73237",
+    "src/crossings.js": "8a8a0ecdb07f731577ead1b3e67e8eb5b2ceca307da70e592b5e906d986a8faf",
+    "src/enemy-motion.js": "edd5881630507ba1a145abcf89d9126b9896a34cc9417f26685f568279363dcc",
+    "src/input.js": "f343c5aa5d3406f1b8e38556b45ee99d4050942595b5da86be7b32f9cc033807",
+    "src/ironfang-geometry.js": "eed318fcd1b70a8982212fccc9b0ae9851f18c2433245a2d40639565cdfafa04",
+    "src/ironfang.js": "3ade8eb413b4fc775c4d32eede37108ba120507657842a798aa174045e2d0eaa",
+    "src/lantern-art.js": "24b00188a1cc9c349fa96b75fbb5eacb1eb35380dcf93d751c9347b9bf47d740",
+    "src/lantern-fx.js": "41e203dd425285fbb3463f4a0595a001bcb31a23bbb2c1bfaf16234f5b3d4dc0",
+    "src/legacy-level.js": "21614250e936233c0bfea0ce0626a528f618651ac9dc679ab7e27691e0e0f1fa",
+    "src/level.js": "41dbe349fbe7859f701253cb9f23d0b9562b2b2fe2b8b381773e38523eab6d83",
+    "src/main.js": "0a70d791cc12b733e323b2657192e4bd255abd79a316db26eb42f17f05b78fdc",
+    "src/physics.js": "ab87b5534f22293f85bed634997fae3f2431fee147d32cdc239985ccb7e8a9ba",
+    "src/progress.js": "d9e1898c98c05e761ad533999eedbf611f7cc13074a69504cb20c4a72b1ca211",
+    "src/reference-art.js": "1ee6f6283cce08057c812ee0632609f8d1b720359dc160bfbc775f9e7866738e",
+    "src/rune-worlds.js": "90da2751f09c4384227d15d430794800535283eda6256f58611079e9280d0754",
+    "src/runeheart-art.js": "d67f92b6295ee2e3594b61ed0a7b72d76828c6f4bb84a83fffda059155c3e715",
+    "src/sanctuary-theme.css": "9af6426f4742a44f298f91b95da4ba58c492a27598e4f0617e1b8850c39d8039",
+    "src/story.js": "146c76ea5ef1076c08a30ee1821bf47e41a09a56e519991325e28ab54e7fd5d2",
+    "src/style.css": "b4f9ac8c01c42627da1f07a4876b1b2efe2e64cddcc3e8b77ece57d959fe8f8a",
+    "src/terrain.js": "3f162e22b0649e22a170e000dd175e7848cb33cc64122198dfb54a1a41a95af5",
+    "src/ui.js": "3516f68cd17f821d80fc2b6b20be3688f3d862832e80228a4442deacf97ba8fb",
+    "src/worlds.js": "f3e899199f1fe72be50fa777d268ddde5133aa8c32bab81a56bc975d29af9daa"
+  },
+  "checks": [
+    "Production omits window.__ASH debug hook; served index SHA-256 matches current dist",
+    "43 Lantern/motion/FX PNGs decoded; all 3 bundled fonts loaded",
+    "All three story panels, contained keyboard focus and complete eighteen-second intro reach play",
+    "Home settings, start, keyboard movement/jump inputs, pause, paused settings, all six equipment tabs, close-to-pause and resume",
+    "Reload at the opening lantern restarts the story; pause freezes progress and Begin journey skips to play"
+  ],
+  "screenshots": [
+    "01-home.png",
+    "02-home-settings.png",
+    "03-intro-0.png",
+    "03-intro-1.png",
+    "03-intro-2.png",
+    "03-play.png",
+    "04-pause.png",
+    "05-paused-settings.png",
+    "06-equipment-engine.png",
+    "06-equipment-armor.png",
+    "06-equipment-spell.png",
+    "07-resumed.png",
+    "08-controls-640x360.png",
+    "08-controls-960x540.png",
+    "09-replayed-intro.png"
+  ],
+  "runtimeErrors": [],
+  "failedResources": [],
+  "imageSampling": {
+    "#game canvas": "auto",
+    "#intro-art": "auto",
+    "#story-panel img": "auto"
+  },
+  "servedBundles": [
+    "dist/assets/index-Bwt6ape6.css",
+    "dist/assets/index-CxM1ff7d.js"
+  ],
+  "images": [
+    {
+      "url": "/lantern/arch.png",
+      "width": 503,
+      "height": 591,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/atlas.png",
+      "width": 2048,
+      "height": 1024,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/lantern.png",
+      "width": 234,
+      "height": 621,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/platform.png",
+      "width": 780,
+      "height": 404,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/root.png",
+      "width": 695,
+      "height": 636,
+      "decoded": true
+    },
+    {
+      "url": "/lantern/sanctuary.png",
+      "width": 1536,
+      "height": 1024,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-motion/atlas.png",
+      "width": 2048,
+      "height": 1024,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/atlas.png",
+      "width": 512,
+      "height": 512,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/bolt.png",
+      "width": 100,
+      "height": 26,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/emitter-cap.png",
+      "width": 84,
+      "height": 57,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/emitter.png",
+      "width": 124,
+      "height": 85,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/lever.png",
+      "width": 74,
+      "height": 76,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/orb.png",
+      "width": 100,
+      "height": 56,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/platform.png",
+      "width": 306,
+      "height": 126,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/stone.png",
+      "width": 1254,
+      "height": 1254,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/ward.png",
+      "width": 121,
+      "height": 176,
+      "decoded": true
+    },
+    {
+      "url": "/lantern-fx/water.png",
+      "width": 306,
+      "height": 306,
+      "decoded": true
+    },
+    {
+      "url": "/character-revision/atlas-1.png",
+      "width": 2048,
+      "height": 1999,
+      "decoded": true
+    },
+    {
+      "url": "/character-revision/atlas-2.png",
+      "width": 2048,
+      "height": 403,
+      "decoded": true
+    },
+    {
+      "url": "/character-revision/atlas.png",
+      "width": 2048,
+      "height": 1964,
+      "decoded": true
+    },
+    {
+      "url": "/ironfang/atlas-1.png",
+      "width": 2048,
+      "height": 1344,
+      "decoded": true
+    },
+    {
+      "url": "/ironfang/atlas.png",
+      "width": 2048,
+      "height": 1939,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/bell.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/boots.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/jet.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/lantern.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/rifle.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/rune.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/satchel.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/sanctuary-ui/sword.png",
+      "width": 272,
+      "height": 272,
+      "decoded": true
+    },
+    {
+      "url": "/journey/ember.png",
+      "width": 1254,
+      "height": 418,
+      "decoded": true
+    },
+    {
+      "url": "/journey/intro-0.png",
+      "width": 1254,
+      "height": 418,
+      "decoded": true
+    },
+    {
+      "url": "/journey/intro-1.png",
+      "width": 1254,
+      "height": 418,
+      "decoded": true
+    },
+    {
+      "url": "/journey/intro-2.png",
+      "width": 1254,
+      "height": 418,
+      "decoded": true
+    },
+    {
+      "url": "/journey/tide.png",
+      "width": 1254,
+      "height": 418,
+      "decoded": true
+    },
+    {
+      "url": "/journey/wind.png",
+      "width": 1254,
+      "height": 418,
+      "decoded": true
+    },
+    {
+      "url": "/painted-correction/courier-portrait.png",
+      "width": 260,
+      "height": 288,
+      "decoded": true
+    },
+    {
+      "url": "/painted-correction/pyre.png",
+      "width": 1536,
+      "height": 864,
+      "decoded": true
+    },
+    {
+      "url": "/painted-correction/sanctuary.png",
+      "width": 1536,
+      "height": 864,
+      "decoded": true
+    },
+    {
+      "url": "/painted-correction/storm.png",
+      "width": 1536,
+      "height": 864,
+      "decoded": true
+    },
+    {
+      "url": "/painted-correction/threshold.png",
+      "width": 512,
+      "height": 695,
+      "decoded": true
+    },
+    {
+      "url": "/painted-correction/tide.png",
+      "width": 1536,
+      "height": 864,
+      "decoded": true
+    },
+    {
+      "url": "/painted-correction/veil.png",
+      "width": 1536,
+      "height": 864,
+      "decoded": true
+    }
+  ],
+  "fonts": [
+    {
+      "url": "/fonts/Alegreya-Variable.ttf",
+      "status": "loaded"
+    },
+    {
+      "url": "/fonts/AlegreyaSans-Bold.ttf",
+      "status": "loaded"
+    },
+    {
+      "url": "/fonts/AlegreyaSans-Regular.ttf",
+      "status": "loaded"
+    }
+  ],
+  "introWallSeconds": 19.154,
+  "equipmentTabs": [
+    {
+      "category": "engine",
+      "count": 4
+    },
+    {
+      "category": "sword",
+      "count": 3
+    },
+    {
+      "category": "gun",
+      "count": 5
+    },
+    {
+      "category": "armor",
+      "count": 4
+    },
+    {
+      "category": "spell",
+      "count": 10
+    },
+    {
+      "category": "relic",
+      "count": 6
+    }
+  ],
+  "controlLayouts": [
+    {
+      "viewport": {
+        "width": 640,
+        "height": 360
+      },
+      "bounds": {
+        "touch-jump": {
+          "x": 522,
+          "y": 252,
+          "width": 100,
+          "height": 100
+        },
+        "touch-attack": {
+          "x": 408,
+          "y": 204,
+          "width": 100,
+          "height": 100
+        },
+        "touch-boost": {
+          "x": 300,
+          "y": 260,
+          "width": 92,
+          "height": 92
+        },
+        "touch-power": {
+          "x": 194,
+          "y": 232,
+          "width": 80,
+          "height": 80
+        },
+        "touch-pause": {
+          "x": 240,
+          "y": 10,
+          "width": 48,
+          "height": 48
+        },
+        "touch-gear": {
+          "x": 352,
+          "y": 10,
+          "width": 48,
+          "height": 48
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 960,
+        "height": 540
+      },
+      "bounds": {
+        "touch-jump": {
+          "x": 836,
+          "y": 432,
+          "width": 100,
+          "height": 100
+        },
+        "touch-attack": {
+          "x": 722,
+          "y": 384,
+          "width": 100,
+          "height": 100
+        },
+        "touch-boost": {
+          "x": 614,
+          "y": 440,
+          "width": 92,
+          "height": 92
+        },
+        "touch-power": {
+          "x": 504,
+          "y": 412,
+          "width": 80,
+          "height": 80
+        },
+        "touch-pause": {
+          "x": 400,
+          "y": 10,
+          "width": 48,
+          "height": 48
+        },
+        "touch-gear": {
+          "x": 512,
+          "y": 10,
+          "width": 48,
+          "height": 48
+        }
+      }
+    }
+  ],
+  "reloadBeforeClick": {
+    "startDisabled": false,
+    "menuHidden": false,
+    "saved": [
+      "runeheart-sfx-volume",
+      "runeheart-music-volume",
+      "runeheart-reduced-fx",
+      "ash-signal-soulforge-test-armory"
+    ]
+  },
+  "reloadAfterClick": {
+    "mode": "intro",
+    "startDisabled": false,
+    "menuHidden": true,
+    "introHidden": false
+  },
+  "status": "pass",
+  "finished": "2026-10-16T21:49:20.548Z"
+}

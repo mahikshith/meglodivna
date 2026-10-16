@@ -89,6 +89,14 @@ const hasRunes = (world, object) => [object.requiresRelic, ...(object.requiresRe
   .filter(Boolean).every(id => world.collections.includes(id));
 const bossFloor = boss => boss.floorY ?? boss.baseY + boss.h;
 function refreshSolids(world) {
+  const p = world.player, feet = p.y + p.h, center = p.x + p.w / 2;
+  for (const gate of world.gates) if (!gate.open && gate.autoOpenAt && p.grounded
+    && Math.abs(feet - gate.autoOpenAt.y) < 5 && center >= gate.autoOpenAt.x
+    && center <= gate.autoOpenAt.x + gate.autoOpenAt.w) {
+    gate.open = true; addOnce(world.progress.openedGates, gate.id);
+    emit(world, 'gate', gate.x, gate.y, { gateId: gate.id, bell: true });
+    say(world, 'THE LANTERN ANSWERS // The path ahead is open.', 2.5);
+  }
   for (const gate of world.gates) if (!gate.open && (gate.requiresRelic || gate.requiresRelics?.length || gate.requiresEnemyDefeated)
     && hasRunes(world, gate) && (!gate.requiresEnemyDefeated || world.progress.defeatedBosses.includes(gate.requiresEnemyDefeated))
     && (!gate.bossId || world.progress.defeatedBosses.includes(gate.bossId))) {
@@ -382,7 +390,9 @@ function updatePlayerPortals(world, dt) {
   const touching = world.portals.filter(portal => overlaps(p, portal));
   if (!touching.length) world.portalExitLock = false;
   if (world.portalCooldown > 0 || world.portalExitLock) return false;
-  const portal = touching.find(entry => !entry.dormant && !world.gates.some(gate => gate.id === entry.disabledWhenGateOpen && gate.open)
+  const portal = touching.find(entry => !entry.dormant
+    && (!entry.requiresGateOpen || world.gates.some(gate => gate.id === entry.requiresGateOpen && gate.open))
+    && !world.gates.some(gate => gate.id === entry.disabledWhenGateOpen && gate.open)
     && hasRunes(world, entry) && entry.to && [entry.to.x, entry.to.y].every(Number.isFinite));
   if (!portal) return false;
   const to = { x: portal.to.x + 12 - p.w / 2, y: portal.to.y + 46 - p.h };
@@ -393,6 +403,14 @@ function updatePlayerPortals(world, dt) {
   for (const endpoint of world.portals) if (endpoint.pairId === portal.pairId) endpoint.dormant = false;
   emit(world, 'portal', portal.x + portal.w / 2, portal.y + portal.h, { to, portalId: portal.id, pairId: portal.pairId, facing: p.facing, kind: 'departure' });
   emit(world, 'portalarrival', p.x + p.w / 2, p.y + p.h, { portalId: portal.destinationId, pairId: portal.pairId, kind: 'player', facing: p.facing });
+  const chapterId = portal.chapterEntry || portal.chapterReturn;
+  const chapter = world.level.crossings?.find(crossing => crossing.id.endsWith(`-${chapterId}`));
+  const beat = portal.chapterEntry ? 'opening' : 'ending';
+  const claim = `npc:chapter:${chapterId}:${beat}`;
+  if (chapter?.[beat] && !world.progress.claimed.includes(claim)) {
+    world.story = { npcId: `chapter:${chapterId}:${beat}`, speaker: 'MIRA', portrait: 'mira',
+      lines: chapter[beat], choices: [], index: 0 };
+  }
   return true;
 }
 function updateSouls(world, dt) {

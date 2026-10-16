@@ -5,7 +5,11 @@ import { advanceStory, createWorld, equipItem, hazardState, retryWorld, weaponOr
 import { resumeRouteIndex } from './route-navigation.mjs';
 import { archiveDriver, gameplaySources, sourceHash } from './campaign-source.mjs';
 
-const provenance = { gameplaySourceHash: sourceHash(gameplaySources()), driverSources: archiveDriver(), startedAt: new Date().toISOString() };
+const outputDir = process.argv.includes('--correction') ? 'artifacts/playtest-correction' : 'artifacts';
+const output = name => `${outputDir}/${name}`;
+const provenance = { gameplaySourceHash: sourceHash(gameplaySources()),
+  driverSources: archiveDriver(process.argv.includes('--correction') ? `${outputDir}/drivers` : undefined),
+  startedAt: new Date().toISOString() };
 
 const difficulty = process.argv[2] || 'forge';
 assert.ok(['ember', 'forge', 'inferno', 'extinction'].includes(difficulty), 'Pass a supported difficulty ID.');
@@ -273,23 +277,23 @@ const report = { ...provenance, worldId, worldName: LEVEL.name, difficulty, stat
   }),
   method: 'Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.',
   target: route[targetIndex]?.id, events: [...eventsSeen].sort(), history };
-mkdirSync(new URL('../artifacts/', import.meta.url), { recursive: true });
+mkdirSync(outputDir, { recursive: true });
 if (optional) {
-  writeFileSync(new URL(`../artifacts/bellbeast-route-${difficulty}-report.json`, import.meta.url), JSON.stringify(report, null, 2));
-  writeFileSync(new URL(`../artifacts/bellbeast-route-${difficulty}-inputs.json`, import.meta.url), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
+  writeFileSync(output(`bellbeast-route-${difficulty}-report.json`), JSON.stringify(report, null, 2));
+  writeFileSync(output(`bellbeast-route-${difficulty}-inputs.json`), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
   assert.ok(optionalDone && optionalProof.collected === 80, 'Optional encounter must be reached, defeated, collected and returned through ordinary inputs.');
   assert.ok(['lift', 'downswing', 'contact', 'recovery'].every(phase => optionalProof.phases.has(phase)), 'The live optional fight must expose its complete attack cycle.');
 }
 if (!optional) {
-writeFileSync(new URL(`../artifacts/combat-route-${worldId}-${difficulty}-report.json`, import.meta.url), JSON.stringify(report, null, 2));
-writeFileSync(new URL(`../artifacts/combat-route-${worldId}-${difficulty}-inputs.json`, import.meta.url), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
+writeFileSync(output(`combat-route-${worldId}-${difficulty}-report.json`), JSON.stringify(report, null, 2));
+writeFileSync(output(`combat-route-${worldId}-${difficulty}-inputs.json`), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
 if (worldId === 'soulforge') {
-  writeFileSync(new URL(`../artifacts/combat-route-${difficulty}-report.json`, import.meta.url), JSON.stringify(report, null, 2));
-  writeFileSync(new URL(`../artifacts/combat-route-${difficulty}-inputs.json`, import.meta.url), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
+  writeFileSync(output(`combat-route-${difficulty}-report.json`), JSON.stringify(report, null, 2));
+  writeFileSync(output(`combat-route-${difficulty}-inputs.json`), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
 }
 if (worldId === 'soulforge' && difficulty === 'forge') {
-  writeFileSync(new URL('../artifacts/combat-route-report.json', import.meta.url), JSON.stringify(report, null, 2));
-  writeFileSync(new URL('../artifacts/combat-route-inputs.json', import.meta.url), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
+  writeFileSync(output('combat-route-report.json'), JSON.stringify(report, null, 2));
+  writeFileSync(output('combat-route-inputs.json'), JSON.stringify({ step: STEP, worldId, difficulty, records: trace }));
 }
 }
 console.log(JSON.stringify({ ...report, history: world.status === 'won' ? undefined : history.slice(-12) }, null, 2));
@@ -299,9 +303,13 @@ for (const boss of report.bosses.filter(boss => world.bosses.find(b => b.id === 
   assert.ok(boss.formsSeen.includes('transforming') && boss.formsSeen.includes('flying'), 'The final guardian must transform into the rocket wyrm during live combat.');
   if(difficulty!=='ember')assert.ok(boss.flyingAttacksSeen.length > 0, 'The rocket wyrm must attack in its flying form during live combat.');
 }
-assert.equal(conversations.size, LEVEL.npcs.length, 'Every authored story conversation must be completed.');
+assert.equal(conversations.size, LEVEL.npcs.length + LEVEL.crossings.length * 2,
+  'Every survivor conversation and chapter entry/return beat must be completed.');
 assert.equal(Object.keys(triggerProof).length, 3, 'All bosses must activate through their proper trigger.');
 assert.ok(LEVEL.npcs.every(npc => world.progress.claimed.filter(id => id === `npc:${npc.id}`).length === 1), 'Each story reward is claimed exactly once.');
-assert.ok(world.gates.every(g => g.open), 'Boss and lever gates must be opened through gameplay.');
+assert.ok(LEVEL.crossings.every(crossing => ['opening', 'ending'].every(beat =>
+  world.progress.claimed.includes(`npc:chapter:${crossing.id.split('-').at(-1)}:${beat}`))),
+  'Each ordered chapter story beat must be seen exactly once.');
+assert.ok(world.gates.every(g => g.open), 'Boss and path gates must open through gameplay.');
 assert.ok(report.crossings.every(crossing => crossing.completed && crossing.guardianDefeated && crossing.seconds > 0), 'Each crossing must be entered, solved and returned, with its guardian defeated.');
 assert.ok(world.collections.includes('ember-heart') && world.collections.includes('tide-glass') && world.collections.includes('storm-seal'), 'All three required stones are recovered through contact.');

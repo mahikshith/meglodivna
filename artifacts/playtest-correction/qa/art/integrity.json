@@ -1,0 +1,138 @@
+{
+  "kind": "offline corrected-art integrity",
+  "bossCorrectionFrames": 43,
+  "wolfCorrectionFrames": 8,
+  "measuredSolidGunMouthSockets": 55,
+  "textures": [
+    {
+      "name": "sanctuary",
+      "file": "public/painted-correction/sanctuary.png",
+      "size": [
+        1536,
+        864
+      ],
+      "rgbaDecodedBytes": 5308416,
+      "sha256": "e3ff69d5bc035fc5162ed76efcb849442d9207e604ec97e3c374867ccb55630d"
+    },
+    {
+      "name": "tide",
+      "file": "public/painted-correction/tide.png",
+      "size": [
+        1536,
+        864
+      ],
+      "rgbaDecodedBytes": 5308416,
+      "sha256": "d32cc8298a867fe8f17db2eea57fc2a9eba2e267cf4128a006ebeefc334cb595"
+    },
+    {
+      "name": "pyre",
+      "file": "public/painted-correction/pyre.png",
+      "size": [
+        1536,
+        864
+      ],
+      "rgbaDecodedBytes": 5308416,
+      "sha256": "86516b48fa2375ba531c84eb029104a3460bf99d9d21e5e2379673102dd339d7"
+    },
+    {
+      "name": "storm",
+      "file": "public/painted-correction/storm.png",
+      "size": [
+        1536,
+        864
+      ],
+      "rgbaDecodedBytes": 5308416,
+      "sha256": "a9da28244addd979d4df148ee58bf928d53949c2d4cb0d30d6a646660d1f9a64"
+    },
+    {
+      "name": "veil",
+      "file": "public/painted-correction/veil.png",
+      "size": [
+        1536,
+        864
+      ],
+      "rgbaDecodedBytes": 5308416,
+      "sha256": "a45f200ae29d0ce9136120688b018f3ed1b8500a739a179704939e436347a896"
+    },
+    {
+      "name": "threshold",
+      "file": "public/painted-correction/threshold.png",
+      "size": [
+        512,
+        695
+      ],
+      "rgbaDecodedBytes": 1423360,
+      "sha256": "add78794439918391eca5fb3cde050204175be840b2927dd95c70736a3ad0029"
+    },
+    {
+      "name": "courierPortrait",
+      "file": "public/painted-correction/courier-portrait.png",
+      "size": [
+        260,
+        288
+      ],
+      "rgbaDecodedBytes": 299520,
+      "sha256": "fb433816ce023325999be6ba9ad1749a13ae6027204b9ccdab2d6ae4cf118ee0"
+    },
+    {
+      "name": "ironfang-atlas.png",
+      "file": "public/ironfang/atlas.png",
+      "size": [
+        2048,
+        1939
+      ],
+      "rgbaDecodedBytes": 15884288,
+      "sha256": "4fbfa53490f2721a64173ab92f7f406bcec2a837508b6b84e168ad05377d3085"
+    },
+    {
+      "name": "ironfang-atlas-1.png",
+      "file": "public/ironfang/atlas-1.png",
+      "size": [
+        2048,
+        1344
+      ],
+      "rgbaDecodedBytes": 11010048,
+      "sha256": "69a06d7d6b3ca4850900aedf8ca85d4b8b8b0912d1f1914b39fd877cc5074ff9"
+    },
+    {
+      "name": "character-revision-atlas.png",
+      "file": "public/character-revision/atlas.png",
+      "size": [
+        2048,
+        1964
+      ],
+      "rgbaDecodedBytes": 16089088,
+      "sha256": "571c412f32a102c126ed230c463170dd361e6d445bf2c943e2c70649ba831201"
+    },
+    {
+      "name": "character-revision-atlas-1.png",
+      "file": "public/character-revision/atlas-1.png",
+      "size": [
+        2048,
+        1999
+      ],
+      "rgbaDecodedBytes": 16375808,
+      "sha256": "0486e73487f15696db11237ea0980de2b7edc8ba42b08c5f42e812f7b8bd28ec"
+    },
+    {
+      "name": "character-revision-atlas-2.png",
+      "file": "public/character-revision/atlas-2.png",
+      "size": [
+        2048,
+        403
+      ],
+      "rgbaDecodedBytes": 3301376,
+      "sha256": "0082fd501573f9f2a5e17d6d7d3354f6ea4ce585e51753f1e37c25eec0d7d1cd"
+    }
+  ],
+  "rgbaDecodedBytes": 90925568,
+  "checks": [
+    "source and runtime SHA-256",
+    "all five 1536x864 backdrops",
+    "transparent portal and portrait",
+    "atlas source/size/key integrity",
+    "solid source pixels under corrected boss gun/mouth sockets",
+    "transparent dragon flight background",
+    "eight regenerated wolf poses and three solid mouth sockets"
+  ]
+}

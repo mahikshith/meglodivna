@@ -10,16 +10,17 @@ export function addCrossings(level) {
   level.crossings = [];
   level.campaignRoute = [...level.route];
   level.timeLimit = Math.max(level.timeLimit, 1800);
-  level.description = 'Rescue the captive sanctuary through three rune trials and three portal crossings.';
+  level.description = 'Follow Mira through Wind, Water and Fire to free Orren and the sanctuary.';
   const insertion = level.campaignRoute.findIndex(marker => marker.bossId === level.boss.id);
   const detours = [];
   const crossingWidth = 4470 + COURSE_LENGTH + 900, crossingStride = crossingWidth + 630;
   for (const [realmIndex, realm] of CROSSINGS.entries()) {
     const prefix = `${level.id}-crossing-${realm.id}`;
     const x = baseWidth + 700 + realmIndex * crossingStride, floor = 1160;
-    // More than portal width + player width leaves a real non-contact gap,
-    // allowing the arrival lock to release before the next entrance.
-    const entranceX = hub.x + 20 + realmIndex * 80;
+    // One shared heart gate presents the next chapter only. Return arrivals land
+    // west of it, so walking forward always enters the newly unlocked chapter.
+    const entranceX = hub.x + 70;
+    const previousSeal = realmIndex ? `${level.id}-crossing-${CROSSINGS[realmIndex - 1].id}-heart-seal` : null;
     const completionGate = `${prefix}-heart-seal`, entryId = `${prefix}-entry`, returnId = `${prefix}-return`;
     const route = [], solids = [];
     const solid = (id, sx, sy, w, oneWay = false) => {
@@ -31,11 +32,13 @@ export function addCrossings(level) {
     const entry = solid('landing', x, floor, 420);
     marker(entry, x + 210);
     level.portals.push({ id: entryId, pairId: `${prefix}-entry-pair`, destinationId: `${prefix}-retreat`, x: entranceX, y: hub.floorY - 46, w: 34, h: 46,
-      to: { x: x + 90, y: floor - 46 }, label: realm.name, disabledWhenGateOpen: completionGate });
+      to: { x: x + 90, y: floor - 46 }, label: realm.name, chapterEntry: realm.id,
+      requiresGateOpen: previousSeal, disabledWhenGateOpen: completionGate });
     // Retreat is available from the first landing even before any trial is solved.
     level.portals.push({ id: `${prefix}-retreat`, pairId: `${prefix}-entry-pair`, destinationId: entryId, x: x + 90, y: floor - 46, w: 34, h: 46, dormant: false,
-      to: { x: entranceX, y: hub.floorY - 46 }, label: 'Return to the heart gate' });
-    level.gates.push({ id: completionGate, x: hub.x + 236 + realmIndex * 25, y: 0, w: 20, h: hub.floorY, leverId: `${prefix}-oath` });
+      to: { x: entranceX - 110, y: hub.floorY - 46 }, label: 'Return to the heart gate' });
+    level.gates.push({ id: completionGate, x: hub.x + 236 + realmIndex * 25, y: 0, w: 20, h: hub.floorY,
+      requiresEnemyDefeated: `${prefix}-oath-guardian` });
     level.guides.push({ x: x + 200, y: floor - 165, text: `${realm.name}\n${realm.subtitle}` });
     level.rooms.push({ id: prefix, kind: `crossing-${realm.id}`, name: realm.name, x, y: 0, w: crossingWidth, h: 1440, floorY: floor });
     level.zones.push({ x, label: realm.name, subtitle: realm.subtitle, biome: realm.biome, tint: realm.tint, sky: realm.sky, theme: { scene: realm.scene, foreground: realm.material }, weather: realm.weather });
@@ -47,11 +50,17 @@ export function addCrossings(level) {
       const middle = solid(`step-${chamber}`, cx + 495, floor - rise, 210, true);
       marker(middle, cx + 610);
       const high = solid(`bell-${chamber}`, cx + 780, floor - rise * 2, 250, true);
-      const leverId = `${prefix}-lever-${chamber}`, gateId = `${prefix}-shutter-${chamber}`;
-      level.props.push({ id: leverId, type: 'lever', x: high.x + 95, y: high.y - 46, w: 28, h: 46, gateId });
-      marker(high, high.x + 109, { leverId });
+      if (realm.id === 'water') {
+        const lift = { id: `${prefix}-teaching-raft-${chamber}`, kind: 'raft', x: cx + 670, y: high.y + 35,
+          w: 155, h: 24, oneWay: true, axis: 'x', distance: 45, period: 5.2, phase: chamber * .7 };
+        level.movingPlatforms.push(lift);
+        route.push({ id: lift.id, x: lift.x + 92, y: lift.y, verb: 'jump', dynamic: true, offsetX: 92 });
+      }
+      const gateId = `${prefix}-shutter-${chamber}`;
+      marker(high, high.x + 109);
       const end = solid(`bridge-${chamber}`, cx + 1100, floor, 250);
-      level.gates.push({ id: gateId, leverId, x: cx + 1230, y: 0, w: 22, h: floor });
+      level.gates.push({ id: gateId, x: cx + 1230, y: 0, w: 22, h: floor,
+        autoOpenAt: { x: high.x + 25, y: high.y, w: high.w - 50 } });
       marker(end, cx + 1190); marker(end, cx + 1310);
       pickup(`rest-${chamber}`, 'health', cx + 1160, floor, { value: 30 });
       pickup(`fuel-${chamber}`, 'fuel', cx + 1200, floor, { value: 65 });
@@ -66,6 +75,9 @@ export function addCrossings(level) {
           contents: [{ type: realm.id === 'fire' ? 'weapon' : realm.id === 'water' ? 'sword' : 'spell', itemId: realm.id === 'fire' ? 'rocket' : realm.id === 'water' ? 'saber' : 'raven' }, { type: 'mana', value: 50 }] });
       }
       level.landmarks.push({ type: chamber === 1 ? 'lantern' : 'arch', x: high.x + 125, y: high.y, seed: 280 + realmIndex * 3 + chamber });
+      level.guides.push({ x: cx + 580, y: floor - 250, text: realm.id === 'wind' ? 'WIND BELL\nCatch the updraft. Land at the high lantern to release the path.'
+        : realm.id === 'water' ? 'BRIDGE KEEPER\nRide the moving raft. Land at the high lantern to raise the bridge.'
+          : 'EMBER OATH\nJump from brittle stone. Land at the lantern, then time the steam.' });
       if (realm.id === 'wind') level.currents.push({ id: `${prefix}-draft-${chamber}`, x: cx + 420, y: floor - 330, w: 650, h: 360, vx: 24, vy: -48 });
       if (realm.id === 'water') {
         level.currents.push({ id: `${prefix}-tide-${chamber}`, x: cx + 420, y: floor - 150, w: 650, h: 260, vx: -26, vy: 0 });
@@ -84,12 +96,10 @@ export function addCrossings(level) {
       minX: endX + 40, maxX: endX + 500, leashX: endX - 70, leashW: 700 });
     level.gates.push({ id: guardianGate, requiresEnemyDefeated: guardianId, x: endX + 620, y: 0, w: 24, h: floor });
     marker(finish, endX + 110, { enemyId: guardianId });
-    const oathId = `${prefix}-oath`;
-    level.props.push({ id: oathId, type: 'lever', x: endX + 720, y: floor - 46, w: 28, h: 46, gateId: completionGate });
-    marker(finish, endX + 734, { leverId: oathId });
+    marker(finish, endX + 734);
     pickup('pact', 'spell', endX + 770, floor, { itemId: realm.power });
     level.portals.push({ id: returnId, pairId: `${prefix}-completion-pair`, destinationId: `${prefix}-completed`, x: endX + 830, y: floor - 46, w: 34, h: 46,
-      to: { x: entranceX, y: hub.floorY - 46 }, label: 'Carry the oath home' });
+      to: { x: entranceX - 110, y: hub.floorY - 46 }, label: 'Carry the oath home', chapterReturn: realm.id });
     marker(finish, endX + 845, { portalId: returnId });
     detours.push({ id: hubFloor.id, x: entranceX + 15, y: hub.floorY, portalId: entryId, crossingId: prefix }, ...route);
     level.crossings.push({ ...realm, id: prefix, x, w: crossingWidth, completionGate, entryId, returnId, guardianId, route, solidIds: solids.map(s => s.id), targetMinutes: [3, 4] });
@@ -97,8 +107,7 @@ export function addCrossings(level) {
   level.campaignRoute.splice(insertion, 0, ...detours);
   level.width = baseWidth + 700 + 2 * crossingStride + crossingWidth + 200;
   level.zones.sort((a, b) => a.x - b.x);
-  level.guides.push({ x: hub.x + 150, y: hub.floorY - 155, text: 'THREE CROSSINGS\nRestore wind, water and flame to open the heart.' });
   const keeper = level.npcs.find(npc => npc.id.endsWith('-mira'));
-  if (keeper) keeper.lines.at(-1).text = 'Recover Ember, Tide and Storm. At the heart, three crossings remain: restore wind, water and flame. No one gets left behind.';
+  if (keeper) keeper.lines.at(-1).text = 'Orren is still inside. Recover Ember, Tide and Storm. At the heart, follow the one lit gate: wind, then water, then flame. Bring him home.';
   return level;
 }

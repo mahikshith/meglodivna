@@ -1,0 +1,7 @@
+# The Last Lantern v0.10.0 - Lantern Path test build
+
+This Android test build repairs the confusing v0.9 route. The heart foyer presents one lit gate at a time: Windward Canopy, Moonlit Causeway, then Ember Oath. Mira and Aether name Orren and the rescue goal in the eighteen-second introduction and in chapter entry and return scenes. Each crossing has four shorter authored action sections with a visible high-lantern shutter, five safe relays and a guardian. Wind changes the direction of its drafts; Water combines moving rafts and reversing currents; Fire combines brittle steps, timed vents and a lower recovery walk. Repeated crossing levers have been removed.
+
+The illustrated backgrounds and boss art have been repainted and sampled smoothly. The Minotaur and full-body dragon use registered poses and cannon sockets; the slash, impact and crossing portal receive new painted effects. Holding Boost again gives continuous v0.8-style flight, while a short tap produces a forward burst. Existing saves, the application ID and the persistent signing certificate are retained; v0.9 crossing checkpoints migrate to the new shorter relay layout.
+
+This is a **test build**. Automated campaigns and isolated visual/browser fixtures are documented in [the correction plan](https://github.com/mahikshith/meglodivna/blob/v0.10.0-lantern/docs/PLAYTEST-CORRECTION-PLAN.md) and the packaged `validation.json`. Simulated route time does not establish the ten-minute first-human-play target. Physical-device comfort and sustained performance have not been measured.

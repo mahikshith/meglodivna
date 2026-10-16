@@ -1,0 +1,2373 @@
+{
+  "gameplaySourceHash": "189c6ef3259bfbb0415915821a8ff739c0926bfe1c54586fd9cb17263e115988",
+  "driverSources": {
+    "scripts/combat-route.mjs": {
+      "sha256": "85b40ffa423124ca9fead3b505e553bc5ca882f109bb94138d815d0ee2280e21",
+      "archive": "artifacts/playtest-correction/drivers/85b40ffa423124ca9fead3b505e553bc5ca882f109bb94138d815d0ee2280e21.mjs"
+    },
+    "scripts/route-navigation.mjs": {
+      "sha256": "824d09b0af7a22b9abc975c5de94829f7db683d34c6c9703a464a35205c34f1c",
+      "archive": "artifacts/playtest-correction/drivers/824d09b0af7a22b9abc975c5de94829f7db683d34c6c9703a464a35205c34f1c.mjs"
+    },
+    "scripts/campaign-source.mjs": {
+      "sha256": "f864b236670d8fb06e6f66215bbada57b1cc292ddd71fd93c1d91c0e25a7104f",
+      "archive": "artifacts/playtest-correction/drivers/f864b236670d8fb06e6f66215bbada57b1cc292ddd71fd93c1d91c0e25a7104f.mjs"
+    }
+  },
+  "startedAt": "2026-10-16T21:39:19.366Z",
+  "worldId": "pyre",
+  "worldName": "CINDER COVEN · The Furnace Below",
+  "difficulty": "forge",
+  "status": "won",
+  "playerBody": {
+    "w": 28,
+    "h": 60
+  },
+  "elapsed": 327.98,
+  "campaignTime": 327.98,
+  "timeLeft": 2848.49,
+  "deaths": 1,
+  "checkpoint": 6,
+  "x": 18683.7,
+  "y": 400,
+  "hp": 133.5,
+  "conversations": [
+    "pyre-mira",
+    "chapter:wind:opening",
+    "chapter:wind:ending",
+    "chapter:water:opening",
+    "chapter:water:ending",
+    "chapter:fire:opening",
+    "chapter:fire:ending"
+  ],
+  "triggerProof": {
+    "pyre-warden": {
+      "triggerX": 5080,
+      "activatedX": 5080.18,
+      "activatedTime": 18.41
+    },
+    "pyre-hex": {
+      "triggerX": 12110,
+      "activatedX": 12110.07,
+      "activatedTime": 49.4
+    },
+    "pyre-regent": {
+      "triggerX": 17670,
+      "activatedX": 17670.02,
+      "activatedTime": 314.2
+    }
+  },
+  "storyClaims": [
+    "npc:pyre-mira",
+    "npc:chapter:wind:opening",
+    "npc:chapter:wind:ending",
+    "npc:chapter:water:opening",
+    "npc:chapter:water:ending",
+    "npc:chapter:fire:opening",
+    "npc:chapter:fire:ending"
+  ],
+  "bosses": [
+    {
+      "id": "pyre-warden",
+      "dead": true,
+      "hp": 0,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 5.61,
+      "attacksSeen": [
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
+    },
+    {
+      "id": "pyre-hex",
+      "dead": true,
+      "hp": 0,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 11.59,
+      "attacksSeen": [
+        0,
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
+    },
+    {
+      "id": "pyre-regent",
+      "dead": true,
+      "hp": 0,
+      "body": {
+        "w": 112,
+        "h": 86
+      },
+      "fightSeconds": 12.82,
+      "attacksSeen": [
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground",
+        "transforming",
+        "flying"
+      ],
+      "flyingAttacksSeen": [
+        1
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "pyre-pressure-door-20",
+      "open": true
+    },
+    {
+      "id": "pyre-guardian-seal-31",
+      "open": true
+    },
+    {
+      "id": "pyre-tide-seal-67",
+      "open": true
+    },
+    {
+      "id": "pyre-guardian-seal-80",
+      "open": true
+    },
+    {
+      "id": "pyre-guardian-seal-111",
+      "open": true
+    },
+    {
+      "id": "pyre-furnace-ward-114",
+      "open": true
+    },
+    {
+      "id": "pyre-three-stone-seal",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-wind-heart-seal",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-wind-shutter-0",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-wind-shutter-1",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-wind-shutter-2",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-wind-course-shutter-0",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-wind-course-shutter-1",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-wind-course-shutter-2",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-wind-course-shutter-3",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-wind-guardian-seal",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-water-heart-seal",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-water-shutter-0",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-water-shutter-1",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-water-shutter-2",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-water-course-shutter-0",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-water-course-shutter-1",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-water-course-shutter-2",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-water-course-shutter-3",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-water-guardian-seal",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-fire-heart-seal",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-fire-shutter-0",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-fire-shutter-1",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-fire-shutter-2",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-fire-course-shutter-0",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-fire-course-shutter-1",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-fire-course-shutter-2",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-fire-course-shutter-3",
+      "open": true
+    },
+    {
+      "id": "pyre-crossing-fire-guardian-seal",
+      "open": true
+    }
+  ],
+  "crossings": [
+    {
+      "id": "pyre-crossing-wind",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 65.91
+    },
+    {
+      "id": "pyre-crossing-water",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 89.32
+    },
+    {
+      "id": "pyre-crossing-fire",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 74.59
+    }
+  ],
+  "method": "Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.",
+  "target": "pyre-arena-106",
+  "events": [
+    "bossdead",
+    "bossstart",
+    "burn",
+    "cannon",
+    "charge",
+    "checkpoint",
+    "crumble",
+    "dash",
+    "death",
+    "debris",
+    "enemyattack",
+    "enemyshot",
+    "enemywindup",
+    "equip",
+    "explode",
+    "gate",
+    "hit",
+    "hurt",
+    "impact",
+    "jet",
+    "jump",
+    "land",
+    "missilewarning",
+    "parry",
+    "pickup",
+    "portal",
+    "portalarrival",
+    "portalwarning",
+    "shot",
+    "slam",
+    "slash",
+    "soulcollect",
+    "souldrop",
+    "spark",
+    "spell",
+    "stagger",
+    "story",
+    "summon",
+    "summonarrival",
+    "summonattack",
+    "summonexpire",
+    "taunt",
+    "thunder",
+    "transform",
+    "win"
+  ],
+  "history": [
+    {
+      "event": "landing",
+      "id": "pyre-sanctuary-1",
+      "x": 98.1,
+      "hp": 100,
+      "time": 0.01
+    },
+    {
+      "event": "story",
+      "npcId": "pyre-mira",
+      "choiceId": "pyre-ward"
+    },
+    {
+      "event": "landing",
+      "id": "pyre-sanctuary-1",
+      "x": 273.2,
+      "hp": 100,
+      "time": 0.62
+    },
+    {
+      "event": "landing",
+      "id": "pyre-sanctuary-1",
+      "x": 793.2,
+      "hp": 100,
+      "time": 2.24
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crypt-lip-5",
+      "x": 1192.6,
+      "hp": 100,
+      "time": 3.75
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crypt-stair-6",
+      "x": 1506.9,
+      "hp": 100,
+      "time": 5.2
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crypt-floor-7",
+      "x": 1782.5,
+      "hp": 100,
+      "time": 6.12
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crypt-floor-7",
+      "x": 2731.8,
+      "hp": 100,
+      "time": 9.08
+    },
+    {
+      "event": "landing",
+      "id": "pyre-engine-walk-15",
+      "x": 3041.8,
+      "hp": 130,
+      "time": 10.13
+    },
+    {
+      "event": "landing",
+      "id": "pyre-engine-walk-15",
+      "x": 3371.7,
+      "hp": 130,
+      "time": 11.18
+    },
+    {
+      "event": "landing",
+      "id": "pyre-engine-duct-17",
+      "x": 3811.9,
+      "hp": 130,
+      "time": 12.68
+    },
+    {
+      "event": "gate",
+      "x": 3812.6,
+      "hp": 130,
+      "time": 12.69
+    },
+    {
+      "event": "landing",
+      "id": "pyre-engine-switchyard-18",
+      "x": 4154.7,
+      "hp": 130,
+      "time": 13.89
+    },
+    {
+      "event": "landing",
+      "id": "pyre-engine-switchyard-18",
+      "x": 4221.6,
+      "hp": 130,
+      "time": 14.13
+    },
+    {
+      "event": "landing",
+      "id": "pyre-engine-switchyard-18",
+      "x": 4663.6,
+      "hp": 135,
+      "time": 16.64
+    },
+    {
+      "event": "checkpoint",
+      "x": 4783.6,
+      "hp": 135,
+      "time": 17.02
+    },
+    {
+      "event": "landing",
+      "id": "pyre-arena-26",
+      "x": 4891.8,
+      "hp": 135,
+      "time": 17.58
+    },
+    {
+      "event": "gate",
+      "x": 4892.2,
+      "hp": 135,
+      "time": 17.59
+    },
+    {
+      "event": "bossstart",
+      "x": 5080.2,
+      "hp": 135,
+      "time": 18.41
+    },
+    {
+      "event": "hurt",
+      "x": 5580.9,
+      "hp": 135,
+      "time": 21.08
+    },
+    {
+      "event": "bossdefeated",
+      "id": "pyre-warden",
+      "time": 24.02,
+      "hp": 135
+    },
+    {
+      "event": "gate",
+      "x": 5578.5,
+      "hp": 135,
+      "time": 24.02
+    },
+    {
+      "event": "landing",
+      "id": "pyre-arena-26",
+      "x": 5578.5,
+      "hp": 135,
+      "time": 24.02
+    },
+    {
+      "event": "landing",
+      "id": "pyre-arena-26",
+      "x": 6074.1,
+      "hp": 135,
+      "time": 25.77
+    },
+    {
+      "event": "landing",
+      "id": "pyre-arena-26",
+      "x": 6074.1,
+      "hp": 135,
+      "time": 25.77
+    },
+    {
+      "event": "checkpoint",
+      "x": 6160,
+      "hp": 135,
+      "time": 26.07
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-foot-35",
+      "x": 6422.8,
+      "hp": 135,
+      "time": 27.15
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-step-36",
+      "x": 6639.5,
+      "hp": 135,
+      "time": 27.93
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-step-37",
+      "x": 6857.6,
+      "hp": 135,
+      "time": 28.68
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-step-38",
+      "x": 7077.1,
+      "hp": 135,
+      "time": 29.43
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-step-40",
+      "x": 7297.9,
+      "hp": 135,
+      "time": 30.19
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-crown-41",
+      "x": 7513,
+      "hp": 135,
+      "time": 31.16
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-crown-41",
+      "x": 7902.3,
+      "hp": 135,
+      "time": 32.42
+    },
+    {
+      "event": "landing",
+      "id": "pyre-root-bank-45",
+      "x": 8328.3,
+      "hp": 135,
+      "time": 33.84
+    },
+    {
+      "event": "landing",
+      "id": "pyre-broken-root-47",
+      "x": 8640.6,
+      "hp": 135,
+      "time": 36.16
+    },
+    {
+      "event": "landing",
+      "id": "pyre-hanging-root-49",
+      "x": 9063.7,
+      "hp": 135,
+      "time": 37.62
+    },
+    {
+      "event": "landing",
+      "id": "pyre-orchard-bank-50",
+      "x": 9425.8,
+      "hp": 135,
+      "time": 39.48
+    },
+    {
+      "event": "landing",
+      "id": "pyre-orchard-bank-50",
+      "x": 9711.6,
+      "hp": 135,
+      "time": 40.43
+    },
+    {
+      "event": "landing",
+      "id": "pyre-vault-entry-60",
+      "x": 10132.6,
+      "hp": 135,
+      "time": 42.01
+    },
+    {
+      "event": "landing",
+      "id": "pyre-vault-upper-61",
+      "x": 10487.5,
+      "hp": 135,
+      "time": 43.38
+    },
+    {
+      "event": "landing",
+      "id": "pyre-rune-reliquary-62",
+      "x": 10763.2,
+      "hp": 135,
+      "time": 44.29
+    },
+    {
+      "event": "gate",
+      "x": 10849.3,
+      "hp": 135,
+      "time": 44.58
+    },
+    {
+      "event": "landing",
+      "id": "pyre-rune-reliquary-62",
+      "x": 10864.3,
+      "hp": 135,
+      "time": 44.71
+    },
+    {
+      "event": "landing",
+      "id": "pyre-vault-exit-65",
+      "x": 11385.5,
+      "hp": 135,
+      "time": 46.9
+    },
+    {
+      "event": "landing",
+      "id": "pyre-vault-exit-65",
+      "x": 11671.5,
+      "hp": 135,
+      "time": 47.85
+    },
+    {
+      "event": "checkpoint",
+      "x": 11815.5,
+      "hp": 135,
+      "time": 48.3
+    },
+    {
+      "event": "bossstart",
+      "x": 12110.1,
+      "hp": 135,
+      "time": 49.4
+    },
+    {
+      "event": "hurt",
+      "x": 12701.8,
+      "hp": 135,
+      "time": 56.79
+    },
+    {
+      "event": "hurt",
+      "x": 12556.4,
+      "hp": 135,
+      "time": 58.85
+    },
+    {
+      "event": "hurt",
+      "x": 12408.4,
+      "hp": 135,
+      "time": 59.77
+    },
+    {
+      "event": "hurt",
+      "x": 12485.7,
+      "hp": 135,
+      "time": 60.67
+    },
+    {
+      "event": "bossdefeated",
+      "id": "pyre-hex",
+      "time": 60.99,
+      "hp": 135
+    },
+    {
+      "event": "gate",
+      "x": 12491.3,
+      "hp": 135,
+      "time": 60.99
+    },
+    {
+      "event": "landing",
+      "id": "pyre-arena-75",
+      "x": 12491.3,
+      "hp": 135,
+      "time": 60.99
+    },
+    {
+      "event": "hurt",
+      "x": 12640.5,
+      "hp": 135,
+      "time": 61.58
+    },
+    {
+      "event": "landing",
+      "id": "pyre-arena-75",
+      "x": 13102.8,
+      "hp": 135,
+      "time": 63.03
+    },
+    {
+      "event": "checkpoint",
+      "x": 13220.2,
+      "hp": 135,
+      "time": 63.4
+    },
+    {
+      "event": "landing",
+      "id": "pyre-sluice-entry-83",
+      "x": 13488.3,
+      "hp": 135,
+      "time": 64.38
+    },
+    {
+      "event": "landing",
+      "id": "pyre-aqueduct-span-84",
+      "x": 13852.6,
+      "hp": 135,
+      "time": 65.82
+    },
+    {
+      "event": "hurt",
+      "x": 14180.3,
+      "hp": 132,
+      "time": 67.07
+    },
+    {
+      "event": "landing",
+      "id": "pyre-aqueduct-span-85",
+      "x": 14186.8,
+      "hp": 132,
+      "time": 67.65
+    },
+    {
+      "event": "landing",
+      "id": "pyre-aqueduct-span-87",
+      "x": 14511.3,
+      "hp": 132,
+      "time": 68.93
+    },
+    {
+      "event": "landing",
+      "id": "pyre-aqueduct-span-88",
+      "x": 14844.8,
+      "hp": 132,
+      "time": 70.43
+    },
+    {
+      "event": "landing",
+      "id": "pyre-cistern-bank-89",
+      "x": 15312.7,
+      "hp": 132,
+      "time": 71.95
+    },
+    {
+      "event": "checkpoint",
+      "x": 15499.4,
+      "hp": 135,
+      "time": 72.53
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-foot-94",
+      "x": 15762.7,
+      "hp": 135,
+      "time": 73.62
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-step-95",
+      "x": 15979.5,
+      "hp": 135,
+      "time": 74.4
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-step-96",
+      "x": 16197.6,
+      "hp": 135,
+      "time": 75.15
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-step-97",
+      "x": 16417.6,
+      "hp": 135,
+      "time": 76.99
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-step-99",
+      "x": 16637.1,
+      "hp": 135,
+      "time": 77.74
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-crown-100",
+      "x": 16853.1,
+      "hp": 135,
+      "time": 78.72
+    },
+    {
+      "event": "gate",
+      "x": 16928.8,
+      "hp": 135,
+      "time": 79.03
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-crown-100",
+      "x": 16944.1,
+      "hp": 135,
+      "time": 79.15
+    },
+    {
+      "event": "landing",
+      "id": "pyre-tower-crown-100",
+      "x": 17243.4,
+      "hp": 135,
+      "time": 80.12
+    },
+    {
+      "event": "checkpoint",
+      "x": 17374,
+      "hp": 135,
+      "time": 80.53
+    },
+    {
+      "event": "crossingportal",
+      "id": "pyre-crossing-wind-entry",
+      "time": 81.02,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:wind:opening"
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-landing",
+      "x": 19613.2,
+      "hp": 135,
+      "time": 81.25
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-court-0",
+      "x": 20188.3,
+      "hp": 135,
+      "time": 83.13
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-step-0",
+      "x": 20467,
+      "hp": 135,
+      "time": 84.03
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-bell-0",
+      "x": 20715.9,
+      "hp": 135,
+      "time": 84.78
+    },
+    {
+      "event": "gate",
+      "x": 20718.7,
+      "hp": 135,
+      "time": 84.78
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-bridge-0",
+      "x": 21065.2,
+      "hp": 135,
+      "time": 86.28
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-bridge-0",
+      "x": 21132.8,
+      "hp": 135,
+      "time": 86.54
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-court-1",
+      "x": 21538.1,
+      "hp": 135,
+      "time": 87.89
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-step-1",
+      "x": 21817,
+      "hp": 135,
+      "time": 88.78
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-bell-1",
+      "x": 22061.6,
+      "hp": 135,
+      "time": 89.53
+    },
+    {
+      "event": "gate",
+      "x": 22064.5,
+      "hp": 135,
+      "time": 89.54
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-bridge-1",
+      "x": 22415.1,
+      "hp": 135,
+      "time": 91.03
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-bridge-1",
+      "x": 22482.8,
+      "hp": 135,
+      "time": 91.3
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-court-2",
+      "x": 22888.1,
+      "hp": 135,
+      "time": 92.65
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-step-2",
+      "x": 23167,
+      "hp": 135,
+      "time": 93.54
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-bell-2",
+      "x": 23415.9,
+      "hp": 135,
+      "time": 94.29
+    },
+    {
+      "event": "gate",
+      "x": 23418.8,
+      "hp": 135,
+      "time": 94.3
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-bridge-2",
+      "x": 23765.2,
+      "hp": 135,
+      "time": 95.79
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-bridge-2",
+      "x": 23832.8,
+      "hp": 135,
+      "time": 96.06
+    },
+    {
+      "event": "checkpoint",
+      "x": 24062.1,
+      "hp": 135,
+      "time": 96.78
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-0",
+      "x": 24111,
+      "hp": 135,
+      "time": 96.97
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-1",
+      "x": 24530.5,
+      "hp": 135,
+      "time": 98.51
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-2",
+      "x": 24930.5,
+      "hp": 135,
+      "time": 99.95
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-3",
+      "x": 25322,
+      "hp": 135,
+      "time": 101.5
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-4",
+      "x": 25710.4,
+      "hp": 135,
+      "time": 102.96
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-5",
+      "x": 26128.9,
+      "hp": 135,
+      "time": 104.47
+    },
+    {
+      "event": "gate",
+      "x": 26129.2,
+      "hp": 135,
+      "time": 104.48
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-6",
+      "x": 26529.6,
+      "hp": 135,
+      "time": 106.14
+    },
+    {
+      "event": "checkpoint",
+      "x": 26917.1,
+      "hp": 135,
+      "time": 107.48
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-7",
+      "x": 26925.5,
+      "hp": 135,
+      "time": 107.63
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-8",
+      "x": 27318.3,
+      "hp": 135,
+      "time": 109.14
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-9",
+      "x": 27713.3,
+      "hp": 135,
+      "time": 110.59
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-10",
+      "x": 28131.3,
+      "hp": 135,
+      "time": 112.19
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-11",
+      "x": 28526.8,
+      "hp": 135,
+      "time": 113.56
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-12",
+      "x": 28918,
+      "hp": 135,
+      "time": 115.08
+    },
+    {
+      "event": "gate",
+      "x": 28918.9,
+      "hp": 135,
+      "time": 115.09
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-13",
+      "x": 29329.4,
+      "hp": 135,
+      "time": 116.8
+    },
+    {
+      "event": "checkpoint",
+      "x": 29717,
+      "hp": 135,
+      "time": 118.14
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-14",
+      "x": 29725.5,
+      "hp": 135,
+      "time": 118.28
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-15",
+      "x": 30129.8,
+      "hp": 135,
+      "time": 119.78
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-16",
+      "x": 30529.3,
+      "hp": 135,
+      "time": 121.2
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-17",
+      "x": 30917.5,
+      "hp": 135,
+      "time": 122.65
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-18",
+      "x": 31321.3,
+      "hp": 135,
+      "time": 124.26
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-19",
+      "x": 31726.7,
+      "hp": 135,
+      "time": 125.67
+    },
+    {
+      "event": "gate",
+      "x": 31727.1,
+      "hp": 135,
+      "time": 125.68
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-20",
+      "x": 32130.3,
+      "hp": 135,
+      "time": 127.44
+    },
+    {
+      "event": "checkpoint",
+      "x": 32517.2,
+      "hp": 135,
+      "time": 128.78
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-21",
+      "x": 32525.5,
+      "hp": 135,
+      "time": 128.93
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-22",
+      "x": 32920.5,
+      "hp": 135,
+      "time": 130.43
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-23",
+      "x": 33327.3,
+      "hp": 135,
+      "time": 131.87
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-24",
+      "x": 33729.9,
+      "hp": 135,
+      "time": 133.3
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-25",
+      "x": 34121,
+      "hp": 135,
+      "time": 134.87
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-26",
+      "x": 34527.3,
+      "hp": 135,
+      "time": 136.32
+    },
+    {
+      "event": "gate",
+      "x": 34527.7,
+      "hp": 135,
+      "time": 136.33
+    },
+    {
+      "event": "checkpoint",
+      "x": 34929.3,
+      "hp": 135,
+      "time": 137.97
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-course-27",
+      "x": 34930.2,
+      "hp": 135,
+      "time": 138.08
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-oath-court",
+      "x": 34971,
+      "hp": 135,
+      "time": 143.81
+    },
+    {
+      "event": "gate",
+      "x": 34971.2,
+      "hp": 135,
+      "time": 143.82
+    },
+    {
+      "event": "gate",
+      "x": 34971.2,
+      "hp": 135,
+      "time": 143.82
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-wind-oath-court",
+      "x": 35806,
+      "hp": 135,
+      "time": 146.48
+    },
+    {
+      "event": "crossingportal",
+      "id": "pyre-crossing-wind-return",
+      "time": 146.93
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:wind:ending"
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.2,
+      "hp": 135,
+      "time": 147.18
+    },
+    {
+      "event": "crossingportal",
+      "id": "pyre-crossing-water-entry",
+      "time": 147.93,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:water:opening"
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-landing",
+      "x": 36813.2,
+      "hp": 135,
+      "time": 148.17
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-court-0",
+      "x": 37388.3,
+      "hp": 135,
+      "time": 150.05
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-step-0",
+      "x": 37648,
+      "hp": 135,
+      "time": 150.94
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-teaching-raft-0",
+      "x": 37838.6,
+      "hp": 135,
+      "time": 153.47
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-bell-0",
+      "x": 37958.5,
+      "hp": 135,
+      "time": 154.15
+    },
+    {
+      "event": "gate",
+      "x": 37958.8,
+      "hp": 135,
+      "time": 154.16
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-bridge-0",
+      "x": 38264.4,
+      "hp": 135,
+      "time": 155.56
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-bridge-0",
+      "x": 38332.6,
+      "hp": 135,
+      "time": 155.83
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-court-1",
+      "x": 38738.7,
+      "hp": 135,
+      "time": 157.18
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-step-1",
+      "x": 38998.1,
+      "hp": 135,
+      "time": 158.08
+    },
+    {
+      "event": "hurt",
+      "x": 39093.9,
+      "hp": 127.5,
+      "time": 158.4
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-teaching-raft-1",
+      "x": 39106.8,
+      "hp": 127.5,
+      "time": 158.76
+    },
+    {
+      "event": "hurt",
+      "x": 39156.3,
+      "hp": 124.4,
+      "time": 159.32
+    },
+    {
+      "event": "hurt",
+      "x": 39311.1,
+      "hp": 121.3,
+      "time": 160.23
+    },
+    {
+      "event": "hurt",
+      "x": 39312.6,
+      "hp": 118.2,
+      "time": 161.13
+    },
+    {
+      "event": "death",
+      "checkpoint": 6,
+      "x": 39314.3,
+      "y": 1511.7,
+      "hp": 0,
+      "time": 162.48,
+      "target": "pyre-crossing-water-bell-1"
+    },
+    {
+      "event": "crossingportal",
+      "id": "pyre-crossing-water-entry",
+      "time": 162.49,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-landing",
+      "x": 36813.2,
+      "hp": 135,
+      "time": 162.73
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-court-0",
+      "x": 37388.3,
+      "hp": 135,
+      "time": 164.61
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-step-0",
+      "x": 37648,
+      "hp": 135,
+      "time": 165.5
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-teaching-raft-0",
+      "x": 37817.1,
+      "hp": 135,
+      "time": 166.26
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-bell-0",
+      "x": 37958.7,
+      "hp": 135,
+      "time": 166.94
+    },
+    {
+      "event": "hurt",
+      "x": 38261.3,
+      "hp": 127.5,
+      "time": 168.18
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-bridge-0",
+      "x": 38262.9,
+      "hp": 127.5,
+      "time": 168.67
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-bridge-0",
+      "x": 38332.3,
+      "hp": 127.5,
+      "time": 168.93
+    },
+    {
+      "event": "hurt",
+      "x": 38385,
+      "hp": 124.4,
+      "time": 169.1
+    },
+    {
+      "event": "hurt",
+      "x": 38673.8,
+      "hp": 121.3,
+      "time": 170.01
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-court-1",
+      "x": 38749.2,
+      "hp": 121.3,
+      "time": 170.6
+    },
+    {
+      "event": "hurt",
+      "x": 38832.9,
+      "hp": 118.2,
+      "time": 170.92
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-step-1",
+      "x": 38983.2,
+      "hp": 118.2,
+      "time": 171.43
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-teaching-raft-1",
+      "x": 39162.4,
+      "hp": 118.2,
+      "time": 174.08
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-bell-1",
+      "x": 39310,
+      "hp": 118.2,
+      "time": 174.85
+    },
+    {
+      "event": "gate",
+      "x": 39310.3,
+      "hp": 118.2,
+      "time": 174.86
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-bridge-1",
+      "x": 39614.4,
+      "hp": 135,
+      "time": 176.26
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-bridge-1",
+      "x": 39682.6,
+      "hp": 135,
+      "time": 176.53
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-court-2",
+      "x": 40088.7,
+      "hp": 135,
+      "time": 177.88
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-step-2",
+      "x": 40348.1,
+      "hp": 135,
+      "time": 178.78
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-teaching-raft-2",
+      "x": 40489.2,
+      "hp": 135,
+      "time": 179.53
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-bell-2",
+      "x": 40660.3,
+      "hp": 135,
+      "time": 180.35
+    },
+    {
+      "event": "gate",
+      "x": 40660.6,
+      "hp": 135,
+      "time": 180.36
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-bridge-2",
+      "x": 40964.4,
+      "hp": 135,
+      "time": 181.76
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-bridge-2",
+      "x": 41032.6,
+      "hp": 135,
+      "time": 182.02
+    },
+    {
+      "event": "checkpoint",
+      "x": 41262,
+      "hp": 135,
+      "time": 182.74
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-0",
+      "x": 41311.9,
+      "hp": 135,
+      "time": 182.94
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-causeway-raft-1",
+      "x": 41690.4,
+      "hp": 135,
+      "time": 184.46
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-2",
+      "x": 42126.4,
+      "hp": 135,
+      "time": 186.07
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-causeway-raft-3",
+      "x": 42530,
+      "hp": 135,
+      "time": 187.55
+    },
+    {
+      "event": "hurt",
+      "x": 42916.8,
+      "hp": 121.3,
+      "time": 189.48
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-4",
+      "x": 42924.3,
+      "hp": 121.3,
+      "time": 189.84
+    },
+    {
+      "event": "gate",
+      "x": 42925.1,
+      "hp": 121.3,
+      "time": 189.85
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-causeway-raft-5",
+      "x": 43291.6,
+      "hp": 121.3,
+      "time": 191.33
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-6",
+      "x": 43727.9,
+      "hp": 121.3,
+      "time": 193.07
+    },
+    {
+      "event": "checkpoint",
+      "x": 44117.7,
+      "hp": 135,
+      "time": 194.42
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-7",
+      "x": 44125.8,
+      "hp": 135,
+      "time": 194.56
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-causeway-raft-8",
+      "x": 44529.2,
+      "hp": 135,
+      "time": 196.07
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-9",
+      "x": 44928.4,
+      "hp": 135,
+      "time": 197.66
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-causeway-raft-10",
+      "x": 45290.2,
+      "hp": 135,
+      "time": 199.21
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-11",
+      "x": 45717.3,
+      "hp": 135,
+      "time": 201.5
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-causeway-raft-12",
+      "x": 46132.9,
+      "hp": 135,
+      "time": 203.02
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-13",
+      "x": 46526.5,
+      "hp": 135,
+      "time": 204.6
+    },
+    {
+      "event": "gate",
+      "x": 46527.1,
+      "hp": 135,
+      "time": 204.61
+    },
+    {
+      "event": "checkpoint",
+      "x": 46926.8,
+      "hp": 135,
+      "time": 206.1
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-14",
+      "x": 46929.2,
+      "hp": 135,
+      "time": 206.22
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-15",
+      "x": 47320.6,
+      "hp": 135,
+      "time": 207.73
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-causeway-raft-16",
+      "x": 47695.2,
+      "hp": 135,
+      "time": 209.27
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-17",
+      "x": 48118.1,
+      "hp": 135,
+      "time": 210.71
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-causeway-raft-18",
+      "x": 48454.8,
+      "hp": 135,
+      "time": 212.3
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-19",
+      "x": 48921.3,
+      "hp": 135,
+      "time": 214.57
+    },
+    {
+      "event": "gate",
+      "x": 48921.7,
+      "hp": 135,
+      "time": 214.58
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-20",
+      "x": 49329.4,
+      "hp": 135,
+      "time": 216.3
+    },
+    {
+      "event": "checkpoint",
+      "x": 49717,
+      "hp": 135,
+      "time": 217.64
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-21",
+      "x": 49725.5,
+      "hp": 135,
+      "time": 217.78
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-causeway-raft-22",
+      "x": 50127.7,
+      "hp": 135,
+      "time": 219.28
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-23",
+      "x": 50526.9,
+      "hp": 135,
+      "time": 220.87
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-causeway-raft-24",
+      "x": 50890.6,
+      "hp": 135,
+      "time": 222.39
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-25",
+      "x": 51322.8,
+      "hp": 135,
+      "time": 225.5
+    },
+    {
+      "event": "gate",
+      "x": 51323.5,
+      "hp": 135,
+      "time": 225.51
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-causeway-raft-26",
+      "x": 51643.6,
+      "hp": 135,
+      "time": 226.63
+    },
+    {
+      "event": "checkpoint",
+      "x": 52122.9,
+      "hp": 135,
+      "time": 228.31
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-course-27",
+      "x": 52127.4,
+      "hp": 135,
+      "time": 228.43
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-oath-court",
+      "x": 52171,
+      "hp": 135,
+      "time": 234.13
+    },
+    {
+      "event": "gate",
+      "x": 52171.2,
+      "hp": 135,
+      "time": 234.14
+    },
+    {
+      "event": "gate",
+      "x": 52171.2,
+      "hp": 135,
+      "time": 234.14
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-water-oath-court",
+      "x": 53006,
+      "hp": 135,
+      "time": 236.8
+    },
+    {
+      "event": "crossingportal",
+      "id": "pyre-crossing-water-return",
+      "time": 237.25
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:water:ending"
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.2,
+      "hp": 135,
+      "time": 237.5
+    },
+    {
+      "event": "crossingportal",
+      "id": "pyre-crossing-fire-entry",
+      "time": 238.26,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:fire:opening"
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-landing",
+      "x": 54013.2,
+      "hp": 135,
+      "time": 238.49
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-court-0",
+      "x": 54588.3,
+      "hp": 135,
+      "time": 240.37
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-step-0",
+      "x": 54832.1,
+      "hp": 135,
+      "time": 241.17
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-bell-0",
+      "x": 55120,
+      "hp": 135,
+      "time": 242.07
+    },
+    {
+      "event": "gate",
+      "x": 55122.6,
+      "hp": 135,
+      "time": 242.07
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-bridge-0",
+      "x": 55465.1,
+      "hp": 135,
+      "time": 243.6
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-bridge-0",
+      "x": 55532.8,
+      "hp": 135,
+      "time": 243.87
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-court-1",
+      "x": 55938.1,
+      "hp": 135,
+      "time": 245.22
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-step-1",
+      "x": 56182,
+      "hp": 135,
+      "time": 246.01
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-bell-1",
+      "x": 56469.1,
+      "hp": 135,
+      "time": 247.44
+    },
+    {
+      "event": "gate",
+      "x": 56471.8,
+      "hp": 135,
+      "time": 247.45
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-bridge-1",
+      "x": 56815.1,
+      "hp": 135,
+      "time": 248.97
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-bridge-1",
+      "x": 56882.8,
+      "hp": 135,
+      "time": 249.24
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-court-2",
+      "x": 57288.1,
+      "hp": 135,
+      "time": 250.59
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-step-2",
+      "x": 57532,
+      "hp": 135,
+      "time": 251.38
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-bell-2",
+      "x": 57819.8,
+      "hp": 135,
+      "time": 252.28
+    },
+    {
+      "event": "gate",
+      "x": 57822.5,
+      "hp": 135,
+      "time": 252.29
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-bridge-2",
+      "x": 58165.1,
+      "hp": 135,
+      "time": 253.82
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-bridge-2",
+      "x": 58232.8,
+      "hp": 135,
+      "time": 254.08
+    },
+    {
+      "event": "checkpoint",
+      "x": 58462.1,
+      "hp": 135,
+      "time": 254.8
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-0",
+      "x": 58511,
+      "hp": 135,
+      "time": 254.99
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-1",
+      "x": 58926,
+      "hp": 135,
+      "time": 256.51
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-2",
+      "x": 59322.8,
+      "hp": 135,
+      "time": 257.93
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-3",
+      "x": 59727.9,
+      "hp": 135,
+      "time": 259.51
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-4",
+      "x": 60114,
+      "hp": 135,
+      "time": 261.17
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-5",
+      "x": 60524.5,
+      "hp": 135,
+      "time": 262.65
+    },
+    {
+      "event": "gate",
+      "x": 60525,
+      "hp": 135,
+      "time": 262.66
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-6",
+      "x": 60928.9,
+      "hp": 135,
+      "time": 264.28
+    },
+    {
+      "event": "checkpoint",
+      "x": 61317,
+      "hp": 135,
+      "time": 265.62
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-7",
+      "x": 61325.5,
+      "hp": 135,
+      "time": 265.77
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-8",
+      "x": 61724.8,
+      "hp": 135,
+      "time": 267.23
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-9",
+      "x": 62154.3,
+      "hp": 135,
+      "time": 269.68
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-10",
+      "x": 62527.8,
+      "hp": 135,
+      "time": 271.25
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-11",
+      "x": 62920.9,
+      "hp": 135,
+      "time": 272.64
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-12",
+      "x": 63331,
+      "hp": 135,
+      "time": 278.97
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-13",
+      "x": 63728,
+      "hp": 135,
+      "time": 280.54
+    },
+    {
+      "event": "gate",
+      "x": 63728.4,
+      "hp": 135,
+      "time": 280.55
+    },
+    {
+      "event": "checkpoint",
+      "x": 64126.1,
+      "hp": 135,
+      "time": 282.04
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-14",
+      "x": 64128.8,
+      "hp": 135,
+      "time": 282.17
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-15",
+      "x": 64528.1,
+      "hp": 135,
+      "time": 283.75
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-16",
+      "x": 64927,
+      "hp": 135,
+      "time": 285.28
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-17",
+      "x": 65327.4,
+      "hp": 135,
+      "time": 286.83
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-18",
+      "x": 65720.3,
+      "hp": 135,
+      "time": 288.22
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-19",
+      "x": 66122,
+      "hp": 135,
+      "time": 289.63
+    },
+    {
+      "event": "gate",
+      "x": 66122.7,
+      "hp": 135,
+      "time": 289.64
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-20",
+      "x": 66530.2,
+      "hp": 135,
+      "time": 291.42
+    },
+    {
+      "event": "checkpoint",
+      "x": 66917.1,
+      "hp": 135,
+      "time": 292.76
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-21",
+      "x": 66925.5,
+      "hp": 135,
+      "time": 292.9
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-22",
+      "x": 67325.4,
+      "hp": 135,
+      "time": 294.38
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-23",
+      "x": 67731,
+      "hp": 135,
+      "time": 298.29
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-24",
+      "x": 68087.2,
+      "hp": 135,
+      "time": 299.22
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-25",
+      "x": 68527.8,
+      "hp": 135,
+      "time": 300.86
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-26",
+      "x": 68920.3,
+      "hp": 135,
+      "time": 302.24
+    },
+    {
+      "event": "gate",
+      "x": 68921.1,
+      "hp": 135,
+      "time": 302.25
+    },
+    {
+      "event": "checkpoint",
+      "x": 69328.8,
+      "hp": 135,
+      "time": 303.87
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-course-27",
+      "x": 69330,
+      "hp": 135,
+      "time": 304
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-oath-court",
+      "x": 69371,
+      "hp": 135,
+      "time": 309.73
+    },
+    {
+      "event": "gate",
+      "x": 69371.2,
+      "hp": 135,
+      "time": 309.74
+    },
+    {
+      "event": "gate",
+      "x": 69371.2,
+      "hp": 135,
+      "time": 309.74
+    },
+    {
+      "event": "landing",
+      "id": "pyre-crossing-fire-oath-court",
+      "x": 70206,
+      "hp": 135,
+      "time": 312.4
+    },
+    {
+      "event": "crossingportal",
+      "id": "pyre-crossing-fire-return",
+      "time": 312.85
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:fire:ending"
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.2,
+      "hp": 135,
+      "time": 313.1
+    },
+    {
+      "event": "bossstart",
+      "x": 17670,
+      "hp": 135,
+      "time": 314.2
+    },
+    {
+      "event": "hurt",
+      "x": 18057.9,
+      "hp": 127.5,
+      "time": 316.97
+    },
+    {
+      "event": "hurt",
+      "x": 18073.9,
+      "hp": 126.6,
+      "time": 317.89
+    },
+    {
+      "event": "hurt",
+      "x": 18166.7,
+      "hp": 123.4,
+      "time": 318.8
+    },
+    {
+      "event": "hurt",
+      "x": 18198.7,
+      "hp": 122.5,
+      "time": 319.71
+    },
+    {
+      "event": "bossdefeated",
+      "id": "pyre-regent",
+      "time": 327.02,
+      "hp": 133.5
+    },
+    {
+      "event": "gate",
+      "x": 18397,
+      "hp": 133.5,
+      "time": 327.02
+    },
+    {
+      "event": "landing",
+      "id": "pyre-arena-106",
+      "x": 18397,
+      "hp": 133.5,
+      "time": 327.02
+    },
+    {
+      "event": "landing",
+      "id": "pyre-arena-106",
+      "x": 18661.3,
+      "hp": 133.5,
+      "time": 327.91
+    },
+    {
+      "event": "win",
+      "x": 18683.7,
+      "hp": 133.5,
+      "time": 327.98
+    }
+  ]
+}

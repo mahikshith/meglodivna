@@ -35,7 +35,7 @@ export function buildSolidTerrain(scene,solid,material='ruins'){
  // Broad capstones communicate mass and a continuous, readable landing plane.
  let bx=x;
  while(bx<x+w){const bw=Math.min(w-(bx-x),64+r()*82);g.fillStyle(p.cap,1);g.fillRect(Math.floor(bx),y,Math.ceil(bw),capH);
-  g.fillStyle(p.light,.78);g.fillRect(Math.floor(bx+1),y,Math.max(1,Math.floor(bw-2)),2);
+  g.fillStyle(0xf0dfb8,.92);g.fillRect(Math.floor(bx+1),y,Math.max(1,Math.floor(bw-2)),3);
   g.fillStyle(p.seam,.9);g.fillRect(Math.floor(bx),y+capH-3,Math.ceil(bw),3);
   if(bx>x){g.fillStyle(p.seam,.8);g.fillRect(Math.floor(bx),y+2,2,capH-2);}bx+=bw;}
  // Bevels on the face and sides keep solids readable over either light or dark backgrounds.
@@ -60,7 +60,12 @@ export function buildSolidTerrain(scene,solid,material='ruins'){
    const source=scene.textures.get('ln-platform').getSourceImage();
    for(let px=x;px<x+w;px+=225){const length=Math.min(225,x+w-px);group.add(scene.add.image(px,y,'ln-platform').setOrigin(0).setDisplaySize(225,97).setCrop(0,0,length/225*source.width,source.height).setAlpha(.92));}
   }
-  const edge=scene.add.graphics();edge.lineStyle(1,solid.oneWay?0xd3bd86:0xbdc5ad,.65);edge.lineBetween(x,y,x+w,y);group.add(edge);
+  // Keep the actual collision top unmistakable over detailed painted scenery.
+  // The dark undercut supports a warm 3px edge without moving the visual ledge.
+  const edge=scene.add.graphics();
+  edge.fillStyle(0x081a24,.94);edge.fillRect(x,y+3,w,3);
+  edge.fillStyle(solid.oneWay?0xf7dfa8:0xeadfbd,.96);edge.fillRect(x,y,w,3);
+  group.add(edge);
   return group;
  }
  return g;

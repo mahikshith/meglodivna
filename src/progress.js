@@ -1,16 +1,32 @@
 import { CATALOG } from './catalog.js';
+import { getLevel } from './level.js';
 
 const STARTERS = { sword: 'rustfang', gun: 'carbine', armor: 'courier', spell: 'cinder' };
+const PREVIOUS_CROSSING_RELAYS = 14;
 export const WORLD_IDS = ['soulforge', 'tide', 'pyre', 'neon', 'veil'];
 const ENCOUNTER_KEYS = ['claimed', 'defeatedBosses', 'openedGates', 'destroyedProps'];
 export function defaultProgress() {
-  return { version: 1, layoutVersion: 2, unlocked: Object.fromEntries(Object.entries(STARTERS).map(([key, id]) => [key, [id]])),
+  return { version: 1, layoutVersion: 3, unlocked: Object.fromEntries(Object.entries(STARTERS).map(([key, id]) => [key, [id]])),
     equipped: { ...STARTERS }, collections: [], claimed: [], defeatedBosses: [], openedGates: [],
     destroyedProps: [], charges: { cannon: 0, nova: 0 }, checkpoint: 0,
     worldId: 'soulforge', worlds: {}, completedWorlds: [], souls: 0, soulClaims: [], pendingSouls: [], upgrades: { armor: 0, artifact: 0 } };
 }
 const safeIds = value => Array.isArray(value)
   ? [...new Set(value.filter(id => typeof id === 'string' && /^[a-zA-Z0-9:_-]{1,80}$/.test(id)))].slice(0, 2048) : [];
+function migrateV2Checkpoint(index, worldId) {
+  const level = getLevel(worldId);
+  const originalCount = level.checkpoints.filter(checkpoint => checkpoint.x < level.mainWidth).length;
+  if (index < originalCount) return index;
+  const oldOffset = index - originalCount;
+  const crossingIndex = Math.floor(oldOffset / PREVIOUS_CROSSING_RELAYS);
+  const crossing = level.crossings[crossingIndex];
+  if (!crossing) return 0;
+  const relays = level.checkpoints.map((checkpoint, checkpointIndex) => ({ checkpoint, checkpointIndex }))
+    .filter(({ checkpoint }) => checkpoint.x >= crossing.x && checkpoint.x < crossing.x + crossing.w);
+  if (!relays.length) return originalCount - 1;
+  const oldRelay = oldOffset % PREVIOUS_CROSSING_RELAYS;
+  return relays[Math.min(relays.length - 1, Math.floor(oldRelay * relays.length / PREVIOUS_CROSSING_RELAYS))].checkpointIndex;
+}
 export function validateProgress(raw) {
   const progress = defaultProgress();
   if (!raw || typeof raw !== 'object' || raw.version !== 1) return progress;
@@ -38,11 +54,13 @@ export function validateProgress(raw) {
   }
   progress.checkpoint = Number.isInteger(raw.checkpoint) && raw.checkpoint >= 0 && raw.checkpoint < 1000 ? raw.checkpoint : 0;
   progress.worldId = WORLD_IDS.includes(raw.worldId) ? raw.worldId : 'soulforge';
+  if (raw.layoutVersion === 2) progress.checkpoint = migrateV2Checkpoint(progress.checkpoint, progress.worldId);
   progress.completedWorlds = safeIds(raw.completedWorlds).filter(id => WORLD_IDS.includes(id));
   for (const id of WORLD_IDS) {
     const snapshot = raw.worlds?.[id];
     if (!snapshot || typeof snapshot !== 'object') continue;
-    progress.worlds[id] = { checkpoint: Number.isInteger(snapshot.checkpoint) && snapshot.checkpoint >= 0 && snapshot.checkpoint < 1000 ? snapshot.checkpoint : 0 };
+    const checkpoint = Number.isInteger(snapshot.checkpoint) && snapshot.checkpoint >= 0 && snapshot.checkpoint < 1000 ? snapshot.checkpoint : 0;
+    progress.worlds[id] = { checkpoint: raw.layoutVersion === 2 ? migrateV2Checkpoint(checkpoint, id) : checkpoint };
     for (const key of ENCOUNTER_KEYS) progress.worlds[id][key] = safeIds(snapshot[key]);
   }
   return progress;
@@ -94,7 +112,7 @@ export function loadProgress(storage, { testMode = false } = {}) {
     }
     const raw = JSON.parse(target?.getItem('ash-signal-soulforge') || 'null');
     // Old relays name different rooms. Keep the armory, restart encounters at the new sanctuary.
-    if (raw && typeof raw === 'object' && raw.version === 1 && (raw.layoutVersion !== 2 || !Object.hasOwn(raw, 'worldId'))) return newCampaignProgress(raw);
+    if (raw && typeof raw === 'object' && raw.version === 1 && (![2, 3].includes(raw.layoutVersion) || !Object.hasOwn(raw, 'worldId'))) return newCampaignProgress(raw);
     return validateProgress(raw);
   }
   catch { return testMode ? testArmoryProgress() : defaultProgress(); }

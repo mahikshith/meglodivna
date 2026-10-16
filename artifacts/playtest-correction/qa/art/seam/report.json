@@ -1,0 +1,92 @@
+{
+  "kind": "Isolated rendered panorama seam check",
+  "viewport": [
+    740,
+    360
+  ],
+  "physicalDevice": false,
+  "legalCampaign": false,
+  "passed": true,
+  "records": [
+    {
+      "theme": "soulforge",
+      "texture": "rh-bg-pc-sanctuary",
+      "panoramaWidth": 1344,
+      "speed": 0.1,
+      "seamCameraX": 13440,
+      "deltaWorldX": 0.1,
+      "width": 740,
+      "height": 360,
+      "meanAbsoluteRGB": 0.070259,
+      "changedOver8Fraction": 0,
+      "maxChannelDelta": 2,
+      "beforeRGBStdDev": 34.727,
+      "before": "artifacts\\playtest-correction\\qa\\art\\seam\\soulforge-before.png",
+      "after": "artifacts\\playtest-correction\\qa\\art\\seam\\soulforge-after.png"
+    },
+    {
+      "theme": "tide",
+      "texture": "rh-bg-pc-tide",
+      "panoramaWidth": 1344,
+      "speed": 0.1,
+      "seamCameraX": 13440,
+      "deltaWorldX": 0.1,
+      "width": 740,
+      "height": 360,
+      "meanAbsoluteRGB": 0.078554,
+      "changedOver8Fraction": 0,
+      "maxChannelDelta": 2,
+      "beforeRGBStdDev": 40.233,
+      "before": "artifacts\\playtest-correction\\qa\\art\\seam\\tide-before.png",
+      "after": "artifacts\\playtest-correction\\qa\\art\\seam\\tide-after.png"
+    },
+    {
+      "theme": "pyre",
+      "texture": "rh-bg-pc-pyre",
+      "panoramaWidth": 1344,
+      "speed": 0.1,
+      "seamCameraX": 13440,
+      "deltaWorldX": 0.1,
+      "width": 740,
+      "height": 360,
+      "meanAbsoluteRGB": 0.094289,
+      "changedOver8Fraction": 0,
+      "maxChannelDelta": 2,
+      "beforeRGBStdDev": 36.781,
+      "before": "artifacts\\playtest-correction\\qa\\art\\seam\\pyre-before.png",
+      "after": "artifacts\\playtest-correction\\qa\\art\\seam\\pyre-after.png"
+    },
+    {
+      "theme": "neon",
+      "texture": "rh-bg-pc-storm",
+      "panoramaWidth": 1344,
+      "speed": 0.1,
+      "seamCameraX": 13440,
+      "deltaWorldX": 0.1,
+      "width": 740,
+      "height": 360,
+      "meanAbsoluteRGB": 0.079877,
+      "changedOver8Fraction": 0,
+      "maxChannelDelta": 2,
+      "beforeRGBStdDev": 39.638,
+      "before": "artifacts\\playtest-correction\\qa\\art\\seam\\neon-before.png",
+      "after": "artifacts\\playtest-correction\\qa\\art\\seam\\neon-after.png"
+    },
+    {
+      "theme": "veil",
+      "texture": "rh-bg-pc-veil",
+      "panoramaWidth": 1344,
+      "speed": 0.1,
+      "seamCameraX": 13440,
+      "deltaWorldX": 0.1,
+      "width": 740,
+      "height": 360,
+      "meanAbsoluteRGB": 0.105034,
+      "changedOver8Fraction": 0,
+      "maxChannelDelta": 2,
+      "beforeRGBStdDev": 34.629,
+      "before": "artifacts\\playtest-correction\\qa\\art\\seam\\veil-before.png",
+      "after": "artifacts\\playtest-correction\\qa\\art\\seam\\veil-after.png"
+    }
+  ]
+}

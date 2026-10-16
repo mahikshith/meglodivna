@@ -41,9 +41,9 @@ export class LanternEffects {
     if (!Number.isFinite(x) || !Number.isFinite(y)) return;
     const n = reduced ? .4 : 1;
     if((e.type==='shot'||e.type==='enemyshot'&&e.kind==='cannonround')&&this.muzzles.length<24)this.muzzles.push({x,y,angle:e.angle??(e.facing<0?Math.PI:0),age:0,bossId:e.bossId,slot:e.weaponSlot,hero:e.type==='shot'});
-    if(['impact','hurt'].includes(e.type)) {
-      if(this.impacts.length<32)this.impacts.push({x,y,age:0,hurt:e.type==='hurt'});
-      this.sparks(x,y,Math.ceil(8*n),e.type==='hurt'?0xff775e:0xffbe78);return;
+    if(['impact','hurt','parry'].includes(e.type)||e.type==='hit'&&e.kind==='melee') {
+      if(this.impacts.length<32)this.impacts.push({x,y,age:0,hurt:e.type==='hurt',blade:e.kind==='melee'||e.type==='parry'});
+      this.sparks(x,y,Math.ceil((e.kind==='melee'?13:8)*n),e.type==='hurt'?0xff775e:e.kind==='melee'?0xf9d99a:0xffbe78,e.facing||0);return;
     }
     if (e.type === 'land') this.dust(x, y, Math.ceil(12 * n), Math.max(.5, Math.min(1.6, (e.impactSpeed || 400) / 500)));
     else if (e.type === 'jump' || e.type === 'walljump') {
@@ -155,7 +155,8 @@ export class LanternEffects {
     }
     for(const impact of this.impacts){
       impact.age+=dt;const frame=Math.min(3,Math.floor(impact.age/.06));
-      this.image(`if-impact-${frame}`,impact.x,impact.y,impact.hurt?48:36,impact.hurt?48:36,0,Math.max(0,1-impact.age/.28));
+      const size=impact.blade?58:impact.hurt?48:36;
+      this.image(`if-impact-${frame}`,impact.x,impact.y,size,size,0,Math.max(0,1-impact.age/.28));
     }
     this.impacts=this.impacts.filter(i=>i.age<.28);
     for(const dust of this.dashDust){dust.age+=dt;

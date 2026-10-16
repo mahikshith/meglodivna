@@ -10,10 +10,12 @@ from scipy.ndimage import label, binary_erosion, distance_transform_edt
 
 ROOT=Path(__file__).resolve().parents[1]
 SRC=ROOT/'reference/epic-revision'
-PROOF=ROOT/'artifacts/epic-revision'
+CORRECTION=ROOT/'reference/playtest-correction'
+PROOF=ROOT/'artifacts/playtest-correction/qa/art'
 
 def extract(name,count,columns=4):
-    path=SRC/name; a=np.array(Image.open(path).convert('RGBA')); mask=a[:,:,3]>=20
+    path=(CORRECTION/name if (CORRECTION/name).exists() else SRC/name)
+    a=np.array(Image.open(path).convert('RGBA')); mask=a[:,:,3]>=20
     for erosion in range(16):
         labs,_=label(binary_erosion(mask,iterations=erosion) if erosion else mask,np.ones((3,3)))
         sizes=np.bincount(labs.ravel()); ids=np.where(sizes>3000)[0]; ids=ids[ids!=0]
@@ -45,7 +47,7 @@ def register(frames,pixels,key,path,part,pivot,body,slots,scale=1.0,atlas='ironf
     if hurtboxes:frames[key]['hurtboxes']=[dict(**point(b),w=b[2]*scale,h=b[3]*scale) for b in hurtboxes]
 
 def bosses(frames,pixels,animations):
-    path,parts=extract('bull-raw.png',16)
+    path,parts=extract('bull-painted-source.png',16)
     pivots=[(163,307),(490,307),(799,307),(1105,307),(168,622),(489,622),(791,622),(1104,622),
             (166,915),(489,915),(791,915),(1103,915),(164,1210),(482,1210),(790,1210),(1090,1210)]
     guns=[(271,83),(600,92),(914,92),(1233,83),(292,421),(566,400),(919,472),(1222,484),
@@ -57,13 +59,13 @@ def bosses(frames,pixels,animations):
     for i in range(4):
         key=f'if-bull-charge-{i}';frames[key]=dict(frames[f'if-bull-{i}'],key=key);pixels[key]=pixels[f'if-bull-{i}']
     animations['ironbull-charge']=[f'if-bull-charge-{i}' for i in range(4)]
-    path,parts=extract('dragon-raw.png',12)
+    path,parts=extract('dragon-painted-source.png',12)
     pivots=[(245,400),(603,400),(960,400),(1320,400),(244,767),(603,767),(964,767),(1321,767),
             (244,1051),(602,1051),(961,1051),(1308,1051)]
-    guns=[(332,230),(672,230),(1049,235),(1394,230),(326,597),(688,598),(1043,592),(1409,600),
+    guns=[(332,230),(672,230),(1049,235),(1394,230),(326,597),(688,598),(1043,592),(1408,602),
           (320,885),(614,824),(999,904),(1366,970)]
-    mouths=[(371,286),(732,287),(1083,291),(1441,286),(365,645),(723,647),(1103,615),(1437,653),
-            (362,936),(679,827),(1047,963),(1435,1031)]
+    mouths=[(371,286),(732,287),(1083,291),(1441,286),(365,645),(722,645),(1102,610),(1436,652),
+            (362,936),(679,836),(1047,963),(1435,1031)]
     for i,(part,pivot,gun,mouth) in enumerate(zip(parts,pivots,guns,mouths)):
         x,y=pivot
         register(frames,pixels,f'if-dragon-{i}',path,part,pivot,(136,150),{'gun':gun,'rocket':gun,'mouth':mouth},1,
@@ -71,10 +73,10 @@ def bosses(frames,pixels,animations):
     for i in range(4):
         key=f'if-dragon-cannon-{i}';frames[key]=dict(frames[f'if-dragon-{i+4}'],key=key);pixels[key]=pixels[f'if-dragon-{i+4}']
     animations['irondragon-cannon']=[f'if-dragon-cannon-{i}' for i in range(4)]
-    path,parts=extract('dragon-flight-raw.png',4,2)
+    path,parts=extract('dragon-flight-painted-source.png',4,2)
     # This second source was regenerated because the first sheet moved the torso too little.
     pivots=[(470,475),(1180,505),(527,907),(1208,930)]
-    guns=[(569,166),(1322,338),(595,693),(1390,728)]
+    guns=[(569,166),(1323,340),(595,693),(1390,728)]
     mouths=[(719,231),(1481,448),(750,607),(1485,817)]
     for i,(part,pivot,gun,mouth) in enumerate(zip(parts,pivots,guns,mouths)):
         x,y=pivot
@@ -100,6 +102,30 @@ def effects(frames,pixels,animations):
     for name,box,pivot in [('round',(0,1033,289,1169),(194,1096)),('shell',(307,1042,628,1174),(487,1100)),
                            ('chips',(631,979,946,1210),(786,1194)),('arc',(949,944,1254,1228),(1100,1084))]:
         effect_frame(frames,pixels,'if-'+name,source,path,box,pivot,(200,200),.78)
+    slash_path=CORRECTION/'slash-source.png'
+    slash=Image.open(slash_path).convert('RGBA')
+    assert slash.width%4==0,slash.size
+    cell_w=slash.width//4
+    for i in range(4):
+        cell=slash.crop((i*cell_w,0,(i+1)*cell_w,slash.height))
+        alpha=np.array(cell.getchannel('A'))
+        yy,xx=np.where(alpha>=8)
+        assert len(xx)>1000,(i,'empty painted slash')
+        box=(int(xx.min()),int(yy.min()),int(xx.max()+1),int(yy.max()+1))
+        crop=cell.crop(box)
+        scale=min(330/crop.width,300/crop.height)
+        crop=crop.resize((round(crop.width*scale),round(crop.height*scale)),Image.Resampling.LANCZOS)
+        canvas=Image.new('RGBA',(400,400))
+        offset=(55,(400-crop.height)//2)
+        assert offset[0]+crop.width<=400 and offset[1]>=0
+        canvas.alpha_composite(crop,offset)
+        key=f'if-cut-{i}'
+        pixels[key]=canvas
+        frames[key]=dict(key=key,atlasKey='ironfang',width=400,height=400,anchor=dict(x=64,y=200),
+            source=slash_path.relative_to(ROOT).as_posix(),sourceSha256=hashlib.sha256(slash_path.read_bytes()).hexdigest(),
+            sourceRect=[i*cell_w+box[0],box[1],i*cell_w+box[2],box[3]],
+            normalization='Painted four-frame slash; alpha-tight source crop with Lanczos scale and fixed hand-side emitter')
+    animations['ironfang-cut']=[f'if-cut-{i}' for i in range(4)]
 
 def effect_frame(frames,pixels,key,source,path,box,pivot,anchor,scale):
     crop=source.crop(box);a=np.array(crop);yy,xx=np.indices(a.shape[:2])

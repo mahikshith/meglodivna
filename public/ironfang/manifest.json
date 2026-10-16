@@ -29,13 +29,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        41,
-        49,
-        286,
-        308
+        28,
+        43,
+        290,
+        315
       ],
       "sourcePivot": [
         163,
@@ -87,13 +87,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        382,
-        58,
-        612,
-        308
+        370,
+        48,
+        615,
+        317
       ],
       "sourcePivot": [
         490,
@@ -145,13 +145,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        668,
-        53,
-        921,
-        308
+        664,
+        47,
+        927,
+        318
       ],
       "sourcePivot": [
         799,
@@ -203,13 +203,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        971,
-        44,
-        1239,
-        284
+        956,
+        40,
+        1247,
+        309
       ],
       "sourcePivot": [
         1105,
@@ -261,13 +261,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        28,
-        362,
-        303,
-        621
+        31,
+        364,
+        318,
+        636
       ],
       "sourcePivot": [
         168,
@@ -319,13 +319,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        343,
-        308,
-        607,
-        621
+        344,
+        316,
+        620,
+        635
       ],
       "sourcePivot": [
         489,
@@ -377,13 +377,13 @@
           "y": 491.5
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        638,
-        400,
-        961,
-        644
+        639,
+        397,
+        960,
+        652
       ],
       "sourcePivot": [
         791,
@@ -435,13 +435,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        959,
-        404,
-        1251,
-        643
+        962,
+        401,
+        1249,
+        651
       ],
       "sourcePivot": [
         1104,
@@ -493,13 +493,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        57,
-        669,
-        288,
-        916
+        46,
+        661,
+        302,
+        933
       ],
       "sourcePivot": [
         166,
@@ -551,13 +551,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        375,
-        666,
-        607,
-        916
+        367,
+        660,
+        621,
+        930
       ],
       "sourcePivot": [
         489,
@@ -609,13 +609,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        655,
-        666,
-        906,
-        916
+        657,
+        662,
+        921,
+        930
       ],
       "sourcePivot": [
         791,
@@ -667,13 +667,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        988,
-        666,
-        1224,
-        919
+        975,
+        662,
+        1240,
+        933
       ],
       "sourcePivot": [
         1103,
@@ -725,13 +725,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        50,
-        949,
-        278,
-        1213
+        44,
+        945,
+        281,
+        1223
       ],
       "sourcePivot": [
         164,
@@ -783,13 +783,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        347,
-        955,
-        613,
-        1216
+        344,
+        941,
+        622,
+        1224
       ],
       "sourcePivot": [
         482,
@@ -841,13 +841,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        637,
-        1009,
-        912,
-        1217
+        631,
+        1001,
+        915,
+        1222
       ],
       "sourcePivot": [
         790,
@@ -899,13 +899,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        910,
-        1065,
+        906,
+        1061,
         1250,
-        1208
+        1217
       ],
       "sourcePivot": [
         1090,
@@ -957,13 +957,13 @@
           "y": 328.72
         }
       },
-      "source": "reference/epic-revision/dragon-flight-raw.png",
-      "sourceSha256": "7ce769e105424a28b5d8cacf0ac6ac1bd6393f048e5ceaa95029ab5603c0a383",
+      "source": "reference/playtest-correction/dragon-flight-painted-source.png",
+      "sourceSha256": "6bfcef53ba6be2297642680bd5a478d8e8b82f669ef38d67a8eb6666e66f2a5f",
       "sourceRect": [
-        137,
-        18,
-        723,
-        521
+        129,
+        9,
+        756,
+        531
       ],
       "sourcePivot": [
         470,
@@ -1009,25 +1009,25 @@
       },
       "sockets": {
         "gun": {
-          "x": 472.04,
-          "y": 376.46
+          "x": 472.66,
+          "y": 377.7
         },
         "rocket": {
-          "x": 472.04,
-          "y": 376.46
+          "x": 472.66,
+          "y": 377.7
         },
         "mouth": {
           "x": 570.62,
           "y": 444.66
         }
       },
-      "source": "reference/epic-revision/dragon-flight-raw.png",
-      "sourceSha256": "7ce769e105424a28b5d8cacf0ac6ac1bd6393f048e5ceaa95029ab5603c0a383",
+      "source": "reference/playtest-correction/dragon-flight-painted-source.png",
+      "sourceSha256": "6bfcef53ba6be2297642680bd5a478d8e8b82f669ef38d67a8eb6666e66f2a5f",
       "sourceRect": [
-        801,
-        177,
-        1485,
-        580
+        799,
+        171,
+        1513,
+        544
       ],
       "sourcePivot": [
         1180,
@@ -1085,13 +1085,13 @@
           "y": 294.0
         }
       },
-      "source": "reference/epic-revision/dragon-flight-raw.png",
-      "sourceSha256": "7ce769e105424a28b5d8cacf0ac6ac1bd6393f048e5ceaa95029ab5603c0a383",
+      "source": "reference/playtest-correction/dragon-flight-painted-source.png",
+      "sourceSha256": "6bfcef53ba6be2297642680bd5a478d8e8b82f669ef38d67a8eb6666e66f2a5f",
       "sourceRect": [
-        33,
-        582,
-        757,
-        996
+        18,
+        533,
+        805,
+        982
       ],
       "sourcePivot": [
         527,
@@ -1149,13 +1149,13 @@
           "y": 409.94
         }
       },
-      "source": "reference/epic-revision/dragon-flight-raw.png",
-      "sourceSha256": "7ce769e105424a28b5d8cacf0ac6ac1bd6393f048e5ceaa95029ab5603c0a383",
+      "source": "reference/playtest-correction/dragon-flight-painted-source.png",
+      "sourceSha256": "6bfcef53ba6be2297642680bd5a478d8e8b82f669ef38d67a8eb6666e66f2a5f",
       "sourceRect": [
-        969,
-        582,
-        1491,
-        1005
+        960,
+        549,
+        1521,
+        1013
       ],
       "sourcePivot": [
         1208,
@@ -1213,13 +1213,13 @@
           "y": 358
         }
       },
-      "source": "reference/epic-revision/dragon-raw.png",
-      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "source": "reference/playtest-correction/dragon-painted-source.png",
+      "sourceSha256": "4615eef9165fed7637aac5ebe2aadfaf12994ff2471a9cb1ca1cb127754d31fd",
       "sourceRect": [
         15,
-        476,
-        369,
-        764
+        474,
+        372,
+        760
       ],
       "sourcePivot": [
         244,
@@ -1273,17 +1273,17 @@
           "y": 311
         },
         "mouth": {
-          "x": 504,
-          "y": 360
+          "x": 503,
+          "y": 358
         }
       },
-      "source": "reference/epic-revision/dragon-raw.png",
-      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "source": "reference/playtest-correction/dragon-painted-source.png",
+      "sourceSha256": "4615eef9165fed7637aac5ebe2aadfaf12994ff2471a9cb1ca1cb127754d31fd",
       "sourceRect": [
-        371,
-        480,
+        369,
+        475,
         726,
-        764
+        757
       ],
       "sourcePivot": [
         603,
@@ -1299,8 +1299,8 @@
           "h": 111
         },
         {
-          "x": 421,
-          "y": 328,
+          "x": 420,
+          "y": 326,
           "w": 87,
           "h": 63
         },
@@ -1337,17 +1337,17 @@
           "y": 305
         },
         "mouth": {
-          "x": 523,
-          "y": 328
+          "x": 522,
+          "y": 323
         }
       },
-      "source": "reference/epic-revision/dragon-raw.png",
-      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "source": "reference/playtest-correction/dragon-painted-source.png",
+      "sourceSha256": "4615eef9165fed7637aac5ebe2aadfaf12994ff2471a9cb1ca1cb127754d31fd",
       "sourceRect": [
-        733,
-        505,
+        727,
+        499,
         1106,
-        776
+        772
       ],
       "sourcePivot": [
         964,
@@ -1363,8 +1363,8 @@
           "h": 111
         },
         {
-          "x": 440,
-          "y": 296,
+          "x": 439,
+          "y": 291,
           "w": 87,
           "h": 63
         },
@@ -1393,25 +1393,25 @@
       },
       "sockets": {
         "gun": {
-          "x": 472,
-          "y": 313
+          "x": 471,
+          "y": 315
         },
         "rocket": {
-          "x": 472,
-          "y": 313
+          "x": 471,
+          "y": 315
         },
         "mouth": {
-          "x": 500,
-          "y": 366
+          "x": 499,
+          "y": 365
         }
       },
-      "source": "reference/epic-revision/dragon-raw.png",
-      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "source": "reference/playtest-correction/dragon-painted-source.png",
+      "sourceSha256": "4615eef9165fed7637aac5ebe2aadfaf12994ff2471a9cb1ca1cb127754d31fd",
       "sourceRect": [
-        1094,
-        475,
-        1438,
-        768
+        1088,
+        470,
+        1444,
+        767
       ],
       "sourcePivot": [
         1321,
@@ -1427,8 +1427,8 @@
           "h": 111
         },
         {
-          "x": 417,
-          "y": 334,
+          "x": 416,
+          "y": 333,
           "w": 87,
           "h": 63
         },
@@ -1469,13 +1469,13 @@
           "y": 365
         }
       },
-      "source": "reference/epic-revision/dragon-raw.png",
-      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "source": "reference/playtest-correction/dragon-painted-source.png",
+      "sourceSha256": "4615eef9165fed7637aac5ebe2aadfaf12994ff2471a9cb1ca1cb127754d31fd",
       "sourceRect": [
-        18,
-        798,
-        364,
-        1050
+        16,
+        774,
+        367,
+        1045
       ],
       "sourcePivot": [
         244,
@@ -1530,16 +1530,16 @@
         },
         "mouth": {
           "x": 461,
-          "y": 256
+          "y": 265
         }
       },
-      "source": "reference/epic-revision/dragon-raw.png",
-      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "source": "reference/playtest-correction/dragon-painted-source.png",
+      "sourceSha256": "4615eef9165fed7637aac5ebe2aadfaf12994ff2471a9cb1ca1cb127754d31fd",
       "sourceRect": [
-        392,
-        783,
-        688,
-        1043
+        379,
+        762,
+        687,
+        1041
       ],
       "sourcePivot": [
         602,
@@ -1556,7 +1556,7 @@
         },
         {
           "x": 378,
-          "y": 224,
+          "y": 233,
           "w": 87,
           "h": 63
         },
@@ -1597,13 +1597,13 @@
           "y": 392
         }
       },
-      "source": "reference/epic-revision/dragon-raw.png",
-      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "source": "reference/playtest-correction/dragon-painted-source.png",
+      "sourceSha256": "4615eef9165fed7637aac5ebe2aadfaf12994ff2471a9cb1ca1cb127754d31fd",
       "sourceRect": [
-        726,
-        843,
-        1052,
-        1070
+        721,
+        821,
+        1059,
+        1067
       ],
       "sourcePivot": [
         961,
@@ -1661,13 +1661,13 @@
           "y": 460
         }
       },
-      "source": "reference/epic-revision/dragon-raw.png",
-      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "source": "reference/playtest-correction/dragon-painted-source.png",
+      "sourceSha256": "4615eef9165fed7637aac5ebe2aadfaf12994ff2471a9cb1ca1cb127754d31fd",
       "sourceRect": [
         1050,
-        925,
-        1437,
-        1063
+        902,
+        1441,
+        1056
       ],
       "sourcePivot": [
         1308,
@@ -1725,13 +1725,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        347,
-        955,
-        613,
-        1216
+        344,
+        941,
+        622,
+        1224
       ],
       "sourcePivot": [
         482,
@@ -1783,13 +1783,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        28,
-        362,
-        303,
-        621
+        31,
+        364,
+        318,
+        636
       ],
       "sourcePivot": [
         168,
@@ -1841,13 +1841,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        343,
-        308,
-        607,
-        621
+        344,
+        316,
+        620,
+        635
       ],
       "sourcePivot": [
         489,
@@ -1873,74 +1873,78 @@
     "if-cut-0": {
       "key": "if-cut-0",
       "atlasKey": "ironfang",
-      "width": 320,
-      "height": 320,
+      "width": 400,
+      "height": 400,
       "anchor": {
-        "x": 160,
-        "y": 160
+        "x": 64,
+        "y": 200
       },
-      "source": "reference/ironfang-source/fx-raw.png",
+      "source": "reference/playtest-correction/slash-source.png",
+      "sourceSha256": "16ff0598776ba8b29cac396bc908ff6853e674c0dce87e14bdb669485d09fef9",
       "sourceRect": [
-        0,
-        24,
-        308,
-        360
+        30,
+        137,
+        543,
+        573
       ],
-      "sourceSha256": "74c1bf0a2ddad4920a3b9a63cd82577298350d9f1767a790ccb4b03aad891480"
+      "normalization": "Painted four-frame slash; alpha-tight source crop with Lanczos scale and fixed hand-side emitter"
     },
     "if-cut-1": {
       "key": "if-cut-1",
       "atlasKey": "ironfang",
-      "width": 320,
-      "height": 320,
+      "width": 400,
+      "height": 400,
       "anchor": {
-        "x": 160,
-        "y": 160
+        "x": 64,
+        "y": 200
       },
-      "source": "reference/ironfang-source/fx-raw.png",
+      "source": "reference/playtest-correction/slash-source.png",
+      "sourceSha256": "16ff0598776ba8b29cac396bc908ff6853e674c0dce87e14bdb669485d09fef9",
       "sourceRect": [
-        308,
-        24,
-        617,
-        360
+        543,
+        112,
+        1086,
+        607
       ],
-      "sourceSha256": "74c1bf0a2ddad4920a3b9a63cd82577298350d9f1767a790ccb4b03aad891480"
+      "normalization": "Painted four-frame slash; alpha-tight source crop with Lanczos scale and fixed hand-side emitter"
     },
     "if-cut-2": {
       "key": "if-cut-2",
       "atlasKey": "ironfang",
-      "width": 320,
-      "height": 320,
+      "width": 400,
+      "height": 400,
       "anchor": {
-        "x": 160,
-        "y": 160
+        "x": 64,
+        "y": 200
       },
-      "source": "reference/ironfang-source/fx-raw.png",
+      "source": "reference/playtest-correction/slash-source.png",
+      "sourceSha256": "16ff0598776ba8b29cac396bc908ff6853e674c0dce87e14bdb669485d09fef9",
       "sourceRect": [
-        617,
-        24,
-        940,
-        360
+        1086,
+        120,
+        1629,
+        611
       ],
-      "sourceSha256": "74c1bf0a2ddad4920a3b9a63cd82577298350d9f1767a790ccb4b03aad891480"
+      "normalization": "Painted four-frame slash; alpha-tight source crop with Lanczos scale and fixed hand-side emitter"
     },
     "if-cut-3": {
       "key": "if-cut-3",
       "atlasKey": "ironfang",
-      "width": 320,
-      "height": 320,
+      "width": 400,
+      "height": 400,
       "anchor": {
-        "x": 160,
-        "y": 160
+        "x": 64,
+        "y": 200
       },
-      "source": "reference/ironfang-source/fx-raw.png",
+      "source": "reference/playtest-correction/slash-source.png",
+      "sourceSha256": "16ff0598776ba8b29cac396bc908ff6853e674c0dce87e14bdb669485d09fef9",
       "sourceRect": [
-        940,
-        24,
-        1254,
-        360
+        1629,
+        157,
+        2148,
+        572
       ],
-      "sourceSha256": "74c1bf0a2ddad4920a3b9a63cd82577298350d9f1767a790ccb4b03aad891480"
+      "normalization": "Painted four-frame slash; alpha-tight source crop with Lanczos scale and fixed hand-side emitter"
     },
     "if-impact-0": {
       "key": "if-impact-0",
@@ -2211,13 +2215,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        41,
-        49,
-        286,
-        308
+        28,
+        43,
+        290,
+        315
       ],
       "sourcePivot": [
         163,
@@ -2269,13 +2273,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        382,
-        58,
-        612,
-        308
+        370,
+        48,
+        615,
+        317
       ],
       "sourcePivot": [
         490,
@@ -2327,13 +2331,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        668,
-        53,
-        921,
-        308
+        664,
+        47,
+        927,
+        318
       ],
       "sourcePivot": [
         799,
@@ -2385,13 +2389,13 @@
           "y": 480.0
         }
       },
-      "source": "reference/epic-revision/bull-raw.png",
-      "sourceSha256": "7ab3e3e126a1b43be654a1cec5cedb01eca9a7079b457b687975b5fd33f09242",
+      "source": "reference/playtest-correction/bull-painted-source.png",
+      "sourceSha256": "b007537256e01b447d0613da937d69eb9b37cba0a7e0f7f7aa78430813518479",
       "sourceRect": [
-        971,
-        44,
-        1239,
-        284
+        956,
+        40,
+        1247,
+        309
       ],
       "sourcePivot": [
         1105,
@@ -2443,13 +2447,13 @@
           "y": 358
         }
       },
-      "source": "reference/epic-revision/dragon-raw.png",
-      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "source": "reference/playtest-correction/dragon-painted-source.png",
+      "sourceSha256": "4615eef9165fed7637aac5ebe2aadfaf12994ff2471a9cb1ca1cb127754d31fd",
       "sourceRect": [
         15,
-        476,
-        369,
-        764
+        474,
+        372,
+        760
       ],
       "sourcePivot": [
         244,
@@ -2503,17 +2507,17 @@
           "y": 311
         },
         "mouth": {
-          "x": 504,
-          "y": 360
+          "x": 503,
+          "y": 358
         }
       },
-      "source": "reference/epic-revision/dragon-raw.png",
-      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "source": "reference/playtest-correction/dragon-painted-source.png",
+      "sourceSha256": "4615eef9165fed7637aac5ebe2aadfaf12994ff2471a9cb1ca1cb127754d31fd",
       "sourceRect": [
-        371,
-        480,
+        369,
+        475,
         726,
-        764
+        757
       ],
       "sourcePivot": [
         603,
@@ -2529,8 +2533,8 @@
           "h": 111
         },
         {
-          "x": 421,
-          "y": 328,
+          "x": 420,
+          "y": 326,
           "w": 87,
           "h": 63
         },
@@ -2567,17 +2571,17 @@
           "y": 305
         },
         "mouth": {
-          "x": 523,
-          "y": 328
+          "x": 522,
+          "y": 323
         }
       },
-      "source": "reference/epic-revision/dragon-raw.png",
-      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "source": "reference/playtest-correction/dragon-painted-source.png",
+      "sourceSha256": "4615eef9165fed7637aac5ebe2aadfaf12994ff2471a9cb1ca1cb127754d31fd",
       "sourceRect": [
-        733,
-        505,
+        727,
+        499,
         1106,
-        776
+        772
       ],
       "sourcePivot": [
         964,
@@ -2593,8 +2597,8 @@
           "h": 111
         },
         {
-          "x": 440,
-          "y": 296,
+          "x": 439,
+          "y": 291,
           "w": 87,
           "h": 63
         },
@@ -2623,25 +2627,25 @@
       },
       "sockets": {
         "gun": {
-          "x": 472,
-          "y": 313
+          "x": 471,
+          "y": 315
         },
         "rocket": {
-          "x": 472,
-          "y": 313
+          "x": 471,
+          "y": 315
         },
         "mouth": {
-          "x": 500,
-          "y": 366
+          "x": 499,
+          "y": 365
         }
       },
-      "source": "reference/epic-revision/dragon-raw.png",
-      "sourceSha256": "57ed3894413d52a98960ffc82342d054523f7bbf623a1bcabcf60640f95839d6",
+      "source": "reference/playtest-correction/dragon-painted-source.png",
+      "sourceSha256": "4615eef9165fed7637aac5ebe2aadfaf12994ff2471a9cb1ca1cb127754d31fd",
       "sourceRect": [
-        1094,
-        475,
-        1438,
-        768
+        1088,
+        470,
+        1444,
+        767
       ],
       "sourcePivot": [
         1321,
@@ -2657,8 +2661,8 @@
           "h": 111
         },
         {
-          "x": 417,
-          "y": 334,
+          "x": 416,
+          "y": 333,
           "w": 87,
           "h": 63
         },

@@ -1,0 +1,108 @@
+{
+  "version": "0.10.0-lantern",
+  "generatedAt": "2026-10-16T21:56:52.737Z",
+  "sourceAndEvidenceHashesVerified": true,
+  "lineEndingOnlyDifferences": [],
+  "unitTests": {
+    "command": "npm test",
+    "passed": 237,
+    "failed": 0
+  },
+  "legalCampaigns": 9,
+  "simulatedCampaignSeconds": [
+    {
+      "world": "soulforge",
+      "difficulty": "ember",
+      "seconds": 293.76
+    },
+    {
+      "world": "soulforge",
+      "difficulty": "forge",
+      "seconds": 313.56
+    },
+    {
+      "world": "soulforge",
+      "difficulty": "inferno",
+      "seconds": 328.47
+    },
+    {
+      "world": "soulforge",
+      "difficulty": "extinction",
+      "seconds": 361.05
+    },
+    {
+      "world": "soulforge",
+      "difficulty": "forge",
+      "seconds": 321.47
+    },
+    {
+      "world": "tide",
+      "difficulty": "forge",
+      "seconds": 319.87
+    },
+    {
+      "world": "pyre",
+      "difficulty": "forge",
+      "seconds": 327.98
+    },
+    {
+      "world": "neon",
+      "difficulty": "forge",
+      "seconds": 319.03
+    },
+    {
+      "world": "veil",
+      "difficulty": "forge",
+      "seconds": 334.64
+    }
+  ],
+  "isolatedVisualFixtures": 58,
+  "realInputScenarios": 9,
+  "storyBrowserChecks": 4,
+  "productionSmoke": "pass",
+  "art": {
+    "correctedBossFrames": 43,
+    "correctedWolfFrames": 8,
+    "measuredSockets": 55,
+    "rgbaDecodedBytes": 90925568
+  },
+  "paintedPanoramaSeamsVerified": 5,
+  "textureBudget": {
+    "rgbaBytes": 216587668,
+    "sourceImages": 450,
+    "deviceMemoryMeasured": false
+  },
+  "evidence": {
+    "art": {
+      "path": "artifacts/playtest-correction/qa/art/integrity.json",
+      "sha256": "bb4d01e5c270a19f76ad4dca9c29a2f34bd02de06c79226789c02ec627572f94"
+    },
+    "seam": {
+      "path": "artifacts/playtest-correction/qa/art/seam/report.json",
+      "sha256": "e99f2b65c39a5320a7fae60a46bf77764828c74e3bb077f17ea88fad44f29689"
+    },
+    "campaign": {
+      "path": "artifacts/playtest-correction/campaign-summary.json",
+      "sha256": "be3e59ad59d36fc0ca030a8646fd26ecdb947c40f066d7ffc923de32264bd9d4"
+    },
+    "visual": {
+      "path": "artifacts/playtest-correction/qa/visual/report.json",
+      "sha256": "f5f115ff1170118934cd433fd9720db95381d8738d3d58cdde641e7daecee4e9"
+    },
+    "controls": {
+      "path": "artifacts/playtest-correction/controls/report.json",
+      "sha256": "3c9da921e9d8886de33ed36ac5bbfb1d39eea6625dcab03fc6dec5f9eb78860b"
+    },
+    "story": {
+      "path": "artifacts/playtest-correction/qa/story/report.json",
+      "sha256": "7eeb8360caa18410b0d41d677e8330e016224c8670e3d50bff87872bacc6078d"
+    },
+    "production": {
+      "path": "artifacts/playtest-correction/qa/production/report.json",
+      "sha256": "dbfa7be14199ee51434ac0cbd098d4852943a51ead2b5507211d58ce2f0f8b34"
+    }
+  },
+  "physicalDeviceTested": false,
+  "humanTenMinuteTargetVerified": false,
+  "limits": "Simulated campaign time is not human pacing. Browser art fixtures do not establish device comfort or sustained performance. Signed APK verification is separate in android-report.json."
+}

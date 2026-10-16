@@ -19,9 +19,15 @@ const oldIds = {
   portals: 'a3e581a5ea04c69bd759ee6d68713fc7918b45ed306ed1a90b2f615f06b667b6',
 };
 
-test('Hollow additions preserve every pre-rebuild ID and checkpoint index', () => {
+test('Hollow additions preserve surviving pre-rebuild IDs and checkpoint indices', () => {
   for (const [group, hash] of Object.entries(oldIds)) {
     const ids = level[group].filter(object => !object.id.includes('-hollow-') && !object.id.includes('-bellbeast') && !object.id.includes('-crossing-') && !object.id.endsWith('-destination')).map(object => object.id);
+    // The old pressure-valve prop was deliberately removed. Its serial slot
+    // remains reserved so every following save/claim ID keeps its old name.
+    if (group === 'props') {
+      assert.ok(!ids.includes('soulforge-pressure-valve-98'));
+      ids.push('soulforge-pressure-valve-98');
+    }
     assert.equal(createHash('sha256').update(JSON.stringify(ids)).digest('hex'), hash, group);
   }
   assert.deepEqual(level.checkpoints.slice(0, 7).map(cp => [cp.x, cp.y]), [

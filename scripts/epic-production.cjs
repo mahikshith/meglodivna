@@ -3,10 +3,10 @@ const fs=require('node:fs');
 const path=require('node:path');
 const crypto=require('node:crypto');
 const assert=require('node:assert/strict');
-const output=path.resolve('artifacts/epic-rebuild/qa/production');fs.mkdirSync(output,{recursive:true});
+const output=path.resolve('artifacts/playtest-correction/qa/production');fs.mkdirSync(output,{recursive:true});
 const digest=b=>crypto.createHash('sha256').update(b).digest('hex');
 const paths=['dist/index.html',...fs.readdirSync('dist/assets').filter(n=>/\.(js|css)$/.test(n)).map(n=>'dist/assets/'+n)];
-const images=['lantern','lantern-motion','lantern-fx','character-revision','ironfang','sanctuary-ui','journey'].flatMap(d=>fs.readdirSync('dist/'+d).filter(n=>n.endsWith('.png')).map(n=>'/'+d+'/'+n));
+const images=['lantern','lantern-motion','lantern-fx','character-revision','ironfang','sanctuary-ui','journey','painted-correction'].flatMap(d=>fs.readdirSync('dist/'+d).filter(n=>n.endsWith('.png')).map(n=>'/'+d+'/'+n));
 const fonts=fs.readdirSync('dist/fonts').filter(n=>n.endsWith('.ttf')).map(n=>'/fonts/'+n);
 const report={kind:'Production Vite preview Chromium smoke with real UI inputs',physicalDevice:false,campaignCompletion:false,viewport:{width:740,height:360},started:new Date().toISOString(),distHashes:Object.fromEntries(paths.map(p=>[p,digest(fs.readFileSync(p))])),sourceHashes:Object.fromEntries(fs.readdirSync('src').filter(name=>/\.(js|css)$/.test(name)).map(name=>'src/'+name).map(p=>[p,digest(fs.readFileSync(p))])),checks:[],screenshots:[],runtimeErrors:[],failedResources:[]};
 (async()=>{
@@ -24,6 +24,8 @@ const report={kind:'Production Vite preview Chromium smoke with real UI inputs',
   assert.equal(digest(await response.body()),report.distHashes['dist/index.html'],'served HTML is the exact current dist');
   await page.waitForFunction(()=>!document.getElementById('start').disabled&&document.querySelector('#game canvas'));
   assert.equal(await page.evaluate(()=>typeof window.__ASH),'undefined');
+  report.imageSampling=await page.evaluate(()=>Object.fromEntries(['#game canvas','#intro-art','#story-panel img'].map(selector=>[selector,getComputedStyle(document.querySelector(selector)).imageRendering])));
+  assert.ok(Object.values(report.imageSampling).every(value=>value==='auto'),`illustrated artwork must use smooth sampling: ${JSON.stringify(report.imageSampling)}`);
   report.checks.push('Production omits window.__ASH debug hook; served index SHA-256 matches current dist');
   report.servedBundles=[];
   for(const file of paths.filter(p=>p!=='dist/index.html')){
@@ -60,6 +62,7 @@ const report={kind:'Production Vite preview Chromium smoke with real UI inputs',
    const tab=page.locator('#catalogue-tab-'+category);await tab.click();assert.equal(await tab.getAttribute('aria-selected'),'true');
    const count=await page.locator('#catalogue-grid .catalogue-item').count();assert.ok(count>0);report.equipmentTabs.push({category,count});
    const broken=await page.locator('#catalogue-grid img:not([hidden])').evaluateAll(ims=>ims.filter(im=>!im.complete||im.naturalWidth===0).map(im=>im.src));assert.deepEqual(broken,[]);
+   const hardPixelImages=await page.locator('#catalogue-grid img:not([hidden])').evaluateAll(ims=>ims.filter(im=>getComputedStyle(im).imageRendering!=='auto').map(im=>im.src));assert.deepEqual(hardPixelImages,[]);
    if(['engine','armor','spell'].includes(category))await capture('06-equipment-'+category);
   }
   await page.locator('#catalogue-close').click();await mode('paused');
@@ -76,7 +79,14 @@ const report={kind:'Production Vite preview Chromium smoke with real UI inputs',
   }
   report.checks.push('Home settings, start, keyboard movement/jump inputs, pause, paused settings, all six equipment tabs, close-to-pause and resume');
   await page.reload();await page.waitForFunction(()=>!document.getElementById('start').disabled&&document.querySelector('#game canvas'));
-  await page.locator('#start').click();await mode('intro');
+  report.reloadBeforeClick=await page.evaluate(()=>({mode:document.getElementById('stage').dataset.mode,
+    startDisabled:document.getElementById('start').disabled,menuHidden:document.getElementById('menu').hidden,
+    saved:Object.keys(localStorage)}));
+  await page.locator('#start').click();
+  report.reloadAfterClick=await page.evaluate(()=>({mode:document.getElementById('stage').dataset.mode,
+    startDisabled:document.getElementById('start').disabled,menuHidden:document.getElementById('menu').hidden,
+    introHidden:document.getElementById('intro').hidden}));
+  await mode('intro');
   assert.equal(await page.locator('#intro-title').innerText(),'The stolen dawn');
   await page.locator('#intro-pause').click();const replayTime=await page.locator('#intro-progress').evaluate(el=>el.value);
   await page.waitForTimeout(200);assert.equal(await page.locator('#intro-progress').evaluate(el=>el.value),replayTime);

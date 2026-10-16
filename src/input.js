@@ -5,12 +5,18 @@ export function stickValue(dx, dy, radius, deadzone = 0.15) {
   const strength = (Math.min(1, length) - deadzone) / (1 - deadzone);
   return { x: x / length * strength, y: y / length * strength, thumbX: dx * scale, thumbY: dy * scale };
 }
+// Decide the burst on release: a held flight must not first spend18fuel and
+// flatten the vertical velocity with a horizontal dash.
+const BOOST_HOLD_MS = 160;
+const boostKeys = ['ShiftLeft', 'ShiftRight'];
 
 export class Controls {
   constructor(element, onPause, onRetry, onConfirm) {
     this.keys = new Set(); this.edges = new Set(); this.touch = new Set(); this.pointers = new Map(); this.padLast = {};
     this.stick = { x: 0, y: 0 }; this.stickPointer = null; this.stickElement = element.querySelector('#joystick');
     this.aim = null; this.aimOrigins = new Map();
+    this.boostTouchStarted = null; this.boostKeyStarted = null; this.boostPadStarted = null;
+    this.boostTouchCancelled = false;
     this.stickOrigin = null; this.stickHideTimer = null;
     this.pressTimes = new Map(); this.pressContexts = new Map(); this.paletteOpened = new Set(); this.element = element;
     this.actionButtons = new Map([...element.querySelectorAll('[data-action]')].map(button => [button.dataset.action, button]));
@@ -33,10 +39,17 @@ export class Controls {
     window.addEventListener('keydown', e => {
       if (['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName) || e.target.isContentEditable || document.querySelector('dialog[open]')) return;
       if (captured.includes(e.code)) e.preventDefault();
+      if (boostKeys.includes(e.code) && !boostKeys.some(key => this.keys.has(key))) this.boostKeyStarted = performance.now();
       if (!e.repeat) { this.edges.add(e.code); if (e.code === 'Escape') onPause(); if (e.code === 'KeyR') onRetry(); }
       this.keys.add(e.code);
     });
-    window.addEventListener('keyup', e => this.keys.delete(e.code));
+    window.addEventListener('keyup', e => {
+      this.keys.delete(e.code);
+      if (boostKeys.includes(e.code) && !boostKeys.some(key => this.keys.has(key))) {
+        if (this.boostKeyStarted !== null && performance.now() - this.boostKeyStarted < BOOST_HOLD_MS && !document.querySelector('dialog[open]')) this.edges.add('boost');
+        this.boostKeyStarted = null;
+      }
+    });
     window.addEventListener('blur', () => { this.clear(); onPause(true); });
     document.addEventListener('visibilitychange', () => { if (document.hidden) { this.clear(); onPause(true); } });
     if (this.stickElement) {
@@ -73,8 +86,11 @@ export class Controls {
         this.pointers.set(e.pointerId, action);
         if (action === 'attack') this.aimOrigins.set(e.pointerId, { x: e.clientX, y: e.clientY });
         this.pressTimes.set(e.pointerId, performance.now());
+        if (action === 'boost' && !this.touch.has(action)) {
+          this.boostTouchStarted = performance.now(); this.boostTouchCancelled = false;
+        }
         if (action === 'power') this.pressContexts.set(e.pointerId, this.element.dataset.interact === 'true' ? 'interact' : 'spell');
-        if (!this.touch.has(action) && action !== 'power') this.edges.add(action === 'attack' ? 'slash' : action);
+        if (!this.touch.has(action) && !['power', 'boost'].includes(action)) this.edges.add(action === 'attack' ? 'slash' : action);
         this.touch.add(action); button.classList.add('active'); this.paintAction(action, 0);
       });
       button.addEventListener('pointermove', e => {
@@ -88,6 +104,13 @@ export class Controls {
         this.pointers.delete(e.pointerId); this.pressTimes.delete(e.pointerId); this.pressContexts.delete(e.pointerId); this.paletteOpened.delete(e.pointerId);
         this.aimOrigins.delete(e.pointerId);
         if (![...this.pointers.values()].includes('attack')) this.aim = null;
+        if (action === 'boost') {
+          if (event !== 'pointerup') this.boostTouchCancelled = true;
+          if (![...this.pointers.values()].includes(action)) {
+            if (!this.boostTouchCancelled && this.boostTouchStarted !== null && performance.now() - this.boostTouchStarted < BOOST_HOLD_MS && !document.querySelector('dialog[open]')) this.edges.add('boost');
+            this.boostTouchStarted = null;
+          }
+        }
         if (event === 'pointerup' && !document.querySelector('dialog[open]') && ![...this.pointers.values()].includes(action)) {
           if (action === 'power' && duration < 450 && !opened) this.edges.add(context);
         }
@@ -99,7 +122,7 @@ export class Controls {
   }
   paintAction(action, elapsed) {
     const button = this.actionButtons.get(action); if (!button) return;
-    const threshold = { attack: 120, jump: 350, boost: 160, power: 450 }[action];
+    const threshold = { attack: 120, jump: 350, boost: BOOST_HOLD_MS, power: 450 }[action];
     button.dataset.phase = elapsed === undefined ? 'idle' : threshold && elapsed >= threshold ? 'hold' : 'press';
     button.style.setProperty?.('--hold-progress', elapsed === undefined || !threshold ? '0deg' : `${Math.min(1, elapsed / threshold) * 360}deg`);
     if (this.feedback) {
@@ -108,6 +131,7 @@ export class Controls {
     }
   }
   clear() {
+    this.boostTouchStarted = null; this.boostKeyStarted = null; this.boostPadStarted = null; this.boostTouchCancelled = false;
     this.aim = null; this.aimOrigins.clear();
     this.keys.clear(); this.edges.clear(); this.touch.clear(); this.pointers.clear(); this.pressTimes.clear(); this.pressContexts.clear(); this.paletteOpened.clear(); this.stickPointer = null; this.stickOrigin = null; this.stick = { x: 0, y: 0 };
     clearTimeout(this.stickHideTimer); this.stickHideTimer = null; if (this.stickElement) this.stickElement.hidden = true;
@@ -122,6 +146,7 @@ export class Controls {
     if (!modal) for (const action of this.touch) {
       let elapsed = 0;
       for (const [id, value] of this.pointers) if (value === action) elapsed = Math.max(elapsed, performance.now() - this.pressTimes.get(id));
+      if (action === 'boost' && this.boostTouchStarted !== null) elapsed = performance.now() - this.boostTouchStarted;
       this.paintAction(action, elapsed);
     }
     if (!modal) for (const [id, action] of this.pointers) {
@@ -136,6 +161,11 @@ export class Controls {
     const rawButton = i => !!pad?.buttons[i]?.pressed;
     const button = i => !modal && rawButton(i);
     const padEdge = i => button(i) && !this.padLast[i];
+    if (button(1) && !this.padLast[1] && this.boostPadStarted === null) this.boostPadStarted = performance.now();
+    if (!button(1) && this.boostPadStarted !== null) {
+      if (!modal && pad?.connected && performance.now() - this.boostPadStarted < BOOST_HOLD_MS) this.edges.add('boost');
+      this.boostPadStarted = null;
+    }
     if (modal) {
       if (rawButton(0) && !this.padLast[0]) document.activeElement?.click?.();
       if (rawButton(9) && !this.padLast[9] && modal.id === 'catalogue') modal.close();
@@ -153,7 +183,8 @@ export class Controls {
     const aim = !modal && this.aim || (Math.hypot(rightX, rightY) > .25 ? { x: rightX, y: rightY } : null);
     const input = { move: held('KeyA','ArrowLeft','left') ? -1 : held('KeyD','ArrowRight','right') ? 1 : stickX || axis,
       jumpPressed: edge('Space','jump') || padEdge(0), jumpHeld: held('Space','jump') || button(0),
-      boostPressed: edge('ShiftLeft','ShiftRight','boost') || padEdge(1), jet: held('KeyL','KeyE','jet') || heldFor('boost',160) || heldFor('jump',350) || button(5) || button(1) && !padEdge(1),
+      boostPressed: edge('boost'), jet: held('KeyL','KeyE','jet') || heldFor('jump',350) || button(5)
+        || !modal && [this.boostTouchStarted, this.boostKeyStarted, this.boostPadStarted].some(started => started !== null && performance.now() - started >= BOOST_HOLD_MS),
       slashPressed: edge('KeyJ','slash') || padEdge(2), shoot: held('KeyK','shoot') || heldFor('attack',120) || button(7),
       aimUp: !aim && (held('KeyW','ArrowUp','aimUp') || stickY < -0.55 || !modal && (pad?.axes[1] || 0) < -0.55),
       down: held('KeyS','ArrowDown','down') || stickY > 0.55 || !modal && (pad?.axes[1] || 0) > 0.55,

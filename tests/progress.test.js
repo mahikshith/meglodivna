@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { defaultProgress, validateProgress, loadProgress, saveProgress, newCampaignProgress } from '../src/progress.js';
+import { LEVELS } from '../src/level.js';
 import { createWorld, equipItem, rewardPlayer, retryWorld, castSpell, stepWorld, STEP } from '../src/combat.js';
 
 test('progress rejects unknown gear, invalid equipment, malformed charges, and unsafe IDs', () => {
@@ -126,4 +127,35 @@ test('loading a v0.2 save migrates translated encounters while preserving discov
   assert.equal(world.player.x + world.player.w / 2, world.level.checkpoints[0].x + 12); assert.ok(world.bosses.every(boss => !boss.dead));
   migrated.checkpoint = 2; migrated.claimed.push('new-cache'); migrated.charges.cannon = 1;
   assert.equal(saveProgress(migrated, storage), true); assert.deepEqual(loadProgress(storage), migrated);
+});
+
+test('v0.9 crossing saves map old relays into the shorter chapter courses without losing discoveries', () => {
+  const old = defaultProgress();
+  old.layoutVersion = 2;
+  old.worldId = 'pyre';
+  old.unlocked.gun.push('rail'); old.equipped.gun = 'rail';
+  old.claimed.push('npc:chapter:wind:ending'); old.openedGates.push('pyre-crossing-wind-heart-seal');
+  old.checkpoint = 7 + 14 + 13; // Last old Water relay.
+  for (const id of Object.keys(LEVELS)) old.worlds[id] = { checkpoint: 7 + 28 + 13,
+    claimed: [`npc:chapter:${id}:ending`], defeatedBosses: [], openedGates: [], destroyedProps: [] };
+  let stored = JSON.stringify(old);
+  const storage = { getItem: () => stored, setItem: (_key, value) => { stored = value; } };
+  const migrated = loadProgress(storage);
+  assert.equal(migrated.layoutVersion, 3);
+  assert.equal(migrated.equipped.gun, 'rail');
+  assert.deepEqual(migrated.claimed, old.claimed);
+  assert.deepEqual(migrated.openedGates, old.openedGates);
+  const water = LEVELS.pyre.crossings[1];
+  const waterRelays = LEVELS.pyre.checkpoints.map((checkpoint, index) => ({ checkpoint, index }))
+    .filter(({ checkpoint }) => checkpoint.x >= water.x && checkpoint.x < water.x + water.w);
+  assert.equal(migrated.checkpoint, waterRelays.at(-1).index);
+  for (const [id, level] of Object.entries(LEVELS)) {
+    const fire = level.crossings[2];
+    const fireRelays = level.checkpoints.map((checkpoint, index) => ({ checkpoint, index }))
+      .filter(({ checkpoint }) => checkpoint.x >= fire.x && checkpoint.x < fire.x + fire.w);
+    assert.equal(migrated.worlds[id].checkpoint, fireRelays.at(-1).index, id);
+    assert.deepEqual(migrated.worlds[id].claimed, old.worlds[id].claimed);
+  }
+  assert.equal(saveProgress(migrated, storage), true);
+  assert.deepEqual(loadProgress(storage), migrated);
 });

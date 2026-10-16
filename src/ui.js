@@ -1,6 +1,11 @@
 import { PHYSICS } from './physics.js';
 const el = id => document.getElementById(id);
 const time = seconds => `${Math.floor(Math.max(0, seconds) / 60).toString().padStart(2, '0')}:${Math.floor(Math.max(0, seconds) % 60).toString().padStart(2, '0')}`;
+export function storyPortraitKey(line, story) {
+  const key = ['AETHER', 'COURIER'].includes(line?.speaker) ? 'ref-face-aether'
+    : story?.portrait || `portrait-${story?.npcId}`;
+  return key.startsWith('portrait-') || key.startsWith('ref-') ? key : `portrait-${key}`;
+}
 
 export function createCampaignUI(catalog, callbacks = {}) {
   const categories = { engine: [], sword: catalog.SWORDS, gun: catalog.GUNS, armor: catalog.ARMORS, spell: catalog.SPELLS, relic: catalog.RELICS };
@@ -143,14 +148,13 @@ export function createCampaignUI(catalog, callbacks = {}) {
     const line = story.lines?.[story.index || 0] || {}, final = (story.index || 0) >= (story.lines?.length || 1) - 1;
     el('story-speaker').textContent = line.speaker === 'COURIER' ? 'AETHER' : line.speaker || story.speaker || 'SURVIVOR';
     el('story-text').textContent = line.text || (typeof line === 'string' ? line : '');
-    const portraitKey = story.portrait || `portrait-${story.npcId}`;
-    const portrait = callbacks.iconUrl?.(portraitKey.startsWith('portrait-') ? portraitKey : `portrait-${portraitKey}`); if (portrait) el('story-portrait').src = portrait;
+    const portrait = callbacks.iconUrl?.(storyPortraitKey(line, story)); if (portrait) el('story-portrait').src = portrait;
     el('story-choices').replaceChildren();
     if (final) for (const choice of story.choices || []) {
       const button = document.createElement('button'); button.textContent = choice.label; button.addEventListener('click', () => callbacks.onStoryChoice?.(choice.id)); el('story-choices').append(button);
     }
     el('story-next').hidden = final && !!story.choices?.length;
-    el('story-next').textContent = final ? 'Return to the sanctuary →' : 'Continue →';
+    el('story-next').textContent = final ? 'Continue journey →' : 'Continue →';
     if (!storyPanel.open) { close(); storyPanel.showModal(); }
     (el('story-choices').firstElementChild || el('story-next')).focus();
   };

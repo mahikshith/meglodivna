@@ -11,11 +11,12 @@ from scipy.ndimage import label, binary_erosion, distance_transform_edt, find_ob
 from atlas_pack import pack
 
 ROOT=Path(__file__).resolve().parents[1]
-SRC=ROOT/'reference/character-revision';OUT=ROOT/'public/character-revision';PROOF=ROOT/'artifacts/character-revision'
+SRC=ROOT/'reference/character-revision';OUT=ROOT/'public/character-revision';PROOF=ROOT/'artifacts/playtest-correction/qa/art/character-revision'
 frames={};pixels={};animations={}
 
 def extract(name,count):
-    path=SRC/name;a=np.array(Image.open(path).convert('RGBA'));mask=a[:,:,3]>=32
+    path=(ROOT/name if name.startswith('reference/') else SRC/name)
+    a=np.array(Image.open(path).convert('RGBA'));mask=a[:,:,3]>=32
     for erosion in range(9):
         labs,_=label(binary_erosion(mask,iterations=erosion) if erosion else mask,np.ones((3,3)))
         sizes=np.bincount(labs.ravel());ids=np.where(sizes>3000)[0];ids=ids[ids!=0]
@@ -32,6 +33,7 @@ def extract(name,count):
     return path,parts,erosion
 
 def inspect():
+    PROOF.mkdir(exist_ok=True,parents=True)
     data={}
     for name,count in [('courier',24),('plate',24),('stalker-caster',24),('guardian',16),('beast-knight',24),('companions',24),('npcs',16)]:
         path,parts,erosion=extract(name+'-raw.png',count)
@@ -103,10 +105,11 @@ def build():
                            'attack':[4,5,6,7],'recovery':[7],'hurt':[9],'death':[10,11]}.items():alias(name+'-'+action,name,ids)
     for action,ids in {'walk':[0,1,2,3],'idle':[12],'lift':[4,5,6,7],'windup':[4,5,6,7],'downswing':[8],
                        'contact':[9],'attack':range(4,12),'recovery':[10,11],'hurt':[13],'death':[14,15]}.items():alias('guardian-'+action,'guardian',ids)
-    wolf=[(165,220),(423,220),(717,220),(990,220),(169,439),(431,439),(729,439),(1005,439)]
+    wolf=[(162,224),(454,227),(756,222),(1069,227),(164,439),(462,439),(784,445),(1101,442)]
     dragon=[(179,711),(466,711),(751,711),(1030,711),(160,940),(447,940),(735,940),(1007,940)]
     raven=[(137,1150),(439,1150),(722,1150),(1006,1150),(142,1320),(433,1320),(733,1320),(995,1320)]
-    family('companions',24,'wolf',0,8,130,200,wolf,{4:{'mouth':(275,382)},5:{'mouth':(554,313)},6:{'mouth':(861,386)}})
+    family('reference/playtest-correction/wolf-painted',8,'wolf',0,8,130,200,wolf,
+        {4:{'mouth':(289,356)},5:{'mouth':(591,308)},6:{'mouth':(931,373)}})
     family('companions',24,'dragon',8,8,120,190,dragon,{0:{'mouth':(284,648)},1:{'mouth':(571,636)},2:{'mouth':(858,610)},3:{'mouth':(1109,656)},
         4:{'mouth':(269,853)},5:{'mouth':(556,818)},6:{'mouth':(845,862)},7:{'mouth':(1020,768)}})
     family('companions',24,'raven',16,8,100,140,raven,{4:{'beak':(250,1325)},5:{'beak':(542,1334)},6:{'claw':(817,1298)}})

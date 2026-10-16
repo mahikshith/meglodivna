@@ -58,7 +58,7 @@ for (const world of Object.values(LEVELS)) test(`${world.id}: world boundaries, 
 test('unique world mechanics are present in actionable data rather than menu descriptions', () => {
   assert.ok(LEVELS.tide.currents.length > 0 && LEVELS.tide.movingPlatforms.some(p => p.kind === 'raft'));
   assert.ok(LEVELS.pyre.crumble.length > 0 && LEVELS.pyre.hazards.some(h => h.type === 'steam'));
-  const marshal = LEVELS.pyre.bosses[0]; assert.ok(LEVELS.pyre.gates.some(g => g.id === marshal.shieldGateId && g.leverId));
+  const marshal = LEVELS.pyre.bosses[0]; assert.ok(LEVELS.pyre.gates.some(g => g.id === marshal.shieldGateId && g.autoOpenAt));
   assert.ok(LEVELS.neon.movingPlatforms.some(p => p.kind === 'lift'));
   assert.ok(LEVELS.neon.solids.some(s => s.id.includes('machinery-ceiling')));
   assert.ok(LEVELS.veil.portals.length > 0);

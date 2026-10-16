@@ -1,0 +1,290 @@
+{
+  "viewport": "740x360",
+  "physicalDevice": false,
+  "campaignCompletion": false,
+  "method": "Opening uses real keyboard and story buttons. Chapter scenes position the player/mark prior victories as isolated fixtures; portal contact, landing, dialogs and UI then run normally.",
+  "checks": [
+    {
+      "name": "Real start, walk and interact open Mira dialogue without held movement",
+      "evidence": {
+        "mode": "story",
+        "stageMode": "playing",
+        "npc": "soulforge-mira",
+        "speaker": "MIRA",
+        "text": "The engine is burning people into light. My brother is still inside.",
+        "objective": "SPEAK TO MIRA AT THE LANTERN",
+        "chapter": "The Last Lantern",
+        "pointers": 0,
+        "touch": false,
+        "x": 267.8541666666663,
+        "claimed": [],
+        "visiblePortals": []
+      }
+    },
+    {
+      "name": "wind: hub gate, real portal contact/dialog buttons, pause/resume, high-landing shutter and return objective",
+      "evidence": {
+        "hub": {
+          "mode": "playing",
+          "stageMode": "playing",
+          "speaker": "MIRA",
+          "text": "Orren is still inside. Recover Ember, Tide and Storm. At the heart, follow the one lit gate: wind, then water, then flame. Bring him home.",
+          "objective": "CHAPTER 1 / 3 · ENTER THE LIT GATE",
+          "chapter": "The Heart Gate",
+          "pointers": 0,
+          "touch": true,
+          "x": 17375,
+          "claimed": [],
+          "visiblePortals": [
+            "travel:soulforge-crossing-wind-entry"
+          ]
+        },
+        "entry": {
+          "mode": "story",
+          "stageMode": "playing",
+          "npc": "chapter:wind:opening",
+          "speaker": "MIRA",
+          "text": "Orren followed the wind bells. Reach their high ledges and the path will answer your steps.",
+          "objective": "RIDE THE WIND · LAND AT LANTERNS",
+          "chapter": "CHAPTER 1 / 3 · The Windward Canopy",
+          "pointers": 0,
+          "touch": false,
+          "x": 19558,
+          "claimed": [],
+          "visiblePortals": [
+            "travel:soulforge-crossing-wind-retreat"
+          ]
+        },
+        "landing": {
+          "mode": "playing",
+          "stageMode": "playing",
+          "speaker": "AETHER",
+          "text": "I can hear him in the storm. One bell, one landing, one step closer.",
+          "objective": "RIDE THE WIND · LAND AT LANTERNS",
+          "chapter": "CHAPTER 1 / 3 · The Windward Canopy",
+          "pointers": 0,
+          "touch": true,
+          "x": 20745.80000000002,
+          "claimed": [
+            "npc:chapter:wind:opening"
+          ],
+          "visiblePortals": []
+        },
+        "returning": {
+          "mode": "story",
+          "stageMode": "playing",
+          "npc": "chapter:wind:ending",
+          "speaker": "MIRA",
+          "text": "The wind carries his signal again. Follow the next lit gate into the water.",
+          "objective": "CHAPTER 2 / 3 · ENTER THE LIT GATE",
+          "chapter": "The Heart Gate",
+          "pointers": 0,
+          "touch": false,
+          "x": 17328,
+          "claimed": [
+            "npc:chapter:wind:opening",
+            "pickup:soulforge-crossing-wind-pact"
+          ],
+          "visiblePortals": [
+            "travel:soulforge-crossing-water-entry"
+          ]
+        },
+        "returned": {
+          "mode": "playing",
+          "stageMode": "playing",
+          "speaker": "MIRA",
+          "text": "The wind carries his signal again. Follow the next lit gate into the water.",
+          "objective": "CHAPTER 2 / 3 · ENTER THE LIT GATE",
+          "chapter": "The Heart Gate",
+          "pointers": 0,
+          "touch": true,
+          "x": 17328,
+          "claimed": [
+            "npc:chapter:wind:opening",
+            "pickup:soulforge-crossing-wind-pact",
+            "npc:chapter:wind:ending"
+          ],
+          "visiblePortals": [
+            "travel:soulforge-crossing-water-entry"
+          ]
+        }
+      }
+    },
+    {
+      "name": "water: hub gate, real portal contact/dialog buttons, pause/resume, high-landing shutter and return objective",
+      "evidence": {
+        "hub": {
+          "mode": "playing",
+          "stageMode": "playing",
+          "speaker": "MIRA",
+          "text": "The wind carries his signal again. Follow the next lit gate into the water.",
+          "objective": "CHAPTER 2 / 3 · ENTER THE LIT GATE",
+          "chapter": "The Heart Gate",
+          "pointers": 0,
+          "touch": true,
+          "x": 17375,
+          "claimed": [],
+          "visiblePortals": [
+            "travel:soulforge-crossing-water-entry"
+          ]
+        },
+        "entry": {
+          "mode": "story",
+          "stageMode": "playing",
+          "npc": "chapter:water:opening",
+          "speaker": "MIRA",
+          "text": "The crossing broke. The Bridge Keeper left lanterns on the high stones to guide anyone still searching.",
+          "objective": "CROSS THE RAFTS · LAND AT LANTERNS",
+          "chapter": "CHAPTER 2 / 3 · The Moonlit Causeway",
+          "pointers": 0,
+          "touch": false,
+          "x": 36758,
+          "claimed": [],
+          "visiblePortals": [
+            "travel:soulforge-crossing-water-retreat"
+          ]
+        },
+        "landing": {
+          "mode": "playing",
+          "stageMode": "playing",
+          "speaker": "AETHER",
+          "text": "I will follow the rafts and leave every bridge open for the families behind me.",
+          "objective": "CROSS THE RAFTS · LAND AT LANTERNS",
+          "chapter": "CHAPTER 2 / 3 · The Moonlit Causeway",
+          "pointers": 0,
+          "touch": true,
+          "x": 37937.18333333333,
+          "claimed": [
+            "npc:chapter:water:opening"
+          ],
+          "visiblePortals": []
+        },
+        "returning": {
+          "mode": "story",
+          "stageMode": "playing",
+          "npc": "chapter:water:ending",
+          "speaker": "MIRA",
+          "text": "The causeway shelters the families now. The final gate leads through fire to Orren.",
+          "objective": "CHAPTER 3 / 3 · ENTER THE LIT GATE",
+          "chapter": "The Heart Gate",
+          "pointers": 0,
+          "touch": false,
+          "x": 17328,
+          "claimed": [
+            "npc:chapter:water:opening",
+            "pickup:soulforge-crossing-water-pact"
+          ],
+          "visiblePortals": [
+            "travel:soulforge-crossing-fire-entry"
+          ]
+        },
+        "returned": {
+          "mode": "playing",
+          "stageMode": "playing",
+          "speaker": "MIRA",
+          "text": "The causeway shelters the families now. The final gate leads through fire to Orren.",
+          "objective": "CHAPTER 3 / 3 · ENTER THE LIT GATE",
+          "chapter": "The Heart Gate",
+          "pointers": 0,
+          "touch": true,
+          "x": 17328,
+          "claimed": [
+            "npc:chapter:water:opening",
+            "pickup:soulforge-crossing-water-pact",
+            "npc:chapter:water:ending"
+          ],
+          "visiblePortals": [
+            "travel:soulforge-crossing-fire-entry"
+          ]
+        }
+      }
+    },
+    {
+      "name": "fire: hub gate, real portal contact/dialog buttons, pause/resume, high-landing shutter and return objective",
+      "evidence": {
+        "hub": {
+          "mode": "playing",
+          "stageMode": "playing",
+          "speaker": "MIRA",
+          "text": "The causeway shelters the families now. The final gate leads through fire to Orren.",
+          "objective": "CHAPTER 3 / 3 · ENTER THE LIT GATE",
+          "chapter": "The Heart Gate",
+          "pointers": 0,
+          "touch": true,
+          "x": 17375,
+          "claimed": [],
+          "visiblePortals": [
+            "travel:soulforge-crossing-fire-entry"
+          ]
+        },
+        "entry": {
+          "mode": "story",
+          "stageMode": "playing",
+          "npc": "chapter:fire:opening",
+          "speaker": "MIRA",
+          "text": "Only the Ash Sentinel stands between us and Orren. Rest at every lantern; the lower walk will catch a fall.",
+          "objective": "TIME THE VENTS · LAND AT LANTERNS",
+          "chapter": "CHAPTER 3 / 3 · The Ember Oath",
+          "pointers": 0,
+          "touch": false,
+          "x": 53958,
+          "claimed": [],
+          "visiblePortals": [
+            "travel:soulforge-crossing-fire-retreat"
+          ]
+        },
+        "landing": {
+          "mode": "playing",
+          "stageMode": "playing",
+          "speaker": "AETHER",
+          "text": "No one stays bound because their path is harder. I will bring them all through this fire.",
+          "objective": "TIME THE VENTS · LAND AT LANTERNS",
+          "chapter": "CHAPTER 3 / 3 · The Ember Oath",
+          "pointers": 0,
+          "touch": true,
+          "x": 55140,
+          "claimed": [
+            "npc:chapter:fire:opening"
+          ],
+          "visiblePortals": []
+        },
+        "returning": {
+          "mode": "story",
+          "stageMode": "playing",
+          "npc": "chapter:fire:ending",
+          "speaker": "MIRA",
+          "text": "All three crossings hold. Enter the heart and break the Regent’s bond.",
+          "objective": "ENTER THE HEART · FREE ORREN",
+          "chapter": "The Heart Gate",
+          "pointers": 0,
+          "touch": false,
+          "x": 17328,
+          "claimed": [
+            "npc:chapter:fire:opening",
+            "pickup:soulforge-crossing-fire-pact"
+          ],
+          "visiblePortals": []
+        },
+        "returned": {
+          "mode": "playing",
+          "stageMode": "playing",
+          "speaker": "MIRA",
+          "text": "All three crossings hold. Enter the heart and break the Regent’s bond.",
+          "objective": "ENTER THE HEART · FREE ORREN",
+          "chapter": "The Heart Gate",
+          "pointers": 0,
+          "touch": true,
+          "x": 17328,
+          "claimed": [
+            "npc:chapter:fire:opening",
+            "pickup:soulforge-crossing-fire-pact",
+            "npc:chapter:fire:ending"
+          ],
+          "visiblePortals": []
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "ok": true
+}

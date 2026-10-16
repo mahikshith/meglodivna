@@ -1,8 +1,8 @@
 /* Isolated rendering fixtures. This does not establish campaign completion or device performance. */
 const {chromium}=require('playwright');
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
-const out=path.resolve('artifacts/epic-rebuild/qa/visual');fs.mkdirSync(out,{recursive:true});
-const sourceFiles=fs.readdirSync('src').filter(f=>/\.(js|css)$/.test(f)).map(f=>`src/${f}`).concat(['index.html',...['ironfang','character-revision','journey','lantern','lantern-fx'].flatMap(dir=>fs.readdirSync(`public/${dir}`).filter(name=>/\.(png|json)$/.test(name)).map(name=>`public/${dir}/${name}`))]);
+const out=path.resolve('artifacts/playtest-correction/qa/visual');fs.mkdirSync(out,{recursive:true});
+const sourceFiles=fs.readdirSync('src').filter(f=>/\.(js|css)$/.test(f)).map(f=>`src/${f}`).concat(['index.html',...['ironfang','character-revision','journey','lantern','lantern-fx','painted-correction'].flatMap(dir=>fs.readdirSync(`public/${dir}`).filter(name=>/\.(png|json)$/.test(name)).map(name=>`public/${dir}/${name}`))]);
 const hashes=()=>Object.fromEntries(sourceFiles.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex')]));
 const report={kind:'Isolated illustrated combat and environment fixtures',physicalDevice:false,legalCampaign:false,hashes:hashes(),fixtures:[],errors:[]};
 (async()=>{
@@ -15,14 +15,16 @@ const report={kind:'Isolated illustrated combat and environment fixtures',physic
   await page.evaluate(()=>window.__ASH.scene.game.loop.sleep());
   const cases=['bull-walk-0','bull-walk-1','bull-walk-2','bull-walk-3','bull-charge-0','bull-charge-1','bull-charge-2','bull-charge-3',
    'bull-cannon-left','bull-cannon-right','dragon-flight-0','dragon-flight-1','dragon-flight-2','dragon-flight-3','dragon-cannon-left','dragon-cannon-right',
-   'slam','boost-air','hero-air-down','hero-crouch','guardian','stalker','caster','bellbeast','knight','drone','realm-wind','realm-water','realm-fire',
+   'slam','boost-air','hero-air-down','hero-crouch','hero-slash-contact','hero-slash-finisher','hero-slash-hit','guardian','stalker','caster','bellbeast','knight','drone','realm-wind','realm-water','realm-fire',
    ...Array.from({length:6},(_,i)=>`transform-${i}`),
    ...['guardian','stalker','caster','bellbeast','knight','drone'].flatMap(f=>[`${f}-hurt`,`${f}-death`]),
-   'bull-death','dragon-death','summon-wolf','summon-raven','summon-dragon','summon-clone'];
+   'bull-death','dragon-death','summon-wolf','summon-raven','summon-dragon','summon-clone',
+   'world-neon-wrap','world-veil-wrap'];
   for(const kind of cases){
    const result=await page.evaluate(async kind=>{
     const g=window.__ASH,s=g.scene,{ironfangFrame,ironfangSocket,ironfangRotation}=await import('/src/ironfang.js');
-    const w=g.createWorld(0,{worldId:'soulforge',difficulty:'forge'}),p=w.player,b=w.bosses.find(b=>b.type==='regent');
+    const worldId=kind.startsWith('world-')?kind.split('-')[1]:'soulforge';
+    const w=g.createWorld(0,{worldId,difficulty:'forge'}),p=w.player,b=w.bosses.find(b=>b.type==='regent');
     const originalEnemies=w.enemies;
     w.enemies=[];w.npcs=[];w.props=[];w.pickups=[];w.gates=[];w.portals=[];w.enemyPortals=[];w.hazards=[];w.bosses=[b];w.boss=b;
     Object.assign(p,{x:380,y:1260-p.h,grounded:true,invincible:1000,facing:1});
@@ -46,6 +48,14 @@ const report={kind:'Isolated illustrated combat and environment fixtures',physic
     if(kind==='boost-air')Object.assign(p,{y:1120,grounded:false,jetActive:true,boostActive:true,dashTime:.12,vx:760,vy:0});
     if(kind==='hero-air-down')Object.assign(p,{y:1100,grounded:false,shooting:true,shootCooldown:.1,aimAngle:Math.PI/2,jetActive:true,vx:200,vy:-150});
     if(kind==='hero-crouch')Object.assign(p,{crouching:true,shooting:true,shootCooldown:.1,aimAngle:0,vx:0});
+    if(kind==='hero-slash-contact'||kind==='hero-slash-hit')Object.assign(p,{slashDuration:.26,slashTime:.15,slashMode:'horizontal',slashFacing:1,combo:0});
+    if(kind==='hero-slash-finisher')Object.assign(p,{slashDuration:.34,slashTime:.16,slashMode:'finisher',slashFacing:1,combo:2});
+    if(kind==='hero-slash-hit'){
+      // First draw initializes the presentation world; that transition clears
+      // old effects. Contact arrives after initialization in the live game.
+      s.drawWorld(0);
+      s.feedback({type:'hit',kind:'melee',x:p.x+72,y:p.y+29,facing:1});
+    }
     const family={guardian:'sentinel',stalker:'guard',caster:'mage',bellbeast:'bellbeast',knight:'wispknight',drone:'drone'}[kind.split('-')[0]];
     if(family){
       const e=structuredClone(originalEnemies.find(e=>e.type===family)||originalEnemies.find(e=>e.type==='shade'));
@@ -65,7 +75,15 @@ const report={kind:'Isolated illustrated combat and environment fixtures',physic
       const realm=kind.slice(6),crossing=w.level.crossings.find(c=>c.id.endsWith(realm));
       p.x=crossing.x+160;p.y=1160-p.h;cameraX=p.x-200;floor=1160;w.bosses=[];w.activeBoss=null;
     }
-    s.previousPlayer={x:p.x,y:p.y};s.cameraX=cameraX;s.cameraY=floor-s.viewportH+20;s.cameras.main.setZoom(1);
+    if(kind.startsWith('world-')){
+      const support=w.level.solids.find(solid=>solid.x<=5000&&solid.x+solid.w>=5000&&solid.kind==='ground');
+      if(!support)throw new Error(`No world-wrap support in ${worldId}`);
+      p.x=5000;p.y=support.y-p.h;cameraX=5000;floor=support.y;w.bosses=[];w.activeBoss=null;
+    }
+    // Lift secondary actors above the mobile attack/boost buttons so their
+    // anatomy can be judged in the captured fixture, not hidden by controls.
+    const reviewLift=family||kind.startsWith('summon-')?95:20;
+    s.previousPlayer={x:p.x,y:p.y};s.cameraX=cameraX;s.cameraY=floor-s.viewportH+reviewLift;s.cameras.main.setZoom(1);
     s.drawWorld(0);
     if(kind.endsWith('death')){(w.enemies[0]||b).dead=true;s.drawWorld(0);s.visualTime+=.22;s.drawWorld(0);}
     s.children.depthSort();const r=s.sys.game.renderer;r.preRender();s.cameras.render(r,s.children);r.postRender();
@@ -77,6 +95,7 @@ const report={kind:'Isolated illustrated combat and environment fixtures',physic
       bossRotation:s.bossSprites.get(b.id)?.rotation,expectedRotation:ironfangRotation(b),
       enemyFrames:[...s.enemySprites.values()].filter(v=>v.visible).map(v=>({key:v.frame.name,atlas:v.texture.key})),
       allyFrames:[...s.allySprites.values()].filter(v=>v.visible).map(v=>({key:v.frame.name,atlas:v.texture.key})),
+      slashTrail:s.referenceEffects.get('blade-trail')?.visible?{frame:s.referenceEffects.get('blade-trail').frame.name,texture:s.referenceEffects.get('blade-trail').texture.key,x:s.referenceEffects.get('blade-trail').x,y:s.referenceEffects.get('blade-trail').y}:null,
       halos:[...s.shieldSprites.entries()].filter(([id,v])=>id!=='hero'&&v.visible).map(([id])=>id),warningLines,
       round:shot?{frame:s.projectileSprites[index]?.frame.name,texture:s.projectileSprites[index]?.texture.key,x:shot.x,y:shot.y}:null,
       muzzle:ironfangSocket(b,b.form==='flying'?'rocket':'gun'),effects:s.lanternFX.views.filter(v=>v.visible).map(v=>({frame:v.frame.name,x:v.x,y:v.y,rotation:v.rotation,originX:v.originX,originY:v.originY})),
@@ -89,7 +108,10 @@ const report={kind:'Isolated illustrated combat and environment fixtures',physic
    if(kind==='boost-air')assert.ok(result.effects.some(e=>e.frame.startsWith('if-boost-')));
    if(kind==='hero-air-down')assert.equal(result.heroFrame,'cr-couriergunair-2');
    if(kind==='hero-crouch')assert.equal(result.heroFrame,'cr-courierguncrouch-1');
-   if(kind.startsWith('realm'))assert.ok(result.parallax.startsWith('rh-bg-crossing-'));
+   if(kind.startsWith('hero-slash')){assert.ok(result.slashTrail,kind);assert.equal(result.slashTrail.texture,'ironfang',kind);assert.ok(result.slashTrail.frame.startsWith('if-cut-'),kind);}
+   if(kind==='hero-slash-hit')assert.ok(result.effects.some(e=>e.frame.startsWith('if-impact-')),kind);
+   if(kind.startsWith('realm'))assert.ok(result.parallax.startsWith('rh-bg-pc-'));
+   if(kind.startsWith('world-'))assert.equal(result.parallax,`rh-bg-pc-${kind.includes('neon')?'storm':'veil'}`);
    for(const frame of result.enemyFrames)assert.equal(frame.atlas,'character-revision',kind);
    if(kind.startsWith('summon-')){assert.ok(result.allyFrames.length,kind);for(const frame of result.allyFrames)assert.equal(frame.atlas,'character-revision',kind);}
   }

@@ -44,7 +44,7 @@ function createRealm(id,d) {
   }else if(kind==='crypt'){
    const a=ground('crypt-lip',x,floor,320);path(a,x+260);path(block('crypt-stair',x+390,Math.min(1330,floor+110),280));floor=Math.min(1260,floor+220);const c=ground('crypt-floor',x+780,floor,1150);path(c,x+890);block('crypt-roof',x+1010,floor-225,650,40,false,'ceiling');foe('shade',c,440,'shadow');foe('mage',c,790,'cinder');w.props.push({id:tag('volatile-vessel'),type:'barrel',x:x+1300,y:floor-48,w:38,h:48,hp:12});cache(c,x+1730,[{type:'weapon',itemId:'rocket'},{type:'mana',value:60}]);path(c,x+1850);x+=1930;
   }else if(kind==='conduit'){
-   const a=ground('engine-walk',x,floor,660);path(a,x+190);foe('sentinel',a,400,'lightning');path(a,x+560);path(block('engine-duct',x+760,floor-95,300));const c=ground('engine-switchyard',x+1200,floor,700);path(c,x+1300);const leverId=tag('pressure-valve'),gateId=tag('pressure-door');w.props.push({id:leverId,type:'lever',x:x+1400,y:floor-46,w:28,h:46,gateId});path(c,x+1410,{leverId});w.gates.push({id:gateId,leverId,x:x+1650,y:0,w:24,h:floor});w.hazards.push({id:tag('steam-jet'),type:'steam',x:x+1510,y:floor-140,w:24,h:140,period:3.8,onTime:1.2,phase:1});pickup('cannon',x+1760,floor-28,null,2);pickup('nova',x+1820,floor-28,null,1);path(c,x+1850);w.landmarks.push({type:'pipes',x:x+970,y:floor,seed:index});x+=1900;
+   const a=ground('engine-walk',x,floor,660);path(a,x+190);foe('sentinel',a,400,'lightning');path(a,x+560);const duct=path(block('engine-duct',x+760,floor-95,300));const c=ground('engine-switchyard',x+1200,floor,700);path(c,x+1300);tag('pressure-valve');const gateId=tag('pressure-door');path(c,x+1410);w.gates.push({id:gateId,x:x+1650,y:0,w:24,h:floor,autoOpenAt:{x:duct.x+35,y:duct.y,w:duct.w-70}});w.hazards.push({id:tag('steam-jet'),type:'steam',x:x+1510,y:floor-140,w:24,h:140,period:3.8,onTime:1.2,phase:1});pickup('cannon',x+1760,floor-28,null,2);pickup('nova',x+1820,floor-28,null,1);path(c,x+1850);w.landmarks.push({type:'pipes',x:x+970,y:floor,seed:index});x+=1900;
   }
   room.w=x-start;room.floorY=floor;w.landmarks.push({type:kind==='refuge'?'lantern':'arch',x:start+80,y:entryY,seed:index});if(index>0&&!['warden','hex','regent'].includes(kind))pickup('health',x-95,floor-28,null,25);
  }
@@ -56,10 +56,10 @@ function createRealm(id,d) {
  }
  if(id==='pyre'){
   const brittle=w.solids.filter(s=>s.kind==='platform'&&!s.oneWay).slice(0,3);for(const s of brittle)w.crumble.push({solidId:s.id,delay:.9,restore:4});
-  const b=w.bosses[0],leverId=tag('furnace-valve'),gateId=tag('furnace-ward');
-  w.props.push({id:leverId,type:'lever',x:b.arenaStart-85,y:b.floorY-46,w:28,h:46,gateId});
-  w.gates.push({id:gateId,leverId,x:b.arenaStart+50,y:0,w:24,h:b.floorY});b.shieldGateId=gateId;
-  const i=w.route.findIndex(m=>m.bossId===b.id);w.route.splice(i,0,{id:w.route[i].id,x:b.arenaStart-70,y:b.floorY,verb:'run',leverId});w.bosses.forEach(b=>b.power='infernal');
+  const b=w.bosses[0];tag('furnace-valve');const gateId=tag('furnace-ward');
+  w.gates.push({id:gateId,x:b.arenaStart+50,y:0,w:24,h:b.floorY,
+   autoOpenAt:{x:b.arenaStart-105,y:b.floorY,w:70}});b.shieldGateId=gateId;
+  const i=w.route.findIndex(m=>m.bossId===b.id);w.route.splice(i,0,{id:w.route[i].id,x:b.arenaStart-70,y:b.floorY,verb:'run'});w.bosses.forEach(b=>b.power='infernal');
  }
  if(id==='neon'){
   w.movingPlatforms.push({id:tag('lift'),kind:'lift',x:tower.x+1100,y:tower.floorY+150,w:130,h:24,oneWay:true,axis:'y',distance:290,period:6,phase:0});
@@ -84,7 +84,7 @@ function createRealm(id,d) {
    {id:'soulforge-hollow-choir-boost',type:'boost',x:6320,y:832,value:8},
    {id:'soulforge-hollow-crypt-rapid',type:'rapid',x:11200,y:1052,value:8},
    {id:'soulforge-hollow-storm-fuel',type:'fuel',x:14330,y:852,value:60});
-  const guidance={refuge:'Find Mira. Hold jump to reach the low shelf; release to land sooner.',roots:'Watch the stalker wind up. Evade its lunge, then strike.',stair:'Climb the bell walkways and find Orren.',warden:'Let the Keeper commit. Strike during recovery to claim Ember.',aqueduct:'Cross the broken choir. The amber booster strengthens thrust.',vault:'Take Tideglass from the upper reliquary. Side vaults are optional.',crypt:'A sleeping bell waits through the raised rift. The descending passage leads onward.',hex:'Break the coven and awaken the dragon pact.',spire:'Climb above the engine to recover the Storm stone.',conduit:'The conduit flashes before it fires. Cross while it rests.',regent:'Carry the three stones into the heart. Unbind the captive souls.'};
+  const guidance={refuge:'Find Mira. Hold jump to reach the low shelf; release to land sooner.',roots:'Watch the stalker wind up. Evade its lunge, then strike.',stair:'Climb the bell walkways and find Orren.',warden:'Let the Keeper commit. Strike during recovery to claim Ember.',aqueduct:'Cross the broken choir. The amber booster strengthens thrust.',vault:'Take Tideglass from the upper reliquary. Side vaults are optional.',crypt:'A sleeping bell waits through the raised rift. The descending passage leads onward.',hex:'Break the coven and awaken the dragon pact.',spire:'Climb above the engine to recover the Storm stone.',conduit:'Land on the upper duct to release the seal. Cross the steam while it rests.',regent:'Carry the three stones into the heart. Unbind the captive souls.'};
   w.zones.forEach((zone,index)=>zone.subtitle=guidance[w.rooms[index].kind]);
   // Optional upper crypt: explicit IDs keep every existing claim and relay stable.
   const beastFloor={id:'soulforge-bellbeast-floor',x:10550,y:460,w:1500,h:48,kind:'platform',material:d.surface,biome:d.biome};

@@ -1,0 +1,2318 @@
+{
+  "gameplaySourceHash": "189c6ef3259bfbb0415915821a8ff739c0926bfe1c54586fd9cb17263e115988",
+  "driverSources": {
+    "scripts/combat-route.mjs": {
+      "sha256": "85b40ffa423124ca9fead3b505e553bc5ca882f109bb94138d815d0ee2280e21",
+      "archive": "artifacts/playtest-correction/drivers/85b40ffa423124ca9fead3b505e553bc5ca882f109bb94138d815d0ee2280e21.mjs"
+    },
+    "scripts/route-navigation.mjs": {
+      "sha256": "824d09b0af7a22b9abc975c5de94829f7db683d34c6c9703a464a35205c34f1c",
+      "archive": "artifacts/playtest-correction/drivers/824d09b0af7a22b9abc975c5de94829f7db683d34c6c9703a464a35205c34f1c.mjs"
+    },
+    "scripts/campaign-source.mjs": {
+      "sha256": "f864b236670d8fb06e6f66215bbada57b1cc292ddd71fd93c1d91c0e25a7104f",
+      "archive": "artifacts/playtest-correction/drivers/f864b236670d8fb06e6f66215bbada57b1cc292ddd71fd93c1d91c0e25a7104f.mjs"
+    }
+  },
+  "startedAt": "2026-10-16T21:36:33.238Z",
+  "worldId": "soulforge",
+  "worldName": "RUNEHEART · The Hollow Sanctuary",
+  "difficulty": "forge",
+  "status": "won",
+  "playerBody": {
+    "w": 28,
+    "h": 60
+  },
+  "elapsed": 313.56,
+  "campaignTime": 313.56,
+  "timeLeft": 2862.91,
+  "deaths": 0,
+  "checkpoint": 6,
+  "x": 18682,
+  "y": 613,
+  "hp": 116.5,
+  "conversations": [
+    "soulforge-mira",
+    "soulforge-orren",
+    "chapter:wind:opening",
+    "chapter:wind:ending",
+    "chapter:water:opening",
+    "chapter:water:ending",
+    "chapter:fire:opening",
+    "chapter:fire:ending"
+  ],
+  "triggerProof": {
+    "soulforge-warden": {
+      "triggerX": 4920,
+      "activatedX": 4920.08,
+      "activatedTime": 19.65
+    },
+    "soulforge-hex": {
+      "triggerX": 12520,
+      "activatedX": 12520.09,
+      "activatedTime": 56.37
+    },
+    "soulforge-regent": {
+      "triggerX": 17670,
+      "activatedX": 17670.02,
+      "activatedTime": 303.64
+    }
+  },
+  "storyClaims": [
+    "npc:soulforge-mira",
+    "npc:soulforge-orren",
+    "npc:chapter:wind:opening",
+    "npc:chapter:wind:ending",
+    "npc:chapter:water:opening",
+    "npc:chapter:water:ending",
+    "npc:chapter:fire:opening",
+    "npc:chapter:fire:ending"
+  ],
+  "bosses": [
+    {
+      "id": "soulforge-warden",
+      "dead": true,
+      "hp": 0,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 8.89,
+      "attacksSeen": [
+        0,
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
+    },
+    {
+      "id": "soulforge-hex",
+      "dead": true,
+      "hp": 0,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 16.53,
+      "attacksSeen": [
+        0,
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
+    },
+    {
+      "id": "soulforge-regent",
+      "dead": true,
+      "hp": 0,
+      "body": {
+        "w": 112,
+        "h": 86
+      },
+      "fightSeconds": 8.75,
+      "attacksSeen": [
+        0,
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground",
+        "transforming",
+        "flying"
+      ],
+      "flyingAttacksSeen": [
+        0
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "soulforge-guardian-seal-34",
+      "open": true
+    },
+    {
+      "id": "soulforge-tide-seal-56",
+      "open": true
+    },
+    {
+      "id": "soulforge-guardian-seal-79",
+      "open": true
+    },
+    {
+      "id": "soulforge-pressure-door-99",
+      "open": true
+    },
+    {
+      "id": "soulforge-guardian-seal-110",
+      "open": true
+    },
+    {
+      "id": "soulforge-three-stone-seal",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-wind-heart-seal",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-wind-shutter-0",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-wind-shutter-1",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-wind-shutter-2",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-wind-course-shutter-0",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-wind-course-shutter-1",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-wind-course-shutter-2",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-wind-course-shutter-3",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-wind-guardian-seal",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-water-heart-seal",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-water-shutter-0",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-water-shutter-1",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-water-shutter-2",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-water-course-shutter-0",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-water-course-shutter-1",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-water-course-shutter-2",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-water-course-shutter-3",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-water-guardian-seal",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-fire-heart-seal",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-fire-shutter-0",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-fire-shutter-1",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-fire-shutter-2",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-fire-course-shutter-0",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-fire-course-shutter-1",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-fire-course-shutter-2",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-fire-course-shutter-3",
+      "open": true
+    },
+    {
+      "id": "soulforge-crossing-fire-guardian-seal",
+      "open": true
+    }
+  ],
+  "crossings": [
+    {
+      "id": "soulforge-crossing-wind",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 65.77
+    },
+    {
+      "id": "soulforge-crossing-water",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 72.31
+    },
+    {
+      "id": "soulforge-crossing-fire",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 72.49
+    }
+  ],
+  "method": "Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.",
+  "target": "soulforge-arena-105",
+  "events": [
+    "bossdead",
+    "bossstart",
+    "burn",
+    "cannon",
+    "charge",
+    "checkpoint",
+    "dash",
+    "debris",
+    "enemyattack",
+    "enemyshot",
+    "enemywindup",
+    "equip",
+    "explode",
+    "gate",
+    "hit",
+    "hurt",
+    "impact",
+    "jet",
+    "jump",
+    "land",
+    "parry",
+    "pickup",
+    "portal",
+    "portalarrival",
+    "portalwarning",
+    "shot",
+    "slam",
+    "slash",
+    "soulcollect",
+    "souldrop",
+    "spark",
+    "spell",
+    "stagger",
+    "story",
+    "summon",
+    "summonarrival",
+    "summonattack",
+    "summonexpire",
+    "taunt",
+    "thunder",
+    "transform",
+    "win"
+  ],
+  "history": [
+    {
+      "event": "landing",
+      "id": "soulforge-sanctuary-1",
+      "x": 98.1,
+      "hp": 100,
+      "time": 0.01
+    },
+    {
+      "event": "story",
+      "npcId": "soulforge-mira",
+      "choiceId": "soulforge-ward"
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-sanctuary-1",
+      "x": 273.2,
+      "hp": 100,
+      "time": 0.62
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-sanctuary-1",
+      "x": 793.2,
+      "hp": 100,
+      "time": 2.24
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-root-bank-5",
+      "x": 1248.3,
+      "hp": 100,
+      "time": 3.75
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-broken-root-7",
+      "x": 1560.6,
+      "hp": 100,
+      "time": 6.07
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-hanging-root-9",
+      "x": 1983.7,
+      "hp": 100,
+      "time": 7.53
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-orchard-bank-10",
+      "x": 2345.8,
+      "hp": 100,
+      "time": 9.39
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-orchard-bank-10",
+      "x": 2631.6,
+      "hp": 100,
+      "time": 10.34
+    },
+    {
+      "event": "checkpoint",
+      "x": 2748.9,
+      "hp": 135,
+      "time": 10.71
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-foot-20",
+      "x": 3012.6,
+      "hp": 135,
+      "time": 11.79
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-step-21",
+      "x": 3229.5,
+      "hp": 135,
+      "time": 12.57
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-step-22",
+      "x": 3447.6,
+      "hp": 135,
+      "time": 13.32
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-step-23",
+      "x": 3667.6,
+      "hp": 135,
+      "time": 15.13
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-step-25",
+      "x": 3887.1,
+      "hp": 135,
+      "time": 15.88
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-crown-26",
+      "x": 4103.1,
+      "hp": 135,
+      "time": 16.86
+    },
+    {
+      "event": "story",
+      "npcId": "soulforge-orren",
+      "choiceId": "soulforge-echo"
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-crown-26",
+      "x": 4172.3,
+      "hp": 135,
+      "time": 17.13
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-crown-26",
+      "x": 4492.3,
+      "hp": 135,
+      "time": 18.13
+    },
+    {
+      "event": "checkpoint",
+      "x": 4625.7,
+      "hp": 135,
+      "time": 18.55
+    },
+    {
+      "event": "bossstart",
+      "x": 4920.1,
+      "hp": 135,
+      "time": 19.65
+    },
+    {
+      "event": "hurt",
+      "x": 5425.6,
+      "hp": 135,
+      "time": 24.65
+    },
+    {
+      "event": "hurt",
+      "x": 5548.5,
+      "hp": 135,
+      "time": 26.77
+    },
+    {
+      "event": "hurt",
+      "x": 5276.2,
+      "hp": 135,
+      "time": 27.62
+    },
+    {
+      "event": "bossdefeated",
+      "id": "soulforge-warden",
+      "time": 28.54,
+      "hp": 135
+    },
+    {
+      "event": "gate",
+      "x": 5083.4,
+      "hp": 135,
+      "time": 28.54
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-arena-29",
+      "x": 5083.4,
+      "hp": 135,
+      "time": 28.54
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-arena-29",
+      "x": 5914.6,
+      "hp": 135,
+      "time": 31.45
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-arena-29",
+      "x": 5914.6,
+      "hp": 135,
+      "time": 31.45
+    },
+    {
+      "event": "checkpoint",
+      "x": 6029.6,
+      "hp": 135,
+      "time": 31.84
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-sluice-entry-38",
+      "x": 6298.6,
+      "hp": 135,
+      "time": 32.83
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-aqueduct-span-39",
+      "x": 6662.6,
+      "hp": 135,
+      "time": 34.27
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-aqueduct-span-40",
+      "x": 6994.8,
+      "hp": 135,
+      "time": 35.77
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-aqueduct-span-42",
+      "x": 7322.6,
+      "hp": 135,
+      "time": 37.1
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-aqueduct-span-43",
+      "x": 7654.8,
+      "hp": 135,
+      "time": 38.6
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-cistern-bank-44",
+      "x": 8122.7,
+      "hp": 135,
+      "time": 40.12
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-vault-entry-49",
+      "x": 8612.7,
+      "hp": 135,
+      "time": 41.91
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-vault-upper-50",
+      "x": 8967.5,
+      "hp": 135,
+      "time": 43.28
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-rune-reliquary-51",
+      "x": 9243.2,
+      "hp": 135,
+      "time": 44.19
+    },
+    {
+      "event": "gate",
+      "x": 9329.3,
+      "hp": 135,
+      "time": 44.48
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-rune-reliquary-51",
+      "x": 9344.3,
+      "hp": 135,
+      "time": 44.61
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-vault-exit-54",
+      "x": 9865.5,
+      "hp": 135,
+      "time": 46.8
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-vault-exit-54",
+      "x": 10151.5,
+      "hp": 135,
+      "time": 47.75
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crypt-lip-64",
+      "x": 10532.6,
+      "hp": 135,
+      "time": 49.2
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crypt-stair-65",
+      "x": 10847.2,
+      "hp": 135,
+      "time": 50.7
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crypt-floor-66",
+      "x": 11159.1,
+      "hp": 135,
+      "time": 51.89
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crypt-floor-66",
+      "x": 12071.2,
+      "hp": 135,
+      "time": 54.78
+    },
+    {
+      "event": "checkpoint",
+      "x": 12223.2,
+      "hp": 135,
+      "time": 55.26
+    },
+    {
+      "event": "bossstart",
+      "x": 12520.1,
+      "hp": 135,
+      "time": 56.37
+    },
+    {
+      "event": "hurt",
+      "x": 12970.8,
+      "hp": 135,
+      "time": 61.08
+    },
+    {
+      "event": "hurt",
+      "x": 13041.1,
+      "hp": 135,
+      "time": 62
+    },
+    {
+      "event": "hurt",
+      "x": 13106.7,
+      "hp": 135,
+      "time": 62.91
+    },
+    {
+      "event": "hurt",
+      "x": 13130.5,
+      "hp": 135,
+      "time": 63.82
+    },
+    {
+      "event": "hurt",
+      "x": 13139.1,
+      "hp": 135,
+      "time": 66
+    },
+    {
+      "event": "hurt",
+      "x": 13258.7,
+      "hp": 135,
+      "time": 66.92
+    },
+    {
+      "event": "hurt",
+      "x": 13264.8,
+      "hp": 135,
+      "time": 67.83
+    },
+    {
+      "event": "hurt",
+      "x": 13263.2,
+      "hp": 130.1,
+      "time": 68.7
+    },
+    {
+      "event": "hurt",
+      "x": 13264.9,
+      "hp": 127,
+      "time": 69.65
+    },
+    {
+      "event": "hurt",
+      "x": 13264.9,
+      "hp": 123.9,
+      "time": 70.56
+    },
+    {
+      "event": "hurt",
+      "x": 13262.1,
+      "hp": 120.8,
+      "time": 71.47
+    },
+    {
+      "event": "hurt",
+      "x": 13263,
+      "hp": 113.3,
+      "time": 72.88
+    },
+    {
+      "event": "bossdefeated",
+      "id": "soulforge-hex",
+      "time": 72.89,
+      "hp": 113.3
+    },
+    {
+      "event": "gate",
+      "x": 13259.5,
+      "hp": 113.3,
+      "time": 72.89
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-arena-74",
+      "x": 13259.5,
+      "hp": 113.3,
+      "time": 72.89
+    },
+    {
+      "event": "hurt",
+      "x": 13457.2,
+      "hp": 110.2,
+      "time": 73.79
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-arena-74",
+      "x": 13511.9,
+      "hp": 110.2,
+      "time": 73.97
+    },
+    {
+      "event": "checkpoint",
+      "x": 13599.9,
+      "hp": 135,
+      "time": 74.24
+    },
+    {
+      "event": "hurt",
+      "x": 13746,
+      "hp": 131.9,
+      "time": 74.7
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-foot-82",
+      "x": 13861.5,
+      "hp": 131.9,
+      "time": 75.28
+    },
+    {
+      "event": "hurt",
+      "x": 13949.9,
+      "hp": 128.8,
+      "time": 75.61
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-step-83",
+      "x": 14076.6,
+      "hp": 128.8,
+      "time": 76.05
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-step-84",
+      "x": 14297.8,
+      "hp": 128.8,
+      "time": 76.81
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-step-85",
+      "x": 14517.7,
+      "hp": 128.8,
+      "time": 78.88
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-step-87",
+      "x": 14737.1,
+      "hp": 128.8,
+      "time": 79.63
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-crown-88",
+      "x": 14953.1,
+      "hp": 128.8,
+      "time": 80.61
+    },
+    {
+      "event": "gate",
+      "x": 15028.8,
+      "hp": 128.8,
+      "time": 80.92
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-crown-88",
+      "x": 15044.1,
+      "hp": 128.8,
+      "time": 81.04
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-tower-crown-88",
+      "x": 15343.4,
+      "hp": 135,
+      "time": 82.01
+    },
+    {
+      "event": "hurt",
+      "x": 15610.9,
+      "hp": 125,
+      "time": 82.85
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-engine-walk-94",
+      "x": 15625.9,
+      "hp": 125,
+      "time": 83.23
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-engine-walk-94",
+      "x": 15961.5,
+      "hp": 125,
+      "time": 84.3
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-engine-duct-96",
+      "x": 16401.8,
+      "hp": 125,
+      "time": 85.8
+    },
+    {
+      "event": "gate",
+      "x": 16402.5,
+      "hp": 125,
+      "time": 85.81
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-engine-switchyard-97",
+      "x": 16744.7,
+      "hp": 125,
+      "time": 87.01
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-engine-switchyard-97",
+      "x": 16811.6,
+      "hp": 125,
+      "time": 87.25
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-engine-switchyard-97",
+      "x": 17253.6,
+      "hp": 135,
+      "time": 88.83
+    },
+    {
+      "event": "checkpoint",
+      "x": 17373.6,
+      "hp": 135,
+      "time": 89.21
+    },
+    {
+      "event": "crossingportal",
+      "id": "soulforge-crossing-wind-entry",
+      "time": 89.7,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:wind:opening"
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-landing",
+      "x": 19613.2,
+      "hp": 135,
+      "time": 89.93
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-court-0",
+      "x": 20188.3,
+      "hp": 135,
+      "time": 91.82
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-step-0",
+      "x": 20467,
+      "hp": 135,
+      "time": 92.71
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-bell-0",
+      "x": 20715.9,
+      "hp": 135,
+      "time": 93.46
+    },
+    {
+      "event": "gate",
+      "x": 20718.7,
+      "hp": 135,
+      "time": 93.47
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-bridge-0",
+      "x": 21065.2,
+      "hp": 135,
+      "time": 94.96
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-bridge-0",
+      "x": 21132.8,
+      "hp": 135,
+      "time": 95.23
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-court-1",
+      "x": 21538.1,
+      "hp": 135,
+      "time": 96.58
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-step-1",
+      "x": 21817,
+      "hp": 135,
+      "time": 97.47
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-bell-1",
+      "x": 22061.6,
+      "hp": 135,
+      "time": 98.22
+    },
+    {
+      "event": "gate",
+      "x": 22064.5,
+      "hp": 135,
+      "time": 98.23
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-bridge-1",
+      "x": 22415.1,
+      "hp": 135,
+      "time": 99.72
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-bridge-1",
+      "x": 22482.8,
+      "hp": 135,
+      "time": 99.98
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-court-2",
+      "x": 22888.1,
+      "hp": 135,
+      "time": 101.33
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-step-2",
+      "x": 23167,
+      "hp": 135,
+      "time": 102.23
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-bell-2",
+      "x": 23415.9,
+      "hp": 135,
+      "time": 102.98
+    },
+    {
+      "event": "gate",
+      "x": 23418.8,
+      "hp": 135,
+      "time": 102.98
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-bridge-2",
+      "x": 23765.2,
+      "hp": 135,
+      "time": 104.48
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-bridge-2",
+      "x": 23832.8,
+      "hp": 135,
+      "time": 104.74
+    },
+    {
+      "event": "checkpoint",
+      "x": 24062.1,
+      "hp": 135,
+      "time": 105.46
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-0",
+      "x": 24111,
+      "hp": 135,
+      "time": 105.65
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-1",
+      "x": 24530.5,
+      "hp": 135,
+      "time": 107.19
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-2",
+      "x": 24930.5,
+      "hp": 135,
+      "time": 108.63
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-3",
+      "x": 25322,
+      "hp": 135,
+      "time": 110.18
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-4",
+      "x": 25710.4,
+      "hp": 135,
+      "time": 111.64
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-5",
+      "x": 26128.9,
+      "hp": 135,
+      "time": 113.15
+    },
+    {
+      "event": "gate",
+      "x": 26129.2,
+      "hp": 135,
+      "time": 113.16
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-6",
+      "x": 26529.6,
+      "hp": 135,
+      "time": 114.83
+    },
+    {
+      "event": "checkpoint",
+      "x": 26917.1,
+      "hp": 135,
+      "time": 116.17
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-7",
+      "x": 26925.5,
+      "hp": 135,
+      "time": 116.31
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-8",
+      "x": 27318.3,
+      "hp": 135,
+      "time": 117.83
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-9",
+      "x": 27713.3,
+      "hp": 135,
+      "time": 119.28
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-10",
+      "x": 28131.3,
+      "hp": 135,
+      "time": 120.88
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-11",
+      "x": 28526.8,
+      "hp": 135,
+      "time": 122.24
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-12",
+      "x": 28918,
+      "hp": 135,
+      "time": 123.77
+    },
+    {
+      "event": "gate",
+      "x": 28918.9,
+      "hp": 135,
+      "time": 123.78
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-13",
+      "x": 29329.4,
+      "hp": 135,
+      "time": 125.48
+    },
+    {
+      "event": "checkpoint",
+      "x": 29717,
+      "hp": 135,
+      "time": 126.83
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-14",
+      "x": 29725.5,
+      "hp": 135,
+      "time": 126.97
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-15",
+      "x": 30129.8,
+      "hp": 135,
+      "time": 128.47
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-16",
+      "x": 30529.3,
+      "hp": 135,
+      "time": 129.88
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-17",
+      "x": 30917.5,
+      "hp": 135,
+      "time": 131.33
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-18",
+      "x": 31321.3,
+      "hp": 135,
+      "time": 132.94
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-19",
+      "x": 31726.7,
+      "hp": 135,
+      "time": 134.35
+    },
+    {
+      "event": "gate",
+      "x": 31727.1,
+      "hp": 135,
+      "time": 134.36
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-20",
+      "x": 32130.3,
+      "hp": 135,
+      "time": 136.13
+    },
+    {
+      "event": "checkpoint",
+      "x": 32517.2,
+      "hp": 135,
+      "time": 137.47
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-21",
+      "x": 32525.5,
+      "hp": 135,
+      "time": 137.61
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-22",
+      "x": 32920.5,
+      "hp": 135,
+      "time": 139.11
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-23",
+      "x": 33327.3,
+      "hp": 135,
+      "time": 140.55
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-24",
+      "x": 33729.9,
+      "hp": 135,
+      "time": 141.98
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-25",
+      "x": 34121,
+      "hp": 135,
+      "time": 143.55
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-26",
+      "x": 34527.3,
+      "hp": 135,
+      "time": 145
+    },
+    {
+      "event": "gate",
+      "x": 34527.7,
+      "hp": 135,
+      "time": 145.01
+    },
+    {
+      "event": "checkpoint",
+      "x": 34929.3,
+      "hp": 135,
+      "time": 146.65
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-course-27",
+      "x": 34930.2,
+      "hp": 135,
+      "time": 146.77
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-oath-court",
+      "x": 34971,
+      "hp": 135,
+      "time": 152.35
+    },
+    {
+      "event": "gate",
+      "x": 34971.2,
+      "hp": 135,
+      "time": 152.36
+    },
+    {
+      "event": "gate",
+      "x": 34971.2,
+      "hp": 135,
+      "time": 152.36
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-wind-oath-court",
+      "x": 35806,
+      "hp": 135,
+      "time": 155.02
+    },
+    {
+      "event": "crossingportal",
+      "id": "soulforge-crossing-wind-return",
+      "time": 155.47
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:wind:ending"
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.2,
+      "hp": 135,
+      "time": 155.72
+    },
+    {
+      "event": "crossingportal",
+      "id": "soulforge-crossing-water-entry",
+      "time": 156.48,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:water:opening"
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-landing",
+      "x": 36813.2,
+      "hp": 135,
+      "time": 156.71
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-court-0",
+      "x": 37388.3,
+      "hp": 135,
+      "time": 158.59
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-step-0",
+      "x": 37648,
+      "hp": 135,
+      "time": 159.48
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-teaching-raft-0",
+      "x": 37790,
+      "hp": 135,
+      "time": 160.23
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-bell-0",
+      "x": 37960.3,
+      "hp": 135,
+      "time": 161.04
+    },
+    {
+      "event": "gate",
+      "x": 37960.5,
+      "hp": 135,
+      "time": 161.05
+    },
+    {
+      "event": "hurt",
+      "x": 38258.7,
+      "hp": 127.5,
+      "time": 162.22
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-bridge-0",
+      "x": 38263.5,
+      "hp": 135,
+      "time": 162.76
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-bridge-0",
+      "x": 38332.4,
+      "hp": 135,
+      "time": 163.03
+    },
+    {
+      "event": "hurt",
+      "x": 38366.5,
+      "hp": 131.9,
+      "time": 163.13
+    },
+    {
+      "event": "hurt",
+      "x": 38655.3,
+      "hp": 128.8,
+      "time": 164.04
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-court-1",
+      "x": 38748.4,
+      "hp": 128.8,
+      "time": 164.63
+    },
+    {
+      "event": "hurt",
+      "x": 38832.8,
+      "hp": 125.6,
+      "time": 164.95
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-step-1",
+      "x": 38983,
+      "hp": 125.6,
+      "time": 165.47
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-teaching-raft-1",
+      "x": 39208.2,
+      "hp": 127.7,
+      "time": 167.98
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-bell-1",
+      "x": 39310.7,
+      "hp": 127.7,
+      "time": 168.66
+    },
+    {
+      "event": "gate",
+      "x": 39310.9,
+      "hp": 127.7,
+      "time": 168.67
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-bridge-1",
+      "x": 39614.4,
+      "hp": 135,
+      "time": 170.07
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-bridge-1",
+      "x": 39682.6,
+      "hp": 135,
+      "time": 170.33
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-court-2",
+      "x": 40088.7,
+      "hp": 135,
+      "time": 171.69
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-step-2",
+      "x": 40348.1,
+      "hp": 135,
+      "time": 172.58
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-teaching-raft-2",
+      "x": 40507.8,
+      "hp": 135,
+      "time": 173.48
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-bell-2",
+      "x": 40660.4,
+      "hp": 135,
+      "time": 174.28
+    },
+    {
+      "event": "gate",
+      "x": 40660.6,
+      "hp": 135,
+      "time": 174.28
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-bridge-2",
+      "x": 40964.4,
+      "hp": 135,
+      "time": 175.68
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-bridge-2",
+      "x": 41032.6,
+      "hp": 135,
+      "time": 175.95
+    },
+    {
+      "event": "checkpoint",
+      "x": 41262,
+      "hp": 135,
+      "time": 176.67
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-0",
+      "x": 41311.9,
+      "hp": 135,
+      "time": 176.87
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-causeway-raft-1",
+      "x": 41690.3,
+      "hp": 135,
+      "time": 178.38
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-2",
+      "x": 42126.7,
+      "hp": 135,
+      "time": 180
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-causeway-raft-3",
+      "x": 42446.3,
+      "hp": 135,
+      "time": 181.04
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-4",
+      "x": 42927.8,
+      "hp": 135,
+      "time": 182.72
+    },
+    {
+      "event": "gate",
+      "x": 42928.4,
+      "hp": 135,
+      "time": 182.72
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-causeway-raft-5",
+      "x": 43291.7,
+      "hp": 135,
+      "time": 184.22
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-6",
+      "x": 43727.7,
+      "hp": 135,
+      "time": 185.94
+    },
+    {
+      "event": "checkpoint",
+      "x": 44117.7,
+      "hp": 135,
+      "time": 187.29
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-7",
+      "x": 44125.8,
+      "hp": 135,
+      "time": 187.43
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-causeway-raft-8",
+      "x": 44530.1,
+      "hp": 135,
+      "time": 188.94
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-9",
+      "x": 44929.4,
+      "hp": 135,
+      "time": 190.54
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-causeway-raft-10",
+      "x": 45290.5,
+      "hp": 135,
+      "time": 192.04
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-11",
+      "x": 45721.7,
+      "hp": 135,
+      "time": 193.89
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-causeway-raft-12",
+      "x": 46052.2,
+      "hp": 135,
+      "time": 195.42
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-13",
+      "x": 46507.7,
+      "hp": 135,
+      "time": 196.98
+    },
+    {
+      "event": "gate",
+      "x": 46509.5,
+      "hp": 135,
+      "time": 196.99
+    },
+    {
+      "event": "checkpoint",
+      "x": 46927,
+      "hp": 135,
+      "time": 198.51
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-14",
+      "x": 46929.2,
+      "hp": 135,
+      "time": 198.63
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-15",
+      "x": 47320.6,
+      "hp": 135,
+      "time": 200.14
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-causeway-raft-16",
+      "x": 47692.7,
+      "hp": 135,
+      "time": 201.62
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-17",
+      "x": 48122.4,
+      "hp": 135,
+      "time": 203.12
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-causeway-raft-18",
+      "x": 48524.8,
+      "hp": 135,
+      "time": 204.71
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-19",
+      "x": 48926.1,
+      "hp": 135,
+      "time": 206.96
+    },
+    {
+      "event": "gate",
+      "x": 48926.2,
+      "hp": 135,
+      "time": 206.97
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-20",
+      "x": 49329.3,
+      "hp": 135,
+      "time": 208.67
+    },
+    {
+      "event": "checkpoint",
+      "x": 49717,
+      "hp": 135,
+      "time": 210.02
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-21",
+      "x": 49725.5,
+      "hp": 135,
+      "time": 210.16
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-causeway-raft-22",
+      "x": 50021.2,
+      "hp": 135,
+      "time": 211.17
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-23",
+      "x": 50524,
+      "hp": 135,
+      "time": 212.87
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-causeway-raft-24",
+      "x": 50891.2,
+      "hp": 135,
+      "time": 214.32
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-25",
+      "x": 51321.2,
+      "hp": 135,
+      "time": 216.72
+    },
+    {
+      "event": "gate",
+      "x": 51321.9,
+      "hp": 135,
+      "time": 216.72
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-causeway-raft-26",
+      "x": 51665.3,
+      "hp": 135,
+      "time": 218.27
+    },
+    {
+      "event": "checkpoint",
+      "x": 52117.8,
+      "hp": 135,
+      "time": 219.92
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-course-27",
+      "x": 52125.2,
+      "hp": 135,
+      "time": 220.05
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-oath-court",
+      "x": 52171,
+      "hp": 135,
+      "time": 225.67
+    },
+    {
+      "event": "gate",
+      "x": 52171.2,
+      "hp": 135,
+      "time": 225.68
+    },
+    {
+      "event": "gate",
+      "x": 52171.2,
+      "hp": 135,
+      "time": 225.68
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-water-oath-court",
+      "x": 53006,
+      "hp": 135,
+      "time": 228.34
+    },
+    {
+      "event": "crossingportal",
+      "id": "soulforge-crossing-water-return",
+      "time": 228.79
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:water:ending"
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.2,
+      "hp": 135,
+      "time": 229.04
+    },
+    {
+      "event": "crossingportal",
+      "id": "soulforge-crossing-fire-entry",
+      "time": 229.8,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:fire:opening"
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-landing",
+      "x": 54013.2,
+      "hp": 135,
+      "time": 230.03
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-court-0",
+      "x": 54588.3,
+      "hp": 135,
+      "time": 231.92
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-step-0",
+      "x": 54832.1,
+      "hp": 135,
+      "time": 232.71
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-bell-0",
+      "x": 55120,
+      "hp": 135,
+      "time": 233.61
+    },
+    {
+      "event": "gate",
+      "x": 55122.6,
+      "hp": 135,
+      "time": 233.62
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-bridge-0",
+      "x": 55465.1,
+      "hp": 135,
+      "time": 235.14
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-bridge-0",
+      "x": 55532.8,
+      "hp": 135,
+      "time": 235.41
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-court-1",
+      "x": 55938.1,
+      "hp": 135,
+      "time": 236.76
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-step-1",
+      "x": 56182,
+      "hp": 135,
+      "time": 237.55
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-bell-1",
+      "x": 56469.1,
+      "hp": 135,
+      "time": 238.8
+    },
+    {
+      "event": "gate",
+      "x": 56471.8,
+      "hp": 135,
+      "time": 238.81
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-bridge-1",
+      "x": 56815.1,
+      "hp": 135,
+      "time": 240.33
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-bridge-1",
+      "x": 56882.8,
+      "hp": 135,
+      "time": 240.6
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-court-2",
+      "x": 57288.1,
+      "hp": 135,
+      "time": 241.95
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-step-2",
+      "x": 57532,
+      "hp": 135,
+      "time": 242.74
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-bell-2",
+      "x": 57819.8,
+      "hp": 135,
+      "time": 243.64
+    },
+    {
+      "event": "gate",
+      "x": 57822.5,
+      "hp": 135,
+      "time": 243.65
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-bridge-2",
+      "x": 58165.1,
+      "hp": 135,
+      "time": 245.17
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-bridge-2",
+      "x": 58232.8,
+      "hp": 135,
+      "time": 245.44
+    },
+    {
+      "event": "checkpoint",
+      "x": 58462.1,
+      "hp": 135,
+      "time": 246.16
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-0",
+      "x": 58511,
+      "hp": 135,
+      "time": 246.35
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-1",
+      "x": 58926,
+      "hp": 135,
+      "time": 247.87
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-2",
+      "x": 59322.8,
+      "hp": 135,
+      "time": 249.29
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-3",
+      "x": 59727.9,
+      "hp": 135,
+      "time": 250.87
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-4",
+      "x": 60114,
+      "hp": 135,
+      "time": 252.55
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-5",
+      "x": 60524.5,
+      "hp": 135,
+      "time": 254.02
+    },
+    {
+      "event": "gate",
+      "x": 60525,
+      "hp": 135,
+      "time": 254.03
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-6",
+      "x": 60928.9,
+      "hp": 135,
+      "time": 255.66
+    },
+    {
+      "event": "checkpoint",
+      "x": 61317,
+      "hp": 135,
+      "time": 257
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-7",
+      "x": 61325.5,
+      "hp": 135,
+      "time": 257.14
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-8",
+      "x": 61724.8,
+      "hp": 135,
+      "time": 258.61
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-9",
+      "x": 62122.4,
+      "hp": 135,
+      "time": 260.02
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-10",
+      "x": 62527.7,
+      "hp": 135,
+      "time": 261.59
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-11",
+      "x": 62920.9,
+      "hp": 135,
+      "time": 262.98
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-12",
+      "x": 63323.7,
+      "hp": 135,
+      "time": 265.09
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-13",
+      "x": 63728.1,
+      "hp": 135,
+      "time": 266.67
+    },
+    {
+      "event": "gate",
+      "x": 63728.4,
+      "hp": 135,
+      "time": 266.68
+    },
+    {
+      "event": "checkpoint",
+      "x": 64126.1,
+      "hp": 135,
+      "time": 268.17
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-14",
+      "x": 64128.8,
+      "hp": 135,
+      "time": 268.3
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-15",
+      "x": 64528.1,
+      "hp": 135,
+      "time": 269.88
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-16",
+      "x": 64927,
+      "hp": 135,
+      "time": 271.42
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-17",
+      "x": 65379.9,
+      "hp": 135,
+      "time": 274.04
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-18",
+      "x": 65720.3,
+      "hp": 135,
+      "time": 275.45
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-19",
+      "x": 66122,
+      "hp": 135,
+      "time": 276.87
+    },
+    {
+      "event": "gate",
+      "x": 66122.7,
+      "hp": 135,
+      "time": 276.87
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-20",
+      "x": 66530.2,
+      "hp": 135,
+      "time": 278.65
+    },
+    {
+      "event": "checkpoint",
+      "x": 66917.1,
+      "hp": 135,
+      "time": 279.99
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-21",
+      "x": 66925.5,
+      "hp": 135,
+      "time": 280.13
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-22",
+      "x": 67325.4,
+      "hp": 135,
+      "time": 281.62
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-23",
+      "x": 67731,
+      "hp": 135,
+      "time": 287.47
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-24",
+      "x": 68122.1,
+      "hp": 135,
+      "time": 288.87
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-25",
+      "x": 68527.7,
+      "hp": 135,
+      "time": 290.44
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-26",
+      "x": 68920.3,
+      "hp": 135,
+      "time": 291.82
+    },
+    {
+      "event": "gate",
+      "x": 68921.1,
+      "hp": 135,
+      "time": 291.83
+    },
+    {
+      "event": "checkpoint",
+      "x": 69328.8,
+      "hp": 135,
+      "time": 293.46
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-course-27",
+      "x": 69330,
+      "hp": 135,
+      "time": 293.58
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-oath-court",
+      "x": 69371,
+      "hp": 135,
+      "time": 299.17
+    },
+    {
+      "event": "gate",
+      "x": 69371.2,
+      "hp": 135,
+      "time": 299.18
+    },
+    {
+      "event": "gate",
+      "x": 69371.2,
+      "hp": 135,
+      "time": 299.18
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-crossing-fire-oath-court",
+      "x": 70206,
+      "hp": 135,
+      "time": 301.84
+    },
+    {
+      "event": "crossingportal",
+      "id": "soulforge-crossing-fire-return",
+      "time": 302.29
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:fire:ending"
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.2,
+      "hp": 135,
+      "time": 302.54
+    },
+    {
+      "event": "bossstart",
+      "x": 17670,
+      "hp": 135,
+      "time": 303.64
+    },
+    {
+      "event": "hurt",
+      "x": 18171.7,
+      "hp": 120,
+      "time": 308.58
+    },
+    {
+      "event": "hurt",
+      "x": 18267.9,
+      "hp": 122.8,
+      "time": 311.63
+    },
+    {
+      "event": "bossdefeated",
+      "id": "soulforge-regent",
+      "time": 312.39,
+      "hp": 122.8
+    },
+    {
+      "event": "gate",
+      "x": 18321.1,
+      "hp": 122.8,
+      "time": 312.39
+    },
+    {
+      "event": "landing",
+      "id": "soulforge-arena-105",
+      "x": 18321.1,
+      "hp": 122.8,
+      "time": 312.39
+    },
+    {
+      "event": "hurt",
+      "x": 18364.7,
+      "hp": 119.7,
+      "time": 312.55
+    },
+    {
+      "event": "hurt",
+      "x": 18653.5,
+      "hp": 116.5,
+      "time": 313.46
+    },
+    {
+      "event": "win",
+      "x": 18682,
+      "hp": 116.5,
+      "time": 313.56
+    }
+  ]
+}

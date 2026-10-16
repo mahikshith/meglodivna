@@ -1,0 +1,86 @@
+{
+  "sampledAt": "2026-10-16T21:36:03.831Z",
+  "combinedHash": "189c6ef3259bfbb0415915821a8ff739c0926bfe1c54586fd9cb17263e115988",
+  "sources": {
+    "src/blade-motion.js": {
+      "sha256": "70d2e5a8869657f8b85ca82f2c70e330c1d7a76d8991fc9fae7beadfa1d05527",
+      "modifiedAt": "2026-10-16T18:51:31.898Z"
+    },
+    "src/camera.js": {
+      "sha256": "332f75f253599e3633ba3dfb27242b323eaaf5b8482204d91cbbda3f6922a3d0",
+      "modifiedAt": "2026-10-14T18:03:04.381Z"
+    },
+    "src/catalog.js": {
+      "sha256": "d851cb49e16fe17d2c1ac70012f370e1b33bd1d8e059e1eb48e7804554d2cce1",
+      "modifiedAt": "2026-10-16T19:34:35.753Z"
+    },
+    "src/character-geometry.js": {
+      "sha256": "7d8a2689cc22ca7b2196b555ade746c8465c3bbb4fdc26536d998240e87afeff",
+      "modifiedAt": "2026-10-16T21:33:29.870Z"
+    },
+    "src/character-motion.js": {
+      "sha256": "475b207c11ded54893424617f18485ee2c79ecad0ef8409586d7249f437b0389",
+      "modifiedAt": "2026-10-16T19:35:03.924Z"
+    },
+    "src/combat.js": {
+      "sha256": "86ed8abf88212e0ae40480faf877deaab78986b806307e0e37afabf2d9e79246",
+      "modifiedAt": "2026-10-16T20:34:08.539Z"
+    },
+    "src/companions.js": {
+      "sha256": "be3f25dab44a32334186e1a788566bb297b89eb9cf6409195455b1d2dffcf2c5",
+      "modifiedAt": "2026-10-16T20:40:27.029Z"
+    },
+    "src/crossing-courses.js": {
+      "sha256": "ac381e8ab8b9ec6bc9c292683b7e22d7b97375464cc0ee9b06a214a4f4b73237",
+      "modifiedAt": "2026-10-16T20:48:09.829Z"
+    },
+    "src/crossings.js": {
+      "sha256": "8a8a0ecdb07f731577ead1b3e67e8eb5b2ceca307da70e592b5e906d986a8faf",
+      "modifiedAt": "2026-10-16T20:52:48.611Z"
+    },
+    "src/enemy-motion.js": {
+      "sha256": "edd5881630507ba1a145abcf89d9126b9896a34cc9417f26685f568279363dcc",
+      "modifiedAt": "2026-10-15T12:49:04.934Z"
+    },
+    "src/input.js": {
+      "sha256": "f343c5aa5d3406f1b8e38556b45ee99d4050942595b5da86be7b32f9cc033807",
+      "modifiedAt": "2026-10-16T20:38:08.580Z"
+    },
+    "src/ironfang-geometry.js": {
+      "sha256": "eed318fcd1b70a8982212fccc9b0ae9851f18c2433245a2d40639565cdfafa04",
+      "modifiedAt": "2026-10-16T21:08:34.666Z"
+    },
+    "src/ironfang.js": {
+      "sha256": "3ade8eb413b4fc775c4d32eede37108ba120507657842a798aa174045e2d0eaa",
+      "modifiedAt": "2026-10-16T19:35:04.178Z"
+    },
+    "src/legacy-level.js": {
+      "sha256": "21614250e936233c0bfea0ce0626a528f618651ac9dc679ab7e27691e0e0f1fa",
+      "modifiedAt": "2026-10-14T12:27:11.680Z"
+    },
+    "src/level.js": {
+      "sha256": "41dbe349fbe7859f701253cb9f23d0b9562b2b2fe2b8b381773e38523eab6d83",
+      "modifiedAt": "2026-10-16T18:49:08.968Z"
+    },
+    "src/physics.js": {
+      "sha256": "ab87b5534f22293f85bed634997fae3f2431fee147d32cdc239985ccb7e8a9ba",
+      "modifiedAt": "2026-10-16T19:31:38.835Z"
+    },
+    "src/progress.js": {
+      "sha256": "d9e1898c98c05e761ad533999eedbf611f7cc13074a69504cb20c4a72b1ca211",
+      "modifiedAt": "2026-10-16T20:47:12.080Z"
+    },
+    "src/rune-worlds.js": {
+      "sha256": "90da2751f09c4384227d15d430794800535283eda6256f58611079e9280d0754",
+      "modifiedAt": "2026-10-16T20:36:48.326Z"
+    },
+    "src/story.js": {
+      "sha256": "146c76ea5ef1076c08a30ee1821bf47e41a09a56e519991325e28ab54e7fd5d2",
+      "modifiedAt": "2026-10-16T20:41:14.442Z"
+    },
+    "src/worlds.js": {
+      "sha256": "f3e899199f1fe72be50fa777d268ddde5133aa8c32bab81a56bc975d29af9daa",
+      "modifiedAt": "2026-10-14T12:27:11.703Z"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Controls } from '../src/input.js';
+import { createPlayer, stepPlayer } from '../src/physics.js';
 
 function fixture() {
   const saved = Object.fromEntries(['window', 'document', 'navigator'].map(key => [key, Object.getOwnPropertyDescriptor(globalThis, key)]));
@@ -27,7 +28,10 @@ function fixture() {
   return { controls, actions, surface, gear, pause, feedback, win,
     get palettes() { return palettes; }, get pauses() { return pauses; },
     setModal(value) { modal = value; },
-    elapsed(id, ms) { controls.pressTimes.set(id, performance.now() - ms); },
+    elapsed(id, ms) {
+      controls.pressTimes.set(id, performance.now() - ms);
+      if (controls.pointers.get(id) === 'boost') controls.boostTouchStarted = performance.now() - ms;
+    },
     restore() { for (const [key, descriptor] of Object.entries(saved)) if (descriptor) Object.defineProperty(globalThis, key, descriptor); else delete globalThis[key]; },
   };
 }
@@ -57,11 +61,83 @@ test('boost replaces dash and attack finger aims independently of the movement s
     let input = f.controls.read();
     assert.equal(input.move, 1); assert.equal(input.aimX, 0); assert.equal(input.aimY, 1);
     assert.equal(input.independentAim, true); assert.equal(input.shoot, true);
-    assert.equal(input.boostPressed, true); assert.equal(input.dashPressed, undefined);
+    assert.equal(input.boostPressed, false); assert.equal(input.dashPressed, undefined);
     f.elapsed(2, 180); input = f.controls.read(); assert.equal(input.jet, true); assert.equal(input.boostPressed, false);
     f.actions.attack.emit('pointerup', 1); assert.equal(f.controls.read().jet, true);
     assert.equal(f.controls.read().independentAim, false);
-    f.actions.boost.emit('pointerup', 2); assert.equal(f.controls.read().jet, false);
+    f.actions.boost.emit('pointerup', 2); input = f.controls.read(); assert.equal(input.jet, false); assert.equal(input.boostPressed, false);
+  } finally { f.restore(); }
+});
+
+test('a short Boost tap surges once on release; cancellation and interrupted holds never surge', () => {
+  const f = fixture();
+  try {
+    f.actions.boost.emit('pointerdown', 1);
+    assert.equal(f.controls.read().boostPressed, false);
+    f.actions.boost.emit('pointerup', 1);
+    assert.equal(f.controls.read(false).boostPressed, true);
+    assert.equal(f.controls.read().boostPressed, true);
+    assert.equal(f.controls.read().boostPressed, false);
+    f.actions.boost.emit('pointerdown', 2); f.actions.boost.emit('pointercancel', 2);
+    assert.equal(f.controls.read().boostPressed, false);
+    f.actions.boost.emit('pointerdown', 3); f.elapsed(3, 180); f.controls.read();
+    f.actions.boost.emit('pointerdown', 4); f.actions.boost.emit('pointerup', 3);
+    assert.equal(f.controls.read().jet, true, 'A second finger preserves the original held gesture');
+    f.actions.boost.emit('pointerup', 4);
+    assert.equal(f.controls.read().boostPressed, false, 'The last short-lived finger cannot convert a long hold to a tap');
+    f.actions.boost.emit('pointerdown', 5); f.win.emit('blur'); f.actions.boost.emit('pointerup', 5);
+    assert.equal(f.controls.read().boostPressed, false);
+  } finally { f.restore(); }
+});
+
+test('held Boost reproduces v0.8 continuous flight and release for normal and heavy armor', () => {
+  // Golden trajectory sampled from the immutable v0.8.0-lantern physics tag,
+  // starting airborne at (100,600), vy=-250, then holding thrust for exactly120ticks.
+  const expected = [
+    [1, 100.10416666666667, 597.8611111111111, 12.5, -256.6666666666667],
+    [30, 147.1875, 521.1666666666666, 320, -330],
+    [60, 227.1875, 438.66666666666663, 320, -330],
+    [120, 387.1875, 273.66666666666663, 320, -330],
+    [180, 547.1875, 337.41666666666663, 320, 570],
+  ];
+  for (const fuelRate of [1, 1.5]) {
+    const f = fixture();
+    try {
+      const p = createPlayer(100, 600); p.vy = -250; p.fuelRate = fuelRate;
+      f.controls.stick = { x: 1, y: 0 }; f.actions.boost.emit('pointerdown', 1); f.elapsed(1, 180);
+      for (let frame = 1; frame <= 180; frame++) {
+        if (frame === 121) f.actions.boost.emit('pointerup', 1);
+        const input = f.controls.read(); assert.equal(input.boostPressed, false);
+        stepPlayer(p, input, [], 1 / 120);
+        const sample = expected.find(row => row[0] === frame);
+        if (sample) {
+          for (const [index, key] of ['x', 'y', 'vx', 'vy'].entries()) assert.ok(Math.abs(p[key] - sample[index + 1]) < 1e-8, `${key} at${frame},armor${fuelRate}`);
+          assert.ok(Math.abs(p.fuel - (100 - Math.min(frame, 120) / 120 * 50 * fuelRate)) < 1e-8);
+        }
+        assert.equal(p.boostActive, false);
+      }
+    } finally { f.restore(); }
+  }
+});
+
+test('Shift and gamepad B use the same tap-or-hold choice as touch', () => {
+  const f = fixture(), key = (type, code = 'ShiftLeft') => f.win.emit(type, 0, { code, repeat: false, target: { tagName: 'BODY' } });
+  try {
+    key('keydown'); assert.equal(f.controls.read().boostPressed, false);
+    key('keyup'); assert.equal(f.controls.read().boostPressed, true);
+    key('keydown'); f.controls.boostKeyStarted = performance.now() - 180;
+    let input = f.controls.read(); assert.equal(input.jet, true); assert.equal(input.boostPressed, false);
+    key('keyup'); input = f.controls.read(); assert.equal(input.jet, false); assert.equal(input.boostPressed, false);
+    key('keydown', 'KeyL'); assert.equal(f.controls.read().jet, true, 'Dedicated jet key stays immediate'); key('keyup', 'KeyL');
+    const pad = { connected: true, buttons: [{}, { pressed: true }], axes: [] };
+    navigator.getGamepads = () => [pad];
+    assert.equal(f.controls.read().boostPressed, false);
+    pad.buttons[1].pressed = false; assert.equal(f.controls.read().boostPressed, true);
+    pad.buttons[1].pressed = true; f.controls.read(); f.controls.boostPadStarted = performance.now() - 180;
+    input = f.controls.read(); assert.equal(input.jet, true); assert.equal(input.boostPressed, false);
+    pad.buttons[1].pressed = false; input = f.controls.read(); assert.equal(input.jet, false); assert.equal(input.boostPressed, false);
+    pad.buttons[1].pressed = true; f.controls.read(); pad.connected = false;
+    assert.equal(f.controls.read().boostPressed, false, 'Disconnect is cancellation, not a tap');
   } finally { f.restore(); }
 });
 

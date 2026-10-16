@@ -33,15 +33,15 @@ jobs:
       - run: npm ci
       - name: Complete campaign through legal inputs
         run: |
-          rm -f "artifacts/${{ matrix.report }}"
-          node scripts/combat-route.mjs ${{ matrix.args }}
+          rm -f "artifacts/playtest-correction/${{ matrix.report }}"
+          node scripts/combat-route.mjs ${{ matrix.args }} --correction
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: campaign-${{ matrix.id }}
           path: |
-            artifacts/${{ matrix.report }}
-            artifacts/epic-rebuild/drivers/*.mjs
+            artifacts/playtest-correction/${{ matrix.report }}
+            artifacts/playtest-correction/drivers/*.mjs
           if-no-files-found: error
   apk:
     needs: campaign
@@ -75,6 +75,8 @@ jobs:
         run: npm ci && npm test
       - name: Build offline game
         run: npm run build && node scripts/sync-android.mjs
+      - name: Verify correction evidence against tagged sources and bundle
+        run: node scripts/verify-correction-evidence.mjs
       - name: Build and lint debug APK
         working-directory: android
         run: chmod +x gradlew && ./gradlew assembleDebug lintDebug --no-daemon
@@ -95,6 +97,7 @@ jobs:
           name: Runeheart-test-evidence
           path: |
             artifacts/*report.json
+            artifacts/playtest-correction/*report.json
             android/app/build/reports/lint-results-debug.html
   prerelease:
     if: startsWith(github.ref, 'refs/tags/v') && endsWith(github.ref, '-lantern')
@@ -118,20 +121,20 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
           mkdir -p release-upload downloaded
-          cp release-apk/app-debug.apk release-upload/ASH-SIGNAL-Lantern-v0.9.0.apk
+          cp release-apk/app-debug.apk release-upload/ASH-SIGNAL-Lantern-v0.10.0.apk
           cp release-evidence/artifacts/android-report.json release-upload/android-report.json
-          cp artifacts/epic-rebuild/validation.json release-upload/validation.json
+          cp artifacts/playtest-correction/validation.json release-upload/validation.json
           python - <<'PY'
           import hashlib, json, os
           from pathlib import Path
-          apk = Path('release-upload/ASH-SIGNAL-Lantern-v0.9.0.apk')
+          apk = Path('release-upload/ASH-SIGNAL-Lantern-v0.10.0.apk')
           report = json.loads(Path('release-upload/android-report.json').read_text())
           assert hashlib.sha256(apk.read_bytes()).hexdigest() == report['sha256']
-          assert report['version'] == '0.9.0-lantern' and report['versionCode'] == 10
+          assert report['version'] == '0.10.0-lantern' and report['versionCode'] == 11
           assert os.environ['RELEASE_TAG'] == 'v' + report['version'], 'Release tag and verified APK version differ'
           Path('release-upload/SHA256SUMS.txt').write_text(report['sha256'] + '  ' + apk.name + '\n')
           PY
-          gh release create "$RELEASE_TAG" release-upload/* --verify-tag --prerelease --title "The Last Lantern v0.9.0 — Oath Crossings test build" --notes-file docs/OATH-CROSSINGS-RELEASE.md
-          gh release download "$RELEASE_TAG" --dir downloaded --pattern ASH-SIGNAL-Lantern-v0.9.0.apk
-          cmp release-upload/ASH-SIGNAL-Lantern-v0.9.0.apk downloaded/ASH-SIGNAL-Lantern-v0.9.0.apk
+          gh release create "$RELEASE_TAG" release-upload/* --verify-tag --prerelease --title "The Last Lantern v0.10.0 - The Lantern Path test build" --notes-file docs/LANTERN-PATH-RELEASE.md
+          gh release download "$RELEASE_TAG" --dir downloaded --pattern ASH-SIGNAL-Lantern-v0.10.0.apk
+          cmp release-upload/ASH-SIGNAL-Lantern-v0.10.0.apk downloaded/ASH-SIGNAL-Lantern-v0.10.0.apk
           echo "Uploaded APK downloaded again and matched byte for byte." >> "$GITHUB_STEP_SUMMARY"

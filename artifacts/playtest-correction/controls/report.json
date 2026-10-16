@@ -1,0 +1,447 @@
+{
+  "kind": "Real keyboard and Chromium multitouch inputs on the running game",
+  "physicalDevice": false,
+  "injectedSimulation": false,
+  "campaignCompletion": false,
+  "started": "2026-10-16T21:54:21.707Z",
+  "checks": [
+    {
+      "name": "Real start, intro pause and skip reach playable scene with Boost control",
+      "evidence": {
+        "mode": "playing",
+        "time": 0.041666666666666664,
+        "x": 98,
+        "y": 1200,
+        "vx": 0,
+        "vy": 0,
+        "fuel": 100,
+        "grounded": true,
+        "crouching": false,
+        "jet": false,
+        "boost": false,
+        "facing": 1,
+        "shooting": false,
+        "slashId": 0,
+        "pointers": 0,
+        "move": 0,
+        "inputJet": false,
+        "inputShoot": false,
+        "sprite": "cr-courier-0",
+        "savedCampaign": null,
+        "savedTest": null
+      }
+    },
+    {
+      "name": "Airborne touch boost spends exactly18 fuel and creates no sword attack",
+      "evidence": {
+        "before": {
+          "mode": "playing",
+          "time": 0.05833333333333333,
+          "x": 98,
+          "y": 1196.2083333333335,
+          "vx": 0,
+          "vy": -220,
+          "fuel": 100,
+          "grounded": false,
+          "crouching": false,
+          "jet": false,
+          "boost": false,
+          "facing": 1,
+          "shooting": false,
+          "slashId": 0,
+          "pointers": 0,
+          "move": 0,
+          "inputJet": false,
+          "inputShoot": false,
+          "sprite": "cr-courier-8",
+          "savedCampaign": null,
+          "savedTest": null
+        },
+        "boosted": {
+          "mode": "playing",
+          "time": 0.15833333333333333,
+          "x": 108.33333333333334,
+          "y": 1184.750000000001,
+          "vx": 620,
+          "vy": 0,
+          "fuel": 82,
+          "grounded": false,
+          "crouching": false,
+          "jet": true,
+          "boost": true,
+          "facing": 1,
+          "shooting": false,
+          "slashId": 0,
+          "pointers": 0,
+          "move": 0,
+          "inputJet": false,
+          "inputShoot": false,
+          "sprite": "cr-courier-9",
+          "savedCampaign": null,
+          "savedTest": null
+        }
+      }
+    },
+    {
+      "name": "Held Boost gives clean sustained ascent with no sideways burst, extra fuel fee or release surge",
+      "evidence": {
+        "beforeHold": {
+          "mode": "playing",
+          "time": 0.9416666666666658,
+          "x": 269.9583333333333,
+          "y": 1151.0416666666674,
+          "vx": 0,
+          "vy": -520,
+          "fuel": 100,
+          "grounded": false,
+          "crouching": false,
+          "jet": false,
+          "boost": false,
+          "facing": 1,
+          "shooting": false,
+          "slashId": 0,
+          "pointers": 0,
+          "move": 0,
+          "inputJet": false,
+          "inputShoot": false,
+          "sprite": "cr-courier-8",
+          "savedCampaign": null,
+          "savedTest": null
+        },
+        "heldBoost": {
+          "mode": "playing",
+          "time": 1.441666666666664,
+          "x": 269.9583333333333,
+          "y": 1170.8333333333364,
+          "vx": 0,
+          "vy": -3.197442310920451e-14,
+          "fuel": 87.49999999999986,
+          "grounded": false,
+          "crouching": false,
+          "jet": true,
+          "boost": false,
+          "facing": 1,
+          "shooting": false,
+          "slashId": 0,
+          "pointers": 1,
+          "move": 0,
+          "inputJet": true,
+          "inputShoot": false,
+          "sprite": "cr-courier-9",
+          "savedCampaign": null,
+          "savedTest": null
+        },
+        "releasedHold": {
+          "mode": "playing",
+          "time": 1.8416666666666626,
+          "x": 269.9583333333333,
+          "y": 1112.0000000000034,
+          "vx": 0,
+          "vy": -146.66666666666663,
+          "fuel": 70.833333333333,
+          "grounded": false,
+          "crouching": false,
+          "jet": false,
+          "boost": false,
+          "facing": 1,
+          "shooting": false,
+          "slashId": 0,
+          "pointers": 0,
+          "move": 0,
+          "inputJet": false,
+          "inputShoot": false,
+          "sprite": "cr-courier-8",
+          "savedCampaign": null,
+          "savedTest": null
+        }
+      }
+    },
+    {
+      "name": "Walking right while the attack finger aims left preserves travel and turns the gun",
+      "evidence": {
+        "mode": "playing",
+        "time": 3.024999999999992,
+        "x": 374.09659436196904,
+        "y": 1200,
+        "vx": 300.7121330505637,
+        "vy": 0,
+        "fuel": 100,
+        "grounded": true,
+        "crouching": false,
+        "jet": false,
+        "boost": false,
+        "facing": -1,
+        "aim": 3.141592653589793,
+        "shooting": true,
+        "slashId": 1,
+        "pointers": 1,
+        "move": 0.9397254157830115,
+        "inputJet": false,
+        "inputShoot": true,
+        "sprite": "cr-couriergunrun-0",
+        "savedCampaign": null,
+        "savedTest": null
+      }
+    },
+    {
+      "name": "Three actual fingers sustain movement, downward shooting and booster ascent together",
+      "evidence": {
+        "mode": "playing",
+        "time": 4.074999999999992,
+        "x": 608.8063252657136,
+        "y": 1154.0000000000048,
+        "vx": 300.7121330505637,
+        "vy": -3.3333333333333286,
+        "fuel": 81.66666666666646,
+        "grounded": false,
+        "crouching": false,
+        "jet": true,
+        "boost": false,
+        "facing": 1,
+        "aim": 1.5707963267948966,
+        "shooting": true,
+        "slashId": 2,
+        "pointers": 2,
+        "move": 0.9397254157830115,
+        "inputJet": true,
+        "inputShoot": true,
+        "sprite": "cr-couriergunair-2",
+        "savedCampaign": null,
+        "savedTest": null
+      }
+    },
+    {
+      "name": "Down plus forward and shooting holds a planted crouch without drift",
+      "evidence": {
+        "crouched": {
+          "mode": "playing",
+          "time": 5.058333333333374,
+          "x": 729.4770373677574,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "fuel": 75.91666666666617,
+          "grounded": true,
+          "crouching": true,
+          "jet": false,
+          "boost": false,
+          "facing": 1,
+          "aim": 0,
+          "shooting": true,
+          "slashId": 2,
+          "pointers": 0,
+          "move": 1,
+          "inputJet": false,
+          "inputShoot": true,
+          "sprite": "cr-courierguncrouch-1",
+          "savedCampaign": null,
+          "savedTest": "{\"version\":1,\"layoutVersion\":3,\"unlocked\":{\"sword\":[\"rustfang\",\"katana\",\"saber\"],\"gun\":[\"carbine\",\"scatter\",\"rail\",\"rocket\",\"cannon\"],\"armor\":[\"courier\",\"lanternplate\",\"bulwark\",\"wraith\"],\"spell\":[\"cinder\",\"raven\",\"siphon\",\"thunder\",\"veil\",\"stasis\",\"eclipse\",\"clone\",\"wolf\",\"dragon\"]},\"equipped\":{\"sword\":\"rustfang\",\"gun\":\"carbine\",\"armor\":\"courier\",\"spell\":\"wolf\"},\"collections\":[],\"claimed\":[\"pickup:soulforge-spell-3\"],\"defeatedBosses\":[],\"openedGates\":[],\"destroyedProps\":[],\"charges\":{\"cannon\":9,\"nova\":9},\"checkpoint\":0,\"worldId\":\"soulforge\",\"worlds\":{},\"completedWorlds\":[],\"souls\":9999,\"soulClaims\":[],\"pendingSouls\":[],\"upgrades\":{\"armor\":0,\"artifact\":0},\"testMode\":true}"
+        },
+        "stillCrouched": {
+          "mode": "playing",
+          "time": 5.191666666666714,
+          "x": 729.4770373677574,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "fuel": 83.24999999999943,
+          "grounded": true,
+          "crouching": true,
+          "jet": false,
+          "boost": false,
+          "facing": 1,
+          "aim": 0,
+          "shooting": true,
+          "slashId": 2,
+          "pointers": 0,
+          "move": 1,
+          "inputJet": false,
+          "inputShoot": true,
+          "sprite": "cr-courierguncrouch-1",
+          "savedCampaign": null,
+          "savedTest": "{\"version\":1,\"layoutVersion\":3,\"unlocked\":{\"sword\":[\"rustfang\",\"katana\",\"saber\"],\"gun\":[\"carbine\",\"scatter\",\"rail\",\"rocket\",\"cannon\"],\"armor\":[\"courier\",\"lanternplate\",\"bulwark\",\"wraith\"],\"spell\":[\"cinder\",\"raven\",\"siphon\",\"thunder\",\"veil\",\"stasis\",\"eclipse\",\"clone\",\"wolf\",\"dragon\"]},\"equipped\":{\"sword\":\"rustfang\",\"gun\":\"carbine\",\"armor\":\"courier\",\"spell\":\"wolf\"},\"collections\":[],\"claimed\":[\"pickup:soulforge-spell-3\"],\"defeatedBosses\":[],\"openedGates\":[],\"destroyedProps\":[],\"charges\":{\"cannon\":9,\"nova\":9},\"checkpoint\":0,\"worldId\":\"soulforge\",\"worlds\":{},\"completedWorlds\":[],\"souls\":9999,\"soulClaims\":[],\"pendingSouls\":[],\"upgrades\":{\"armor\":0,\"artifact\":0},\"testMode\":true}"
+        }
+      }
+    },
+    {
+      "name": "Test save starts charged and all six engine upgrade ranks purchase through real buttons without granting relics or opening gates",
+      "evidence": {
+        "testStart": {
+          "charges": {
+            "cannon": 9,
+            "nova": 9
+          },
+          "souls": 9999
+        },
+        "upgrades": [
+          {
+            "id": "armor",
+            "rank": 1
+          },
+          {
+            "id": "armor",
+            "rank": 2
+          },
+          {
+            "id": "armor",
+            "rank": 3
+          },
+          {
+            "id": "artifact",
+            "rank": 1
+          },
+          {
+            "id": "artifact",
+            "rank": 2
+          },
+          {
+            "id": "artifact",
+            "rank": 3
+          }
+        ],
+        "engine": {
+          "souls": 9714,
+          "upgrades": {
+            "armor": 3,
+            "artifact": 3
+          },
+          "collections": [],
+          "gates": []
+        }
+      }
+    },
+    {
+      "name": "Opening gear clears held fingers and freezes simulation; every gear item equips without touching campaign save",
+      "evidence": {
+        "equipped": {
+          "sword": [
+            "Rustfang",
+            "Storm Katana",
+            "Soul Saber"
+          ],
+          "gun": [
+            "Ash Carbine",
+            "Grave Scattergun",
+            "Storm Rail",
+            "Cinder Launcher",
+            "Oblivion Cannon"
+          ],
+          "armor": [
+            "Lantern Plate",
+            "Courier Rig",
+            "Bulwark Plate",
+            "Wraith Weave"
+          ],
+          "spell": [
+            "Bell Raven",
+            "Cinder Plague",
+            "Soul Siphon",
+            "Skybreaker",
+            "Shadow Veil",
+            "Stillgrave",
+            "Eclipse Nova",
+            "Courier Echo",
+            "Ash Wolf",
+            "Cinder Wyrm"
+          ]
+        },
+        "originalCampaign": null,
+        "menu": {
+          "mode": "catalogue",
+          "time": 5.808333333333412,
+          "x": 729.4770373677574,
+          "y": 1200,
+          "vx": 0,
+          "vy": 0,
+          "fuel": 100,
+          "grounded": true,
+          "crouching": false,
+          "jet": false,
+          "boost": false,
+          "facing": 1,
+          "aim": 0,
+          "shooting": true,
+          "slashId": 3,
+          "pointers": 0,
+          "move": 0,
+          "inputJet": false,
+          "inputShoot": false,
+          "sprite": "cr-courier-15",
+          "savedCampaign": null,
+          "savedTest": "{\"version\":1,\"layoutVersion\":3,\"unlocked\":{\"sword\":[\"rustfang\",\"katana\",\"saber\"],\"gun\":[\"carbine\",\"scatter\",\"rail\",\"rocket\",\"cannon\"],\"armor\":[\"courier\",\"lanternplate\",\"bulwark\",\"wraith\"],\"spell\":[\"cinder\",\"raven\",\"siphon\",\"thunder\",\"veil\",\"stasis\",\"eclipse\",\"clone\",\"wolf\",\"dragon\"]},\"equipped\":{\"sword\":\"rustfang\",\"gun\":\"carbine\",\"armor\":\"courier\",\"spell\":\"wolf\"},\"collections\":[],\"claimed\":[\"pickup:soulforge-spell-3\"],\"defeatedBosses\":[],\"openedGates\":[],\"destroyedProps\":[],\"charges\":{\"cannon\":9,\"nova\":9},\"checkpoint\":0,\"worldId\":\"soulforge\",\"worlds\":{},\"completedWorlds\":[],\"souls\":9999,\"soulClaims\":[],\"pendingSouls\":[],\"upgrades\":{\"armor\":0,\"artifact\":0},\"testMode\":true}"
+        }
+      }
+    },
+    {
+      "name": "Keyboard pause closes active gameplay cleanly",
+      "evidence": {
+        "mode": "paused",
+        "time": 5.866666666666748,
+        "x": 729.4770373677574,
+        "y": 1200,
+        "vx": 0,
+        "vy": 0,
+        "fuel": 100,
+        "grounded": true,
+        "crouching": false,
+        "jet": false,
+        "boost": false,
+        "facing": 1,
+        "aim": 0,
+        "shooting": false,
+        "slashId": 3,
+        "pointers": 0,
+        "move": 0,
+        "inputJet": false,
+        "inputShoot": false,
+        "sprite": "cr-couriergun-0",
+        "savedCampaign": null,
+        "savedTest": "{\"version\":1,\"layoutVersion\":3,\"unlocked\":{\"sword\":[\"rustfang\",\"katana\",\"saber\"],\"gun\":[\"carbine\",\"scatter\",\"rail\",\"rocket\",\"cannon\"],\"armor\":[\"courier\",\"lanternplate\",\"bulwark\",\"wraith\"],\"spell\":[\"cinder\",\"raven\",\"siphon\",\"thunder\",\"veil\",\"stasis\",\"eclipse\",\"clone\",\"wolf\",\"dragon\"]},\"equipped\":{\"sword\":\"saber\",\"gun\":\"cannon\",\"armor\":\"wraith\",\"spell\":\"dragon\"},\"collections\":[],\"claimed\":[\"pickup:soulforge-spell-3\"],\"defeatedBosses\":[],\"openedGates\":[],\"destroyedProps\":[],\"charges\":{\"cannon\":9,\"nova\":9},\"checkpoint\":0,\"worldId\":\"soulforge\",\"worlds\":{},\"completedWorlds\":[],\"souls\":9714,\"soulClaims\":[],\"pendingSouls\":[],\"upgrades\":{\"armor\":3,\"artifact\":3},\"testMode\":true}"
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "sourceHashes": {
+    "src/input.js": "f343c5aa5d3406f1b8e38556b45ee99d4050942595b5da86be7b32f9cc033807",
+    "src/physics.js": "ab87b5534f22293f85bed634997fae3f2431fee147d32cdc239985ccb7e8a9ba",
+    "src/combat.js": "86ed8abf88212e0ae40480faf877deaab78986b806307e0e37afabf2d9e79246",
+    "src/main.js": "0a70d791cc12b733e323b2657192e4bd255abd79a316db26eb42f17f05b78fdc",
+    "src/ui.js": "3516f68cd17f821d80fc2b6b20be3688f3d862832e80228a4442deacf97ba8fb",
+    "index.html": "102882cbfc620d56afbb2784a39d1fda8c21af60c3d8c9217798270b42fab271",
+    "src/character-motion.js": "475b207c11ded54893424617f18485ee2c79ecad0ef8409586d7249f437b0389",
+    "src/character-geometry.js": "7d8a2689cc22ca7b2196b555ade746c8465c3bbb4fdc26536d998240e87afeff",
+    "public/character-revision/manifest.json": "3e58c9adb23aae69a65c1c40164caac79ab31979edb4fd33c313de8d8dc94e9b",
+    "public/character-revision/atlas.json": "0397f026716d5c492571730215aca16eee47ce2f0a2ab6c3ffcc330acf8cc22b"
+  },
+  "boostTapDebug": {
+    "mode": "playing",
+    "trace": [
+      {
+        "name": "pointerdown",
+        "at": 11666.400000095367,
+        "id": 2
+      },
+      {
+        "name": "pointerup",
+        "at": 11737.5,
+        "id": 2
+      },
+      {
+        "name": "lostpointercapture",
+        "at": 11738.5,
+        "id": 2
+      }
+    ],
+    "edges": [
+      "boost"
+    ],
+    "pointers": [],
+    "boostTouchStarted": null,
+    "fuel": 100,
+    "dashTime": 0,
+    "boostActive": false
+  },
+  "ok": true,
+  "finished": "2026-10-16T21:54:46.251Z"
+}

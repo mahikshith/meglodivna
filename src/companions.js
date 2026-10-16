@@ -2,9 +2,9 @@ import { moveBody, overlaps } from './physics.js';
 import { companionFrame, characterSocket, firingFrame } from './character-motion.js';
 
 export const COMPANIONS = Object.freeze({
-  wolf: { w: 60, h: 34, speed: 300, acceleration: 1250, jump: 660, range: 112, windup: .14, contact: .22, recovery: .48, cooldown: .95 },
+  wolf: { w: 72, h: 46, speed: 300, acceleration: 1250, jump: 660, range: 124, windup: .14, contact: .22, recovery: .48, cooldown: .95 },
   clone: { w: 28, h: 60, speed: 215, acceleration: 1050, jump: 620, range: 650, windup: .18, contact: .10, recovery: .28, cooldown: .85 },
-  dragon: { w: 72, h: 48, speed: 235, acceleration: 560, range: 470, windup: .3, contact: .42, recovery: .4, cooldown: 1.45, flying: true },
+  dragon: { w: 94, h: 60, speed: 235, acceleration: 560, range: 470, windup: .3, contact: .42, recovery: .4, cooldown: 1.45, flying: true },
   raven: { w: 42, h: 30, speed: 330, acceleration: 1000, range: 420, windup: .2, contact: .55, recovery: .55, cooldown: 1.6, flying: true },
 });
 const center = a => ({ x: a.x + a.w / 2, y: a.y + a.h / 2 });

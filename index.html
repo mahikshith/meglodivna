@@ -43,7 +43,7 @@
           <div class="eyebrow" id="menu-eyebrow">RUNEHEART · CHAPTER I</div>
           <h1 id="menu-title">The Last<br><span>Lantern</span></h1>
           <div class="title-rule"></div>
-          <p id="menu-copy">Mira’s brother is trapped inside the sanctuary.<br>Recover three lost runes. Break the engine’s hold.</p>
+          <p id="menu-copy">Mira’s brother Orren is trapped inside the sanctuary.<br>Find the three stones, then follow the lit gate through wind, water and fire.</p>
           <div class="menu-launch">
           <div class="new-run-options">
           <label class="difficulty-label" for="world-select">Your journey</label>
@@ -53,7 +53,7 @@
             <option value="ember">Ember · Gentle</option><option value="forge" selected>Forge · Balanced</option><option value="inferno">Inferno · Demanding</option><option value="extinction">Extinction · Relentless</option>
           </select>
           </div>
-          <button id="start" class="primary">Enter the sanctuary <span aria-hidden="true">→</span></button>
+          <button id="start" class="primary" disabled>Enter the sanctuary <span aria-hidden="true">→</span></button>
           <div class="menu-actions"><button id="menu-settings" class="menu-settings" aria-haspopup="dialog">Settings</button><button id="menu-equipment" aria-haspopup="dialog">Equipment</button></div>
           </div>
           <div class="menu-detail" id="menu-detail">TEST ARMORY - All equipment unlocked</div>
@@ -61,10 +61,10 @@
             <div class="manual" role="dialog" aria-modal="true" aria-label="Field guide">
               <header class="catalogue-header"><div><span class="eyebrow">A COURIER'S COMPANION</span><h2>Field guide</h2></div><button id="manual-close" aria-label="Close field guide">Close ×</button></header>
               <div class="manual-body" tabindex="0" aria-label="Field guide instructions">
-                <section><h3>Touch · two ways to act</h3><p>Drag an empty part of the screen to move. Hold Attack and drag on its button to aim independently. The stick stays where your finger first lands.</p><dl class="guide-actions"><div><dt>Attack</dt><dd>Tap to slash. Hold to fire.</dd></div><div><dt>Jump</dt><dd>Tap to leap. Hold to thrust.</dd></div><div><dt>Boost</dt><dd>Tap to propel forward, even in the air. Hold to thrust upward. Both use fuel.</dd></div><div><dt>Power rune</dt><dd>Tap to cast, or interact when someone or something is nearby. Hold to open equipment.</dd></div></dl><p>The small gear opens equipment while the world is paused. Hold down + Jump to drop through a thin platform.</p></section>
+                <section><h3>Touch · two ways to act</h3><p>Drag an empty part of the screen to move. Hold Attack and drag on its button to aim independently. The stick stays where your finger first lands.</p><dl class="guide-actions"><div><dt>Attack</dt><dd>Tap to slash. Hold to fire.</dd></div><div><dt>Jump</dt><dd>Tap to leap. Hold to thrust.</dd></div><div><dt>Boost</dt><dd>Tap to surge forward; hold to fly. Both use fuel.</dd></div><div><dt>Power rune</dt><dd>Tap to cast, or speak to a nearby survivor. Hold to open equipment.</dd></div></dl><p>The small gear opens equipment while the world is paused. Hold down + Jump to drop through a thin platform.</p></section>
                 <section><h3>Movement &amp; survival</h3><p>Jump again in the air. Hold a jump for more height; jump against a wall to climb. Thrust uses fuel, which refills on solid ground.</p><p>Read an enemy's windup, evade the strike, then punish its recovery. Slash incoming projectiles to deflect them. Find caches and speak to survivors for equipment.</p><p>Sorcery consumes resonance. Cannon and nova charges are finite. Collect the three runes to open the sanctuary's heart.</p></section>
                 <section><h3>Keyboard</h3><p><kbd>A D</kbd> / <kbd>← →</kbd> move · <kbd>Space</kbd> jump<br><kbd>J</kbd> slash · <kbd>K</kbd> fire · <kbd>W ↑</kbd> aim up<br><kbd>Shift</kbd> boost · hold <kbd>L</kbd> / <kbd>E</kbd> thrust<br><kbd>Q</kbd> power · <kbd>F</kbd> interact<br><kbd>C</kbd> gun · <kbd>V</kbd> blade · <kbd>X</kbd> spell<br><kbd>Z</kbd> nova · <kbd>S + Space</kbd> drop through<br><kbd>Esc</kbd> pause</p></section>
-                <section><h3>Portals &amp; the Soul Engine</h3><p>Walk into an active portal to travel. Step clear before entering again.</p><p>Gather souls released by fallen guardians. Open Gear → Soul Engine to forge armor and strengthen your lantern. Your forged upgrades remain after a fall.</p></section>
+                <section><h3>The story path &amp; Soul Engine</h3><p>Find Ember, Tide and Storm on the main path. At the heart, walk into the one lit gate. Complete Wind, then Water, then Fire. Land on each high lantern to open the next passage; defeat the guardian and use the return gate. Follow the objective beside the HUD.</p><p>Gather souls released by fallen guardians. Open Gear → Soul Engine to forge armor and strengthen your lantern. Your forged upgrades remain after a fall.</p></section>
                 <section><h3>Gamepad</h3><p>Left stick move / right stick aim · A jump · X slash · RT fire · B boost · RB thrust · LT power · Y interact · LB gun · D-pad left/right blade/spell · right stick click nova · Start pause.</p></section>
               </div>
             </div>
@@ -92,7 +92,7 @@
           <span id="touch-power-name" class="power-name" aria-hidden="true">SORCERY</span><span id="touch-power-cost" class="power-cost" aria-hidden="true"></span>
         </div>
         <div class="touch-fight">
-          <button id="touch-boost" data-action="boost" aria-label="Boost forward; hold for thrust"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 9h10M2 16h8M3 23h10m3-17 12 10-12 10 5-10Z"/></svg></button>
+          <button id="touch-boost" data-action="boost" aria-label="Tap Boost to surge forward; hold to fly"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 9h10M2 16h8M3 23h10m3-17 12 10-12 10 5-10Z"/></svg></button>
           <button id="touch-attack" data-action="attack" aria-label="Slash; hold to fire"><svg class="action-primary" viewBox="0 0 32 32" aria-hidden="true"><path d="m11 22 15-18 2 2-13 20ZM8 18l10 10M4 28l7-7m-7-5Q3 5 16 3"/></svg><svg class="action-held" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 10h21v3h5v4h-6l-3 4h-8l-2 7H5l2-11H3Zm8 7h9m-1-7V6h5v4m-3 7v4"/></svg><svg class="hold-affordance" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 10h21v3h5v4h-6l-3 4h-8l-2 7H5l2-11H3Z"/></svg></button>
           <button id="touch-jump" data-action="jump" aria-label="Jump; hold for jetpack"><svg class="action-primary" viewBox="0 0 32 32" aria-hidden="true"><path d="m7 14 9-10 9 10h-6v12h-6V14ZM5 28h22"/></svg><svg class="action-held" viewBox="0 0 32 32" aria-hidden="true"><path d="M11 4h10v18H11Zm-4 5h4v12H7Zm14 0h4v12h-4M8 24l1 5 2-5m2 0 3 6 3-6m2 0 2 5 1-5"/></svg><svg class="hold-affordance" viewBox="0 0 32 32" aria-hidden="true"><path d="M11 4h10v18H11Zm-4 5h4v12H7Zm14 0h4v12h-4m-8 3 3 6 3-6"/></svg></button>
         </div>

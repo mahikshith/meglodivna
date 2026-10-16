@@ -1,0 +1,2233 @@
+{
+  "gameplaySourceHash": "189c6ef3259bfbb0415915821a8ff739c0926bfe1c54586fd9cb17263e115988",
+  "driverSources": {
+    "scripts/combat-route.mjs": {
+      "sha256": "85b40ffa423124ca9fead3b505e553bc5ca882f109bb94138d815d0ee2280e21",
+      "archive": "artifacts/playtest-correction/drivers/85b40ffa423124ca9fead3b505e553bc5ca882f109bb94138d815d0ee2280e21.mjs"
+    },
+    "scripts/route-navigation.mjs": {
+      "sha256": "824d09b0af7a22b9abc975c5de94829f7db683d34c6c9703a464a35205c34f1c",
+      "archive": "artifacts/playtest-correction/drivers/824d09b0af7a22b9abc975c5de94829f7db683d34c6c9703a464a35205c34f1c.mjs"
+    },
+    "scripts/campaign-source.mjs": {
+      "sha256": "f864b236670d8fb06e6f66215bbada57b1cc292ddd71fd93c1d91c0e25a7104f",
+      "archive": "artifacts/playtest-correction/drivers/f864b236670d8fb06e6f66215bbada57b1cc292ddd71fd93c1d91c0e25a7104f.mjs"
+    }
+  },
+  "startedAt": "2026-10-16T21:39:19.403Z",
+  "worldId": "neon",
+  "worldName": "STORM ARCHIVE · The Broken Circuit",
+  "difficulty": "forge",
+  "status": "won",
+  "playerBody": {
+    "w": 28,
+    "h": 60
+  },
+  "elapsed": 319.03,
+  "campaignTime": 319.03,
+  "timeLeft": 2857.44,
+  "deaths": 0,
+  "checkpoint": 6,
+  "x": 18682.9,
+  "y": 620,
+  "hp": 131.9,
+  "conversations": [
+    "neon-mira",
+    "chapter:wind:opening",
+    "chapter:wind:ending",
+    "chapter:water:opening",
+    "chapter:water:ending",
+    "chapter:fire:opening",
+    "chapter:fire:ending"
+  ],
+  "triggerProof": {
+    "neon-warden": {
+      "triggerX": 5000,
+      "activatedX": 5000.15,
+      "activatedTime": 18.75
+    },
+    "neon-hex": {
+      "triggerX": 12490,
+      "activatedX": 12490.09,
+      "activatedTime": 52.84
+    },
+    "neon-regent": {
+      "triggerX": 17670,
+      "activatedX": 17670.02,
+      "activatedTime": 301.75
+    }
+  },
+  "storyClaims": [
+    "npc:neon-mira",
+    "npc:chapter:wind:opening",
+    "npc:chapter:wind:ending",
+    "npc:chapter:water:opening",
+    "npc:chapter:water:ending",
+    "npc:chapter:fire:opening",
+    "npc:chapter:fire:ending"
+  ],
+  "bosses": [
+    {
+      "id": "neon-warden",
+      "dead": true,
+      "hp": 0,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 7.15,
+      "attacksSeen": [
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
+    },
+    {
+      "id": "neon-hex",
+      "dead": true,
+      "hp": 0,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 10.98,
+      "attacksSeen": [
+        0,
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
+    },
+    {
+      "id": "neon-regent",
+      "dead": true,
+      "hp": 0,
+      "body": {
+        "w": 112,
+        "h": 86
+      },
+      "fightSeconds": 15.42,
+      "attacksSeen": [
+        0,
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground",
+        "transforming",
+        "flying"
+      ],
+      "flyingAttacksSeen": [
+        1,
+        2
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "neon-pressure-door-10",
+      "open": true
+    },
+    {
+      "id": "neon-guardian-seal-33",
+      "open": true
+    },
+    {
+      "id": "neon-guardian-seal-73",
+      "open": true
+    },
+    {
+      "id": "neon-tide-seal-83",
+      "open": true
+    },
+    {
+      "id": "neon-guardian-seal-111",
+      "open": true
+    },
+    {
+      "id": "neon-three-stone-seal",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-wind-heart-seal",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-wind-shutter-0",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-wind-shutter-1",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-wind-shutter-2",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-wind-course-shutter-0",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-wind-course-shutter-1",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-wind-course-shutter-2",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-wind-course-shutter-3",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-wind-guardian-seal",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-water-heart-seal",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-water-shutter-0",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-water-shutter-1",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-water-shutter-2",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-water-course-shutter-0",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-water-course-shutter-1",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-water-course-shutter-2",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-water-course-shutter-3",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-water-guardian-seal",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-fire-heart-seal",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-fire-shutter-0",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-fire-shutter-1",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-fire-shutter-2",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-fire-course-shutter-0",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-fire-course-shutter-1",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-fire-course-shutter-2",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-fire-course-shutter-3",
+      "open": true
+    },
+    {
+      "id": "neon-crossing-fire-guardian-seal",
+      "open": true
+    }
+  ],
+  "crossings": [
+    {
+      "id": "neon-crossing-wind",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 65.72
+    },
+    {
+      "id": "neon-crossing-water",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 75.81
+    },
+    {
+      "id": "neon-crossing-fire",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 74.42
+    }
+  ],
+  "method": "Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.",
+  "target": "neon-arena-106",
+  "events": [
+    "bossdead",
+    "bossstart",
+    "burn",
+    "cannon",
+    "charge",
+    "checkpoint",
+    "crumble",
+    "dash",
+    "debris",
+    "enemyattack",
+    "enemyshot",
+    "enemywindup",
+    "equip",
+    "explode",
+    "gate",
+    "hit",
+    "hurt",
+    "impact",
+    "jet",
+    "jump",
+    "land",
+    "missilewarning",
+    "parry",
+    "pickup",
+    "portal",
+    "portalarrival",
+    "portalwarning",
+    "shot",
+    "slam",
+    "slash",
+    "soulcollect",
+    "souldrop",
+    "spark",
+    "spell",
+    "stagger",
+    "story",
+    "summonarrival",
+    "summonexpire",
+    "taunt",
+    "thunder",
+    "transform",
+    "win"
+  ],
+  "history": [
+    {
+      "event": "landing",
+      "id": "neon-sanctuary-1",
+      "x": 98.1,
+      "hp": 100,
+      "time": 0.01
+    },
+    {
+      "event": "story",
+      "npcId": "neon-mira",
+      "choiceId": "neon-ward"
+    },
+    {
+      "event": "landing",
+      "id": "neon-sanctuary-1",
+      "x": 273.2,
+      "hp": 100,
+      "time": 0.62
+    },
+    {
+      "event": "landing",
+      "id": "neon-sanctuary-1",
+      "x": 793.2,
+      "hp": 100,
+      "time": 2.24
+    },
+    {
+      "event": "landing",
+      "id": "neon-engine-walk-5",
+      "x": 1111.6,
+      "hp": 100,
+      "time": 3.31
+    },
+    {
+      "event": "hurt",
+      "x": 1148.3,
+      "hp": 100,
+      "time": 3.45
+    },
+    {
+      "event": "landing",
+      "id": "neon-engine-walk-5",
+      "x": 1441.7,
+      "hp": 100,
+      "time": 4.63
+    },
+    {
+      "event": "landing",
+      "id": "neon-engine-duct-7",
+      "x": 1881.9,
+      "hp": 100,
+      "time": 6.13
+    },
+    {
+      "event": "gate",
+      "x": 1882.6,
+      "hp": 100,
+      "time": 6.14
+    },
+    {
+      "event": "landing",
+      "id": "neon-engine-switchyard-8",
+      "x": 2224.7,
+      "hp": 100,
+      "time": 7.34
+    },
+    {
+      "event": "landing",
+      "id": "neon-engine-switchyard-8",
+      "x": 2291.6,
+      "hp": 100,
+      "time": 7.58
+    },
+    {
+      "event": "landing",
+      "id": "neon-engine-switchyard-8",
+      "x": 2732.7,
+      "hp": 130,
+      "time": 9
+    },
+    {
+      "event": "checkpoint",
+      "x": 2828.7,
+      "hp": 135,
+      "time": 9.3
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-foot-16",
+      "x": 3092.6,
+      "hp": 135,
+      "time": 10.38
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-step-17",
+      "x": 3309.5,
+      "hp": 135,
+      "time": 11.17
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-step-18",
+      "x": 3527.6,
+      "hp": 135,
+      "time": 11.92
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-step-19",
+      "x": 3747.6,
+      "hp": 135,
+      "time": 14.11
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-step-21",
+      "x": 3967.1,
+      "hp": 135,
+      "time": 14.86
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-crown-22",
+      "x": 4183.1,
+      "hp": 135,
+      "time": 15.83
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-crown-22",
+      "x": 4274.1,
+      "hp": 135,
+      "time": 16.27
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-crown-22",
+      "x": 4573.4,
+      "hp": 135,
+      "time": 17.23
+    },
+    {
+      "event": "checkpoint",
+      "x": 4704,
+      "hp": 135,
+      "time": 17.64
+    },
+    {
+      "event": "bossstart",
+      "x": 5000.2,
+      "hp": 135,
+      "time": 18.75
+    },
+    {
+      "event": "hurt",
+      "x": 5500.9,
+      "hp": 135,
+      "time": 21.42
+    },
+    {
+      "event": "hurt",
+      "x": 5363.7,
+      "hp": 127.6,
+      "time": 23.64
+    },
+    {
+      "event": "bossdefeated",
+      "id": "neon-warden",
+      "time": 25.9,
+      "hp": 127.6
+    },
+    {
+      "event": "gate",
+      "x": 5443.6,
+      "hp": 127.6,
+      "time": 25.9
+    },
+    {
+      "event": "landing",
+      "id": "neon-arena-28",
+      "x": 5443.6,
+      "hp": 127.6,
+      "time": 25.9
+    },
+    {
+      "event": "landing",
+      "id": "neon-arena-28",
+      "x": 5994.4,
+      "hp": 127.6,
+      "time": 27.82
+    },
+    {
+      "event": "landing",
+      "id": "neon-arena-28",
+      "x": 5994.4,
+      "hp": 127.6,
+      "time": 27.82
+    },
+    {
+      "event": "checkpoint",
+      "x": 6109.5,
+      "hp": 135,
+      "time": 28.22
+    },
+    {
+      "event": "landing",
+      "id": "neon-sluice-entry-37",
+      "x": 6378.6,
+      "hp": 135,
+      "time": 29.21
+    },
+    {
+      "event": "landing",
+      "id": "neon-aqueduct-span-38",
+      "x": 6742.6,
+      "hp": 135,
+      "time": 30.64
+    },
+    {
+      "event": "landing",
+      "id": "neon-aqueduct-span-39",
+      "x": 7074.8,
+      "hp": 135,
+      "time": 32.14
+    },
+    {
+      "event": "landing",
+      "id": "neon-aqueduct-span-41",
+      "x": 7401.2,
+      "hp": 135,
+      "time": 33.42
+    },
+    {
+      "event": "landing",
+      "id": "neon-aqueduct-span-42",
+      "x": 7734.8,
+      "hp": 135,
+      "time": 34.92
+    },
+    {
+      "event": "landing",
+      "id": "neon-cistern-bank-43",
+      "x": 8202.7,
+      "hp": 135,
+      "time": 36.44
+    },
+    {
+      "event": "checkpoint",
+      "x": 8389.4,
+      "hp": 135,
+      "time": 37.02
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-foot-48",
+      "x": 8652.7,
+      "hp": 135,
+      "time": 38.11
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-step-49",
+      "x": 8869.5,
+      "hp": 135,
+      "time": 38.89
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-step-50",
+      "x": 9087.6,
+      "hp": 135,
+      "time": 39.64
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-step-51",
+      "x": 9307.6,
+      "hp": 135,
+      "time": 41.27
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-step-53",
+      "x": 9527.1,
+      "hp": 135,
+      "time": 42.02
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-crown-54",
+      "x": 9743.1,
+      "hp": 135,
+      "time": 42.99
+    },
+    {
+      "event": "landing",
+      "id": "neon-tower-crown-54",
+      "x": 10132.3,
+      "hp": 135,
+      "time": 44.26
+    },
+    {
+      "event": "landing",
+      "id": "neon-crypt-lip-58",
+      "x": 10502.6,
+      "hp": 135,
+      "time": 45.67
+    },
+    {
+      "event": "landing",
+      "id": "neon-crypt-stair-59",
+      "x": 10817.2,
+      "hp": 135,
+      "time": 47.17
+    },
+    {
+      "event": "landing",
+      "id": "neon-crypt-floor-60",
+      "x": 11129.1,
+      "hp": 135,
+      "time": 48.37
+    },
+    {
+      "event": "landing",
+      "id": "neon-crypt-floor-60",
+      "x": 12041.2,
+      "hp": 135,
+      "time": 51.26
+    },
+    {
+      "event": "checkpoint",
+      "x": 12193.2,
+      "hp": 135,
+      "time": 51.73
+    },
+    {
+      "event": "bossstart",
+      "x": 12490.1,
+      "hp": 135,
+      "time": 52.84
+    },
+    {
+      "event": "hurt",
+      "x": 13046.8,
+      "hp": 121.3,
+      "time": 59.9
+    },
+    {
+      "event": "hurt",
+      "x": 12861.9,
+      "hp": 113.8,
+      "time": 61.75
+    },
+    {
+      "event": "bossdefeated",
+      "id": "neon-hex",
+      "time": 63.82,
+      "hp": 113.8
+    },
+    {
+      "event": "gate",
+      "x": 12779.2,
+      "hp": 113.8,
+      "time": 63.82
+    },
+    {
+      "event": "landing",
+      "id": "neon-arena-68",
+      "x": 12779.2,
+      "hp": 113.8,
+      "time": 63.82
+    },
+    {
+      "event": "landing",
+      "id": "neon-arena-68",
+      "x": 13482.5,
+      "hp": 113.8,
+      "time": 66.12
+    },
+    {
+      "event": "landing",
+      "id": "neon-vault-entry-76",
+      "x": 13872.8,
+      "hp": 113.8,
+      "time": 67.61
+    },
+    {
+      "event": "landing",
+      "id": "neon-vault-upper-77",
+      "x": 14227.5,
+      "hp": 113.8,
+      "time": 68.98
+    },
+    {
+      "event": "landing",
+      "id": "neon-rune-reliquary-78",
+      "x": 14503.2,
+      "hp": 113.8,
+      "time": 69.89
+    },
+    {
+      "event": "gate",
+      "x": 14589.3,
+      "hp": 113.8,
+      "time": 70.18
+    },
+    {
+      "event": "gate",
+      "x": 14589.3,
+      "hp": 113.8,
+      "time": 70.18
+    },
+    {
+      "event": "landing",
+      "id": "neon-rune-reliquary-78",
+      "x": 14604.3,
+      "hp": 113.8,
+      "time": 70.31
+    },
+    {
+      "event": "landing",
+      "id": "neon-vault-exit-81",
+      "x": 15125.5,
+      "hp": 113.8,
+      "time": 72.5
+    },
+    {
+      "event": "landing",
+      "id": "neon-vault-exit-81",
+      "x": 15411.5,
+      "hp": 113.8,
+      "time": 73.45
+    },
+    {
+      "event": "landing",
+      "id": "neon-root-bank-91",
+      "x": 15848.3,
+      "hp": 135,
+      "time": 74.9
+    },
+    {
+      "event": "landing",
+      "id": "neon-broken-root-93",
+      "x": 16160.6,
+      "hp": 135,
+      "time": 77.22
+    },
+    {
+      "event": "landing",
+      "id": "neon-hanging-root-95",
+      "x": 16583.7,
+      "hp": 135,
+      "time": 78.68
+    },
+    {
+      "event": "landing",
+      "id": "neon-orchard-bank-96",
+      "x": 16945.8,
+      "hp": 135,
+      "time": 80.54
+    },
+    {
+      "event": "landing",
+      "id": "neon-orchard-bank-96",
+      "x": 17231.6,
+      "hp": 135,
+      "time": 81.49
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.6,
+      "hp": 135,
+      "time": 81.94
+    },
+    {
+      "event": "crossingportal",
+      "id": "neon-crossing-wind-entry",
+      "time": 82.43,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:wind:opening"
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-landing",
+      "x": 19613.2,
+      "hp": 135,
+      "time": 82.66
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-court-0",
+      "x": 20188.3,
+      "hp": 135,
+      "time": 84.54
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-step-0",
+      "x": 20467,
+      "hp": 135,
+      "time": 85.43
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-bell-0",
+      "x": 20715.9,
+      "hp": 135,
+      "time": 86.18
+    },
+    {
+      "event": "gate",
+      "x": 20718.7,
+      "hp": 135,
+      "time": 86.19
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-bridge-0",
+      "x": 21065.2,
+      "hp": 135,
+      "time": 87.68
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-bridge-0",
+      "x": 21132.8,
+      "hp": 135,
+      "time": 87.95
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-court-1",
+      "x": 21538.1,
+      "hp": 135,
+      "time": 89.3
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-step-1",
+      "x": 21817,
+      "hp": 135,
+      "time": 90.19
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-bell-1",
+      "x": 22061.6,
+      "hp": 135,
+      "time": 90.94
+    },
+    {
+      "event": "gate",
+      "x": 22064.5,
+      "hp": 135,
+      "time": 90.95
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-bridge-1",
+      "x": 22415.1,
+      "hp": 135,
+      "time": 92.44
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-bridge-1",
+      "x": 22482.8,
+      "hp": 135,
+      "time": 92.71
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-court-2",
+      "x": 22888.1,
+      "hp": 135,
+      "time": 94.06
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-step-2",
+      "x": 23167,
+      "hp": 135,
+      "time": 94.95
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-bell-2",
+      "x": 23415.9,
+      "hp": 135,
+      "time": 95.7
+    },
+    {
+      "event": "gate",
+      "x": 23418.8,
+      "hp": 135,
+      "time": 95.71
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-bridge-2",
+      "x": 23765.2,
+      "hp": 135,
+      "time": 97.2
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-bridge-2",
+      "x": 23832.8,
+      "hp": 135,
+      "time": 97.47
+    },
+    {
+      "event": "checkpoint",
+      "x": 24062.1,
+      "hp": 135,
+      "time": 98.18
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-0",
+      "x": 24111,
+      "hp": 135,
+      "time": 98.38
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-1",
+      "x": 24530.5,
+      "hp": 135,
+      "time": 99.92
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-2",
+      "x": 24930.5,
+      "hp": 135,
+      "time": 101.36
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-3",
+      "x": 25322,
+      "hp": 135,
+      "time": 102.91
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-4",
+      "x": 25710.4,
+      "hp": 135,
+      "time": 104.37
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-5",
+      "x": 26128.9,
+      "hp": 135,
+      "time": 105.88
+    },
+    {
+      "event": "gate",
+      "x": 26129.2,
+      "hp": 135,
+      "time": 105.88
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-6",
+      "x": 26529.6,
+      "hp": 135,
+      "time": 107.55
+    },
+    {
+      "event": "checkpoint",
+      "x": 26917.1,
+      "hp": 135,
+      "time": 108.89
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-7",
+      "x": 26925.5,
+      "hp": 135,
+      "time": 109.03
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-8",
+      "x": 27318.3,
+      "hp": 135,
+      "time": 110.55
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-9",
+      "x": 27713.3,
+      "hp": 135,
+      "time": 112
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-10",
+      "x": 28131.3,
+      "hp": 135,
+      "time": 113.6
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-11",
+      "x": 28526.8,
+      "hp": 135,
+      "time": 114.97
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-12",
+      "x": 28918,
+      "hp": 135,
+      "time": 116.49
+    },
+    {
+      "event": "gate",
+      "x": 28918.9,
+      "hp": 135,
+      "time": 116.5
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-13",
+      "x": 29329.4,
+      "hp": 135,
+      "time": 118.21
+    },
+    {
+      "event": "checkpoint",
+      "x": 29717,
+      "hp": 135,
+      "time": 119.55
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-14",
+      "x": 29725.5,
+      "hp": 135,
+      "time": 119.69
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-15",
+      "x": 30129.8,
+      "hp": 135,
+      "time": 121.19
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-16",
+      "x": 30529.3,
+      "hp": 135,
+      "time": 122.61
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-17",
+      "x": 30917.5,
+      "hp": 135,
+      "time": 124.06
+    },
+    {
+      "event": "hurt",
+      "x": 31028.1,
+      "hp": 135,
+      "time": 124.43
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-18",
+      "x": 31296.1,
+      "hp": 135,
+      "time": 125.43
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-19",
+      "x": 31727,
+      "hp": 135,
+      "time": 126.88
+    },
+    {
+      "event": "gate",
+      "x": 31727.5,
+      "hp": 135,
+      "time": 126.89
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-20",
+      "x": 32130.3,
+      "hp": 135,
+      "time": 128.66
+    },
+    {
+      "event": "checkpoint",
+      "x": 32517.2,
+      "hp": 135,
+      "time": 130
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-21",
+      "x": 32525.5,
+      "hp": 135,
+      "time": 130.14
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-22",
+      "x": 32920.5,
+      "hp": 135,
+      "time": 131.64
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-23",
+      "x": 33327.3,
+      "hp": 135,
+      "time": 133.08
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-24",
+      "x": 33729.9,
+      "hp": 135,
+      "time": 134.52
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-25",
+      "x": 34121,
+      "hp": 135,
+      "time": 136.08
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-26",
+      "x": 34527.3,
+      "hp": 135,
+      "time": 137.53
+    },
+    {
+      "event": "gate",
+      "x": 34527.7,
+      "hp": 135,
+      "time": 137.54
+    },
+    {
+      "event": "checkpoint",
+      "x": 34929.3,
+      "hp": 135,
+      "time": 139.18
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-course-27",
+      "x": 34930.2,
+      "hp": 135,
+      "time": 139.3
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-oath-court",
+      "x": 34971,
+      "hp": 135,
+      "time": 145.03
+    },
+    {
+      "event": "gate",
+      "x": 34971.2,
+      "hp": 135,
+      "time": 145.04
+    },
+    {
+      "event": "gate",
+      "x": 34971.2,
+      "hp": 135,
+      "time": 145.04
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-wind-oath-court",
+      "x": 35806,
+      "hp": 135,
+      "time": 147.7
+    },
+    {
+      "event": "crossingportal",
+      "id": "neon-crossing-wind-return",
+      "time": 148.15
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:wind:ending"
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.2,
+      "hp": 135,
+      "time": 148.4
+    },
+    {
+      "event": "crossingportal",
+      "id": "neon-crossing-water-entry",
+      "time": 149.16,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:water:opening"
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-landing",
+      "x": 36813.2,
+      "hp": 135,
+      "time": 149.39
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-court-0",
+      "x": 37388.3,
+      "hp": 135,
+      "time": 151.28
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-step-0",
+      "x": 37648,
+      "hp": 135,
+      "time": 152.17
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-teaching-raft-0",
+      "x": 37790,
+      "hp": 135,
+      "time": 154.76
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-bell-0",
+      "x": 37960.3,
+      "hp": 135,
+      "time": 155.58
+    },
+    {
+      "event": "gate",
+      "x": 37960.6,
+      "hp": 135,
+      "time": 155.59
+    },
+    {
+      "event": "hurt",
+      "x": 38253.4,
+      "hp": 135,
+      "time": 156.68
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-bridge-0",
+      "x": 38263.7,
+      "hp": 135,
+      "time": 157.27
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-bridge-0",
+      "x": 38332.5,
+      "hp": 135,
+      "time": 157.53
+    },
+    {
+      "event": "hurt",
+      "x": 38350.6,
+      "hp": 135,
+      "time": 157.59
+    },
+    {
+      "event": "hurt",
+      "x": 38639.3,
+      "hp": 133.8,
+      "time": 158.5
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-court-1",
+      "x": 38747.4,
+      "hp": 133.8,
+      "time": 159.09
+    },
+    {
+      "event": "hurt",
+      "x": 38832.5,
+      "hp": 130.7,
+      "time": 159.41
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-step-1",
+      "x": 38982.7,
+      "hp": 130.7,
+      "time": 159.93
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-teaching-raft-1",
+      "x": 39189.7,
+      "hp": 132.8,
+      "time": 160.79
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-bell-1",
+      "x": 39310.9,
+      "hp": 132.8,
+      "time": 161.48
+    },
+    {
+      "event": "gate",
+      "x": 39311,
+      "hp": 132.8,
+      "time": 161.48
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-bridge-1",
+      "x": 39614.4,
+      "hp": 135,
+      "time": 162.88
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-bridge-1",
+      "x": 39682.6,
+      "hp": 135,
+      "time": 163.15
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-court-2",
+      "x": 40088.7,
+      "hp": 135,
+      "time": 164.51
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-step-2",
+      "x": 40348.1,
+      "hp": 135,
+      "time": 165.4
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-teaching-raft-2",
+      "x": 40522.7,
+      "hp": 135,
+      "time": 167.97
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-bell-2",
+      "x": 40656.3,
+      "hp": 135,
+      "time": 168.65
+    },
+    {
+      "event": "gate",
+      "x": 40656.8,
+      "hp": 135,
+      "time": 168.66
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-bridge-2",
+      "x": 40964.4,
+      "hp": 135,
+      "time": 170.06
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-bridge-2",
+      "x": 41032.6,
+      "hp": 135,
+      "time": 170.33
+    },
+    {
+      "event": "checkpoint",
+      "x": 41262,
+      "hp": 135,
+      "time": 171.04
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-0",
+      "x": 41311.9,
+      "hp": 135,
+      "time": 171.24
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-causeway-raft-1",
+      "x": 41690.3,
+      "hp": 135,
+      "time": 172.75
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-2",
+      "x": 42126.3,
+      "hp": 135,
+      "time": 174.37
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-causeway-raft-3",
+      "x": 42430.9,
+      "hp": 135,
+      "time": 175.41
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-4",
+      "x": 42925.1,
+      "hp": 135,
+      "time": 177.61
+    },
+    {
+      "event": "gate",
+      "x": 42925.8,
+      "hp": 135,
+      "time": 177.62
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-causeway-raft-5",
+      "x": 43291.6,
+      "hp": 135,
+      "time": 179.06
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-6",
+      "x": 43728.6,
+      "hp": 135,
+      "time": 180.82
+    },
+    {
+      "event": "checkpoint",
+      "x": 44117,
+      "hp": 135,
+      "time": 182.17
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-7",
+      "x": 44125.5,
+      "hp": 135,
+      "time": 182.31
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-causeway-raft-8",
+      "x": 44494.2,
+      "hp": 135,
+      "time": 183.82
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-9",
+      "x": 44918,
+      "hp": 135,
+      "time": 185.4
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-causeway-raft-10",
+      "x": 45290.4,
+      "hp": 135,
+      "time": 186.92
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-11",
+      "x": 45717.3,
+      "hp": 135,
+      "time": 189.22
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-causeway-raft-12",
+      "x": 46049.7,
+      "hp": 135,
+      "time": 190.74
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-13",
+      "x": 46509.1,
+      "hp": 135,
+      "time": 192.31
+    },
+    {
+      "event": "gate",
+      "x": 46510.8,
+      "hp": 135,
+      "time": 192.32
+    },
+    {
+      "event": "checkpoint",
+      "x": 46926.8,
+      "hp": 135,
+      "time": 193.82
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-14",
+      "x": 46929.1,
+      "hp": 135,
+      "time": 193.95
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-15",
+      "x": 47320.6,
+      "hp": 135,
+      "time": 195.46
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-causeway-raft-16",
+      "x": 47694.7,
+      "hp": 135,
+      "time": 196.98
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-17",
+      "x": 48119.4,
+      "hp": 135,
+      "time": 198.42
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-causeway-raft-18",
+      "x": 48528.8,
+      "hp": 135,
+      "time": 200.02
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-19",
+      "x": 48925.7,
+      "hp": 135,
+      "time": 202.27
+    },
+    {
+      "event": "gate",
+      "x": 48925.8,
+      "hp": 135,
+      "time": 202.28
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-20",
+      "x": 49329.3,
+      "hp": 135,
+      "time": 203.99
+    },
+    {
+      "event": "checkpoint",
+      "x": 49717,
+      "hp": 135,
+      "time": 205.33
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-21",
+      "x": 49725.5,
+      "hp": 135,
+      "time": 205.47
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-causeway-raft-22",
+      "x": 50126.4,
+      "hp": 135,
+      "time": 206.97
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-23",
+      "x": 50529,
+      "hp": 135,
+      "time": 208.57
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-causeway-raft-24",
+      "x": 50891.3,
+      "hp": 135,
+      "time": 210.02
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-25",
+      "x": 51316.1,
+      "hp": 135,
+      "time": 212.74
+    },
+    {
+      "event": "gate",
+      "x": 51317.1,
+      "hp": 135,
+      "time": 212.75
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-causeway-raft-26",
+      "x": 51699.1,
+      "hp": 135,
+      "time": 214.31
+    },
+    {
+      "event": "checkpoint",
+      "x": 52128,
+      "hp": 135,
+      "time": 215.97
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-course-27",
+      "x": 52129.7,
+      "hp": 135,
+      "time": 216.09
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-oath-court",
+      "x": 52171,
+      "hp": 135,
+      "time": 221.86
+    },
+    {
+      "event": "gate",
+      "x": 52171.2,
+      "hp": 135,
+      "time": 221.87
+    },
+    {
+      "event": "gate",
+      "x": 52171.2,
+      "hp": 135,
+      "time": 221.87
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-water-oath-court",
+      "x": 53006,
+      "hp": 135,
+      "time": 224.52
+    },
+    {
+      "event": "crossingportal",
+      "id": "neon-crossing-water-return",
+      "time": 224.97
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:water:ending"
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.2,
+      "hp": 135,
+      "time": 225.22
+    },
+    {
+      "event": "crossingportal",
+      "id": "neon-crossing-fire-entry",
+      "time": 225.98,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:fire:opening"
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-landing",
+      "x": 54063.8,
+      "hp": 135,
+      "time": 226.73
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-court-0",
+      "x": 54588.2,
+      "hp": 135,
+      "time": 228.51
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-step-0",
+      "x": 54832,
+      "hp": 135,
+      "time": 229.3
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-bell-0",
+      "x": 55119.9,
+      "hp": 135,
+      "time": 230.2
+    },
+    {
+      "event": "gate",
+      "x": 55122.6,
+      "hp": 135,
+      "time": 230.21
+    },
+    {
+      "event": "hurt",
+      "x": 55463.7,
+      "hp": 123.8,
+      "time": 231.58
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-bridge-0",
+      "x": 55467.8,
+      "hp": 123.8,
+      "time": 232.07
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-bridge-0",
+      "x": 55533.3,
+      "hp": 123.8,
+      "time": 232.34
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-court-1",
+      "x": 55938.2,
+      "hp": 126.9,
+      "time": 233.69
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-step-1",
+      "x": 56182,
+      "hp": 126.9,
+      "time": 234.48
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-bell-1",
+      "x": 56469.2,
+      "hp": 126.9,
+      "time": 235.69
+    },
+    {
+      "event": "gate",
+      "x": 56471.9,
+      "hp": 126.9,
+      "time": 235.7
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-bridge-1",
+      "x": 56815.1,
+      "hp": 126.9,
+      "time": 237.22
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-bridge-1",
+      "x": 56882.8,
+      "hp": 126.9,
+      "time": 237.49
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-court-2",
+      "x": 57288.1,
+      "hp": 129,
+      "time": 238.84
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-step-2",
+      "x": 57532,
+      "hp": 129,
+      "time": 239.63
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-bell-2",
+      "x": 57819.8,
+      "hp": 129,
+      "time": 240.53
+    },
+    {
+      "event": "gate",
+      "x": 57822.5,
+      "hp": 129,
+      "time": 240.54
+    },
+    {
+      "event": "hurt",
+      "x": 58163.6,
+      "hp": 117.7,
+      "time": 241.92
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-bridge-2",
+      "x": 58167.8,
+      "hp": 117.7,
+      "time": 242.41
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-bridge-2",
+      "x": 58233.3,
+      "hp": 117.7,
+      "time": 242.67
+    },
+    {
+      "event": "checkpoint",
+      "x": 58462.6,
+      "hp": 135,
+      "time": 243.39
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-0",
+      "x": 58511.2,
+      "hp": 135,
+      "time": 243.58
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-1",
+      "x": 58926,
+      "hp": 135,
+      "time": 245.1
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-2",
+      "x": 59322.8,
+      "hp": 135,
+      "time": 246.52
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-3",
+      "x": 59727.9,
+      "hp": 135,
+      "time": 248.1
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-4",
+      "x": 60114,
+      "hp": 135,
+      "time": 249.77
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-5",
+      "x": 60524.5,
+      "hp": 135,
+      "time": 251.25
+    },
+    {
+      "event": "gate",
+      "x": 60525,
+      "hp": 135,
+      "time": 251.26
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-6",
+      "x": 60928.9,
+      "hp": 135,
+      "time": 252.88
+    },
+    {
+      "event": "checkpoint",
+      "x": 61317,
+      "hp": 135,
+      "time": 254.22
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-7",
+      "x": 61325.5,
+      "hp": 135,
+      "time": 254.37
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-8",
+      "x": 61724.8,
+      "hp": 135,
+      "time": 255.83
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-9",
+      "x": 62154.3,
+      "hp": 135,
+      "time": 258.28
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-10",
+      "x": 62527.8,
+      "hp": 135,
+      "time": 259.85
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-11",
+      "x": 62920.9,
+      "hp": 135,
+      "time": 261.24
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-12",
+      "x": 63331,
+      "hp": 135,
+      "time": 267.57
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-13",
+      "x": 63728,
+      "hp": 135,
+      "time": 269.14
+    },
+    {
+      "event": "gate",
+      "x": 63728.4,
+      "hp": 135,
+      "time": 269.15
+    },
+    {
+      "event": "checkpoint",
+      "x": 64126.1,
+      "hp": 135,
+      "time": 270.64
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-14",
+      "x": 64128.8,
+      "hp": 135,
+      "time": 270.77
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-15",
+      "x": 64528.1,
+      "hp": 135,
+      "time": 272.35
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-16",
+      "x": 64927,
+      "hp": 135,
+      "time": 273.88
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-17",
+      "x": 65379.9,
+      "hp": 135,
+      "time": 276.51
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-18",
+      "x": 65720.3,
+      "hp": 135,
+      "time": 277.92
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-19",
+      "x": 66122,
+      "hp": 135,
+      "time": 279.33
+    },
+    {
+      "event": "gate",
+      "x": 66122.7,
+      "hp": 135,
+      "time": 279.34
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-20",
+      "x": 66530.2,
+      "hp": 135,
+      "time": 281.12
+    },
+    {
+      "event": "checkpoint",
+      "x": 66917.1,
+      "hp": 135,
+      "time": 282.46
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-21",
+      "x": 66925.5,
+      "hp": 135,
+      "time": 282.6
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-22",
+      "x": 67325.4,
+      "hp": 135,
+      "time": 284.08
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-23",
+      "x": 67720.8,
+      "hp": 135,
+      "time": 285.47
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-24",
+      "x": 68122,
+      "hp": 135,
+      "time": 286.89
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-25",
+      "x": 68527.7,
+      "hp": 135,
+      "time": 288.46
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-26",
+      "x": 68920.3,
+      "hp": 135,
+      "time": 289.84
+    },
+    {
+      "event": "gate",
+      "x": 68921.1,
+      "hp": 135,
+      "time": 289.85
+    },
+    {
+      "event": "checkpoint",
+      "x": 69328.8,
+      "hp": 135,
+      "time": 291.47
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-course-27",
+      "x": 69330,
+      "hp": 135,
+      "time": 291.6
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-oath-court",
+      "x": 69371,
+      "hp": 135,
+      "time": 297.28
+    },
+    {
+      "event": "gate",
+      "x": 69371.2,
+      "hp": 135,
+      "time": 297.29
+    },
+    {
+      "event": "gate",
+      "x": 69371.2,
+      "hp": 135,
+      "time": 297.29
+    },
+    {
+      "event": "landing",
+      "id": "neon-crossing-fire-oath-court",
+      "x": 70206,
+      "hp": 135,
+      "time": 299.95
+    },
+    {
+      "event": "crossingportal",
+      "id": "neon-crossing-fire-return",
+      "time": 300.4
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:fire:ending"
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.2,
+      "hp": 135,
+      "time": 300.65
+    },
+    {
+      "event": "bossstart",
+      "x": 17670,
+      "hp": 135,
+      "time": 301.75
+    },
+    {
+      "event": "hurt",
+      "x": 18057.9,
+      "hp": 127.5,
+      "time": 304.52
+    },
+    {
+      "event": "hurt",
+      "x": 17945.9,
+      "hp": 127.5,
+      "time": 313
+    },
+    {
+      "event": "bossdefeated",
+      "id": "neon-regent",
+      "time": 317.17,
+      "hp": 131.9
+    },
+    {
+      "event": "gate",
+      "x": 18104.2,
+      "hp": 131.9,
+      "time": 317.17
+    },
+    {
+      "event": "landing",
+      "id": "neon-arena-106",
+      "x": 18104.2,
+      "hp": 131.9,
+      "time": 317.17
+    },
+    {
+      "event": "landing",
+      "id": "neon-arena-106",
+      "x": 18662.9,
+      "hp": 131.9,
+      "time": 318.97
+    },
+    {
+      "event": "win",
+      "x": 18682.9,
+      "hp": 131.9,
+      "time": 319.03
+    }
+  ]
+}

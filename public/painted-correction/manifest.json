@@ -1,0 +1,142 @@
+{
+  "backdrops": {
+    "sanctuary": {
+      "source": "reference/playtest-correction/sanctuary-source.png",
+      "sourceSha256": "1bea645191a48b49fdc0a9a9668d77ad48b3292366d11f10ffa99aaba90aca92",
+      "sourceSize": [
+        1672,
+        941
+      ],
+      "file": "public/painted-correction/sanctuary.png",
+      "sha256": "e3ff69d5bc035fc5162ed76efcb849442d9207e604ec97e3c374867ccb55630d",
+      "size": [
+        1536,
+        864
+      ],
+      "worldScale": "screen-space cover, bilinear sampling"
+    },
+    "tide": {
+      "source": "reference/playtest-correction/tide-source.png",
+      "sourceSha256": "55b6fd520b4311fe87f2bfae03a83a67909877099af2379d80e7b3276e66c4fa",
+      "sourceSize": [
+        1672,
+        941
+      ],
+      "file": "public/painted-correction/tide.png",
+      "sha256": "d32cc8298a867fe8f17db2eea57fc2a9eba2e267cf4128a006ebeefc334cb595",
+      "size": [
+        1536,
+        864
+      ],
+      "worldScale": "screen-space cover, bilinear sampling"
+    },
+    "pyre": {
+      "source": "reference/playtest-correction/pyre-source.png",
+      "sourceSha256": "ea8dc17d3897a7ab7206054194237750b46bb4dfa9945ae95693d224d8864b30",
+      "sourceSize": [
+        1672,
+        941
+      ],
+      "file": "public/painted-correction/pyre.png",
+      "sha256": "86516b48fa2375ba531c84eb029104a3460bf99d9d21e5e2379673102dd339d7",
+      "size": [
+        1536,
+        864
+      ],
+      "worldScale": "screen-space cover, bilinear sampling"
+    },
+    "storm": {
+      "source": "reference/playtest-correction/storm-source.png",
+      "sourceSha256": "b324eeac3a23dab70972dbb741cdefbb47aba0fd4a61d9896b2b1ee4ef34763c",
+      "sourceSize": [
+        1672,
+        941
+      ],
+      "file": "public/painted-correction/storm.png",
+      "sha256": "a9da28244addd979d4df148ee58bf928d53949c2d4cb0d30d6a646660d1f9a64",
+      "size": [
+        1536,
+        864
+      ],
+      "worldScale": "screen-space cover, bilinear sampling"
+    },
+    "veil": {
+      "source": "reference/playtest-correction/veil-source.png",
+      "sourceSha256": "898bed415cf28537e50810fe67bf26c99e3f2279618f3b21321948ab30c3eebe",
+      "sourceSize": [
+        1672,
+        940
+      ],
+      "file": "public/painted-correction/veil.png",
+      "sha256": "a45f200ae29d0ce9136120688b018f3ed1b8500a739a179704939e436347a896",
+      "size": [
+        1536,
+        864
+      ],
+      "worldScale": "screen-space cover, bilinear sampling"
+    }
+  },
+  "sprites": {
+    "threshold": {
+      "source": "reference/playtest-correction/threshold-source.png",
+      "sourceSha256": "c8d6abcfe82e99d2489c3fe97e24ce1ab387bf6172f799f3c2a4658c88679805",
+      "sourceSize": [
+        1070,
+        1470
+      ],
+      "sourceRect": [
+        11,
+        13,
+        1062,
+        1439
+      ],
+      "file": "public/painted-correction/threshold.png",
+      "sha256": "add78794439918391eca5fb3cde050204175be840b2927dd95c70736a3ad0029",
+      "size": [
+        512,
+        695
+      ],
+      "anchor": [
+        256.0,
+        695
+      ],
+      "worldDisplay": [
+        70,
+        96
+      ]
+    },
+    "courierPortrait": {
+      "source": "reference/character-revision/courier-raw.png",
+      "sourceSha256": "47a380e64da97d5736eb647895294ca99919e6655caca267fd6ddb348fcc6818",
+      "sourceRect": [
+        75,
+        43,
+        205,
+        187
+      ],
+      "file": "public/painted-correction/courier-portrait.png",
+      "sha256": "fb433816ce023325999be6ba9ad1749a13ae6027204b9ccdab2d6ae4cf118ee0",
+      "size": [
+        260,
+        288
+      ]
+    }
+  },
+  "normalizedSources": {
+    "wolfSheet": {
+      "source": "reference/playtest-correction/wolf-painted-source.png",
+      "sourceSha256": "7774f34bb54d544731a280c5827574ce6798bf8d47c93509523906050f6eb0cb",
+      "sourceSize": [
+        2048,
+        768
+      ],
+      "file": "reference/playtest-correction/wolf-painted-raw.png",
+      "sha256": "62d3989565a489e07978a07fef612acaa2d1893c49492160960eecad7a665fa2",
+      "size": [
+        1254,
+        470
+      ],
+      "role": "offline animation extraction source, not a runtime texture"
+    }
+  }
+}

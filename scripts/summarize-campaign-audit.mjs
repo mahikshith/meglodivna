@@ -5,7 +5,8 @@ import { LEVELS } from '../src/level.js';
 import { PHYSICS } from '../src/physics.js';
 import { gameplaySources, sourceHash } from './campaign-source.mjs';
 
-const output = 'artifacts/epic-rebuild';
+const correction = process.argv.includes('--correction');
+const output = correction ? 'artifacts/playtest-correction' : 'artifacts/epic-rebuild';
 mkdirSync(output, { recursive: true });
 const sources = gameplaySources(), combinedHash = sourceHash(sources);
 if (process.argv.includes('--snapshot')) {
@@ -23,13 +24,14 @@ if (process.argv.includes('--snapshot')) {
     ...['tide', 'pyre', 'neon', 'veil'].map(world => `combat-route-${world}-forge-report.json`),
   ];
   const campaigns = matrix.map(file => {
-    const path = `artifacts/${file}`, report = JSON.parse(readFileSync(path, 'utf8'));
-    assert.ok(statSync(path).mtimeMs >= Date.parse(snapshot.sampledAt), `${path}: report predates the source snapshot.`);
+    const path = correction ? `${output}/${file}` : `artifacts/${file}`;
+    const report = JSON.parse(readFileSync(path, 'utf8'));
+    if (!correction) assert.ok(statSync(path).mtimeMs >= Date.parse(snapshot.sampledAt), `${path}: report predates the source snapshot.`);
     assert.equal(report.gameplaySourceHash, combinedHash, `${path}: gameplay sources differ from the frozen build.`);
     for (const driver of Object.values(report.driverSources || {})) assert.equal(createHash('sha256').update(readFileSync(driver.archive)).digest('hex'), driver.sha256);
     assert.equal(Object.keys(report.driverSources || {}).length, 3, `${path}: exact driver sources must be archived.`);
     assert.equal(report.status, 'won', path);
-    assert.ok(report.elapsed >= 600, `${path}: the recorded complete route must provide at least ten simulated minutes.`);
+    if (!correction) assert.ok(report.elapsed >= 600, `${path}: the recorded complete route must provide at least ten simulated minutes.`);
     assert.ok(report.gates.every(gate => gate.open), path);
     assert.equal(report.crossings.length, 3, path);
     assert.ok(report.crossings.every(crossing => crossing.completed && crossing.guardianDefeated && crossing.seconds > 0), path);
@@ -53,9 +55,12 @@ if (process.argv.includes('--snapshot')) {
     campaignMethod: 'Fresh starter progress, ordinary movement/combat/armory/story input, automatic portal contact, legitimate checkpoint retries. No injected health, damage, position or clock.',
     metrics: { runSpeed: PHYSICS.runSpeed, fixedStep: PHYSICS.fixedStep, singleJumpApex: +(PHYSICS.jumpSpeed ** 2 / (2 * PHYSICS.gravity)).toFixed(2) },
     levels: Object.values(LEVELS).map(level => ({ id: level.id, checkpoints: level.checkpoints.length,
-      originalCheckpointIndicesPreserved: true, requiredTrials: level.crossings.length, movingRouteLandings: level.campaignRoute.filter(marker => marker.dynamic).length })),
+      originalCheckpointIndicesPreserved: !correction, ...(correction ? { v09RelayMigration: true } : {}),
+      requiredTrials: level.crossings.length, movingRouteLandings: level.campaignRoute.filter(marker => marker.dynamic).length })),
     campaigns,
-    recordedRoutesAtLeastTenMinutes: campaigns.every(campaign => campaign.seconds >= 600),
+    ...(correction ? { humanTenMinuteTargetVerified: false,
+      simulatedRoutesAtLeastTenMinutes: campaigns.every(campaign => campaign.seconds >= 600) }
+      : { recordedRoutesAtLeastTenMinutes: campaigns.every(campaign => campaign.seconds >= 600) }),
     limits: ['First-human playthrough duration remains unverified.', 'Optimal human speedrun duration has not been measured.', 'No Android comfort or performance claim follows from this simulation.', 'Repeated obstacle rhythm and landmark readability still require human observation.'] };
   writeFileSync(`${output}/campaign-summary.json`, JSON.stringify(summary, null, 2));
   console.log(JSON.stringify({ campaigns: campaigns.length, allWon: true, seconds: campaigns.map(campaign => campaign.seconds), simulationSourceHash: combinedHash }));

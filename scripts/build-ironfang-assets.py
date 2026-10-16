@@ -13,7 +13,7 @@ from atlas_pack import pack
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / 'reference/ironfang-source'
 OUT = ROOT / 'public/ironfang'
-PROOF = ROOT / 'artifacts/ironfang'
+PROOF = ROOT / 'artifacts/playtest-correction/qa/art/ironfang'
 components = runpy.run_path(str(ROOT / 'scripts/build-lantern-assets.py'))['components']
 frames, pixels, animations = {}, {}, {}
 

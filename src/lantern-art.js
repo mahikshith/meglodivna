@@ -14,8 +14,7 @@ export function preloadLanternArt(scene) {
   scene.load.json('ironfang-manifest', `${boss}manifest.json`);
   scene.load.atlas('lantern-fx', `${fx}atlas.png`, `${fx}atlas.json`);
   for (const name of ['water','stone','platform','emitter','emitter-cap','lever','ward','bolt','orb']) scene.load.image(`ln-fx-${name}`, `${fx}${name}.png`);
-  scene.load.image('rh-bg-lantern', `${base}sanctuary.png`);
-  for(const name of ['wind','tide','ember'])scene.load.image(`rh-bg-crossing-${name}`,`${import.meta.env.BASE_URL}journey/${name}.png`);
+  scene.load.image('pc-threshold', `${import.meta.env.BASE_URL}painted-correction/threshold.png`);
   for (const name of ['platform', 'arch', 'lantern', 'root']) scene.load.image(`ln-${name}`, `${base}${name}.png`);
 }
 

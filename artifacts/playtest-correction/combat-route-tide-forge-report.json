@@ -1,0 +1,2249 @@
+{
+  "gameplaySourceHash": "189c6ef3259bfbb0415915821a8ff739c0926bfe1c54586fd9cb17263e115988",
+  "driverSources": {
+    "scripts/combat-route.mjs": {
+      "sha256": "85b40ffa423124ca9fead3b505e553bc5ca882f109bb94138d815d0ee2280e21",
+      "archive": "artifacts/playtest-correction/drivers/85b40ffa423124ca9fead3b505e553bc5ca882f109bb94138d815d0ee2280e21.mjs"
+    },
+    "scripts/route-navigation.mjs": {
+      "sha256": "824d09b0af7a22b9abc975c5de94829f7db683d34c6c9703a464a35205c34f1c",
+      "archive": "artifacts/playtest-correction/drivers/824d09b0af7a22b9abc975c5de94829f7db683d34c6c9703a464a35205c34f1c.mjs"
+    },
+    "scripts/campaign-source.mjs": {
+      "sha256": "f864b236670d8fb06e6f66215bbada57b1cc292ddd71fd93c1d91c0e25a7104f",
+      "archive": "artifacts/playtest-correction/drivers/f864b236670d8fb06e6f66215bbada57b1cc292ddd71fd93c1d91c0e25a7104f.mjs"
+    }
+  },
+  "startedAt": "2026-10-16T21:38:00.481Z",
+  "worldId": "tide",
+  "worldName": "DROWNED CHOIR · The Sluice Kingdom",
+  "difficulty": "forge",
+  "status": "won",
+  "playerBody": {
+    "w": 28,
+    "h": 60
+  },
+  "elapsed": 319.87,
+  "campaignTime": 319.87,
+  "timeLeft": 2856.6,
+  "deaths": 0,
+  "checkpoint": 6,
+  "x": 18682.8,
+  "y": 620,
+  "hp": 101.9,
+  "conversations": [
+    "tide-mira",
+    "chapter:wind:opening",
+    "chapter:wind:ending",
+    "chapter:water:opening",
+    "chapter:water:ending",
+    "chapter:fire:opening",
+    "chapter:fire:ending"
+  ],
+  "triggerProof": {
+    "tide-warden": {
+      "triggerX": 5520,
+      "activatedX": 5520.07,
+      "activatedTime": 20.45
+    },
+    "tide-hex": {
+      "triggerX": 12490,
+      "activatedX": 12490.08,
+      "activatedTime": 56.57
+    },
+    "tide-regent": {
+      "triggerX": 17670,
+      "activatedX": 17670.02,
+      "activatedTime": 301.75
+    }
+  },
+  "storyClaims": [
+    "npc:tide-mira",
+    "npc:chapter:wind:opening",
+    "npc:chapter:wind:ending",
+    "npc:chapter:water:opening",
+    "npc:chapter:water:ending",
+    "npc:chapter:fire:opening",
+    "npc:chapter:fire:ending"
+  ],
+  "bosses": [
+    {
+      "id": "tide-warden",
+      "dead": true,
+      "hp": 0,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 11.06,
+      "attacksSeen": [
+        0,
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
+    },
+    {
+      "id": "tide-hex",
+      "dead": true,
+      "hp": 0,
+      "body": {
+        "w": 96,
+        "h": 120
+      },
+      "fightSeconds": 9.48,
+      "attacksSeen": [
+        0,
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground"
+      ],
+      "flyingAttacksSeen": []
+    },
+    {
+      "id": "tide-regent",
+      "dead": true,
+      "hp": 0,
+      "body": {
+        "w": 112,
+        "h": 86
+      },
+      "fightSeconds": 16.39,
+      "attacksSeen": [
+        0,
+        1,
+        2
+      ],
+      "formsSeen": [
+        "ground",
+        "transforming",
+        "flying"
+      ],
+      "flyingAttacksSeen": [
+        1,
+        2
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "tide-tide-seal-23",
+      "open": true
+    },
+    {
+      "id": "tide-guardian-seal-36",
+      "open": true
+    },
+    {
+      "id": "tide-pressure-door-60",
+      "open": true
+    },
+    {
+      "id": "tide-guardian-seal-81",
+      "open": true
+    },
+    {
+      "id": "tide-guardian-seal-111",
+      "open": true
+    },
+    {
+      "id": "tide-three-stone-seal",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-wind-heart-seal",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-wind-shutter-0",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-wind-shutter-1",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-wind-shutter-2",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-wind-course-shutter-0",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-wind-course-shutter-1",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-wind-course-shutter-2",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-wind-course-shutter-3",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-wind-guardian-seal",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-water-heart-seal",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-water-shutter-0",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-water-shutter-1",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-water-shutter-2",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-water-course-shutter-0",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-water-course-shutter-1",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-water-course-shutter-2",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-water-course-shutter-3",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-water-guardian-seal",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-fire-heart-seal",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-fire-shutter-0",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-fire-shutter-1",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-fire-shutter-2",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-fire-course-shutter-0",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-fire-course-shutter-1",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-fire-course-shutter-2",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-fire-course-shutter-3",
+      "open": true
+    },
+    {
+      "id": "tide-crossing-fire-guardian-seal",
+      "open": true
+    }
+  ],
+  "crossings": [
+    {
+      "id": "tide-crossing-wind",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 66.07
+    },
+    {
+      "id": "tide-crossing-water",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 74.06
+    },
+    {
+      "id": "tide-crossing-fire",
+      "completed": true,
+      "guardianDefeated": true,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216,
+      "guardianAttacksSeen": [
+        "slam"
+      ],
+      "seconds": 74.42
+    }
+  ],
+  "method": "Legal movement/combat/armory/story actions only. Live enemies and hazards. No health, position, invulnerability, damage, or clock overrides. Legitimate retryWorld recovery.",
+  "target": "tide-arena-106",
+  "events": [
+    "bossdead",
+    "bossstart",
+    "burn",
+    "cannon",
+    "charge",
+    "checkpoint",
+    "crumble",
+    "currentwarning",
+    "dash",
+    "debris",
+    "enemyattack",
+    "enemyshot",
+    "enemywindup",
+    "equip",
+    "explode",
+    "gate",
+    "hit",
+    "hurt",
+    "impact",
+    "jet",
+    "jump",
+    "land",
+    "missilewarning",
+    "parry",
+    "pickup",
+    "portal",
+    "portalarrival",
+    "portalwarning",
+    "shot",
+    "slam",
+    "slash",
+    "soulcollect",
+    "souldrop",
+    "spark",
+    "spell",
+    "stagger",
+    "story",
+    "summon",
+    "summonarrival",
+    "summonattack",
+    "summonexpire",
+    "taunt",
+    "thunder",
+    "transform",
+    "win"
+  ],
+  "history": [
+    {
+      "event": "landing",
+      "id": "tide-sanctuary-1",
+      "x": 98.1,
+      "hp": 100,
+      "time": 0.01
+    },
+    {
+      "event": "story",
+      "npcId": "tide-mira",
+      "choiceId": "tide-ward"
+    },
+    {
+      "event": "landing",
+      "id": "tide-sanctuary-1",
+      "x": 273.2,
+      "hp": 100,
+      "time": 0.62
+    },
+    {
+      "event": "landing",
+      "id": "tide-sanctuary-1",
+      "x": 793.2,
+      "hp": 100,
+      "time": 2.24
+    },
+    {
+      "event": "checkpoint",
+      "x": 958.5,
+      "hp": 126.4,
+      "time": 2.76
+    },
+    {
+      "event": "landing",
+      "id": "tide-sluice-entry-5",
+      "x": 1228.4,
+      "hp": 126.4,
+      "time": 3.75
+    },
+    {
+      "event": "landing",
+      "id": "tide-aqueduct-span-6",
+      "x": 1587.2,
+      "hp": 126.4,
+      "time": 5.18
+    },
+    {
+      "event": "landing",
+      "id": "tide-aqueduct-span-7",
+      "x": 1918.3,
+      "hp": 126.4,
+      "time": 6.74
+    },
+    {
+      "event": "landing",
+      "id": "tide-aqueduct-span-9",
+      "x": 2243.1,
+      "hp": 126.4,
+      "time": 8.08
+    },
+    {
+      "event": "landing",
+      "id": "tide-aqueduct-span-10",
+      "x": 2578.8,
+      "hp": 126.4,
+      "time": 9.63
+    },
+    {
+      "event": "landing",
+      "id": "tide-cistern-bank-11",
+      "x": 3051.4,
+      "hp": 126.4,
+      "time": 11.27
+    },
+    {
+      "event": "landing",
+      "id": "tide-vault-entry-16",
+      "x": 3542.6,
+      "hp": 135,
+      "time": 13.06
+    },
+    {
+      "event": "landing",
+      "id": "tide-vault-upper-17",
+      "x": 3897.5,
+      "hp": 135,
+      "time": 14.43
+    },
+    {
+      "event": "landing",
+      "id": "tide-rune-reliquary-18",
+      "x": 4173.2,
+      "hp": 135,
+      "time": 15.34
+    },
+    {
+      "event": "gate",
+      "x": 4259.3,
+      "hp": 135,
+      "time": 15.63
+    },
+    {
+      "event": "landing",
+      "id": "tide-rune-reliquary-18",
+      "x": 4274.3,
+      "hp": 135,
+      "time": 15.76
+    },
+    {
+      "event": "landing",
+      "id": "tide-vault-exit-21",
+      "x": 4795.5,
+      "hp": 135,
+      "time": 17.95
+    },
+    {
+      "event": "landing",
+      "id": "tide-vault-exit-21",
+      "x": 5081.5,
+      "hp": 135,
+      "time": 18.9
+    },
+    {
+      "event": "checkpoint",
+      "x": 5225.5,
+      "hp": 135,
+      "time": 19.35
+    },
+    {
+      "event": "bossstart",
+      "x": 5520.1,
+      "hp": 135,
+      "time": 20.45
+    },
+    {
+      "event": "hurt",
+      "x": 5917.6,
+      "hp": 135,
+      "time": 23.92
+    },
+    {
+      "event": "hurt",
+      "x": 6202.3,
+      "hp": 135,
+      "time": 29.57
+    },
+    {
+      "event": "bossdefeated",
+      "id": "tide-warden",
+      "time": 31.51,
+      "hp": 135
+    },
+    {
+      "event": "gate",
+      "x": 6262.7,
+      "hp": 135,
+      "time": 31.51
+    },
+    {
+      "event": "landing",
+      "id": "tide-arena-31",
+      "x": 6262.7,
+      "hp": 135,
+      "time": 31.51
+    },
+    {
+      "event": "landing",
+      "id": "tide-arena-31",
+      "x": 6514.1,
+      "hp": 135,
+      "time": 32.45
+    },
+    {
+      "event": "landing",
+      "id": "tide-arena-31",
+      "x": 6514.1,
+      "hp": 135,
+      "time": 32.45
+    },
+    {
+      "event": "landing",
+      "id": "tide-root-bank-40",
+      "x": 6918.5,
+      "hp": 135,
+      "time": 33.83
+    },
+    {
+      "event": "landing",
+      "id": "tide-broken-root-42",
+      "x": 7230.6,
+      "hp": 135,
+      "time": 36.15
+    },
+    {
+      "event": "landing",
+      "id": "tide-hanging-root-44",
+      "x": 7653.7,
+      "hp": 135,
+      "time": 37.61
+    },
+    {
+      "event": "landing",
+      "id": "tide-orchard-bank-45",
+      "x": 8015.8,
+      "hp": 135,
+      "time": 39.47
+    },
+    {
+      "event": "landing",
+      "id": "tide-orchard-bank-45",
+      "x": 8301.6,
+      "hp": 135,
+      "time": 40.42
+    },
+    {
+      "event": "hurt",
+      "x": 8580,
+      "hp": 135,
+      "time": 41.3
+    },
+    {
+      "event": "landing",
+      "id": "tide-engine-walk-55",
+      "x": 8613.1,
+      "hp": 135,
+      "time": 41.68
+    },
+    {
+      "event": "landing",
+      "id": "tide-engine-walk-55",
+      "x": 8933,
+      "hp": 135,
+      "time": 42.73
+    },
+    {
+      "event": "landing",
+      "id": "tide-engine-duct-57",
+      "x": 9371.5,
+      "hp": 135,
+      "time": 44.22
+    },
+    {
+      "event": "gate",
+      "x": 9372.2,
+      "hp": 135,
+      "time": 44.23
+    },
+    {
+      "event": "landing",
+      "id": "tide-engine-switchyard-58",
+      "x": 9725.3,
+      "hp": 135,
+      "time": 45.86
+    },
+    {
+      "event": "landing",
+      "id": "tide-engine-switchyard-58",
+      "x": 9782.1,
+      "hp": 135,
+      "time": 46.09
+    },
+    {
+      "event": "landing",
+      "id": "tide-engine-switchyard-58",
+      "x": 10222.1,
+      "hp": 135,
+      "time": 47.47
+    },
+    {
+      "event": "checkpoint",
+      "x": 10318.1,
+      "hp": 135,
+      "time": 47.77
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-foot-66",
+      "x": 10582.6,
+      "hp": 135,
+      "time": 48.85
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-step-67",
+      "x": 10799.5,
+      "hp": 135,
+      "time": 49.63
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-step-68",
+      "x": 11017.6,
+      "hp": 135,
+      "time": 50.38
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-step-69",
+      "x": 11237.6,
+      "hp": 135,
+      "time": 52.06
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-step-71",
+      "x": 11457.1,
+      "hp": 135,
+      "time": 52.81
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-crown-72",
+      "x": 11673.1,
+      "hp": 135,
+      "time": 53.78
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-crown-72",
+      "x": 12062.3,
+      "hp": 135,
+      "time": 55.05
+    },
+    {
+      "event": "checkpoint",
+      "x": 12195.7,
+      "hp": 135,
+      "time": 55.47
+    },
+    {
+      "event": "bossstart",
+      "x": 12490.1,
+      "hp": 135,
+      "time": 56.57
+    },
+    {
+      "event": "hurt",
+      "x": 13096.1,
+      "hp": 135,
+      "time": 63.96
+    },
+    {
+      "event": "hurt",
+      "x": 12936,
+      "hp": 132.6,
+      "time": 65.64
+    },
+    {
+      "event": "bossdefeated",
+      "id": "tide-hex",
+      "time": 66.05,
+      "hp": 132.6
+    },
+    {
+      "event": "gate",
+      "x": 12909.6,
+      "hp": 132.6,
+      "time": 66.05
+    },
+    {
+      "event": "landing",
+      "id": "tide-arena-76",
+      "x": 12909.6,
+      "hp": 132.6,
+      "time": 66.05
+    },
+    {
+      "event": "landing",
+      "id": "tide-arena-76",
+      "x": 13481.4,
+      "hp": 132.6,
+      "time": 68.08
+    },
+    {
+      "event": "landing",
+      "id": "tide-crypt-lip-84",
+      "x": 13832.7,
+      "hp": 132.6,
+      "time": 69.43
+    },
+    {
+      "event": "landing",
+      "id": "tide-crypt-stair-85",
+      "x": 14147.2,
+      "hp": 132.6,
+      "time": 70.93
+    },
+    {
+      "event": "landing",
+      "id": "tide-crypt-floor-86",
+      "x": 14459.1,
+      "hp": 132.6,
+      "time": 72.13
+    },
+    {
+      "event": "landing",
+      "id": "tide-crypt-floor-86",
+      "x": 15371.2,
+      "hp": 132.6,
+      "time": 75.02
+    },
+    {
+      "event": "checkpoint",
+      "x": 15531.2,
+      "hp": 135,
+      "time": 75.52
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-foot-94",
+      "x": 15712.5,
+      "hp": 135,
+      "time": 76.08
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-step-95",
+      "x": 15979.6,
+      "hp": 135,
+      "time": 76.98
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-step-96",
+      "x": 16197.6,
+      "hp": 135,
+      "time": 77.73
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-step-97",
+      "x": 16417.6,
+      "hp": 135,
+      "time": 79.8
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-step-99",
+      "x": 16637.1,
+      "hp": 135,
+      "time": 80.55
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-crown-100",
+      "x": 16853.1,
+      "hp": 135,
+      "time": 81.53
+    },
+    {
+      "event": "gate",
+      "x": 16928.8,
+      "hp": 135,
+      "time": 81.83
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-crown-100",
+      "x": 16944.1,
+      "hp": 135,
+      "time": 81.96
+    },
+    {
+      "event": "landing",
+      "id": "tide-tower-crown-100",
+      "x": 17243.4,
+      "hp": 135,
+      "time": 82.93
+    },
+    {
+      "event": "checkpoint",
+      "x": 17374,
+      "hp": 135,
+      "time": 83.33
+    },
+    {
+      "event": "crossingportal",
+      "id": "tide-crossing-wind-entry",
+      "time": 83.83,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:wind:opening"
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-landing",
+      "x": 19613.2,
+      "hp": 135,
+      "time": 84.06
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-court-0",
+      "x": 20188.3,
+      "hp": 135,
+      "time": 85.94
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-step-0",
+      "x": 20467,
+      "hp": 135,
+      "time": 86.83
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-bell-0",
+      "x": 20715.9,
+      "hp": 135,
+      "time": 87.58
+    },
+    {
+      "event": "gate",
+      "x": 20718.7,
+      "hp": 135,
+      "time": 87.59
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-bridge-0",
+      "x": 21065.2,
+      "hp": 135,
+      "time": 89.08
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-bridge-0",
+      "x": 21132.8,
+      "hp": 135,
+      "time": 89.35
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-court-1",
+      "x": 21538.1,
+      "hp": 135,
+      "time": 90.7
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-step-1",
+      "x": 21817,
+      "hp": 135,
+      "time": 91.59
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-bell-1",
+      "x": 22061.6,
+      "hp": 135,
+      "time": 92.34
+    },
+    {
+      "event": "gate",
+      "x": 22064.5,
+      "hp": 135,
+      "time": 92.35
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-bridge-1",
+      "x": 22415.1,
+      "hp": 135,
+      "time": 93.84
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-bridge-1",
+      "x": 22482.8,
+      "hp": 135,
+      "time": 94.11
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-court-2",
+      "x": 22888.1,
+      "hp": 135,
+      "time": 95.46
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-step-2",
+      "x": 23167,
+      "hp": 135,
+      "time": 96.35
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-bell-2",
+      "x": 23415.9,
+      "hp": 135,
+      "time": 97.1
+    },
+    {
+      "event": "gate",
+      "x": 23418.8,
+      "hp": 135,
+      "time": 97.11
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-bridge-2",
+      "x": 23765.2,
+      "hp": 135,
+      "time": 98.6
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-bridge-2",
+      "x": 23832.8,
+      "hp": 135,
+      "time": 98.87
+    },
+    {
+      "event": "checkpoint",
+      "x": 24062.1,
+      "hp": 135,
+      "time": 99.58
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-0",
+      "x": 24111,
+      "hp": 135,
+      "time": 99.78
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-1",
+      "x": 24530.5,
+      "hp": 135,
+      "time": 101.32
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-2",
+      "x": 24930.5,
+      "hp": 135,
+      "time": 102.76
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-3",
+      "x": 25322,
+      "hp": 135,
+      "time": 104.31
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-4",
+      "x": 25710.4,
+      "hp": 135,
+      "time": 105.77
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-5",
+      "x": 26128.9,
+      "hp": 135,
+      "time": 107.28
+    },
+    {
+      "event": "gate",
+      "x": 26129.2,
+      "hp": 135,
+      "time": 107.28
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-6",
+      "x": 26529.6,
+      "hp": 135,
+      "time": 108.95
+    },
+    {
+      "event": "checkpoint",
+      "x": 26917.1,
+      "hp": 135,
+      "time": 110.29
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-7",
+      "x": 26925.5,
+      "hp": 135,
+      "time": 110.43
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-8",
+      "x": 27318.3,
+      "hp": 135,
+      "time": 111.95
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-9",
+      "x": 27713.3,
+      "hp": 135,
+      "time": 113.4
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-10",
+      "x": 28131.3,
+      "hp": 135,
+      "time": 115
+    },
+    {
+      "event": "hurt",
+      "x": 28380.1,
+      "hp": 125,
+      "time": 115.81
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-11",
+      "x": 28476.5,
+      "hp": 125,
+      "time": 116.38
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-12",
+      "x": 28917.9,
+      "hp": 125,
+      "time": 118.01
+    },
+    {
+      "event": "gate",
+      "x": 28918.8,
+      "hp": 125,
+      "time": 118.02
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-13",
+      "x": 29329.4,
+      "hp": 125,
+      "time": 119.73
+    },
+    {
+      "event": "checkpoint",
+      "x": 29717,
+      "hp": 135,
+      "time": 121.07
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-14",
+      "x": 29725.5,
+      "hp": 135,
+      "time": 121.21
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-15",
+      "x": 30129.8,
+      "hp": 135,
+      "time": 122.71
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-16",
+      "x": 30529.3,
+      "hp": 135,
+      "time": 124.13
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-17",
+      "x": 30917.5,
+      "hp": 135,
+      "time": 125.58
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-18",
+      "x": 31321.3,
+      "hp": 135,
+      "time": 127.18
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-19",
+      "x": 31726.7,
+      "hp": 135,
+      "time": 128.59
+    },
+    {
+      "event": "gate",
+      "x": 31727.1,
+      "hp": 135,
+      "time": 128.6
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-20",
+      "x": 32130.3,
+      "hp": 135,
+      "time": 130.37
+    },
+    {
+      "event": "checkpoint",
+      "x": 32517.2,
+      "hp": 135,
+      "time": 131.71
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-21",
+      "x": 32525.5,
+      "hp": 135,
+      "time": 131.85
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-22",
+      "x": 32920.5,
+      "hp": 135,
+      "time": 133.35
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-23",
+      "x": 33327.3,
+      "hp": 135,
+      "time": 134.79
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-24",
+      "x": 33729.9,
+      "hp": 135,
+      "time": 136.23
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-25",
+      "x": 34121,
+      "hp": 135,
+      "time": 137.79
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-26",
+      "x": 34527.3,
+      "hp": 135,
+      "time": 139.24
+    },
+    {
+      "event": "gate",
+      "x": 34527.7,
+      "hp": 135,
+      "time": 139.25
+    },
+    {
+      "event": "checkpoint",
+      "x": 34929.3,
+      "hp": 135,
+      "time": 140.89
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-course-27",
+      "x": 34930.2,
+      "hp": 135,
+      "time": 141.01
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-oath-court",
+      "x": 34971,
+      "hp": 135,
+      "time": 146.78
+    },
+    {
+      "event": "gate",
+      "x": 34971.2,
+      "hp": 135,
+      "time": 146.79
+    },
+    {
+      "event": "gate",
+      "x": 34971.2,
+      "hp": 135,
+      "time": 146.79
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-wind-oath-court",
+      "x": 35806,
+      "hp": 135,
+      "time": 149.45
+    },
+    {
+      "event": "crossingportal",
+      "id": "tide-crossing-wind-return",
+      "time": 149.9
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:wind:ending"
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.2,
+      "hp": 135,
+      "time": 150.15
+    },
+    {
+      "event": "crossingportal",
+      "id": "tide-crossing-water-entry",
+      "time": 150.91,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:water:opening"
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-landing",
+      "x": 36813.2,
+      "hp": 135,
+      "time": 151.14
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-court-0",
+      "x": 37388.3,
+      "hp": 135,
+      "time": 153.03
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-step-0",
+      "x": 37648,
+      "hp": 135,
+      "time": 153.92
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-teaching-raft-0",
+      "x": 37789.9,
+      "hp": 135,
+      "time": 154.7
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-bell-0",
+      "x": 37960.3,
+      "hp": 135,
+      "time": 155.53
+    },
+    {
+      "event": "gate",
+      "x": 37960.5,
+      "hp": 135,
+      "time": 155.53
+    },
+    {
+      "event": "hurt",
+      "x": 38260.5,
+      "hp": 127.5,
+      "time": 156.74
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-bridge-0",
+      "x": 38263.2,
+      "hp": 135,
+      "time": 157.25
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-bridge-0",
+      "x": 38332.4,
+      "hp": 135,
+      "time": 157.52
+    },
+    {
+      "event": "hurt",
+      "x": 38377.1,
+      "hp": 131.9,
+      "time": 157.66
+    },
+    {
+      "event": "hurt",
+      "x": 38665.9,
+      "hp": 128.8,
+      "time": 158.57
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-court-1",
+      "x": 38748.9,
+      "hp": 128.8,
+      "time": 159.16
+    },
+    {
+      "event": "hurt",
+      "x": 38832.9,
+      "hp": 125.6,
+      "time": 159.48
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-step-1",
+      "x": 38983.1,
+      "hp": 125.6,
+      "time": 159.99
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-teaching-raft-1",
+      "x": 39193.5,
+      "hp": 128.8,
+      "time": 160.87
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-bell-1",
+      "x": 39311.2,
+      "hp": 128.8,
+      "time": 161.55
+    },
+    {
+      "event": "gate",
+      "x": 39311.3,
+      "hp": 128.8,
+      "time": 161.56
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-bridge-1",
+      "x": 39614.4,
+      "hp": 135,
+      "time": 162.96
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-bridge-1",
+      "x": 39682.6,
+      "hp": 135,
+      "time": 163.23
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-court-2",
+      "x": 40088.7,
+      "hp": 135,
+      "time": 164.58
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-step-2",
+      "x": 40348.1,
+      "hp": 135,
+      "time": 165.48
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-teaching-raft-2",
+      "x": 40518.5,
+      "hp": 135,
+      "time": 168.05
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-bell-2",
+      "x": 40655.5,
+      "hp": 135,
+      "time": 168.73
+    },
+    {
+      "event": "gate",
+      "x": 40656,
+      "hp": 135,
+      "time": 168.74
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-bridge-2",
+      "x": 40964.4,
+      "hp": 135,
+      "time": 170.14
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-bridge-2",
+      "x": 41032.6,
+      "hp": 135,
+      "time": 170.41
+    },
+    {
+      "event": "checkpoint",
+      "x": 41262,
+      "hp": 135,
+      "time": 171.13
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-0",
+      "x": 41311.9,
+      "hp": 135,
+      "time": 171.33
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-causeway-raft-1",
+      "x": 41690.4,
+      "hp": 135,
+      "time": 172.84
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-2",
+      "x": 42126.4,
+      "hp": 135,
+      "time": 174.46
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-causeway-raft-3",
+      "x": 42431.8,
+      "hp": 135,
+      "time": 175.5
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-4",
+      "x": 42925.6,
+      "hp": 135,
+      "time": 177.6
+    },
+    {
+      "event": "gate",
+      "x": 42926.3,
+      "hp": 135,
+      "time": 177.61
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-causeway-raft-5",
+      "x": 43291.6,
+      "hp": 135,
+      "time": 179.05
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-6",
+      "x": 43728.6,
+      "hp": 135,
+      "time": 180.82
+    },
+    {
+      "event": "checkpoint",
+      "x": 44117,
+      "hp": 135,
+      "time": 182.16
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-7",
+      "x": 44125.5,
+      "hp": 135,
+      "time": 182.3
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-causeway-raft-8",
+      "x": 44494.5,
+      "hp": 135,
+      "time": 183.81
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-9",
+      "x": 44918,
+      "hp": 135,
+      "time": 185.39
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-causeway-raft-10",
+      "x": 45290.4,
+      "hp": 135,
+      "time": 186.92
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-11",
+      "x": 45717.2,
+      "hp": 135,
+      "time": 189.22
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-causeway-raft-12",
+      "x": 46049.6,
+      "hp": 135,
+      "time": 190.75
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-13",
+      "x": 46509.2,
+      "hp": 135,
+      "time": 192.32
+    },
+    {
+      "event": "gate",
+      "x": 46510.9,
+      "hp": 135,
+      "time": 192.32
+    },
+    {
+      "event": "checkpoint",
+      "x": 46926.8,
+      "hp": 135,
+      "time": 193.83
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-14",
+      "x": 46929.1,
+      "hp": 135,
+      "time": 193.96
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-15",
+      "x": 47320.6,
+      "hp": 135,
+      "time": 195.47
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-causeway-raft-16",
+      "x": 47694.7,
+      "hp": 135,
+      "time": 196.99
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-17",
+      "x": 48119.4,
+      "hp": 135,
+      "time": 198.43
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-causeway-raft-18",
+      "x": 48529.1,
+      "hp": 135,
+      "time": 200.02
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-19",
+      "x": 48925.7,
+      "hp": 135,
+      "time": 202.27
+    },
+    {
+      "event": "gate",
+      "x": 48925.8,
+      "hp": 135,
+      "time": 202.28
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-20",
+      "x": 49329.3,
+      "hp": 135,
+      "time": 203.99
+    },
+    {
+      "event": "checkpoint",
+      "x": 49717,
+      "hp": 135,
+      "time": 205.33
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-21",
+      "x": 49725.5,
+      "hp": 135,
+      "time": 205.47
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-causeway-raft-22",
+      "x": 50126.4,
+      "hp": 135,
+      "time": 206.97
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-23",
+      "x": 50529,
+      "hp": 135,
+      "time": 208.57
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-causeway-raft-24",
+      "x": 50891.3,
+      "hp": 135,
+      "time": 210.02
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-25",
+      "x": 51316.1,
+      "hp": 135,
+      "time": 212.74
+    },
+    {
+      "event": "gate",
+      "x": 51317.1,
+      "hp": 135,
+      "time": 212.75
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-causeway-raft-26",
+      "x": 51699.1,
+      "hp": 135,
+      "time": 214.31
+    },
+    {
+      "event": "checkpoint",
+      "x": 52128,
+      "hp": 135,
+      "time": 215.97
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-course-27",
+      "x": 52129.7,
+      "hp": 135,
+      "time": 216.09
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-oath-court",
+      "x": 52171,
+      "hp": 135,
+      "time": 221.86
+    },
+    {
+      "event": "gate",
+      "x": 52171.2,
+      "hp": 135,
+      "time": 221.87
+    },
+    {
+      "event": "gate",
+      "x": 52171.2,
+      "hp": 135,
+      "time": 221.87
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-water-oath-court",
+      "x": 53006,
+      "hp": 135,
+      "time": 224.52
+    },
+    {
+      "event": "crossingportal",
+      "id": "tide-crossing-water-return",
+      "time": 224.97
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:water:ending"
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.2,
+      "hp": 135,
+      "time": 225.22
+    },
+    {
+      "event": "crossingportal",
+      "id": "tide-crossing-fire-entry",
+      "time": 225.98,
+      "guardianHealthOnEntry": 216,
+      "guardianMaxHealth": 216
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:fire:opening"
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-landing",
+      "x": 54063.8,
+      "hp": 135,
+      "time": 226.73
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-court-0",
+      "x": 54588.2,
+      "hp": 135,
+      "time": 228.51
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-step-0",
+      "x": 54832,
+      "hp": 135,
+      "time": 229.3
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-bell-0",
+      "x": 55119.9,
+      "hp": 135,
+      "time": 230.2
+    },
+    {
+      "event": "gate",
+      "x": 55122.6,
+      "hp": 135,
+      "time": 230.21
+    },
+    {
+      "event": "hurt",
+      "x": 55463.7,
+      "hp": 123.8,
+      "time": 231.58
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-bridge-0",
+      "x": 55467.8,
+      "hp": 123.8,
+      "time": 232.07
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-bridge-0",
+      "x": 55533.3,
+      "hp": 123.8,
+      "time": 232.34
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-court-1",
+      "x": 55938.2,
+      "hp": 125.9,
+      "time": 233.69
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-step-1",
+      "x": 56182,
+      "hp": 125.9,
+      "time": 234.48
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-bell-1",
+      "x": 56469.2,
+      "hp": 125.9,
+      "time": 235.69
+    },
+    {
+      "event": "gate",
+      "x": 56471.9,
+      "hp": 125.9,
+      "time": 235.7
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-bridge-1",
+      "x": 56815.1,
+      "hp": 125.9,
+      "time": 237.22
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-bridge-1",
+      "x": 56882.8,
+      "hp": 125.9,
+      "time": 237.49
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-court-2",
+      "x": 57288.1,
+      "hp": 129,
+      "time": 238.84
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-step-2",
+      "x": 57532,
+      "hp": 129,
+      "time": 239.63
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-bell-2",
+      "x": 57819.8,
+      "hp": 129,
+      "time": 240.53
+    },
+    {
+      "event": "gate",
+      "x": 57822.5,
+      "hp": 129,
+      "time": 240.54
+    },
+    {
+      "event": "hurt",
+      "x": 58163.6,
+      "hp": 117.7,
+      "time": 241.92
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-bridge-2",
+      "x": 58167.8,
+      "hp": 117.7,
+      "time": 242.41
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-bridge-2",
+      "x": 58233.3,
+      "hp": 117.7,
+      "time": 242.67
+    },
+    {
+      "event": "checkpoint",
+      "x": 58462.6,
+      "hp": 135,
+      "time": 243.39
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-0",
+      "x": 58511.2,
+      "hp": 135,
+      "time": 243.58
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-1",
+      "x": 58926,
+      "hp": 135,
+      "time": 245.1
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-2",
+      "x": 59322.8,
+      "hp": 135,
+      "time": 246.52
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-3",
+      "x": 59727.9,
+      "hp": 135,
+      "time": 248.1
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-4",
+      "x": 60114,
+      "hp": 135,
+      "time": 249.77
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-5",
+      "x": 60524.5,
+      "hp": 135,
+      "time": 251.25
+    },
+    {
+      "event": "gate",
+      "x": 60525,
+      "hp": 135,
+      "time": 251.26
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-6",
+      "x": 60928.9,
+      "hp": 135,
+      "time": 252.88
+    },
+    {
+      "event": "checkpoint",
+      "x": 61317,
+      "hp": 135,
+      "time": 254.22
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-7",
+      "x": 61325.5,
+      "hp": 135,
+      "time": 254.37
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-8",
+      "x": 61724.8,
+      "hp": 135,
+      "time": 255.83
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-9",
+      "x": 62154.3,
+      "hp": 135,
+      "time": 258.28
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-10",
+      "x": 62527.8,
+      "hp": 135,
+      "time": 259.85
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-11",
+      "x": 62920.9,
+      "hp": 135,
+      "time": 261.24
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-12",
+      "x": 63331,
+      "hp": 135,
+      "time": 267.57
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-13",
+      "x": 63728,
+      "hp": 135,
+      "time": 269.14
+    },
+    {
+      "event": "gate",
+      "x": 63728.4,
+      "hp": 135,
+      "time": 269.15
+    },
+    {
+      "event": "checkpoint",
+      "x": 64126.1,
+      "hp": 135,
+      "time": 270.64
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-14",
+      "x": 64128.8,
+      "hp": 135,
+      "time": 270.77
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-15",
+      "x": 64528.1,
+      "hp": 135,
+      "time": 272.35
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-16",
+      "x": 64927,
+      "hp": 135,
+      "time": 273.88
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-17",
+      "x": 65379.9,
+      "hp": 135,
+      "time": 276.51
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-18",
+      "x": 65720.3,
+      "hp": 135,
+      "time": 277.92
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-19",
+      "x": 66122,
+      "hp": 135,
+      "time": 279.33
+    },
+    {
+      "event": "gate",
+      "x": 66122.7,
+      "hp": 135,
+      "time": 279.34
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-20",
+      "x": 66530.2,
+      "hp": 135,
+      "time": 281.12
+    },
+    {
+      "event": "checkpoint",
+      "x": 66917.1,
+      "hp": 135,
+      "time": 282.46
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-21",
+      "x": 66925.5,
+      "hp": 135,
+      "time": 282.6
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-22",
+      "x": 67325.4,
+      "hp": 135,
+      "time": 284.08
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-23",
+      "x": 67720.8,
+      "hp": 135,
+      "time": 285.47
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-24",
+      "x": 68122,
+      "hp": 135,
+      "time": 286.89
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-25",
+      "x": 68527.7,
+      "hp": 135,
+      "time": 288.46
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-26",
+      "x": 68920.3,
+      "hp": 135,
+      "time": 289.84
+    },
+    {
+      "event": "gate",
+      "x": 68921.1,
+      "hp": 135,
+      "time": 289.85
+    },
+    {
+      "event": "checkpoint",
+      "x": 69328.8,
+      "hp": 135,
+      "time": 291.47
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-course-27",
+      "x": 69330,
+      "hp": 135,
+      "time": 291.6
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-oath-court",
+      "x": 69371,
+      "hp": 135,
+      "time": 297.28
+    },
+    {
+      "event": "gate",
+      "x": 69371.2,
+      "hp": 135,
+      "time": 297.29
+    },
+    {
+      "event": "gate",
+      "x": 69371.2,
+      "hp": 135,
+      "time": 297.29
+    },
+    {
+      "event": "landing",
+      "id": "tide-crossing-fire-oath-court",
+      "x": 70206,
+      "hp": 135,
+      "time": 299.95
+    },
+    {
+      "event": "crossingportal",
+      "id": "tide-crossing-fire-return",
+      "time": 300.4
+    },
+    {
+      "event": "story",
+      "npcId": "chapter:fire:ending"
+    },
+    {
+      "event": "checkpoint",
+      "x": 17375.2,
+      "hp": 135,
+      "time": 300.65
+    },
+    {
+      "event": "bossstart",
+      "x": 17670,
+      "hp": 135,
+      "time": 301.75
+    },
+    {
+      "event": "hurt",
+      "x": 18070.1,
+      "hp": 127.5,
+      "time": 304.48
+    },
+    {
+      "event": "hurt",
+      "x": 18072.6,
+      "hp": 120,
+      "time": 305.41
+    },
+    {
+      "event": "hurt",
+      "x": 18091.6,
+      "hp": 111.9,
+      "time": 311.43
+    },
+    {
+      "event": "hurt",
+      "x": 18159.9,
+      "hp": 101.9,
+      "time": 317.16
+    },
+    {
+      "event": "bossdefeated",
+      "id": "tide-regent",
+      "time": 318.14,
+      "hp": 101.9
+    },
+    {
+      "event": "gate",
+      "x": 18156.7,
+      "hp": 101.9,
+      "time": 318.14
+    },
+    {
+      "event": "landing",
+      "id": "tide-arena-106",
+      "x": 18156.7,
+      "hp": 101.9,
+      "time": 318.14
+    },
+    {
+      "event": "landing",
+      "id": "tide-arena-106",
+      "x": 18662.8,
+      "hp": 101.9,
+      "time": 319.8
+    },
+    {
+      "event": "win",
+      "x": 18682.8,
+      "hp": 101.9,
+      "time": 319.87
+    }
+  ]
+}
