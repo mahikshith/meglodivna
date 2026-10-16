@@ -1,6 +1,6 @@
 {
   "version": "0.10.0-lantern",
-  "generatedAt": "2026-10-16T21:56:52.737Z",
+  "generatedAt": "2026-10-16T22:12:28.011Z",
   "sourceAndEvidenceHashesVerified": true,
   "lineEndingOnlyDifferences": [],
   "unitTests": {
@@ -100,6 +100,10 @@
     "production": {
       "path": "artifacts/playtest-correction/qa/production/report.json",
       "sha256": "dbfa7be14199ee51434ac0cbd098d4852943a51ead2b5507211d58ce2f0f8b34"
+    },
+    "portable": {
+      "path": "artifacts/playtest-correction/qa/portable-hashes.json",
+      "sha256": "083758932c8521d530be01a18c13150fdcaf846eccd3399b7391ccfb048178b1"
     }
   },
   "physicalDeviceTested": false,

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 
 process.on('uncaughtException', error => {
   console.error(`::error title=Correction evidence verification::${error.message}`);
@@ -19,6 +19,40 @@ const paths = {
   production: 'artifacts/playtest-correction/qa/production/report.json',
 };
 const reports = Object.fromEntries(Object.entries(paths).map(([name, path]) => [name, read(path)]));
+const portablePath = 'artifacts/playtest-correction/qa/portable-hashes.json';
+const ci = process.argv.includes('--ci');
+const portableDigest = path => {
+  const bytes = readFileSync(path);
+  const value = /\.(js|mjs|cjs|css|html|json|py|md|yml)$/.test(path)
+    ? bytes.toString('utf8').replace(/\r\n/g, '\n') : bytes;
+  return createHash('sha256').update(value).digest('hex');
+};
+const referencedFiles = new Set([
+  ...Object.values(paths),
+  ...Object.keys(reports.campaign.sources),
+  ...Object.keys(reports.visual.hashes),
+  ...Object.keys(reports.controls.sourceHashes),
+  ...Object.keys(reports.production.sourceHashes),
+  ...reports.art.textures.map(item => item.file),
+  ...reports.campaign.campaigns.flatMap(campaign => [campaign.report,
+    ...Object.values(campaign.driverSources).map(driver => driver.archive)]),
+  ...readdirSync('reference/playtest-correction').map(name => `reference/playtest-correction/${name}`),
+  '.github/workflows/android.yml', 'android/app/build.gradle', 'package.json', 'package-lock.json',
+  'scripts/verify-correction-evidence.mjs', 'scripts/build-playtest-correction-art.py',
+  'scripts/build-ironfang-assets.py', 'scripts/build-character-assets.py', 'scripts/validate-playtest-correction-art.py',
+]);
+if (process.argv.includes('--write-portable')) {
+  const files = Object.fromEntries([...referencedFiles].sort().map(path => [path, portableDigest(path)]));
+  writeFileSync(portablePath, JSON.stringify({kind: 'Git-portable LF-normalized text and exact binary SHA-256', files}, null, 2) + '\n');
+  console.log(`Recorded ${Object.keys(files).length} portable file hashes`);
+  process.exit(0);
+}
+if (ci) {
+  const portable = read(portablePath);
+  assert.deepEqual(Object.keys(portable.files).sort(), [...referencedFiles].sort());
+  for (const [path, expected] of Object.entries(portable.files))
+    assert.equal(portableDigest(path), expected, `Stale portable evidence: ${path}`);
+}
 const lineEndingOnly = [];
 const verifyFile = (path, expected) => {
   if (digest(path) === expected) return;
@@ -37,14 +71,16 @@ const verify = hashes => {
   for (const [path, expected] of Object.entries(hashes)) verifyFile(path, typeof expected === 'string' ? expected : expected.sha256);
 };
 
-verify(reports.campaign.sources);
-verify(reports.visual.hashes);
-verify(reports.controls.sourceHashes);
-verify(reports.production.sourceHashes);
+if (!ci) {
+  verify(reports.campaign.sources);
+  verify(reports.visual.hashes);
+  verify(reports.controls.sourceHashes);
+  verify(reports.production.sourceHashes);
+}
 // Vite/minifier bytes can differ between Windows and Linux. The local
 // production smoke checks the exact served bundle; CI builds its own bundle
 // from the verified tagged sources before compiling Android.
-if (!process.argv.includes('--ci')) verify(reports.production.distHashes);
+if (!ci) verify(reports.production.distHashes);
 assert.equal(reports.campaign.sourceUnchangedSinceSnapshot, true);
 assert.equal(reports.campaign.campaigns.length, 9);
 assert.equal(reports.campaign.unitTests.failed, 0);
@@ -53,9 +89,9 @@ for (const campaign of reports.campaign.campaigns) {
   assert.equal(campaign.status, 'won', `${campaign.world}/${campaign.difficulty}`);
   assert.equal(campaign.allCrossingGuardiansDefeated, true);
   assert.ok(campaign.seconds > 0);
-  verifyFile(campaign.report, campaign.reportSha256);
+  if (!ci) verifyFile(campaign.report, campaign.reportSha256);
   assert.equal(Object.keys(campaign.driverSources).length, 3);
-  for (const driver of Object.values(campaign.driverSources)) verifyFile(driver.archive, driver.sha256);
+  if (!ci) for (const driver of Object.values(campaign.driverSources)) verifyFile(driver.archive, driver.sha256);
 }
 assert.equal(reports.art.bossCorrectionFrames, 43);
 assert.equal(reports.art.wolfCorrectionFrames, 8);
@@ -96,7 +132,8 @@ const summary = {
   paintedPanoramaSeamsVerified: reports.seam.records.length,
   textureBudget: {rgbaBytes: reports.visual.textureBudget.rgbaBytes,
     sourceImages: reports.visual.textureBudget.textures.length, deviceMemoryMeasured: false},
-  evidence: Object.fromEntries(Object.entries(paths).map(([name, path]) => [name, {path, sha256: digest(path)}])),
+  evidence: {...Object.fromEntries(Object.entries(paths).map(([name, path]) => [name, {path, sha256: digest(path)}])),
+    portable: {path: portablePath, sha256: digest(portablePath)}},
   physicalDeviceTested: false, humanTenMinuteTargetVerified: false,
   limits: 'Simulated campaign time is not human pacing. Browser art fixtures do not establish device comfort or sustained performance. Signed APK verification is separate in android-report.json.',
 };
