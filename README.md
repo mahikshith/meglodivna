@@ -1,23 +1,23 @@
 # The Last Lantern — Hollow Sanctuary
 
-**Latest APK:** [Download The Last Lantern v0.9.0 Oath Crossings Android test build](https://github.com/mahikshith/meglodivna/releases/download/v0.9.0-lantern/ASH-SIGNAL-Lantern-v0.9.0.apk) — 17 October 2026, version `0.9.0-lantern`, code **10**, Android 7.0+.
+**Latest APK:** [Download The Last Lantern v0.10.0 Lantern Path Android test build](https://github.com/mahikshith/meglodivna/releases/download/v0.10.0-lantern/ASH-SIGNAL-Lantern-v0.10.0.apk) — 17 October 2026, version `0.10.0-lantern`, code **11**, Android 7.0+.
 
-[Prerelease and checksums](https://github.com/mahikshith/meglodivna/releases/tag/v0.9.0-lantern) · [Passed Android build and upload verification](https://github.com/mahikshith/meglodivna/actions/runs/38960622853) · [Signed payload report](https://github.com/mahikshith/meglodivna/releases/download/v0.9.0-lantern/android-report.json). CI downloaded the uploaded APK again and matched it byte for byte before this link was updated.
+[Prerelease and checksums](https://github.com/mahikshith/meglodivna/releases/tag/v0.10.0-lantern) · [Passed Android build and upload verification](https://github.com/mahikshith/meglodivna/actions/runs/38974668399) · [Signed payload report](https://github.com/mahikshith/meglodivna/releases/download/v0.10.0-lantern/android-report.json) · [Current validation](https://github.com/mahikshith/meglodivna/releases/download/v0.10.0-lantern/validation.json). CI downloaded the uploaded APK again and matched it byte for byte; the public download also matched SHA-256 `1b79c5213428cc871efe275bce62e0c6ccc3a2c85602412213d1d48442d16cd7` before this link was updated.
 
-The v0.9 test build expands **one connected chapter**: Aether carries the last lantern through Hollow Sanctuary, meets Mira and Orren, and crosses wind, water and ember trials to recover the stolen dawn. An 18-second illustrated introduction establishes the courier's promise and the journey toward Lanternplate knighthood. The story is original fiction inspired by themes from the Ramayana; its characters are not presented as literal epic figures.
+The v0.10 test build follows **one clear rescue route**: Aether carries the last lantern through Hollow Sanctuary, learns that Mira's brother Orren is trapped, then enters one lit gate at a time through Wind, Water and Fire. Each crossing has four authored movement sections with visible high-landing shutters, safe relays and a guardian. An 18-second illustrated introduction establishes the courier's promise and the journey toward Lanternplate knighthood. The story is original fiction inspired by themes from the Ramayana; its characters are not presented as literal epic figures.
 
-![The Last Lantern illustrated home screen](artifacts/epic-rebuild/qa/production/01-home.png)
+![The Last Lantern illustrated home screen](artifacts/playtest-correction/qa/production/01-home.png)
 
 ## The rebuild
 
 - Original generated courier, creatures, companions, NPCs, portal and environmental art, extracted into transparent sprites with registered feet/body anchors. Source images, exact prompts and reproducible extraction scripts are included.
 - Stalkers commit to close lunges; casters lob falling cinders; stone guardians brace and slam. The rebuilt Minotaur runs, leaps into charges, swings its axe and fires from its rotary gun, then becomes a cannon-bearing dragon with full-body flight poses. Warnings, damage regions and recovery differ by attack.
-- Detailed illustrated rendering: 180 character frame keys with 112 animation bindings, 67 Ironfang actor/effect keys with 20 bindings, four revised sanctuary props, a new masonry texture and six story/realm panels. Counts include reused bindings. Smooth sampling preserves source detail while world dimensions and the physics step remain stable.
+- Five new 1536×864 world paintings, a taller illustrated portal, a corrected courier portrait, a repainted Minotaur and full-body dragon, an eight-pose wolf, and four painted slash frames replace the most visibly mismatched art. Smooth sampling and a clear ledge rim preserve detail and the playable ground line at phone size.
 - Painted muzzle flashes, cannon shells, ground impacts and directional booster exhaust share measured weapon/contact geometry. All six illustrated secondary-villain families have anatomical damage regions. Enemy shield/body circles are removed; touch controls remain visible. Awakened villains keep simulating offscreen.
 - Wolf, raven, dragon and Courier Echo each have distinct locomotion, terrain awareness, target selection and attacks. Ground companions handle reachable ledges and unsupported gaps; flying companions route around solid obstacles.
-- Three portal crossings add Windward Canopy, Moonlit Causeway and Ember Oath environments, each with its own traversal forces, routes and action puzzles. Automatic return portals, the optional Bellbeast encounter, persistent souls and Soul Engine progression remain part of the chapter.
+- One active story gate leads through Windward Canopy, Moonlit Causeway and Ember Oath in order. Four sections per realm teach and combine changing drafts, reversing currents and moving rafts, or brittle ledges and timed vents. Landing at a high lantern opens each visible shutter; relays, catch ledges and a lower Fire recovery route keep failure readable. Automatic return portals, the optional Bellbeast, persistent souls and Soul Engine progression remain.
 - The Test Armory makes all 22 weapons, armor sets and powers available for testing, with Soul Engine test upgrades. Its save is separate from earned journey progress; testing gear does not overwrite the normal unlock history.
-- Authored masonry and hanging platforms, water aligned to its real boundary, and readable energy emitters near the lever.
+- Authored masonry and hanging platforms, water aligned to its real boundary, and readable high-landing shutters.
 - Safe opening jump practice, a more forgiving aqueduct landing, contextual objectives, and useful shield/boost/rapid/fuel rewards. Shooting preserves running or flight movement; crouching brakes horizontal drift.
 - A shared sanctuary theme across home, pause, settings, field guide, dialogue, equipment and HUD. Top-edge Pause, Settings and Gear work while another finger holds an action; dialogue and notices stay at the edge. Offline Alegreya typography is bundled.
 
@@ -40,9 +40,11 @@ Settings preserve music, effects, reduced motion/effects and touch opacity. Andr
 
 ## Evidence and remaining work
 
-[Detailed plan and rewritten brief](docs/LANTERN-MOTION-PLAN.md) · [Existing-game critique](docs/LANTERN-MOTION-VALIDATION.md) · [Level audit](docs/HOLLOW-LEVEL-AUDIT.md) · [Current validation](docs/LANTERN-MOTION-VALIDATION.md) · [Asset provenance and limitations](ASSETS.md) | [Persistent art-production memory](docs/ASSET-PRODUCTION-MEMORY.md).
+[Current correction plan and platformer references](docs/PLAYTEST-CORRECTION-PLAN.md) · [Story and crossing notes](docs/RAMAYANA-STORY-AND-CROSSINGS.md) · [Current validation](artifacts/playtest-correction/validation.json) · [Asset provenance and limitations](ASSETS.md) · [Persistent art-production memory](docs/ASSET-PRODUCTION-MEMORY.md).
 
-The published v0.8 illustrated revision passed 189 unit tests and nine legal simulation campaigns, including the optional giant/reward/return route, plus its browser and visual checks. [v0.8 validation](artifacts/character-revision/validation.json) and [v0.8 revision scope](docs/ILLUSTRATED-RELEASE.md) describe that delivery. The v0.9 asset integrity report is [here](artifacts/epic-revision/integrity.json); [story and crossings notes](docs/RAMAYANA-STORY-AND-CROSSINGS.md) explain the new chapter material. The [v0.9 integrated validation](artifacts/epic-rebuild/validation.json) records 231 passing tests, nine complete legal routes in 10:52 to 11:43, 53 visual fixtures and eight actual-input scenarios. The signed v0.9 APK passed Android lint, persistent-certificate checks and exact embedded-file verification; the public download matched its SHA-256 checksum before the link above was updated. Legal simulations, browser input checks and isolated visual fixtures establish different things; none establishes physical-device comfort. **Physical Android comfort, sustained frame pacing, thermals, audio mix and first-time human pacing remain unverified.** This is a test build, not a commercially validated release. Some animation states reuse poses; the asset report identifies them.
+The v0.10 candidate passed 237 unit tests, nine legal fixed-step campaigns through the final transformed boss, 58 isolated phone-size visual fixtures, nine real-input control checks, four story browser checks, a production preview smoke test and five painted-panorama seam checks. The [signed APK report](https://github.com/mahikshith/meglodivna/releases/download/v0.10.0-lantern/android-report.json) verifies version code 11, the persistent `com.meglodivna.ashsignal` application ID and signing certificate, and all 85 embedded web files. The uploaded public APK matched the report and checksum. Automated campaign times are 4:54–6:01; they do **not** establish the ten-minute first-human-play target. Physical-device comfort, sustained performance and first-time human pacing remain unverified.
+
+The published v0.8 illustrated revision passed 189 unit tests and nine legal simulation campaigns, including the optional giant/reward/return route, plus its browser and visual checks. [v0.8 validation](artifacts/character-revision/validation.json) and [v0.8 revision scope](docs/ILLUSTRATED-RELEASE.md) describe that historical delivery. The [v0.9 integrated validation](artifacts/epic-rebuild/validation.json) records 231 passing tests, nine complete legal routes in 10:52 to 11:43, 53 visual fixtures and eight actual-input scenarios for the previous layout. This is a test build, not a commercially validated release. Some animation states reuse poses; the [asset report](ASSETS.md) identifies them.
 
 ## Run and validate
 
@@ -52,8 +54,8 @@ Use Node.js 22, Phaser 3.90.0 and Vite 6.4.4.
 npm ci
 npm run dev
 npm test
-node scripts/combat-route.mjs forge soulforge
-node scripts/combat-route.mjs forge soulforge --bellbeast
+node scripts/combat-route.mjs forge soulforge --correction
+node scripts/combat-route.mjs forge soulforge --bellbeast --correction
 npm run build
 ```
 
@@ -65,7 +67,8 @@ npm run test:visual
 npm run preview -- --port 4173
 # In a separate terminal while preview runs:
 npm run test:production
-node scripts/verify-epic-evidence.mjs
+node scripts/check-parallax-seam.cjs
+node scripts/verify-correction-evidence.mjs
 ```
 
 Android uses JDK 17, SDK 36, minimum API 24, and an offline landscape WebView. Point `ASH_SIGNAL_DEBUG_KEYSTORE` at the persistent test certificate before building updates.
