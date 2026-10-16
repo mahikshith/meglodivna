@@ -2,7 +2,7 @@
   "kind": "Git-portable LF-normalized text and exact binary SHA-256",
   "files": {
     ".github/workflows/android.yml": "297b34aca44c9bea70c4980ad8de4b70141f362471f4bd29f772663d7d956cac",
-    "android/app/build.gradle": "b042f493ff4212c598e5a157b9f0991328ec96a76b4826cd1d53e55e799b4e3d",
+    "android/app/build.gradle": "5ad8c57601c3db6de92577072de43122c04ed4aba8b02685f81c63e3a065be16",
     "artifacts/playtest-correction/bellbeast-route-forge-report.json": "f99a85d5be6457a501ccea43cb414b43a5cdcbdc0529bb6e91c4176616d5dba7",
     "artifacts/playtest-correction/campaign-summary.json": "be3e59ad59d36fc0ca030a8646fd26ecdb947c40f066d7ffc923de32264bd9d4",
     "artifacts/playtest-correction/combat-route-neon-forge-report.json": "49fea181bbf7434d10eedd50195a9756867e4a999f66a634231b227831df77ce",
@@ -89,7 +89,7 @@
     "scripts/build-ironfang-assets.py": "60e05a68197b5268eac0f967c7897fd9386ff4bef062cdcb8c92cf648380b877",
     "scripts/build-playtest-correction-art.py": "8e19f17039934e53a4be43f95c27686daa253c74b37d369dcd39dde417140d88",
     "scripts/validate-playtest-correction-art.py": "1f1b1d0af8ec2f14daa545294b92eb7608e8cedde34f8c22d9587f07ed53d994",
-    "scripts/verify-correction-evidence.mjs": "58bcf3d4cbe1e2016030da97f23d5eeb798b8900dd1817641d6a48551adb7e5b",
+    "scripts/verify-correction-evidence.mjs": "2c7307e00a0ead6db47077893ed5a3d7945c937fa16fe60bd200550638b1ec34",
     "src/art.js": "ca40c2e8e471b61a2eda087594fa3abcf21ae07990016ffc0c1de416dc7ac976",
     "src/audio.js": "394c9c3f9cddc423fe36a997b4a0aff91784faea42058a7553aabe09af6cc929",
     "src/blade-motion.js": "17cb29beab9861e13708e7a00b5efe0e4ba0c5d1c25f3ede31286ea2550ba2fe",

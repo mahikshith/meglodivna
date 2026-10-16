@@ -23,7 +23,7 @@ const portablePath = 'artifacts/playtest-correction/qa/portable-hashes.json';
 const ci = process.argv.includes('--ci');
 const portableDigest = path => {
   const bytes = readFileSync(path);
-  const value = /\.(js|mjs|cjs|css|html|json|py|md|yml)$/.test(path)
+  const value = /\.(js|mjs|cjs|css|html|json|py|md|yml|gradle)$/.test(path)
     ? bytes.toString('utf8').replace(/\r\n/g, '\n') : bytes;
   return createHash('sha256').update(value).digest('hex');
 };
